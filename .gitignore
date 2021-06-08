@@ -1,4 +1,13 @@
 ﻿.idea
+
+/script-a-master/Altv-Roleplay/.idea
+/script-a-master/Altv-Roleplay/Altv-Roleplay/bin
+/script-a-master/Altv-Roleplay/Altv-Roleplay/obj
+/script-a-master/Altv-Roleplay/DiscordWebhook/bin
+/script-a-master/Altv-Roleplay/DiscordWebhook/obj
+/script-a-master/Altv-Roleplay/SaltyChat.Server/bin
+/script-a-master/Altv-Roleplay/SaltyChat.Server/obj
+
 /script-a-master/Server/cache
 /script-a-master/Server/node_modules
 /script-a-master/Server/package-lock.json
