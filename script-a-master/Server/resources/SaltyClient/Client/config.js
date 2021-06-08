@@ -10,3 +10,4 @@ Config.enableRadioSound = true;
 Config.enableOverlay = true;
 Config.overlayLanguage = "de";
 Config.overlayAddress = "ts.metrov.de";
+Config.automaticPlayerHealth = true;
