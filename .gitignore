@@ -1,3 +1,4 @@
 ﻿.idea
 /script-a-master/Server/cache
 /script-a-master/Server/node_modules
+/script-a-master/Server/package-lock.json
