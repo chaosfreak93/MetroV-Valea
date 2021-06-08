@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Altv-Roleplay": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Server\\altv-server.exe",
+      "workingDirectory": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Server"
+    }
+  }
+}

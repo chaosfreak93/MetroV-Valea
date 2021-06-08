@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "sx9GAS92r/2H375eilzfbNTyclqOWqHJq4Fr2cLAoNXREXqztXh88ZpPLTXLMf3xbCRFiDfrMBMa/oenF4cy2g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yanlu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
