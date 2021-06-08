@@ -1,5 +1,0 @@
-C:\Users\Administrator\Desktop\Testserver\script-a-master\Altv-Roleplay\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.dll
-C:\Users\Administrator\Desktop\Testserver\script-a-master\Altv-Roleplay\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.deps.json
-C:\Users\Administrator\Desktop\Testserver\script-a-master\Altv-Roleplay\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.runtimeconfig.json
-C:\Users\Administrator\Desktop\Testserver\script-a-master\Altv-Roleplay\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.pdb
-C:\Users\Administrator\Desktop\Testserver\script-a-master\Altv-Roleplay\DiscordWebhook\bin\Release\net5.0\publish\Newtonsoft.Json.dll
