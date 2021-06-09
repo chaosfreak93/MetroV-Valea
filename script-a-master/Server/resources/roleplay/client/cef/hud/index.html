@@ -1788,7 +1788,7 @@
 
     let neededItemLet, producedItemLet, neededItemAmountLet, produceditemAmountLet, durationLet, neededItemTWOLet, neededItemTHREELet, neededItemTWOAmountLet, neededItemTHREEAmountLet = "";
 
-    function FarmingCreateCEF(neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount) {
+    function FarmingCreateCEF(neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration) {
         $("#ProcessingBox").fadeTo(1000, 1, function() {});
 
         document.getElementById("ProcessingBoxButtonBoxes").innerHTML=`     <!--<hr class="ProcessingBoxLinie">-->
@@ -1903,7 +1903,7 @@
     }
 
     function startProcessing() {
-        alt.emit("Client:Farming:StartProcessing", neededItemLet, producedItemLet, neededItemAmountLet, produceditemAmountLet, durationLet, neededItemTWOLet, neededItemTHREELet, neededItemTWOAmountLet, neededItemTHREEAmountLet);
+        alt.emit("Client:Farming:StartProcessing", neededItemLet, neededItemAmountLet, neededItemTWOLet, neededItemTWOAmountLet, neededItemTHREELet, neededItemTHREEAmountLet, producedItemLet, produceditemAmountLet, durationLet);
     }
 
     function closeProcessingMenuCEF() {
@@ -5591,8 +5591,8 @@
 
     //Alt On Events
 
-    alt.on("CEF:Farming:createCEF", (neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount) => {
-        FarmingCreateCEF(neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount);
+    alt.on("CEF:Farming:createCEF", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration) => {
+        FarmingCreateCEF(neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
     });
 
     alt.on("CEF:HUD:sendNotification", (type, time, message) => {
