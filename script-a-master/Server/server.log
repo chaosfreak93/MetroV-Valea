@@ -1,92 +1,207 @@
-[22:07:11] alt:V Server 4.0-dev12 (dev)
-[22:07:12] Starting MetroV Dev Server on 0.0.0.0:19132
-[22:07:12] C:\Program Files\dotnet\host\fxr\5.0.7\hostfxr.dll
-[22:07:12] coreclr-module: version found: 2.1.28
-[22:07:12] coreclr-module: version found: 3.1.15
-[22:07:12] coreclr-module: version found: 3.1.16
-[22:07:12] coreclr-module: version found: 5.0.4
-[22:07:12] coreclr-module: version found: 5.0.6
-[22:07:12] coreclr-module: version found: 5.0.7
-[22:07:12] coreclr-module: greatest version: 5.0.7
-[22:07:12] Loading resource policestation
-[22:07:12] Loaded resource policestation
-[22:07:12] Loading resource acls
-[22:07:12] Loaded resource acls
-[22:07:12] Loading resource flott_autohandel
-[22:07:12] Loaded resource flott_autohandel
-[22:07:12] Loading resource mazebank
-[22:07:12] Loaded resource mazebank
-[22:07:12] Loading resource mrpd
-[22:07:12] Loaded resource mrpd
-[22:07:12] Loading resource gabz_pillbox
-[22:07:12] Loaded resource gabz_pillbox
-[22:07:12] Loading resource gabz_pillboxloader
-[22:07:12] Loaded resource gabz_pillboxloader
-[22:07:12] Loading resource 18mustangum
-[22:07:12] Loaded resource 18mustangum
-[22:07:12] Loading resource 67mustang
-[22:07:12] Loaded resource 67mustang
-[22:07:12] Loading resource 560sec87
-[22:07:12] Loaded resource 560sec87
-[22:07:12] Loading resource 720s
-[22:07:12] Loaded resource 720s
-[22:07:12] Loading resource c3chrg
-[22:07:12] Loaded resource c3chrg
-[22:07:12] Loading resource c3chgr18
-[22:07:12] Loaded resource c3chgr18
-[22:07:12] Loading resource czr1
-[22:07:12] Loaded resource czr1
-[22:07:12] Loading resource i8
-[22:07:12] Loaded resource i8
-[22:07:12] Loading resource tr22
-[22:07:12] Loaded resource tr22
-[22:07:12] Loading resource intr
-[22:07:12] Loaded resource intr
-[22:07:12] Loading resource ppd1
-[22:07:12] Loaded resource ppd1
-[22:07:12] Loading resource gtr
-[22:07:12] Loaded resource gtr
-[22:07:12] Loading resource mcgt20
-[22:07:12] Loaded resource mcgt20
-[22:07:12] Loading resource mgt
-[22:07:12] Loaded resource mgt
-[22:07:12] Loading resource pol718
-[22:07:12] Loaded resource pol718
-[22:07:12] Loading resource urus
-[22:07:13] Loaded resource urus
-[22:07:13] Loading resource f12ber
-[22:07:13] Loaded resource f12ber
-[22:07:13] Loading resource gt63samg
-[22:07:13] Loaded resource gt63samg
-[22:07:13] Loading resource huracansto2021
-[22:07:13] Loaded resource huracansto2021
-[22:07:13] Loading resource rmodamgc63
-[22:07:13] Loaded resource rmodamgc63
-[22:07:13] Loading resource xkgt
-[22:07:13] Loaded resource xkgt
-[22:07:13] Loading resource medicpack
-[22:07:13] Loaded resource medicpack
-[22:07:13] Loading resource bison2
-[22:07:13] Loaded resource bison2
-[22:07:13] Loading resource chat
-[22:07:13] Loaded resource chat
-[22:07:13] Loading resource roleplay
-[22:07:18] MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
-   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, Int32 startTickCount, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken)
-   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(String logMessage, Int32 startTickCount, IOBehavior ioBehavior, CancellationToken cancellationToken)
-   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, IOBehavior ioBehavior, CancellationToken cancellationToken)
-   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, IOBehavior ioBehavior, CancellationToken cancellationToken)
-   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Nullable`1 ioBehavior, CancellationToken cancellationToken)
-   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken)
-   at MySqlConnector.MySqlConnection.Open()
-   at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
-   at Altv_Roleplay.models.gtaContext.OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
-   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
-   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
-   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
-   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
-   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IEnumerable<TEntity>.GetEnumerator()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Altv_Roleplay.Database.DatabaseHandler.ResetDatabaseOnlineState()
+[21:54:15] alt:V Server 4.0-dev12 (dev)
+[21:54:15] Starting MetroV Dev Server on 0.0.0.0:19132
+[21:54:15] C:\Program Files\dotnet\host\fxr\5.0.7\hostfxr.dll
+[21:54:15] coreclr-module: version found: 2.1.28
+[21:54:15] coreclr-module: version found: 3.1.15
+[21:54:15] coreclr-module: version found: 3.1.16
+[21:54:15] coreclr-module: version found: 5.0.4
+[21:54:15] coreclr-module: version found: 5.0.6
+[21:54:15] coreclr-module: version found: 5.0.7
+[21:54:15] coreclr-module: greatest version: 5.0.7
+[21:54:15] Loading resource policestation
+[21:54:15] Loaded resource policestation
+[21:54:15] Loading resource acls
+[21:54:15] Loaded resource acls
+[21:54:15] Loading resource flott_autohandel
+[21:54:15] Loaded resource flott_autohandel
+[21:54:15] Loading resource mazebank
+[21:54:15] Loaded resource mazebank
+[21:54:15] Loading resource mrpd
+[21:54:15] Loaded resource mrpd
+[21:54:15] Loading resource gabz_pillbox
+[21:54:15] Loaded resource gabz_pillbox
+[21:54:15] Loading resource gabz_pillboxloader
+[21:54:15] Loaded resource gabz_pillboxloader
+[21:54:15] Loading resource 18mustangum
+[21:54:15] Loaded resource 18mustangum
+[21:54:15] Loading resource 67mustang
+[21:54:15] Loaded resource 67mustang
+[21:54:15] Loading resource 560sec87
+[21:54:15] Loaded resource 560sec87
+[21:54:15] Loading resource 720s
+[21:54:15] Loaded resource 720s
+[21:54:15] Loading resource c3chrg
+[21:54:15] Loaded resource c3chrg
+[21:54:15] Loading resource c3chgr18
+[21:54:16] Loaded resource c3chgr18
+[21:54:16] Loading resource czr1
+[21:54:16] Loaded resource czr1
+[21:54:16] Loading resource i8
+[21:54:16] Loaded resource i8
+[21:54:16] Loading resource tr22
+[21:54:16] Loaded resource tr22
+[21:54:16] Loading resource intr
+[21:54:16] Loaded resource intr
+[21:54:16] Loading resource ppd1
+[21:54:16] Loaded resource ppd1
+[21:54:16] Loading resource gtr
+[21:54:16] Loaded resource gtr
+[21:54:16] Loading resource mcgt20
+[21:54:16] Loaded resource mcgt20
+[21:54:16] Loading resource mgt
+[21:54:16] Loaded resource mgt
+[21:54:16] Loading resource pol718
+[21:54:16] Loaded resource pol718
+[21:54:16] Loading resource urus
+[21:54:16] Loaded resource urus
+[21:54:16] Loading resource f12ber
+[21:54:16] Loaded resource f12ber
+[21:54:16] Loading resource gt63samg
+[21:54:16] Loaded resource gt63samg
+[21:54:16] Loading resource huracansto2021
+[21:54:16] Loaded resource huracansto2021
+[21:54:16] Loading resource rmodamgc63
+[21:54:16] Loaded resource rmodamgc63
+[21:54:16] Loading resource xkgt
+[21:54:17] Loaded resource xkgt
+[21:54:17] Loading resource medicpack
+[21:54:17] Loaded resource medicpack
+[21:54:17] Loading resource bison2
+[21:54:17] Loaded resource bison2
+[21:54:17] Loading resource chat
+[21:54:17] Loaded resource chat
+[21:54:17] Loading resource roleplay
+[21:54:20] 109 Spieler wurden geladen.
+[21:54:20] 158 Charakter wurden geladen.
+[21:54:20] 159 Charakter-Skins wurden geladen.
+[21:54:20] 148 Character Bank Accounts wurden geladen.
+[21:54:20] 155 Charakter Positionen wurden geladen.
+[21:54:20] 2098 Charakter Inventar-Items wurden geladen.
+[21:54:20] 159 Character-Licenses wurden geladen.
+[21:54:20] 0 Character-Permissions wurden geladen.
+[21:54:20] 63 Character-Minijob-Entrys wurden geladen.
+[21:54:20] 145 Character-Phone-Chats wurden geladen.
+[21:54:20] 1419 Character-Phone-Chat-Messages wurden geladen.
+[21:54:20] 359 Character-Phone-Contacts wurden geladen.
+[21:54:20] 118 Server-Wanted-Einträge wurden geladen.
+[21:54:20] 44 Characters-Wanted-Einträge wurden geladen.
+[21:54:20] 36 Server-Blips wurden geladen.
+[21:54:20] 1 Server-Marker wurden geladen.
+[21:54:20] 742 Server-All-Vehicles wurden geladen.
+[21:54:20] 309 Server-Animationen wurden geladen.
+[21:54:20] 106 Server-ATMs wurden geladen.
+[21:54:20] 10 Server-Banken wurden geladen.
+[21:54:20] 7854 Server-Bank-Papers geladen.
+[21:54:20] 93 Server-Items wurden geladen.
+[21:54:20] 6 Server-Peds wurden geladen.
+[21:54:20] 12 Server-Clothes-Shops wurden geladen.
+[21:54:20] 30175 Server-Clothes-Shop-Items wurden geladen.
+[21:54:20] 47 Server-Shops wurden geladen.
+[21:54:21] 2348 Server ShopItems wurden geladen.
+[21:54:21] 7 Server-Barbers wurden geladen.
+[21:54:21] 10 Server-Teleports wurden geladen.
+[21:54:21] 43 Server-Garagen wurden geladen.
+[21:54:21] 82 Server-Garagen Slots wurden geladen.
+[21:54:21] 20905 All-Server-Vehicle-Mods wurden geladen.
+[21:54:21] 440 Server-Vehicle-Mods wurden geladen.
+[21:54:21] 389 Server-Vehicles wurden geladen.
+[21:54:21] 383 Server-Vehicle-Trunk-Items wurden geladen.
+[21:54:21] 7 Server-Vehicle-Shops wurden geladen.
+[21:54:21] 40 Server-Vehicle-ShopItems wurden geladen.
+[21:54:21] 14 Server-Farming-Spots wurden geladen.
+[21:54:22] 12 Server-Farming-Verarbeiter wurden geladen.
+[21:54:22] 9 Server-Jobs wurden geladen.
+[21:54:22] 7 Server-Licenses wurden geladen.
+[21:54:22] 8 Server-Tankstellen wurden geladen.
+[21:54:22] 94 Server-Tankstellen-Spots wurden geladen
+[21:54:22] 9 Server-Tablet-App-Datas wurden geladen.
+[21:54:22] 159 Character-Tablet-App Einträge wurden geladen.
+[21:54:22] 159 Character-Tablet-Tutorial Entrys wurden geladen.
+[21:54:22] 0 Server-Tablet-Events wurden geladen.
+[21:54:22] 1 Server-Tablet-Advertisements wurden geladen.
+[21:54:22] 18 Server-Tablet-Notes wurden geladen.
+[21:54:22] 0 Server-Companys wurden geladen.
+[21:54:22] 0 Server-Company-Member wurden geladen.
+[21:54:22] 15 Server-Factions wurden geladen.
+[21:54:22] 17 Server-Faction-Positions wurden geladen.
+[21:54:22] 129 Server-Faction-Ranks wurden geladen.
+[21:54:22] 20 Server-Faction-Member wurden geladen.
+[21:54:22] 181 Server-Faction-Storage-Items wurden geladen.
+[21:54:22] 86 Server-Doors wurden geladen.
+[21:54:22] 0 Server-Hotels wurden geladen.
+[21:54:22] 0 Server-Hotels-Apartments wurden geladen.
+[21:54:22] 0 Server-Hotels-Storage-Items wurden geladen.
+[21:54:22] 135 Server-Houses wurden geladen.
+[21:54:22] 9 Server-House-Interior wurden geladen.
+[21:54:22] 0 Server-House-Storage-Items wurden geladen.
+[21:54:22] 0 Server-House-Renter wurden geladen.
+[21:54:22] 3 Server-Minijobs-BusDriver-Routes wurden geladen.
+[21:54:22] 47 Server-Minijob-Busdriver-Spots wurden geladen.
+[21:54:22] 177 Server-Minijob-Garbage-Spots wurden geladen.
+[21:54:22] 11376 Server-Fraktions-Logs wurden geladen.
+[21:54:22] 0 Server-Company-Logs wurden geladen.
+[21:54:22] 60 Character-Tattoos wurden geladen.
+[21:54:22] 919 Server-Tattoos wurden geladen.
+[21:54:22] 1 Server-Tattoo-Shops wurden geladen.
+[21:54:22] Lade Minijob: Elektrolieferant...
+[21:54:22] Minijob: Elektrolieferant geladen...
+[21:54:22] Lade Minijob: Pilot...
+[21:54:22] Minijob: Pilot geladen...
+[21:54:22] Lade Minijob: Müllmann...
+[21:54:22] Minijob: Müllmann geladen...
+[21:54:22] Lade Minijob: Busfahrer...
+[21:54:22] Minijob: Busfahrer geladen...
+[21:54:24] Loaded resource roleplay
+[21:54:24] Required server permissions:
+[21:54:24] Optional server permissions:
+[21:54:24] Starting HTTP server on 0.0.0.0:19132
+[21:54:24] Main thread started (ThreadId: 24760)
+[21:54:24] Colshape thread started (ThreadId: 20812)
+[21:54:24] EntityStreamer thread started (ThreadId: 2324)
+[21:54:24] Network thread started (ThreadId: 25420)
+[21:54:24] Console thread started (ThreadId: 4384)
+[21:54:24] Server started
+[21:54:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0005548
+[21:54:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001303
+[21:55:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000366
+[21:55:23] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0017797
+[21:55:23] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000528
+[21:55:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
+[21:55:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0011001
+[21:55:50] ValidateLoginCredentials benötigte 233ms
+[21:55:53] Eingeloggt __keiner__
+[21:55:53] 19 - CharacterSelectedSpawnPlace benötigte 96ms
+[21:55:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0008559
+[21:55:55] Gehaeutete Kroete
+[21:56:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000664
+[21:56:23] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001089
+[21:56:23] OnEntityTimer: Player Foreach benötigte: 00:00:00.0160753
+[21:56:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000573
+[21:56:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000451
+[21:56:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000527
+[21:57:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000441
+[21:57:23] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000681
+[21:57:23] OnEntityTimer: Player Foreach benötigte: 00:00:00.0092156
+[21:57:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000610
+[21:57:30] Kroete
+[21:57:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000564
+[21:57:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000584
+[21:58:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000696
+[21:58:23] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000555
+[21:58:23] OnEntityTimer: Player Foreach benötigte: 00:00:00.0114611
+[21:58:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000442
+[21:58:26] Kroete
+[21:58:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000562
+[21:58:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000521
+[21:59:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000502
+[21:59:22] OnDesireTimer Timer aufgerufen
+[21:59:23] Essen/Durst Anzeige update: 39 | 39
+[21:59:23] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000664
+[21:59:23] OnEntityTimer: Player Foreach benötigte: 00:00:00.0088976
+[21:59:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000576
+[21:59:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000663
+[21:59:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000505
+[22:00:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000526
+[22:00:23] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000472
+[22:00:23] OnEntityTimer: Player Foreach benötigte: 00:00:00.0077056
+[22:00:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000450
