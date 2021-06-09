@@ -8,11 +8,11 @@ namespace Altv_Roleplay.Handler
     internal class TriggerHandler : IScript
     {
         [AsyncClientEvent("Server:Farming:StartProcessing")]
-        public void FarmingStartProcessing(IPlayer player, string neededItem, string producedItem, int neededItemAmount, int producedItemAmount,
-            int duration, string neededItemTWO, string neededItemTHREE, int neededItemTWOAmount, int neededItemTHREEAmount) {
+        public void FarmingStartProcessing(IPlayer player, string neededItem, int neededItemAmount, 
+            string neededItemTWO, int neededItemTWOAmount, string neededItemTHREE, int neededItemTHREEAmount, string producedItem, int producedItemAmount, int duration) {
             try {
-                FarmingHandler.ProduceItem(player, neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO,
-                    neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount);
+                FarmingHandler.ProduceItem(player, neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, 
+                    neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
