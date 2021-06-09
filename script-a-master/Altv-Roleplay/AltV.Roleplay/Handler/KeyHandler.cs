@@ -63,7 +63,6 @@ namespace Altv_Roleplay.Handler
 
                     if (farmColData != null) {
                         //FarmingHandler.ProduceItem(player, farmColData.neededItem, farmColData.producedItem, farmColData.neededItemAmount, farmColData.producedItemAmount, farmColData.duration);
-                        Alt.Log(farmColData.neededItem);
                         FarmingHandler.openFarmingCEF(player, farmColData.neededItem, farmColData.neededItemAmount, farmColData.neededItemTWO, farmColData.neededItemTWOAmount, 
                             farmColData.neededItemTHREE, farmColData.neededItemTHREEAmount, 
                             farmColData.producedItem, farmColData.producedItemAmount, farmColData.duration);
