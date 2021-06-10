@@ -242,6 +242,15 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
 
 alt.on('connectionComplete', () => {
     loadallIPLsAndInteriors();
+    game.startAudioScene("FBI_HEIST_H5_MUTE_AMBIENCE_SCENE");
+    game.cancelCurrentPoliceReport();
+    game.clearAmbientZoneState("AZ_COUNTRYSIDE_PRISON_01_ANNOUNCER_GENERAL", 1);
+    game.clearAmbientZoneState("AZ_COUNTRYSIDE_PRISON_01_ANNOUNCER_WARNING", 1);
+    game.clearAmbientZoneState("AZ_COUNTRYSIDE_PRISON_01_ANNOUNCER_ALARM", 1);
+    game.setAmbientZoneState(0, 0, 0);
+    game.clearAmbientZoneState("AZ_DISTANT_SASQUATCH", 0);
+    game.setAudioFlag("LoadMPData", true);
+    game.setAudioFlag("DisableFlightMusic", true);
     alt.setStat('stamina', 50);
     alt.setStat('strength', 50);
     alt.setStat('lung_capacity', 100);
