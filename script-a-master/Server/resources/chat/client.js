@@ -53,15 +53,18 @@ alt.on('keyup', (key) => {
             //if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
             opened = true;
             view.emit('openChat', false);
+            view.focus();
             alt.toggleGameControls(false);
         } else if (!opened && key === 0xBF && alt.gameControlsEnabled()) {
             //if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
             opened = true;
             view.emit('openChat', true);
+            view.focus();
             alt.toggleGameControls(false);
         } else if (opened && key == 0x1B) {
             opened = false;
             view.emit('closeChat');
+            view.unfocus();
             alt.toggleGameControls(true);
         }
     }

@@ -7,13 +7,13 @@ let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
 let loginModelHash = null;
-const storage = alt.LocalStorage.get();
+const storage = alt.LocalStorage;
 
 alt.onServer('Client:Login:CreateCEF', () => {
     if (loginBrowser == null) {
         loginCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 3280, 5220, 26, 0, 0, 240, 50, true, 2);
         game.setCamActive(loginCam, true);
-        game.renderScriptCams(true, false, 0, true, false);
+        game.renderScriptCams(true, false, 0, true, false, 0);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -134,7 +134,7 @@ alt.onServer("Client:Login:showArea", (area) => {
         loginBrowser.emit("CEF:Login:showArea", area);
         if (area == "charselect") {
             if (loginCam != null) {
-                game.renderScriptCams(false, false, 0, true, false);
+                game.renderScriptCams(false, false, 0, true, false, 0);
                 game.setCamActive(loginCam, false);
                 game.destroyCam(loginCam, true);
                 loginCam = null;
@@ -142,7 +142,7 @@ alt.onServer("Client:Login:showArea", (area) => {
             game.setEntityAlpha(alt.Player.local.scriptID, 0, 0);
             loginCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
             game.setCamActive(loginCam, true);
-            game.renderScriptCams(true, false, 0, true, false);
+            game.renderScriptCams(true, false, 0, true, false, 0);
         }
     }
 });
@@ -158,16 +158,16 @@ let destroyLoginBrowser = function() {
         loginBrowser.destroy();
     }
     loginBrowser = null;
-    game.renderScriptCams(false, false, 0, true, false);
-    game.setCamActive(loginCam, false);
+    game.renderScriptCams(false, false, 0, true, false, 0);
     if (loginCam != null) {
+        game.setCamActive(loginCam, false);
         game.destroyCam(loginCam, true);
+        loginCam = null;
     }
     if (loginPedHandle != null) {
         game.deletePed(loginPedHandle);
         loginPedHandle = null;
     }
-    loginCam = null;
     alt.showCursor(false);
     alt.toggleGameControls(true);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);

@@ -2,7 +2,7 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
-const storage = alt.LocalStorage.get();
+const storage = alt.LocalStorage;
 
 alt.on('keyup', (key) => {
     if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("IsUnconscious") == true || alt.Player.local.getSyncedMeta("IsCefOpen") == true) return;

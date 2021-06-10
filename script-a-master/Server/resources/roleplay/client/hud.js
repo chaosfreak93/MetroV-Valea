@@ -6,7 +6,7 @@ import { closeInventoryCEF } from './inventory.js';
 import { closeTabletCEF } from './tablet.js';
 import { Raycast, GetDirectionFromRotation, setClothes, setTattoo, clearTattoos, setCorrectTattoos } from './utilities.js';
 
-const storage = alt.LocalStorage.get();
+const storage = alt.LocalStorage;
 export let hudBrowser = null;
 export let browserReady = false;
 let deathScreen = null;
