@@ -65,6 +65,16 @@ alt.onServer('Client:Login:CreateCEF', () => {
         loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr) => {
             alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
         });
+
+        loginBrowser.on("Client:Charcreator:SwitchOut", () => {
+            if (loginCam != null) {
+                game.renderScriptCams(false, false, 0, true, false, 0);
+                game.setCamActive(loginCam, false);
+                game.destroyCam(loginCam, true);
+                loginCam = null;
+            }
+            game.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
+        });
     }
 });
 
@@ -172,6 +182,7 @@ let destroyLoginBrowser = function() {
     alt.toggleGameControls(true);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     game.setEntityAlpha(alt.Player.local.scriptID, 255, 0);
+    game.switchInPlayer(alt.Player.local.scriptID);
 }
 
 function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
