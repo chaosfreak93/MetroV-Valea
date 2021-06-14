@@ -34,33 +34,18 @@ namespace SaltyChat.Server.Writables
             writer.EndArray();
 
             writer.Name("radioTowers");
-            writer.BeginArray();
-
-            foreach (var radioTower in VoiceManager.Configuration.RadioTowers) {
-                writer.BeginObject();
-                writer.Name("X");
-                writer.Value(radioTower.X);
-                writer.Name("Y");
-                writer.Value(radioTower.Y);
-                writer.Name("Z");
-                writer.Value(radioTower.Z);
-                writer.Name("Range");
-                writer.Value(radioTower.Range);
-                writer.EndObject();
-            }
-
-            writer.EndArray();
+            new ClientRadioTowers(VoiceManager.Configuration.RadioTowers).OnWrite(writer);
 
             writer.Name("requestTalkStates");
             writer.Value(VoiceManager.Configuration.RequestTalkStates);
             writer.Name("requestRadioTrafficStates");
             writer.Value(VoiceManager.Configuration.RequestRadioTrafficStates);
-            writer.Name("ultraShortRangeDistance");
-            writer.Value(VoiceManager.Configuration.UltraShortRangeDistance);
-            writer.Name("shortRangeDistance");
-            writer.Value(VoiceManager.Configuration.ShortRangeDistance);
-            writer.Name("longRangeDistance");
-            writer.Value(VoiceManager.Configuration.LongRangeDistance);
+            writer.Name("radioRangeUltraShort");
+            writer.Value(VoiceManager.Configuration.RadioRangeUltraShort);
+            writer.Name("radioRangeShort");
+            writer.Value(VoiceManager.Configuration.RadioRangeShort);
+            writer.Name("radioRangeLong");
+            writer.Value(VoiceManager.Configuration.RadioRangeLong);
             writer.EndObject();
         }
     }
