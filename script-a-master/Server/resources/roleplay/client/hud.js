@@ -60,18 +60,18 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
             }, 1000);
         });
 
-        hudBrowser.on("Client:Farming:StartProcessing", (neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount) => {
-            alt.emitServer("Server:Farming:StartProcessing", neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount);
+        hudBrowser.on("Client:Farming:StartProcessing", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration) => {
+            alt.emitServer("Server:Farming:StartProcessing", neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
         });
 
         hudBrowser.on("Client:Farming:closeCEF", () => {
             closeFarmingCEF();
         });
 
-        alt.onServer("Client:Farming:createCEF", (neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount) => {
+        alt.onServer("Client:Farming:createCEF", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE,neededItemTHREEAmount, producedItem, producedItemAmount, duration) => {
             if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && ShopCefOpened == false) {
                 if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true) return;
-                hudBrowser.emit("CEF:Farming:createCEF", neededItem, producedItem, neededItemAmount, producedItemAmount, duration, neededItemTWO, neededItemTHREE, neededItemTWOAmount, neededItemTHREEAmount);
+                hudBrowser.emit("CEF:Farming:createCEF", neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
                 alt.emitServer("Server:CEF:setCefStatus", true);
                 alt.showCursor(true);
                 alt.toggleGameControls(false);
