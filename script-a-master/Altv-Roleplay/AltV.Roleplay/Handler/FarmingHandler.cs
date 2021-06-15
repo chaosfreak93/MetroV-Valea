@@ -154,8 +154,8 @@ namespace Altv_Roleplay.Handler
                 } //Spieler hat nicht genug Gegenstände dabei.
 
                 if (invAmount < neededItemAmount && backpackAmount < neededItemAmount ||
-                    invAmount < neededItemTWOAmount && backpackAmount < neededItemTWOAmount ||
-                    invAmount < neededItemTHREEAmount && backpackAmount < neededItemTHREEAmount) {
+                    (hasItemSlot == 2 && (invAmount < neededItemTWOAmount && backpackAmount < neededItemTWOAmount)) ||
+                    (hasItemSlot == 3 && (invAmount < neededItemTHREEAmount && backpackAmount < neededItemTHREEAmount))) {
                     HUDHandler.SendNotification(player, 3, 5000, $"Du benötigst mindestens {neededItemAmount} Gegenstände in der gleichen Tasche.");
                     return;
                 }
