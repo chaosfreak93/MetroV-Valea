@@ -33,7 +33,7 @@ namespace Altv_Roleplay
 
         public override void OnStart() {
             Environment.SetEnvironmentVariable("COMPlus_legacyCorruptedState­­ExceptionsPolicy", "1");
-            
+
             //Datenbank laden
             DatabaseHandler.ResetDatabaseOnlineState();
             DatabaseHandler.LoadAllPlayers();

@@ -55,7 +55,8 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        public static void openFarmingCEF(IPlayer player, string neededItem, int neededItemAmount, string neededItemTWO, int neededItemTWOAmount, string neededItemTHREE, int neededItemTHREEAmount, string producedItem, int producedItemAmount, int duration) {
+        public static void openFarmingCEF(IPlayer player, string neededItem, int neededItemAmount, string neededItemTWO, int neededItemTWOAmount,
+            string neededItemTHREE, int neededItemTHREEAmount, string producedItem, int producedItemAmount, int duration) {
             try {
                 player.EmitLocked("Client:Farming:createCEF", neededItem, neededItemAmount,
                     neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
@@ -65,9 +66,11 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        internal static async void ProduceItem(IPlayer player, string neededItem, int neededItemAmount, string neededItemTWO, int neededItemTWOAmount, string neededItemTHREE, int neededItemTHREEAmount, string producedItem, int producedItemAmount, int duration) {
+        internal static async void ProduceItem(IPlayer player, string neededItem, int neededItemAmount, string neededItemTWO,
+            int neededItemTWOAmount, string neededItemTHREE, int neededItemTHREEAmount, string producedItem, int producedItemAmount, int duration) {
             try {
-                if (player is not {Exists: true} || neededItem == "" || producedItem == "" || neededItemAmount == 0 || producedItemAmount == 0 || duration < 0) return;
+                if (player is not {Exists: true} || neededItem == "" || producedItem == "" || neededItemAmount == 0 || producedItemAmount == 0 ||
+                    duration < 0) return;
 
                 var charId = User.GetPlayerOnline(player);
                 var hasItemSlot = 1;
@@ -84,6 +87,7 @@ namespace Altv_Roleplay.Handler
                                 "Du hast nicht die richtigen Gegenstände, um " + neededItem + " zu verarbeiten.");
                             return;
                         }
+
                         break;
                     case 2:
                         if (!CharactersInventory.ExistCharacterItem(charId, neededItem, "inventory") &&
@@ -92,12 +96,14 @@ namespace Altv_Roleplay.Handler
                                 "Du hast nicht die richtigen Gegenstände, um " + neededItem + " zu verarbeiten.");
                             return;
                         }
+
                         if (!CharactersInventory.ExistCharacterItem(charId, neededItemTWO, "inventory") &&
                             !CharactersInventory.ExistCharacterItem(charId, neededItemTWO, "backpack")) {
                             HUDHandler.SendNotification(player, 3, 5000,
                                 "Du hast nicht die richtigen Gegenstände, um " + neededItemTWO + " zu verarbeiten.");
                             return;
                         }
+
                         break;
                     case 3:
                         if (!CharactersInventory.ExistCharacterItem(charId, neededItem, "inventory") &&
@@ -106,18 +112,21 @@ namespace Altv_Roleplay.Handler
                                 "Du hast nicht die richtigen Gegenstände, um " + neededItem + " zu verarbeiten.");
                             return;
                         }
+
                         if (!CharactersInventory.ExistCharacterItem(charId, neededItemTWO, "inventory") &&
                             !CharactersInventory.ExistCharacterItem(charId, neededItemTWO, "backpack")) {
                             HUDHandler.SendNotification(player, 3, 5000,
                                 "Du hast nicht die richtigen Gegenstände, um " + neededItemTWO + " zu verarbeiten.");
                             return;
                         }
+
                         if (!CharactersInventory.ExistCharacterItem(charId, neededItemTHREE, "inventory") &&
                             !CharactersInventory.ExistCharacterItem(charId, neededItemTHREE, "backpack")) {
                             HUDHandler.SendNotification(player, 3, 5000,
                                 "Du hast nicht die richtigen Gegenstände, um " + neededItemTHREE + " zu verarbeiten.");
                             return;
                         }
+
                         break;
                 }
 
@@ -154,8 +163,8 @@ namespace Altv_Roleplay.Handler
                 } //Spieler hat nicht genug Gegenstände dabei.
 
                 if (invAmount < neededItemAmount && backpackAmount < neededItemAmount ||
-                    (hasItemSlot == 2 && (invAmount < neededItemTWOAmount && backpackAmount < neededItemTWOAmount)) ||
-                    (hasItemSlot == 3 && (invAmount < neededItemTHREEAmount && backpackAmount < neededItemTHREEAmount))) {
+                    hasItemSlot == 2 && invAmount < neededItemTWOAmount && backpackAmount < neededItemTWOAmount ||
+                    hasItemSlot == 3 && invAmount < neededItemTHREEAmount && backpackAmount < neededItemTHREEAmount) {
                     HUDHandler.SendNotification(player, 3, 5000, $"Du benötigst mindestens {neededItemAmount} Gegenstände in der gleichen Tasche.");
                     return;
                 }
@@ -231,9 +240,9 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                if (antiDupeInvAmount < invAmount || antiDupeBackpackAmount < backpackAmount || 
-                    (hasItemSlot == 2 && (antiDupeInvAmountTWO < invAmount || antiDupeBackpackAmountTWO < backpackAmount)) || 
-                    (hasItemSlot == 3 && (antiDupeInvAmountTHREE < invAmount || antiDupeBackpackAmountTHREE < backpackAmount))) {
+                if (antiDupeInvAmount < invAmount || antiDupeBackpackAmount < backpackAmount ||
+                    hasItemSlot == 2 && (antiDupeInvAmountTWO < invAmount || antiDupeBackpackAmountTWO < backpackAmount) ||
+                    hasItemSlot == 3 && (antiDupeInvAmountTHREE < invAmount || antiDupeBackpackAmountTHREE < backpackAmount)) {
                     HUDHandler.SendNotification(player, 3, 5000, "Du darfst nichts wegwerfen während du verarbeitest!");
                     return;
                 }

@@ -3,7 +3,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Numerics;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AltV.Net;
@@ -23,51 +22,22 @@ namespace SaltyChat.Server
 
         #endregion
 
-        #region Properties
-
-        public static VoiceManager Instance { get; private set; }
-
-        public static Configuration Configuration { get; private set; }
-
-        public IEnumerable<VoiceClient> VoiceClients
-        {
-            get
-            {
-                VoiceClient[] clients;
-                lock (_voiceClients)
-                {
-                    clients = _voiceClients.Values.ToArray();
-                }
-
-                return clients;
-            }
-        }
-
-        private readonly ConcurrentDictionary<IPlayer, VoiceClient> _voiceClients = new ConcurrentDictionary<IPlayer, VoiceClient>();
-        private readonly List<RadioChannel> _radioChannels = new List<RadioChannel>();
-
-        #endregion
-
         #region Constructor
 
-        public VoiceManager()
-        {
+        public VoiceManager() {
             var configFile = Path.Combine(Alt.Server.RootDirectory, "resources", Alt.Server.Resource.Name, "config.json");
+
             if (File.Exists(configFile))
-            {
-                try
-                {
+                try {
                     Configuration = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(configFile));
                     Alt.Log("[SaltyChat] Loaded configuration from config.json");
                     Alt.Log($"[SaltyChat] Server Identifier: {Configuration.ServerIdentifier}");
                     Alt.Log($"[SaltyChat] Version: {Version}");
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     Alt.Log("[SaltyChat] Failed loading configuration from config.json: " + ex);
                     Environment.FailFast("Failed loading configuration from config.json", ex);
                 }
-            }
 
             Instance = this;
             AltAsync.OnClient<IPlayer, string>("SaltyChat:CheckVersion", OnClientCheckVersion);
@@ -90,14 +60,13 @@ namespace SaltyChat.Server
 
         #region Server Events
 
-        private void OnServerPlayerDisconnect(IPlayer player, string reason)
-        {
-            lock (player)
-            {
+        private void OnServerPlayerDisconnect(IPlayer player, string reason) {
+            lock (player) {
                 Alt.EmitAllClients("SaltyChat:RemoveClient", player.Id);
-                lock (_voiceClients)
-                {
+
+                lock (_voiceClients) {
                     if (!_voiceClients.TryGetValue(player, out var voiceClient)) return;
+
                     foreach (var radioChannel in _radioChannels) radioChannel.RemoveMember(voiceClient);
 
                     _voiceClients.TryRemove(player, out _);
@@ -107,78 +76,95 @@ namespace SaltyChat.Server
 
         #endregion
 
+        #region Properties
+
+        public static VoiceManager Instance { get; private set; }
+
+        public static Configuration Configuration { get; private set; }
+
+        public IEnumerable<VoiceClient> VoiceClients
+        {
+            get
+            {
+                VoiceClient[] clients;
+
+                lock (_voiceClients) {
+                    clients = _voiceClients.Values.ToArray();
+                }
+
+                return clients;
+            }
+        }
+
+        private readonly ConcurrentDictionary<IPlayer, VoiceClient> _voiceClients = new();
+        private readonly List<RadioChannel> _radioChannels = new();
+
+        #endregion
+
         #region Client Events
 
-        private async void OnClientCheckVersion(IPlayer player, string version)
-        {
-            lock (_voiceClients)
-            {
+        private async void OnClientCheckVersion(IPlayer player, string version) {
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out var voiceClient)) return;
             }
 
             if (!IsVersionAccepted(version))
-            {
                 player.Kick($"[Salty Chat] Required plugin version: {Configuration.MinimumPluginVersion}");
-            }
 
             await Task.CompletedTask;
         }
 
-        private async void OnClientPlayerIsSending(IPlayer player, string radioChannelName, bool isSending)
-        {
+        private async void OnClientPlayerIsSending(IPlayer player, string radioChannelName, bool isSending) {
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out voiceClient)) return;
             }
 
             var radioChannel = GetRadioChannel(radioChannelName, false);
             if (radioChannel == null || !radioChannel.IsMember(voiceClient)) return;
+
             radioChannel.Send(voiceClient, isSending);
 
             await Task.CompletedTask;
         }
 
-        private async void OnClientSetRange(IPlayer player, float range)
-        {
+        private async void OnClientSetRange(IPlayer player, float range) {
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out voiceClient)) return;
             }
 
             if (Array.IndexOf(Configuration.VoiceRanges, range) == -1) return;
+
             voiceClient.VoiceRange = range;
             AltAsync.EmitAllClients("SaltyChat:UpdateClientRange", player, range);
 
             await Task.CompletedTask;
         }
 
-        private async void OnClientIsUsingMegaphone(IPlayer player, bool state)
-        {
-            lock (_voiceClients)
-            {
+        private async void OnClientIsUsingMegaphone(IPlayer player, bool state) {
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out _)) return;
+
                 AltAsync.EmitAllClients("SaltyChat:IsUsingMegaphone", player, Configuration.MegaphoneRange, state, player.Position);
             }
 
             await Task.CompletedTask;
         }
 
-        private async void OnClientToggleRadioSpeaker(IPlayer player, bool state)
-        {
+        private async void OnClientToggleRadioSpeaker(IPlayer player, bool state) {
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out voiceClient)) return;
             }
 
             voiceClient.IsRadioSpeakerEnabled = state;
 
             foreach (var radioChannelMembership in GetRadioChannelMembership(voiceClient))
-            {
                 radioChannelMembership.RadioChannel.SetSpeaker(voiceClient, state);
-            }
 
             await Task.CompletedTask;
         }
@@ -187,11 +173,10 @@ namespace SaltyChat.Server
 
         #region Exports: State
 
-        private async void OnServerSetPlayerAlive(IPlayer player, bool isAlive)
-        {
-            lock (_voiceClients)
-            {
+        private async void OnServerSetPlayerAlive(IPlayer player, bool isAlive) {
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out var voiceClient)) return;
+
                 voiceClient.IsAlive = isAlive;
                 AltAsync.EmitAllClients("SaltyChat:UpdateClientAlive", voiceClient.Player, isAlive);
             }
@@ -199,13 +184,12 @@ namespace SaltyChat.Server
             await Task.CompletedTask;
         }
 
-        private async void OnServerEnablePlayer(IPlayer player)
-        {
-            var health = await AltAsync.GetHealthAsync(player);
+        private async void OnServerEnablePlayer(IPlayer player) {
+            var health = await player.GetHealthAsync();
 
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 voiceClient = new VoiceClient(player, GetTeamSpeakName(player), Configuration.VoiceRanges[1], health > 100);
                 if (_voiceClients.ContainsKey(player)) _voiceClients[player] = voiceClient;
                 else _voiceClients.TryAdd(player, voiceClient);
@@ -214,12 +198,12 @@ namespace SaltyChat.Server
             player.EmitLocked("SaltyChat:Initialize", new ClientInitData(voiceClient.TeamSpeakName));
 
             var voiceClients = new List<VoiceClient>();
-            lock (_voiceClients)
-            {
-                foreach (var (key, value) in _voiceClients.Where(c => c.Key.Id != player.Id))
-                {
+
+            lock (_voiceClients) {
+                foreach (var (key, value) in _voiceClients.Where(c => c.Key.Id != player.Id)) {
                     voiceClients.Add(new VoiceClient(key, value.TeamSpeakName, value.VoiceRange, value.IsAlive, key.Position));
-                    key.EmitLocked("SaltyChat:UpdateClient", player, voiceClient.TeamSpeakName, voiceClient.VoiceRange, voiceClient.IsAlive, player.Position);
+                    key.EmitLocked("SaltyChat:UpdateClient", player, voiceClient.TeamSpeakName, voiceClient.VoiceRange, voiceClient.IsAlive,
+                        player.Position);
                 }
             }
 
@@ -232,8 +216,7 @@ namespace SaltyChat.Server
 
         #region Exports: Radio
 
-        private async void OnServerUpdateRadioTowers(string radioTowersStr)
-        {
+        private async void OnServerUpdateRadioTowers(string radioTowersStr) {
             Configuration.RadioTowers = JsonConvert.DeserializeObject<RadioTower[]>(radioTowersStr);
             var clientRadioTowers = new ClientRadioTowers(Configuration.RadioTowers);
             AltAsync.EmitAllClients("SaltyChat:UpdateRadioTowers", clientRadioTowers);
@@ -241,43 +224,36 @@ namespace SaltyChat.Server
             await Task.CompletedTask;
         }
 
-        private async void OnServerJoinRadioChannel(IPlayer player, string channelName, bool isPrimary)
-        {
+        private async void OnServerJoinRadioChannel(IPlayer player, string channelName, bool isPrimary) {
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out voiceClient)) return;
             }
 
             if (channelName != null)
-            {
                 JoinRadioChannel(voiceClient, channelName, isPrimary);
-            }
 
             await Task.CompletedTask;
         }
 
-        private async void OnServerLeaveRadioChannel(IPlayer player, string channelName)
-        {
+        private async void OnServerLeaveRadioChannel(IPlayer player, string channelName) {
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out voiceClient)) return;
             }
 
             if (channelName != null)
-            {
                 LeaveRadioChannel(voiceClient, channelName);
-            }
 
             await Task.CompletedTask;
         }
 
-        private async void OnServerLeaveAllRadioChannel(IPlayer player)
-        {
+        private async void OnServerLeaveAllRadioChannel(IPlayer player) {
             VoiceClient voiceClient;
-            lock (_voiceClients)
-            {
+
+            lock (_voiceClients) {
                 if (!_voiceClients.TryGetValue(player, out voiceClient)) return;
             }
 
@@ -290,14 +266,12 @@ namespace SaltyChat.Server
 
         #region Exports: Phone
 
-        private void OnServerStartCall(IPlayer caller, IPlayer called)
-        {
+        private void OnServerStartCall(IPlayer caller, IPlayer called) {
             caller.EmitLocked("SaltyChat:PhoneEstablish", called, called.Position);
             called.EmitLocked("SaltyChat:PhoneEstablish", caller, caller.Position);
         }
 
-        private void OnServerEndCall(IPlayer caller, IPlayer called)
-        {
+        private void OnServerEndCall(IPlayer caller, IPlayer called) {
             if (caller.Exists) caller.EmitLocked("SaltyChat:PhoneEnd", called.Id);
             if (called.Exists) called.EmitLocked("SaltyChat:PhoneEnd", caller.Id);
         }
@@ -306,15 +280,13 @@ namespace SaltyChat.Server
 
         #region Radio: Control Methods
 
-        private RadioChannel GetRadioChannel(string name, bool create)
-        {
+        private RadioChannel GetRadioChannel(string name, bool create) {
             RadioChannel radioChannel;
 
-            lock (_radioChannels)
-            {
+            lock (_radioChannels) {
                 radioChannel = _radioChannels.FirstOrDefault(r => r.Name == name);
-                if (radioChannel == null && create)
-                {
+
+                if (radioChannel == null && create) {
                     radioChannel = new RadioChannel(name);
                     _radioChannels.Add(radioChannel);
                 }
@@ -323,10 +295,8 @@ namespace SaltyChat.Server
             return radioChannel;
         }
 
-        private async void JoinRadioChannel(VoiceClient voiceClient, string radioChannelName, bool isPrimary)
-        {
-            lock (_radioChannels)
-            {
+        private async void JoinRadioChannel(VoiceClient voiceClient, string radioChannelName, bool isPrimary) {
+            lock (_radioChannels) {
                 if (_radioChannels.Any(c => c.Members.Any(m => m.VoiceClient == voiceClient && m.IsPrimary == isPrimary))) return;
             }
 
@@ -336,14 +306,12 @@ namespace SaltyChat.Server
             await Task.CompletedTask;
         }
 
-        private async void LeaveRadioChannel(VoiceClient voiceClient, string radioChannelName)
-        {
-            foreach (var membership in GetRadioChannelMembership(voiceClient).Where(m => m.RadioChannel.Name == radioChannelName))
-            {
+        private async void LeaveRadioChannel(VoiceClient voiceClient, string radioChannelName) {
+            foreach (var membership in GetRadioChannelMembership(voiceClient).Where(m => m.RadioChannel.Name == radioChannelName)) {
                 membership.RadioChannel.RemoveMember(voiceClient);
                 if (membership.RadioChannel.Members.Length != 0) continue;
-                lock (_radioChannels)
-                {
+
+                lock (_radioChannels) {
                     _radioChannels.Remove(membership.RadioChannel);
                 }
             }
@@ -351,15 +319,14 @@ namespace SaltyChat.Server
             await Task.CompletedTask;
         }
 
-        private async void LeaveRadioChannel(VoiceClient voiceClient)
-        {
+        private async void LeaveRadioChannel(VoiceClient voiceClient) {
             var memberships = GetRadioChannelMembership(voiceClient);
-            foreach (var membership in memberships)
-            {
+
+            foreach (var membership in memberships) {
                 membership.RadioChannel.RemoveMember(voiceClient);
                 if (membership.RadioChannel.Members.Length != 0) continue;
-                lock (_radioChannels)
-                {
+
+                lock (_radioChannels) {
                     _radioChannels.Remove(membership.RadioChannel);
                 }
             }
@@ -367,12 +334,12 @@ namespace SaltyChat.Server
             await Task.CompletedTask;
         }
 
-        private IEnumerable<RadioChannelMember> GetRadioChannelMembership(VoiceClient voiceClient)
-        {
+        private IEnumerable<RadioChannelMember> GetRadioChannelMembership(VoiceClient voiceClient) {
             var memberships = new List<RadioChannelMember>();
-            lock (_radioChannels)
-            {
-                memberships.AddRange(_radioChannels.Select(radioChannel => radioChannel.Members.FirstOrDefault(m => m.VoiceClient == voiceClient)).Where(membership => membership != null));
+
+            lock (_radioChannels) {
+                memberships.AddRange(_radioChannels.Select(radioChannel => radioChannel.Members.FirstOrDefault(m => m.VoiceClient == voiceClient))
+                    .Where(membership => membership != null));
             }
 
             return memberships;
@@ -382,11 +349,10 @@ namespace SaltyChat.Server
 
         #region Methods: Misc
 
-        private string GetTeamSpeakName(IPlayer player)
-        {
+        private string GetTeamSpeakName(IPlayer player) {
             var name = Configuration.NamePattern;
-            do
-            {
+
+            do {
                 name = Regex.Replace(name, @"(\{guid\})", Guid.NewGuid().ToString().Replace("-", ""));
                 name = Regex.Replace(name, @"(\{serverid\})", player.Id.ToString());
                 if (name.Length > 30) name = name.Remove(29, name.Length - 30);
@@ -395,32 +361,27 @@ namespace SaltyChat.Server
             return name;
         }
 
-        private bool IsVersionAccepted(string version)
-        {
+        private bool IsVersionAccepted(string version) {
             if (!string.IsNullOrWhiteSpace(version))
-            {
-                try
-                {
+                try {
                     var minimumVersionArray = Configuration.MinimumPluginVersion.Split(".");
                     var currentVersionArray = version.Split(".");
-                    var lengthCounter = currentVersionArray.Length >= minimumVersionArray.Length ? currentVersionArray.Length : minimumVersionArray.Length;
-                    for (var i = 0; i < lengthCounter; i++)
-                    {
+                    var lengthCounter = currentVersionArray.Length >= minimumVersionArray.Length
+                        ? currentVersionArray.Length
+                        : minimumVersionArray.Length;
+
+                    for (var i = 0; i < lengthCounter; i++) {
                         var min = Convert.ToInt32(minimumVersionArray[i]);
                         var cur = Convert.ToInt32(currentVersionArray[i]);
                         if (cur > min) return true;
                         if (cur < min) return false;
                     }
                 }
-                catch
-                {
+                catch {
                     return false;
                 }
-            }
             else
-            {
                 return false;
-            }
 
             return true;
         }

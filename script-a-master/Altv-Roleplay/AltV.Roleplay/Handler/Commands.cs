@@ -458,7 +458,8 @@ namespace Altv_Roleplay.Handler
 
                 ServerVehicles.SetVehicleInGarage(vehicle, true, currentGarageId);
                 var plate = vehicle.NumberplateText;
-                HUDHandler.SendNotification(player, 4, 5000, $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
+                HUDHandler.SendNotification(player, 4, 5000,
+                    $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
@@ -502,7 +503,8 @@ namespace Altv_Roleplay.Handler
                 if (currentGarageId <= 0) return;
 
                 ServerVehicles.SetVehicleInGarage(vehicle, true, currentGarageId);
-                HUDHandler.SendNotification(player, 4, 5000, $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
+                HUDHandler.SendNotification(player, 4, 5000,
+                    $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
