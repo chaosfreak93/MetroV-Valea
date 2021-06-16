@@ -6,6 +6,7 @@ export class RadioTower {
         this.range = range;
     }
 }
+
 export class RadioTowers {
     constructor(towers) {
         this.towers = towers;

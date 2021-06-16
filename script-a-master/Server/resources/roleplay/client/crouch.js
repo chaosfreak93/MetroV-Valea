@@ -2,6 +2,7 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
+
 const movementClipSet = "move_ped_crouched";
 const strafeClipSet = "move_ped_crouched_strafing";
 const clipSetSwitchTime = 0.25;

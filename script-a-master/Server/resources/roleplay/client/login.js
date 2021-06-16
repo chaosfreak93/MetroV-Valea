@@ -32,7 +32,10 @@ alt.onServer('Client:Login:CreateCEF', () => {
             if (storage.get("discordId")) {
                 alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, storage.get("discordId"));
             } else {
-                if (alt.Discord.currentUser == null) { loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu."); return; }
+                if (alt.Discord.currentUser == null) {
+                    loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
+                    return;
+                }
                 alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.Discord.currentUser.id);
             }
         });
@@ -163,7 +166,7 @@ alt.onServer("Client:Charselector:sendCharactersToCEF", (chars) => {
     }
 });
 
-let destroyLoginBrowser = function() {
+let destroyLoginBrowser = function () {
     if (loginBrowser != null) {
         loginBrowser.destroy();
     }
@@ -202,7 +205,7 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
         loginModelHash = game.getHashKey('mp_m_freemode_01');
         game.requestModel(loginModelHash);
     }
-    alt.setTimeout(function() {
+    alt.setTimeout(function () {
         if (game.hasModelLoaded(loginModelHash)) {
             loginPedHandle = game.createPed(4, loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);
             game.setEntityAlpha(loginPedHandle, 255, 0);
@@ -424,7 +427,7 @@ function activateIPLProps() {
         game.pinInteriorInMemory(interiorID);
         game.activateInteriorEntitySet(interiorID, 'csr_beforeMission');
         game.activateInteriorEntitySet(interiorID, 'shutter_closed');
-        game.refreshInterior(interiorID); 
+        game.refreshInterior(interiorID);
     }
 
     interiorID = game.getInteriorAtCoords(976.6364, 70.29476, 115.1641);
@@ -449,6 +452,7 @@ function activateIPLProps() {
         game.activateInteriorEntitySet(interiorID, 'V_Michael_S_items');
         game.activateInteriorEntitySet(interiorID, 'V_Michael_L_Items');
         game.activateInteriorEntitySet(interiorID, 'V_Michael_bed_tidy');
+        game.removeModelHide(-802.73, 167.5, 77.58, 1, alt.hash("v_ilev_mm_windowwc"), false);
         game.refreshInterior(interiorID);
     }
 
@@ -476,6 +480,6 @@ function activateIPLProps() {
         game.activateInteriorEntitySet(interiorID, 'locked');
         game.refreshInterior(interiorID);
     }
-    
+
     //TODO: Fix all House Interiors
 }

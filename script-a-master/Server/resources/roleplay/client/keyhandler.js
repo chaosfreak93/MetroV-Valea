@@ -2,12 +2,15 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
-import { Raycast } from './utilities.js';
+import {Raycast} from './utilities.js';
+
 var canUseEKey = true;
 var lastInteract = 0;
 let toggleCrouch = false;
 
-function canInteract() { return lastInteract + 1000 < Date.now() }
+function canInteract() {
+    return lastInteract + 1000 < Date.now()
+}
 
 alt.on('keyup', (key) => {
     if (!canInteract) return;
@@ -38,7 +41,7 @@ alt.on('keydown', (key) => {
         game.disableControlAction(0, 36, true);
         if (!game.isPlayerDead(alt.Player.local) && !game.isPedSittingInAnyVehicle(alt.Player.local.scriptID)) {
             if (!game.isPauseMenuActive()) {
-                
+
                 game.requestAnimSet("move_ped_crouched");
                 if (!toggleCrouch) {
                     game.setPedMovementClipset(alt.Player.local.scriptID, "move_ped_crouched", 0.45);

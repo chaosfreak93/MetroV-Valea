@@ -2,146 +2,166 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../utils/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="../utils/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
     <title>Loginscreen</title>
 </head>
 
 <body>
-    <div class="box" id="mainbox">
-        <!--<p class="alphatext">Closed Alpha</p>
-        <span id="registertext" onclick="showArea('register');">Noch nicht angemeldet? Registrieren!</span>-->
-        <img class="Pic" src="../utils/img/features_second_bg_02.png">
-        <hr class="cut">
-        <div class="box2">
-            <p id="error"></p>
-            <div id="LoginArea">
-                <p class="logintitle">LOGIN</p>
+<div class="box" id="mainbox">
+    <!--<p class="alphatext">Closed Alpha</p>
+    <span id="registertext" onclick="showArea('register');">Noch nicht angemeldet? Registrieren!</span>-->
+    <img class="Pic" src="../utils/img/features_second_bg_02.png">
+    <hr class="cut">
+    <div class="box2">
+        <p id="error"></p>
+        <div id="LoginArea">
+            <p class="logintitle">LOGIN</p>
 
-                <div class="inputgroup">
-                    <!--<i class="fa fa-user icon"></i>-->
-                    <input id="email" type="text" maxlength="32" placeholder="Benutzername" spellcheck="false">
-                </div>
-
-                <div class="inputgroup">
-                    <!--<i class="fa fa-key icon"></i>-->
-                    <input id="password" type="password" maxlength="32" placeholder="Passwort" spellcheck="false">
-                </div>
-
-                <button id="loginbtn" type="button" class="btn btn-outline-secondary loginbtn">ANMELDEN</button><br><br>
-                <button id="noidlol" type="button" class="btn btn-outline-secondary registerbtn" onclick="showArea('register');">REGISTRIEREN</button>
-                <!--<p class="infotext">Solltest du dein Passwort vergessen haben, melde dich im Support!</p>-->
+            <div class="inputgroup">
+                <!--<i class="fa fa-user icon"></i>-->
+                <input id="email" maxlength="32" placeholder="Benutzername" spellcheck="false" type="text">
             </div>
-            <div id="ResetPasswordArea">
-                <p class="logintitle">PASSWORT ZURÜCKSETZEN</p>
 
-                <div class="inputgroup">
-                    <!--<i class="fa fa-user icon"></i>-->
-                    <input id="resetpassword" type="password" maxlength="32" placeholder="Passwort eingeben..." spellcheck="false">
-                </div>
-
-                <div class="inputgroup">
-                    <!--<i class="fa fa-key icon"></i>-->
-                    <input id="resetpasswordrepeat" type="password" maxlength="32" placeholder="Passwort wiederholen..." spellcheck="false">
-                </div>
-
-                <button id="resetbtn" type="button" class="btn btn-outline-secondary loginbtn">NEUES PASSWORT</button><br><br>
+            <div class="inputgroup">
+                <!--<i class="fa fa-key icon"></i>-->
+                <input id="password" maxlength="32" placeholder="Passwort" spellcheck="false" type="password">
             </div>
-            <div id="RegisterArea">
-                <p class="logintitle">REGISTRIEREN</p>
 
-                <div class="inputgroup">
-                    <!--<i class="fa fa-user icon"></i>-->
-                    <input id="registername" type="text" maxlength="32" placeholder="Username eingeben..." spellcheck="false">
-                </div>
+            <button class="btn btn-outline-secondary loginbtn" id="loginbtn" type="button">ANMELDEN</button>
+            <br><br>
+            <button class="btn btn-outline-secondary registerbtn" id="noidlol" onclick="showArea('register');"
+                    type="button">REGISTRIEREN
+            </button>
+            <!--<p class="infotext">Solltest du dein Passwort vergessen haben, melde dich im Support!</p>-->
+        </div>
+        <div id="ResetPasswordArea">
+            <p class="logintitle">PASSWORT ZURÜCKSETZEN</p>
 
-                <div class="inputgroup">
-                    <!--<i class="fa fa-envelope icon"></i>-->
-                    <input id="registeremail" type="text" maxlength="32" placeholder="E-Mail eingeben..." spellcheck="false">
-                </div>
-
-                <div class="inputgroup">
-                    <!--<i class="fa fa-key icon"></i>-->
-                    <input id="registerpassword" type="password" maxlength="32" placeholder="Passwort eingeben..." spellcheck="false">
-                </div>
-
-                <div class="inputgroup">
-                    <!--<i class="fa fa-key icon"></i>-->
-                    <input id="registerpasswordrepeat" type="password" maxlength="32" placeholder="Passwort wiederholen..." spellcheck="false">
-                </div>
-
-                <button id="registerbtn" type="button" class="btn btn-outline-secondary loginbtn">REGISTRIEREN</button><br><br>
-                <button id="noidlol" type="button" class="btn btn-outline-secondary registerbtn" onclick="showArea('login');">ANMELDEN</button>
+            <div class="inputgroup">
+                <!--<i class="fa fa-user icon"></i>-->
+                <input id="resetpassword" maxlength="32" placeholder="Passwort eingeben..." spellcheck="false"
+                       type="password">
             </div>
-            <div id="CharSelectArea">
-                <p class="logintitle" style="font-size: 1.25rem; margin-bottom: 0.2rem;">CHARAKTERAUSWAHL</p>
-                <p class="infotext" style="font-size: 0.9rem">Um fortzufahren wähle einen Charakter aus oder erstelle einen.</p>
 
-                <ul id="charlist" class="list-group charlist"></ul>
+            <div class="inputgroup">
+                <!--<i class="fa fa-key icon"></i>-->
+                <input id="resetpasswordrepeat" maxlength="32" placeholder="Passwort wiederholen..." spellcheck="false"
+                       type="password">
+            </div>
 
-                <div id="chardeatharea">
-                    <div class="dropdown">
-                        <input class="dropdown-selector" type="checkbox" />
-                        <div class="dropdown-caption">
-                            <i class="fas fa-angle-double-down dropdown"></i> Gestorbene Charaktere
-                        </div>
-                        <div id="chardeathlist" class="dropdown-content"></div>
+            <button class="btn btn-outline-secondary loginbtn" id="resetbtn" type="button">NEUES PASSWORT</button>
+            <br><br>
+        </div>
+        <div id="RegisterArea">
+            <p class="logintitle">REGISTRIEREN</p>
+
+            <div class="inputgroup">
+                <!--<i class="fa fa-user icon"></i>-->
+                <input id="registername" maxlength="32" placeholder="Username eingeben..." spellcheck="false"
+                       type="text">
+            </div>
+
+            <div class="inputgroup">
+                <!--<i class="fa fa-envelope icon"></i>-->
+                <input id="registeremail" maxlength="32" placeholder="E-Mail eingeben..." spellcheck="false"
+                       type="text">
+            </div>
+
+            <div class="inputgroup">
+                <!--<i class="fa fa-key icon"></i>-->
+                <input id="registerpassword" maxlength="32" placeholder="Passwort eingeben..." spellcheck="false"
+                       type="password">
+            </div>
+
+            <div class="inputgroup">
+                <!--<i class="fa fa-key icon"></i>-->
+                <input id="registerpasswordrepeat" maxlength="32" placeholder="Passwort wiederholen..." spellcheck="false"
+                       type="password">
+            </div>
+
+            <button class="btn btn-outline-secondary loginbtn" id="registerbtn" type="button">REGISTRIEREN</button>
+            <br><br>
+            <button class="btn btn-outline-secondary registerbtn" id="noidlol" onclick="showArea('login');"
+                    type="button">ANMELDEN
+            </button>
+        </div>
+        <div id="CharSelectArea">
+            <p class="logintitle" style="font-size: 1.25rem; margin-bottom: 0.2rem;">CHARAKTERAUSWAHL</p>
+            <p class="infotext" style="font-size: 0.9rem">Um fortzufahren wähle einen Charakter aus oder erstelle
+                einen.</p>
+
+            <ul class="list-group charlist" id="charlist"></ul>
+
+            <div id="chardeatharea">
+                <div class="dropdown">
+                    <input class="dropdown-selector" type="checkbox"/>
+                    <div class="dropdown-caption">
+                        <i class="fas fa-angle-double-down dropdown"></i> Gestorbene Charaktere
                     </div>
+                    <div class="dropdown-content" id="chardeathlist"></div>
                 </div>
-
             </div>
-            <div id="SpawnSelectArea">
-                <p class="logintitle" style="font-size: 1.25rem; margin-bottom: 0.2rem;">SPAWNAUSWAHL</p>
-                <p class="infotext" style="font-size: 0.9rem">Um fortzufahren wähle einen Ort deiner Wahl an dem du spawnen möchtest.<br>Jeder Ort hat einen anderen Anfang, bedenke gut welchen du wählst.</p>
 
-                <ul id="SpawnSelectList"></ul>
-            </div>
         </div>
-        <!--<p class="partnertitle">HOSTED BY</p>
-        <img class="grey" src="../utils/img/altvlogo.svg">
-        <img class="grey" src="../utils/img/avoro.png">-->
-    </div>
+        <div id="SpawnSelectArea">
+            <p class="logintitle" style="font-size: 1.25rem; margin-bottom: 0.2rem;">SPAWNAUSWAHL</p>
+            <p class="infotext" style="font-size: 0.9rem">Um fortzufahren wähle einen Ort deiner Wahl an dem du spawnen
+                möchtest.<br>Jeder Ort hat einen anderen Anfang, bedenke gut welchen du wählst.</p>
 
-    <div class="modal fade" id="killCharacterModalCenter" tabindex="-1" role="dialog" aria-labelledby="killCharacterModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="killCharacterModalCenterLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Möchtest du den oben genannten Charakter wirklich töten? <br>Diese Entscheidung ist entgültig und kann <strong>nicht</strong> durch den Support rückgängig gemacht werden.
-
-                    <br><br>Achtung: Dein Gießkannen-Abonnement bei Hamudi-Josef-Zalami wird aufgehoben und du kannst keine Zigaretten mehr mit @Lando rauchen.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondaryred" data-dismiss="modal">Abbrechen</button>
-                    <button type="button" class="btn btn-primarygreen" data-dismiss="modal" onclick="DeleteCharFinally();">Charakter endgültig töten</button>
-                </div>
-            </div>
+            <ul id="SpawnSelectList"></ul>
         </div>
     </div>
+    <!--<p class="partnertitle">HOSTED BY</p>
+    <img class="grey" src="../utils/img/altvlogo.svg">
+    <img class="grey" src="../utils/img/avoro.png">-->
+</div>
+
+<div aria-hidden="true" aria-labelledby="killCharacterModalCenterTitle" class="modal fade" id="killCharacterModalCenter"
+     role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="killCharacterModalCenterLongTitle">Modal title</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Möchtest du den oben genannten Charakter wirklich töten? <br>Diese Entscheidung ist entgültig und kann
+                <strong>nicht</strong> durch den Support rückgängig gemacht werden.
+
+                <br><br>Achtung: Dein Gießkannen-Abonnement bei Hamudi-Josef-Zalami wird aufgehoben und du kannst keine
+                Zigaretten mehr mit @Lando rauchen.
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondaryred" data-dismiss="modal" type="button">Abbrechen</button>
+                <button class="btn btn-primarygreen" data-dismiss="modal" onclick="DeleteCharFinally();" type="button">
+                    Charakter endgültig töten
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-    <script src="../utils/jquery-3.6.0.min.js"></script>
-    <script src="../utils/popper-1.14.7.min.js"></script>
-    <script src="../utils/bootstrap.min.js"></script>
-    <script src="../utils/anime.min.js"></script>
-    <script src="../utils/640357ffb4.js"></script>
+<script src="../utils/jquery-3.6.0.min.js"></script>
+<script src="../utils/popper-1.14.7.min.js"></script>
+<script src="../utils/bootstrap.min.js"></script>
+<script src="../utils/anime.min.js"></script>
+<script src="../utils/640357ffb4.js"></script>
 </body>
 
 <script>
     var playbtn_selecteduid = 0;
     var maxAvailableChars = 2;
 
-    $(function() {
-        $('#killCharacterModalCenter').on('show.bs.modal', function(e) {
+    $(function () {
+        $('#killCharacterModalCenter').on('show.bs.modal', function (e) {
             var button = $(e.relatedTarget)
 
             var charid = button.data("charid");
@@ -152,7 +172,7 @@
         });
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         setTimeout(() => {
             alt.emit('Client:Login:cefIsReady');
         }, 1500);
@@ -160,7 +180,7 @@
 
     function showArea(area) {
         $("#error").fadeOut(500);
-        $(".box").fadeOut(800, function() {
+        $(".box").fadeOut(800, function () {
             $("#mainbox").css("width", "600");
             $("#LoginArea").hide();
             $("#ResetPasswordArea").hide();
@@ -169,7 +189,8 @@
             $("#RegisterArea").hide();
             $("#registertext").hide();
 
-            $(".box").fadeTo(800, 1, function() {});
+            $(".box").fadeTo(800, 1, function () {
+            });
             $(".box").fadeIn(800);
 
             switch (area) {
@@ -209,7 +230,7 @@
     }
 
     // Login Button
-    $("#loginbtn").click(function() {
+    $("#loginbtn").click(function () {
         var emailvalue = $("#email").val().replace(/^\s+|\s+$/g, "");
         var passvalue = $("#password").val().replace(/^\s+|\s+$/g, "");
 
@@ -226,7 +247,7 @@
         alt.emit('Client:Login:sendLoginDataToServer', emailvalue, passvalue);
     });
 
-    $("#resetbtn").click(function() {
+    $("#resetbtn").click(function () {
         var passwordvalue = $("#resetpassword").val().replace(/^\s+|\s+$/g, "");
         var passwordresetvalue = $("#resetpasswordrepeat").val().replace(/^\s+|\s+$/g, "");
 
@@ -248,7 +269,7 @@
         alt.emit('Client:Login:resetPW', passwordvalue);
     });
 
-    $("#registerbtn").click(function() {
+    $("#registerbtn").click(function () {
         var namevalue = $("#registername").val().replace(/^\s+|\s+$/g, ""),
             emailvalue = $("#registeremail").val().replace(/^\s+|\s+$/g, ""),
             passvalue = $("#registerpassword").val().replace(/^\s+|\s+$/g, ""),
@@ -317,7 +338,7 @@
         if (playbtn_selecteduid == 0 || spawnstr == null || spawnstr == "") return;
         alt.emit('Client:Charselector:spawnChar', playbtn_selecteduid, spawnstr);
 
-        $(".box").fadeOut(50, function() {
+        $(".box").fadeOut(50, function () {
             alt.emit('Client:Login:DestroyCEF');
         });
     }
@@ -341,7 +362,7 @@
         }
 
         if (action == "create") {
-            $(".box").fadeOut(800, function() {
+            $(".box").fadeOut(800, function () {
                 alt.emit("Client:Charcreator:OpenCreator");
                 return;
             });

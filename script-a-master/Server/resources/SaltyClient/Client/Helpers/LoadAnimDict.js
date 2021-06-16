@@ -1,7 +1,8 @@
 /// <reference types="@altv/types-client" />
 /// <reference types="@altv/types-natives" />
-import { doesAnimDictExist, hasAnimDictLoaded, requestAnimDict } from "natives";
-import { setInterval, clearInterval } from "alt-client";
+import {doesAnimDictExist, hasAnimDictLoaded, requestAnimDict} from "natives";
+import {clearInterval, setInterval} from "alt-client";
+
 export function loadAnimDict(animDict) {
     return new Promise((res, rej) => {
         if (!doesAnimDictExist(animDict)) {
@@ -17,13 +18,11 @@ export function loadAnimDict(animDict) {
             if (tries >= 100) {
                 clearInterval(interval);
                 rej(`Timeout reached loading dictionary ${animDict}`);
-            }
-            else {
+            } else {
                 if (!hasAnimDictLoaded(animDict)) {
                     requestAnimDict(animDict);
                     tries++;
-                }
-                else {
+                } else {
                     clearInterval(interval);
                     res(true);
                 }

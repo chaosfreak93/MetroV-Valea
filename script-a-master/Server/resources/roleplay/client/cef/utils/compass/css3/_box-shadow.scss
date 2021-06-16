@@ -19,10 +19,10 @@ $default-box-shadow-v-offset: 0px !default;
 $default-box-shadow-blur: 5px !default;
 
 // The default spread length.
-$default-box-shadow-spread : false !default;
+$default-box-shadow-spread: false !default;
 
 // The default shadow inset: inset or false (for standard shadow).
-$default-box-shadow-inset : false !default;
+$default-box-shadow-inset: false !default;
 
 // Provides cross-browser for Webkit, Gecko, and CSS3 box shadows when one or more box
 // shadows are needed.
@@ -41,11 +41,11 @@ $default-box-shadow-inset : false !default;
   $shadow-10: false
 ) {
   @if $shadow-1 == default {
-    $shadow-1 : -compass-space-list(compact(if($default-box-shadow-inset, inset, false), $default-box-shadow-h-offset, $default-box-shadow-v-offset, $default-box-shadow-blur, $default-box-shadow-spread, $default-box-shadow-color));
+    $shadow-1: -compass-space-list(compact(if($default-box-shadow-inset, inset, false), $default-box-shadow-h-offset, $default-box-shadow-v-offset, $default-box-shadow-blur, $default-box-shadow-spread, $default-box-shadow-color));
   }
-  $shadow : compact($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10);
+  $shadow: compact($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10);
   @include experimental(box-shadow, $shadow,
-    -moz, -webkit, not(-o), not(-ms), not(-khtml), official
+          -moz, -webkit, not(-o), not(-ms), not(-khtml), official
   );
 }
 
@@ -66,11 +66,19 @@ $default-box-shadow-inset : false !default;
   @if $color == none {
     @include box-shadow(none);
   } @else {
-    $full   : $hoff $voff;
-    @if $blur   { $full: $full $blur;   }
-    @if $spread { $full: $full $spread; }
-    @if $color  { $full: $full $color;  }
-    @if $inset  { $full: inset $full;   }
+    $full: $hoff $voff;
+    @if $blur {
+      $full: $full $blur;
+    }
+    @if $spread {
+      $full: $full $spread;
+    }
+    @if $color {
+      $full: $full $color;
+    }
+    @if $inset {
+      $full: inset $full;
+    }
     @include box-shadow($full);
   }
 }

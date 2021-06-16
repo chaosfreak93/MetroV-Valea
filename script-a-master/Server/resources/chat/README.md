@@ -1,6 +1,7 @@
 # alt:V Chat
 
 You can start by adding the chat resource in its own folder called 'chat'.
+
 ```
 altVServerFolder/
 └── resources/
@@ -17,6 +18,7 @@ altVServerFolder/
 
 **This is for YOUR resource that you want to implement the chat resource into.**
 resource.cfg
+
 ```
 type: js,
 main: your_resource_main.mjs
@@ -30,6 +32,7 @@ deps: [
 ### General Usage
 
 **Serverside**
+
 ```
 import * as chat from 'chat';
 

@@ -1,4 +1,5 @@
-import { EchoEffect } from "./EchoEffect";
+import {EchoEffect} from "./EchoEffect";
+
 export class SelfState {
     constructor(position, rotation, echo = false) {
         this.Position = position;

@@ -7,11 +7,38 @@ let PoliceDoors = {};
 let PlayerData = null;
 let UTK = {
     doorchecks: [
-        {x: 257.10, y: 220.30, z: 106.28, he: 339.733, h: alt.hash("hei_v_ilev_bk_gate_pris"), h1: "hei_v_ilev_bk_gate_pris", h2: "hei_v_ilev_bk_gate_molten", status: 0},
+        {
+            x: 257.10,
+            y: 220.30,
+            z: 106.28,
+            he: 339.733,
+            h: alt.hash("hei_v_ilev_bk_gate_pris"),
+            h1: "hei_v_ilev_bk_gate_pris",
+            h2: "hei_v_ilev_bk_gate_molten",
+            status: 0
+        },
         {x: 236.91, y: 227.50, z: 106.29, he: 340.000, h: alt.hash("v_ilev_bk_door"), status: 0},
         {x: 262.35, y: 223.00, z: 107.05, he: 249.731, h: alt.hash("hei_v_ilev_bk_gate2_pris"), status: 0},
-        {x: 252.72, y: 220.95, z: 101.68, he: 160.278, h: alt.hash("hei_v_ilev_bk_safegate_pris"), h1: "hei_v_ilev_bk_safegate_pris", h2: "hei_v_ilev_bk_safegate_molten", status: 0},
-        {x: 261.01, y: 215.01, z: 101.68, he: 250.082, h: alt.hash("hei_v_ilev_bk_safegate_pris"), h1: "hei_v_ilev_bk_safegate_pris", h2: "hei_v_ilev_bk_safegate_molten", status: 0},
+        {
+            x: 252.72,
+            y: 220.95,
+            z: 101.68,
+            he: 160.278,
+            h: alt.hash("hei_v_ilev_bk_safegate_pris"),
+            h1: "hei_v_ilev_bk_safegate_pris",
+            h2: "hei_v_ilev_bk_safegate_molten",
+            status: 0
+        },
+        {
+            x: 261.01,
+            y: 215.01,
+            z: 101.68,
+            he: 250.082,
+            h: alt.hash("hei_v_ilev_bk_safegate_pris"),
+            h1: "hei_v_ilev_bk_safegate_pris",
+            h2: "hei_v_ilev_bk_safegate_molten",
+            status: 0
+        },
         {x: 253.92, y: 224.56, z: 101.88, he: 160.000, h: alt.hash("v_ilev_bk_vaultdoor"), status: 0}
     ],
     enablesupersilent: false,
@@ -150,6 +177,7 @@ let RouletteWords = [
     "MAETHRIL"
 ];
 let CurrentSlot = 0;
+
 function GetInfo() {
     //alt.emitServer("utk_oh:GetData");
 }
@@ -189,7 +217,7 @@ function HandleInfo() {
                 if (UTK.stage0break) {
                     UTK.stage0break = false;
                     alt.clearEveryTick(everyTick);
-                } 
+                }
             });
         } else if (UTK.info.stage == 1) {
             if (UTK.initiator) {
@@ -723,7 +751,7 @@ function Loot(currentgrab, tryNumber = 0) {
     } else if (currentgrab == 5) {
         Trolley = native.getClosestObjectOfType(265.11, 212.05, 100.68, 1.0, 269934519, false, false, false);
     }
-    let CashAppear = function(tryNumber = 0) {
+    let CashAppear = function (tryNumber = 0) {
         let pedCoords = alt.Player.local.pos;
         let grabmodel = alt.hash(model);
 
@@ -986,7 +1014,7 @@ function Initialize(tryNumber = 0) {
                 alt.logError("Could Not Load This Additional Text. Aborting");
                 return;
             }
-    
+
             alt.setTimeout(() => {
                 Initialize(++tryNumber);
             }, 25);
@@ -1126,7 +1154,7 @@ alt.everyTick(() => {
                             native.beginScaleformMovieMethod(scaleform, "OPEN_APP");
                             native.scaleformMovieMethodAddParamFloat(0.0);
                             native.endScaleformMovieMethod();
-        
+
                             Hacking = true;
                             alt.emit("Client:HUD:sendNotification", 1, 2500, "Finde die IP Adresse...", 0);
                             //Finde die IP Adresse...
@@ -1139,15 +1167,15 @@ alt.everyTick(() => {
                             native.scaleformMovieMethodAddParamInt(lives);
                             native.scaleformMovieMethodAddParamInt(5);
                             native.endScaleformMovieMethod();
-        
+
                             native.beginScaleformMovieMethod(scaleform, "OPEN_APP");
                             native.scaleformMovieMethodAddParamFloat(1.0);
                             native.endScaleformMovieMethod();
-        
+
                             native.beginScaleformMovieMethod(scaleform, "SET_ROULETTE_WORD");
                             native.scaleformMovieMethodAddParamPlayerNameString(RouletteWords[RouletteWords.length * Math.random() | 0]);
                             native.endScaleformMovieMethod();
-        
+
                             Hacking = true;
                             alt.emit("Client:HUD:sendNotification", 1, 2500, "Finde das Passwort...", 0);
                             //Finde das Passwort...
@@ -1271,7 +1299,7 @@ alt.everyTick(() => {
         }
     }
 
-    let enabled  = false;
+    let enabled = false;
 
     if (UTK.disableinput) {
         enabled = true;
@@ -1328,7 +1356,7 @@ alt.on("utk_oh:vault", (method) => {
                 alt.clearInterval(interval);
                 native.freezeEntityPosition(obj, true);
             }
-        }, 10);  
+        }, 10);
     } else {
         let count = 0
         let interval = alt.setInterval(() => {

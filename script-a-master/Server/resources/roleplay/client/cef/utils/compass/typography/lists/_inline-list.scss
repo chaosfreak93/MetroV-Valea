@@ -26,12 +26,20 @@
 @mixin delimited-list($separator: ", ") {
   @include inline-list;
   li {
-    &:after { content: $separator; }
-    &:last-child {
-      &:after { content: ""; }
+    &:after {
+      content: $separator;
     }
+
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+
     &.last {
-      &:after { content: ""; }
+      &:after {
+        content: "";
+      }
     }
   }
 }

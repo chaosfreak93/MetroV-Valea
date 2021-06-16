@@ -1,6 +1,8 @@
-import { RadioType } from "./Enum/SaltyChat/RadioType";
+import {RadioType} from "./Enum/SaltyChat/RadioType";
+
 export class Config {
 }
+
 Config.radioRange = RadioType.longRange;
 Config.enableRadioAnimation = true;
 Config.enableLipSync = true;

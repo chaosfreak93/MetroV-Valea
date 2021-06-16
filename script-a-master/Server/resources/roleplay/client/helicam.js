@@ -33,7 +33,7 @@ alt.everyTick(() => {
         }
 
         if (native.isControlJustPressed(0, toggle_rappel)) {
-            if (native.getPedInVehicleSeat(heli, 1) == lPed || native.getPedInVehicleSeat(heli, 2) == lPed){
+            if (native.getPedInVehicleSeat(heli, 1) == lPed || native.getPedInVehicleSeat(heli, 2) == lPed) {
                 native.playSoundFrontend(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", false);
                 native.taskRappelFromHeli(lPed, 1);
             } else {
@@ -45,7 +45,7 @@ alt.everyTick(() => {
             spotlight_state = !spotlight_state;
             alt.emitServer("heli:spotlight", spotlight_state);
             native.playSoundFrontend(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", false);
-        } 
+        }
     }
 
     if (helicam) {
@@ -236,7 +236,7 @@ function GetVehicleInView(cam) {
     let coords = native.getCamCoord(cam);
     let forward_vector = RotAnglesToVec(native.getCamRot(cam, 2));
     let rayhandle = native.startShapeTestLosProbe(coords.x, coords.y, coords.z, coords + (forward_vector * 350.0), 10, native.getVehiclePedIsIn(native.getPlayerPed(-1)), 0);
-    let [ a, b, c, d, entityHit ] = native.getShapeTestResult(rayhandle);
+    let [a, b, c, d, entityHit] = native.getShapeTestResult(rayhandle);
     if (entityHit > 0 && native.isEntityAVehicle(entityHit)) {
         return entityHit;
     } else {
@@ -297,8 +297,8 @@ alt.onServer("heli:spotlight_update", (playerid, data) => {
 
 function RotAnglesToVec(rot) {
     let pi = Math.PI;
-    let z = rot.z * (pi/180);
-    let x = rot.x * (pi/180);
+    let z = rot.z * (pi / 180);
+    let x = rot.x * (pi / 180);
     let num = Math.abs(Math.cos(x));
     return new alt.Vector3(-Math.sin(z) * num, Math.cos(z) * num, Math.sin(x));
 }

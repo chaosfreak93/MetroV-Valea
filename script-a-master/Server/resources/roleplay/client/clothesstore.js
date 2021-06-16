@@ -12,7 +12,7 @@ alt.onServer("Client:HUD:CreateCEF", () => {
         clothesStoreBrowser = new alt.WebView("http://resource/client/cef/clothesstore/index.html");
 
         clothesStoreBrowser.on('Client:Clothesstore:PreviewCloth', (isProp, previewComponentId, previewDrawableId, previewTextureId) => {
-            if (!isProp) game.setPedComponentVariation(alt.Player.local.scriptID, previewComponentId, previewDrawableId, previewTextureId, 0); 
+            if (!isProp) game.setPedComponentVariation(alt.Player.local.scriptID, previewComponentId, previewDrawableId, previewTextureId, 0);
             else game.setPedPropIndex(alt.Player.local.scriptID, previewComponentId, previewDrawableId, previewTextureId, false);
         });
 

@@ -1,251 +1,356 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Timo's Clothesstore</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-    <div id="clothesstore-main" style="display: none;">
-        <h2 id="clothesstore-title">Kleiderladen</h2>
+<div id="clothesstore-main" style="display: none;">
+    <h2 id="clothesstore-title">Kleiderladen</h2>
 
-        <div class="scrolldiv">
-            <div id="clothesstore-item-oberbekleidung" class="clothesstore-item-div">
-                <p id="title-oberbekleidung" class="undertitle">Oberbekleidung</p>
-                <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/shirt.png">
-                    <button onclick="pressButton('left', 'oberbekleidung')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'oberbekleidung')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-oberbekleidung-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-oberbekleidung-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Oberbekleidung')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('oberbekleidung')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
+    <div class="scrolldiv">
+        <div class="clothesstore-item-div" id="clothesstore-item-oberbekleidung">
+            <p class="undertitle" id="title-oberbekleidung">Oberbekleidung</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/shirt.png">
+                <button class="arrow left" onclick="pressButton('left', 'oberbekleidung')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'oberbekleidung')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-oberbekleidung-input" type="number"
+                       value=0>
+                <asdas id="clothesstore-item-oberbekleidung-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Oberbekleidung')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('oberbekleidung')"></i>
+                <div class="maindiv-bg"></div>
             </div>
-             
-			 <div id="clothesstore-item-körper" class="clothesstore-item-div">
-                <p id="title-körper" class="undertitle">Körper</p>
-                <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/torso.png">
-                    <button onclick="pressButton('left', 'körper')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'körper')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-körper-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-körper-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Körper')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('körper')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-   
-            <div id="clothesstore-item-unterbekleidung" class="clothesstore-item-div">
-                <p id="title-unterbekleidung" class="undertitle">Unterbekleidung</p>
-                <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/undershirt.png">
-                    <button onclick="pressButton('left', 'unterbekleidung')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'unterbekleidung')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-unterbekleidung-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-unterbekleidung-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Unterbekleidung')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('unterbekleidung')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <!--<div id="clothesstore-item-taschen" class="clothesstore-item-div">
-                <p id="title-taschen" class="undertitle">Taschen</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/undershirt.png">
-                    <button onclick="pressButton('left', 'taschen')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'taschen')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-taschen-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-taschen-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Taschen')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('taschen')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>-->
-    
-            <div id="clothesstore-item-accessories" class="clothesstore-item-div">
-                <p id="title-accessories" class="undertitle">Accessories</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/necklace.png">
-                    <button onclick="pressButton('left', 'accessories')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'accessories')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-accessories-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-accessories-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Accessories')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('accessories')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-westen" class="clothesstore-item-div">
-                <p id="title-westen" class="undertitle">Westen</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/Weste.png">
-                    <button onclick="pressButton('left', 'westen')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'westen')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-westen-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-westen-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Westen')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('westen')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-hosen" class="clothesstore-item-div">
-                <p id="title-hosen" class="undertitle">Hosen</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/jeans.png">
-                    <button onclick="pressButton('left', 'hosen')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'hosen')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-hosen-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-hosen-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Hosen')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('hosen')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-schuhe" class="clothesstore-item-div">
-                <p id="title-schuhe" class="undertitle">Schuhe</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/shoes.png">
-                    <button onclick="pressButton('left', 'schuhe')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'schuhe')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-schuhe-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-schuhe-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Schuhe')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('schuhe')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-masken" class="clothesstore-item-div">
-                <p id="title-masken" class="undertitle">Masken</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/Maske.png">
-                    <button onclick="pressButton('left', 'masken')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'masken')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-masken-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-masken-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Masken')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('masken')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-hüte" class="clothesstore-item-div">
-                <p id="title-hüte" class="undertitle">Hüte</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/witch-hat.png">
-                    <button onclick="pressButton('left', 'hüte')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'hüte')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-hüte-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-hüte-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Hüte')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('hüte')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-brillen" class="clothesstore-item-div">
-                <p id="title-brillen" class="undertitle">Brillen</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/sun-glasses.png">
-                    <button onclick="pressButton('left', 'brillen')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'brillen')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-brillen-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-brillen-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Brillen')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('brillen')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-ohrringe" class="clothesstore-item-div">
-                <p id="title-ohrringe" class="undertitle">Ohrringe</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/earrings.png">
-                    <button onclick="pressButton('left', 'ohrringe')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'ohrringe')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-ohrringe-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-ohrringe-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Ohrringe')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('ohrringe')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-uhren" class="clothesstore-item-div">
-                <p id="title-uhren" class="undertitle">Uhren</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/smartwatch.png">
-                    <button onclick="pressButton('left', 'uhren')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'uhren')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-uhren-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-uhren-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Uhren')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('uhren')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <div id="clothesstore-item-armbänder" class="clothesstore-item-div">
-                <p id="title-armbänder" class="undertitle">Armbänder</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/bracelet.png">
-                    <button onclick="pressButton('left', 'armbänder')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'armbänder')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-armbänder-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-armbänder-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Armbänder')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('armbänder')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>
-    
-            <!--<div id="clothesstore-item-embleme" class="clothesstore-item-div">
-                <p id="title-embleme" class="undertitle">Embleme</p>
-               <div class="clothesstore-item-maindiv">
-                    <img class="clothesstore-item-img" src="./img/undershirt.png">
-                    <button onclick="pressButton('left', 'embleme')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-                    <button onclick="pressButton('right', 'embleme')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-                    <input id="clothesstore-item-embleme-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-embleme-maxinputvalue">/???</asdas>
-                    <br><i onclick="openTextureMenu('Embleme')" class="clothesshop-icon fad fa-fill-drip"></i>
-                    <br><i onclick="buyCloth('embleme')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
-                    <div class="maindiv-bg"></div>
-                </div>
-            </div>-->
         </div>
-        <input class="inputcustom" type="range" id="charrotationslider" val="180" min="0" max="360" oninput="changeSliderRot();">
-    </div>
-    <div id="clothesstore-texture-menu" style="display: none;">
-        <h2 id="texturemenu-title">Farbenauswahl Unterbekleidung</h2>
 
-        <div class="clothesstore-texture-menu-maindiv">
-            <button onclick="pressTextureButton('left')" class="texturearrow textureleft"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
-            <button onclick="pressTextureButton('right')" class="texturearrow textureright"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
-
-            <input id="clothesstore-texture-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-texture-maxinputvalue">/??</asdas>
+        <div class="clothesstore-item-div" id="clothesstore-item-körper">
+            <p class="undertitle" id="title-körper">Körper</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/torso.png">
+                <button class="arrow left" onclick="pressButton('left', 'körper')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'körper')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-körper-input" type="number" value=0>
+                <asdas id="clothesstore-item-körper-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Körper')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('körper')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
         </div>
-    </div>
 
-    <script src="../utils/f25e534c46.js"></script>
-    <script src="../utils/jquery-3.6.0.min.js"></script>
-    <script src="../utils/jquery-ui-1.12.1.min.js"></script>
-    <script defer src="../utils/fontawesome/js/all.js"></script>
+        <div class="clothesstore-item-div" id="clothesstore-item-unterbekleidung">
+            <p class="undertitle" id="title-unterbekleidung">Unterbekleidung</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/undershirt.png">
+                <button class="arrow left" onclick="pressButton('left', 'unterbekleidung')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'unterbekleidung')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-unterbekleidung-input" type="number"
+                       value=0>
+                <asdas id="clothesstore-item-unterbekleidung-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Unterbekleidung')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('unterbekleidung')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <!--<div id="clothesstore-item-taschen" class="clothesstore-item-div">
+            <p id="title-taschen" class="undertitle">Taschen</p>
+           <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/undershirt.png">
+                <button onclick="pressButton('left', 'taschen')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
+                <button onclick="pressButton('right', 'taschen')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
+                <input id="clothesstore-item-taschen-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-taschen-maxinputvalue">/???</asdas>
+                <br><i onclick="openTextureMenu('Taschen')" class="clothesshop-icon fad fa-fill-drip"></i>
+                <br><i onclick="buyCloth('taschen')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>-->
+
+        <div class="clothesstore-item-div" id="clothesstore-item-accessories">
+            <p class="undertitle" id="title-accessories">Accessories</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/necklace.png">
+                <button class="arrow left" onclick="pressButton('left', 'accessories')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'accessories')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-accessories-input" type="number" value=0>
+                <asdas id="clothesstore-item-accessories-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Accessories')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('accessories')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-westen">
+            <p class="undertitle" id="title-westen">Westen</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/Weste.png">
+                <button class="arrow left" onclick="pressButton('left', 'westen')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'westen')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-westen-input" type="number" value=0>
+                <asdas id="clothesstore-item-westen-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Westen')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('westen')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-hosen">
+            <p class="undertitle" id="title-hosen">Hosen</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/jeans.png">
+                <button class="arrow left" onclick="pressButton('left', 'hosen')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'hosen')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-hosen-input" type="number" value=0>
+                <asdas id="clothesstore-item-hosen-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Hosen')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('hosen')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-schuhe">
+            <p class="undertitle" id="title-schuhe">Schuhe</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/shoes.png">
+                <button class="arrow left" onclick="pressButton('left', 'schuhe')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'schuhe')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-schuhe-input" type="number" value=0>
+                <asdas id="clothesstore-item-schuhe-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Schuhe')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('schuhe')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-masken">
+            <p class="undertitle" id="title-masken">Masken</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/Maske.png">
+                <button class="arrow left" onclick="pressButton('left', 'masken')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'masken')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-masken-input" type="number" value=0>
+                <asdas id="clothesstore-item-masken-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Masken')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('masken')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-hüte">
+            <p class="undertitle" id="title-hüte">Hüte</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/witch-hat.png">
+                <button class="arrow left" onclick="pressButton('left', 'hüte')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'hüte')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-hüte-input" type="number" value=0>
+                <asdas id="clothesstore-item-hüte-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Hüte')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('hüte')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-brillen">
+            <p class="undertitle" id="title-brillen">Brillen</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/sun-glasses.png">
+                <button class="arrow left" onclick="pressButton('left', 'brillen')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'brillen')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-brillen-input" type="number" value=0>
+                <asdas id="clothesstore-item-brillen-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Brillen')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('brillen')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-ohrringe">
+            <p class="undertitle" id="title-ohrringe">Ohrringe</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/earrings.png">
+                <button class="arrow left" onclick="pressButton('left', 'ohrringe')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'ohrringe')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-ohrringe-input" type="number" value=0>
+                <asdas id="clothesstore-item-ohrringe-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Ohrringe')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('ohrringe')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-uhren">
+            <p class="undertitle" id="title-uhren">Uhren</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/smartwatch.png">
+                <button class="arrow left" onclick="pressButton('left', 'uhren')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'uhren')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-uhren-input" type="number" value=0>
+                <asdas id="clothesstore-item-uhren-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Uhren')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('uhren')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <div class="clothesstore-item-div" id="clothesstore-item-armbänder">
+            <p class="undertitle" id="title-armbänder">Armbänder</p>
+            <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/bracelet.png">
+                <button class="arrow left" onclick="pressButton('left', 'armbänder')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <button class="arrow right" onclick="pressButton('right', 'armbänder')">
+                    <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+                </button>
+                <input class="clothesstore-item-input" id="clothesstore-item-armbänder-input" type="number" value=0>
+                <asdas id="clothesstore-item-armbänder-maxinputvalue">/???</asdas>
+                <br><i class="clothesshop-icon fad fa-fill-drip" onclick="openTextureMenu('Armbänder')"></i>
+                <br><i class="clothesshop-icon-scnd fas fa-shopping-basket" onclick="buyCloth('armbänder')"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>
+
+        <!--<div id="clothesstore-item-embleme" class="clothesstore-item-div">
+            <p id="title-embleme" class="undertitle">Embleme</p>
+           <div class="clothesstore-item-maindiv">
+                <img class="clothesstore-item-img" src="./img/undershirt.png">
+                <button onclick="pressButton('left', 'embleme')" class="arrow left"><svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/></svg></button>
+                <button onclick="pressButton('right', 'embleme')" class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/></svg></button>
+                <input id="clothesstore-item-embleme-input" class="clothesstore-item-input" type="number" value=0><asdas id="clothesstore-item-embleme-maxinputvalue">/???</asdas>
+                <br><i onclick="openTextureMenu('Embleme')" class="clothesshop-icon fad fa-fill-drip"></i>
+                <br><i onclick="buyCloth('embleme')" class="clothesshop-icon-scnd fas fa-shopping-basket"></i>
+                <div class="maindiv-bg"></div>
+            </div>
+        </div>-->
+    </div>
+    <input class="inputcustom" id="charrotationslider" max="360" min="0" oninput="changeSliderRot();" type="range"
+           val="180">
+</div>
+<div id="clothesstore-texture-menu" style="display: none;">
+    <h2 id="texturemenu-title">Farbenauswahl Unterbekleidung</h2>
+
+    <div class="clothesstore-texture-menu-maindiv">
+        <button class="texturearrow textureleft" onclick="pressTextureButton('left')">
+            <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve"><polyline fill="none" points="45.63,75.8 0.375,38.087 45.63,0.375 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+        </button>
+        <button class="texturearrow textureright" onclick="pressTextureButton('right')">
+            <svg height="80px" viewBox="0 0 50 80" width="60px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="0.375,0.375 45.63,38.087 0.375,75.8 " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+        </button>
+
+        <input class="clothesstore-item-input" id="clothesstore-texture-input" type="number" value=0>
+        <asdas id="clothesstore-texture-maxinputvalue">/??</asdas>
+    </div>
+</div>
+
+<script src="../utils/f25e534c46.js"></script>
+<script src="../utils/jquery-3.6.0.min.js"></script>
+<script src="../utils/jquery-ui-1.12.1.min.js"></script>
+<script defer src="../utils/fontawesome/js/all.js"></script>
 </body>
-<script type="text/javascript" src="clothes_male.js"></script>
-<script type="text/javascript" src="clothes_female.js"></script>
+<script src="clothes_male.js" type="text/javascript"></script>
+<script src="clothes_female.js" type="text/javascript"></script>
 <script>
     let categories = ["oberbekleidung", "körper", "unterbekleidung", "taschen", "accessories", "westen", "hosen", "schuhe", "masken", "hüte", "brillen", "ohrringe", "uhren", "armbänder", "embleme"];
     let currentcategory = "main";
 
-    let count_male = { accessories: 0, armbänder: 0, brillen: 0, embleme: 0, hosen: 0, hüte: 0, masken: 0, oberbekleidung: 0, ohrringe: 0, schuhe: 0, taschen: 0, uhren: 0, unterbekleidung: 0, westen: 0, körper: 0 }
-    let count_female = { accessories: 0, armbänder: 0, brillen: 0, embleme: 0, hosen: 0, hüte: 0, masken: 0, oberbekleidung: 0, ohrringe: 0, schuhe: 0, taschen: 0, uhren: 0, unterbekleidung: 0, westen: 0, körper: 0 }
+    let count_male = {
+        accessories: 0,
+        armbänder: 0,
+        brillen: 0,
+        embleme: 0,
+        hosen: 0,
+        hüte: 0,
+        masken: 0,
+        oberbekleidung: 0,
+        ohrringe: 0,
+        schuhe: 0,
+        taschen: 0,
+        uhren: 0,
+        unterbekleidung: 0,
+        westen: 0,
+        körper: 0
+    }
+    let count_female = {
+        accessories: 0,
+        armbänder: 0,
+        brillen: 0,
+        embleme: 0,
+        hosen: 0,
+        hüte: 0,
+        masken: 0,
+        oberbekleidung: 0,
+        ohrringe: 0,
+        schuhe: 0,
+        taschen: 0,
+        uhren: 0,
+        unterbekleidung: 0,
+        westen: 0,
+        körper: 0
+    }
 
 
-    count_male.accessories = count_male.accessories- 1, count_male.armbänder = count_male.armbänder- 1, count_male.brillen = count_male.brillen- 1, count_male.embleme = count_male.embleme- 1, count_male.hosen = count_male.hosen- 1, count_male.hüte = count_male.hüte- 1, count_male.masken = count_male.masken- 1, count_male.oberbekleidung = count_male.oberbekleidung- 1, count_male.ohrringe = count_male.ohrringe- 1, count_male.schuhe = count_male.schuhe- 1, count_male.taschen = count_male.taschen- 1, count_male.uhren = count_male.uhren- 1, count_male.unterbekleidung = count_male.unterbekleidung- 1, count_male.westen = count_male.westen- 1, count_male.körper = count_male.körper- 1;
-    count_female.accessories = count_female.accessories- 1, count_female.armbänder = count_female.armbänder- 1, count_female.brillen = count_female.brillen- 1, count_female.embleme = count_female.embleme- 1, count_female.hosen = count_female.hosen- 1, count_female.hüte = count_female.hüte- 1, count_female.masken = count_female.masken- 1, count_female.oberbekleidung = count_female.oberbekleidung- 1, count_female.ohrringe = count_female.ohrringe- 1, count_female.schuhe = count_female.schuhe- 1, count_female.taschen = count_female.taschen- 1, count_female.uhren = count_female.uhren- 1, count_female.unterbekleidung = count_female.unterbekleidung- 1, count_female.westen = count_female.westen- 1, count_female.körper = count_female.körper- 1;
+    count_male.accessories = count_male.accessories - 1, count_male.armbänder = count_male.armbänder - 1, count_male.brillen = count_male.brillen - 1, count_male.embleme = count_male.embleme - 1, count_male.hosen = count_male.hosen - 1, count_male.hüte = count_male.hüte - 1, count_male.masken = count_male.masken - 1, count_male.oberbekleidung = count_male.oberbekleidung - 1, count_male.ohrringe = count_male.ohrringe - 1, count_male.schuhe = count_male.schuhe - 1, count_male.taschen = count_male.taschen - 1, count_male.uhren = count_male.uhren - 1, count_male.unterbekleidung = count_male.unterbekleidung - 1, count_male.westen = count_male.westen - 1, count_male.körper = count_male.körper - 1;
+    count_female.accessories = count_female.accessories - 1, count_female.armbänder = count_female.armbänder - 1, count_female.brillen = count_female.brillen - 1, count_female.embleme = count_female.embleme - 1, count_female.hosen = count_female.hosen - 1, count_female.hüte = count_female.hüte - 1, count_female.masken = count_female.masken - 1, count_female.oberbekleidung = count_female.oberbekleidung - 1, count_female.ohrringe = count_female.ohrringe - 1, count_female.schuhe = count_female.schuhe - 1, count_female.taschen = count_female.taschen - 1, count_female.uhren = count_female.uhren - 1, count_female.unterbekleidung = count_female.unterbekleidung - 1, count_female.westen = count_female.westen - 1, count_female.körper = count_female.körper - 1;
 
     let gender = 0;
 
     setCount()
 
     categories.forEach(a => {
-        $(`#clothesstore-item-${a}-input`).bind("paste cut keydown delete",function(e) {
+        $(`#clothesstore-item-${a}-input`).bind("paste cut keydown delete", function (e) {
             setTimeout(() => {
-                if(document.getElementById(`clothesstore-item-${a}-input`).value == "") document.getElementById(`clothesstore-item-${a}-input`).value = 0;
+                if (document.getElementById(`clothesstore-item-${a}-input`).value == "") document.getElementById(`clothesstore-item-${a}-input`).value = 0;
                 document.getElementById(`clothesstore-item-${a}-input`).value = parseInt(document.getElementById(`clothesstore-item-${a}-input`).value);
                 if (gender == 1 && $(this).val() > eval("count_male." + a)) document.getElementById(`clothesstore-item-${a}-input`).value = eval("count_male." + a);
                 else if (gender == 2 && $(this).val() > eval("count_female." + a)) document.getElementById(`clothesstore-item-${a}-input`).value = eval("count_female." + a);
@@ -255,11 +360,11 @@
         })
     })
 
-    $(`#clothesstore-texture-input`).bind("paste cut keydown delete",function(e) {
+    $(`#clothesstore-texture-input`).bind("paste cut keydown delete", function (e) {
         setTimeout(() => {
-            if(document.getElementById(`clothesstore-texture-input`).value == "") document.getElementById(`clothesstore-texture-input`).value = 0;
+            if (document.getElementById(`clothesstore-texture-input`).value == "") document.getElementById(`clothesstore-texture-input`).value = 0;
             document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById(`clothesstore-texture-input`).value);
-            if ($(this).val() > parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g,''))) document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g,''));
+            if ($(this).val() > parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g, ''))) document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g, ''));
             previewCloth("textures");
         }, 5);
     })
@@ -273,7 +378,7 @@
     }
 
     function openClothesMenu(usergender) {
-		document.getElementById("clothesstore-texture-menu").style.display = "none";
+        document.getElementById("clothesstore-texture-menu").style.display = "none";
         if (gender == usergender && document.getElementById("clothesstore-main").style.display == "block") document.getElementById("clothesstore-main").style.display = "none";
         else if (gender == usergender) document.getElementById("clothesstore-main").style.display = "block";
         else {
@@ -295,7 +400,7 @@
             previewDrawableId = 0,
             previewTextureId = 0,
             isProp = false;
-        
+
         if (clothesType == "textures") {
             switch (document.getElementById("texturemenu-title").innerHTML.replace('Farbenauswahl ', '').toLowerCase()) {
                 case "oberbekleidung":
@@ -303,12 +408,12 @@
                     previewDrawableId = document.getElementById(`clothesstore-item-oberbekleidung-input`).value;
                     previewTextureId = document.getElementById('clothesstore-texture-input').value;
                     break;
-				case "körper":
+                case "körper":
                     previewComponentId = 3;
                     previewDrawableId = document.getElementById(`clothesstore-item-körper-input`).value;
                     previewTextureId = document.getElementById('clothesstore-texture-input').value;
                     break;
-				case "unterbekleidung":
+                case "unterbekleidung":
                     previewComponentId = 8;
                     previewDrawableId = document.getElementById(`clothesstore-item-unterbekleidung-input`).value;
                     previewTextureId = document.getElementById('clothesstore-texture-input').value;
@@ -388,12 +493,12 @@
                     previewDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
                     if (document.getElementById("texturemenu-title").innerHTML == `Farbenauswahl ${clothesType.charAt(0).toUpperCase() + clothesType.slice(1)}`) previewTextureId = document.getElementById('clothesstore-texture-input').value;
                     break;
-				case "körper":
+                case "körper":
                     previewComponentId = 3;
                     previewDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
                     if (document.getElementById("texturemenu-title").innerHTML == `Farbenauswahl ${clothesType.charAt(0).toUpperCase() + clothesType.slice(1)}`) previewTextureId = document.getElementById('clothesstore-texture-input').value;
                     break;
-				case "unterbekleidung":
+                case "unterbekleidung":
                     previewComponentId = 8;
                     previewDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
                     if (document.getElementById("texturemenu-title").innerHTML == `Farbenauswahl ${clothesType.charAt(0).toUpperCase() + clothesType.slice(1)}`) previewTextureId = document.getElementById('clothesstore-texture-input').value;
@@ -498,11 +603,11 @@
 
     function pressTextureButton(direction) {
         if (direction == "left" && document.getElementById(`clothesstore-texture-input`).value != null && gender != 0) {
-            if (document.getElementById(`clothesstore-texture-input`).value == 0) document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g,''));
+            if (document.getElementById(`clothesstore-texture-input`).value == 0) document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g, ''));
             else document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById(`clothesstore-texture-input`).value) - 1;
             previewCloth("textures");
         } else if (direction == "right" && document.getElementById(`clothesstore-texture-input`).value != null && gender != 0) {
-            if (document.getElementById(`clothesstore-texture-input`).value == parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g,''))) document.getElementById(`clothesstore-texture-input`).value = 0;
+            if (document.getElementById(`clothesstore-texture-input`).value == parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g, ''))) document.getElementById(`clothesstore-texture-input`).value = 0;
             else document.getElementById(`clothesstore-texture-input`).value = parseInt(document.getElementById(`clothesstore-texture-input`).value) + 1;
             previewCloth("textures");
         }
@@ -519,7 +624,7 @@
             document.getElementById("texturemenu-title").innerHTML = `Farbenauswahl ${textureMenuTitleText}`;
         }
 
-        if (document.getElementById("clothesstore-texture-input").value > parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g,''))) document.getElementById("clothesstore-texture-input").value = parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g,''));
+        if (document.getElementById("clothesstore-texture-input").value > parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g, ''))) document.getElementById("clothesstore-texture-input").value = parseInt(document.getElementById("clothesstore-texture-maxinputvalue").innerHTML.replace(/\\|\//g, ''));
     }
 
     function buyCloth(clothesType) {
@@ -527,10 +632,10 @@
             buyDrawableId = 0,
             buyTextureId = 0,
             isProp = false;
-        
+
         switch (clothesType) {
             case "oberbekleidung":
-               buyComponentId = 11;
+                buyComponentId = 11;
                 buyDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
                 if (document.getElementById("texturemenu-title").innerHTML == `Farbenauswahl ${clothesType.charAt(0).toUpperCase() + clothesType.slice(1)}`) buyTextureId = document.getElementById('clothesstore-texture-input').value;
                 break;
@@ -538,7 +643,7 @@
                 buyComponentId = 3;
                 buyDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
                 if (document.getElementById("texturemenu-title").innerHTML == `Farbenauswahl ${clothesType.charAt(0).toUpperCase() + clothesType.slice(1)}`) buyTextureId = document.getElementById('clothesstore-texture-input').value;
-				break;
+                break;
             case "unterbekleidung":
                 buyComponentId = 8;
                 buyDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
@@ -589,7 +694,7 @@
             case "ohrringe":
                 isProp = true;
                 buyComponentId = 2;
-                buyDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value; 
+                buyDrawableId = document.getElementById(`clothesstore-item-${clothesType.toLowerCase()}-input`).value;
                 if (document.getElementById("texturemenu-title").innerHTML == `Farbenauswahl ${clothesType.charAt(0).toUpperCase() + clothesType.slice(1)}`) buyTextureId = document.getElementById('clothesstore-texture-input').value;
                 break;
             case "uhren":
@@ -611,7 +716,8 @@
                 break;
             default:
                 break;
-        };
+        }
+        ;
 
         let clothId = 0;
 
@@ -647,11 +753,11 @@
                 TextureComponentId = 11;
                 TextureDrawableId = document.getElementById(`clothesstore-item-${current_category.toLowerCase()}-input`).value;
                 break;
-			case "körper":
+            case "körper":
                 TextureComponentId = 3;
                 TextureDrawableId = document.getElementById(`clothesstore-item-${current_category.toLowerCase()}-input`).value;
                 break;
-			case "unterbekleidung":
+            case "unterbekleidung":
                 TextureComponentId = 8;
                 TextureDrawableId = document.getElementById(`clothesstore-item-${current_category.toLowerCase()}-input`).value;
                 break;
@@ -717,19 +823,19 @@
 
         if (gender == 1) {
             for (var a in clothes_male) {
-                if (clothes_male[a] != undefined && !isProp && clothes_male[a].Type == "cloth" && clothes_male[a].ComponentId == TextureComponentId && clothes_male[a].DrawableId == TextureDrawableId) count ++;
-                else if (clothes_male[a] != undefined && isProp && clothes_male[a].Type == "prop" && clothes_male[a].ComponentId == TextureComponentId && clothes_male[a].DrawableId == TextureDrawableId) count ++;
+                if (clothes_male[a] != undefined && !isProp && clothes_male[a].Type == "cloth" && clothes_male[a].ComponentId == TextureComponentId && clothes_male[a].DrawableId == TextureDrawableId) count++;
+                else if (clothes_male[a] != undefined && isProp && clothes_male[a].Type == "prop" && clothes_male[a].ComponentId == TextureComponentId && clothes_male[a].DrawableId == TextureDrawableId) count++;
             }
 
             document.getElementById("clothesstore-texture-maxinputvalue").innerHTML = `/${count}`
         } else if (gender == 2) {
             for (var a in clothes_female) {
-                if (clothes_female[a] != undefined && !isProp && clothes_female[a].Type == "cloth" && clothes_female[a].ComponentId == TextureComponentId && clothes_female[a].DrawableId == TextureDrawableId) count ++;
-                else if (clothes_female[a] != undefined && isProp && clothes_female[a].Type == "prop" && clothes_female[a].ComponentId == TextureComponentId && clothes_female[a].DrawableId == TextureDrawableId) count ++;
+                if (clothes_female[a] != undefined && !isProp && clothes_female[a].Type == "cloth" && clothes_female[a].ComponentId == TextureComponentId && clothes_female[a].DrawableId == TextureDrawableId) count++;
+                else if (clothes_female[a] != undefined && isProp && clothes_female[a].Type == "prop" && clothes_female[a].ComponentId == TextureComponentId && clothes_female[a].DrawableId == TextureDrawableId) count++;
             }
 
             document.getElementById("clothesstore-texture-maxinputvalue").innerHTML = `/${count}`
-        } 
+        }
 
         if (isSpecial && document.getElementById(`clothesstore-texture-input`).value > count) document.getElementById(`clothesstore-texture-input`).value = count;
     }
@@ -742,10 +848,10 @@
                     case "1":
                         count_male.masken += 1;
                         break;
-					case "3":
+                    case "3":
                         count_male.körper += 1;
                         break;
-					case "4":
+                    case "4":
                         count_male.hosen += 1;
                         break;
                     case "5":
@@ -791,7 +897,7 @@
                         break;
                     default:
                         break;
-                }  
+                }
             }
         }
 
@@ -802,10 +908,10 @@
                     case "1":
                         count_female.masken += 1;
                         break;
-					case "3":
+                    case "3":
                         count_female.körper += 1;
                         break;
-					case "4":
+                    case "4":
                         count_female.hosen += 1;
                         break;
                     case "5":
@@ -851,7 +957,7 @@
                         break;
                     default:
                         break;
-                }  
+                }
             }
         }
     }

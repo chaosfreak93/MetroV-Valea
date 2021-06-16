@@ -5,9 +5,9 @@ import game from 'natives';
 
 // Disable Idle Cam
 alt.setInterval(() => {
-    game.invalidateIdleCam(); 
+    game.invalidateIdleCam();
     game.invalidateVehicleIdleCam();
-}, 20000); 
+}, 20000);
 
 // HideMap
 /**alt.setInterval(() => {

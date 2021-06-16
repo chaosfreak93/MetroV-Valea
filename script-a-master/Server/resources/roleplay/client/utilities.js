@@ -3,7 +3,7 @@
 import * as alt from 'alt-client';
 import * as game from 'natives';
 import Ragdoll from './ragdoll';
-import { hudBrowser } from './hud.js';
+
 const ragdoll = new Ragdoll(alt.Player.local);
 
 let blip = null;

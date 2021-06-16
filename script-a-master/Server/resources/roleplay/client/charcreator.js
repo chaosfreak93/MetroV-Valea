@@ -34,7 +34,7 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
         });
 
         charcreatorBrowser.on("Client:Charcreator:cefIsReady", () => {
-            alt.setTimeout(function() {
+            alt.setTimeout(function () {
                 charcreatorBrowser.emit("CEF:Charcreator:showArea", "sexarea");
             }, 1000);
         });
@@ -115,7 +115,7 @@ function spawnCreatorPed(gender) {
         modelHash = game.getHashKey('mp_m_freemode_01');
         game.requestModel(modelHash);
     }
-    let interval = alt.setInterval(function() {
+    let interval = alt.setInterval(function () {
         if (game.hasModelLoaded(modelHash)) {
             alt.clearInterval(interval);
             pedHandle = game.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
@@ -131,7 +131,7 @@ function spawnCreatorPed(gender) {
     }, 0);
 }
 
-let destroycharcreatorBrowser = function() {
+let destroycharcreatorBrowser = function () {
     if (charcreatorBrowser != null) {
         charcreatorBrowser.destroy();
     }

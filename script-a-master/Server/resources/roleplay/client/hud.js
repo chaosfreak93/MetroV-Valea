@@ -2,9 +2,9 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
-import { closeInventoryCEF } from './inventory.js';
-import { closeTabletCEF } from './tablet.js';
-import { Raycast, GetDirectionFromRotation, setClothes, setTattoo, clearTattoos, setCorrectTattoos } from './utilities.js';
+import {closeInventoryCEF} from './inventory.js';
+import {closeTabletCEF} from './tablet.js';
+import {clearTattoos, Raycast, setClothes, setCorrectTattoos, setTattoo} from './utilities.js';
 
 const storage = alt.LocalStorage;
 export let hudBrowser = null;
@@ -52,7 +52,7 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         hudBrowser = new alt.WebView("http://resource/client/cef/hud/index.html");
 
         hudBrowser.on("Client:HUD:cefIsReady", () => {
-            alt.setTimeout(function() {
+            alt.setTimeout(function () {
                 hudBrowser.emit("CEF:HUD:updateDesireHUD", hunger, thirst);
                 hudBrowser.emit("CEF:HUD:updateMoney", currentmoney);
                 hudBrowser.emit("CEF:HUD:updateHUDVoice", 3.0);
@@ -68,7 +68,7 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
             closeFarmingCEF();
         });
 
-        alt.onServer("Client:Farming:createCEF", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE,neededItemTHREEAmount, producedItem, producedItemAmount, duration) => {
+        alt.onServer("Client:Farming:createCEF", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration) => {
             if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && ShopCefOpened == false) {
                 if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true) return;
                 hudBrowser.emit("CEF:Farming:createCEF", neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
@@ -729,7 +729,7 @@ alt.onServer("Client:Bank:createBankAccountManageForm", (bankArray, curBank) => 
 
 alt.onServer("Client:ATM:BankATMcreateCEF", (pin, accNumber, zoneName) => {
     alt.emitServer("Server:Inventory:closeCEF");
-    alt.setTimeout(function() {
+    alt.setTimeout(function () {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:ATM:BankATMcreateCEF", pin, accNumber, zoneName);
         alt.emitServer("Server:CEF:setCefStatus", true);
@@ -1228,8 +1228,12 @@ let OldVehKMPos,
 
 alt.onServer("Client:HUD:GetDistanceForVehicleKM", () => {
     if (hudBrowser != null && alt.Player.local.vehicle != null) {
-        if (curVehKMid == 0) { curVehKMid = alt.Player.local.vehicle.scriptID; }
-        if (curVehKMid != alt.Player.local.vehicle.scriptID) { GetVehKMPos = false; }
+        if (curVehKMid == 0) {
+            curVehKMid = alt.Player.local.vehicle.scriptID;
+        }
+        if (curVehKMid != alt.Player.local.vehicle.scriptID) {
+            GetVehKMPos = false;
+        }
 
         if (!GetVehKMPos) {
             OldVehKMPos = alt.Player.local.vehicle.pos;
@@ -1344,12 +1348,10 @@ alt.on('keydown', (key) => {
         alt.toggleGameControls(false);
         alt.emitServer("Server:AnimationMenu:GetAnimationItems");
         return;
-    } 
-    
-    else if (key === 39) { 
+    } else if (key === 39) {
         if (AnimationMenuUsing == false && AnimationMenuUsingPage2 == false && AnimationMenuUsingPage3 == false) return;
 
-        if (AnimationMenuUsing == false) { 
+        if (AnimationMenuUsing == false) {
             if (AnimationMenuUsingPage2 == true) {
                 AnimationMenuUsingPage3 = true;
                 AnimationMenuUsing, AnimationMenuUsingPage2 = false;
@@ -1360,9 +1362,7 @@ alt.on('keydown', (key) => {
             AnimationMenuUsing = false;
             alt.emitServer("Server:AnimationMenuPage2:GetAnimationItems");
         }
-    }
-
-    else if (key === 37) {
+    } else if (key === 37) {
         if (AnimationMenuUsing == false && AnimationMenuUsingPage2 == false && AnimationMenuUsingPage3 == false) return;
 
         if (AnimationMenuUsing == false) {
@@ -1376,9 +1376,7 @@ alt.on('keydown', (key) => {
                 alt.emitServer("Server:AnimationMenuPage2:GetAnimationItems");
             }
         }
-    }
-    
-    else if (key == 'K'.charCodeAt(0)) {
+    } else if (key == 'K'.charCodeAt(0)) {
         if (alt.Player.local.getSyncedMeta("IsCefOpen")) return;
         ClothesRadialMenuUsing = true;
         hudBrowser.focus();
@@ -1386,13 +1384,12 @@ alt.on('keydown', (key) => {
         alt.toggleGameControls(false);
         alt.emitServer("Server:ClothesRadial:GetClothesRadialItems");
         return;
-    } 
-    else if (key === 'N'.charCodeAt(0)) {
-        if (currentRadioFrequence == null || currentRadioFrequence == undefined  || alt.Player.local.getSyncedMeta("IsCefOpen")) return;
+    } else if (key === 'N'.charCodeAt(0)) {
+        if (currentRadioFrequence == null || currentRadioFrequence == undefined || alt.Player.local.getSyncedMeta("IsCefOpen")) return;
         alt.emit("SaltyChat:UseRadio", true, true);
 
         hudBrowser.emit("CEF:Sound:PlayOnce", "../utils/sounds/radio/startspeak.mp3");
-    } 
+    }
 });
 
 alt.on('keyup', (key) => {
@@ -1404,7 +1401,7 @@ alt.on('keyup', (key) => {
         hudBrowser.unfocus();
         alt.showCursor(false);
         alt.toggleGameControls(true);
-    } else if (key == 'M'.charCodeAt(0)) { 
+    } else if (key == 'M'.charCodeAt(0)) {
         if (hudBrowser == null) return;
         if (AnimationMenuUsing == true) {
             hudBrowser.emit("CEF:AnimationMenu:requestAction");
@@ -1423,14 +1420,14 @@ alt.on('keyup', (key) => {
         hudBrowser.unfocus();
         alt.showCursor(false);
         alt.toggleGameControls(true);
-    /*} else if (key == 116) { //F5
-        if (hudBrowser == null) return;
-        if (!AnimationMenuCefOpened) {
-            initializeFavouriteAnims();
-        } else {
-            hudBrowser.emit("CEF:Animations:hideAnimationMenu");
-        }
-        AnimationMenuCefOpened != AnimationMenuCefOpened;*/
+        /*} else if (key == 116) { //F5
+            if (hudBrowser == null) return;
+            if (!AnimationMenuCefOpened) {
+                initializeFavouriteAnims();
+            } else {
+                hudBrowser.emit("CEF:Animations:hideAnimationMenu");
+            }
+            AnimationMenuCefOpened != AnimationMenuCefOpened;*/
     } else if (key == 'K'.charCodeAt(0)) {
         if (hudBrowser == null || ClothesRadialMenuUsing == false) return;
         hudBrowser.emit("CEF:ClothesRadial:requestAction");
@@ -1460,7 +1457,7 @@ alt.on('keyup', (key) => {
     } else if (key === 'N'.charCodeAt(0)) {
         if (currentRadioFrequence == null || currentRadioFrequence == undefined) return;
         alt.emit("SaltyChat:UseRadio", true, false);
-    
+
         game.stopAnimTask(alt.Player.local.scriptID, "random@arrests", "generic_radio_chatter", 1);
         hudBrowser.emit("CEF:Sound:PlayOnce", "../utils/sounds/radio/stopspeak.mp3");
     }
@@ -1468,7 +1465,9 @@ alt.on('keyup', (key) => {
 
 function InterActionMenuDoAction(type, action) {
     if (selectedRaycastId != null && selectedRaycastId != 0 && type != "none") {
-        if (type == "vehicleOut" || type == "vehicleIn") { type = "vehicle"; }
+        if (type == "vehicleOut" || type == "vehicleIn") {
+            type = "vehicle";
+        }
         if (type == "vehicle") {
             vehicle = alt.Vehicle.all.find(x => x.scriptID == selectedRaycastId);
             if (!vehicle) return;
@@ -1567,7 +1566,7 @@ function InterActionMenuDoActionAnimationMenu(action) {
         } else if (action == "lean4") {
             playAnimation("amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", 1, 300000)
         } else if (action == "mechanic") {
-            playAnimation("mini@repair", "fixing_a_ped",  1, 300000)
+            playAnimation("mini@repair", "fixing_a_ped", 1, 300000)
         } else if (action == "pushup") {
             playAnimation("amb@world_human_push_ups@male@idle_a", "idle_d", 1, 300000)
         } else if (action = 'close') {
@@ -1613,13 +1612,13 @@ function InterActionMenuDoActionAnimationMenuPage3(action) {
         if (action == "injured") {
             playWalking("move_m@injured");
         } else if (action == "arrogant") {
-            playWalking("move_f@arrogant@a");        
+            playWalking("move_f@arrogant@a");
         } else if (action == "casual") {
-            playWalking("move_m@casual@a"); 
+            playWalking("move_m@casual@a");
         } else if (action == "casual4") {
-            playWalking("move_m@casual@d");        
+            playWalking("move_m@casual@d");
         } else if (action == "confident") {
-            playWalking("move_m@confident"); 
+            playWalking("move_m@confident");
         } else if (action == "drunk") {
             playWalking("move_m@drunk@a");
         } else if (action == "gangster") {
@@ -1718,14 +1717,14 @@ alt.everyTick(() => {
     game.setAudioFlag("DisableFlightMusic", true);
 });
 
-let closeFarmingCEF = function() {
+let closeFarmingCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     alt.toggleGameControls(true);
     alt.showCursor(false);
     hudBrowser.unfocus();
 }
 
-let closeBankCEF = function() {
+let closeBankCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1734,7 +1733,7 @@ let closeBankCEF = function() {
     BankAccountManageFormOpened = false;
 }
 
-let closeATMCEF = function() {
+let closeATMCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1743,7 +1742,7 @@ let closeATMCEF = function() {
     ATMcefOpened = false;
 }
 
-let closeShopCEF = function() {
+let closeShopCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1752,7 +1751,7 @@ let closeShopCEF = function() {
     ShopCefOpened = false;
 }
 
-let closeBarberCEF = function() {
+let closeBarberCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1761,7 +1760,7 @@ let closeBarberCEF = function() {
     BarberCefOpened = false;
 }
 
-let closeGarageCEF = function() {
+let closeGarageCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1770,7 +1769,7 @@ let closeGarageCEF = function() {
     GarageCefOpened = false;
 }
 
-let closeVehicleShopCEF = function() {
+let closeVehicleShopCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1779,7 +1778,7 @@ let closeVehicleShopCEF = function() {
     VehicleShopCefOpened = false;
 }
 
-let closeJobcenterCEF = function() {
+let closeJobcenterCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1788,7 +1787,7 @@ let closeJobcenterCEF = function() {
     JobcenterCefOpened = false;
 }
 
-let closeFuelstationCEF = function() {
+let closeFuelstationCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1797,7 +1796,7 @@ let closeFuelstationCEF = function() {
     FuelStationCefOpened = false;
 }
 
-let closeClothesShopCEF = function() {
+let closeClothesShopCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1806,7 +1805,7 @@ let closeClothesShopCEF = function() {
     ClothesShopCefOpened = false;
 }
 
-let closeClothesStorageCEF = function() {
+let closeClothesStorageCEF = function () {
     alt.emitServer("Server:ClothesShop:RequestCurrentSkin");
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
@@ -1815,7 +1814,7 @@ let closeClothesStorageCEF = function() {
     ClothesStorageCefOpened = false;
 }
 
-let closeBankFactionATMCEF = function() {
+let closeBankFactionATMCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1824,7 +1823,7 @@ let closeBankFactionATMCEF = function() {
     bankFactionATMCefOpened = false;
 }
 
-let closeGivePlayerBillCEF = function() {
+let closeGivePlayerBillCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1833,7 +1832,7 @@ let closeGivePlayerBillCEF = function() {
     GivePlayerBillCefOpened = false;
 }
 
-let closeRecievePlayerBillCEF = function() {
+let closeRecievePlayerBillCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1842,7 +1841,7 @@ let closeRecievePlayerBillCEF = function() {
     RecievePlayerBillCefOpened = false;
 }
 
-let closeFactionStorageCEF = function() {
+let closeFactionStorageCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1851,7 +1850,7 @@ let closeFactionStorageCEF = function() {
     FactionStorageCefOpened = false;
 }
 
-let closeVehicleTrunkCEF = function() {
+let closeVehicleTrunkCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1860,7 +1859,7 @@ let closeVehicleTrunkCEF = function() {
     VehicleTrunkCefOpened = false;
 }
 
-let closeVehicleLicensingCEF = function() {
+let closeVehicleLicensingCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1869,7 +1868,7 @@ let closeVehicleLicensingCEF = function() {
     VehicleLicensingCefOpened = false;
 }
 
-let closePlayerSearchCEF = function() {
+let closePlayerSearchCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1878,7 +1877,7 @@ let closePlayerSearchCEF = function() {
     PlayerSearchInventoryCefOpened = false;
 }
 
-let closeGivePlayerLicenseCEF = function() {
+let closeGivePlayerLicenseCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1887,7 +1886,7 @@ let closeGivePlayerLicenseCEF = function() {
     GivePlayerLicenseCefOpened = false;
 }
 
-let closeMinijobPilotCEF = function() {
+let closeMinijobPilotCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1896,7 +1895,7 @@ let closeMinijobPilotCEF = function() {
     MinijobPilotCefOpened = false;
 }
 
-let closeMinijobBusdriverCEF = function() {
+let closeMinijobBusdriverCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1905,7 +1904,7 @@ let closeMinijobBusdriverCEF = function() {
     MinijobBusdriverCefOpened = false;
 }
 
-let closeHotelRentCEF = function() {
+let closeHotelRentCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1914,7 +1913,7 @@ let closeHotelRentCEF = function() {
     HotelRentCefOpened = false;
 }
 
-let closeHouseEntranceCEF = function() {
+let closeHouseEntranceCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1923,7 +1922,7 @@ let closeHouseEntranceCEF = function() {
     HouseEntranceCefOpened = false;
 }
 
-let closeHouseManageCEF = function() {
+let closeHouseManageCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1932,7 +1931,7 @@ let closeHouseManageCEF = function() {
     HouseManageCefOpened = false;
 }
 
-let destroyTownHallHouseSelector = function() {
+let destroyTownHallHouseSelector = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
@@ -1941,7 +1940,7 @@ let destroyTownHallHouseSelector = function() {
     TownhallHouseSelectorCefOpened = false;
 }
 
-let destroyAnimationMenu = function() {
+let destroyAnimationMenu = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1949,7 +1948,7 @@ let destroyAnimationMenu = function() {
     AnimationMenuCefOpened = false;
 }
 
-let destroyClothesRadialMenu = function() {
+let destroyClothesRadialMenu = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1958,7 +1957,7 @@ let destroyClothesRadialMenu = function() {
 }
 
 
-let closeTuningCEF = function() {
+let closeTuningCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     alt.toggleGameControls(true);
     alt.showCursor(false);
@@ -1968,7 +1967,7 @@ let closeTuningCEF = function() {
     curTuningVeh = null;
 }
 
-let closeAllCEFs = function() {
+let closeAllCEFs = function () {
     if (hudBrowser == null) return;
     if (identityCardApplyCEFopened || TuningMenuCefOpened || BankAccountManageFormOpened || ATMcefOpened || ShopCefOpened || BarberCefOpened || GarageCefOpened || VehicleShopCefOpened || JobcenterCefOpened || FuelStationCefOpened || ClothesShopCefOpened || bankFactionATMCefOpened || GivePlayerBillCefOpened || FactionStorageCefOpened || RecievePlayerBillCefOpened || VehicleTrunkCefOpened || VehicleLicensingCefOpened || PlayerSearchInventoryCefOpened || GivePlayerLicenseCefOpened || MinijobPilotCefOpened || MinijobBusdriverCefOpened || HotelRentCefOpened || HouseEntranceCefOpened || HouseManageCefOpened || TownhallHouseSelectorCefOpened || AnimationMenuCefOpened) {
         hudBrowser.emit("CEF:General:hideAllCEFs");

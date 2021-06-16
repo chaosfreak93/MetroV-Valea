@@ -2,6 +2,7 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
+
 const storage = alt.LocalStorage;
 
 alt.on('keyup', (key) => {

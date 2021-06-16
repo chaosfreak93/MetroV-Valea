@@ -55,13 +55,11 @@ function loadAnimDict(animDict) {
             if (tries >= 100) {
                 alt.clearInterval(interval);
                 rej(`Timeout reached loading dictionary ${animDict}`);
-            }
-            else {
+            } else {
                 if (!game.hasAnimDictLoaded(animDict)) {
                     game.requestAnimDict(animDict);
                     tries++;
-                }
-                else {
+                } else {
                     alt.clearInterval(interval);
                     res(true);
                 }

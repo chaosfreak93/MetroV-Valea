@@ -250,20 +250,20 @@ ul.charlist {
     margin-bottom: 2rem;
 }
 
-ul.charlist>li.list-group-item {
+ul.charlist > li.list-group-item {
     background: rgba(0, 0, 0, 0.4);
     padding: 1.25rem 1.25rem;
     text-align: left;
 }
 
-ul.charlist>li.list-group-item>span.name {
+ul.charlist > li.list-group-item > span.name {
     color: #d2d2d2;
     font-family: OSL;
     font-weight: bold;
     line-height: 2rem;
 }
 
-ul.charlist>li.list-group-item>button.btn.charbtn {
+ul.charlist > li.list-group-item > button.btn.charbtn {
     padding: 0.35rem 0.65rem;
     color: #d2d2d2;
     font-weight: bold;
@@ -273,23 +273,23 @@ ul.charlist>li.list-group-item>button.btn.charbtn {
     float: right;
 }
 
-ul.charlist>li.list-group-item>button.btn.charbtn.play {
+ul.charlist > li.list-group-item > button.btn.charbtn.play {
     background: #1eff8075;
 }
 
-ul.charlist>li.list-group-item>button.btn.charbtn.play:hover {
+ul.charlist > li.list-group-item > button.btn.charbtn.play:hover {
     background: rgb(25, 160, 84);
 }
 
-ul.charlist>li.list-group-item>button.btn.charbtn.delete {
+ul.charlist > li.list-group-item > button.btn.charbtn.delete {
     background: #b32222c4;
 }
 
-ul.charlist>li.list-group-item>button.btn.charbtn.delete:hover {
+ul.charlist > li.list-group-item > button.btn.charbtn.delete:hover {
     background: rgb(181, 39, 39);
 }
 
-div#SpawnSelectArea>ul {
+div#SpawnSelectArea > ul {
     list-style: none;
     height: 350px;
     border-radius: 4px;
@@ -297,7 +297,7 @@ div#SpawnSelectArea>ul {
     justify-content: center;
 }
 
-div#SpawnSelectArea>ul>li {
+div#SpawnSelectArea > ul > li {
     position: relative;
     float: left;
     height: 310px;
@@ -319,28 +319,28 @@ div#SpawnSelectArea>ul>li {
     text-shadow: 4px 4px 2px black;
 }
 
-div#SpawnSelectArea>ul>li.lastpos {
+div#SpawnSelectArea > ul > li.lastpos {
     width: 250px;
     background-image: url(../utils/img/mountchiliad.jpg);
 }
 
-div#SpawnSelectArea>ul>li.airport {
+div#SpawnSelectArea > ul > li.airport {
     background-image: url(../utils/img/airport.png);
 }
 
-div#SpawnSelectArea>ul>li.beach {
+div#SpawnSelectArea > ul > li.beach {
     background-image: url(../utils/img/losssantos.png);
 }
 
-div#SpawnSelectArea>ul>li.sandyshores {
+div#SpawnSelectArea > ul > li.sandyshores {
     background-image: url(../utils/img/bridge.jpg);
 }
 
-div#SpawnSelectArea>ul>li.paletobay {
+div#SpawnSelectArea > ul > li.paletobay {
     background-image: url(../utils/img/paletobay.jpg);
 }
 
-div#SpawnSelectArea>ul>li:hover {
+div#SpawnSelectArea > ul > li:hover {
     cursor: pointer;
     filter: grayscale(0.4);
     font-weight: bold;
@@ -349,7 +349,7 @@ div#SpawnSelectArea>ul>li:hover {
 
 /* Char death Dropdown */
 
-div#chardeatharea>.dropdown>.dropdown-caption>i.fas.fa-angle-double-down.dropdown {
+div#chardeatharea > .dropdown > .dropdown-caption > i.fas.fa-angle-double-down.dropdown {
     background: rgba(0, 0, 0, 0.5);
     font-size: 1rem;
     padding-left: 7px;
@@ -360,14 +360,14 @@ div#chardeatharea>.dropdown>.dropdown-caption>i.fas.fa-angle-double-down.dropdow
     margin-right: 0.25rem;
 }
 
-div#chardeatharea>div.dropdown>div.dropdown-content>div.subboxcontent {
+div#chardeatharea > div.dropdown > div.dropdown-content > div.subboxcontent {
     background: rgba(10, 10, 10, 0.38);
     padding-left: 8px;
     padding-top: 6px;
     border-bottom: 1px solid #252525;
 }
 
-div#chardeatharea>div.dropdown>div.dropdown-content>div.subboxcontent>p {
+div#chardeatharea > div.dropdown > div.dropdown-content > div.subboxcontent > p {
     color: #d2d2d2;
     font-family: PT;
     font-size: 0.8rem;
@@ -375,14 +375,14 @@ div#chardeatharea>div.dropdown>div.dropdown-content>div.subboxcontent>p {
     margin-bottom: 0.05rem;
 }
 
-div#chardeatharea>.dropdown .dropdown-caption {
+div#chardeatharea > .dropdown .dropdown-caption {
     display: block;
     box-sizing: border-box;
     padding: 15px;
     transition: all .25 ease;
 }
 
-div#chardeatharea>.dropdown .dropdown-selector {
+div#chardeatharea > .dropdown .dropdown-selector {
     position: absolute;
     top: 0;
     left: 0;
@@ -392,7 +392,7 @@ div#chardeatharea>.dropdown .dropdown-selector {
     opacity: 0;
 }
 
-div#chardeatharea>.dropdown .dropdown-content {
+div#chardeatharea > .dropdown .dropdown-content {
     position: relative;
     z-index: 2;
     box-sizing: border-box;
@@ -402,12 +402,12 @@ div#chardeatharea>.dropdown .dropdown-content {
     overflow: hidden;
 }
 
-div#chardeatharea>.dropdown .dropdown-selector:checked~.dropdown-content {
+div#chardeatharea > .dropdown .dropdown-selector:checked ~ .dropdown-content {
     max-height: 500px;
     opacity: 1;
 }
 
-div#chardeatharea>.dropdown {
+div#chardeatharea > .dropdown {
     font-family: Proxima Nova, Arial, sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 14px;
@@ -416,7 +416,7 @@ div#chardeatharea>.dropdown {
     border: 1px solid #0000004a;
 }
 
-div#chardeatharea>.dropdown .dropdown-caption {
+div#chardeatharea > .dropdown .dropdown-caption {
     line-height: 20px;
     padding: 5px 10px;
     color: #d2d2d2;
@@ -427,23 +427,23 @@ div#chardeatharea>.dropdown .dropdown-caption {
     border-radius: 2px;
 }
 
-div#chardeatharea>.dropdown .dropdown-caption:after {
+div#chardeatharea > .dropdown .dropdown-caption:after {
     -webkit-transform: rotateZ(-45deg);
     transform: rotateZ(-45deg);
     right: 17px;
 }
 
-div#chardeatharea>.dropdown-selector:checked~.dropdown-caption:before {
+div#chardeatharea > .dropdown-selector:checked ~ .dropdown-caption:before {
     -webkit-transform: rotateZ(135deg);
     transform: rotateZ(135deg);
 }
 
-div#chardeatharea>.dropdown-selector:checked~.dropdown-caption:after {
+div#chardeatharea > .dropdown-selector:checked ~ .dropdown-caption:after {
     -webkit-transform: rotateZ(-135deg);
     transform: rotateZ(-135deg);
 }
 
-div#chardeatharea>.dropdown .dropdown-content li {
+div#chardeatharea > .dropdown .dropdown-content li {
     list-style: none;
     display: block;
     padding: 15px;
@@ -454,12 +454,12 @@ div#chardeatharea>.dropdown .dropdown-content li {
     transition: all 0.3s ease-in-out;
 }
 
-div#chardeatharea>.dropdown>.dropdown-content>li:hover {
+div#chardeatharea > .dropdown > .dropdown-content > li:hover {
     cursor: pointer;
     background: rgba(27, 56, 93, 0.16);
 }
 
-div#chardeatharea>.dropdown>.dropdown-content>li>span {
+div#chardeatharea > .dropdown > .dropdown-content > li > span {
     color: #d2d2d2;
     font-family: PT;
     font-weight: bold;

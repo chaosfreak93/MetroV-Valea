@@ -41,7 +41,7 @@ alt.onServer("Client:HUD:CreateCEF", () => {
     adminMenuBrowser.on("Client:AdminMenu:SetMeta", (username, selectedfield) => {
         alt.emitServer("Server:AdminMenu:GetPlayer", "SetMeta", username, selectedfield);
     });
-    
+
     adminMenuBrowser.on("Client:AdminMenu:SetGameControls", (state) => {
         if (state) {
             alt.toggleGameControls(false);
@@ -104,7 +104,10 @@ alt.onServer("Client:Adminmenu:ReceiveMeta", (GetPlayerPlayer) => {
 
     adminmenu_latestonlineactionarray.forEach(a => {
         var tempmeta = GetPlayerPlayer.getMeta(a);
-        if (tempmeta == undefined) { tempmeta = false; GetPlayerPlayer.setMeta(a, false); }
+        if (tempmeta == undefined) {
+            tempmeta = false;
+            GetPlayerPlayer.setMeta(a, false);
+        }
         if (tempmeta != undefined && tempmeta) newarray.push(`yaes${tempmeta}${count}`);
         else if (tempmeta != undefined && !tempmeta) newarray.push(`yeno${tempmeta}${count}`);
         count++;
@@ -139,7 +142,7 @@ alt.onServer("Client:AdminMenu:GetWaypointInfo", () => {
         alt.setTimeout(() => {
             const [found, groundZ] = game.getGroundZFor3dCoord(coords.x, coords.y, coords.z + 100, 5, false, false);
             coords = new alt.Vector3(coords.x, coords.y, groundZ + 1);
-            alt.emitServer('Server:AdminMenu:TeleportWaypoint', coords.x, coords.y, coords.z);  
+            alt.emitServer('Server:AdminMenu:TeleportWaypoint', coords.x, coords.y, coords.z);
         }, 50);
     }
 });
@@ -157,7 +160,7 @@ alt.onServer("Client:AdminMenu:Godmode", (info) => {
 function waitFor(func, ...args) {
     return new Promise((resolve, reject) => {
         const interval = alt.setInterval(() => {
-            if(!func(...args)) return;
+            if (!func(...args)) return;
             resolve();
             alt.clearInterval(interval);
             alt.clearTimeout(timeout);
@@ -222,27 +225,27 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
                 /*if (player.scriptID === alt.Player.local.scriptID) {
                     continue;
                 }*/
-        
+
                 const name = player.getSyncedMeta('NAME');
                 if (!name) continue;
-            
+
                 if (!game.hasEntityClearLosToEntity(alt.Player.local.scriptID, player.scriptID, 17)) continue;
-            
+
                 let dist = distance2d(player.pos, alt.Player.local.pos);
                 if (dist > 25) continue;
 
                 const isChatting = player.getSyncedMeta('CHATTING');
-                const pos = { ...game.getPedBoneCoords(player.scriptID, 12844, 0, 0, 0) };
+                const pos = {...game.getPedBoneCoords(player.scriptID, 12844, 0, 0, 0)};
                 pos.z += 0.5;
-            
+
                 let scale = 1 - (0.8 * dist) / 25;
                 let fontSize = 0.6 * scale;
-            
+
                 const lineHeight = game.getTextScaleHeight(fontSize, 4);
                 const entity = player.vehicle ? player.vehicle.scriptID : player.scriptID;
                 const vector = game.getEntityVelocity(entity);
                 const frameTime = game.getFrameTime();
-            
+
                 game.setDrawOrigin(
                     pos.x + vector.x * frameTime,
                     pos.y + vector.y * frameTime,
@@ -258,11 +261,11 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
                 game.setTextOutline();
                 game.addTextComponentSubstringPlayerName(isChatting ? `${name}~r~*` : `${name}`);
                 game.endTextCommandDisplayText(0, 0);
-            
+
                 if (!game.isEntityDead(player.scriptID)) {
                     drawBarBackground(100, lineHeight, scale, 0.25, 0, 147, 29, 255);
                     drawBar(game.getEntityHealth(player.scriptID) - 100, lineHeight, scale, 0.25, 0, 224, 11, 255);
-            
+
                     if (game.getPedArmour(player.scriptID) > 0) {
                         drawBarBackground(100, lineHeight, scale, 0.75, 0, 45, 142, 255);
                         drawBar(game.getPedArmour(player.scriptID), lineHeight, scale, 0.75, 0, 74, 234, 255);
@@ -329,7 +332,6 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
         });
     }
 });
-
 
 
 /* -------------------------- FUNCTIONS ---------------------------*/
@@ -412,20 +414,6 @@ export default class NoClip {
     static enabled = false;
     static speed = 1.0;
     static everyTick = null;
-
-    static start() {
-        if (NoClip.enabled) return;
-        NoClip.enabled = true;
-        game.freezeEntityPosition(alt.Player.local.scriptID, true);
-        this.everyTick = alt.everyTick(NoClip.keyHandler);
-    }
-    static stop() {
-        if (!NoClip.enabled) return;
-        NoClip.enabled = false;
-        game.freezeEntityPosition(alt.Player.local.scriptID, false);
-        alt.clearEveryTick(this.everyTick);
-    }
-
     static KEYS = {
         FORWARD: 32,
         BACKWARD: 33,
@@ -435,6 +423,21 @@ export default class NoClip {
         DOWN: 36,
         SHIFT: 21,
     };
+
+    static start() {
+        if (NoClip.enabled) return;
+        NoClip.enabled = true;
+        game.freezeEntityPosition(alt.Player.local.scriptID, true);
+        this.everyTick = alt.everyTick(NoClip.keyHandler);
+    }
+
+    static stop() {
+        if (!NoClip.enabled) return;
+        NoClip.enabled = false;
+        game.freezeEntityPosition(alt.Player.local.scriptID, false);
+        alt.clearEveryTick(this.everyTick);
+    }
+
     static keyHandler() {
         let currentPos = alt.Player.local.pos;
         let speed = NoClip.speed;

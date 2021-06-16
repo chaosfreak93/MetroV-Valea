@@ -12,7 +12,7 @@
 @mixin user-select($select) {
   $select: unquote($select);
   @include experimental(user-select, $select,
-    -moz, -webkit, not(-o), -ms, -khtml, official
+          -moz, -webkit, not(-o), -ms, -khtml, official
   );
 }
 
@@ -40,8 +40,16 @@
 //       }
 //     }
 @mixin input-placeholder {
-  &:-ms-input-placeholder { @content; }
-  &:-moz-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
 }

@@ -9,7 +9,7 @@
   @each $item in $items {
     @if $item != null {
       $full: $full, $item;
-    }    
+    }
   }
   @return $full;
 }
