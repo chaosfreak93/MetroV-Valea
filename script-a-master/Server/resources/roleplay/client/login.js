@@ -11,7 +11,7 @@ const storage = alt.LocalStorage;
 
 alt.onServer('Client:Login:CreateCEF', () => {
     if (loginBrowser == null) {
-        loginCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 3280, 5220, 26, 0, 0, 240, 50, true, 2);
+        loginCam = game.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280.0, 5220.0, 26.0, 0, 0, 240, 50, true, 2);
         game.setCamActive(loginCam, true);
         game.renderScriptCams(true, false, 0, true, false, 0);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
@@ -108,7 +108,7 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     game.setPedHairColor(alt.Player.local.scriptID, parseInt(headoverlays[2][13]), parseInt(headoverlays[1][13]));
 
     for (let i = 0; i < 20; i++) {
-        game.setPedFaceFeature(alt.Player.local.scriptID, i, facefeatures[i]);
+        game.setPedFaceFeature(alt.Player.local.scriptID, i, parseFloat(facefeatures[i]));
     }
 });
 
@@ -153,7 +153,7 @@ alt.onServer("Client:Login:showArea", (area) => {
                 loginCam = null;
             }
             game.setEntityAlpha(alt.Player.local.scriptID, 0, 0);
-            loginCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+            loginCam = game.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003.0, -98.6, 0, 0, 358, 18, true, 2);
             game.setCamActive(loginCam, true);
             game.renderScriptCams(true, false, 0, true, false, 0);
         }
@@ -199,10 +199,10 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
     }
 
     if (gender == true) {
-        loginModelHash = game.getHashKey('mp_f_freemode_01');
+        loginModelHash = alt.hash('mp_f_freemode_01');
         game.requestModel(loginModelHash);
     } else if (gender == false) {
-        loginModelHash = game.getHashKey('mp_m_freemode_01');
+        loginModelHash = alt.hash('mp_m_freemode_01');
         game.requestModel(loginModelHash);
     }
     alt.setTimeout(function () {
@@ -237,7 +237,7 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
             game.setPedHairColor(loginPedHandle, parseInt(headoverlays[2][13]), parseInt(headoverlays[1][13]));
 
             for (let i = 0; i < 20; i++) {
-                game.setPedFaceFeature(loginPedHandle, i, facefeatures[i]);
+                game.setPedFaceFeature(loginPedHandle, i, parseFloat(facefeatures[i]));
             }
         }
     }, 200);
