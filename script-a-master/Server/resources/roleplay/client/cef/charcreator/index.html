@@ -2,12 +2,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="../utils/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link href="../utils/bootstrap-datepicker3.css" rel="stylesheet">
+    <link rel="stylesheet" href="../utils/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../utils/bootstrap-datepicker3.css">
 
     <title>Charaktereditor</title>
 </head>
@@ -20,24 +20,22 @@
     <div class="box2">
         <div id="SexArea">
             <p class="title">WÄHLE DEIN GESCHLECHT</p>
-            <img class="charsex g" id="femalegender" src="../utils/img/girl.png">
-            <img class="charsex m" id="malegender" src="../utils/img/men.png">
+            <img id="femalegender" class="charsex g" src="../utils/img/girl.png">
+            <img id="malegender" class="charsex m" src="../utils/img/men.png">
             <hr class="cut charsex">
             <span class="chartitle left">WEIBLICH</span>
             <span class="chartitle right">MÄNNLICH</span>
         </div>
     </div>
 
-    <p class="info">Wähle dein Geschlecht aus um mit der Charaktererstellung fortzufahren. Beachte dass du dein
-        Geschlecht im Nachhinein NICHT mehr ändern kannst.</p>
+    <p class="info">Wähle dein Geschlecht aus um mit der Charaktererstellung fortzufahren. Beachte dass du dein Geschlecht im Nachhinein NICHT mehr ändern kannst.</p>
 </div>
-<input class="inputcustom" id="charrotationslider" max="360" min="0" oninput="changeSliderRot();" type="range"
-       val="180">
+<input class="inputcustom" type="range" id="charrotationslider" val="180" min="0" max="360" oninput="changeSliderRot();">
 <div class="charcreatorbox">
     <div id="creatorarea">
         <p class="title">ERSTELLE DEINEN CHARAKTER</p>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Kopfbehaarung
             </div>
@@ -46,9 +44,7 @@
                     <p>Haare</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="HairVariation" max="21" min="0"
-                                   name="auswertung" oninput="ChangeHair(0, 'Hair');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="HairVariation" oninput="ChangeHair(0, 'Hair');" type="range" name="auswertung" min="0" step="1" max="21" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -56,9 +52,7 @@
                     <p>Primärfarbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="HairColor1" max="63" min="0"
-                                   name="auswertung" oninput="ChangeHair(1, 'HairColor1');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="HairColor1" oninput="ChangeHair(1, 'HairColor1');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -66,16 +60,14 @@
                     <p>Sekundärfarbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="HairColor2" max="63" min="0"
-                                   name="auswertung" oninput="ChangeHair(2, 'HairColor2');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="HairColor2" oninput="ChangeHair(2, 'HairColor2');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Gesichtsbehaarung
             </div>
@@ -84,9 +76,7 @@
                     <p>Bart</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="BeardVariation" max="30" min="-1"
-                                   name="auswertung" oninput="ChangeHair(3, 'Beard');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="BeardVariation" oninput="ChangeHair(3, 'Beard');" type="range" name="auswertung" min="-1" step="1" max="30" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -94,9 +84,7 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="BeardAlpha" max="1" min="0"
-                                   name="auswertung" oninput="ChangeHair(7, 'BeardAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="BeardAlpha" oninput="ChangeHair(7, 'BeardAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
@@ -104,16 +92,14 @@
                     <p>Farbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="BeardColor" max="63" min="0"
-                                   name="auswertung" oninput="ChangeHair(4, 'BeardColor');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="BeardColor" oninput="ChangeHair(4, 'BeardColor');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Brustbehaarung
             </div>
@@ -122,9 +108,7 @@
                     <p>Brusthaare</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="ChestHairVariation" max="16"
-                                   min="-1" name="auswertung" oninput="ChangeHair(9, 'ChestHair');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="ChestHairVariation" oninput="ChangeHair(9, 'ChestHair');" type="range" name="auswertung" min="-1" step="1" max="16" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -132,9 +116,7 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="ChestHairAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHair(11, 'ChestHairAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="ChestHairAlpha" oninput="ChangeHair(11, 'ChestHairAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
@@ -142,16 +124,14 @@
                     <p>Farbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="ChestHairColor" max="63"
-                                   min="0" name="auswertung" oninput="ChangeHair(10, 'ChestHairColor');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="ChestHairColor" oninput="ChangeHair(10, 'ChestHairColor');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Augenbehaarung
             </div>
@@ -160,9 +140,7 @@
                     <p>Augenbrauen</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyebrowsVariation" max="30"
-                                   min="-1" name="auswertung" oninput="ChangeHair(5, 'Eyebrows');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="EyebrowsVariation" oninput="ChangeHair(5, 'Eyebrows');" type="range" name="auswertung" min="-1" step="1" max="30" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -170,9 +148,7 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyebrowsAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHair(8, 'EyebrowsAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="EyebrowsAlpha" oninput="ChangeHair(8, 'EyebrowsAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
@@ -180,9 +156,7 @@
                     <p>Farbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyebrowsColor" max="63"
-                                   min="0" name="auswertung" oninput="ChangeHair(6, 'EyebrowsColor');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="EyebrowsColor" oninput="ChangeHair(6, 'EyebrowsColor');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -190,9 +164,7 @@
                     <p>Augenbrauenhöhe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyebrowsHeight" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(1);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="EyebrowsHeight" oninput="ChangeFace(1);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -200,16 +172,14 @@
                     <p>Augenbrauenbreite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyebrowsWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(2);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="EyebrowsWidth" oninput="ChangeFace(2);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Abstammung
             </div>
@@ -218,9 +188,7 @@
                     <p>Vater</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="FatherVariation" max="23"
-                                   min="0" name="auswertung" oninput="ChangeHead(0, 'FatherVariation');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="FatherVariation" oninput="ChangeHead(0, 'FatherVariation');" type="range" name="auswertung" min="0" step="1" max="23" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -228,9 +196,7 @@
                     <p>Mutter</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="MotherVariation" max="19"
-                                   min="0" name="auswertung" oninput="ChangeHead(1, 'MotherVariation');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="MotherVariation" oninput="ChangeHead(1, 'MotherVariation');" type="range" name="auswertung" min="0" step="1" max="19" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -238,16 +204,14 @@
                     <p>Mischung / Mix</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="FatherMotherMix" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(2, 'FatherMotherMix');" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="FatherMotherMix" oninput="ChangeHead(2, 'FatherMotherMix');" type="range" name="auswertung" min="0" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Alterung
             </div>
@@ -256,9 +220,7 @@
                     <p>Alterung</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="AgeingVariation" max="14"
-                                   min="-1" name="auswertung" oninput="ChangeHead(14, 'AgeingVariation');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="AgeingVariation" oninput="ChangeHead(14, 'AgeingVariation');" type="range" name="auswertung" min="-1" step="1" max="14" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -266,16 +228,14 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="AgeingAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(13, 'AgeingAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="AgeingAlpha" oninput="ChangeHead(13, 'AgeingAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Hautfarbe
             </div>
@@ -284,9 +244,7 @@
                     <p>Vaters Hautfarbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="FatherSkin" max="23"
-                                   min="0" name="auswertung" oninput="ChangeHead(21, 'FatherSkin');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="FatherSkin" oninput="ChangeHead(21, 'FatherSkin');" type="range" name="auswertung" min="0" step="1" max="23" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -294,9 +252,7 @@
                     <p>Mutters Hautfarbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="MotherSkin" max="19"
-                                   min="0" name="auswertung" oninput="ChangeHead(22, 'MotherSkin');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="MotherSkin" oninput="ChangeHead(22, 'MotherSkin');" type="range" name="auswertung" min="0" step="1" max="19" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -304,16 +260,14 @@
                     <p>Mischung / Mix</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="FatherMotherSkinMix"
-                                   max="1" min="0" name="auswertung" oninput="ChangeHead(23, 'FatherMotherSkinMix');" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="FatherMotherSkinMix" oninput="ChangeHead(23, 'FatherMotherSkinMix');" type="range" name="auswertung" min="0" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Augen
             </div>
@@ -322,9 +276,7 @@
                     <p>Augengröße</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyesSize" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(3);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="EyesSize" oninput="ChangeFace(3);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -332,9 +284,7 @@
                     <p>Augenfarbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="EyesColor" max="31" min="0"
-                                   name="auswertung" oninput="ChangeHead(24, 'EyesColor');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="EyesColor" oninput="ChangeHead(24, 'EyesColor');" type="range" name="auswertung" min="0" step="1" max="31" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -342,9 +292,7 @@
                     <p>Makeup</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="MakeupVariation" max="74"
-                                   min="-1" name="auswertung" oninput="ChangeHead(7, 'MakeupVariation');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="MakeupVariation" oninput="ChangeHead(7, 'MakeupVariation');" type="range" name="auswertung" min="-1" step="1" max="74" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -352,16 +300,14 @@
                     <p>Makeup Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="MakeupAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(6, 'MakeupAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="MakeupAlpha" oninput="ChangeHead(6, 'MakeupAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Teint
             </div>
@@ -370,9 +316,7 @@
                     <p>Teint</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="ComplexionIndex" max="11"
-                                   min="-1" name="auswertung" oninput="ChangeHead(16, 'ComplexionIndex');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="ComplexionIndex" oninput="ChangeHead(16, 'ComplexionIndex');" type="range" name="auswertung" min="-1" step="1" max="11" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -380,16 +324,14 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="ComplexionAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(15, 'ComplexionAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="ComplexionAlpha" oninput="ChangeHead(15, 'ComplexionAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Wangenröte
             </div>
@@ -398,9 +340,7 @@
                     <p>Wangenröte</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="WangenBlushVariation"
-                                   max="6" min="-1" name="auswertung" oninput="ChangeHead(4, 'WangenBlushVariation');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="WangenBlushVariation" oninput="ChangeHead(4, 'WangenBlushVariation');" type="range" name="auswertung" min="-1" step="1" max="6" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -408,9 +348,7 @@
                     <p>Farbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="WangenBlushColor" max="63"
-                                   min="0" name="auswertung" oninput="ChangeHead(5, 'WangenBlushColor');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="WangenBlushColor" oninput="ChangeHead(5, 'WangenBlushColor');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -418,16 +356,14 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="WangenBlushAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(3, 'WangenBlushAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="WangenBlushAlpha" oninput="ChangeHead(3, 'WangenBlushAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Gesichtsflecken
             </div>
@@ -436,9 +372,7 @@
                     <p>Flecken</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="BlemishesIndex" max="23"
-                                   min="-1" name="auswertung" oninput="ChangeHead(12, 'Blemishes');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="BlemishesIndex" oninput="ChangeHead(12, 'Blemishes');" type="range" name="auswertung" min="-1" step="1" max="23" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -446,16 +380,14 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="BlemishesAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(11, 'BlemishesAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="BlemishesAlpha" oninput="ChangeHead(11, 'BlemishesAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Leberflecken & Sommersprossen
             </div>
@@ -464,9 +396,7 @@
                     <p>Variation</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="MolesIndex" max="17" min="-1"
-                                   name="auswertung" oninput="ChangeHead(20, 'Moles');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="MolesIndex" oninput="ChangeHead(20, 'Moles');" type="range" name="auswertung" min="-1" step="1" max="17" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -474,16 +404,14 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="MolesAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(19, 'MolesAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="MolesAlpha" oninput="ChangeHead(19, 'MolesAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Sonnenschaden
             </div>
@@ -492,9 +420,7 @@
                     <p>Sonnenschaden</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="SunDamageIndex" max="10"
-                                   min="-1" name="auswertung" oninput="ChangeHead(18, 'SunDamage');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="SunDamageIndex" oninput="ChangeHead(18, 'SunDamage');" type="range" name="auswertung" min="-1" step="1" max="10" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -502,16 +428,14 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="SunDamageAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(17, 'SunDamageAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="SunDamageAlpha" oninput="ChangeHead(17, 'SunDamageAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Lippen
             </div>
@@ -520,9 +444,7 @@
                     <p>Lippenstift</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="LipstickVariation" max="9"
-                                   min="-1" name="auswertung" oninput="ChangeHead(9, 'LipstickVariation');" step="1" type="range" value="-1">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="LipstickVariation" oninput="ChangeHead(9, 'LipstickVariation');" type="range" name="auswertung" min="-1" step="1" max="9" value="-1" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -530,9 +452,7 @@
                     <p>Farbe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="LipstickColor" max="63"
-                                   min="0" name="auswertung" oninput="ChangeHead(10, 'LipstickColor');" step="1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="LipstickColor" oninput="ChangeHead(10, 'LipstickColor');" type="range" name="auswertung" min="0" step="1" max="63" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -540,9 +460,7 @@
                     <p>Sichtbarkeit</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="LipstickAlpha" max="1"
-                                   min="0" name="auswertung" oninput="ChangeHead(8, 'LipstickAlpha');" step="0.1" type="range" value="1">
-                            <output class="numberfield" name="numerisch">1</output>
+                            <input id="LipstickAlpha" oninput="ChangeHead(8, 'LipstickAlpha');" type="range" name="auswertung" min="0" step="0.1" max="1" value="1" class="slider"><output name="numerisch" class="numberfield">1</output>
                         </form>
                     </div>
                 </div>
@@ -550,16 +468,14 @@
                     <p>Lippenfülle</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="lipsfill" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(4);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="lipsfill" oninput="ChangeFace(4);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Kinn
             </div>
@@ -568,9 +484,7 @@
                     <p>Form</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="chinShape" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(5);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="chinShape" oninput="ChangeFace(5);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -578,9 +492,7 @@
                     <p>Position</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="chinPosition" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(6);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="chinPosition" oninput="ChangeFace(6);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -588,9 +500,7 @@
                     <p>Länge</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="chinLength" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(7);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="chinLength" oninput="ChangeFace(7);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -598,16 +508,14 @@
                     <p>Breite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="chinWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(8);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="chinWidth" oninput="ChangeFace(8);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Kiefer
             </div>
@@ -616,9 +524,7 @@
                     <p>Breite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="jawWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(9);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="jawWidth" oninput="ChangeFace(9);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -626,16 +532,14 @@
                     <p>Höhe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="jawHeight" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(10);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="jawHeight" oninput="ChangeFace(10);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Wangen
             </div>
@@ -644,9 +548,7 @@
                     <p>Knochen Höhe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="cheekboneHeight" max="1" min="-1"
-                                   name="auswertung" oninput="ChangeFace(11);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="cheekboneHeight" oninput="ChangeFace(11);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -654,9 +556,7 @@
                     <p>Knochen Breite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="cheekboneWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(12);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="cheekboneWidth" oninput="ChangeFace(12);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -664,16 +564,14 @@
                     <p>Wangen Breite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="cheeksWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(13);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="cheeksWidth" oninput="ChangeFace(13);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Nacken
             </div>
@@ -682,16 +580,14 @@
                     <p>Breite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="neckWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(14);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="neckWidth" oninput="ChangeFace(14);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dropdown">
-            <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+            <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
             <div class="dropdown-caption">
                 <i class="fas fa-angle-double-right dropdown"></i> Nase
             </div>
@@ -700,9 +596,7 @@
                     <p>Spitze</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="noseTip" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(15);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="noseTip" oninput="ChangeFace(15);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -710,9 +604,7 @@
                     <p>Breite</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="noseWidth" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(20);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="noseWidth" oninput="ChangeFace(20);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -720,9 +612,7 @@
                     <p>Höhe</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="noseHeight" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(16);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="noseHeight" oninput="ChangeFace(16);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -730,9 +620,7 @@
                     <p>Länge</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="noseLength" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(17);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="noseLength" oninput="ChangeFace(17);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -740,9 +628,7 @@
                     <p>Rücken</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="noseBridge" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(18);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="noseBridge" oninput="ChangeFace(18);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -750,9 +636,7 @@
                     <p>Verschiebung</p>
                     <div class="nose-pegel">
                         <form oninput="numerisch.value=auswertung.value">
-                            <input class="slider" id="noseShift" max="1" min="-1" name="auswertung"
-                                   oninput="ChangeFace(19);" step="0.1" type="range" value="0">
-                            <output class="numberfield" name="numerisch">0</output>
+                            <input id="noseShift" oninput="ChangeFace(19);" type="range" name="auswertung" min="-1" step="0.1" max="1" value="0" class="slider"><output name="numerisch" class="numberfield">0</output>
                         </form>
                     </div>
                 </div>
@@ -792,25 +676,22 @@
         </div>
     </div>-->
     <div class="dropdown">
-        <input class="dropdown-selector" onclick="clickdrop(this);" type="checkbox"/>
+        <input onclick="clickdrop(this);" class="dropdown-selector" type="checkbox" />
         <div class="dropdown-caption">
             <i class="fas fa-angle-double-right dropdown"></i> Personalien deines Charakters
         </div>
         <div class="dropdown-content">
             <div class="subboxcontent">
                 <p>Vorname</p>
-                <input id="vornameinput" maxlength="30" name="vornameinput" placeholder="Vorname eingeben.." spellcheck="false"
-                       type="text">
+                <input id="vornameinput" maxlength="30" name="vornameinput" spellcheck="false" type="text" placeholder="Vorname eingeben..">
             </div>
             <div class="subboxcontent">
                 <p>Nachname</p>
-                <input id="nachnameinput" maxlength="30" name="nachnameinput" placeholder="Nachname eingeben.." spellcheck="false"
-                       type="text">
+                <input id="nachnameinput" maxlength="30" name="nachnameinput" spellcheck="false" type="text" placeholder="Nachname eingeben..">
             </div>
             <div class="subboxcontent">
                 <p>Geburtsdatum</p>
-                <input id="birthday" maxlength="30" name="birthday" placeholder="dd.mm.yyyy" spellcheck="false"
-                       type="text">
+                <input id="birthday" maxlength="30" name="birthday" spellcheck="false" type="text" placeholder="dd.mm.yyyy">
             </div>
         </div>
     </div>
@@ -871,7 +752,7 @@
         [0, 0, false]
     ];
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         var date_input = $('input[name="birthday"]');
         var options = {
             format: "dd.mm.yyyy",
@@ -895,12 +776,12 @@
         alt.emit("Client:Charcreator:cefIsReady");
     });
 
-    $('#femalegender').on('click', function () {
+    $('#femalegender').on('click', function() {
         alt.emit('Client:Charcreator:ChangeGender', true);
         gender = true;
     });
 
-    $("#malegender").click(function () {
+    $("#malegender").click(function() {
         alt.emit('Client:Charcreator:ChangeGender', false);
         gender = false;
     });
@@ -1502,27 +1383,23 @@
         $("#charerror").fadeOut(800);
         $(".charcreatorbox").fadeOut(800);
         $("#charcreatorsecondbox").fadeOut(800);
-        $(".box").fadeOut(800, function () {
+        $(".box").fadeOut(800, function() {
             $("#SexArea").hide();
             $("#creatorarea").hide();
 
             switch (area) {
                 case "sexarea":
-                    $(".box").fadeTo(800, 1, function () {
-                    });
+                    $(".box").fadeTo(800, 1, function() {});
                     $(".box").fadeIn(800);
                     $("#SexArea").fadeIn(800);
                     break;
                 case "creatorarea":
-                    $(".charcreatorbox").fadeTo(800, 1, function () {
-                    });
-                    $("#charcreatorsecondbox").fadeTo(800, 1, function () {
-                    });
+                    $(".charcreatorbox").fadeTo(800, 1, function() {});
+                    $("#charcreatorsecondbox").fadeTo(800, 1, function() {});
                     $(".charcreatorbox").fadeIn(800);
                     $("#charcreatorsecondbox").fadeIn(800);
                     $("#creatorarea").fadeIn(800);
-                    $("#charrotationslider").fadeTo(800, 1, function () {
-                    });
+                    $("#charrotationslider").fadeTo(800, 1, function() {});
                     $("#charrotationslider").fadeIn(800);
                     break;
             }
@@ -1535,14 +1412,13 @@
 
     function showError(msg) {
         if (msg == "none") {
-            $("#charerror").fadeOut(800, function () {
+            $("#charerror").fadeOut(800, function() {
                 $("#charerror").hide();
             });
             return;
         }
         $("#charerror").text(msg);
-        $("#charerror").fadeTo(800, 1, function () {
-        });
+        $("#charerror").fadeTo(800, 1, function() {});
         $("#charerror").fadeIn(800);
     }
 </script>

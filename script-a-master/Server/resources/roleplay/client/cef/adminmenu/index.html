@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timo's Admin Menu</title>
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,14 +20,14 @@
         <li class="adminmenu-main-list-item adminmenu-main-list-item-peds">PEDS</li>
         <li class="adminmenu-main-list-item adminmenu-main-list-item-server">SERVER</li>
     </ul>
-    <ul class="adminmenu-list adminmenu-player-list" id="adminmenu-player-list"></ul>
-    <ul class="adminmenu-list adminmenu-online-list" id="adminmenu-online-list"></ul>
-    <ul class="adminmenu-list adminmenu-misc-list" id="adminmenu-misc-list"></ul>
-    <ul class="adminmenu-list adminmenu-fahrzeug-list" id="adminmenu-fahrzeug-list"></ul>
-    <ul class="adminmenu-list adminmenu-peds-list" id="adminmenu-peds-list"></ul>
-    <ul class="adminmenu-list adminmenu-server-list" id="adminmenu-server-list"></ul>
-    <ul class="adminmenu-list adminmenu-online_action-list" id="adminmenu-online_action-list"></ul>
-    <input autocomplete="off" class="adminmenu-input" required type="input">
+    <ul id="adminmenu-player-list" class="adminmenu-list adminmenu-player-list"></ul>
+    <ul id="adminmenu-online-list" class="adminmenu-list adminmenu-online-list"></ul>
+    <ul id="adminmenu-misc-list" class="adminmenu-list adminmenu-misc-list"></ul>
+    <ul id="adminmenu-fahrzeug-list" class="adminmenu-list adminmenu-fahrzeug-list"></ul>
+    <ul id="adminmenu-peds-list" class="adminmenu-list adminmenu-peds-list"></ul>
+    <ul id="adminmenu-server-list" class="adminmenu-list adminmenu-server-list"></ul>
+    <ul id="adminmenu-online_action-list" class="adminmenu-list adminmenu-online_action-list"></ul>
+    <input type="input" class="adminmenu-input" autocomplete="off" required>
     <br><br>
     <hr class="hr-bottom">
 </div>
@@ -123,8 +123,8 @@
                     $(`.adminmenu-main-list-item`).removeClass("selected");
                     $(`.${"adminmenu-online_action-list-item"}-${eval("adminmenu_online_action_items")[eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) - 1]}`).addClass("selected");
                     adminmenu_selectedfield = eval("adminmenu_online_action_items")[eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) - 1];
-                    if (eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) < (eval("adminmenu_online_action_items").length - 8)) {
-                        document.getElementById(`adminmenu-online_action-list`).scrollBy(0, -3.45 * window.innerHeight / 100);
+                    if(eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) < (eval("adminmenu_online_action_items").length - 8)) {
+                        document.getElementById(`adminmenu-online_action-list`).scrollBy(0, -3.45 * window.innerHeight/100);
                     }
                 } else if (adminmenu_selectedmenu == "onlineaction" && adminmenu_selectedfield == adminmenu_online_action_items[0]) {
                     $(`.adminmenu-main-list-item`).removeClass("selected");
@@ -138,8 +138,8 @@
                             $(`.adminmenu-main-list-item`).removeClass("selected");
                             $(`.${"adminmenu-" + b + "-list-item"}-${eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) - 1]}`).addClass("selected");
                             adminmenu_selectedfield = eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) - 1];
-                            if (eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) < (eval("adminmenu_" + b + "_items").length - 8)) {
-                                document.getElementById(`adminmenu-${b}-list`).scrollBy(0, -3.45 * window.innerHeight / 100);
+                            if(eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) < (eval("adminmenu_" + b + "_items").length - 8)) {
+                                document.getElementById(`adminmenu-${b}-list`).scrollBy(0, -3.45 * window.innerHeight/100);
                             }
                         } else if (adminmenu_selectedmenu == b && adminmenu_selectedfield == eval("adminmenu_" + b + "_items")[0]) {
                             $(`.adminmenu-main-list-item`).removeClass("selected");
@@ -181,8 +181,8 @@
                     $(`.adminmenu-main-list-item`).removeClass("selected");
                     $(`.${"adminmenu-online_action-list-item"}-${eval("adminmenu_online_action_items")[eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) + 1]}`).addClass("selected");
                     adminmenu_selectedfield = eval("adminmenu_online_action_items")[eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) + 1];
-                    if (eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) > 8) {
-                        document.getElementById(`adminmenu-online_action-list`).scrollBy(0, 3.45 * window.innerHeight / 100);
+                    if(eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) > 8) {
+                        document.getElementById(`adminmenu-online_action-list`).scrollBy(0, 3.45 * window.innerHeight/100);
                     }
                 } else if (adminmenu_selectedmenu == "onlineaction" && adminmenu_selectedfield == adminmenu_online_action_items[adminmenu_online_action_items.length - 1]) {
                     alt.emit("Client:AdminMenu:SetGameControls", true);
@@ -196,8 +196,8 @@
                             $(`.adminmenu-main-list-item`).removeClass("selected");
                             $(`.${"adminmenu-" + b + "-list-item"}-${eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) + 1]}`).addClass("selected");
                             adminmenu_selectedfield = eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) + 1];
-                            if (eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) > 8) {
-                                document.getElementById(`adminmenu-${b}-list`).scrollBy(0, 3.45 * window.innerHeight / 100);
+                            if(eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) > 8) {
+                                document.getElementById(`adminmenu-${b}-list`).scrollBy(0, 3.45 * window.innerHeight/100);
                             }
                         } else if (adminmenu_selectedmenu == b && adminmenu_selectedfield == eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").length - 1]) {
                             alt.emit("Client:AdminMenu:SetGameControls", true);
@@ -211,7 +211,6 @@
             }
         }
     }
-
     function ChangeSelectedMenu() {
         if (adminmenu_selectedmenu == "main") {
             adminmenu_main_items.forEach(a => {
@@ -224,7 +223,7 @@
                     $(`.${"adminmenu-" + adminmenu_selectedmenu + "-list-item-" + adminmenu_selectedfield}`).addClass("selected");
                     $(`#adminmenu-${adminmenu_selectedmenu}-list`).scrollTop(0);
                     $(`.adminmenu-main-title`).html(`Adminmenü > ${a.charAt(0).toUpperCase() + a.slice(1)}`);
-                    if (adminmenu_selectedmenu == "online") alt.emit("Client:AdminMenu:RequestAllOnlinePlayers");
+                    if(adminmenu_selectedmenu == "online") alt.emit("Client:AdminMenu:RequestAllOnlinePlayers");
                 }
             })
         } else {
@@ -255,26 +254,21 @@
             }
         }
     }
-
     function ReturnSelectedMenu() {
         if (selecteduser != "None") {
             selecteduser = "None";
             adminmenu_selectedmenu = "online";
             $(`.adminmenu-main-title`).html(`Adminmenü > ${adminmenu_selectedmenu.charAt(0).toUpperCase() + adminmenu_selectedmenu.slice(1)}`);
             alt.emit("Client:AdminMenu:RequestAllOnlinePlayers");
-            $(`.adminmenu-list`).hide();
-            $(`.adminmenu-online-list`).show();
+            $(`.adminmenu-list`).hide(); $(`.adminmenu-online-list`).show();
         } else {
-            $(`.adminmenu-main-list-item`).removeClass("selected");
-            $(`.adminmenu-main-list-item-player`).addClass("selected");
-            $(`.adminmenu-list`).hide();
-            $(`.adminmenu-main-list`).show();
+            $(`.adminmenu-main-list-item`).removeClass("selected"); $(`.adminmenu-main-list-item-player`).addClass("selected");
+            $(`.adminmenu-list`).hide(); $(`.adminmenu-main-list`).show();
             adminmenu_selectedmenu = "main";
             adminmenu_selectedfield = "player";
             $(`.adminmenu-main-title`).html(`Adminmenü`);
         }
     }
-
     function UseAllOnlinePlayerArray(AllOnlinePlayerArray) {
         adminmenu_online_items = [];
         var html = "";
@@ -289,10 +283,8 @@
         $("#adminmenu-online-list").html(html);
 
         adminmenu_selectedfield = eval("adminmenu_online_items")[0];
-        $(`.adminmenu-main-list-item`).removeClass("selected");
-        $(`.${"adminmenu-" + adminmenu_selectedmenu + "-list-item-" + adminmenu_selectedfield}`).addClass("selected");
+        $(`.adminmenu-main-list-item`).removeClass("selected"); $(`.${"adminmenu-" + adminmenu_selectedmenu + "-list-item-" + adminmenu_selectedfield}`).addClass("selected");
     }
-
     function ChangeSelectedMenuMain(a, b) {
         if ($(`.${"adminmenu-" + a + "-list-item-" + b}`).hasClass("onoff")) {
             if (eval("activatedmodules_" + a)[eval("adminmenu_" + a + "_items").indexOf(b)] == 0) {
@@ -312,11 +304,8 @@
             if (adminmenu_selectedmenu == "onlineaction" && selecteduser != "None") {
                 alt.emit("Client:AdminMenu:SetMeta", selecteduser, b);
             }
-        } else if ($(`.${"adminmenu-" + a + "-list-item-" + b}`).hasClass("button")) {
-            if (a == "online_action") alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "button", selecteduser, $(`.adminmenu-input`).val()); else alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "button", "none", $(`.adminmenu-input`).val());
-        }
+        } else if ($(`.${"adminmenu-" + a + "-list-item-" + b}`).hasClass("button")) { if (a == "online_action") alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "button", selecteduser, $(`.adminmenu-input`).val()); else alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "button", "none", $(`.adminmenu-input`).val()); }
     }
-
     function receiveMeta(metaarray) {
         metaarray.forEach(metaarrayelement => {
             if (adminmenu_online_action_items_type[adminmenu_online_action_items.indexOf(adminmenu_online_action_items[metaarray.indexOf(metaarrayelement)])] == "button") return;
