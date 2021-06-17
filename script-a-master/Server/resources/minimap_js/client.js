@@ -1,3 +1,5 @@
+/// <reference types="@altv/types-client" />
+/// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 
 const ZOOM_LEVEL_0 = alt.MapZoomData.get('ZOOM_LEVEL_0');
