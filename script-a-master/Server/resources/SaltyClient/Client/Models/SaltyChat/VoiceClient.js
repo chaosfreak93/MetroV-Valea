@@ -13,6 +13,6 @@ export class VoiceClient {
     }
 
     SendPlayerStateUpdate() {
-        SaltyVoice.GetInstance().executeCommand(new PluginCommand(Command.playerStateUpdate, SaltyVoice.GetInstance().serverIdentifier, new PlayerState(this.teamSpeakName, this.lastPosition, this.voiceRange, this.isAlive)));
+        SaltyVoice.GetInstance().executeCommand(new PluginCommand(Command.playerStateUpdate, new PlayerState(this.teamSpeakName, this.lastPosition, this.voiceRange, this.isAlive)));
     }
 }
