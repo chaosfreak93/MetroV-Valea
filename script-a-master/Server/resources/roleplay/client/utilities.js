@@ -15,7 +15,7 @@ export function clearTattoos(entity) {
 }
 
 export function setTattoo(entity, collection, hash) {
-    game.addPedDecorationFromHashes(entity, game.getHashKey(collection), game.getHashKey(hash));
+    game.addPedDecorationFromHashes(entity, alt.hash(collection), alt.hash(hash));
 }
 
 export function setClothes(entity, compId, draw, tex) {

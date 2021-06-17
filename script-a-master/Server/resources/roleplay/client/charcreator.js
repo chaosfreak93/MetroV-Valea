@@ -16,7 +16,7 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
         alt.toggleGameControls(false);
         game.setEntityAlpha(alt.Player.local.scriptID, 0, 0);
         game.triggerScreenblurFadeIn(1);
-        charcreatorCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+        charcreatorCam = game.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003.0, -98.6, 0, 0, 358, 18, true, 2);
         game.setCamActive(charcreatorCam, true);
         game.renderScriptCams(true, false, 0, true, false);
         charcreatorBrowser = new alt.WebView("http://resource/client/cef/charcreator/index.html");
@@ -47,7 +47,7 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
             let facefeatures = JSON.parse(facefeaturesdata);
 
             for (let i = 0; i < 20; i++) {
-                game.setPedFaceFeature(pedHandle, i, facefeatures[i]);
+                game.setPedFaceFeature(pedHandle, i, parseFloat(facefeatures[i]));
             }
         });
 
@@ -109,10 +109,10 @@ alt.onServer("Client:Charcreator:showArea", (area) => {
 
 function spawnCreatorPed(gender) {
     if (gender == true) {
-        modelHash = game.getHashKey('mp_f_freemode_01');
+        modelHash = alt.hash('mp_f_freemode_01');
         game.requestModel(modelHash);
     } else if (gender == false) {
-        modelHash = game.getHashKey('mp_m_freemode_01');
+        modelHash = alt.hash('mp_m_freemode_01');
         game.requestModel(modelHash);
     }
     let interval = alt.setInterval(function () {

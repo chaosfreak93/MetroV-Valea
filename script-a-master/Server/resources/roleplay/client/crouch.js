@@ -21,7 +21,7 @@ alt.onServer("Client:Crouch:toggleCrouch", (isCrouching) => {
 function loadClipsetAsync(model) {
     return new Promise((resolve, reject) => {
         if (typeof model === 'string') {
-            model = game.getHashKey(model);
+            model = alt.hash(model);
         }
 
         if (game.hasClipSetLoaded(model))

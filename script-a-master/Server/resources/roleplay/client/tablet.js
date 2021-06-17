@@ -30,7 +30,7 @@ alt.onServer('Client:Tablet:createCEF', () => {
     let coords = game.getEntityCoords(alt.Player.local.scriptID, true);
     let bone = game.getPedBoneIndex(alt.Player.local.scriptID, 28422);
     if (tablet) return;
-    let tabletModel = game.getHashKey('prop_cs_tablet');
+    let tabletModel = alt.hash('prop_cs_tablet');
     game.requestAnimDict("cellphone@");
     game.requestModel(tabletModel);
     let animInterval = alt.setInterval(() => {

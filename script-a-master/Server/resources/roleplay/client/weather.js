@@ -15,7 +15,7 @@ alt.onServer('Client:Weather:SetWeather', (newWeather) => {
     let i = 0;
     let interval = alt.setInterval(() => {
         i++;
-        if (i < 100) game.setWeatherTypeTransition(game.getHashKey(oldWeather), game.getHashKey(newWeather), (i / 100));
+        if (i < 100) game.setWeatherTypeTransition(alt.hash(oldWeather), alt.hash(newWeather), (i / 100));
         else {
             alt.clearInterval(interval);
             oldWeather = newWeather;
