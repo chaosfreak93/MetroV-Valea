@@ -1,1259 +1,300 @@
-[19:05:15] alt:V Server 4.0-dev13 (dev)
-[19:05:15] Starting MetroV Dev Server on 0.0.0.0:19132
-[19:05:15] C:\Program Files\dotnet\host\fxr\5.0.7\hostfxr.dll
-[19:05:15] coreclr-module: version found: 2.1.28
-[19:05:15] coreclr-module: version found: 3.1.15
-[19:05:15] coreclr-module: version found: 3.1.16
-[19:05:15] coreclr-module: version found: 5.0.4
-[19:05:15] coreclr-module: version found: 5.0.6
-[19:05:15] coreclr-module: version found: 5.0.7
-[19:05:15] coreclr-module: greatest version: 5.0.7
-[19:05:15] Loading resource minimap
-[19:05:16] Loaded resource minimap
-[19:05:16] Loading resource map_rework
-[19:05:18] Loaded resource map_rework
-[19:05:18] Loading resource policestation
-[19:05:18] Loaded resource policestation
-[19:05:18] Loading resource acls
-[19:05:18] Loaded resource acls
-[19:05:18] Loading resource flott_autohandel
-[19:05:18] Loaded resource flott_autohandel
-[19:05:18] Loading resource mazebank
-[19:05:18] Loaded resource mazebank
-[19:05:18] Loading resource mrpd
-[19:05:19] Loaded resource mrpd
-[19:05:19] Loading resource gabz_pillbox
-[19:05:19] Loaded resource gabz_pillbox
-[19:05:19] Loading resource gabz_pillboxloader
-[19:05:19] Loaded resource gabz_pillboxloader
-[19:05:19] Loading resource 18mustangum
-[19:05:19] Loaded resource 18mustangum
-[19:05:19] Loading resource 67mustang
-[19:05:19] Loaded resource 67mustang
-[19:05:19] Loading resource 560sec87
-[19:05:19] Loaded resource 560sec87
-[19:05:19] Loading resource 720s
-[19:05:20] Loaded resource 720s
-[19:05:20] Loading resource c3chrg
-[19:05:20] Loaded resource c3chrg
-[19:05:20] Loading resource c3chgr18
-[19:05:20] Loaded resource c3chgr18
-[19:05:20] Loading resource czr1
-[19:05:20] Loaded resource czr1
-[19:05:20] Loading resource i8
-[19:05:20] Loaded resource i8
-[19:05:20] Loading resource tr22
-[19:05:21] Loaded resource tr22
-[19:05:21] Loading resource intr
-[19:05:21] Loaded resource intr
-[19:05:21] Loading resource ppd1
-[19:05:21] Loaded resource ppd1
-[19:05:21] Loading resource gtr
-[19:05:21] Loaded resource gtr
-[19:05:21] Loading resource mcgt20
-[19:05:21] Loaded resource mcgt20
-[19:05:21] Loading resource mgt
-[19:05:21] Loaded resource mgt
-[19:05:21] Loading resource pol718
-[19:05:21] Loaded resource pol718
-[19:05:21] Loading resource urus
-[19:05:22] Loaded resource urus
-[19:05:22] Loading resource f12ber
-[19:05:22] Loaded resource f12ber
-[19:05:22] Loading resource gt63samg
-[19:05:22] Loaded resource gt63samg
-[19:05:22] Loading resource huracansto2021
-[19:05:22] Loaded resource huracansto2021
-[19:05:22] Loading resource rmodamgc63
-[19:05:22] Loaded resource rmodamgc63
-[19:05:22] Loading resource xkgt
-[19:05:23] Loaded resource xkgt
-[19:05:23] Loading resource medicpack
-[19:05:23] Loaded resource medicpack
-[19:05:23] Loading resource bison2
-[19:05:23] Loaded resource bison2
-[19:05:23] Loading resource minimap_js
-[19:05:23] Loaded resource minimap_js
-[19:05:23] Loading resource chat
-[19:05:23] Loaded resource chat
-[19:05:23] Loading resource roleplay
-[19:05:25] 109 Spieler wurden geladen.
-[19:05:25] 158 Charakter wurden geladen.
-[19:05:25] 159 Charakter-Skins wurden geladen.
-[19:05:25] 148 Character Bank Accounts wurden geladen.
-[19:05:25] 155 Charakter Positionen wurden geladen.
-[19:05:25] 2093 Charakter Inventar-Items wurden geladen.
-[19:05:25] 159 Character-Licenses wurden geladen.
-[19:05:25] 0 Character-Permissions wurden geladen.
-[19:05:25] 63 Character-Minijob-Entrys wurden geladen.
-[19:05:25] 145 Character-Phone-Chats wurden geladen.
-[19:05:25] 1419 Character-Phone-Chat-Messages wurden geladen.
-[19:05:25] 359 Character-Phone-Contacts wurden geladen.
-[19:05:25] 118 Server-Wanted-Einträge wurden geladen.
-[19:05:25] 44 Characters-Wanted-Einträge wurden geladen.
-[19:05:25] 36 Server-Blips wurden geladen.
-[19:05:25] 1 Server-Marker wurden geladen.
-[19:05:25] 742 Server-All-Vehicles wurden geladen.
-[19:05:25] 309 Server-Animationen wurden geladen.
-[19:05:25] 106 Server-ATMs wurden geladen.
-[19:05:25] 10 Server-Banken wurden geladen.
-[19:05:25] 7857 Server-Bank-Papers geladen.
-[19:05:25] 93 Server-Items wurden geladen.
-[19:05:25] 6 Server-Peds wurden geladen.
-[19:05:25] 12 Server-Clothes-Shops wurden geladen.
-[19:05:26] 30175 Server-Clothes-Shop-Items wurden geladen.
-[19:05:26] 47 Server-Shops wurden geladen.
-[19:05:26] 2348 Server ShopItems wurden geladen.
-[19:05:26] 7 Server-Barbers wurden geladen.
-[19:05:26] 10 Server-Teleports wurden geladen.
-[19:05:26] 43 Server-Garagen wurden geladen.
-[19:05:26] 82 Server-Garagen Slots wurden geladen.
-[19:05:26] 20905 All-Server-Vehicle-Mods wurden geladen.
-[19:05:26] 440 Server-Vehicle-Mods wurden geladen.
-[19:05:26] 389 Server-Vehicles wurden geladen.
-[19:05:26] 383 Server-Vehicle-Trunk-Items wurden geladen.
-[19:05:26] 7 Server-Vehicle-Shops wurden geladen.
-[19:05:26] 40 Server-Vehicle-ShopItems wurden geladen.
-[19:05:26] 14 Server-Farming-Spots wurden geladen.
-[19:05:26] 12 Server-Farming-Verarbeiter wurden geladen.
-[19:05:26] 9 Server-Jobs wurden geladen.
-[19:05:26] 7 Server-Licenses wurden geladen.
-[19:05:26] 8 Server-Tankstellen wurden geladen.
-[19:05:26] 94 Server-Tankstellen-Spots wurden geladen
-[19:05:26] 9 Server-Tablet-App-Datas wurden geladen.
-[19:05:26] 159 Character-Tablet-App Einträge wurden geladen.
-[19:05:26] 159 Character-Tablet-Tutorial Entrys wurden geladen.
-[19:05:26] 0 Server-Tablet-Events wurden geladen.
-[19:05:26] 0 Server-Tablet-Advertisements wurden geladen.
-[19:05:27] 18 Server-Tablet-Notes wurden geladen.
-[19:05:27] 0 Server-Companys wurden geladen.
-[19:05:27] 0 Server-Company-Member wurden geladen.
-[19:05:27] 15 Server-Factions wurden geladen.
-[19:05:27] 17 Server-Faction-Positions wurden geladen.
-[19:05:27] 129 Server-Faction-Ranks wurden geladen.
-[19:05:27] 20 Server-Faction-Member wurden geladen.
-[19:05:27] 181 Server-Faction-Storage-Items wurden geladen.
-[19:05:27] 86 Server-Doors wurden geladen.
-[19:05:27] 0 Server-Hotels wurden geladen.
-[19:05:27] 0 Server-Hotels-Apartments wurden geladen.
-[19:05:27] 0 Server-Hotels-Storage-Items wurden geladen.
-[19:05:27] 135 Server-Houses wurden geladen.
-[19:05:27] 9 Server-House-Interior wurden geladen.
-[19:05:27] 0 Server-House-Storage-Items wurden geladen.
-[19:05:27] 0 Server-House-Renter wurden geladen.
-[19:05:27] 3 Server-Minijobs-BusDriver-Routes wurden geladen.
-[19:05:27] 47 Server-Minijob-Busdriver-Spots wurden geladen.
-[19:05:27] 177 Server-Minijob-Garbage-Spots wurden geladen.
-[19:05:27] 11380 Server-Fraktions-Logs wurden geladen.
-[19:05:27] 0 Server-Company-Logs wurden geladen.
-[19:05:27] 60 Character-Tattoos wurden geladen.
-[19:05:27] 919 Server-Tattoos wurden geladen.
-[19:05:27] 1 Server-Tattoo-Shops wurden geladen.
-[19:05:27] Lade Minijob: Elektrolieferant...
-[19:05:27] Minijob: Elektrolieferant geladen...
-[19:05:27] Lade Minijob: Pilot...
-[19:05:27] Minijob: Pilot geladen...
-[19:05:27] Lade Minijob: Müllmann...
-[19:05:27] Minijob: Müllmann geladen...
-[19:05:27] Lade Minijob: Busfahrer...
-[19:05:27] Minijob: Busfahrer geladen...
-[19:05:29] Loaded resource roleplay
-[19:05:29] Required server permissions:
-[19:05:29] Optional server permissions:
-[19:05:29] Starting HTTP server on 0.0.0.0:19132
-[19:05:29] Main thread started (ThreadId: 4184)
-[19:05:29] Colshape thread started (ThreadId: 9152)
-[19:05:29] EntityStreamer thread started (ThreadId: 23456)
-[19:05:29] Network thread started (ThreadId: 23464)
-[19:05:29] Console thread started (ThreadId: 21528)
-[19:05:29] Server started
-[19:05:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0002554
-[19:05:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000713
-[19:06:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000340
-[19:06:27] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0015869
-[19:06:27] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000318
-[19:06:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000286
-[19:06:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000342
-[19:06:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000377
-[19:07:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000299
-[19:07:27] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000981
-[19:07:27] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000298
-[19:07:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[19:07:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[19:07:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[19:08:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000810
-[19:08:27] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001295
-[19:08:27] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000279
-[19:08:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[19:08:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000352
-[19:08:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000288
-[19:09:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[19:09:27] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000487
-[19:09:27] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000267
-[19:09:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[19:09:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000264
-[19:09:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[19:10:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000479
-[19:10:27] OnDesireTimer Timer aufgerufen
-[19:10:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000457
-[19:10:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000228
-[19:10:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000261
-[19:10:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[19:10:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000382
-[19:11:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000318
-[19:11:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000419
-[19:11:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000272
-[19:11:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000358
-[19:11:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[19:12:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[19:12:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000299
-[19:12:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000433
-[19:12:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0009380
-[19:12:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0004852
-[19:12:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000593
-[19:12:45] ValidateLoginCredentials benötigte 218ms
-[19:12:56] Eingeloggt __keiner__
-[19:12:56] 19 - CharacterSelectedSpawnPlace benötigte 58ms
-[19:13:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0005884
-[19:13:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000537
-[19:13:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000487
-[19:13:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0142579
-[19:13:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000409
-[19:13:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000414
-[19:14:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000434
-[19:14:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000398
-[19:14:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000412
-[19:14:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0067807
-[19:14:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000404
-[19:14:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000378
-[19:15:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000418
-[19:15:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000353
-[19:15:27] OnDesireTimer Timer aufgerufen
-[19:15:27] Essen/Durst Anzeige update: 30 | 30
-[19:15:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000560
-[19:15:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0061060
-[19:15:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000373
-[19:15:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000495
-[19:16:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000558
-[19:16:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000451
-[19:16:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000433
-[19:16:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0061188
-[19:16:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000429
-[19:16:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000410
-[19:17:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000400
-[19:17:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000366
-[19:17:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000443
-[19:17:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0067694
-[19:17:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000438
-[19:17:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000400
-[19:18:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000379
-[19:18:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000388
-[19:18:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000566
-[19:18:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0068892
-[19:18:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000385
-[19:18:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000550
-[19:19:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000610
-[19:19:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000492
-[19:19:28] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000416
-[19:19:28] OnEntityTimer: Player Foreach benötigte: 00:00:00.0311528
-[19:19:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000576
-[19:19:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000525
-[19:20:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000459
-[19:20:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000442
-[19:20:27] OnDesireTimer Timer aufgerufen
-[19:20:27] Essen/Durst Anzeige update: 29 | 29
-[19:20:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000428
-[19:20:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0057171
-[19:20:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000427
-[19:20:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000518
-[19:21:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000435
-[19:21:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000521
-[19:21:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000512
-[19:21:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0065707
-[19:21:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000540
-[19:21:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000638
-[19:22:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000639
-[19:22:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000544
-[19:22:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000505
-[19:22:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0097583
-[19:22:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000601
-[19:22:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000544
-[19:23:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000600
-[19:23:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000513
-[19:23:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000521
-[19:23:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0081271
-[19:23:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000432
-[19:23:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000563
-[19:24:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000453
-[19:24:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000539
-[19:24:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000417
-[19:24:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0076136
-[19:24:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000545
-[19:24:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000504
-[19:25:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000380
-[19:25:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000364
-[19:25:27] OnDesireTimer Timer aufgerufen
-[19:25:27] Essen/Durst Anzeige update: 28 | 28
-[19:25:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000536
-[19:25:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0069289
-[19:25:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000372
-[19:25:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000385
-[19:26:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000566
-[19:26:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000413
-[19:26:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000531
-[19:26:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0074313
-[19:26:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000596
-[19:26:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000684
-[19:27:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000497
-[19:27:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000456
-[19:27:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000413
-[19:27:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0070294
-[19:27:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000436
-[19:27:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001778
-[19:28:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000410
-[19:28:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000371
-[19:28:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000438
-[19:28:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0086791
-[19:28:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0002966
-[19:28:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000852
-[19:29:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000556
-[19:29:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000817
-[19:29:29] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001828
-[19:29:29] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000636
-[19:29:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000850
-[19:29:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000854
-[19:30:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000798
-[19:30:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000766
-[19:30:27] OnDesireTimer Timer aufgerufen
-[19:30:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001275
-[19:30:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000570
-[19:30:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[19:30:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[19:31:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[19:31:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000418
-[19:31:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000490
-[19:31:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000212
-[19:31:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000366
-[19:31:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000268
-[19:32:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[19:32:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000627
-[19:32:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000540
-[19:32:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000403
-[19:32:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000298
-[19:32:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[19:33:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000289
-[19:33:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[19:33:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000522
-[19:33:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000200
-[19:33:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000308
-[19:33:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[19:34:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000330
-[19:34:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000372
-[19:34:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000493
-[19:34:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000238
-[19:34:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000232
-[19:34:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[19:35:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000366
-[19:35:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[19:35:28] OnDesireTimer Timer aufgerufen
-[19:35:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000429
-[19:35:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000310
-[19:35:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000319
-[19:35:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000264
-[19:36:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[19:36:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000343
-[19:36:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000349
-[19:36:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000206
-[19:36:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[19:36:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000235
-[19:37:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000413
-[19:37:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000235
-[19:37:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000374
-[19:37:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[19:37:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000223
-[19:37:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[19:38:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000262
-[19:38:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[19:38:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000380
-[19:38:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000198
-[19:38:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000288
-[19:38:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000299
-[19:39:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000245
-[19:39:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000280
-[19:39:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000368
-[19:39:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000255
-[19:39:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[19:39:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000316
-[19:40:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000302
-[19:40:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000286
-[19:40:28] OnDesireTimer Timer aufgerufen
-[19:40:30] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000417
-[19:40:30] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000229
-[19:40:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[19:40:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000232
-[19:41:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[19:41:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000231
-[19:41:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000359
-[19:41:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000198
-[19:41:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[19:41:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000256
-[19:42:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[19:42:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000402
-[19:42:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000480
-[19:42:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000200
-[19:42:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[19:42:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[19:43:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[19:43:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000236
-[19:43:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000444
-[19:43:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000208
-[19:43:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[19:43:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[19:44:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000279
-[19:44:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[19:44:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000399
-[19:44:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[19:44:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[19:44:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000283
-[19:45:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[19:45:28] OnDesireTimer Timer aufgerufen
-[19:45:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[19:45:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000830
-[19:45:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000240
-[19:45:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[19:45:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001271
-[19:46:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000287
-[19:46:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[19:46:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000692
-[19:46:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000200
-[19:46:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000237
-[19:46:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000340
-[19:47:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[19:47:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[19:47:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000504
-[19:47:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000206
-[19:47:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000316
-[19:47:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000387
-[19:48:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000255
-[19:48:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[19:48:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000563
-[19:48:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000217
-[19:48:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000354
-[19:48:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[19:49:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000337
-[19:49:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[19:49:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000586
-[19:49:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000256
-[19:49:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[19:50:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000357
-[19:50:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000280
-[19:50:28] OnDesireTimer Timer aufgerufen
-[19:50:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000312
-[19:50:31] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000432
-[19:50:31] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000241
-[19:50:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000255
-[19:51:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[19:51:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000420
-[19:51:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000264
-[19:51:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000666
-[19:51:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000282
-[19:51:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[19:52:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000446
-[19:52:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[19:52:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[19:52:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000534
-[19:52:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000230
-[19:52:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000256
-[19:53:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000280
-[19:53:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[19:53:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[19:53:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000910
-[19:53:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000268
-[19:53:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000303
-[19:54:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[19:54:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000363
-[19:54:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000317
-[19:54:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000390
-[19:54:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000245
-[19:54:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000310
-[19:55:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000319
-[19:55:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[19:55:28] OnDesireTimer Timer aufgerufen
-[19:55:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000335
-[19:55:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000690
-[19:55:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000229
-[19:55:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000346
-[19:56:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000296
-[19:56:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[19:56:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000360
-[19:56:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000192
-[19:56:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000331
-[19:56:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000334
-[19:57:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000229
-[19:57:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000342
-[19:57:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000491
-[19:57:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000231
-[19:57:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[19:57:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000252
-[19:58:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[19:58:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[19:58:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000380
-[19:58:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000192
-[19:58:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000354
-[19:58:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[19:59:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[19:59:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[19:59:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000376
-[19:59:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000196
-[19:59:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000310
-[19:59:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000312
-[20:00:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000305
-[20:00:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[20:00:28] OnDesireTimer Timer aufgerufen
-[20:00:32] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000408
-[20:00:32] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000196
-[20:00:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[20:00:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[20:01:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000231
-[20:01:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[20:01:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000444
-[20:01:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000205
-[20:01:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000236
-[20:01:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000368
-[20:02:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000234
-[20:02:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[20:02:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000410
-[20:02:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000237
-[20:02:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000313
-[20:02:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[20:03:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000235
-[20:03:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[20:03:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000490
-[20:03:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[20:03:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[20:03:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000233
-[20:04:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[20:04:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[20:04:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000399
-[20:04:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000247
-[20:04:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000457
-[20:04:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[20:05:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000254
-[20:05:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000255
-[20:05:28] OnDesireTimer Timer aufgerufen
-[20:05:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000391
-[20:05:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000220
-[20:05:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000225
-[20:05:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[20:06:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[20:06:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[20:06:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000523
-[20:06:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000234
-[20:06:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000235
-[20:06:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[20:07:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000231
-[20:07:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000233
-[20:07:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000489
-[20:07:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000199
-[20:07:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[20:07:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[20:08:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[20:08:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[20:08:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000406
-[20:08:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000204
-[20:08:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[20:08:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000224
-[20:09:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[20:09:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000310
-[20:09:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000358
-[20:09:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000256
-[20:09:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[20:09:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000254
-[20:10:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[20:10:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000307
-[20:10:28] OnDesireTimer Timer aufgerufen
-[20:10:33] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000387
-[20:10:33] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000208
-[20:10:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:10:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000279
-[20:11:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[20:11:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[20:11:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000354
-[20:11:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000269
-[20:11:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000393
-[20:11:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[20:12:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[20:12:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000230
-[20:12:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000466
-[20:12:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000326
-[20:12:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000348
-[20:12:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[20:13:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[20:13:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000404
-[20:13:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000405
-[20:13:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000255
-[20:13:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000242
-[20:13:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:14:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000235
-[20:14:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[20:14:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000363
-[20:14:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000287
-[20:14:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000302
-[20:14:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000230
-[20:15:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[20:15:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[20:15:28] OnDesireTimer Timer aufgerufen
-[20:15:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000365
-[20:15:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000194
-[20:15:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000236
-[20:15:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[20:16:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:16:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000230
-[20:16:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000394
-[20:16:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000227
-[20:16:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000358
-[20:16:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000291
-[20:17:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[20:17:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:17:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000405
-[20:17:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:17:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000240
-[20:17:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[20:18:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[20:18:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[20:18:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000391
-[20:18:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000246
-[20:18:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[20:18:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000285
-[20:19:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:19:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[20:19:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000471
-[20:19:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000198
-[20:19:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000237
-[20:19:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000261
-[20:20:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000283
-[20:20:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[20:20:28] OnDesireTimer Timer aufgerufen
-[20:20:34] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000361
-[20:20:34] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000200
-[20:20:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000288
-[20:20:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000292
-[20:21:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[20:21:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[20:21:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000455
-[20:21:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000228
-[20:21:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000229
-[20:21:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000283
-[20:22:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000349
-[20:22:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[20:22:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000503
-[20:22:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000191
-[20:22:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[20:22:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[20:23:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000294
-[20:23:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000301
-[20:23:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000590
-[20:23:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000311
-[20:23:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000445
-[20:23:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0003734
-[20:24:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[20:24:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[20:24:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000434
-[20:24:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000243
-[20:24:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:24:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000358
-[20:25:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000601
-[20:25:29] OnDesireTimer Timer aufgerufen
-[20:25:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000307
-[20:25:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000390
-[20:25:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000202
-[20:25:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[20:25:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000324
-[20:26:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000339
-[20:26:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000523
-[20:26:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000477
-[20:26:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000253
-[20:26:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[20:26:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000311
-[20:27:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000290
-[20:27:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000285
-[20:27:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000466
-[20:27:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000199
-[20:27:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000338
-[20:28:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000343
-[20:28:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[20:28:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[20:28:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000499
-[20:28:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000206
-[20:28:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000232
-[20:29:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:29:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[20:29:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000352
-[20:29:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000400
-[20:29:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000196
-[20:29:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000391
-[20:30:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[20:30:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000225
-[20:30:29] OnDesireTimer Timer aufgerufen
-[20:30:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000245
-[20:30:35] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000430
-[20:30:35] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000214
-[20:30:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000300
-[20:31:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[20:31:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000268
-[20:31:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000290
-[20:31:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000468
-[20:31:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000245
-[20:31:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000245
-[20:32:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[20:32:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000367
-[20:32:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[20:32:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000435
-[20:32:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000262
-[20:32:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000308
-[20:33:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000333
-[20:33:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000275
-[20:33:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000279
-[20:33:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000393
-[20:33:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000196
-[20:33:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000240
-[20:34:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[20:34:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[20:34:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[20:34:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000535
-[20:34:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000211
-[20:34:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[20:35:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[20:35:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000435
-[20:35:29] OnDesireTimer Timer aufgerufen
-[20:35:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000307
-[20:35:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000369
-[20:35:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000281
-[20:35:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000307
-[20:36:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[20:36:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0007538
-[20:36:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000255
-[20:36:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000482
-[20:36:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000199
-[20:36:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000399
-[20:37:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000427
-[20:37:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[20:37:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[20:37:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000775
-[20:37:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000292
-[20:37:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[20:38:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[20:38:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000401
-[20:38:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[20:38:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000415
-[20:38:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000223
-[20:38:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000353
-[20:39:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000417
-[20:39:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000255
-[20:39:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000282
-[20:39:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000476
-[20:39:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000206
-[20:39:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[20:40:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[20:40:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000364
-[20:40:29] OnDesireTimer Timer aufgerufen
-[20:40:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000309
-[20:40:36] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000477
-[20:40:36] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000248
-[20:40:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[20:41:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000335
-[20:41:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000234
-[20:41:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000256
-[20:41:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000649
-[20:41:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000354
-[20:41:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:42:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000331
-[20:42:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000287
-[20:42:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000280
-[20:42:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000479
-[20:42:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000688
-[20:42:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000323
-[20:43:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[20:43:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[20:43:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0002355
-[20:43:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000421
-[20:43:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000203
-[20:43:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[20:44:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000359
-[20:44:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000332
-[20:44:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000327
-[20:44:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000477
-[20:44:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000221
-[20:44:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001183
-[20:45:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000312
-[20:45:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[20:45:29] OnDesireTimer Timer aufgerufen
-[20:45:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000381
-[20:45:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000377
-[20:45:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000199
-[20:45:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000268
-[20:46:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000378
-[20:46:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[20:46:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000515
-[20:46:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[20:46:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000261
-[20:46:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000414
-[20:47:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000285
-[20:47:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:47:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000632
-[20:47:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000238
-[20:47:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[20:47:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000296
-[20:48:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000275
-[20:48:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000361
-[20:48:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000469
-[20:48:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000205
-[20:48:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000353
-[20:48:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000240
-[20:49:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[20:49:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[20:49:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000366
-[20:49:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000190
-[20:49:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[20:49:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[20:50:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000335
-[20:50:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[20:50:29] OnDesireTimer Timer aufgerufen
-[20:50:37] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000391
-[20:50:37] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:50:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:50:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[20:51:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[20:51:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000296
-[20:51:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000528
-[20:51:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000239
-[20:51:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000254
-[20:51:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000321
-[20:52:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[20:52:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000268
-[20:52:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000562
-[20:52:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000204
-[20:52:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000332
-[20:52:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000254
-[20:53:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000342
-[20:53:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000299
-[20:53:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000477
-[20:53:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000198
-[20:53:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000385
-[20:53:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[20:54:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000296
-[20:54:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000353
-[20:54:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000430
-[20:54:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[20:54:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000252
-[20:54:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000242
-[20:55:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[20:55:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000288
-[20:55:29] OnDesireTimer Timer aufgerufen
-[20:55:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001104
-[20:55:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000388
-[20:55:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001789
-[20:55:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000346
-[20:56:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[20:56:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[20:56:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000426
-[20:56:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000201
-[20:56:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[20:56:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[20:57:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000352
-[20:57:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0002221
-[20:57:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000546
-[20:57:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000215
-[20:57:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000256
-[20:57:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000299
-[20:58:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000287
-[20:58:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000286
-[20:58:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000700
-[20:58:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000382
-[20:58:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[20:58:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000275
-[20:59:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000352
-[20:59:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
-[20:59:38] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000388
-[20:59:38] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000274
-[20:59:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000328
-[20:59:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[21:00:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000383
-[21:00:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[21:00:29] OnDesireTimer Timer aufgerufen
-[21:00:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000543
-[21:00:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000250
-[21:00:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000306
-[21:00:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000409
-[21:01:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000299
-[21:01:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000363
-[21:01:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000420
-[21:01:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000200
-[21:01:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000388
-[21:01:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000308
-[21:02:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[21:02:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000310
-[21:02:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000406
-[21:02:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[21:02:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000315
-[21:02:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000364
-[21:03:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000245
-[21:03:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000358
-[21:03:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000394
-[21:03:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000195
-[21:03:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:03:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[21:04:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[21:04:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[21:04:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000530
-[21:04:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000201
-[21:04:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000232
-[21:04:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000288
-[21:05:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000338
-[21:05:29] OnDesireTimer Timer aufgerufen
-[21:05:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000411
-[21:05:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000423
-[21:05:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000230
-[21:05:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[21:06:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[21:06:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[21:06:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[21:06:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000403
-[21:06:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000213
-[21:06:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000295
-[21:07:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000282
-[21:07:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000285
-[21:07:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[21:07:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000839
-[21:07:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000227
-[21:07:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000301
-[21:08:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000370
-[21:08:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000355
-[21:08:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[21:08:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000422
-[21:08:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000237
-[21:08:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000407
-[21:09:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[21:09:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[21:09:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[21:09:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000431
-[21:09:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000229
-[21:09:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000377
-[21:10:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000279
-[21:10:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[21:10:29] OnDesireTimer Timer aufgerufen
-[21:10:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000298
-[21:10:39] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000379
-[21:10:39] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000194
-[21:10:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000342
-[21:11:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[21:11:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[21:11:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[21:11:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000502
-[21:11:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000253
-[21:11:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000282
-[21:12:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[21:12:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000399
-[21:12:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[21:12:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000619
-[21:12:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000250
-[21:12:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000242
-[21:13:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000660
-[21:13:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[21:13:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[21:13:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000619
-[21:13:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000272
-[21:13:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000391
-[21:14:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:14:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000293
-[21:14:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[21:14:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000470
-[21:14:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000206
-[21:14:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[21:15:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[21:15:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[21:15:30] OnDesireTimer Timer aufgerufen
-[21:15:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[21:15:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000441
-[21:15:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000247
-[21:15:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000256
-[21:16:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000260
-[21:16:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[21:16:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000300
-[21:16:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000557
-[21:16:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000272
-[21:16:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000423
-[21:17:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000233
-[21:17:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000255
-[21:17:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[21:17:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000579
-[21:17:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000322
-[21:17:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000407
-[21:18:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000250
-[21:18:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000244
-[21:18:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:18:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000430
-[21:18:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000283
-[21:18:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000279
-[21:19:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[21:19:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000283
-[21:19:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[21:19:40] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000422
-[21:19:40] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000267
-[21:19:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000352
-[21:20:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000372
-[21:20:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[21:20:30] OnDesireTimer Timer aufgerufen
-[21:20:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000453
-[21:20:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000553
-[21:20:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000259
-[21:20:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000253
-[21:21:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000258
-[21:21:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000294
-[21:21:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000249
-[21:21:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000404
-[21:21:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000212
-[21:21:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000307
-[21:22:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[21:22:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000310
-[21:22:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000318
-[21:22:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000545
-[21:22:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000200
-[21:22:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000358
-[21:23:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[21:23:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000267
-[21:23:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000401
-[21:23:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000481
-[21:23:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000196
-[21:23:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000371
-[21:24:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000328
-[21:24:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[21:24:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001217
-[21:24:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000412
-[21:24:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000201
-[21:24:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000289
-[21:25:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000356
-[21:25:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000240
-[21:25:30] OnDesireTimer Timer aufgerufen
-[21:25:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000295
-[21:25:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000579
-[21:25:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000399
-[21:25:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000263
-[21:26:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000356
-[21:26:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000240
-[21:26:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000480
-[21:26:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000507
-[21:26:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000221
-[21:26:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000262
-[21:27:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:27:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000367
-[21:27:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000447
-[21:27:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000489
-[21:27:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[21:27:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000382
-[21:28:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000363
-[21:28:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:28:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000280
-[21:28:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000369
-[21:28:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[21:28:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[21:29:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000287
-[21:29:24] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[21:29:39] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[21:29:41] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000404
-[21:29:41] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000296
-[21:29:54] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000273
-[21:30:09] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[21:30:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000415
-[21:30:30] OnDesireTimer Timer aufgerufen
-[21:30:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[21:30:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000413
-[21:30:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000618
-[21:30:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000390
-[21:31:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000344
-[21:31:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000230
-[21:31:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000298
-[21:31:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000410
-[21:31:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000202
-[21:31:55] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[21:32:10] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000347
-[21:32:25] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000245
-[21:32:40] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000335
-[21:32:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000595
-[21:32:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000260
-[21:32:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[21:33:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000242
-[21:33:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[21:33:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000328
-[21:33:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000404
-[21:33:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000203
-[21:33:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000365
-[21:34:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[21:34:26] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[21:34:41] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000261
-[21:34:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000401
-[21:34:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000227
-[21:34:56] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:35:11] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[21:35:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000231
-[21:35:30] OnDesireTimer Timer aufgerufen
-[21:35:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:35:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000525
-[21:35:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000203
-[21:35:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000286
-[21:36:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000262
-[21:36:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000282
-[21:36:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000235
-[21:36:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000464
-[21:36:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000272
-[21:36:57] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[21:37:12] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[21:37:27] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000239
-[21:37:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000405
-[21:37:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000239
-[21:37:42] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000442
-[21:37:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000361
-[21:38:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000349
-[21:38:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000230
-[21:38:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000727
-[21:38:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000227
-[21:38:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[21:38:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000391
-[21:39:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000440
-[21:39:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000338
-[21:39:42] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000562
-[21:39:42] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000234
-[21:39:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000392
-[21:39:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000271
-[21:40:13] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000482
-[21:40:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000377
-[21:40:30] OnDesireTimer Timer aufgerufen
-[21:40:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000436
-[21:40:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000211
-[21:40:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000390
-[21:40:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000313
-[21:41:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000303
-[21:41:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000262
-[21:41:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000371
-[21:41:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000230
-[21:41:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:41:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000340
-[21:42:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000264
-[21:42:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:42:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000389
-[21:42:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000242
-[21:42:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000377
-[21:43:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000381
-[21:43:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000261
-[21:43:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[21:43:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000387
-[21:43:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000191
-[21:43:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000322
-[21:44:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000262
-[21:44:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[21:44:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000271
-[21:44:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000426
-[21:44:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000191
-[21:44:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000278
-[21:45:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000285
-[21:45:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000295
-[21:45:30] OnDesireTimer Timer aufgerufen
-[21:45:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000238
-[21:45:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000352
-[21:45:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000240
-[21:45:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[21:46:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000252
-[21:46:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[21:46:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[21:46:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000363
-[21:46:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000202
-[21:46:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000251
-[21:47:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000285
-[21:47:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000268
-[21:47:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000247
-[21:47:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000421
-[21:47:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000208
-[21:47:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
-[21:48:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000275
-[21:48:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000283
-[21:48:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000240
-[21:48:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000452
-[21:48:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000201
-[21:48:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000301
-[21:49:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000287
-[21:49:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000292
-[21:49:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000361
-[21:49:43] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000486
-[21:49:43] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000194
-[21:49:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000380
-[21:50:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000336
-[21:50:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000284
-[21:50:30] OnDesireTimer Timer aufgerufen
-[21:50:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:50:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000360
-[21:50:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:50:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000266
-[21:51:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000289
-[21:51:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000329
-[21:51:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000256
-[21:51:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000361
-[21:51:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000258
-[21:51:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000294
-[21:52:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000283
-[21:52:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000242
-[21:52:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:52:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000440
-[21:52:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000251
-[21:52:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000313
-[21:53:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000264
-[21:53:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000242
-[21:53:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000246
-[21:53:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000399
-[21:53:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000197
-[21:53:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000271
-[21:54:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000259
-[21:54:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000243
-[21:54:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000231
-[21:54:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000441
-[21:54:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000269
-[21:54:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000248
-[21:55:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000241
-[21:55:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000265
-[21:55:30] OnDesireTimer Timer aufgerufen
-[21:55:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000282
-[21:55:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000502
-[21:55:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000234
-[21:55:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000269
-[21:56:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000237
-[21:56:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[21:56:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000411
-[21:56:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000503
-[21:56:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000249
-[21:56:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000252
-[21:57:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000282
-[21:57:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
-[21:57:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000276
-[21:57:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000425
-[21:57:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000189
-[21:57:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000237
-[21:58:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000261
-[21:58:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000234
-[21:58:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000231
-[21:58:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000415
-[21:58:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000244
-[21:58:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000274
-[21:59:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000268
-[21:59:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000234
-[21:59:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[21:59:44] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000372
-[21:59:44] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000196
-[21:59:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000458
-[22:00:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000264
-[22:00:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000281
-[22:00:30] OnDesireTimer Timer aufgerufen
-[22:00:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000270
-[22:00:44] Server ist gestoppt.
-[22:00:44][22:00:44] < ==== UNHANDLED EXCEPTION ==== > 
+[19:43:07] alt:V Server 4.0-dev13 (dev)
+[19:43:07] Starting MetroV Dev Server on 0.0.0.0:19132
+[19:43:07] C:\Program Files\dotnet\host\fxr\5.0.7\hostfxr.dll
+[19:43:07] coreclr-module: version found: 2.1.28
+[19:43:07] coreclr-module: version found: 3.1.15
+[19:43:07] coreclr-module: version found: 3.1.16
+[19:43:07] coreclr-module: version found: 5.0.4
+[19:43:07] coreclr-module: version found: 5.0.6
+[19:43:07] coreclr-module: version found: 5.0.7
+[19:43:07] coreclr-module: greatest version: 5.0.7
+[19:43:07] Loading resource minimap
+[19:43:07] Loaded resource minimap
+[19:43:07] Loading resource map_rework
+[19:43:07] Loaded resource map_rework
+[19:43:07] Loading resource policestation
+[19:43:07] Loaded resource policestation
+[19:43:07] Loading resource acls
+[19:43:07] Loaded resource acls
+[19:43:07] Loading resource flott_autohandel
+[19:43:07] Loaded resource flott_autohandel
+[19:43:07] Loading resource mazebank
+[19:43:07] Loaded resource mazebank
+[19:43:07] Loading resource mrpd
+[19:43:08] Loaded resource mrpd
+[19:43:08] Loading resource gabz_pillbox
+[19:43:08] Loaded resource gabz_pillbox
+[19:43:08] Loading resource gabz_pillboxloader
+[19:43:08] Loaded resource gabz_pillboxloader
+[19:43:08] Loading resource 18mustangum
+[19:43:08] Loaded resource 18mustangum
+[19:43:08] Loading resource 67mustang
+[19:43:08] Loaded resource 67mustang
+[19:43:08] Loading resource 560sec87
+[19:43:08] Loaded resource 560sec87
+[19:43:08] Loading resource 720s
+[19:43:08] Loaded resource 720s
+[19:43:08] Loading resource c3chrg
+[19:43:08] Loaded resource c3chrg
+[19:43:08] Loading resource c3chgr18
+[19:43:08] Loaded resource c3chgr18
+[19:43:08] Loading resource czr1
+[19:43:08] Loaded resource czr1
+[19:43:08] Loading resource i8
+[19:43:08] Loaded resource i8
+[19:43:08] Loading resource tr22
+[19:43:08] Loaded resource tr22
+[19:43:08] Loading resource intr
+[19:43:08] Loaded resource intr
+[19:43:08] Loading resource ppd1
+[19:43:08] Loaded resource ppd1
+[19:43:08] Loading resource gtr
+[19:43:08] Loaded resource gtr
+[19:43:08] Loading resource mcgt20
+[19:43:08] Loaded resource mcgt20
+[19:43:08] Loading resource mgt
+[19:43:08] Loaded resource mgt
+[19:43:08] Loading resource pol718
+[19:43:08] Loaded resource pol718
+[19:43:08] Loading resource urus
+[19:43:08] Loaded resource urus
+[19:43:08] Loading resource f12ber
+[19:43:09] Loaded resource f12ber
+[19:43:09] Loading resource gt63samg
+[19:43:09] Loaded resource gt63samg
+[19:43:09] Loading resource huracansto2021
+[19:43:09] Loaded resource huracansto2021
+[19:43:09] Loading resource rmodamgc63
+[19:43:09] Loaded resource rmodamgc63
+[19:43:09] Loading resource xkgt
+[19:43:09] Loaded resource xkgt
+[19:43:09] Loading resource medicpack
+[19:43:09] Loaded resource medicpack
+[19:43:09] Loading resource bison2
+[19:43:09] Loaded resource bison2
+[19:43:09] Loading resource minimap_js
+[19:43:09] Loaded resource minimap_js
+[19:43:09] Loading resource chat
+[19:43:09] Loaded resource chat
+[19:43:09] Loading resource roleplay
+[19:43:11] 109 Spieler wurden geladen.
+[19:43:11] 158 Charakter wurden geladen.
+[19:43:11] 159 Charakter-Skins wurden geladen.
+[19:43:11] 148 Character Bank Accounts wurden geladen.
+[19:43:11] 155 Charakter Positionen wurden geladen.
+[19:43:11] 2093 Charakter Inventar-Items wurden geladen.
+[19:43:11] 159 Character-Licenses wurden geladen.
+[19:43:11] 0 Character-Permissions wurden geladen.
+[19:43:11] 63 Character-Minijob-Entrys wurden geladen.
+[19:43:11] 145 Character-Phone-Chats wurden geladen.
+[19:43:11] 1419 Character-Phone-Chat-Messages wurden geladen.
+[19:43:11] 359 Character-Phone-Contacts wurden geladen.
+[19:43:11] 118 Server-Wanted-Einträge wurden geladen.
+[19:43:11] 44 Characters-Wanted-Einträge wurden geladen.
+[19:43:11] 36 Server-Blips wurden geladen.
+[19:43:11] 1 Server-Marker wurden geladen.
+[19:43:11] 742 Server-All-Vehicles wurden geladen.
+[19:43:11] 309 Server-Animationen wurden geladen.
+[19:43:11] 106 Server-ATMs wurden geladen.
+[19:43:11] 10 Server-Banken wurden geladen.
+[19:43:11] 7857 Server-Bank-Papers geladen.
+[19:43:11] 93 Server-Items wurden geladen.
+[19:43:11] 6 Server-Peds wurden geladen.
+[19:43:11] 12 Server-Clothes-Shops wurden geladen.
+[19:43:12] 30175 Server-Clothes-Shop-Items wurden geladen.
+[19:43:12] 47 Server-Shops wurden geladen.
+[19:43:12] 2348 Server ShopItems wurden geladen.
+[19:43:12] 7 Server-Barbers wurden geladen.
+[19:43:12] 10 Server-Teleports wurden geladen.
+[19:43:12] 43 Server-Garagen wurden geladen.
+[19:43:12] 82 Server-Garagen Slots wurden geladen.
+[19:43:12] 20905 All-Server-Vehicle-Mods wurden geladen.
+[19:43:12] 440 Server-Vehicle-Mods wurden geladen.
+[19:43:12] 389 Server-Vehicles wurden geladen.
+[19:43:12] 383 Server-Vehicle-Trunk-Items wurden geladen.
+[19:43:12] 7 Server-Vehicle-Shops wurden geladen.
+[19:43:12] 40 Server-Vehicle-ShopItems wurden geladen.
+[19:43:12] 14 Server-Farming-Spots wurden geladen.
+[19:43:13] 12 Server-Farming-Verarbeiter wurden geladen.
+[19:43:13] 9 Server-Jobs wurden geladen.
+[19:43:13] 7 Server-Licenses wurden geladen.
+[19:43:13] 8 Server-Tankstellen wurden geladen.
+[19:43:13] 94 Server-Tankstellen-Spots wurden geladen
+[19:43:13] 9 Server-Tablet-App-Datas wurden geladen.
+[19:43:13] 159 Character-Tablet-App Einträge wurden geladen.
+[19:43:13] 159 Character-Tablet-Tutorial Entrys wurden geladen.
+[19:43:13] 0 Server-Tablet-Events wurden geladen.
+[19:43:13] 0 Server-Tablet-Advertisements wurden geladen.
+[19:43:13] 18 Server-Tablet-Notes wurden geladen.
+[19:43:13] 0 Server-Companys wurden geladen.
+[19:43:13] 0 Server-Company-Member wurden geladen.
+[19:43:13] 15 Server-Factions wurden geladen.
+[19:43:13] 17 Server-Faction-Positions wurden geladen.
+[19:43:13] 129 Server-Faction-Ranks wurden geladen.
+[19:43:13] 20 Server-Faction-Member wurden geladen.
+[19:43:13] 181 Server-Faction-Storage-Items wurden geladen.
+[19:43:13] 86 Server-Doors wurden geladen.
+[19:43:13] 0 Server-Hotels wurden geladen.
+[19:43:13] 0 Server-Hotels-Apartments wurden geladen.
+[19:43:13] 0 Server-Hotels-Storage-Items wurden geladen.
+[19:43:13] 135 Server-Houses wurden geladen.
+[19:43:13] 9 Server-House-Interior wurden geladen.
+[19:43:13] 0 Server-House-Storage-Items wurden geladen.
+[19:43:13] 0 Server-House-Renter wurden geladen.
+[19:43:13] 3 Server-Minijobs-BusDriver-Routes wurden geladen.
+[19:43:13] 47 Server-Minijob-Busdriver-Spots wurden geladen.
+[19:43:13] 177 Server-Minijob-Garbage-Spots wurden geladen.
+[19:43:13] 11380 Server-Fraktions-Logs wurden geladen.
+[19:43:13] 0 Server-Company-Logs wurden geladen.
+[19:43:13] 60 Character-Tattoos wurden geladen.
+[19:43:13] 919 Server-Tattoos wurden geladen.
+[19:43:13] 1 Server-Tattoo-Shops wurden geladen.
+[19:43:13] Lade Minijob: Elektrolieferant...
+[19:43:13] Minijob: Elektrolieferant geladen...
+[19:43:13] Lade Minijob: Pilot...
+[19:43:13] Minijob: Pilot geladen...
+[19:43:13] Lade Minijob: Müllmann...
+[19:43:13] Minijob: Müllmann geladen...
+[19:43:13] Lade Minijob: Busfahrer...
+[19:43:13] Minijob: Busfahrer geladen...
+[19:43:15] Loaded resource roleplay
+[19:43:15] Required server permissions:
+[19:43:15] Optional server permissions:
+[19:43:15] Starting HTTP server on 0.0.0.0:19132
+[19:43:15] Main thread started (ThreadId: 23748)
+[19:43:15] Colshape thread started (ThreadId: 26964)
+[19:43:15] EntityStreamer thread started (ThreadId: 18100)
+[19:43:15] Network thread started (ThreadId: 23184)
+[19:43:15] Console thread started (ThreadId: 24120)
+[19:43:15] Server started
+[19:43:28] OnCheckTimer: Player Foreach benötigte: 00:00:00.0003592
+[19:43:43] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000612
+[19:43:58] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000300
+[19:44:13] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0015594
+[19:44:13] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000347
+[19:44:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000272
+[19:44:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000277
+[19:44:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000399
+[19:44:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000340
+[19:45:12] Create Login Browser
+[19:45:13] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001016
+[19:45:13] OnEntityTimer: Player Foreach benötigte: 00:00:00.0008520
+[19:45:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0004344
+[19:45:28] ValidateLoginCredentials benötigte 220ms
+[19:45:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000655
+[19:45:34] Eingeloggt __keiner__
+[19:45:34] 19 - CharacterSelectedSpawnPlace benötigte 57ms
+[19:45:44] OnCheckTimer: Player Foreach benötigte: 00:00:00.0006321
+[19:45:59] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000630
+[19:46:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000550
+[19:46:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0150968
+[19:46:14] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000568
+[19:46:29] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000402
+[19:46:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000506
+[19:47:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000408
+[19:47:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000389
+[19:47:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0075936
+[19:47:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000369
+[19:47:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000424
+[19:47:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000380
+[19:48:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000442
+[19:48:13] OnDesireTimer Timer aufgerufen
+[19:48:13] Essen/Durst Anzeige update: 24 | 24
+[19:48:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0002237
+[19:48:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0352200
+[19:48:15] OnCheckTimer: Player Foreach benötigte: 00:00:00.0006240
+[19:48:30] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001092
+[19:48:45] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001083
+[19:49:00] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000832
+[19:49:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001136
+[19:49:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0194628
+[19:49:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001272
+[19:49:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001192
+[19:49:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000837
+[19:50:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001082
+[19:50:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000976
+[19:50:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0167132
+[19:50:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000935
+[19:50:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0002113
+[19:50:46] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000404
+[19:51:01] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000637
+[19:51:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001002
+[19:51:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0095775
+[19:51:16] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000507
+[19:51:31] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000538
+[19:51:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000599
+[19:52:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000422
+[19:52:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000432
+[19:52:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0307668
+[19:52:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000439
+[19:52:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000385
+[19:52:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000536
+[19:53:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000399
+[19:53:13] OnDesireTimer Timer aufgerufen
+[19:53:13] Essen/Durst Anzeige update: 23 | 23
+[19:53:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000422
+[19:53:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0079956
+[19:53:17] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000560
+[19:53:32] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000369
+[19:53:47] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000420
+[19:54:02] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000369
+[19:54:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000529
+[19:54:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0105079
+[19:54:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000420
+[19:54:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000535
+[19:54:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000436
+[19:55:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000427
+[19:55:14] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000682
+[19:55:14] OnEntityTimer: Player Foreach benötigte: 00:00:00.0085483
+[19:55:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000459
+[19:55:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000510
+[19:55:48] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000485
+[19:56:03] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000560
+[19:56:15] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000382
+[19:56:15] OnEntityTimer: Player Foreach benötigte: 00:00:00.0100219
+[19:56:18] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000396
+[19:56:33] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000518
+[19:56:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000556
+[19:57:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000412
+[19:57:15] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000437
+[19:57:15] OnEntityTimer: Player Foreach benötigte: 00:00:00.0088664
+[19:57:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000539
+[19:57:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000384
+[19:57:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000416
+[19:58:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000557
+[19:58:13] OnDesireTimer Timer aufgerufen
+[19:58:13] Essen/Durst Anzeige update: 22 | 22
+[19:58:15] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000637
+[19:58:15] OnEntityTimer: Player Foreach benötigte: 00:00:00.0075221
+[19:58:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000567
+[19:58:34] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000562
+[19:58:49] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000451
+[19:59:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000450
+[19:59:15] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000439
+[19:59:15] OnEntityTimer: Player Foreach benötigte: 00:00:00.0113877
+[19:59:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000547
+[19:59:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000421
+[19:59:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000403
+[20:00:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000533
+[20:00:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000382
+[20:00:21] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000428
+[20:00:21] OnEntityTimer: Player Foreach benötigte: 00:00:00.0087390
+[20:00:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000585
+[20:00:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000398
+[20:01:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000543
+[20:01:15] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000460
+[20:01:15] OnEntityTimer: Player Foreach benötigte: 00:00:00.0109276
+[20:01:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000407
+[20:01:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000404
+[20:01:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000581
+[20:02:05] Server ist gestoppt.
+[20:02:05][20:02:05][20:02:05] < ==== UNHANDLED EXCEPTION ==== > 
+ Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Altv_Roleplay.Factions.ACLS.ACLSBot.Stop()
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
+   at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+ < ==== UNHANDLED EXCEPTION ==== > 
  Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
    at Altv_Roleplay.Factions.LSPD.LSPDBot.Stop()
    at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
@@ -1261,13 +302,13 @@
    at System.Threading.ThreadPoolWorkQueue.Dispatch()
  < ==== UNHANDLED EXCEPTION ==== > 
  Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
-   at Altv_Roleplay.Factions.LSMD.LSMDBot.Stop()
+   at Altv_Roleplay.Factions.ACLS.ACLSBot.Stop()
    at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
    at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
    at System.Threading.ThreadPoolWorkQueue.Dispatch()
-[22:00:44] < ==== UNHANDLED EXCEPTION ==== > 
+[20:02:05] < ==== UNHANDLED EXCEPTION ==== > 
  Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
-   at Altv_Roleplay.Factions.ACLS.ACLSBot.Stop()
+   at Altv_Roleplay.Factions.LSMD.LSMDBot.Stop()
    at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
    at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
    at System.Threading.ThreadPoolWorkQueue.Dispatch()
