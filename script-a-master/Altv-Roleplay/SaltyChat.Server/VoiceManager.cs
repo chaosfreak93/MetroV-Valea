@@ -19,7 +19,7 @@ namespace SaltyChat.Server
     {
         #region Useless things.. But I like them
 
-        private const string Version = "1.0.7E2"; // ToDo: Change on update
+        private const string Version = "1.0.8"; // ToDo: Change on update
 
         #endregion
 
