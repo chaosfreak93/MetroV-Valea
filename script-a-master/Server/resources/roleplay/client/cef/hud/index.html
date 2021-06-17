@@ -2797,19 +2797,8 @@
         $("#bankATMbox-ViewTransactionArea").hide();
         $("#bankATMbox-OverviewArea").hide();
         $("#bankATMbox-DoMoneyTransfer").hide();
-        $(`
-    #$
-        {
-            site
-        }
-        `).fadeTo(500, 1, function() {
-        $(`
-    #$
-        {
-            site
-        }
-        `).show();
-        });
+        $(`#${site}`).fadeTo(500, 1, function() {
+        $(`#${site}`).show();});
 
         if (site == "bankATMbox-PinArea") {
         $("#bankATMboxDescriptionTitle").html("Um weitere Aktionen durchführen zu können geben Sie bitte Ihre Geheimzahl ein.<br>Geben Sie Ihre Geheimzahl zu oft falsch ein wird Ihre Karte gesperrt.");
@@ -6513,13 +6502,7 @@
         $( ".Wallpaper10Setting" ).css( "border-style", 'none' );
         $( ".Wallpaper10Setting" ).css( "border-color", '#ff0000' );
 
-        $(`
-    .Wallpaper$
-        {
-            wallpaperId
-        }
-    Setting
-        `).css("border-style", 'solid');
+        $(`.Wallpaper${wallpaperId}Setting`).css("border-style", 'solid');
         $( ".layer2" ).css( "background-image", `
     url("../utils/img/phone/wallpaper$
         {
