@@ -401,7 +401,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            if (engineState == false && ServerVehicles.GetVehicleFuel(veh) <= 0) {
+            if (engineState == false && ServerVehicles.GetVehicleFuel(veh) <= 0 && ServerVehicles.GetVehicleFuelTypeOnHash(long.Parse(veh.Model.ToString())) != "None") {
                 HUDHandler.SendNotification(player, 3, 5000, "Dieses Fahrzeug hat keinen Treibstoff mehr.");
                 return;
             }

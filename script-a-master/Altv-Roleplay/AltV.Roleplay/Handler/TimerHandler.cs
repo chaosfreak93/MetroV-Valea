@@ -73,7 +73,7 @@ namespace Altv_Roleplay.Handler
 
                             var vehID = Veh.GetVehicleId();
 
-                            if (vehID <= 0)
+                            if (vehID <= 0 || ServerVehicles.GetVehicleFuelTypeOnHash(long.Parse(Veh.Model.ToString())) == "None")
                                 continue;
 
                             ServerVehicles.SaveVehiclePositionAndStates(Veh);
