@@ -397,7 +397,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SendChatMessage($"{player.Position.ToString()}");
+            player.SendChatMessage($"X: {player.Position.X}, Y: {player.Position.Y - 0.8}, Z: {player.Position.Z}");
         }
 
         [Command("rot")]
