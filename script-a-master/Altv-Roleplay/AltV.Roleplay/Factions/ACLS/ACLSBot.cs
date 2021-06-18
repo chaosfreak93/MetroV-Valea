@@ -89,16 +89,16 @@ namespace Altv_Roleplay.Factions.ACLS
                             }
 
                             ServerFactions.SetCharacterInFactionDuty(online.CharacterId, true);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 4, 98, 6);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 11, 248, 14);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 8, 153, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 6, 25, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 2, 2, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 3, 43, 0);
-
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 7, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 1, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 9, 0, 0);
+                            online.SetClothes(4, 98, 6, 0);
+                            online.SetClothes(11, 248, 14, 0);
+                            online.SetClothes(8, 153, 0, 0);
+                            online.SetClothes(6, 25, 0, 0);
+                            online.SetClothes(3, 43, 0, 0);
+                            online.SetClothes(1, 0, 0, 0);
+                            online.SetClothes(9, 0, 0, 0);
+                            
+                            online.SetProps(7, 0, 0);
+                            online.SetProps(2, 2, 0);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                             HUDHandler.SendNotification(online, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
                         } else {
@@ -193,16 +193,16 @@ namespace Altv_Roleplay.Factions.ACLS
                             if (ServerFactions.GetCharacterFactionId(online.CharacterId) != Config.factionId)
                                 return;
 
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 4, 98, 6);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 11, 248, 14);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 8, 153, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 6, 25, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 2, 2, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 3, 43, 0);
-
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 7, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 1, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 9, 0, 0);
+                            online.SetClothes(4, 98, 6, 0);
+                            online.SetClothes(11, 248, 14, 0);
+                            online.SetClothes(8, 153, 0, 0);
+                            online.SetClothes(6, 25, 0, 0);
+                            online.SetClothes(3, 43, 0, 0);
+                            online.SetClothes(1, 0, 0, 0);
+                            online.SetClothes(9, 0, 0, 0);
+                            
+                            online.SetProps(7, 0, 0);
+                            online.SetProps(2, 2, 0);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                         }
 

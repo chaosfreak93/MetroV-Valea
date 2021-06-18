@@ -212,7 +212,7 @@ namespace Altv_Roleplay.Handler
                 CharactersInventory.AddCharacterItem(charid, "Bargeld", 10000, "inventory");
                 CharactersInventory.AddCharacterItem(charid, "Tasche", 1, "inventory");
                 Characters.SetCharacterBackpack(client, "Tasche");
-                //player.EmitLocked("Client:SpawnArea:setCharClothes", 5, 0, 0);
+                //client.SetClothes(5, 0, 0, 0);
                 CharactersInventory.AddCharacterItem(charid, "Sandwich", 3, "backpack");
                 CharactersInventory.AddCharacterItem(charid, "Wasser", 3, "backpack");
                 CharactersInventory.AddCharacterItem(charid, "Tablet", 1, "inventory");
@@ -353,11 +353,11 @@ namespace Altv_Roleplay.Handler
                 }
 
                 if (Characters.GetCharacterGender(charid) == false) {
-                    client.EmitLocked("Client:SpawnArea:setCharClothes", 11, 5, 0);
-                    client.EmitLocked("Client:SpawnArea:setCharClothes", 3, 5, 0);
-                    client.EmitLocked("Client:SpawnArea:setCharClothes", 4, 7, 15);
-                    client.EmitLocked("Client:SpawnArea:setCharClothes", 6, 7, 0);
-                    client.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 88);
+                    client.SetClothes(11, 5, 0, 0);
+                    client.SetClothes(3, 5, 0, 0);
+                    client.SetClothes(4, 7, 15, 0);
+                    client.SetClothes(6, 7, 0, 0);
+                    client.SetClothes(8, 1, 88, 0);
                 }
             }
 

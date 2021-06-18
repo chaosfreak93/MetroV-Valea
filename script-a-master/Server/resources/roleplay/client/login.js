@@ -112,15 +112,6 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     }
 });
 
-alt.onServer("Client:SpawnArea:setCharClothes", (componentId, drawableId, textureId) => {
-    //alt.log(`Component: ${componentId} - drawable: ${drawableId} - texture: ${textureId}`);
-    game.setPedComponentVariation(alt.Player.local.scriptID, parseInt(componentId), parseInt(drawableId), parseInt(textureId), 0);
-});
-
-alt.onServer("Client:SpawnArea:setCharAccessory", (componentId, drawableId, textureId) => {
-    game.setPedPropIndex(alt.Player.local.scriptID, componentId, drawableId, textureId, false);
-});
-
 alt.onServer("Client:SpawnArea:clearCharAccessory", (componentId) => {
     game.clearPedProp(alt.Player.local.scriptID, componentId);
 });

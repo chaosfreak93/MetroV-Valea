@@ -89,19 +89,19 @@ namespace Altv_Roleplay.Factions.LSPD
                             }
 
                             ServerFactions.SetCharacterInFactionDuty(online.CharacterId, true);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 4, 31, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 11, 55, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 8, 58, 0);
-                            //player.EmitLocked("Client:SpawnArea:setCharClothes", 9, 12, 1); // WESTE
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 10, 8, 1);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 6, 25, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 2, 2, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 3, 43, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 0, 46, 0);
-
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 7, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 1, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 9, 0, 0);
+                            online.SetClothes(4, 31, 0, 0);
+                            online.SetClothes(11, 55, 0, 0);
+                            online.SetClothes(8, 58, 0, 0);
+                            online.SetClothes(10, 8, 1, 0);
+                            online.SetClothes(6, 25, 0, 0);
+                            online.SetClothes(3, 43, 0, 0);
+                            online.SetClothes(1, 0, 0, 0);
+                            online.SetClothes(9, 0, 0, 0);
+                            //player.SetClothes(9, 12, 1, 0); // WESTE
+                            
+                            online.SetProps(0, 46, 0);
+                            online.SetProps(7, 0,0);
+                            online.SetProps(2, 2, 0);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                             HUDHandler.SendNotification(online, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
                             SmartphoneHandler.RequestLSPDIntranet(online);
@@ -198,19 +198,19 @@ namespace Altv_Roleplay.Factions.LSPD
                             if (ServerFactions.GetCharacterFactionId(online.CharacterId) != Config.factionId)
                                 return;
 
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 4, 31, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 11, 55, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 8, 58, 0);
-                            //player.EmitLocked("Client:SpawnArea:setCharClothes", 9, 12, 1); // WESTE
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 10, 8, 1);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 6, 25, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 2, 2, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 3, 43, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 0, 46, 0);
-
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 7, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 1, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 9, 0, 0);
+                            online.SetClothes(4, 31, 0, 0);
+                            online.SetClothes(11, 55, 0, 0);
+                            online.SetClothes(8, 58, 0, 0);
+                            online.SetClothes(10, 8, 1, 0);
+                            online.SetClothes(6, 25, 0, 0);
+                            online.SetClothes(3, 43, 0, 0);
+                            online.SetClothes(1, 0, 0, 0);
+                            online.SetClothes(9, 0, 0, 0);
+                            //player.SetClothes(9, 12, 1, 0); // WESTE
+                            
+                            online.SetProps(0, 46, 0);
+                            online.SetProps(7, 0,0);
+                            online.SetProps(2, 2, 0);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                         }
 

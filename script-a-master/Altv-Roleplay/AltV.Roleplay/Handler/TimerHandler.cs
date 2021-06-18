@@ -183,11 +183,11 @@ namespace Altv_Roleplay.Handler
                                             player.Position = new Position(1691.4594f, 2565.7056f, 45.556763f);
 
                                             if (Characters.GetCharacterGender(charId) == false) {
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 11, 5, 0);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 3, 5, 0);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 4, 7, 15);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 6, 7, 0);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 88);
+                                                player.SetClothes(11, 5, 0, 0);
+                                                player.SetClothes(3, 5, 0, 0);
+                                                player.SetClothes(4, 7, 15, 0);
+                                                player.SetClothes(6, 7, 0, 0);
+                                                player.SetClothes(8, 1, 88, 0);
                                             }
                                         } else {
                                             Characters.SetCharacterJailTime(charId, false, 0);

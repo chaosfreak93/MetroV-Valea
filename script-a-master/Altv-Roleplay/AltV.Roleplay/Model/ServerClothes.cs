@@ -18,7 +18,7 @@ namespace Altv_Roleplay.Model
             return 0;
         }
 
-        public static int GetClothesComponent(int clothesId, int gender) {
+        public static byte GetClothesComponent(int clothesId, int gender) {
             try {
                 var clothes = ServerClothesShops.ServerClothesShopsItems_.ToList().FirstOrDefault(x => x.id == clothesId && x.gender == gender);
                 if (clothes != null) return clothes.componentId;
@@ -30,7 +30,7 @@ namespace Altv_Roleplay.Model
             return 0;
         }
 
-        public static int GetClothesDraw(int clothesId, int gender) {
+        public static ushort GetClothesDraw(int clothesId, int gender) {
             try {
                 var clothes = ServerClothesShops.ServerClothesShopsItems_.ToList().FirstOrDefault(x => x.id == clothesId && x.gender == gender);
                 if (clothes != null) return clothes.drawableId;
@@ -42,7 +42,7 @@ namespace Altv_Roleplay.Model
             return 0;
         }
 
-        public static int GetClothesTexture(int clothesId, int gender) {
+        public static byte GetClothesTexture(int clothesId, int gender) {
             try {
                 var clothes = ServerClothesShops.ServerClothesShopsItems_.ToList().FirstOrDefault(x => x.id == clothesId && x.gender == gender);
                 if (clothes != null) return clothes.textureId;

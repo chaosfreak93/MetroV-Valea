@@ -159,7 +159,7 @@ namespace Altv_Roleplay.Handler
                             if (CharactersInventory.GetCharacterBackpackItemCount(charId) == 0) {
                                 Characters.SetCharacterBackpack(player, "None");
                                 HUDHandler.SendNotification(player, 2, 5000, "Du hast deinen Rucksack ausgezogen.");
-                                //player.EmitLocked("Client:SpawnArea:setCharClothes", 5, 0, 0);
+                                //player.SetClothes(5, 0, 0, 0);
                             } else {
                                 HUDHandler.SendNotification(player, 4, 5000,
                                     "Du hast zuviele Sachen im Rucksack, du kannst deinen Rucksack nicht ablegen.");
@@ -172,7 +172,7 @@ namespace Altv_Roleplay.Handler
                         if (itemname == "Tasche") {
                             if (CharactersInventory.GetCharacterBackpackItemCount(charId) == 0) {
                                 Characters.SetCharacterBackpack(player, "None");
-                                //player.EmitLocked("Client:SpawnArea:setCharClothes", 5, 0, 0);
+                                //player.SetClothes(5, 0, 0, 0);
                                 HUDHandler.SendNotification(player, 2, 5000, "Du hast deine Tasche ausgezogen.");
                             } else {
                                 HUDHandler.SendNotification(player, 4, 5000,
@@ -186,9 +186,9 @@ namespace Altv_Roleplay.Handler
                         Characters.SetCharacterBackpack(player, itemname);
 
                         if (itemname == "Rucksack") HUDHandler.SendNotification(player, 2, 5000, "Du hast deinen Rucksack angezogen");
-                        //player.EmitLocked("Client:SpawnArea:setCharClothes", 5, 45, 0);
+                        //player.SetClothes(5, 45, 0, 0);
                         else HUDHandler.SendNotification(player, 2, 5000, "Du hast deine Tasche angezogen.");
-                        //player.EmitLocked("Client:SpawnArea:setCharClothes", 5, 44, 0);
+                        //player.SetClothes(5, 44, 0, 0);
                     }
                 } else if (itemname == "EC Karte") {
                     var atmPos = ServerATM.ServerATM_.FirstOrDefault(x => player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 1f));
@@ -289,8 +289,8 @@ namespace Altv_Roleplay.Handler
                     CharactersInventory.RemoveCharacterItemAmount(charId, "Weste", 1, fromContainer);
                     Characters.SetCharacterArmor(charId, 100);
                     player.Armor = 100;
-                    if (Characters.GetCharacterGender(charId)) player.EmitLocked("Client:SpawnArea:setCharClothes", 9, 17, 2);
-                    else player.EmitLocked("Client:SpawnArea:setCharClothes", 9, 15, 2);
+                    if (Characters.GetCharacterGender(charId)) player.SetClothes(9, 17, 2, 0);
+                    else player.SetClothes(9, 15, 2, 0);
                 } else if (itemname == "Kokain") {
                     CharactersInventory.RemoveCharacterItemAmount(charId, "Kokain", 1, fromContainer);
                     HUDHandler.SendNotification(player, 2, 2000, "Du hast Koks gezogen du bist nun 15 Minuten effektiver.");
