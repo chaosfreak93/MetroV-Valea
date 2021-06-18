@@ -335,6 +335,7 @@
         if (action == "play") {
             playbtn_selecteduid = value;
             setSpawnSelectTyp(value2);
+            alt.emit("Client:Charcreator:SwitchOut");
             showArea("spawnselect");
             return;
         }
