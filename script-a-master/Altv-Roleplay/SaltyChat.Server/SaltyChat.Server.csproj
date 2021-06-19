@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AltV.Net" Version="2.3.53-dev53" />
-    <PackageReference Include="AltV.Net.Async" Version="2.3.53-dev53" />
+    <PackageReference Include="AltV.Net" Version="2.4.6-rc53" />
+    <PackageReference Include="AltV.Net.Async" Version="2.4.6-rc53" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
