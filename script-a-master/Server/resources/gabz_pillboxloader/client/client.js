@@ -1,3 +1,5 @@
+/// <reference types="@altv/types-client" />
+/// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
@@ -19,6 +21,7 @@ alt.onServer('LOADING_PILLBOX', () => {
     alt.removeIpl('rc12b_hospitalinterior_lod');
     alt.removeIpl('rc12b_hospitalinterior');
     alt.removeIpl('rc12b_fixed');
+    alt.removeIpl('v_hospital');
 
     // Charge le pillbox de gabz
     let gabzpillbox = native.getInteriorAtCoords(311.2546, -592.4204, 42.32737);
