@@ -158,7 +158,7 @@ namespace Altv_Roleplay.Handler
         }
 
         [Command("clothes")]
-        public void clothesCMD(IPlayer player, byte type, ushort draw, byte tex) {
+        public void clothesCMD(IPlayer player, int type, int draw, int tex) {
             if (player == null || !player.Exists) return;
 
             if (player.AdminLevel() <= 8) {
@@ -166,11 +166,11 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SetClothes(type, draw, tex, 0);
+            player.SetClothes(byte.Parse(type.ToString()), ushort.Parse(draw.ToString()), byte.Parse(tex.ToString()), 0);
         }
 
         [Command("accessory")]
-        public void accessoryCMD(IPlayer player, byte type, ushort draw, byte tex) {
+        public void accessoryCMD(IPlayer player, int type, int draw, int tex) {
             if (player == null || !player.Exists) return;
             
             if (player.AdminLevel() <= 8) {
@@ -178,7 +178,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SetProps(type, draw, tex);
+            player.SetProps(byte.Parse(type.ToString()), ushort.Parse(draw.ToString()), byte.Parse(tex.ToString()));
         }
 
         [Command("support", true)]
@@ -418,7 +418,7 @@ namespace Altv_Roleplay.Handler
         }
 
         [Command("torso")]
-        public void TorsoCMD(IPlayer player, ushort torso) {
+        public void TorsoCMD(IPlayer player, int torso) {
             if (player == null || !player.Exists) return;
 
             if (player.AdminLevel() <= 8) {
@@ -426,7 +426,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SetClothes(3, torso, 0, 0);
+            player.SetClothes(3, ushort.Parse(torso.ToString()), 0, 0);
         }
 
         [Command("delcar")]
