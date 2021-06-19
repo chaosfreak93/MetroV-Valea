@@ -153,6 +153,25 @@ namespace Altv_Roleplay.Handler
                     player.Position = new Position(teleportsPos.targetX, teleportsPos.targetY, teleportsPos.targetZ + 0.5f);
                     return;
                 }
+                
+                Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
+                Position casinoExitPos = new Position(1089.6263f, 205.87253f, -49.80439453125f);
+                
+                bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 2f);
+
+                if (casinoEntrance && !player.IsInVehicle) {
+                    player.Emit("Casino:Enter");
+                    player.Position = new Position(casinoExitPos.X, casinoExitPos.Y, casinoExitPos.Z + 0.5f);
+                    return;
+                }
+                
+                bool casinoExit = player.Position.IsInRange(casinoExitPos, 2f);
+
+                if (casinoExit && !player.IsInVehicle) {
+                    player.Emit("Casino:Leave");
+                    player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
+                    return;
+                }
 
                 var shopPos = ServerShops.ServerShops_.FirstOrDefault(x => player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 3f));
 
