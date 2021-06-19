@@ -13,7 +13,7 @@ alt.onServer("Client:Crouch:toggleCrouch", (isCrouching) => {
         game.setPedMovementClipset(alt.Player.local.scriptID, movementClipSet, clipSetSwitchTime);
         game.setPedStrafeClipset(alt.Player.local.scriptID, strafeClipSet);
     } else {
-        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.0);
+        game.resetPedMovementClipset(alt.Player.local.scriptID, clipSetSwitchTime);
         game.resetPedStrafeClipset(alt.Player.local.scriptID);
     }
 });

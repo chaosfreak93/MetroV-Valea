@@ -57,7 +57,7 @@ alt.everyTick(() => {
             native.attachCamToEntity(cam, heli, 0.0, 0.0, -1.5, true);
             native.setCamRot(cam, 0.0, 0.0, native.getEntityHeading(heli), 2);
             native.setCamFov(cam, fov);
-            native.renderScriptCams(true, false, 0, 1, 0);
+            native.renderScriptCams(true, false, 0, true, false, 0);
 
             let locked_on_vehicle = null;
             if (helicam && !native.isEntityDead(lPed) && (native.getVehiclePedIsIn(lPed) == heli) && IsHeliHighEnough(heli)) {
@@ -92,7 +92,7 @@ alt.everyTick(() => {
                             native.attachCamToEntity(cam, heli, 0.0, 0.0, -1.5, true);
                             native.setCamRot(cam, rot.x, rot.y, rot.z, 2);
                             native.setCamFov(cam, fov);
-                            native.renderScriptCams(true, false, 0, 1, 0);
+                            native.renderScriptCams(true, false, 0, true, false, 0);
                         }
                     } else {
                         locked_on_vehicle = null;
@@ -153,7 +153,7 @@ alt.everyTick(() => {
 function stopCam(cam, scaleform) {
     helicam = false;
     fov = (fov_max + fov_min) * 0.5;
-    native.renderScriptCams(false, false, 0, 1, 0);
+    native.renderScriptCams(false, false, 0, true, false, 0);
     native.setScaleformMovieAsNoLongerNeeded(scaleform);
     native.destroyCam(cam);
     native.setNightvision(false);

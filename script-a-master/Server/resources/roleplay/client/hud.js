@@ -2051,7 +2051,7 @@ function playAnimation(animDict, animName, animFlag, animDuration) {
 function playWalking(anim) {
     if (anim == undefined) return;
     if (anim == "normal") {
-        game.resetPedMovementClipset(alt.Player.local.scriptID);
+        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.2);
         return;
     }
     game.requestAnimSet(anim);

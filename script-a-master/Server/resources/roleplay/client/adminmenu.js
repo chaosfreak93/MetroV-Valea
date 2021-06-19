@@ -185,7 +185,7 @@ alt.onServer("Client:AdminMenu:Spectate", async (target, info) => {
         await waitFor(game.isCamActive, spectate_camera);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         game.attachCamToEntity(spectate_camera, target.scriptID, 0, -2.0, 1.0, true);
-        game.renderScriptCams(true, false, 0, true, false);
+        game.renderScriptCams(true, false, 0, true, false, 0);
         await waitFor(game.isCamRendering, spectate_camera);
         game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
         await waitFor(game.isNewLoadSceneLoaded);
@@ -197,7 +197,7 @@ alt.onServer("Client:AdminMenu:Spectate", async (target, info) => {
         if (spectate_camera == null) return;
         alt.clearEveryTick(spectate_tick);
         game.setCamActive(spectate_camera, false);
-        game.renderScriptCams(false, false, 0, false, false);
+        game.renderScriptCams(false, false, 0, false, false, 0);
         game.destroyCam(spectate_camera, true);
         game.setEntityCoords(alt.Player.local.scriptID, spectate_lastpos.x, spectate_lastpos.y, spectate_lastpos.z);
         game.freezeEntityPosition(alt.Player.local.scriptID, false);

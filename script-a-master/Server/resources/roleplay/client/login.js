@@ -86,7 +86,7 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     let headblends = JSON.parse(headblendsarray);
     let headoverlays = JSON.parse(headoverlayarray);
 
-    game.setPedHeadBlendData(alt.Player.local.scriptID, headblends[0], headblends[1], 0, headblends[2], headblends[5], 0, headblends[3], headblends[4], 0, 0);
+    game.setPedHeadBlendData(alt.Player.local.scriptID, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 1, 1, parseInt(headoverlays[2][1]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 2, 1, parseInt(headoverlays[2][2]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 5, 2, parseInt(headoverlays[2][5]), 1);
@@ -205,8 +205,8 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
             game.disablePedPainAudio(loginPedHandle, true);
             game.freezeEntityPosition(loginPedHandle, true);
             game.taskSetBlockingOfNonTemporaryEvents(loginPedHandle, true);
-
-            game.setPedHeadBlendData(loginPedHandle, headblends[0], headblends[1], 0, headblends[2], headblends[5], 0, headblends[3], headblends[4], 0, 0);
+            
+            game.setPedHeadBlendData(loginPedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
             game.setPedHeadOverlayColor(loginPedHandle, 1, 1, parseInt(headoverlays[2][1]), 1);
             game.setPedHeadOverlayColor(loginPedHandle, 2, 1, parseInt(headoverlays[2][2]), 1);
             game.setPedHeadOverlayColor(loginPedHandle, 5, 2, parseInt(headoverlays[2][5]), 1);
