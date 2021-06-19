@@ -194,3 +194,76 @@
 [18:03:03] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000582
 [18:03:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.2740758
 [18:03:04] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000416
+[18:03:19] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000433
+[18:03:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000416
+[18:03:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000400
+[18:04:03] OnDesireTimer Timer aufgerufen
+[18:04:03] Essen/Durst Anzeige update: 15 | 15
+[18:04:03] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000408
+[18:04:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.2562438
+[18:04:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000463
+[18:04:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000441
+[18:04:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000444
+[18:04:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000500
+[18:05:03] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000443
+[18:05:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.3934986
+[18:05:05] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000755
+[18:05:20] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000717
+[18:05:35] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000445
+[18:05:50] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000631
+[18:06:03] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000508
+[18:06:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.2707347
+[18:06:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000505
+[18:06:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000387
+[18:06:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000510
+[18:06:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000471
+[18:07:04] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000501
+[18:07:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.2638457
+[18:07:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000459
+[18:07:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001508
+[18:07:36] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000653
+[18:07:51] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000319
+[18:08:04] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000364
+[18:08:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000201
+[18:08:06] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000257
+[18:08:21] OnCheckTimer: Player Foreach benötigte: 00:00:00.0001192
+[18:08:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000942
+[18:08:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000775
+[18:09:03] OnDesireTimer Timer aufgerufen
+[18:09:04] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0002156
+[18:09:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000535
+[18:09:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000860
+[18:09:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000610
+[18:09:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000550
+[18:09:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000552
+[18:10:04] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0001001
+[18:10:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000511
+[18:10:07] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000959
+[18:10:22] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000811
+[18:10:37] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000629
+[18:10:52] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000791
+[18:11:04] OnEntityTimer: Vehicle Foreach benötigte: 00:00:00.0000949
+[18:11:04] OnEntityTimer: Player Foreach benötigte: 00:00:00.0000736
+[18:11:08] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000560
+[18:11:23] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000751
+[18:11:38] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000563
+[18:11:53] OnCheckTimer: Player Foreach benötigte: 00:00:00.0000744
+[18:11:54] Server ist gestoppt.
+[18:11:54][18:11:54][18:11:54][18:11:54] < ==== UNHANDLED EXCEPTION ==== > 
+ Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Altv_Roleplay.Factions.ACLS.ACLSBot.Stop()
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
+   at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+ < ==== UNHANDLED EXCEPTION ==== > 
+ Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Altv_Roleplay.Factions.LSPD.LSPDBot.Stop()
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
+   at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+ < ==== UNHANDLED EXCEPTION ==== > 
+ Received an unhandled exception from : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Altv_Roleplay.Factions.LSMD.LSMDBot.Stop()
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__140_1(Object state)
+   at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
