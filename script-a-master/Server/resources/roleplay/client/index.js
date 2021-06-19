@@ -5,6 +5,7 @@ import '/client/cayoperico.js';
 import '/client/login.js';
 import '/client/charcreator.js';
 import '/client/blipmanager.js';
+import '/client/casino.js';
 import '/client/hud.js';
 import '/client/inventory.js';
 import '/client/keyhandler.js';
