@@ -258,6 +258,12 @@ alt.on('connectionComplete', () => {
     alt.setMsPerGameMinute(60000);
 });
 
+alt.setInterval(() => {
+    let date = new Date();
+    game.setClockTime(parseInt(date.getHours()), parseInt(date.getMinutes()), parseInt(date.getSeconds()));
+    alt.setMsPerGameMinute(60000);
+}, 3600000);
+
 function loadallIPLsAndInteriors() {
     game.requestIpl("hei_hw1_blimp_interior_v_apart_midspaz_milo");
     game.requestIpl('chop_props');
