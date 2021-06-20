@@ -16,7 +16,7 @@ namespace Altv_Roleplay.Handler
     {
         [ScriptEvent(ScriptEventType.PlayerConnect)]
         public void OnPlayerConnect_Handler(ClassicPlayer player, string reason) {
-            if (player == null || !player.Exists) return;
+            if (player is not {Exists: true}) return;
 
             player.SetSyncedMetaData("PLAYER_SPAWNED", false);
             player.SetSyncedMetaData("ADMINLEVEL", 0);
@@ -52,13 +52,13 @@ namespace Altv_Roleplay.Handler
 
         [AsyncClientEvent("Server:CEF:setCefStatus")]
         public static void setCefStatus(IPlayer player, bool status) {
-            if (player == null || !player.Exists) return;
+            if (player is not {Exists: true}) return;
 
             player.SetSyncedMetaData("IsCefOpen", status);
         }
 
         public static void CreateLoginBrowser(IPlayer client) {
-            if (client == null || !client.Exists) return;
+            if (client is not {Exists: true}) return;
 
             client.Model = 0x3D843282;
             client.Dimension = 10000;
@@ -68,7 +68,7 @@ namespace Altv_Roleplay.Handler
 
         [AsyncClientEvent("Server:Login:ValidateLoginCredentials")]
         public void ValidateLoginCredentials(ClassicPlayer client, string username, string password, string discordId) {
-            if (client == null || !client.Exists) return;
+            if (client is not {Exists: true}) return;
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -139,7 +139,7 @@ namespace Altv_Roleplay.Handler
             User.SetPlayerOnline(client, 0);
 
             lock (client) {
-                if (client == null || !client.Exists) return;
+                if (client is not {Exists: true}) return;
 
                 client.accountId = (short) User.GetPlayerAccountId(client);
                 client.Dimension = (short) User.GetPlayerAccountId(client);
@@ -154,13 +154,15 @@ namespace Altv_Roleplay.Handler
 
         [AsyncClientEvent("Server:Login:resetPW")]
         public void resetPW(IPlayer client, string password) {
+            if (client is not {Exists: true}) return;
+            
             User.SetPlayerPassword(client, BCrypt.Net.BCrypt.HashPassword(password));
             client.EmitLocked("Client:Login:showArea", "login");
         }
 
         [AsyncClientEvent("Server:Charselector:PreviewCharacter")]
         public void PreviewCharacter(IPlayer client, int charid) {
-            if (client == null || !client.Exists) return;
+            if (client is not {Exists: true}) return;
 
             client.EmitLocked("Client:Charselector:ViewCharacter", Characters.GetCharacterGender(charid),
                 Characters.GetCharacterSkin("facefeatures", charid), Characters.GetCharacterSkin("headblendsdata", charid),
@@ -168,12 +170,12 @@ namespace Altv_Roleplay.Handler
         }
 
         public static void SendDataToCharselectorArea(IPlayer client) {
-            if (client == null || !client.Exists || ((ClassicPlayer) client).accountId <= 0) return;
+            if (client is not {Exists: true} || ((ClassicPlayer) client).accountId <= 0) return;
 
             var charArray = Characters.GetPlayerCharacters(client);
 
             lock (client) {
-                if (client == null || !client.Exists) return;
+                if (client is not {Exists: true}) return;
 
                 client.Position = new Position((float) 402.778, (float) -996.9758, -98);
             }
@@ -184,8 +186,7 @@ namespace Altv_Roleplay.Handler
 
         [AsyncClientEvent("Server:Charselector:spawnChar")]
         public async void CharacterSelectedSpawnPlace(ClassicPlayer client, string spawnstr, string charcid) {
-            if (client == null || !client.Exists || spawnstr == null || charcid == null || client.accountId <= 0 ||
-                User.GetPlayerAccountId(client) <= 0) return;
+            if (client is not {Exists: true} || spawnstr == null || charcid == null || client.accountId <= 0 || User.GetPlayerAccountId(client) <= 0) return;
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -201,7 +202,7 @@ namespace Altv_Roleplay.Handler
             User.SetPlayerOnline(client, charid); //Online Feld = CharakterID
 
             lock (client) {
-                if (client == null || !client.Exists) return;
+                if (client is not {Exists: true}) return;
 
                 client.CharacterId = charid;
             }
@@ -251,17 +252,13 @@ namespace Altv_Roleplay.Handler
                     case "paletobay":
                         Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_PaletoBay, 0);
                         break;
-                    case null:
-                        Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_Airport, 0);
-                        break;
                 }
             }
 
             lock (client) {
-                if (client == null || !client.Exists) return;
+                if (client is not {Exists: true}) return;
 
-                if (Characters.GetCharacterGender(charid)) client.Model = 0x9C9EFFD8;
-                else client.Model = 0x705E61F2;
+                client.Model = Characters.GetCharacterGender(charid) ? 0x9C9EFFD8 : 0x705E61F2;
             }
 
             client.EmitLocked("Client:ServerBlips:LoadAllBlips", ServerBlips.GetAllServerBlips());
@@ -269,9 +266,12 @@ namespace Altv_Roleplay.Handler
             client.EmitLocked("Client:SpawnArea:setCharSkin", Characters.GetCharacterSkin("facefeatures", charid),
                 Characters.GetCharacterSkin("headblendsdata", charid), Characters.GetCharacterSkin("headoverlays", charid));
             var dbPos = Characters.GetCharacterLastPosition(charid);
+            Alt.Log(dbPos.Z.ToString());
+            dbPos.Z += 1f;
+            Alt.Log(dbPos.Z.ToString());
 
             lock (client) {
-                if (client == null || !client.Exists) return;
+                if (client is not {Exists: true}) return;
 
                 client.Position = dbPos;
                 client.Spawn(dbPos, 0);
@@ -282,7 +282,7 @@ namespace Altv_Roleplay.Handler
                 client.Model = Alt.Hash(Characters.GetCharacterPedName(client.CharacterId));
 
             lock (client) {
-                if (client == null || !client.Exists) return;
+                if (client is not {Exists: true}) return;
 
                 client.Dimension = Characters.GetCharacterLastDimension(charid);
                 client.Health = (ushort) (Characters.GetCharacterHealth(charid) + 100);
@@ -302,11 +302,11 @@ namespace Altv_Roleplay.Handler
                 Characters.GetCharacterName((int) client.GetCharacterMetaId()));
 
             if (Characters.IsCharacterUnconscious(charid)) {
-                dbPos.Y = dbPos.Y + 1;
 
                 lock (client) {
-                    if (client == null || !client.Exists) return;
-
+                    if (client is not {Exists: true}) return;
+                    
+                    client.Position = dbPos;
                     client.Spawn(dbPos, 0);
                     client.EmitLocked("Client:Inventory:PlayAnimation", "missheistfbi3b_ig8_2", "cower_loop_victim", -1, 1, false);
                     client.EmitLocked("Client:Deathscreen:openCEF");
@@ -347,7 +347,7 @@ namespace Altv_Roleplay.Handler
                     $"Du befindest dich noch {Characters.GetCharacterJailTime(charid)} Minuten im Gefängnis.", 8000);
 
                 lock (client) {
-                    if (client == null || !client.Exists) return;
+                    if (client is not {Exists: true}) return;
 
                     client.Position = new Position(1691.4594f, 2565.7056f, 45.556763f);
                 }
@@ -362,6 +362,8 @@ namespace Altv_Roleplay.Handler
             }
 
             client.updateTattoos();
+            
+            client.Emit("Client:SpawnArea:SwitchIn");
             stopwatch.Stop();
             if (stopwatch.Elapsed.Milliseconds > 30)
                 Alt.Log($"{charid} - CharacterSelectedSpawnPlace benötigte {stopwatch.Elapsed.Milliseconds}ms");

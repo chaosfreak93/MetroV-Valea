@@ -66,6 +66,7 @@ alt.onServer('Client:Login:CreateCEF', () => {
         });
 
         loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr) => {
+            game.freezeEntityPosition(alt.Player.local.scriptID, true);
             alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
         });
 
@@ -176,8 +177,12 @@ let destroyLoginBrowser = function () {
     alt.toggleGameControls(true);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     game.setEntityAlpha(alt.Player.local.scriptID, 255, 0);
-    game.switchInPlayer(alt.Player.local.scriptID);
 }
+
+alt.onServer("Client:SpawnArea:SwitchIn", () => {
+    game.switchInPlayer(alt.Player.local.scriptID);
+    game.freezeEntityPosition(alt.Player.local.scriptID, false);
+});
 
 function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
     let facefeatures = JSON.parse(facefeaturearray);
