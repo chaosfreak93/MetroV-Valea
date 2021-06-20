@@ -66,6 +66,7 @@ alt.onServer('Client:Login:CreateCEF', () => {
         });
 
         loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr) => {
+            game.freezeEntityPosition(alt.Player.local.scriptID, true);
             alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
         });
 
@@ -176,8 +177,12 @@ let destroyLoginBrowser = function () {
     alt.toggleGameControls(true);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     game.setEntityAlpha(alt.Player.local.scriptID, 255, 0);
-    game.switchInPlayer(alt.Player.local.scriptID);
 }
+
+alt.onServer("Client:SpawnArea:SwitchIn", () => {
+    game.switchInPlayer(alt.Player.local.scriptID);
+    game.freezeEntityPosition(alt.Player.local.scriptID, false);
+});
 
 function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
     let facefeatures = JSON.parse(facefeaturearray);
@@ -265,141 +270,144 @@ alt.setInterval(() => {
 }, 3600000);
 
 function loadallIPLsAndInteriors() {
-    game.requestIpl("hei_hw1_blimp_interior_v_apart_midspaz_milo");
-    game.requestIpl('chop_props');
-    game.requestIpl('FIBlobby');
-    game.removeIpl('FIBlobbyfake');
-    game.requestIpl('FBI_colPLUG');
-    game.requestIpl('FBI_repair');
-    game.requestIpl('v_tunnel_hole');
-    game.removeIpl('TrevorsMP');
-    game.removeIpl('TrevorsTrailer');
-    game.requestIpl('TrevorsTrailerTidy');
-    game.removeIpl('farm_burnt');
-    game.removeIpl('farm_burnt_lod');
-    game.removeIpl('farm_burnt_props');
-    game.removeIpl('farmint_cap');
-    game.removeIpl('farmint_cap_lod');
-    game.requestIpl('farm');
-    game.requestIpl('farmint');
-    game.requestIpl('farm_lod');
-    game.requestIpl('farm_props');
-    game.requestIpl('facelobby');
-    game.removeIpl('CS1_02_cf_offmission');
-    game.requestIpl('CS1_02_cf_onmission1');
-    game.requestIpl('CS1_02_cf_onmission2');
-    game.requestIpl('CS1_02_cf_onmission3');
-    game.requestIpl('CS1_02_cf_onmission4');
-    game.requestIpl('v_rockclub');
-    game.removeIpl('v_janitor');
-    game.removeIpl('hei_bi_hw1_13_door');
-    game.requestIpl('bkr_bi_hw1_13_int');
-    game.removeIpl('ufo');
-    game.removeIpl('ufo_lod');
-    game.removeIpl('ufo_eye');
-    game.removeIpl('shutter_open');
-    game.requestIpl('csr_afterMission');
-    game.requestIpl('v_carshowroom');
-    game.requestIpl('shr_int');
-    game.requestIpl('shutter_closed');
-    game.requestIpl('smboat');
-    game.requestIpl('smboat_distantlights');
-    game.requestIpl('smboat_lod');
-    game.requestIpl('smboat_lodlights');
-    game.requestIpl('cargoship');
-    game.requestIpl('railing_start');
-    game.removeIpl('sp1_10_fake_interior');
-    game.removeIpl('sp1_10_fake_interior_lod');
-    game.requestIpl('sp1_10_real_interior');
-    game.requestIpl('sp1_10_real_interior_lod');
-    game.removeIpl('id2_14_during_door');
-    game.removeIpl('id2_14_during1');
-    game.removeIpl('id2_14_during2');
-    game.removeIpl('id2_14_on_fire');
-    game.removeIpl('id2_14_post_no_int');
-    game.removeIpl('id2_14_pre_no_int');
-    game.removeIpl('id2_14_during_door');
-    game.requestIpl('id2_14_during1');
-    game.removeIpl('Coroner_Int_off');
-    game.requestIpl('coronertrash');
-    game.requestIpl('Coroner_Int_on');
-    game.removeIpl('bh1_16_refurb');
-    game.removeIpl('jewel2fake');
-    game.removeIpl('bh1_16_doors_shut');
-    game.requestIpl('refit_unload');
-    game.requestIpl('post_hiest_unload');
-    game.requestIpl('Carwash_with_spinners');
-    game.requestIpl('KT_CarWash');
-    game.requestIpl('ferris_finale_Anim');
-    game.removeIpl('ch1_02_closed');
-    game.requestIpl('ch1_02_open');
-    game.requestIpl('AP1_04_TriAf01');
-    game.requestIpl('CS2_06_TriAf02');
-    game.requestIpl('CS4_04_TriAf03');
-    game.removeIpl('scafstartimap');
-    game.requestIpl('scafendimap');
-    game.removeIpl('DT1_05_HC_REMOVE');
-    game.requestIpl('DT1_05_HC_REQ');
-    game.requestIpl('DT1_05_REQUEST');
-    game.requestIpl('FINBANK');
-    game.removeIpl('DT1_03_Shutter');
-    game.removeIpl('DT1_03_Gr_Closed');
-    game.requestIpl('golfflags');
-    game.requestIpl('airfield');
-    game.requestIpl('v_garages');
-    game.requestIpl('v_foundry');
-    game.requestIpl('hei_yacht_heist');
-    game.requestIpl('hei_yacht_heist_Bar');
-    game.requestIpl('hei_yacht_heist_Bedrm');
-    game.requestIpl('hei_yacht_heist_Bridge');
-    game.requestIpl('hei_yacht_heist_DistantLights');
-    game.requestIpl('hei_yacht_heist_enginrm');
-    game.requestIpl('hei_yacht_heist_LODLights');
-    game.requestIpl('hei_yacht_heist_Lounge');
-    game.requestIpl('hei_carrier');
-    game.requestIpl('hei_Carrier_int1');
-    game.requestIpl('hei_Carrier_int2');
-    game.requestIpl('hei_Carrier_int3');
-    game.requestIpl('hei_Carrier_int4');
-    game.requestIpl('hei_Carrier_int5');
-    game.requestIpl('hei_Carrier_int6');
-    game.requestIpl('hei_carrier_LODLights');
-    game.requestIpl('bkr_bi_id1_23_door');
-    game.requestIpl('lr_cs6_08_grave_closed');
-    game.requestIpl('v_bahama');
-    game.removeIpl('CS3_07_MPGates');
-    game.requestIpl('cs5_4_trains');
-    game.requestIpl('v_lesters');
-    game.requestIpl('v_trevors');
-    game.requestIpl('v_michael');
-    game.requestIpl('v_michael_garage');
-    game.requestIpl('v_comedy');
-    game.requestIpl('v_cinema');
-    game.requestIpl('v_sweat');
-    game.removeIpl('v_sweatempty');
-    game.requestIpl('V_35_Fireman');
-    game.removeIpl('redCarpet');
-    game.requestIpl('triathlon2_VBprops');
-    game.requestIpl('jetstegameurnel');
-    game.requestIpl('Jetsteal_ipl_grp1');
-    game.removeIpl('v_hospital');
-    game.requestIpl('bh1_47_joshhse_unburnt');
-    game.requestIpl('canyonriver01');
-    game.requestIpl('canyonriver01_lod');
-    game.requestIpl('cs3_05_water_grp1');
-    game.requestIpl('cs3_05_water_grp1_lod');
-    game.requestIpl('trv1_trail_start');
-    game.requestIpl('CanyonRvrShallow');
+    alt.requestIpl("hei_hw1_blimp_interior_v_apart_midspaz_milo");
+    alt.requestIpl('chop_props');
+    alt.requestIpl('FIBlobby');
+    alt.removeIpl('FIBlobbyfake');
+    alt.requestIpl('FBI_colPLUG');
+    alt.requestIpl('FBI_repair');
+    alt.requestIpl('v_tunnel_hole');
+    alt.removeIpl('TrevorsMP');
+    alt.removeIpl('TrevorsTrailer');
+    alt.requestIpl('TrevorsTrailerTidy');
+    alt.removeIpl('farm_burnt');
+    alt.removeIpl('farm_burnt_lod');
+    alt.removeIpl('farm_burnt_props');
+    alt.removeIpl('farmint_cap');
+    alt.removeIpl('farmint_cap_lod');
+    alt.requestIpl('farm');
+    alt.requestIpl('farmint');
+    alt.requestIpl('farm_lod');
+    alt.requestIpl('farm_props');
+    alt.requestIpl('facelobby');
+    alt.removeIpl('CS1_02_cf_offmission');
+    alt.requestIpl('CS1_02_cf_onmission1');
+    alt.requestIpl('CS1_02_cf_onmission2');
+    alt.requestIpl('CS1_02_cf_onmission3');
+    alt.requestIpl('CS1_02_cf_onmission4');
+    alt.requestIpl('v_rockclub');
+    alt.removeIpl('v_janitor');
+    alt.removeIpl('hei_bi_hw1_13_door');
+    alt.requestIpl('bkr_bi_hw1_13_int');
+    alt.removeIpl('ufo');
+    alt.removeIpl('ufo_lod');
+    alt.removeIpl('ufo_eye');
+    alt.removeIpl('shutter_open');
+    alt.requestIpl('csr_afterMission');
+    alt.requestIpl('v_carshowroom');
+    alt.requestIpl('shr_int');
+    alt.requestIpl('shutter_closed');
+    alt.requestIpl('smboat');
+    alt.requestIpl('smboat_distantlights');
+    alt.requestIpl('smboat_lod');
+    alt.requestIpl('smboat_lodlights');
+    alt.requestIpl('cargoship');
+    alt.requestIpl('railing_start');
+    alt.removeIpl('sp1_10_fake_interior');
+    alt.removeIpl('sp1_10_fake_interior_lod');
+    alt.requestIpl('sp1_10_real_interior');
+    alt.requestIpl('sp1_10_real_interior_lod');
+    alt.removeIpl('id2_14_during_door');
+    alt.removeIpl('id2_14_during1');
+    alt.removeIpl('id2_14_during2');
+    alt.removeIpl('id2_14_on_fire');
+    alt.removeIpl('id2_14_post_no_int');
+    alt.removeIpl('id2_14_pre_no_int');
+    alt.removeIpl('id2_14_during_door');
+    alt.requestIpl('id2_14_during1');
+    alt.removeIpl('Coroner_Int_off');
+    alt.requestIpl('coronertrash');
+    alt.requestIpl('Coroner_Int_on');
+    alt.removeIpl('bh1_16_refurb');
+    alt.removeIpl('jewel2fake');
+    alt.removeIpl('bh1_16_doors_shut');
+    alt.requestIpl('refit_unload');
+    alt.requestIpl('post_hiest_unload');
+    alt.requestIpl('Carwash_with_spinners');
+    alt.requestIpl('KT_CarWash');
+    alt.requestIpl('ferris_finale_Anim');
+    alt.removeIpl('ch1_02_closed');
+    alt.requestIpl('ch1_02_open');
+    alt.requestIpl('AP1_04_TriAf01');
+    alt.requestIpl('CS2_06_TriAf02');
+    alt.requestIpl('CS4_04_TriAf03');
+    alt.removeIpl('scafstartimap');
+    alt.requestIpl('scafendimap');
+    alt.removeIpl('DT1_05_HC_REMOVE');
+    alt.requestIpl('DT1_05_HC_REQ');
+    alt.requestIpl('DT1_05_REQUEST');
+    alt.requestIpl('FINBANK');
+    alt.removeIpl('DT1_03_Shutter');
+    alt.removeIpl('DT1_03_Gr_Closed');
+    alt.requestIpl('golfflags');
+    alt.requestIpl('airfield');
+    alt.requestIpl('v_garages');
+    alt.requestIpl('v_foundry');
+    alt.requestIpl('hei_yacht_heist');
+    alt.requestIpl('hei_yacht_heist_Bar');
+    alt.requestIpl('hei_yacht_heist_Bedrm');
+    alt.requestIpl('hei_yacht_heist_Bridge');
+    alt.requestIpl('hei_yacht_heist_DistantLights');
+    alt.requestIpl('hei_yacht_heist_enginrm');
+    alt.requestIpl('hei_yacht_heist_LODLights');
+    alt.requestIpl('hei_yacht_heist_Lounge');
+    alt.requestIpl('hei_carrier');
+    alt.requestIpl('hei_Carrier_int1');
+    alt.requestIpl('hei_Carrier_int2');
+    alt.requestIpl('hei_Carrier_int3');
+    alt.requestIpl('hei_Carrier_int4');
+    alt.requestIpl('hei_Carrier_int5');
+    alt.requestIpl('hei_Carrier_int6');
+    alt.requestIpl('hei_carrier_LODLights');
+    alt.requestIpl('bkr_bi_id1_23_door');
+    alt.requestIpl('lr_cs6_08_grave_closed');
+    alt.requestIpl('v_bahama');
+    alt.removeIpl('CS3_07_MPGates');
+    alt.requestIpl('cs5_4_trains');
+    alt.requestIpl('v_lesters');
+    alt.requestIpl('v_trevors');
+    alt.requestIpl('v_michael');
+    alt.requestIpl('v_michael_garage');
+    alt.requestIpl('v_comedy');
+    alt.requestIpl('v_cinema');
+    alt.requestIpl('v_sweat');
+    alt.removeIpl('v_sweatempty');
+    alt.requestIpl('V_35_Fireman');
+    alt.removeIpl('redCarpet');
+    alt.requestIpl('triathlon2_VBprops');
+    alt.requestIpl('jetstegameurnel');
+    alt.requestIpl('Jetsteal_ipl_grp1');
+    alt.removeIpl('v_hospital');
+    alt.requestIpl('bh1_47_joshhse_unburnt');
+    alt.requestIpl('canyonriver01');
+    alt.requestIpl('canyonriver01_lod');
+    alt.requestIpl('cs3_05_water_grp1');
+    alt.requestIpl('cs3_05_water_grp1_lod');
+    alt.requestIpl('trv1_trail_start');
+    alt.requestIpl('CanyonRvrShallow');
 
-    game.requestIpl('vw_casino_main');
-    game.requestIpl('hei_dlc_windows_casino');
-    game.requestIpl('hei_dlc_casino_door');
-    game.requestIpl('vw_dlc_casino_door');
-    game.requestIpl('vw_casino_door');
-    game.requestIpl('hei_dlc_casino_aircon');
+    alt.requestIpl('vw_casino_main');
+    alt.requestIpl('hei_dlc_windows_casino');
+    alt.requestIpl('hei_dlc_casino_door');
+    alt.requestIpl('vw_dlc_casino_door');
+    alt.requestIpl('vw_casino_door');
+    alt.requestIpl('hei_dlc_casino_aircon');
 
     // HIGH END APARTMENT IPL
-    game.requestIpl("apa_v_mp_h_02_a");
+    alt.requestIpl("apa_v_mp_h_02_a");
+
+    // NIGHTCLUB
+    alt.requestIpl("ba_dlc_int_01_ba");
 
     // CLOSE OPEN DOORS
     game.doorControl(3687927243, -1149.709, -1521.088, 10.78267, true, 0.0, 50.0, 0.0); // VESPUCCI HOUSE
@@ -414,6 +422,8 @@ function loadallIPLsAndInteriors() {
     game.doorControl(308207762, 7.518359, 539.5268, 176.17764, true, 0.0, 50.0, 0.0); // FRANKLIN'S NEW HOUSE
     game.doorControl(1145337974, 1273.8154, -1720.6969, 54.92143, true, 0.0, 50.0, 0.0); // LESTER'S HOUSE
     game.doorControl(132154435, 1972.769, 3815.366, 33.663258, true, 0.0, 50.0, 0.0); // TREVOR'S HOUSE
+    game.doorControl(2739859149, -1607.536, -3005.431, -75.05607, true, 0.0, 50.0, 0.0); // NIGHTCLUB OFFICE
+    game.doorControl(1695461688, -1610.125, -3004.97, -78.84087, true, 0.0, 50.0, 0.0); // NIGHTCLUB GARAGE
 
     activateIPLProps();
 }
@@ -462,12 +472,10 @@ function activateIPLProps() {
         game.activateInteriorEntitySet(interiorID, 'layer_whiskey');
         game.refreshInterior(interiorID);
     }
-
-    //TODO: Rework Franklins House
+    
     interiorID = game.getInteriorAtCoords(3.199463, 529.7808, 169.6262);
     if (game.isValidInterior(interiorID)) {
         game.pinInteriorInMemory(interiorID);
-        game.activateInteriorEntitySet(interiorID, 'showhome_only');
         game.activateInteriorEntitySet(interiorID, 'franklin_unpacking');
         game.activateInteriorEntitySet(interiorID, 'franklin_settled');
         game.activateInteriorEntitySet(interiorID, 'progress_tshirt');
@@ -478,5 +486,25 @@ function activateIPLProps() {
         game.refreshInterior(interiorID);
     }
 
-    //TODO: Fix all House Interiors
+    interiorID = game.getInteriorAtCoords(-1604.664, -3012.583, -80);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_security_upgrade");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_equipment_setup");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_Style03");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_style03_podium");
+        game.activateInteriorEntitySet(interiorID, "int01_ba_lights_screen");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_Screen");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_bar_content");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_dj03");
+        game.activateInteriorEntitySet(interiorID, "DJ_01_Lights_01");
+        game.activateInteriorEntitySet(interiorID, "DJ_02_Lights_02");
+        game.activateInteriorEntitySet(interiorID, "DJ_03_Lights_03");
+        game.activateInteriorEntitySet(interiorID, "DJ_04_Lights_04");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_lightgrid_01");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_equipment_upgrade");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_clubname_01");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_dry_ice");
+        game.refreshInterior(interiorID);
+    }
 }

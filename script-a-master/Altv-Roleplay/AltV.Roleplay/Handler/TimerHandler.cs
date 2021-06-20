@@ -305,40 +305,40 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        internal static void VehicleAutomaticParkFetch(object sender, ElapsedEventArgs e) {
+        // Automatice Vehicle Park Fetch
+        //foreach(IVehicle vehicle in Alt.Server.GetVehicles().ToList().Where(x => x.GetVehicleId() != 0))
+        //{
+        //    if (vehicle == null) return;
+        //    using (var vehicleRef = new VehicleRef(vehicle))
+        //    {
+        //        if (!vehicleRef.Exists) return;
+        //        lock (vehicle)
+        //        {
+        //            var dbVeh = ServerVehicles.ServerVehicles_.FirstOrDefault(v => v.id == (int)vehicle.GetVehicleId());
+        //            if (dbVeh == null) continue;
+        //            if (DateTime.Now.Subtract(Convert.ToDateTime(dbVeh.lastUsage)).TotalHours >= 3)
+        //            {
+        //                int garage = 0;
+        //                if (dbVeh.garageId == 0) { garage = 10; }
+        //                else { garage = dbVeh.garageId; }
+        //                ServerVehicles.SetVehicleInGarage(vehicle, true, garage);
+        //            }
+        //        }
+        //    }
+        //}
+        
+        internal static void HotelTimer(object sender, ElapsedEventArgs e) {
             try {
-                //foreach(IVehicle vehicle in Alt.Server.GetVehicles().ToList().Where(x => x.GetVehicleId() != 0))
-                //{
-                //    if (vehicle == null) return;
-                //    using (var vehicleRef = new VehicleRef(vehicle))
-                //    {
-                //        if (!vehicleRef.Exists) return;
-                //        lock (vehicle)
-                //        {
-                //            var dbVeh = ServerVehicles.ServerVehicles_.FirstOrDefault(v => v.id == (int)vehicle.GetVehicleId());
-                //            if (dbVeh == null) continue;
-                //            if (DateTime.Now.Subtract(Convert.ToDateTime(dbVeh.lastUsage)).TotalHours >= 3)
-                //            {
-                //                int garage = 0;
-                //                if (dbVeh.garageId == 0) { garage = 10; }
-                //                else { garage = dbVeh.garageId; }
-                //                ServerVehicles.SetVehicleInGarage(vehicle, true, garage);
-                //            }
-                //        }
-                //    }
-                //}
-
                 foreach (var hotelApartment in ServerHotels.ServerHotelsApartments_.Where(x => x.ownerId > 0)) {
-                    if (hotelApartment == null) continue;
+                    if (!(DateTime.Now.Subtract(Convert.ToDateTime(hotelApartment.lastRent)).TotalHours >= hotelApartment.maxRentHours))
+                        continue;
 
-                    if (DateTime.Now.Subtract(Convert.ToDateTime(hotelApartment.lastRent)).TotalHours >= hotelApartment.maxRentHours) {
-                        var oldOwnerId = hotelApartment.ownerId;
-                        ServerHotels.SetApartmentOwner(hotelApartment.hotelId, hotelApartment.id, 0);
+                    var oldOwnerId = hotelApartment.ownerId;
+                    ServerHotels.SetApartmentOwner(hotelApartment.hotelId, hotelApartment.id, 0);
 
-                        foreach (var players in Alt.Server.GetPlayers().ToList()
-                            .Where(x => x != null && x.Exists && User.GetPlayerOnline(x) == oldOwnerId))
-                            HUDHandler.SendNotification(players, 1, 5000, "Deine Mietdauer im Hotel ist ausgelaufen, dein Zimmer wurde gekündigt");
-                    }
+                    foreach (var players in Alt.Server.GetPlayers().ToList()
+                        .Where(x => x is {Exists: true} && User.GetPlayerOnline(x) == oldOwnerId))
+                        HUDHandler.SendNotification(players, 1, 5000, "Deine Mietdauer im Hotel ist ausgelaufen, dein Zimmer wurde gekündigt");
                 }
             }
             catch (Exception ex) {
