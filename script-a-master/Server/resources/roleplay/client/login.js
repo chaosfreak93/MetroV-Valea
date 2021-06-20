@@ -462,12 +462,10 @@ function activateIPLProps() {
         game.activateInteriorEntitySet(interiorID, 'layer_whiskey');
         game.refreshInterior(interiorID);
     }
-
-    //TODO: Rework Franklins House
+    
     interiorID = game.getInteriorAtCoords(3.199463, 529.7808, 169.6262);
     if (game.isValidInterior(interiorID)) {
         game.pinInteriorInMemory(interiorID);
-        game.activateInteriorEntitySet(interiorID, 'showhome_only');
         game.activateInteriorEntitySet(interiorID, 'franklin_unpacking');
         game.activateInteriorEntitySet(interiorID, 'franklin_settled');
         game.activateInteriorEntitySet(interiorID, 'progress_tshirt');
