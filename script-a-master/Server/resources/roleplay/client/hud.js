@@ -690,11 +690,12 @@ alt.on("SaltyChat:VoiceRangeChanged", (voiceRange, voiceIndex) => {
     hudBrowser.emit("CEF:HUD:updateHUDVoice", voiceRange);
     localRange = voiceRange;
     let drawmarkertick = alt.everyTick(() => {
-        game.drawMarker(28, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z - 0.95, 0, 0, 0, 0, 0, 0, voiceRange, voiceRange, 0.2, 52, 152, 219, 50, 0, false, 2, false, undefined, undefined, false);
+        if (voiceRange != 0)
+            game.drawMarker(1, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z - 0.95, 0, 0, 0, 0, 0, 0, voiceRange*2, voiceRange*2, 0.2, 52, 152, 219, 50, 0, false, 2, false, undefined, undefined, false);
     });
     alt.setTimeout(() => {
         alt.clearEveryTick(drawmarkertick);
-    }, 250);
+    }, 500);
 });
 
 alt.onServer("Client:HUD:createIdentityCardApplyForm", (charname, gender, adress, birthdate, curBirthpl) => {

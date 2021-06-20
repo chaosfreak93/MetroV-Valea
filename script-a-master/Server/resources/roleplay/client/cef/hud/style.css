@@ -155,8 +155,7 @@ div#pluginScreen {
 
 #vehicleHUD > #VehicleFuelBox,
 #vehicleHUD > #VehicleKMBox,
-#vehicleHUD > #VehicleSpeedBox,
-p#locationtext {
+#vehicleHUD > #VehicleSpeedBox {
     width: 160px;
     padding: 6.5px;
     z-index: 100;
