@@ -236,23 +236,23 @@ namespace Altv_Roleplay
             var checkTimer = new Timer();
             var entityTimer = new Timer();
             var desireTimer = new Timer();
-            var HotelTimer = new Timer();
-            var WeatherSyncTimer = new Timer();
+            var hotelTimer = new Timer();
+            var weatherSyncTimer = new Timer();
             checkTimer.Elapsed += TimerHandler.OnCheckTimer;
             entityTimer.Elapsed += TimerHandler.OnEntityTimer;
             desireTimer.Elapsed += TimerHandler.OnDesireTimer;
-            HotelTimer.Elapsed += TimerHandler.HotelTimer;
-            WeatherSyncTimer.Elapsed += TimerHandler.WeatherSyncTimer;
+            hotelTimer.Elapsed += TimerHandler.HotelTimer;
+            weatherSyncTimer.Elapsed += TimerHandler.WeatherSyncTimer;
             checkTimer.Interval += 15000;
             entityTimer.Interval += 60000;
             desireTimer.Interval += 300000;
-            HotelTimer.Interval += 300000;
-            WeatherSyncTimer.Interval += 300000;
+            hotelTimer.Interval += 300000;
+            weatherSyncTimer.Interval += 300000;
             checkTimer.Enabled = true;
             entityTimer.Enabled = true;
             desireTimer.Enabled = true;
-            HotelTimer.Enabled = true;
-            WeatherSyncTimer.Enabled = true;
+            hotelTimer.Enabled = true;
+            weatherSyncTimer.Enabled = true;
 
             Console.WriteLine($"Main-Thread = {Thread.CurrentThread.ManagedThreadId}");
         }
