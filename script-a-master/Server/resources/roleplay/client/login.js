@@ -406,6 +406,9 @@ function loadallIPLsAndInteriors() {
     // HIGH END APARTMENT IPL
     alt.requestIpl("apa_v_mp_h_02_a");
 
+    // NIGHTCLUB
+    alt.requestIpl("ba_dlc_int_01_ba");
+
     // CLOSE OPEN DOORS
     game.doorControl(3687927243, -1149.709, -1521.088, 10.78267, true, 0.0, 50.0, 0.0); // VESPUCCI HOUSE
     game.doorControl(520341586, -14.868921, -1441.1823, 31.193226, true, 0.0, 50.0, 0.0); // FRANKLIN'S OLD HOUSE
@@ -419,6 +422,8 @@ function loadallIPLsAndInteriors() {
     game.doorControl(308207762, 7.518359, 539.5268, 176.17764, true, 0.0, 50.0, 0.0); // FRANKLIN'S NEW HOUSE
     game.doorControl(1145337974, 1273.8154, -1720.6969, 54.92143, true, 0.0, 50.0, 0.0); // LESTER'S HOUSE
     game.doorControl(132154435, 1972.769, 3815.366, 33.663258, true, 0.0, 50.0, 0.0); // TREVOR'S HOUSE
+    game.doorControl(2739859149, -1607.536, -3005.431, -75.05607, true, 0.0, 50.0, 0.0); // NIGHTCLUB OFFICE
+    game.doorControl(1695461688, -1610.125, -3004.97, -78.84087, true, 0.0, 50.0, 0.0); // NIGHTCLUB GARAGE
 
     activateIPLProps();
 }
@@ -481,5 +486,25 @@ function activateIPLProps() {
         game.refreshInterior(interiorID);
     }
 
-    //TODO: Fix all House Interiors
+    interiorID = game.getInteriorAtCoords(-1604.664, -3012.583, -80);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_security_upgrade");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_equipment_setup");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_Style03");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_style03_podium");
+        game.activateInteriorEntitySet(interiorID, "int01_ba_lights_screen");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_Screen");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_bar_content");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_dj03");
+        game.activateInteriorEntitySet(interiorID, "DJ_01_Lights_01");
+        game.activateInteriorEntitySet(interiorID, "DJ_02_Lights_02");
+        game.activateInteriorEntitySet(interiorID, "DJ_03_Lights_03");
+        game.activateInteriorEntitySet(interiorID, "DJ_04_Lights_04");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_lightgrid_01");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_equipment_upgrade");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_clubname_01");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_dry_ice");
+        game.refreshInterior(interiorID);
+    }
 }
