@@ -24,10 +24,10 @@ function spawnPed(model, x, y, z, rotation) {
             }
         }, 10);
     }).then(() => {
-        let pedHandle = game.createPed(4, modelHash, x, y, z, rotation, false, false);
+        let deg = rotation * (180/Math.PI);
+        let pedHandle = game.createPed(4, modelHash, x, y, z, deg, false, false);
         game.setBlockingOfNonTemporaryEvents(pedHandle, true);
         game.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
-        game.setEntityHeading(pedHandle, rotation);
         game.setEntityInvincible(pedHandle, true);
         game.setPedFleeAttributes(pedHandle, 15, false);
         game.disablePedPainAudio(pedHandle, true);
