@@ -113,10 +113,6 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     }
 });
 
-alt.onServer("Client:SpawnArea:clearCharAccessory", (componentId) => {
-    game.clearPedProp(alt.Player.local.scriptID, componentId);
-});
-
 alt.onServer("Client:Charselector:ViewCharacter", (gender, facefeaturearray, headblendsarray, headoverlayarray) => {
     spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
 });

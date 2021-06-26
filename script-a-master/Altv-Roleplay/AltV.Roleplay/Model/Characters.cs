@@ -2978,23 +2978,23 @@ namespace Altv_Roleplay.Model
             else
                 player.SetClothes(9, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Armor"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Armor"), Convert.ToInt32(gender)), 0);
 
-            if (GetCharacterClothes(charid, "Hat") == -2) player.EmitLocked("Client:SpawnArea:clearCharAccessory", 0);
+            if (GetCharacterClothes(charid, "Hat") == -2) player.ClearProps(0);
             else
                 player.SetProps(0, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Hat"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Hat"), Convert.ToInt32(gender)));
 
-            if (GetCharacterClothes(charid, "Glass") == -2) player.EmitLocked("Client:SpawnArea:clearCharAccessory", 1);
+            if (GetCharacterClothes(charid, "Glass") == -2) player.ClearProps(1);
             else
                 player.SetProps(1, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Glass"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Glass"), Convert.ToInt32(gender)));
 
-            if (GetCharacterClothes(charid, "Earring") == -2) player.EmitLocked("Client:SpawnArea:clearCharAccessory", 2);
+            if (GetCharacterClothes(charid, "Earring") == -2) player.ClearProps(2);
             else
                 player.SetProps(2, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Earring"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Earring"), Convert.ToInt32(gender)));
 
-            if (GetCharacterClothes(charid, "Watch") == -2) player.EmitLocked("Client:SpawnArea:clearCharAccessory", 6);
+            if (GetCharacterClothes(charid, "Watch") == -2) player.ClearProps(6);
             else
                 player.SetProps(6, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Watch"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Watch"), Convert.ToInt32(gender)));
 
-            if (GetCharacterClothes(charid, "Bracelet") == -2) player.EmitLocked("Client:SpawnArea:clearCharAccessory", 7);
+            if (GetCharacterClothes(charid, "Bracelet") == -2) player.ClearProps(7);
             else
                 player.SetProps(7, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Bracelet"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Bracelet"), Convert.ToInt32(gender)));
 
@@ -3212,19 +3212,19 @@ namespace Altv_Roleplay.Model
                     player.SetClothes(clothesId, 0, 0, 0);
                 } else if (Type == "Hat") {
                     clothesId = 0;
-                    player.EmitLocked("Client:SpawnArea:clearCharAccessory", clothesId);
+                    player.ClearProps(clothesId);
                 } else if (Type == "Glass") {
                     clothesId = 1;
-                    player.EmitLocked("Client:SpawnArea:clearCharAccessory", 1);
+                    player.ClearProps(1);
                 } else if (Type == "Earring") {
                     clothesId = 2;
-                    player.EmitLocked("Client:SpawnArea:clearCharAccessory", 2);
+                    player.ClearProps(2);
                 } else if (Type == "Watch") {
                     clothesId = 6;
-                    player.EmitLocked("Client:SpawnArea:clearCharAccessory", 6);
+                    player.ClearProps(6);
                 } else if (Type == "Bracelet") {
                     clothesId = 7;
-                    player.EmitLocked("Client:SpawnArea:clearCharAccessory", 7);
+                    player.ClearProps(7);
                 }
 
                 TakeOffCharacterClothes(player, charid, clothesId, isProp);
