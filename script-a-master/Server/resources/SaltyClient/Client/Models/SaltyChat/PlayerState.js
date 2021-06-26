@@ -1,5 +1,4 @@
-import {MuffleEffect} from "./MuffleEffect";
-
+import { MuffleEffect } from "./MuffleEffect";
 export class PlayerState {
     constructor(name, position, voiceRange, isAlive, distanceCulled = false, muffleIntensity = null, volumeOverride = null) {
         this.volumeOverride = null;

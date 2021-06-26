@@ -1,20 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks.Dataflow;
 using AltV.Net;
 
 namespace SaltyChat.Server.Models
 {
     public class RadioTowers : IWritable
     {
-        private readonly IEnumerable<RadioTower> _radioTowers;
+        private IEnumerable<RadioTower> _radioTowers;
 
-        public RadioTowers(IEnumerable<RadioTower> radioTowers) {
+        public RadioTowers(IEnumerable<RadioTower> radioTowers)
+        {
             _radioTowers = radioTowers;
         }
 
-        public void OnWrite(IMValueWriter writer) {
+        public void OnWrite(IMValueWriter writer)
+        {
             writer.BeginArray();
-
-            foreach (var radioTower in _radioTowers) {
+            foreach (var radioTower in _radioTowers)
+            {
                 writer.BeginObject();
                 writer.Name("x");
                 writer.Value(radioTower.X);

@@ -8,14 +8,16 @@ namespace SaltyChat.Server.Writables
     {
         private readonly IEnumerable<RadioTower> _radioTowers;
 
-        public ClientRadioTowers(IEnumerable<RadioTower> radioTowers) {
+        public ClientRadioTowers(IEnumerable<RadioTower> radioTowers)
+        {
             _radioTowers = radioTowers;
         }
 
-        public void OnWrite(IMValueWriter writer) {
+        public void OnWrite(IMValueWriter writer)
+        {
             writer.BeginArray();
-
-            foreach (var radioTower in _radioTowers) {
+            foreach (var radioTower in _radioTowers)
+            {
                 writer.BeginObject();
                 writer.Name("x");
                 writer.Value(radioTower.X);

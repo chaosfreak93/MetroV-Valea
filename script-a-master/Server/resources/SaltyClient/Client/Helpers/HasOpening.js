@@ -1,5 +1,4 @@
 import * as native from "natives";
-
 export function hasOpening(vehicle) {
     if (native.isThisModelABike(vehicle.model))
         return true;
