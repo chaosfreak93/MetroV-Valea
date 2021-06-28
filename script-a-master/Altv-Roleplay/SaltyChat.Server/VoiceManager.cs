@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Elements.Entities;
-using Newtonsoft.Json;
 using SaltyChat.Server.Models;
 using SaltyChat.Server.Writables;
 
