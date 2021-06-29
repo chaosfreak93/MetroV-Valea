@@ -10,7 +10,7 @@ let opened = false;
 const view = new alt.WebView("http://resource/html/index.html");
 
 function addMessage(name, text) {
-	if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
+    if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
     if (name) {
         view.emit('addMessage', name, text);
     } else {
@@ -35,7 +35,7 @@ view.on('chatmessage', (text) => {
 
 export function pushMessage(name, text) {
     if (!loaded) {
-        buffer.push({ name, text });
+        buffer.push({name, text});
     } else {
         addMessage(name, text);
     }
@@ -53,15 +53,18 @@ alt.on('keyup', (key) => {
             //if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
             opened = true;
             view.emit('openChat', false);
+            view.focus();
             alt.toggleGameControls(false);
         } else if (!opened && key === 0xBF && alt.gameControlsEnabled()) {
             //if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
             opened = true;
             view.emit('openChat', true);
+            view.focus();
             alt.toggleGameControls(false);
         } else if (opened && key == 0x1B) {
             opened = false;
             view.emit('closeChat');
+            view.unfocus();
             alt.toggleGameControls(true);
         }
     }

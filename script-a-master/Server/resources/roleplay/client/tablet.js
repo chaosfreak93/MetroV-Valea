@@ -19,7 +19,9 @@ alt.on('keyup', (key) => {
     }
 });
 
-function canInteract() { return lastInteract + 1000 < Date.now() }
+function canInteract() {
+    return lastInteract + 1000 < Date.now()
+}
 
 let tablet = null;
 
@@ -28,7 +30,7 @@ alt.onServer('Client:Tablet:createCEF', () => {
     let coords = game.getEntityCoords(alt.Player.local.scriptID, true);
     let bone = game.getPedBoneIndex(alt.Player.local.scriptID, 28422);
     if (tablet) return;
-    let tabletModel = game.getHashKey('prop_cs_tablet');
+    let tabletModel = alt.hash('prop_cs_tablet');
     game.requestAnimDict("cellphone@");
     game.requestModel(tabletModel);
     let animInterval = alt.setInterval(() => {
@@ -158,7 +160,7 @@ alt.onServer("Client:Tablet:SetTutorialAppContent", (array) => {
 });
 
 alt.onServer("Client:Tablet:sendDispatchSound", (filePath) => {
-    if(tabletBrowser != null) {
+    if (tabletBrowser != null) {
         tabletBrowser.emit("CEF:Tablet:playDispatchSound", filePath);
     }
 })
@@ -167,7 +169,7 @@ alt.onServer('Client:Tablet:closeCEF', () => {
     closeTabletCEF();
 });
 
-let openTabletCEF = function() {
+let openTabletCEF = function () {
     if (tabletBrowser == null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -218,7 +220,11 @@ function AppStoreInstallUninstallApp(action, appname) {
     if (!canInteract) return;
     lastInteract = Date.now();
     let isInstalling = false;
-    if (action == "install") { isInstalling = true; } else if (action == "uninstall") { isInstalling = false; }
+    if (action == "install") {
+        isInstalling = true;
+    } else if (action == "uninstall") {
+        isInstalling = false;
+    }
     alt.emitServer("Server:Tablet:AppStoreInstallUninstallApp", appname, isInstalling);
 }
 

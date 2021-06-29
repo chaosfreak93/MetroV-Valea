@@ -6,9 +6,9 @@ namespace Altv_Roleplay.Utils
     {
         public static class DatabaseConfig
         {
-            public static string Host = "localhost";
-            public static string User = "root";
-            public static string Password = "";
+            public static string Host = "5.181.151.36";
+            public static string User = "keiner";
+            public static string Password = "qS*qD7tc@cv#aJtu";
             public static string Port = "3306";
             public static string Database = "gta";
         }

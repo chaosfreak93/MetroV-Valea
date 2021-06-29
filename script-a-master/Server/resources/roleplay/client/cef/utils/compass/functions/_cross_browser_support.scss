@@ -9,8 +9,8 @@
   @each $item in $properties {
     @if type-of($item) == 'string' {
       $prefixed: $prefixed or str-index($item, 'url') != 1 and str-index($item, 'rgb') != 1 and str-index($item, '#') != 1;
-    } @elseif type-of($item) == 'color' {
-    } @elseif $item != null {
+    } @else if type-of($item) == 'color' {
+    } @else if $item != null {
       $prefixed: true;
     }
   }
@@ -31,15 +31,14 @@
 
   $props: false;
   @each $item in $properties {
-    @if $item == null {}
-    @else {
+    @if $item == null {
+    } @else {
       @if prefixed($prefix, $item) {
         $item: #{$prefix}-#{$item};
       }
       @if $props {
         $props: $props, $item;
-      }
-      @else {
+      } @else {
         $props: $item;
       }
     }

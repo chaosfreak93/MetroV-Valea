@@ -1060,6 +1060,21 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.text).HasColumnName("text").HasMaxLength(128);
                 entity.Property(e => e.created).HasColumnName("created");
             });
+            
+            modelBuilder.Entity<Server_Tablet_Advertisements>(entity =>
+            {
+                entity.HasKey(e => e.id);
+                entity.ToTable("server_tablet_advertisements", Constants.DatabaseConfig.Database);
+                entity.HasIndex(e => e.id).HasDatabaseName("id");
+                entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
+                entity.Property(e => e.charId).HasColumnName("charId").HasColumnType("int(11)");
+                entity.Property(e => e.factionId).HasColumnName("factionId").HasColumnType("int(11)");
+                entity.Property(e => e.title).HasColumnName("title").HasMaxLength(64);
+                entity.Property(e => e.ownerName).HasColumnName("ownerName").HasColumnType("text");
+                entity.Property(e => e.callnumber).HasColumnName("callnumber").HasMaxLength(6);
+                entity.Property(e => e.info).HasColumnName("info").HasMaxLength(1024);
+                entity.Property(e => e.created).HasColumnName("created");
+            });
 
             modelBuilder.Entity<Server_Teleports>(entity =>
             {

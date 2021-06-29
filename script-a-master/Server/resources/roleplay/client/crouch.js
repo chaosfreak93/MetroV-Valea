@@ -2,6 +2,7 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
+
 const movementClipSet = "move_ped_crouched";
 const strafeClipSet = "move_ped_crouched_strafing";
 const clipSetSwitchTime = 0.25;
@@ -12,7 +13,7 @@ alt.onServer("Client:Crouch:toggleCrouch", (isCrouching) => {
         game.setPedMovementClipset(alt.Player.local.scriptID, movementClipSet, clipSetSwitchTime);
         game.setPedStrafeClipset(alt.Player.local.scriptID, strafeClipSet);
     } else {
-        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.0);
+        game.resetPedMovementClipset(alt.Player.local.scriptID, clipSetSwitchTime);
         game.resetPedStrafeClipset(alt.Player.local.scriptID);
     }
 });
@@ -20,7 +21,7 @@ alt.onServer("Client:Crouch:toggleCrouch", (isCrouching) => {
 function loadClipsetAsync(model) {
     return new Promise((resolve, reject) => {
         if (typeof model === 'string') {
-            model = game.getHashKey(model);
+            model = alt.hash(model);
         }
 
         if (game.hasClipSetLoaded(model))

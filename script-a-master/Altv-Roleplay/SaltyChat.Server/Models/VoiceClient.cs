@@ -5,18 +5,6 @@ namespace SaltyChat.Server.Models
 {
     public class VoiceClient
     {
-        #region Constructor
-
-        internal VoiceClient(IPlayer player, string teamSpeakName, float voiceRange, bool isAlive, Vector3? position = null) {
-            Player = player;
-            TeamSpeakName = teamSpeakName;
-            VoiceRange = voiceRange;
-            IsAlive = isAlive;
-            if (position != null) Position = position;
-        }
-
-        #endregion
-
         #region Props/Fields
 
         internal IPlayer Player { get; set; }
@@ -25,6 +13,19 @@ namespace SaltyChat.Server.Models
         internal bool IsAlive { get; set; }
         internal bool IsRadioSpeakerEnabled { get; set; }
         internal Vector3? Position { get; set; }
+
+        #endregion
+
+        #region Constructor
+
+        internal VoiceClient(IPlayer player, string teamSpeakName, float voiceRange, bool isAlive, Vector3? position = null)
+        {
+            Player = player;
+            TeamSpeakName = teamSpeakName;
+            VoiceRange = voiceRange;
+            IsAlive = isAlive;
+            if (position != null) Position = position;
+        }
 
         #endregion
     }

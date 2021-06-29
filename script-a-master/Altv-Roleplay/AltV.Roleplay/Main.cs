@@ -33,7 +33,7 @@ namespace Altv_Roleplay
 
         public override void OnStart() {
             Environment.SetEnvironmentVariable("COMPlus_legacyCorruptedState­­ExceptionsPolicy", "1");
-            
+
             //Datenbank laden
             DatabaseHandler.ResetDatabaseOnlineState();
             DatabaseHandler.LoadAllPlayers();
@@ -236,19 +236,23 @@ namespace Altv_Roleplay
             var checkTimer = new Timer();
             var entityTimer = new Timer();
             var desireTimer = new Timer();
-            var VehicleAutomaticParkFetchTimer = new Timer();
+            var hotelTimer = new Timer();
+            var weatherSyncTimer = new Timer();
             checkTimer.Elapsed += TimerHandler.OnCheckTimer;
             entityTimer.Elapsed += TimerHandler.OnEntityTimer;
             desireTimer.Elapsed += TimerHandler.OnDesireTimer;
-            VehicleAutomaticParkFetchTimer.Elapsed += TimerHandler.VehicleAutomaticParkFetch;
+            hotelTimer.Elapsed += TimerHandler.HotelTimer;
+            weatherSyncTimer.Elapsed += TimerHandler.WeatherSyncTimer;
             checkTimer.Interval += 15000;
             entityTimer.Interval += 60000;
             desireTimer.Interval += 300000;
-            VehicleAutomaticParkFetchTimer.Interval += 60000 * 5;
+            hotelTimer.Interval += 300000;
+            weatherSyncTimer.Interval += 300000;
             checkTimer.Enabled = true;
             entityTimer.Enabled = true;
             desireTimer.Enabled = true;
-            VehicleAutomaticParkFetchTimer.Enabled = true;
+            hotelTimer.Enabled = true;
+            weatherSyncTimer.Enabled = true;
 
             Console.WriteLine($"Main-Thread = {Thread.CurrentThread.ManagedThreadId}");
         }
@@ -339,7 +343,7 @@ namespace Altv_Roleplay
         }
 
         public override void OnStop() {
-            foreach (var player in Alt.Server.GetPlayers().Where(p => p != null && p.Exists))
+            foreach (var player in Alt.Server.GetPlayers().Where(p => p is {Exists: true}))
                 player.kickWithMessage("Server wird heruntergefahren...");
 
             ACLSBot.Stop();

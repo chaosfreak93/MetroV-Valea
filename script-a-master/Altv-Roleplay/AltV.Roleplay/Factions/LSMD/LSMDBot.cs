@@ -89,18 +89,17 @@ namespace Altv_Roleplay.Factions.LSMD
                             }
 
                             ServerFactions.SetCharacterInFactionDuty(online.CharacterId, true);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 4, 24, 2);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 11, 250, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 8, 155, 0);
-                            //player.EmitLocked("Client:SpawnArea:setCharClothes", 9, 12, 1); // WESTE
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 10, 58, 1);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 6, 25, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 3, 87, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 2, 2, 0);
-
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 7, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 1, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 9, 0, 0);
+                            online.SetClothes(4, 24, 2, 0);
+                            online.SetClothes(11, 250, 0, 0);
+                            online.SetClothes(8, 155, 0, 0);
+                            online.SetClothes(10, 58, 1, 0);
+                            online.SetClothes(6, 25, 0, 0);
+                            online.SetClothes(3, 87, 0, 0);
+                            online.SetClothes(1, 0, 0, 0);
+                            online.SetClothes(9, 0, 0, 0);
+                            
+                            online.SetProps(2, 2, 0);
+                            online.SetProps(7, 0, 0);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                             HUDHandler.SendNotification(online, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
                         } else {
@@ -195,18 +194,17 @@ namespace Altv_Roleplay.Factions.LSMD
                             if (ServerFactions.GetCharacterFactionId(online.CharacterId) != Config.factionId)
                                 return;
 
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 4, 24, 2);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 11, 250, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 8, 155, 0);
-                            //player.EmitLocked("Client:SpawnArea:setCharClothes", 9, 12, 1); // WESTE
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 10, 58, 1);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 6, 25, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 3, 87, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 2, 2, 0);
-
-                            online.EmitLocked("Client:SpawnArea:setCharAccessory", 7, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 1, 0, 0);
-                            online.EmitLocked("Client:SpawnArea:setCharClothes", 9, 0, 0);
+                            online.SetClothes(4, 24, 2, 0);
+                            online.SetClothes(11, 250, 0, 0);
+                            online.SetClothes(8, 155, 0, 0);
+                            online.SetClothes(10, 58, 1, 0);
+                            online.SetClothes(6, 25, 0, 0);
+                            online.SetClothes(3, 87, 0, 0);
+                            online.SetClothes(1, 0, 0, 0);
+                            online.SetClothes(9, 0, 0, 0);
+                            
+                            online.SetProps(2, 2, 0);
+                            online.SetProps(7, 0, 0);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                         }
 

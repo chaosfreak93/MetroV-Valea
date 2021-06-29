@@ -11,10 +11,10 @@
   @each $prop, $value in $properties {
     @if $prop == display {
       @include experimental-value(display, $value, not(-moz), -webkit,
-                                  not(-o), not(-ms), not(-khtml), official);
+              not(-o), not(-ms), not(-khtml), official);
     } @else {
       @include experimental($prop, $value, not(-moz), -webkit, not(-o),
-                            not(-ms), not(-khtml), official);
+              not(-ms), not(-khtml), official);
     }
   }
 }

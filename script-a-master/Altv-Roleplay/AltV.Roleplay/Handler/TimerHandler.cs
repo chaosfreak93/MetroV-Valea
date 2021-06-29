@@ -73,7 +73,7 @@ namespace Altv_Roleplay.Handler
 
                             var vehID = Veh.GetVehicleId();
 
-                            if (vehID <= 0)
+                            if (vehID <= 0 || ServerVehicles.GetVehicleFuelTypeOnHash(long.Parse(Veh.Model.ToString())) == "None")
                                 continue;
 
                             ServerVehicles.SaveVehiclePositionAndStates(Veh);
@@ -183,11 +183,11 @@ namespace Altv_Roleplay.Handler
                                             player.Position = new Position(1691.4594f, 2565.7056f, 45.556763f);
 
                                             if (Characters.GetCharacterGender(charId) == false) {
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 11, 5, 0);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 3, 5, 0);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 4, 7, 15);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 6, 7, 0);
-                                                player.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 88);
+                                                player.SetClothes(11, 5, 0, 0);
+                                                player.SetClothes(3, 5, 0, 0);
+                                                player.SetClothes(4, 7, 15, 0);
+                                                player.SetClothes(6, 7, 0, 0);
+                                                player.SetClothes(8, 1, 88, 0);
                                             }
                                         } else {
                                             Characters.SetCharacterJailTime(charId, false, 0);
@@ -305,40 +305,40 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        internal static void VehicleAutomaticParkFetch(object sender, ElapsedEventArgs e) {
+        // Automatice Vehicle Park Fetch
+        //foreach(IVehicle vehicle in Alt.Server.GetVehicles().ToList().Where(x => x.GetVehicleId() != 0))
+        //{
+        //    if (vehicle == null) return;
+        //    using (var vehicleRef = new VehicleRef(vehicle))
+        //    {
+        //        if (!vehicleRef.Exists) return;
+        //        lock (vehicle)
+        //        {
+        //            var dbVeh = ServerVehicles.ServerVehicles_.FirstOrDefault(v => v.id == (int)vehicle.GetVehicleId());
+        //            if (dbVeh == null) continue;
+        //            if (DateTime.Now.Subtract(Convert.ToDateTime(dbVeh.lastUsage)).TotalHours >= 3)
+        //            {
+        //                int garage = 0;
+        //                if (dbVeh.garageId == 0) { garage = 10; }
+        //                else { garage = dbVeh.garageId; }
+        //                ServerVehicles.SetVehicleInGarage(vehicle, true, garage);
+        //            }
+        //        }
+        //    }
+        //}
+        
+        internal static void HotelTimer(object sender, ElapsedEventArgs e) {
             try {
-                //foreach(IVehicle vehicle in Alt.Server.GetVehicles().ToList().Where(x => x.GetVehicleId() != 0))
-                //{
-                //    if (vehicle == null) return;
-                //    using (var vehicleRef = new VehicleRef(vehicle))
-                //    {
-                //        if (!vehicleRef.Exists) return;
-                //        lock (vehicle)
-                //        {
-                //            var dbVeh = ServerVehicles.ServerVehicles_.FirstOrDefault(v => v.id == (int)vehicle.GetVehicleId());
-                //            if (dbVeh == null) continue;
-                //            if (DateTime.Now.Subtract(Convert.ToDateTime(dbVeh.lastUsage)).TotalHours >= 3)
-                //            {
-                //                int garage = 0;
-                //                if (dbVeh.garageId == 0) { garage = 10; }
-                //                else { garage = dbVeh.garageId; }
-                //                ServerVehicles.SetVehicleInGarage(vehicle, true, garage);
-                //            }
-                //        }
-                //    }
-                //}
-
                 foreach (var hotelApartment in ServerHotels.ServerHotelsApartments_.Where(x => x.ownerId > 0)) {
-                    if (hotelApartment == null) continue;
+                    if (!(DateTime.Now.Subtract(Convert.ToDateTime(hotelApartment.lastRent)).TotalHours >= hotelApartment.maxRentHours))
+                        continue;
 
-                    if (DateTime.Now.Subtract(Convert.ToDateTime(hotelApartment.lastRent)).TotalHours >= hotelApartment.maxRentHours) {
-                        var oldOwnerId = hotelApartment.ownerId;
-                        ServerHotels.SetApartmentOwner(hotelApartment.hotelId, hotelApartment.id, 0);
+                    var oldOwnerId = hotelApartment.ownerId;
+                    ServerHotels.SetApartmentOwner(hotelApartment.hotelId, hotelApartment.id, 0);
 
-                        foreach (var players in Alt.Server.GetPlayers().ToList()
-                            .Where(x => x != null && x.Exists && User.GetPlayerOnline(x) == oldOwnerId))
-                            HUDHandler.SendNotification(players, 1, 5000, "Deine Mietdauer im Hotel ist ausgelaufen, dein Zimmer wurde gekündigt");
-                    }
+                    foreach (var players in Alt.Server.GetPlayers().ToList()
+                        .Where(x => x is {Exists: true} && User.GetPlayerOnline(x) == oldOwnerId))
+                        HUDHandler.SendNotification(players, 1, 5000, "Deine Mietdauer im Hotel ist ausgelaufen, dein Zimmer wurde gekündigt");
                 }
             }
             catch (Exception ex) {
@@ -389,6 +389,17 @@ namespace Altv_Roleplay.Handler
                         }
                     }
                 }
+            }
+        }
+        
+        internal static void WeatherSyncTimer(object sender, ElapsedEventArgs e) {
+            try {
+                foreach (var player in Alt.Server.GetPlayers().ToList().Where(player => player is {Exists: true})) {
+                    WeatherHandler.SetRealWeather(player);
+                }
+            }
+            catch (Exception ex) {
+                Alt.Log($"{ex}");
             }
         }
     }

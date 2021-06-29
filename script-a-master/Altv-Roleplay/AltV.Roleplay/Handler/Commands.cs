@@ -166,14 +166,19 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.EmitLocked("Client:SpawnArea:setCharClothes", type, draw, tex);
+            player.SetClothes(byte.Parse(type.ToString()), ushort.Parse(draw.ToString()), byte.Parse(tex.ToString()), 0);
         }
 
-        [Command("adolf")]
-        public void adolfCMD(IPlayer player, int type, int draw, int tex) {
-            if (player == null || !player.Exists || player.AdminLevel() <= 8) return;
+        [Command("accessory")]
+        public void accessoryCMD(IPlayer player, int type, int draw, int tex) {
+            if (player == null || !player.Exists) return;
+            
+            if (player.AdminLevel() <= 8) {
+                HUDHandler.SendNotification(player, 4, 5000, "Keine Rechte.");
+                return;
+            }
 
-            player.EmitLocked("Client:SpawnArea:setCharAccessory", type, draw, tex);
+            player.SetProps(byte.Parse(type.ToString()), ushort.Parse(draw.ToString()), byte.Parse(tex.ToString()));
         }
 
         [Command("support", true)]
@@ -397,7 +402,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SendChatMessage($"{player.Position.ToString()}");
+            player.SendChatMessage($"X: {player.Position.X}, Y: {player.Position.Y}, Z: {player.Position.Z - 0.8}");
         }
 
         [Command("rot")]
@@ -416,12 +421,12 @@ namespace Altv_Roleplay.Handler
         public void TorsoCMD(IPlayer player, int torso) {
             if (player == null || !player.Exists) return;
 
-            if (player.AdminLevel() <= 0) {
+            if (player.AdminLevel() <= 8) {
                 HUDHandler.SendNotification(player, 4, 5000, "Keine Rechte.");
                 return;
             }
 
-            player.EmitLocked("Client:SpawnArea:setCharClothes", 3, torso, 0);
+            player.SetClothes(3, ushort.Parse(torso.ToString()), 0, 0);
         }
 
         [Command("delcar")]
@@ -458,7 +463,8 @@ namespace Altv_Roleplay.Handler
 
                 ServerVehicles.SetVehicleInGarage(vehicle, true, currentGarageId);
                 var plate = vehicle.NumberplateText;
-                HUDHandler.SendNotification(player, 4, 5000, $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
+                HUDHandler.SendNotification(player, 4, 5000,
+                    $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
@@ -502,7 +508,8 @@ namespace Altv_Roleplay.Handler
                 if (currentGarageId <= 0) return;
 
                 ServerVehicles.SetVehicleInGarage(vehicle, true, currentGarageId);
-                HUDHandler.SendNotification(player, 4, 5000, $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
+                HUDHandler.SendNotification(player, 4, 5000,
+                    $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId} ({ServerGarages.GetGarageName(currentGarageId)}) eingeparkt");
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
@@ -802,20 +809,20 @@ namespace Altv_Roleplay.Handler
 
                 if (!Characters.GetCharacterGender((int) player.GetCharacterMetaId())) {
                     //Männlich
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 1, 135, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 4, 114, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 6, 78, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 3, 3, 0);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 11, 287, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 99);
+                    player.SetClothes(1, 135, 2, 0);
+                    player.SetClothes(4, 114, 2, 0);
+                    player.SetClothes(6, 78, 2, 0);
+                    player.SetClothes(3, 3, 0, 0);
+                    player.SetClothes(11, 287, 2, 0);
+                    player.SetClothes(8, 1, 99, 0);
                 } else {
                     //Weiblich
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 1, 135, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 11, 300, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 4, 121, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 3, 8, 0);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 99);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 6, 82, 2);
+                    player.SetClothes(1, 135, 2, 0);
+                    player.SetClothes(11, 300, 2, 0);
+                    player.SetClothes(4, 121, 2, 0);
+                    player.SetClothes(3, 8, 0, 0);
+                    player.SetClothes(8, 1, 99, 0);
+                    player.SetClothes(6, 82, 2, 0);
                 }
 
                 player.EmitLocked("Client:Admin:Invincible", true);

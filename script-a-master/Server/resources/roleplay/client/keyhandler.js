@@ -2,12 +2,15 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
-import { Raycast } from './utilities.js';
+import {Raycast} from './utilities.js';
+
 var canUseEKey = true;
 var lastInteract = 0;
 let toggleCrouch = false;
 
-function canInteract() { return lastInteract + 1000 < Date.now() }
+function canInteract() {
+    return lastInteract + 1000 < Date.now()
+}
 
 alt.on('keyup', (key) => {
     if (!canInteract) return;
@@ -38,7 +41,7 @@ alt.on('keydown', (key) => {
         game.disableControlAction(0, 36, true);
         if (!game.isPlayerDead(alt.Player.local) && !game.isPedSittingInAnyVehicle(alt.Player.local.scriptID)) {
             if (!game.isPauseMenuActive()) {
-                
+
                 game.requestAnimSet("move_ped_crouched");
                 if (!toggleCrouch) {
                     game.setPedMovementClipset(alt.Player.local.scriptID, "move_ped_crouched", 0.45);
@@ -55,7 +58,7 @@ alt.on('keydown', (key) => {
 
 alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, isLocked) => {
     if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
-        // game.doorControl(game.getHashKey(hash), pos.x, pos.y, pos.z, isLocked, 0.0, 50.0, 0.0); //isLocked (0) = Open | isLocked (1) = True
+        // game.doorControl(alt.hash(hash), pos.x, pos.y, pos.z, isLocked, 0.0, 50.0, 0.0); //isLocked (0) = Open | isLocked (1) = True
         game.setStateOfClosestDoorOfType(alt.hash(doorHash), pos.x, pos.y, pos.z, isLocked, 0, 0);
         if (doorHash2 != "None") {
             game.setStateOfClosestDoorOfType(alt.hash(doorHash2), pos2.x, pos2.y, pos2.z, isLocked, 0, 0);

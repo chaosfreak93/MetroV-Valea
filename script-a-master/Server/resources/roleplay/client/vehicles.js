@@ -38,7 +38,7 @@ alt.on("gameEntityCreate", (entity) => {
 });
 
 alt.everyTick(() => {
-    if(!alt.Player.local.vehicle || game.getVehicleClass(alt.Player.local.vehicle.scriptID) != 18) return;
+    if (!alt.Player.local.vehicle || game.getVehicleClass(alt.Player.local.vehicle.scriptID) != 18) return;
     game.disableControlAction(1, 86, true);
 });
 
@@ -55,8 +55,8 @@ alt.on('keydown', (key) => {
 
         }
     } else if (key === 18 && alt.Player.local.vehicle && alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
-        if(game.isVehicleSirenOn(alt.Player.local.vehicle.scriptID) && !game.isVehicleSirenAudioOn(alt.Player.local.vehicle.scriptID)) alt.emitServer("Server:Sirens:ForwardSirenMute", alt.Player.local.vehicle.id, false);
-        else if(game.isVehicleSirenOn(alt.Player.local.vehicle.scriptID) && game.isVehicleSirenAudioOn(alt.Player.local.vehicle.scriptID)) alt.emitServer("Server:Sirens:ForwardSirenMute", alt.Player.local.vehicle.id, true);
+        if (game.isVehicleSirenOn(alt.Player.local.vehicle.scriptID) && !game.isVehicleSirenAudioOn(alt.Player.local.vehicle.scriptID)) alt.emitServer("Server:Sirens:ForwardSirenMute", alt.Player.local.vehicle.id, false);
+        else if (game.isVehicleSirenOn(alt.Player.local.vehicle.scriptID) && game.isVehicleSirenAudioOn(alt.Player.local.vehicle.scriptID)) alt.emitServer("Server:Sirens:ForwardSirenMute", alt.Player.local.vehicle.id, true);
     } else if (key == "J".charCodeAt(0) && alt.Player.local.vehicle && alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
         alt.emit("SaltyChat:UseMegaphone", true);
     }

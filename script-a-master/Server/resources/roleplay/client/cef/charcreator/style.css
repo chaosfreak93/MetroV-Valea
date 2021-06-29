@@ -81,7 +81,7 @@ hr.cut {
     margin-left: -35px;
 }
 
-div#SexArea>p.title {
+div#SexArea > p.title {
     font-family: PT;
     color: #d2d2d2;
     font-size: 1.45rem;
@@ -101,7 +101,7 @@ div#SexArea>p.title {
     margin-bottom: 1rem;
 }
 
-div#SexArea>img.charsex {
+div#SexArea > img.charsex {
     width: 300px;
     height: 250px;
     margin-bottom: 1rem;
@@ -110,20 +110,20 @@ div#SexArea>img.charsex {
     transition: all 0.5s ease-in-out;
 }
 
-div#SexArea>img.charsex:hover {
+div#SexArea > img.charsex:hover {
     filter: grayscale(0);
     cursor: pointer;
 }
 
-div#SexArea>img.charsex.g {
+div#SexArea > img.charsex.g {
     margin-left: 16px;
 }
 
-div#SexArea>img.charsex.m {
+div#SexArea > img.charsex.m {
     margin-left: -52px;
 }
 
-div.box2>div#SexArea>span.chartitle {
+div.box2 > div#SexArea > span.chartitle {
     color: #d2d2d2;
     font-family: PEL;
     font-weight: bold;
@@ -131,12 +131,12 @@ div.box2>div#SexArea>span.chartitle {
     text-shadow: 2px 2px #000000cf;
 }
 
-div.box2>div#SexArea>span.chartitle.left {
+div.box2 > div#SexArea > span.chartitle.left {
     float: left;
     padding-left: 140px;
 }
 
-div.box2>div#SexArea>span.chartitle.right {
+div.box2 > div#SexArea > span.chartitle.right {
     float: right;
     padding-right: 105px;
 }
@@ -152,7 +152,7 @@ hr.cut.charsex {
     margin-bottom: 0.5rem;
 }
 
-div.box>p.info {
+div.box > p.info {
     color: #d2d2d2;
     font-family: PT;
     font-weight: bold;
@@ -198,8 +198,8 @@ div.box>p.info {
 
 /* Dropdown fuer Char Editor */
 
-div#creatorarea>.dropdown>.dropdown-caption>i.fas.fa-angle-double-right.dropdown,
-div#charcreatorsecondbox>.dropdown>.dropdown-caption>i.fas.fa-angle-double-right.dropdown {
+div#creatorarea > .dropdown > .dropdown-caption > i.fas.fa-angle-double-right.dropdown,
+div#charcreatorsecondbox > .dropdown > .dropdown-caption > i.fas.fa-angle-double-right.dropdown {
     background: rgba(0, 0, 0, 0.5);
     font-size: 1rem;
     padding-left: 7px;
@@ -210,8 +210,8 @@ div#charcreatorsecondbox>.dropdown>.dropdown-caption>i.fas.fa-angle-double-right
     margin-right: 0.25rem;
 }
 
-div#creatorarea>p.title,
-div#charcreatorsecondbox>p.title {
+div#creatorarea > p.title,
+div#charcreatorsecondbox > p.title {
     text-align: center;
     color: #d2d2d2;
     font-family: PEL;
@@ -219,16 +219,16 @@ div#charcreatorsecondbox>p.title {
     margin-top: -10px;
 }
 
-div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent,
-div#charcreatorsecondbox>div.dropdown>div.dropdown-content>div.subboxcontent {
+div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent,
+div#charcreatorsecondbox > div.dropdown > div.dropdown-content > div.subboxcontent {
     background: rgba(10, 10, 10, 0.38);
     padding-left: 8px;
     padding-top: 6px;
     border-bottom: 1px solid #252525;
 }
 
-div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>p,
-div#charcreatorsecondbox>div.dropdown>div.dropdown-content>div.subboxcontent>p {
+div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > p,
+div#charcreatorsecondbox > div.dropdown > div.dropdown-content > div.subboxcontent > p {
     color: #d2d2d2;
     font-family: PT;
     font-size: 0.8rem;
@@ -236,11 +236,11 @@ div#charcreatorsecondbox>div.dropdown>div.dropdown-content>div.subboxcontent>p {
     margin-bottom: 0.05rem;
 }
 
-div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-pegel {
+div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > div.nose-pegel {
     margin-bottom: -0.8rem;
 }
 
-div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-pegel>form>input.slider {
+div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > div.nose-pegel > form > input.slider {
     opacity: 0.5;
     -webkit-appearance: none;
     width: 298px;
@@ -252,7 +252,7 @@ div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-peg
     border-radius: 2px;
 }
 
-div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-pegel>form>input.slider::-webkit-slider-thumb {
+div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > div.nose-pegel > form > input.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 18px;
@@ -262,7 +262,7 @@ div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-peg
     border-radius: 2px;
 }
 
-div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-pegel>form>output.numberfield {
+div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > div.nose-pegel > form > output.numberfield {
     display: inline-block;
     background: rgba(0, 0, 0, 0.5);
     font-family: PEL;
@@ -279,21 +279,21 @@ div#creatorarea>div.dropdown>div.dropdown-content>div.subboxcontent>div.nose-peg
     position: relative;
 }
 
-div#creatorarea>.dropdown,
-div#charcreatorsecondbox>.dropdown {
+div#creatorarea > .dropdown,
+div#charcreatorsecondbox > .dropdown {
     width: 360px;
 }
 
-div#creatorarea>.dropdown .dropdown-caption,
-div#charcreatorsecondbox>.dropdown .dropdown-caption {
+div#creatorarea > .dropdown .dropdown-caption,
+div#charcreatorsecondbox > .dropdown .dropdown-caption {
     display: block;
     box-sizing: border-box;
     padding: 15px;
     transition: all .25 ease;
 }
 
-div#creatorarea>.dropdown .dropdown-selector,
-div#charcreatorsecondbox>.dropdown .dropdown-selector {
+div#creatorarea > .dropdown .dropdown-selector,
+div#charcreatorsecondbox > .dropdown .dropdown-selector {
     position: absolute;
     top: 0;
     left: 0;
@@ -303,8 +303,8 @@ div#charcreatorsecondbox>.dropdown .dropdown-selector {
     opacity: 0;
 }
 
-div#creatorarea>.dropdown .dropdown-content,
-div#charcreatorsecondbox>.dropdown .dropdown-content {
+div#creatorarea > .dropdown .dropdown-content,
+div#charcreatorsecondbox > .dropdown .dropdown-content {
     position: relative;
     z-index: 2;
     box-sizing: border-box;
@@ -314,28 +314,28 @@ div#charcreatorsecondbox>.dropdown .dropdown-content {
     overflow: hidden;
 }
 
-div#creatorarea>.dropdown .dropdown-content li,
-div#charcreatorsecondbox>.dropdown .dropdown-content li {
+div#creatorarea > .dropdown .dropdown-content li,
+div#charcreatorsecondbox > .dropdown .dropdown-content li {
     list-style: none;
     display: block;
     padding: 15px;
 }
 
-div#creatorarea>.dropdown .dropdown-selector:checked~.dropdown-content,
-div#charcreatorsecondbox>.dropdown .dropdown-selector:checked~.dropdown-content {
+div#creatorarea > .dropdown .dropdown-selector:checked ~ .dropdown-content,
+div#charcreatorsecondbox > .dropdown .dropdown-selector:checked ~ .dropdown-content {
     max-height: 500px;
     opacity: 1;
 }
 
-div#creatorarea>.dropdown,
-div#charcreatorsecondbox>.dropdown {
+div#creatorarea > .dropdown,
+div#charcreatorsecondbox > .dropdown {
     font-family: Proxima Nova, Arial, sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 14px;
 }
 
-div#creatorarea>.dropdown .dropdown-caption,
-div#charcreatorsecondbox>.dropdown .dropdown-caption {
+div#creatorarea > .dropdown .dropdown-caption,
+div#charcreatorsecondbox > .dropdown .dropdown-caption {
     line-height: 20px;
     padding: 5px 10px;
     color: #d2d2d2;
@@ -346,21 +346,21 @@ div#charcreatorsecondbox>.dropdown .dropdown-caption {
     border-radius: 2px;
 }
 
-div#creatorarea>.dropdown .dropdown-caption:after,
-div#charcreatorsecondbox>.dropdown .dropdown-caption:after {
+div#creatorarea > .dropdown .dropdown-caption:after,
+div#charcreatorsecondbox > .dropdown .dropdown-caption:after {
     -webkit-transform: rotateZ(-45deg);
     transform: rotateZ(-45deg);
     right: 17px;
 }
 
-div#creatorarea>.dropdown-selector:checked~.dropdown-caption:before,
-div#charcreatorsecondbox>.dropdown-selector:checked~.dropdown-caption:before {
+div#creatorarea > .dropdown-selector:checked ~ .dropdown-caption:before,
+div#charcreatorsecondbox > .dropdown-selector:checked ~ .dropdown-caption:before {
     -webkit-transform: rotateZ(135deg);
     transform: rotateZ(135deg);
 }
 
-div#creatorarea>.dropdown-selector:checked~.dropdown-caption:after,
-div#charcreatorsecondbox>.dropdown-selector:checked~.dropdown-caption:after {
+div#creatorarea > .dropdown-selector:checked ~ .dropdown-caption:after,
+div#charcreatorsecondbox > .dropdown-selector:checked ~ .dropdown-caption:after {
     -webkit-transform: rotateZ(-135deg);
     transform: rotateZ(-135deg);
 }
@@ -376,11 +376,11 @@ button.movebtn {
     border-radius: 2px;
 }
 
-div#charcreatorsecondbox>div.dropdown>div.dropdown-content>div.subboxcontent {
+div#charcreatorsecondbox > div.dropdown > div.dropdown-content > div.subboxcontent {
     display: flow-root;
 }
 
-div#charcreatorsecondbox>div.dropdown>div.dropdown-content>div.subboxcontent>p {
+div#charcreatorsecondbox > div.dropdown > div.dropdown-content > div.subboxcontent > p {
     font-size: 0.9rem;
     margin-bottom: 1rem;
     padding-left: 10px;
@@ -410,7 +410,7 @@ button.movebtn.small {
 }
 
 button.movebtn:hover,
-div.finish>button.donebtn:hover {
+div.finish > button.donebtn:hover {
     background: #ff000066;
     color: #fff;
 }
@@ -480,7 +480,7 @@ div.finish {
     justify-content: center;
 }
 
-div.finish>button.donebtn {
+div.finish > button.donebtn {
     background-color: #7c0000;
     border: none;
     color: #d2d2d2;

@@ -4,7 +4,7 @@
     - 5.0.0
   label: 500px
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f26e
@@ -50,7 +50,7 @@ accusoft:
     - 5.0.0
   label: Accusoft
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f369
@@ -180,7 +180,7 @@ adn:
     - 5.0.0
   label: App.net
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f170
@@ -207,7 +207,7 @@ adversal:
     - 5.0.0
   label: Adversal
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f36a
@@ -217,7 +217,7 @@ affiliatetheme:
     - 5.0.0
   label: affiliatetheme
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f36b
@@ -266,7 +266,7 @@ airbnb:
     - 5.8.0
   label: Airbnb
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f834
@@ -400,7 +400,7 @@ algolia:
     - 5.0.0
   label: Algolia
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f36c
@@ -563,7 +563,7 @@ alipay:
     - 5.3.0
   label: Alipay
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f642
@@ -594,7 +594,7 @@ amazon:
     - 5.0.0
   label: Amazon
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f270
@@ -605,7 +605,7 @@ amazon-pay:
     - 5.8.0
   label: Amazon Pay
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f42c
@@ -657,7 +657,7 @@ amilia:
     - 5.0.0
   label: Amilia
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f36d
@@ -762,7 +762,7 @@ angellist:
     - 5.0.0
   label: AngelList
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f209
@@ -945,7 +945,7 @@ angrycreative:
     - 5.0.0
   label: Angry Creative
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f36e
@@ -956,7 +956,7 @@ angular:
     - 5.8.0
   label: Angular
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f420
@@ -986,7 +986,7 @@ app-store:
     - 5.0.0
   label: App Store
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f36f
@@ -996,7 +996,7 @@ app-store-ios:
     - 5.0.0
   label: iOS App Store
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f370
@@ -1006,7 +1006,7 @@ apper:
     - 5.0.0
   label: Apper Systems AB
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f371
@@ -1077,7 +1077,7 @@ apple-pay:
     - 5.0.0
   label: Apple Pay
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f415
@@ -1851,7 +1851,7 @@ artstation:
     - 5.8.0
   label: Artstation
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f77a
@@ -1900,7 +1900,7 @@ asymmetrik:
     - 5.0.0
   label: 'Asymmetrik, Ltd.'
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f372
@@ -1949,7 +1949,7 @@ atlassian:
     - 5.6.0
   label: Atlassian
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f77b
@@ -2006,7 +2006,7 @@ audible:
     - 5.0.0
   label: Audible
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f373
@@ -2035,7 +2035,7 @@ autoprefixer:
     - 5.0.0
   label: Autoprefixer
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f41c
@@ -2045,7 +2045,7 @@ avianex:
     - 5.0.0
   label: avianex
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f374
@@ -2055,7 +2055,7 @@ aviato:
     - 5.0.0
   label: Aviato
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f421
@@ -2087,7 +2087,7 @@ aws:
     - 5.1.0
   label: Amazon Web Services (AWS)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f375
@@ -2577,7 +2577,7 @@ bandcamp:
     - 5.0.0
   label: Bandcamp
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2d5
@@ -2945,7 +2945,7 @@ battle-net:
     - 5.8.0
   label: Battle.net
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f835
@@ -3059,7 +3059,7 @@ behance:
     - 5.0.0
   label: Behance
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1b4
@@ -3071,7 +3071,7 @@ behance-square:
     - 5.0.3
   label: Behance Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1b5
@@ -3348,7 +3348,7 @@ bimobject:
     - 5.0.0
   label: BIMobject
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f378
@@ -3439,7 +3439,7 @@ bitcoin:
     - 5.0.0
   label: Bitcoin
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f379
@@ -3449,7 +3449,7 @@ bity:
     - 5.0.0
   label: Bity
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f37a
@@ -3460,7 +3460,7 @@ black-tie:
     - 5.0.0
   label: Font Awesome Black Tie
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f27e
@@ -3470,7 +3470,7 @@ blackberry:
     - 5.0.0
   label: BlackBerry
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f37b
@@ -3626,7 +3626,7 @@ blogger:
     - 5.0.0
   label: Blogger
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f37c
@@ -3636,7 +3636,7 @@ blogger-b:
     - 5.0.0
   label: Blogger B
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f37d
@@ -3647,7 +3647,7 @@ bluetooth:
     - 5.0.0
   label: Bluetooth
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f293
@@ -3658,7 +3658,7 @@ bluetooth-b:
     - 5.0.0
   label: Bluetooth
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f294
@@ -4095,7 +4095,7 @@ bootstrap:
     - 5.8.0
   label: Bootstrap
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f836
@@ -4268,7 +4268,7 @@ border-style:
     - 5.9.0
   label: Border Style
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -4891,7 +4891,7 @@ btc:
     - 5.0.0
   label: BTC
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f15a
@@ -4901,7 +4901,7 @@ buffer:
     - 5.8.0
   label: Buffer
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f837
@@ -5072,7 +5072,7 @@ buromobelexperte:
     - 5.0.0
   label: Büromöbel-Experte GmbH & Co. KG.
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f37f
@@ -5176,7 +5176,7 @@ buy-n-large:
     - 5.11.0
   label: Buy n Large
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f8a6
@@ -5186,7 +5186,7 @@ buysellads:
     - 5.0.0
   label: BuySellAds
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f20d
@@ -6524,7 +6524,7 @@ cc-amazon-pay:
     - 5.0.2
   label: Amazon Pay Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f42d
@@ -6547,7 +6547,7 @@ cc-apple-pay:
     - 5.0.0
   label: Apple Pay Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f416
@@ -6558,7 +6558,7 @@ cc-diners-club:
     - 5.0.0
   label: Diner's Club Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f24c
@@ -6569,7 +6569,7 @@ cc-discover:
     - 5.0.0
   label: Discover Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1f2
@@ -6580,7 +6580,7 @@ cc-jcb:
     - 5.0.0
   label: JCB Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f24b
@@ -6591,7 +6591,7 @@ cc-mastercard:
     - 5.0.0
   label: MasterCard Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1f1
@@ -6602,7 +6602,7 @@ cc-paypal:
     - 5.0.0
   label: Paypal Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1f4
@@ -6613,7 +6613,7 @@ cc-stripe:
     - 5.0.0
   label: Stripe Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1f5
@@ -6624,7 +6624,7 @@ cc-visa:
     - 5.0.0
   label: Visa Credit Card
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1f0
@@ -6654,7 +6654,7 @@ centercode:
     - 5.0.0
   label: Centercode
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f380
@@ -7747,7 +7747,7 @@ chromecast:
     - 5.8.0
   label: Chromecast
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f838
@@ -8506,7 +8506,7 @@ cloudscale:
     - 5.0.0
   label: cloudscale.ch
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f383
@@ -8516,7 +8516,7 @@ cloudsmith:
     - 5.0.0
   label: Cloudsmith
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f384
@@ -8526,7 +8526,7 @@ cloudversify:
     - 5.0.0
   label: cloudversify
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f385
@@ -8661,7 +8661,7 @@ codepen:
     - 5.0.0
   label: Codepen
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1cb
@@ -8672,7 +8672,7 @@ codiepie:
     - 5.0.0
   label: Codie Pie
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f284
@@ -9979,7 +9979,7 @@ connectdevelop:
     - 5.0.0
   label: Connect Develop
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f20e
@@ -10025,7 +10025,7 @@ contao:
     - 5.0.0
   label: Contao
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f26d
@@ -10263,7 +10263,7 @@ cpanel:
     - 5.0.0
   label: cPanel
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f388
@@ -10276,7 +10276,7 @@ creative-commons:
     - 5.1.0
   label: Creative Commons
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f25e
@@ -10286,7 +10286,7 @@ creative-commons-by:
     - 5.0.11
   label: Creative Commons Attribution
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4e7
@@ -10296,7 +10296,7 @@ creative-commons-nc:
     - 5.0.11
   label: Creative Commons Noncommercial
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4e8
@@ -10306,7 +10306,7 @@ creative-commons-nc-eu:
     - 5.0.11
   label: Creative Commons Noncommercial (Euro Sign)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4e9
@@ -10316,7 +10316,7 @@ creative-commons-nc-jp:
     - 5.0.11
   label: Creative Commons Noncommercial (Yen Sign)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4ea
@@ -10326,7 +10326,7 @@ creative-commons-nd:
     - 5.0.11
   label: Creative Commons No Derivative Works
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4eb
@@ -10336,7 +10336,7 @@ creative-commons-pd:
     - 5.0.11
   label: Creative Commons Public Domain
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4ec
@@ -10346,7 +10346,7 @@ creative-commons-pd-alt:
     - 5.0.11
   label: Alternate Creative Commons Public Domain
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4ed
@@ -10356,7 +10356,7 @@ creative-commons-remix:
     - 5.0.11
   label: Creative Commons Remix
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4ee
@@ -10366,7 +10366,7 @@ creative-commons-sa:
     - 5.0.11
   label: Creative Commons Share Alike
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4ef
@@ -10376,7 +10376,7 @@ creative-commons-sampling:
     - 5.0.11
   label: Creative Commons Sampling
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f0
@@ -10386,7 +10386,7 @@ creative-commons-sampling-plus:
     - 5.0.11
   label: Creative Commons Sampling +
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f1
@@ -10396,7 +10396,7 @@ creative-commons-share:
     - 5.0.11
   label: Creative Commons Share
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f2
@@ -10407,7 +10407,7 @@ creative-commons-zero:
     - 5.4.0
   label: Creative Commons CC0
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f3
@@ -10693,7 +10693,7 @@ css3-alt:
     - 5.0.0
   label: Alternate CSS3 Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f38b
@@ -10780,7 +10780,7 @@ cuttlefish:
     - 5.0.0
   label: Cuttlefish
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f38c
@@ -10790,7 +10790,7 @@ d-and-d:
     - 5.0.0
   label: Dungeons & Dragons
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f38d
@@ -10840,7 +10840,7 @@ dashcube:
     - 5.0.3
   label: DashCube
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f210
@@ -10947,7 +10947,7 @@ delicious:
     - 5.7.0
   label: Delicious
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a5
@@ -10979,7 +10979,7 @@ deploydog:
     - 5.0.0
   label: deploy.dog
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f38e
@@ -10989,7 +10989,7 @@ deskpro:
     - 5.0.0
   label: Deskpro
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f38f
@@ -11046,7 +11046,7 @@ dev:
     - 5.4.0
   label: DEV
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f6cc
@@ -11057,7 +11057,7 @@ deviantart:
     - 5.0.0
   label: deviantART
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1bd
@@ -11156,7 +11156,7 @@ diaspora:
     - 5.8.0
   label: Diaspora
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f791
@@ -11412,7 +11412,7 @@ digg:
     - 5.0.0
   label: Digg Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a6
@@ -11440,7 +11440,7 @@ digital-ocean:
     - 5.7.0
   label: Digital Ocean
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f391
@@ -11529,7 +11529,7 @@ discord:
     - 5.0.0
   label: Discord
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f392
@@ -11540,7 +11540,7 @@ discourse:
     - 5.0.3
   label: Discourse
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f393
@@ -11643,7 +11643,7 @@ dochub:
     - 5.0.0
   label: DocHub
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f394
@@ -11653,7 +11653,7 @@ docker:
     - 5.0.0
   label: Docker
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f395
@@ -11920,7 +11920,7 @@ draft2digital:
     - 5.0.0
   label: Draft2digital
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f396
@@ -12040,7 +12040,7 @@ dribbble:
     - 5.0.0
   label: Dribbble
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f17d
@@ -12050,7 +12050,7 @@ dribbble-square:
     - 5.0.0
   label: Dribbble Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f397
@@ -12101,7 +12101,7 @@ dropbox:
     - 5.0.1
   label: Dropbox
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f16b
@@ -12193,7 +12193,7 @@ drupal:
     - 5.0.0
   label: Drupal Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a9
@@ -12338,7 +12338,7 @@ dyalog:
     - 5.0.0
   label: Dyalog
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f399
@@ -12384,7 +12384,7 @@ earlybirds:
     - 5.0.0
   label: Earlybirds
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f39a
@@ -12395,7 +12395,7 @@ ebay:
     - 5.7.0
   label: eBay
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f4
@@ -12525,7 +12525,7 @@ elementor:
     - 5.0.3
   label: Elementor
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f430
@@ -12653,7 +12653,7 @@ ello:
     - 5.2.0
   label: Ello
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5f1
@@ -12664,7 +12664,7 @@ ember:
     - 5.0.3
   label: Ember
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f423
@@ -12675,7 +12675,7 @@ empire:
     - 5.0.0
   label: Galactic Empire
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d1
@@ -12881,7 +12881,7 @@ erlang:
     - 5.7.0
   label: Erlang
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f39d
@@ -12891,7 +12891,7 @@ ethereum:
     - 5.0.2
   label: Ethereum
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f42e
@@ -12923,7 +12923,7 @@ etsy:
     - 5.0.0
   label: Etsy
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2d7
@@ -12951,7 +12951,7 @@ evernote:
     - 5.8.0
   label: Evernote
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f839
@@ -13183,7 +13183,7 @@ expeditedssl:
     - 5.0.0
   label: ExpeditedSSL
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f23e
@@ -13382,7 +13382,7 @@ facebook-messenger:
     - 5.9.0
   label: Facebook Messenger
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f39f
@@ -14717,7 +14717,7 @@ first-order:
     - 5.0.0
   label: First Order
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2b0
@@ -14727,7 +14727,7 @@ first-order-alt:
     - 5.0.12
   label: Alternate First Order
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f50a
@@ -14737,7 +14737,7 @@ firstdraft:
     - 5.0.0
   label: firstdraft
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a1
@@ -15002,7 +15002,7 @@ flickr:
     - 5.0.0
   label: Flickr
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f16e
@@ -15013,7 +15013,7 @@ flipboard:
     - 5.0.9
   label: Flipboard
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f44d
@@ -15134,7 +15134,7 @@ fly:
     - 5.0.0
   label: Fly
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f417
@@ -15337,7 +15337,7 @@ font-awesome-alt:
     - 5.0.0
   label: Alternate Font Awesome
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f35c
@@ -15348,7 +15348,7 @@ font-awesome-flag:
     - 5.0.1
   label: Font Awesome Flag
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f425
@@ -15361,7 +15361,7 @@ font-awesome-logo-full:
     - Font Awesome
   private: true
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -15396,7 +15396,7 @@ fonticons:
     - 5.0.0
   label: Fonticons
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f280
@@ -15406,7 +15406,7 @@ fonticons-fi:
     - 5.0.0
   label: Fonticons Fi
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a2
@@ -15501,7 +15501,7 @@ forumbee:
     - 5.0.0
   label: Forumbee
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f211
@@ -15529,7 +15529,7 @@ foursquare:
     - 5.0.0
   label: Foursquare
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f180
@@ -15558,7 +15558,7 @@ free-code-camp:
     - 5.12.0
   label: freeCodeCamp
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2c5
@@ -15568,7 +15568,7 @@ freebsd:
     - 5.0.0
   label: FreeBSD
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a4
@@ -15682,7 +15682,7 @@ fulcrum:
     - 5.8.0
   label: Fulcrum
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f50b
@@ -16033,7 +16033,7 @@ get-pocket:
     - 5.0.0
   label: Get Pocket
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f265
@@ -16044,7 +16044,7 @@ gg:
     - 5.0.0
   label: GG Currency
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f260
@@ -16055,7 +16055,7 @@ gg-circle:
     - 5.0.0
   label: GG Currency Circle
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f261
@@ -16171,7 +16171,7 @@ git:
     - 5.8.2
   label: Git
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d3
@@ -16181,7 +16181,7 @@ git-alt:
     - 5.8.2
   label: Git Alt
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f841
@@ -16192,7 +16192,7 @@ git-square:
     - 5.8.2
   label: Git Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d2
@@ -16238,7 +16238,7 @@ gitkraken:
     - 5.0.0
   label: GitKraken
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a6
@@ -16261,7 +16261,7 @@ gitter:
     - 5.0.0
   label: Gitter
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f426
@@ -16472,7 +16472,7 @@ glide:
     - 5.0.0
   label: Glide
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2a5
@@ -16483,7 +16483,7 @@ glide-g:
     - 5.0.0
   label: Glide G
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2a6
@@ -16686,7 +16686,7 @@ gofore:
     - 5.0.0
   label: Gofore
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a7
@@ -16730,7 +16730,7 @@ goodreads:
     - 5.0.0
   label: Goodreads
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a8
@@ -16740,7 +16740,7 @@ goodreads-g:
     - 5.0.0
   label: Goodreads G
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3a9
@@ -16751,7 +16751,7 @@ google:
     - 5.0.0
   label: Google Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a0
@@ -16761,7 +16761,7 @@ google-drive:
     - 5.0.0
   label: Google Drive
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3aa
@@ -16771,7 +16771,7 @@ google-play:
     - 5.0.0
   label: Google Play
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ab
@@ -16820,7 +16820,7 @@ google-wallet:
     - 5.0.0
   label: Google Wallet
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1ee
@@ -16908,7 +16908,7 @@ grav:
     - 5.0.0
   label: Grav
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2d6
@@ -17284,7 +17284,7 @@ gripfire:
     - 5.0.0
   label: 'Gripfire, Inc.'
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ac
@@ -17294,7 +17294,7 @@ grunt:
     - 5.0.0
   label: Grunt
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ad
@@ -17367,7 +17367,7 @@ gulp:
     - 5.0.0
   label: Gulp
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ae
@@ -17468,7 +17468,7 @@ hacker-news:
     - 5.0.0
   label: Hacker News
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d4
@@ -17478,7 +17478,7 @@ hacker-news-square:
     - 5.0.0
   label: Hacker News Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3af
@@ -17489,7 +17489,7 @@ hackerrank:
     - 5.8.0
   label: Hackerrank
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5f7
@@ -18735,7 +18735,7 @@ hips:
     - 5.0.5
   label: Hips
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f452
@@ -18745,7 +18745,7 @@ hire-a-helper:
     - 5.0.0
   label: HireAHelper
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b0
@@ -18961,7 +18961,7 @@ hooli:
     - 5.7.0
   label: Hooli
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f427
@@ -18989,7 +18989,7 @@ hornbill:
     - 5.8.0
   label: Hornbill
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f592
@@ -19202,7 +19202,7 @@ hotjar:
     - 5.0.0
   label: Hotjar
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b1
@@ -19450,7 +19450,7 @@ houzz:
     - 5.8.0
   label: Houzz
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f27c
@@ -19478,7 +19478,7 @@ html5:
     - 5.0.0
   label: HTML 5 Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f13b
@@ -19488,7 +19488,7 @@ hubspot:
     - 5.0.0
   label: HubSpot
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b2
@@ -19714,7 +19714,7 @@ ideal:
     - 5.12.0
   label: iDeal
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f913
@@ -19804,7 +19804,7 @@ imdb:
     - 5.0.0
   label: IMDB
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2d8
@@ -20025,7 +20025,7 @@ instagram:
     - 5.0.0
   label: Instagram
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f16d
@@ -20127,7 +20127,7 @@ ioxhost:
     - 5.0.0
   label: ioxhost
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f208
@@ -20180,7 +20180,7 @@ itch-io:
     - 5.8.0
   label: itch.io
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f83a
@@ -20189,7 +20189,7 @@ itunes:
     - 5.0.0
   label: iTunes
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b4
@@ -20199,7 +20199,7 @@ itunes-note:
     - 5.0.0
   label: Itunes Note
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b5
@@ -20230,7 +20230,7 @@ java:
     - 5.8.0
   label: Java
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4e4
@@ -20271,7 +20271,7 @@ jenkins:
     - 5.0.0
   label: Jenkis
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b6
@@ -20292,7 +20292,7 @@ joget:
     - 5.0.0
   label: Joget
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b7
@@ -20325,7 +20325,7 @@ joomla:
     - 5.0.0
   label: Joomla Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1aa
@@ -20374,7 +20374,7 @@ js:
     - 5.0.0
   label: JavaScript (JS)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b8
@@ -20385,7 +20385,7 @@ js-square:
     - 5.0.3
   label: JavaScript (JS) Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3b9
@@ -20396,7 +20396,7 @@ jsfiddle:
     - 5.0.0
   label: jsFiddle
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1cc
@@ -20443,7 +20443,7 @@ kaggle:
     - 5.8.0
   label: Kaggle
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5fa
@@ -20533,7 +20533,7 @@ keybase:
     - 5.11.0
   label: Keybase
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f5
@@ -20563,7 +20563,7 @@ keycdn:
     - 5.0.0
   label: KeyCDN
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ba
@@ -20609,7 +20609,7 @@ kickstarter:
     - 5.0.0
   label: Kickstarter
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3bb
@@ -20619,7 +20619,7 @@ kickstarter-k:
     - 5.0.0
   label: Kickstarter K
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3bc
@@ -20767,7 +20767,7 @@ korvue:
     - 5.0.2
   label: KORVUE
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f42f
@@ -20967,7 +20967,7 @@ laravel:
     - 5.11.2
   label: Laravel
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3bd
@@ -20997,7 +20997,7 @@ lastfm:
     - 5.0.0
   label: last.fm
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f202
@@ -21009,7 +21009,7 @@ lastfm-square:
     - 5.0.11
   label: last.fm Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f203
@@ -21231,7 +21231,7 @@ leanpub:
     - 5.0.0
   label: Leanpub
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f212
@@ -21259,7 +21259,7 @@ less:
     - 5.0.0
   label: Less
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f41d
@@ -21557,7 +21557,7 @@ line:
     - 5.0.0
   label: Line
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3c0
@@ -21647,7 +21647,7 @@ linode:
     - 5.0.0
   label: Linode
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2b8
@@ -22200,7 +22200,7 @@ lyft:
     - 5.0.0
   label: lyft
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3c3
@@ -22230,7 +22230,7 @@ magento:
     - 5.0.0
   label: Magento
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3c4
@@ -22329,7 +22329,7 @@ mailchimp:
     - 5.8.2
   label: Mailchimp
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f59e
@@ -22359,7 +22359,7 @@ mandalorian:
     - 5.8.0
   label: Mandalorian
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f50f
@@ -22834,7 +22834,7 @@ markdown:
     - 5.7.0
   label: Markdown
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f60f
@@ -22878,7 +22878,7 @@ mars-double:
     - 5.0.0
   label: Mars Double
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -22892,7 +22892,7 @@ mars-stroke:
     - 5.0.0
   label: Mars Stroke
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -22907,7 +22907,7 @@ mars-stroke-h:
     - 5.11.0
   label: Mars Stroke Horizontal
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -22922,7 +22922,7 @@ mars-stroke-v:
     - 5.11.0
   label: Mars Stroke Vertical
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -22956,7 +22956,7 @@ mastodon:
     - 5.8.0
   label: Mastodon
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f6
@@ -22967,7 +22967,7 @@ maxcdn:
     - 5.0.0
   label: MaxCDN
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f136
@@ -22977,7 +22977,7 @@ mdb:
     - 5.11.0
   label: Material Design for Bootstrap
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f8ca
@@ -23021,7 +23021,7 @@ medapps:
     - 5.0.0
   label: MedApps
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3c6
@@ -23032,7 +23032,7 @@ medium:
     - 5.0.0
   label: Medium
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f23a
@@ -23042,7 +23042,7 @@ medium-m:
     - 5.0.0
   label: Medium M
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3c7
@@ -23071,7 +23071,7 @@ medrt:
     - 5.0.0
   label: MRT
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3c8
@@ -23082,7 +23082,7 @@ meetup:
     - 5.0.0
   label: Meetup
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2e0
@@ -23110,7 +23110,7 @@ megaport:
     - 5.1.0
   label: Megaport
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5a3
@@ -23198,7 +23198,7 @@ mendeley:
     - 5.6.0
   label: Mendeley
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f7b3
@@ -23262,7 +23262,7 @@ microblog:
     - 5.12.0
   label: Micro.blog
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f91a
@@ -23412,7 +23412,7 @@ microsoft:
     - 5.0.0
   label: Microsoft
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ca
@@ -23602,7 +23602,7 @@ mix:
     - 5.0.3
   label: Mix
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3cb
@@ -23613,7 +23613,7 @@ mixcloud:
     - 5.0.0
   label: Mixcloud
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f289
@@ -23623,7 +23623,7 @@ mizuni:
     - 5.0.0
   label: Mizuni
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3cc
@@ -23723,7 +23723,7 @@ modx:
     - 5.0.0
   label: MODX
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f285
@@ -23733,7 +23733,7 @@ monero:
     - 5.0.0
   label: Monero
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d0
@@ -24352,7 +24352,7 @@ napster:
     - 5.0.0
   label: Napster
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d2
@@ -24385,7 +24385,7 @@ neos:
     - 5.8.0
   label: Neos
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f612
@@ -24415,7 +24415,7 @@ neuter:
     - 5.11.0
   label: Neuter
   search:
-    terms: []
+    terms: [ ]
   styles:
     - solid
     - regular
@@ -24450,7 +24450,7 @@ nimblr:
     - 5.8.0
   label: Nimblr
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5a8
@@ -24460,7 +24460,7 @@ node:
     - 5.0.0
   label: Node.js
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f419
@@ -24471,7 +24471,7 @@ node-js:
     - 5.0.3
   label: Node.js JS
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d3
@@ -24516,7 +24516,7 @@ npm:
     - 5.0.0
   label: npm
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d4
@@ -24526,7 +24526,7 @@ ns8:
     - 5.0.0
   label: NS8
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d5
@@ -24536,7 +24536,7 @@ nutritionix:
     - 5.0.0
   label: Nutritionix
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d6
@@ -24604,7 +24604,7 @@ odnoklassniki:
     - 5.0.0
   label: Odnoklassniki
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f263
@@ -24615,7 +24615,7 @@ odnoklassniki-square:
     - 5.0.0
   label: Odnoklassniki Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f264
@@ -24712,7 +24712,7 @@ opencart:
     - 5.0.0
   label: OpenCart
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f23d
@@ -24723,7 +24723,7 @@ openid:
     - 5.0.0
   label: OpenID
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f19b
@@ -24734,7 +24734,7 @@ opera:
     - 5.0.0
   label: Opera
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f26a
@@ -24746,7 +24746,7 @@ optin-monster:
     - 5.7.0
   label: Optin Monster
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f23c
@@ -24756,7 +24756,7 @@ orcid:
     - 5.11.0
   label: ORCID
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f8d2
@@ -24782,7 +24782,7 @@ osi:
     - 5.8.0
   label: Open Source Initiative
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f41a
@@ -24902,7 +24902,7 @@ page4:
     - 5.0.0
   label: page4 Corporation
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d7
@@ -25033,7 +25033,7 @@ palfed:
     - 5.0.3
   label: Palfed
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d8
@@ -25297,7 +25297,7 @@ patreon:
     - 5.0.3
   label: Patreon
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3d9
@@ -25400,7 +25400,7 @@ paypal:
     - 5.0.0
   label: Paypal
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1ed
@@ -25723,7 +25723,7 @@ periscope:
     - 5.0.0
   label: Periscope
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3da
@@ -25827,7 +25827,7 @@ phabricator:
     - 5.0.0
   label: Phabricator
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3db
@@ -25838,7 +25838,7 @@ phoenix-framework:
     - 5.0.3
   label: Phoenix Framework
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3dc
@@ -25849,7 +25849,7 @@ phoenix-squadron:
     - 5.8.0
   label: Phoenix Squadron
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f511
@@ -26084,7 +26084,7 @@ php:
     - 5.0.5
   label: PHP
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f457
@@ -26175,7 +26175,7 @@ pied-piper:
     - 5.12.0
   label: Pied Piper Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2ae
@@ -26187,7 +26187,7 @@ pied-piper-alt:
     - 5.7.0
   label: Alternate Pied Piper Logo (Old)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a8
@@ -26209,7 +26209,7 @@ pied-piper-pp:
     - 5.0.0
   label: Pied Piper PP Logo (Old)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a7
@@ -26219,7 +26219,7 @@ pied-piper-square:
     - 5.12.0
   label: Pied Piper Square Logo (Old)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f91e
@@ -26284,7 +26284,7 @@ pinterest:
     - 5.0.0
   label: Pinterest
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f0d2
@@ -26295,7 +26295,7 @@ pinterest-p:
     - 5.0.0
   label: Pinterest P
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f231
@@ -26306,7 +26306,7 @@ pinterest-square:
     - 5.0.0
   label: Pinterest Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f0d3
@@ -26548,7 +26548,7 @@ playstation:
     - 5.0.0
   label: PlayStation
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3df
@@ -27187,7 +27187,7 @@ product-hunt:
     - 5.0.0
   label: Product Hunt
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f288
@@ -27254,7 +27254,7 @@ pushed:
     - 5.0.0
   label: Pushed
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e1
@@ -27282,7 +27282,7 @@ python:
     - 5.0.0
   label: Python
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e2
@@ -27293,7 +27293,7 @@ qq:
     - 5.0.0
   label: QQ
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d6
@@ -27399,7 +27399,7 @@ quinscape:
     - 5.8.0
   label: QuinScape
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f459
@@ -27410,7 +27410,7 @@ quora:
     - 5.0.0
   label: Quora
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2c4
@@ -27478,7 +27478,7 @@ r-project:
     - 5.0.12
   label: R Project
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f7
@@ -27752,7 +27752,7 @@ raspberry-pi:
     - 5.6.0
   label: Raspberry Pi
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f7bb
@@ -27763,7 +27763,7 @@ ravelry:
     - 5.0.0
   label: Ravelry
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2d9
@@ -27792,7 +27792,7 @@ react:
     - 5.0.0
   label: React
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f41b
@@ -27803,7 +27803,7 @@ reacteurope:
     - 5.8.0
   label: ReactEurope
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f75d
@@ -27814,7 +27814,7 @@ readme:
     - 5.0.10
   label: ReadMe
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4d5
@@ -27825,7 +27825,7 @@ rebel:
     - 5.0.0
   label: Rebel Alliance
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d0
@@ -27940,7 +27940,7 @@ red-river:
     - 5.0.0
   label: red river
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e3
@@ -27951,7 +27951,7 @@ reddit:
     - 5.0.0
   label: reddit Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a1
@@ -27962,7 +27962,7 @@ reddit-alien:
     - 5.0.0
   label: reddit Alien
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f281
@@ -27973,7 +27973,7 @@ reddit-square:
     - 5.0.0
   label: reddit Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a2
@@ -28090,7 +28090,7 @@ renren:
     - 5.0.0
   label: Renren
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f18b
@@ -28202,7 +28202,7 @@ replyd:
     - 5.0.0
   label: replyd
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e6
@@ -28234,7 +28234,7 @@ researchgate:
     - 5.0.11
   label: Researchgate
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f8
@@ -28244,7 +28244,7 @@ resolving:
     - 5.0.0
   label: Resolving
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e7
@@ -28311,7 +28311,7 @@ rev:
     - 5.8.0
   label: Rev.io
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5b2
@@ -28467,7 +28467,7 @@ rocketchat:
     - 5.8.0
   label: Rocket.Chat
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e8
@@ -28477,7 +28477,7 @@ rockrms:
     - 5.0.0
   label: Rockrms
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3e9
@@ -28879,7 +28879,7 @@ salesforce:
     - 5.8.0
   label: Salesforce
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f83b
@@ -28906,7 +28906,7 @@ sass:
     - 5.8.0
   label: Sass
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f41e
@@ -29198,7 +29198,7 @@ schlix:
     - 5.0.0
   label: SCHLIX
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ea
@@ -29246,7 +29246,7 @@ scribd:
     - 5.0.0
   label: Scribd
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f28a
@@ -29458,7 +29458,7 @@ searchengin:
     - 5.0.0
   label: Searchengin
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3eb
@@ -29497,7 +29497,7 @@ sellsy:
     - 5.0.0
   label: Sellsy
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f213
@@ -29661,7 +29661,7 @@ servicestack:
     - 5.0.0
   label: Servicestack
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ec
@@ -29966,7 +29966,7 @@ shirtsinbulk:
     - 5.7.0
   label: Shirts in Bulk
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f214
@@ -30071,7 +30071,7 @@ shopware:
     - 5.8.0
   label: Shopware
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5b5
@@ -30617,7 +30617,7 @@ simplybuilt:
     - 5.0.0
   label: SimplyBuilt
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f215
@@ -30665,7 +30665,7 @@ sistrix:
     - 5.0.0
   label: SISTRIX
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3ee
@@ -30695,7 +30695,7 @@ sith:
     - 5.0.12
   label: Sith
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f512
@@ -30904,7 +30904,7 @@ skyatlas:
     - 5.0.3
   label: skyatlas
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f216
@@ -30915,7 +30915,7 @@ skype:
     - 5.0.0
   label: Skype
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f17e
@@ -31083,7 +31083,7 @@ slideshare:
     - 5.0.0
   label: Slideshare
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1e7
@@ -31285,7 +31285,7 @@ snapchat:
     - 5.0.0
   label: Snapchat
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2ab
@@ -31296,7 +31296,7 @@ snapchat-ghost:
     - 5.0.0
   label: Snapchat Ghost
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2ac
@@ -31307,7 +31307,7 @@ snapchat-square:
     - 5.0.0
   label: Snapchat Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2ad
@@ -32018,7 +32018,7 @@ soundcloud:
     - 5.0.0
   label: SoundCloud
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1be
@@ -32051,7 +32051,7 @@ sourcetree:
     - 5.8.0
   label: Sourcetree
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f7d3
@@ -32179,7 +32179,7 @@ speakap:
     - 5.8.0
   label: Speakap
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3f3
@@ -32209,7 +32209,7 @@ speaker-deck:
     - 5.8.0
   label: Speaker Deck
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f83c
@@ -32370,7 +32370,7 @@ spotify:
     - 5.0.0
   label: Spotify
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1bc
@@ -32486,7 +32486,7 @@ squarespace:
     - 5.1.0
   label: Squarespace
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5be
@@ -32518,7 +32518,7 @@ stack-exchange:
     - 5.0.3
   label: Stack Exchange
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f18d
@@ -32529,7 +32529,7 @@ stack-overflow:
     - 5.0.0
   label: Stack Overflow
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f16c
@@ -32539,7 +32539,7 @@ stackpath:
     - 5.8.2
   label: Stackpath
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f842
@@ -32855,7 +32855,7 @@ staylinked:
     - 5.0.0
   label: StayLinked
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3f5
@@ -32884,7 +32884,7 @@ steam:
     - 5.0.0
   label: Steam
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1b6
@@ -32895,7 +32895,7 @@ steam-square:
     - 5.0.0
   label: Steam Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1b7
@@ -32905,7 +32905,7 @@ steam-symbol:
     - 5.0.0
   label: Steam Symbol
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3f6
@@ -33001,7 +33001,7 @@ sticker-mule:
     - 5.7.0
   label: Sticker Mule
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3f7
@@ -33166,7 +33166,7 @@ strava:
     - 5.8.0
   label: Strava
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f428
@@ -33251,7 +33251,7 @@ stripe:
     - 5.0.3
   label: Stripe
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f429
@@ -33262,7 +33262,7 @@ stripe-s:
     - 5.8.0
   label: Stripe S
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f42a
@@ -33290,7 +33290,7 @@ studiovinari:
     - 5.0.0
   label: Studio Vinari
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3f8
@@ -33301,7 +33301,7 @@ stumbleupon:
     - 5.0.0
   label: StumbleUpon Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a4
@@ -33312,7 +33312,7 @@ stumbleupon-circle:
     - 5.0.0
   label: StumbleUpon Circle
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1a3
@@ -33535,7 +33535,7 @@ superpowers:
     - 5.0.0
   label: Superpowers
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2dd
@@ -33567,7 +33567,7 @@ supple:
     - 5.0.0
   label: Supple
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3f9
@@ -33629,7 +33629,7 @@ swift:
     - 5.11.0
   label: Swift
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f8e1
@@ -33776,7 +33776,7 @@ symfony:
     - 5.8.0
   label: Symfony
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f83d
@@ -34392,7 +34392,7 @@ teamspeak:
     - 5.8.0
   label: TeamSpeak
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f4f9
@@ -34442,7 +34442,7 @@ telegram:
     - 5.0.0
   label: Telegram
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2c6
@@ -34452,7 +34452,7 @@ telegram-plane:
     - 5.0.0
   label: Telegram Plane
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f3fe
@@ -34593,7 +34593,7 @@ tencent-weibo:
     - 5.0.0
   label: Tencent Weibo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d5
@@ -34801,7 +34801,7 @@ the-red-yeti:
     - 5.8.0
   label: The Red Yeti
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f69d
@@ -34830,7 +34830,7 @@ themeco:
     - 5.8.0
   label: Themeco
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5c6
@@ -34841,7 +34841,7 @@ themeisle:
     - 5.0.0
   label: ThemeIsle
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2b2
@@ -34972,7 +34972,7 @@ think-peaks:
     - 5.8.0
   label: Think Peaks
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f731
@@ -35720,7 +35720,7 @@ trade-federation:
     - 5.0.12
   label: Trade Federation
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f513
@@ -36331,7 +36331,7 @@ tripadvisor:
     - 5.0.0
   label: TripAdvisor
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f262
@@ -36601,7 +36601,7 @@ tumblr:
     - 5.0.0
   label: Tumblr
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f173
@@ -36612,7 +36612,7 @@ tumblr-square:
     - 5.0.0
   label: Tumblr Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f174
@@ -36759,7 +36759,7 @@ twitch:
     - 5.12.0
   label: Twitch
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1e8
@@ -36817,7 +36817,7 @@ typo3:
     - 5.8.0
   label: Typo3
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f42b
@@ -36827,7 +36827,7 @@ uber:
     - 5.0.0
   label: Uber
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f402
@@ -36896,7 +36896,7 @@ uikit:
     - 5.0.0
   label: UIkit
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f403
@@ -36906,7 +36906,7 @@ umbraco:
     - 5.11.0
   label: Umbraco
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f8e8
@@ -37046,7 +37046,7 @@ uniregistry:
     - 5.0.0
   label: Uniregistry
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f404
@@ -37056,7 +37056,7 @@ unity:
     - 5.12.0
   label: Unity 3D
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f949
@@ -37164,7 +37164,7 @@ untappd:
     - 5.0.0
   label: Untappd
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f405
@@ -37205,7 +37205,7 @@ usb:
     - 5.0.0
   label: USB
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f287
@@ -38041,7 +38041,7 @@ ussunnah:
     - 5.0.0
   label: us-Sunnah Foundation
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f407
@@ -38150,7 +38150,7 @@ vaadin:
     - 5.0.0
   label: Vaadin
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f408
@@ -38296,7 +38296,7 @@ viacoin:
     - 5.0.0
   label: Viacoin
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f237
@@ -38307,7 +38307,7 @@ viadeo:
     - 5.0.0
   label: Video
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2a9
@@ -38319,7 +38319,7 @@ viadeo-square:
     - 5.7.0
   label: Video Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2aa
@@ -38368,7 +38368,7 @@ viber:
     - 5.0.3
   label: Viber
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f409
@@ -38455,7 +38455,7 @@ vimeo:
     - 5.0.0
   label: Vimeo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f40a
@@ -38466,7 +38466,7 @@ vimeo-square:
     - 5.0.0
   label: Vimeo Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f194
@@ -38489,7 +38489,7 @@ vine:
     - 5.0.0
   label: Vine
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1ca
@@ -38520,7 +38520,7 @@ vk:
     - 5.0.0
   label: VK
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f189
@@ -38530,7 +38530,7 @@ vnv:
     - 5.0.0
   label: VNV
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f40b
@@ -38772,7 +38772,7 @@ vuejs:
     - 5.0.0
   label: Vue.js
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f41f
@@ -39168,7 +39168,7 @@ waze:
     - 5.8.0
   label: Waze
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f83f
@@ -39217,7 +39217,7 @@ weebly:
     - 5.1.0
   label: Weebly
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5cc
@@ -39228,7 +39228,7 @@ weibo:
     - 5.0.0
   label: Weibo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f18a
@@ -39273,7 +39273,7 @@ weixin:
     - 5.0.3
   label: Weixin (WeChat)
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1d7
@@ -39301,7 +39301,7 @@ whatsapp:
     - 5.0.0
   label: What's App
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f232
@@ -39311,7 +39311,7 @@ whatsapp-square:
     - 5.0.0
   label: What's App Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f40c
@@ -39376,7 +39376,7 @@ whmcs:
     - 5.0.0
   label: WHMCS
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f40d
@@ -39473,7 +39473,7 @@ wikipedia-w:
     - 5.0.0
   label: Wikipedia W
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f266
@@ -39786,7 +39786,7 @@ wix:
     - 5.1.0
   label: Wix
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f5cf
@@ -39814,7 +39814,7 @@ wolf-pack-battalion:
     - 5.8.0
   label: Wolf Pack Battalion
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f514
@@ -39842,7 +39842,7 @@ wordpress:
     - 5.0.0
   label: WordPress Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f19a
@@ -39852,7 +39852,7 @@ wordpress-simple:
     - 5.0.0
   label: Wordpress Simple
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f411
@@ -39863,7 +39863,7 @@ wpbeginner:
     - 5.0.0
   label: WPBeginner
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f297
@@ -39874,7 +39874,7 @@ wpexplorer:
     - 5.0.0
   label: WPExplorer
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2de
@@ -39885,7 +39885,7 @@ wpforms:
     - 5.0.0
   label: WPForms
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f298
@@ -39966,7 +39966,7 @@ xbox:
     - 5.0.0
   label: Xbox
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f412
@@ -39977,7 +39977,7 @@ xing:
     - 5.0.0
   label: Xing
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f168
@@ -39988,7 +39988,7 @@ xing-square:
     - 5.0.0
   label: Xing Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f169
@@ -39999,7 +39999,7 @@ y-combinator:
     - 5.0.0
   label: Y Combinator
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f23b
@@ -40011,7 +40011,7 @@ yahoo:
     - 5.0.3
   label: Yahoo Logo
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f19e
@@ -40021,7 +40021,7 @@ yammer:
     - 5.8.0
   label: Yammer
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f840
@@ -40030,7 +40030,7 @@ yandex:
     - 5.0.0
   label: Yandex
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f413
@@ -40040,7 +40040,7 @@ yandex-international:
     - 5.0.0
   label: Yandex International
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f414
@@ -40050,7 +40050,7 @@ yarn:
     - 5.6.0
   label: Yarn
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f7e3
@@ -40063,7 +40063,7 @@ yelp:
     - 5.8.0
   label: Yelp
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f1e9
@@ -40111,7 +40111,7 @@ yoast:
     - 5.0.3
   label: Yoast
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f2b1
@@ -40136,7 +40136,7 @@ youtube-square:
     - 5.0.3
   label: YouTube Square
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f431
@@ -40146,7 +40146,7 @@ zhihu:
     - 5.2.0
   label: Zhihu
   search:
-    terms: []
+    terms: [ ]
   styles:
     - brands
   unicode: f63f

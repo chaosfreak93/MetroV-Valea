@@ -4,18 +4,20 @@ using SaltyChat.Server.Models;
 
 namespace SaltyChat.Server.Writables
 {
-    public class ClientSyncData : IWritable
+    public class ClientSyncData:IWritable
     {
-        public ClientSyncData(IEnumerable<VoiceClient> voiceClients) {
+        private IEnumerable<VoiceClient> _voiceClients { get; set; }
+
+        public ClientSyncData(IEnumerable<VoiceClient> voiceClients)
+        {
             _voiceClients = voiceClients;
         }
 
-        private IEnumerable<VoiceClient> _voiceClients { get; }
-
-        public void OnWrite(IMValueWriter writer) {
+        public void OnWrite(IMValueWriter writer)
+        {
             writer.BeginArray();
-
-            foreach (var voiceClient in _voiceClients) {
+            foreach (var voiceClient in _voiceClients)
+            {
                 writer.BeginObject();
                 writer.Name("id");
                 writer.Value(voiceClient.Player.Id);

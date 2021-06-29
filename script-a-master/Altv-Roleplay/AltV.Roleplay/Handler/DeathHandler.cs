@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
@@ -9,7 +10,6 @@ using AltV.Net.Resources.Chat.Api;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
 using Altv_Roleplay.Utils;
-using System.Threading.Tasks;
 
 namespace Altv_Roleplay.Handler
 {

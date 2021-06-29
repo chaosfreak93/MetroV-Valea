@@ -13,861 +13,861 @@
 </head>
 
 <body>
-    <div class="TabletBG">
-        <button onclick="showArea(`HomeApp-Area`);" class="btn btn-home btn-circle btn-circle-sm m-1"><i class="fa fa-fingerprint"></i></button>
-        <div class="Tablet">
-            <div class="Taskbar">
-                <i class="fas fa-wifi"></i>
-                <span id="time">12:30 Uhr</span>
-                <i class="fas fa-battery-three-quarters"></i>
+<div class="TabletBG">
+    <button onclick="showArea(`HomeApp-Area`);" class="btn btn-home btn-circle btn-circle-sm m-1"><i class="fa fa-fingerprint"></i></button>
+    <div class="Tablet">
+        <div class="Taskbar">
+            <i class="fas fa-wifi"></i>
+            <span id="time">12:30 Uhr</span>
+            <i class="fas fa-battery-three-quarters"></i>
+        </div>
+        <div class="Tablet-UseableArea">
+            <div id="HomeApp-Area">
+                <ul id="HomeApp-AppList" class="list-group"></ul>
+                <div class="DateBox">
+                    <span id="datetime">12:30 Uhr</span>
+                    <span id="datedate">Donnerstag, den 3. Juli 2019</span>
+                </div>
             </div>
-            <div class="Tablet-UseableArea">
-                <div id="HomeApp-Area">
-                    <ul id="HomeApp-AppList" class="list-group"></ul>
-                    <div class="DateBox">
-                        <span id="datetime">12:30 Uhr</span>
-                        <span id="datedate">Donnerstag, den 3. Juli 2019</span>
-                    </div>
-                </div>
-                <div id="InternetApp-Area">
-                    <!-- Internet App -->
-                    <div id="InternetApp-Area-Overview">
-                        <div class="box">
-                            <p class="title" style="padding-top: 80px">INTERNET</p>
-                            <p class="description">Neue Apps gefällig? Du brauchst ein neues Auto? Oder doch nur informieren? <br>Wähle eine der unten stehenden Kategorien aus um fortzufahren.</p>
-                            <ul class="list-group">
-                                <li class="list-group-item" onclick="openSubWindow(`InternetApp-Area-VehicleStore`);">
-                                    <img src="img/internetapp/shipped.png">
-                                    <p>Fahrzeug Shop</p>
-                                </li>
-                                <li class="list-group-item" onclick="openSubWindow(`InternetApp-Area-AppStore`);">
-                                    <img src="img/internetapp/play-store.png">
-                                    <p>App Store</p>
-                                </li>
-                                <li class="list-group-item">
-                                    <img src="img/internetapp/map.png">
-                                    <p>Maps</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="InternetApp-Area-VehicleStore">
-                        <div class="box" style="height: 560px; top: 15px">
-                            <p class="title" style="padding-top: 25px">FAHRZEUG BESTELLEN</p>
-                            <p class="description">Erwerbe online ein Fahrzeug welches es beim örtlichen Händler nicht gibt.<br>Die Fahrzeugfarbe ist
-                                <font id="InternetApp-Area-VehicleStore-ColorText" style="font-weight: bold">weiß</font>, diese kannst du vor Kauf ändern.</p>
-
-                            <ul id="InternetApp-Area-VehicleStore-List" class="list-group"></ul>
-                        </div>
-                    </div>
-                    <div id="InternetApp-Area-AppStore">
-                        <div class="box" style="height: 550px; top: 20px">
-                            <p class="title">APP STORE</p>
-                            <p class="description">
-                                <font style="font-weight: bold" color="#40c777">Installiere</font> neue Apps oder
-                                <font style="font-weight: bold" color="#dc3535">deinstalliere</font> bestehende Applikationen. <br>Die Geb&uuml;hren werden von deinem Bankkonto abgezogen.</p>
-
-                            <ul id="AppStore-List" class="list-group"></ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="DispatchApp-Area">
-                    <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(2);">
-                        <span>Los Santos Police Department</span><br>
-                        <img src="img/police-car.png">
-                    </div>
-                    <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(3);">
-                        <span>Los Santos Medical Department</span>
-                        <img src="img/ambulance.png">
-                    </div>
-                    <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(6);">
-                        <span>United States Marshal Service</span>
-                        <img src="img/marshal-car.png">
-                    </div>
-                    <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(4);">
-                        <span>Auto Club Los Santos</span>
-                        <img src="img/tow-truck.png">
-                    </div>
-                    <textarea maxlength="64" id="DispatchApp-dispatchTextField" spellcheck="false" placeholder="Nachricht eingeben..." onkeypress="return event.charCode != 59 && event.charCode != 61"></textarea>
-                </div>
-
-                <div id="NotesApp-Area">
+            <div id="InternetApp-Area">
+                <!-- Internet App -->
+                <div id="InternetApp-Area-Overview">
                     <div class="box">
-                        <p class="title">NOTIZEN</p>
-                        <p class="description">Erstelle, lösche oder bearbeite Notizen. <br>Wähle beim Erstellen einen Titel, einen Text und eine passende Farbe aus.</p>
-
-                        <div id="NotesApp-Area-Overview">
-                            <ul id="NotesApp-List" class="list-group"></ul>
-                        </div>
-                        <div id="NotesApp-Area-NewNote">
-                            <div class="colorbox">
-                                <p>Ausgewählte Farbe:
-                                    <font id="NotesApp-NewNote-ColorText" style="font-weight: bold">schwarz</font>
-                                </p>
-                                <button type='button' class='btn btn-black btn-circle btn-sm' onclick="selectNoteColor(`schwarz`, this);"></button>
-                                <button type='button' class='btn btn-white btn-circle btn-sm' onclick="selectNoteColor(`weiß`, this);"></button>
-                                <button type='button' class='btn btn-primary btn-circle btn-sm' onclick="selectNoteColor(`blau`, this);"></button>
-                                <button type='button ' class='btn btn-red btn-circle btn-sm' onclick="selectNoteColor(`rot`, this);"></button>
-                                <button type='button ' class='btn btn-green btn-circle btn-sm' onclick="selectNoteColor(`grün`, this);"></button>
-                                <button type='button' class='btn btn-yellow btn-circle btn-sm' onclick='selectNoteColor(`gelb`, this);'></button><br>
-                            </div>
-                            <div class="box" id="NotesApp-Area-NewNote-NewNoteExample">
-                                <textarea class="title" id="NewNote-Title" spellcheck="false" placeholder="Titel eingeben.." maxlength="24"></textarea>
-                                <hr style="border-color: #2b2a2a54">
-                                <textarea class="text" id="NewNote-Text" spellcheck="false" placeholder="Beschreibung eingeben.." maxlength="64"></textarea>
-                                <button type="button" class="btn btn-create" onclick="NotesAppCreateNewNote();">ERSTELLEN</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="BankingApp-Area">
-                    <!-- Banking App -->
-                    <div id="BankingApp-Area-Overview">
-                        <div class="card text-white">
-                            <div id="bankingapp-overview-header" class="card-header">Bankkonto von Max Mustermann</div>
-                            <div class="card-body">
-                                <h6 class="card-title">Kontoinformationen</h6>
-                                <p id="bankingapp-overview-text" class="card-text"></p>
-                            </div>
-                        </div>
+                        <p class="title" style="padding-top: 80px">INTERNET</p>
+                        <p class="description">Neue Apps gefällig? Du brauchst ein neues Auto? Oder doch nur informieren? <br>Wähle eine der unten stehenden Kategorien aus um fortzufahren.</p>
                         <ul class="list-group">
-                            <p>Weitere Möglichkeiten</p>
-                            <li class="list-group-item" onclick="openSubWindow(`BankingApp-Area-NewTransactionArea`);">
-                                <img src="img/bank/statement.png">
-                                <p>Neue Transaktion</p>
+                            <li class="list-group-item" onclick="openSubWindow(`InternetApp-Area-VehicleStore`);">
+                                <img src="img/internetapp/shipped.png">
+                                <p>Fahrzeug Shop</p>
                             </li>
-                            <li class="list-group-item" onclick="openSubWindow(`BankingApp-Area-ViewBankHistory`);">
-                                <img src="img/bank/transaction.png">
-                                <p>Kontohistorie</p>
+                            <li class="list-group-item" onclick="openSubWindow(`InternetApp-Area-AppStore`);">
+                                <img src="img/internetapp/play-store.png">
+                                <p>App Store</p>
+                            </li>
+                            <li class="list-group-item">
+                                <img src="img/internetapp/map.png">
+                                <p>Maps</p>
                             </li>
                         </ul>
                     </div>
-                    <div id="BankingApp-Area-NewTransactionArea">
-                        <!-- Neue Kontotransaktionsseite -->
-                        <div class="box" style="height: 380px; top: 100px;">
-                            <p>NEUE TRANSAKTION TÄTIGEN</p>
-                            <p id="BankingApp-NewTransactionArea-Error" style="margin-top: -1.8rem;">Dies ist eine Fehlermeldung.</p>
-                            <div class="inputgroup" style="margin-top: 1.5rem">
-                                <i class="fas fa-university icon"></i>
-                                <input id="bankingapp-banknumber" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="16" placeholder="Kontonummer eingeben.." spellcheck="false">
-                            </div>
+                </div>
+                <div id="InternetApp-Area-VehicleStore">
+                    <div class="box" style="height: 560px; top: 15px">
+                        <p class="title" style="padding-top: 25px">FAHRZEUG BESTELLEN</p>
+                        <p class="description">Erwerbe online ein Fahrzeug welches es beim örtlichen Händler nicht gibt.<br>Die Fahrzeugfarbe ist
+                            <font id="InternetApp-Area-VehicleStore-ColorText" style="font-weight: bold">weiß</font>, diese kannst du vor Kauf ändern.</p>
 
-                            <div class="inputgroup">
-                                <i class="far fa-comment icon"></i>
-                                <input id="bankingapp-transactiontext" type="text" maxlength="20" placeholder="Verwendungszweck eingeben.." spellcheck="false">
-                            </div>
-
-                            <div class="inputgroup">
-                                <i class="fas fa-dollar-sign icon" style="padding-left: 17px; padding-right: 17px;"></i>
-                                <input id="bankingapp-moneyamount" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Betrag eingeben.." spellcheck="false">
-                            </div>
-
-                            <button type="button" id="createNewBankTransaction" class="btn btn-bankhov"><i class="fas fa-check" style="padding-right: 6px;"></i>Transaktion durchführen</button>
-                            <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL;">Jede Transaktion auf ein anderes Konto zieht gewisse Gebühren mit sich.<br>Weitere Informationen zu den verschiedenen Gebühren erhalten Sie in Ihrer Bankfiliale.</p>
-                        </div>
-                    </div>
-                    <div id="BankingApp-Area-ViewBankHistory">
-                        <!-- Kontoauszüge -->
-                        <p>LETZTE TRANSAKTIONEN</p>
-                        <ul id="bankapp-bankhistory-list" class="list-group"></ul>
+                        <ul id="InternetApp-Area-VehicleStore-List" class="list-group"></ul>
                     </div>
                 </div>
+                <div id="InternetApp-Area-AppStore">
+                    <div class="box" style="height: 550px; top: 20px">
+                        <p class="title">APP STORE</p>
+                        <p class="description">
+                            <font style="font-weight: bold" color="#40c777">Installiere</font> neue Apps oder
+                            <font style="font-weight: bold" color="#dc3535">deinstalliere</font> bestehende Applikationen. <br>Die Geb&uuml;hren werden von deinem Bankkonto abgezogen.</p>
 
-                <div id="CompanyApp-Area">
-                    <div id="CompanyApp-Area-Overview">
-                        <div class="card text-white">
-                            <div id="companyapp-overview-header" class="card-header">Standartunternehmen (FEHLER)</div>
-                            <div class="card-body">
-                                <h6 class="card-title">Unternehmensinformationen</h6>
-                                <p id="companyapp-overview-text" class="card-text"></p>
-                            </div>
-                        </div>
-                        <ul class="list-group">
-                            <p>Weitere Möglichkeiten</p>
-                            <li class="list-group-item" onclick="openSubWindow(`CompanyApp-Area-ViewAllMembers`);">
-                                <img src="img/multiple-users-silhouette.png">
-                                <p>Mitarbeiter einsehen</p>
-                            </li>
-                            <li class="list-group-item" onclick="CompanyAppLeaveCompany();">
-                                <img src="img/logout.png">
-                                <p>Unternehmen verlassen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`CompanyApp-Area-InviteNewMember`);">
-                                <img src="img/invitation.png">
-                                <p>Mitarbeiter einstellen</p>
-                            </li>
-                        </ul>
+                        <ul id="AppStore-List" class="list-group"></ul>
                     </div>
-                    <div id="CompanyApp-Area-ViewAllMembers">
-                        <div class="box" style="height: 380px; top: 100px;">
-                            <p style="margin-top: 0.5rem; margin-bottom: -1rem; font-size: 1.3rem;">MITARBEITER EINSEHEN</p>
-                            <ul id="CompanyApp-Area-ViewAllMembers-List" class="list-group"></ul>
-                        </div>
+                </div>
+            </div>
+
+            <div id="DispatchApp-Area">
+                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(2);">
+                    <span>Los Santos Police Department</span><br>
+                    <img src="img/police-car.png">
+                </div>
+                <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(3);">
+                    <span>Los Santos Medical Department</span>
+                    <img src="img/ambulance.png">
+                </div>
+                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(6);">
+                    <span>United States Marshal Service</span>
+                    <img src="img/marshal-car.png">
+                </div>
+                <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(4);">
+                    <span>Auto Club Los Santos</span>
+                    <img src="img/tow-truck.png">
+                </div>
+                <textarea maxlength="64" id="DispatchApp-dispatchTextField" spellcheck="false" placeholder="Nachricht eingeben..." onkeypress="return event.charCode != 59 && event.charCode != 61"></textarea>
+            </div>
+
+            <div id="NotesApp-Area">
+                <div class="box">
+                    <p class="title">NOTIZEN</p>
+                    <p class="description">Erstelle, lösche oder bearbeite Notizen. <br>Wähle beim Erstellen einen Titel, einen Text und eine passende Farbe aus.</p>
+
+                    <div id="NotesApp-Area-Overview">
+                        <ul id="NotesApp-List" class="list-group"></ul>
                     </div>
-                    <div id="CompanyApp-Area-InviteNewMember">
-                        <div class="box" style="height: 380px; top: 100px;">
-                            <p style="margin-top: 2rem; margin-bottom: -1rem;">NEUEN MITARBEITER EINSTELLEN</p>
-                            <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL;">Hier hast du die Möglichkeit einen Mitarbeiter einzustellen.<br>Dieser erhält dann Zugriff auf Funktionen des Unternehmens.</p>
-                            <div class="inputgroup" style="margin-top: 2.5rem;">
-                                <i class="fas fa-university icon"></i>
-                                <input id="companyapp-name" type="text" maxlength="32" placeholder="Namen eingeben.." spellcheck="false">
-                            </div>
-                            <button style="margin-top: 1rem;" type="button" id="companyAppInviteNewMember" class="btn btn-companyHov"><i class="fas fa-check" style="padding-right: 6px;"></i>Mitarbeiter einstellen</button>
+                    <div id="NotesApp-Area-NewNote">
+                        <div class="colorbox">
+                            <p>Ausgewählte Farbe:
+                                <font id="NotesApp-NewNote-ColorText" style="font-weight: bold">schwarz</font>
+                            </p>
+                            <button type='button' class='btn btn-black btn-circle btn-sm' onclick="selectNoteColor(`schwarz`, this);"></button>
+                            <button type='button' class='btn btn-white btn-circle btn-sm' onclick="selectNoteColor(`weiß`, this);"></button>
+                            <button type='button' class='btn btn-primary btn-circle btn-sm' onclick="selectNoteColor(`blau`, this);"></button>
+                            <button type='button ' class='btn btn-red btn-circle btn-sm' onclick="selectNoteColor(`rot`, this);"></button>
+                            <button type='button ' class='btn btn-green btn-circle btn-sm' onclick="selectNoteColor(`grün`, this);"></button>
+                            <button type='button' class='btn btn-yellow btn-circle btn-sm' onclick='selectNoteColor(`gelb`, this);'></button><br>
+                        </div>
+                        <div class="box" id="NotesApp-Area-NewNote-NewNoteExample">
+                            <textarea class="title" id="NewNote-Title" spellcheck="false" placeholder="Titel eingeben.." maxlength="24"></textarea>
+                            <hr style="border-color: #2b2a2a54">
+                            <textarea class="text" id="NewNote-Text" spellcheck="false" placeholder="Beschreibung eingeben.." maxlength="64"></textarea>
+                            <button type="button" class="btn btn-create" onclick="NotesAppCreateNewNote();">ERSTELLEN</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div id="FactionManagerApp-Area">
-                    <div id="FactionManagerApp-Area-Overview">
-                        <div class="card text-white">
-                            <div id="factionmanagerapp-overview-header" class="card-header">Standartfraktion (FEHLER)</div>
-                            <div class="card-body">
-                                <h6 class="card-title">Fraktionsinformationen</h6>
-                                <p id="factionmanagerapp-overview-text" class="card-text"></p>
-                            </div>
-                        </div>
-                        <ul class="list-group">
-                            <p>Weitere Möglichkeiten</p>
-                            <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-ViewAllMembers`);">
-                                <img src="img/multiple-users-silhouette.png">
-                                <p>Mitarbeiter einsehen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-RankManage`);">
-                                <img src="img/bank/transaction.png">
-                                <p>Gehälter verwalten</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-InviteNewMember`);">
-                                <img src="img/invitation.png">
-                                <p>Mitarbeiter einstellen</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="FactionManagerApp-Area-ViewAllMembers">
-                        <div class="box">
-                            <p style="margin-top: 0.5rem; margin-bottom: -1rem; font-size: 1.3rem;">MITARBEITER EINSEHEN</p>
-                            <ul id="FactionManagerApp-Area-ViewAllMembers-List" class="list-group"></ul>
+            <div id="BankingApp-Area">
+                <!-- Banking App -->
+                <div id="BankingApp-Area-Overview">
+                    <div class="card text-white">
+                        <div id="bankingapp-overview-header" class="card-header">Bankkonto von Max Mustermann</div>
+                        <div class="card-body">
+                            <h6 class="card-title">Kontoinformationen</h6>
+                            <p id="bankingapp-overview-text" class="card-text"></p>
                         </div>
                     </div>
-                    <div id="FactionManagerApp-Area-InviteNewMember">
-                        <div class="box" style="height: 380px; top: 100px;">
-                            <p style="margin-top: 2rem; margin-bottom: -1rem;">NEUEN MITARBEITER EINSTELLEN</p>
-                            <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL;">Hier hast du die Möglichkeit einen Mitarbeiter einzustellen.<br>Dieser erhält dann Zugriff auf Funktionen des Unternehmens.</p>
-                            <div class="inputgroup" style="margin-top: 2.5rem;">
-                                <i class="fas fa-user icon"></i>
-                                <input id="factionmanagerapp-name" type="text" maxlength="32" placeholder="Namen eingeben.." spellcheck="false">
-                            </div>
-                            <div class="inputgroup" style="margin-top: 0.5rem;">
-                                <i class="fas fa-list-ol icon"></i>
-                                <input id="factionmanagerapp-dienstnummer" type="number" maxlength="32" placeholder="Dienstnummer eingeben.." spellcheck="false" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                            </div>
-                            <button style="margin-top: 1rem;" type="button" id="factionmanagerAppInviteNewMember" class="btn btn-factionManagerHov"><i class="fas fa-check" style="padding-right: 6px;"></i>Mitarbeiter einstellen</button>
+                    <ul class="list-group">
+                        <p>Weitere Möglichkeiten</p>
+                        <li class="list-group-item" onclick="openSubWindow(`BankingApp-Area-NewTransactionArea`);">
+                            <img src="img/bank/statement.png">
+                            <p>Neue Transaktion</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`BankingApp-Area-ViewBankHistory`);">
+                            <img src="img/bank/transaction.png">
+                            <p>Kontohistorie</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="BankingApp-Area-NewTransactionArea">
+                    <!-- Neue Kontotransaktionsseite -->
+                    <div class="box" style="height: 380px; top: 100px;">
+                        <p>NEUE TRANSAKTION TÄTIGEN</p>
+                        <p id="BankingApp-NewTransactionArea-Error" style="margin-top: -1.8rem;">Dies ist eine Fehlermeldung.</p>
+                        <div class="inputgroup" style="margin-top: 1.5rem">
+                            <i class="fas fa-university icon"></i>
+                            <input id="bankingapp-banknumber" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="16" placeholder="Kontonummer eingeben.." spellcheck="false">
                         </div>
-                    </div>
-                    <div id="FactionManagerApp-Area-RankManage">
-                        <div class="box">
-                            <p style="margin-top: 0.5rem; margin-bottom: -1rem; font-size: 1.3rem;">GEHÄLTER VERWALTEN</p>
-                            <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL; margin-bottom: -1rem;">Hier hast du die Möglichkeit die Gehälter deiner Fraktion anzupassen.<br>Ein Minimum von 1$ und ein Maximum von 10.000$ sind hier Minimal- und Maximalwerte.</p>
 
-                            <ul id="FactionManagerApp-Area-RankManage-List" class="list-group"></ul>
+                        <div class="inputgroup">
+                            <i class="far fa-comment icon"></i>
+                            <input id="bankingapp-transactiontext" type="text" maxlength="20" placeholder="Verwendungszweck eingeben.." spellcheck="false">
                         </div>
+
+                        <div class="inputgroup">
+                            <i class="fas fa-dollar-sign icon" style="padding-left: 17px; padding-right: 17px;"></i>
+                            <input id="bankingapp-moneyamount" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Betrag eingeben.." spellcheck="false">
+                        </div>
+
+                        <button type="button" id="createNewBankTransaction" class="btn btn-bankhov"><i class="fas fa-check" style="padding-right: 6px;"></i>Transaktion durchführen</button>
+                        <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL;">Jede Transaktion auf ein anderes Konto zieht gewisse Gebühren mit sich.<br>Weitere Informationen zu den verschiedenen Gebühren erhalten Sie in Ihrer Bankfiliale.</p>
                     </div>
                 </div>
+                <div id="BankingApp-Area-ViewBankHistory">
+                    <!-- Kontoauszüge -->
+                    <p>LETZTE TRANSAKTIONEN</p>
+                    <ul id="bankapp-bankhistory-list" class="list-group"></ul>
+                </div>
+            </div>
 
-                <div id="JusticeApp-Area">
-                    <div id="JusticeApp-Area-Overview">
-                        <div class="card text-white">
-                            <div class="card-header">Department of Justice (1)</div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <b>Aktive Mitarbeiter: </b>
-                                    <font id="JusticeApp-Area-Overview-DutyMemberCount">-1</font>
-                                </p>
-                            </div>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-SearchPerson`);">
-                                <img src="img/multiple-users-silhouette.png">
-                                <p>Person überprüfen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-SearchLicense`);">
-                                <img src="img/driving-license.png">
-                                <p>Lizenz <br>abfragen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-SearchVehiclePlate`);">
-                                <img src="img/license.png">
-                                <p>Kennzeichen überprüfen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-ViewBankTransactions`);">
-                                <img src="img/bank/transaction.png">
-                                <p>Bankdaten überprüfen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-ViewFactionVehicles`);">
-                                <img src="img/parking.png">
-                                <p>Ausgeparkte Fahrzeuge</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-GiveWeaponLicense`);">
-                                <img src="img/gun.png">
-                                <p>Waffenschein vergeben</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="JusticeApp-Area-SearchPerson">
-                        <div class="box">
-                            <p class="title">NAME DER PERSON</p>
-                            <input id="JusticeApp-Area-SearchPerson-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
-                            <button onclick="JusticeAppSearchPerson();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div class="container">
-                                <p><b>Name der Person:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-charName">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Geschlecht:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-gender">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Geburtsdatum:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-birthdate">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Geburtsort:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-birthplace">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Adresse:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-address">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Beruf:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-job">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Hauptkonto:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-mainBankAccNr">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Einreisedatum:</b>
-                                    <font id="JusticeApp-Area-SearchPerson-firstJoinDate">-/-</font>
-                                </p>
-                            </div>
+            <div id="CompanyApp-Area">
+                <div id="CompanyApp-Area-Overview">
+                    <div class="card text-white">
+                        <div id="companyapp-overview-header" class="card-header">Standartunternehmen (FEHLER)</div>
+                        <div class="card-body">
+                            <h6 class="card-title">Unternehmensinformationen</h6>
+                            <p id="companyapp-overview-text" class="card-text"></p>
                         </div>
                     </div>
-                    <div id="JusticeApp-Area-SearchVehiclePlate">
-                        <div class="box">
-                            <p class="title">KENNZEICHEN EINGEBEN</p>
-                            <input id="JusticeApp-Area-SearchVehiclePlate-InputPlate" type="text" maxlength="32" placeholder="Kennzeichen eingeben.." spellcheck="false">
-                            <button onclick="JusticeAppSearchVehiclePlate();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div class="container">
-                                <p><b>Besitzer:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-charName">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Fahrzeugname:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-vehName">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Hersteller:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-manufactor">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Kaufdatum:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-buydate">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Kofferraumgröße:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-trunk">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Tankgröße:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-fuel">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Tankart:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-fueltype">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Steuern:</b>
-                                    <font id="JusticeApp-Area-SearchVehiclePlate-taxes">-/-</font>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="JusticeApp-Area-SearchLicense">
-                        <div class="box">
-                            <p class="title">NAME DER PERSON</p>
-                            <input id="JusticeApp-Area-SearchLicense-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
-                            <button onclick="JusticeAppSearchLicense();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="JusticeApp-Area-SearchLicense-List"></div>
-                        </div>
-                    </div>
-                    <div id="JusticeApp-Area-ViewFactionVehicles">
-                        <div class="box">
-                            <p class="title">AUSGEPARKTE FAHRZEUGE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="JusticeApp-Area-ViewFactionVehicles-List"></div>
-                        </div>
-                    </div>
-                    <div id="JusticeApp-Area-ViewBankTransactions">
-                        <div class="box">
-                            <p class="title">KONTOAKTIVITÄTEN CHECKEN</p>
-                            <input id="JusticeApp-Area-ViewBankTransactions-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
-                            <button onclick="JusticeAppSearchBankAccounts();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: -10;">
-                            <p class="title">KONTOAUSWAHL</p>
-                            <ul id="JusticeApp-Area-ViewBankTransactions-AccountList" class="list-group"></ul>
-                            <hr style="border-color: #0000004a; margin-bottom: -10;">
-                            <p class="title">KONTOVERLAUF</p>
-                            <ul id="JusticeApp-Area-ViewBankTransactions-HistoryList" class="list-group"></ul>
-                        </div>
-                    </div>
-                    <div id="JusticeApp-Area-GiveWeaponLicense">
-                        <div class="box">
-                            <p style="margin-top: 120px;">Waffenschein ausstellen</p>
-                            <div class="inputgroup">
-                                <i class="fas fa-align-left icon"></i>
-                                <input id="JusticeApp-Area-GiveWeaponLicense-InputName" type="text" maxlength="64" placeholder="Weitere Infos eingeben..." spellcheck="false">
-                            </div>
-                            <button type="button" onclick="JusticeAppGiveWeaponLicense();" class="btn btn-justicehov"><i class="fas fa-check" style="padding-right: 6px;"></i>Waffenschein ausstellen</button>
-                        </div>
+                    <ul class="list-group">
+                        <p>Weitere Möglichkeiten</p>
+                        <li class="list-group-item" onclick="openSubWindow(`CompanyApp-Area-ViewAllMembers`);">
+                            <img src="img/multiple-users-silhouette.png">
+                            <p>Mitarbeiter einsehen</p>
+                        </li>
+                        <li class="list-group-item" onclick="CompanyAppLeaveCompany();">
+                            <img src="img/logout.png">
+                            <p>Unternehmen verlassen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`CompanyApp-Area-InviteNewMember`);">
+                            <img src="img/invitation.png">
+                            <p>Mitarbeiter einstellen</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="CompanyApp-Area-ViewAllMembers">
+                    <div class="box" style="height: 380px; top: 100px;">
+                        <p style="margin-top: 0.5rem; margin-bottom: -1rem; font-size: 1.3rem;">MITARBEITER EINSEHEN</p>
+                        <ul id="CompanyApp-Area-ViewAllMembers-List" class="list-group"></ul>
                     </div>
                 </div>
-
-                <div id="LSPDApp-Area">
-                    <div id="LSPDApp-Area-Overview">
-                        <div class="card text-white">
-                            <div class="card-header">Los Santos Police Department (2)</div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <b>Aktuelle Notrufe: </b>
-                                    <font id="LSPDApp-Area-Overview-DispatchCount">-1</font><br>
-                                    <b>Aktive Mitarbeiter: </b>
-                                    <font id="LSPDApp-Area-Overview-DutyMemberCount">-1</font><br>
-                                </p>
-                            </div>
+                <div id="CompanyApp-Area-InviteNewMember">
+                    <div class="box" style="height: 380px; top: 100px;">
+                        <p style="margin-top: 2rem; margin-bottom: -1rem;">NEUEN MITARBEITER EINSTELLEN</p>
+                        <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL;">Hier hast du die Möglichkeit einen Mitarbeiter einzustellen.<br>Dieser erhält dann Zugriff auf Funktionen des Unternehmens.</p>
+                        <div class="inputgroup" style="margin-top: 2.5rem;">
+                            <i class="fas fa-university icon"></i>
+                            <input id="companyapp-name" type="text" maxlength="32" placeholder="Namen eingeben.." spellcheck="false">
                         </div>
-                        <ul class="list-group">
-                            <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-SearchPerson`);">
-                                <img src="img/multiple-users-silhouette.png">
-                                <p>Person überprüfen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-SearchLicense`);">
-                                <img src="img/driving-license.png">
-                                <p>Lizenz <br>abfragen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-SearchVehiclePlate`);">
-                                <img src="img/license.png">
-                                <p>Kennzeichen überprüfen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-InviteNewMember`);">
-                                <img src="img/phonegps.png">
-                                <p>Telefonnummer überprüfen</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewDispatches`);">
-                                <img src="img/sos.png">
-                                <p>Aktuell aktive Notrufe</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewFactionVehicles`);">
-                                <img src="img/parking.png">
-                                <p>Ausgeparkte Fahrzeuge</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="LSPDApp-Area-SearchPerson">
-                        <div class="box">
-                            <p class="title">NAME DER PERSON</p>
-                            <input id="LSPDApp-Area-SearchPerson-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
-                            <button onclick="LSPDAppSearchPerson();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div class="container">
-                                <p><b>Name der Person:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-charName">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Geschlecht:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-gender">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Geburtsdatum:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-birthdate">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Geburtsort:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-birthplace">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Adresse:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-address">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Beruf:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-job">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Hauptkonto:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-mainBankAccNr">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Einreisedatum:</b>
-                                    <font id="LSPDApp-Area-SearchPerson-firstJoinDate">-/-</font>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="LSPDApp-Area-SearchVehiclePlate">
-                        <div class="box">
-                            <p class="title">KENNZEICHEN EINGEBEN</p>
-                            <input id="LSPDApp-Area-SearchVehiclePlate-InputPlate" type="text" maxlength="32" placeholder="Kennzeichen eingeben.." spellcheck="false">
-                            <button onclick="LSPDAppSearchVehiclePlate();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div class="container">
-                                <p><b>Besitzer:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-charName">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Fahrzeugname:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-vehName">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Hersteller:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-manufactor">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Kaufdatum:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-buydate">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Kofferraumgröße:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-trunk">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Tankgröße:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-fuel">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Tankart:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-fueltype">-/-</font>
-                                </p>
-                            </div>
-                            <div class="container">
-                                <p><b>Steuern:</b>
-                                    <font id="LSPDApp-Area-SearchVehiclePlate-taxes">-/-</font>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="LSPDApp-Area-SearchLicense">
-                        <div class="box">
-                            <p class="title">NAME DER PERSON</p>
-                            <input id="LSPDApp-Area-SearchLicense-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
-                            <button onclick="LSPDAppSearchLicense();" type="button" class="btn btn-sm">Suchen</button>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="LSPDApp-Area-SearchLicense-List"></div>
-                        </div>
-                    </div>
-                    <!--<div id="LSPDApp-Area-ViewFactionVehicles">
-                        <div class="box">
-                            <p class="title">AUSGEPARKTE FAHRZEUGE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="LSPDApp-Area-ViewFactionVehicles-List"></div>
-                        </div>
-                    </div>-->
-                    <div id="LSPDApp-Area-ViewDispatches">
-                        <div class="box">
-                            <p class="title">AKTUELLE NOTRUFE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="LSPDApp-Area-ViewDispatches-List"></div>
-                        </div>
+                        <button style="margin-top: 1rem;" type="button" id="companyAppInviteNewMember" class="btn btn-companyHov"><i class="fas fa-check" style="padding-right: 6px;"></i>Mitarbeiter einstellen</button>
                     </div>
                 </div>
+            </div>
 
-                <div id="LSMDApp-Area">
-                    <div id="LSMDApp-Area-Overview">
-                        <div class="card text-white">
-                            <div class="card-header">Los Santos Medical Department (3)</div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <b>Aktuelle Notrufe: </b>
-                                    <font id="LSMDApp-Area-Overview-DispatchCount">-1</font><br>
-                                    <b>Aktive Mitarbeiter: </b>
-                                    <font id="LSMDApp-Area-Overview-DutyMemberCount">-1</font><br>
-                                </p>
-                            </div>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item" onclick="openSubWindow(`LSMDApp-Area-ViewDispatches`);">
-                                <img src="img/sos.png">
-                                <p>Aktuell aktive Notrufe</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`LSMDApp-Area-ViewFactionVehicles`);">
-                                <img src="img/parking.png">
-                                <p>Ausgeparkte Fahrzeuge</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="LSMDApp-Area-ViewFactionVehicles">
-                        <div class="box">
-                            <p class="title">AUSGEPARKTE FAHRZEUGE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="LSMDApp-Area-ViewFactionVehicles-List"></div>
+            <div id="FactionManagerApp-Area">
+                <div id="FactionManagerApp-Area-Overview">
+                    <div class="card text-white">
+                        <div id="factionmanagerapp-overview-header" class="card-header">Standartfraktion (FEHLER)</div>
+                        <div class="card-body">
+                            <h6 class="card-title">Fraktionsinformationen</h6>
+                            <p id="factionmanagerapp-overview-text" class="card-text"></p>
                         </div>
                     </div>
-                    <div id="LSMDApp-Area-ViewDispatches">
-                        <div class="box">
-                            <p class="title">AKTUELLE NOTRUFE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="LSMDApp-Area-ViewDispatches-List"></div>
-                        </div>
-                    </div>
+                    <ul class="list-group">
+                        <p>Weitere Möglichkeiten</p>
+                        <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-ViewAllMembers`);">
+                            <img src="img/multiple-users-silhouette.png">
+                            <p>Mitarbeiter einsehen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-RankManage`);">
+                            <img src="img/bank/transaction.png">
+                            <p>Gehälter verwalten</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-InviteNewMember`);">
+                            <img src="img/invitation.png">
+                            <p>Mitarbeiter einstellen</p>
+                        </li>
+                    </ul>
                 </div>
-
-                <div id="ACLSApp-Area">
-                    <div id="ACLSApp-Area-Overview">
-                        <div class="card text-white">
-                            <div class="card-header">Auto Club Los Santos (4)</div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <b>Aktuelle Notrufe: </b>
-                                    <font id="ACLSApp-Area-Overview-DispatchCount">-1</font><br>
-                                    <b>Aktive Mitarbeiter: </b>
-                                    <font id="ACLSApp-Area-Overview-DutyMemberCount">-1</font><br>
-                                </p>
-                            </div>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item" onclick="openSubWindow(`ACLSApp-Area-ViewDispatches`);">
-                                <img src="img/sos.png">
-                                <p>Aktuell aktive Notrufe</p>
-                            </li>
-                            <li class="list-group-item" onclick="openSubWindow(`ACLSApp-Area-ViewFactionVehicles`);">
-                                <img src="img/parking.png">
-                                <p>Ausgeparkte Fahrzeuge</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="ACLSApp-Area-ViewFactionVehicles">
-                        <div class="box">
-                            <p class="title">AUSGEPARKTE FAHRZEUGE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="ACLSApp-Area-ViewFactionVehicles-List"></div>
-                        </div>
-                    </div>
-                    <div id="ACLSApp-Area-ViewDispatches">
-                        <div class="box">
-                            <p class="title">AKTUELLE NOTRUFE</p>
-                            <hr style="border-color: #0000004a; margin-bottom: 0;">
-                            <div id="ACLSApp-Area-ViewDispatches-List"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="EventsApp-Area">
-                    <!-- Events App -->
-                    <div id="EventsApp-Area-Overview">
-                        <button onclick="openSubWindow(`EventsApp-Area-CreateEvent`);" type="button" class="btn btn-success float-right eventcreate"><i class="fas fa-plus" style="padding-right: 6px;"></i>Event eintragen</button>
-                        <ul id="event-entry-list" class="list-group"></ul>
-                    </div>
-                    <div id="EventsApp-Area-CreateEvent">
-                        <div class="box">
-                            <p>EIN EVENT EINTRAGEN</p>
-                            <p id="EventsApp-CreateEvent-Error">Du hast ein falsches Datum ausgewählt.</p>
-                            <div class="inputgroup" style="margin-top: 1rem;">
-                                <i class="fas fa-pencil-alt icon"></i>
-                                <input id="eventsapp-title" type="text" maxlength="20" placeholder="Titel eingeben..." spellcheck="false">
-                            </div>
-                            <div class="inputgroup">
-                                <i class="fas fa-phone-alt icon"></i>
-                                <input id="eventsapp-callnumber" type="number" maxlength="13" placeholder="Telefonnr. eingeben (optional)" spellcheck="false" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                            </div>
-                            <div class="inputgroup">
-                                <i class="far fa-calendar-alt icon"></i>
-                                <input id="eventsapp-date" type="text" maxlength="32" placeholder="Datum eingeben (01.01.2001)" spellcheck="false">
-                            </div>
-                            <div class="inputgroup">
-                                <i class="far fa-clock icon"></i>
-                                <input id="eventsapp-clock" type="text" maxlength="32" placeholder="Uhrzeit eingeben (12:00)" spellcheck="false">
-                            </div>
-                            <div class="inputgroup">
-                                <i class="fas fa-map-marker-alt icon" style="padding-left: 14px; padding-right: 14px;"></i>
-                                <input id="eventsapp-location" type="text" maxlength="32" placeholder="Standort eingeben..." spellcheck="false">
-                            </div>
-                            <div class="inputgroup">
-                                <i class="fas fa-certificate icon" style="padding-left: 10px; padding-right: 10px;"></i>
-                                <input id="eventsapp-eventtype" type="text" maxlength="20" placeholder="Art der Veranstaltung eingeben..." spellcheck="false">
-                            </div>
-                            <div class="inputgroup">
-                                <i class="fas fa-align-left icon"></i>
-                                <input id="eventsapp-info" type="text" maxlength="64" placeholder="Weitere Infos eingeben..." spellcheck="false">
-                            </div>
-                            <button type="button" id="createEventbtn" class="btn btn-eventhov"><i class="fas fa-check" style="padding-right: 6px;"></i>Event eintragen (250$)</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="LifeinvaderApp-Area">
-                    <!-- Lifeinvader App -->
-                    <div id="LifeinvaderApp-Area-Overview">
-                        <div id="LifeinvaderApp-Area-NavBar">
-                            <div id="LifeinvaderApp-Area-NavBar-Inner">
-                                <div id="LifeinvaderApp-Area-NavBar-Container">
-                                    <img id="brand" src="img/lifeinvader.png" />
-                                    <button onclick="openSubWindow(`LifeinvaderApp-Area-CreateEvent`);" type="button">Werbung eintragen</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="advertisement-entry-list"></div>
-                    </div>
-                    <div id="LifeinvaderApp-Area-CreateEvent">
-                        <div class="box">
-                            <p>EINE WERBEANZEIGE EINTRAGEN</p>
-                            <p id="LifeinvaderApp-CreateEvent-Error"></p>
-                            <div class="inputgroup">
-                                <i class="fas fa-pencil-alt icon"></i>
-                                <textarea id="lifeinvaderapp-title" maxlength="64" placeholder="Titel eingeben..." spellcheck="false" style="resize: none; overflow-y: hidden; height: 30px;"></textarea>
-                            </div>
-                            <div class="inputgroup">
-                                <i class="fas fa-phone-alt icon"></i>
-                                <textarea id="lifeinvaderapp-callnumber" type="number" maxlength="6" placeholder="Telefonnr. eingeben" spellcheck="false" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="resize: none; overflow-y: hidden; height: 30px;"></textarea>
-                            </div>
-                            <div class="inputgroup">
-                                <i class="fas fa-align-left icon"></i>
-                                <textarea id="lifeinvaderapp-info" maxlength="1024" placeholder="Infos eingeben..." spellcheck="false" style="resize: none; overflow-y: hidden; height: 30px; margin-left: 1px;"></textarea>
-                            </div>
-                            <button type="button" id="createLifeinvaderbtn">Werbung eintragen (2000$)</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="TutorialApp-Area">
+                <div id="FactionManagerApp-Area-ViewAllMembers">
                     <div class="box">
-                        <p class="title">TUTORIAL</p>
-                        <p class="description">Um dir den Einstieg zu erleichtern möchten wir dir mit den unten gelisteten Quests helfen. <br><b style="color: #ce2020">ACHTUNG:</b> OOC-Anspielungen wie bspw. 'Dr&uuml;cke Taste E' sind im RP nicht zu verwenden und dienen lediglich
-                            der Einf&uuml;hrung.
-                        </p>
+                        <p style="margin-top: 0.5rem; margin-bottom: -1rem; font-size: 1.3rem;">MITARBEITER EINSEHEN</p>
+                        <ul id="FactionManagerApp-Area-ViewAllMembers-List" class="list-group"></ul>
+                    </div>
+                </div>
+                <div id="FactionManagerApp-Area-InviteNewMember">
+                    <div class="box" style="height: 380px; top: 100px;">
+                        <p style="margin-top: 2rem; margin-bottom: -1rem;">NEUEN MITARBEITER EINSTELLEN</p>
+                        <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL;">Hier hast du die Möglichkeit einen Mitarbeiter einzustellen.<br>Dieser erhält dann Zugriff auf Funktionen des Unternehmens.</p>
+                        <div class="inputgroup" style="margin-top: 2.5rem;">
+                            <i class="fas fa-user icon"></i>
+                            <input id="factionmanagerapp-name" type="text" maxlength="32" placeholder="Namen eingeben.." spellcheck="false">
+                        </div>
+                        <div class="inputgroup" style="margin-top: 0.5rem;">
+                            <i class="fas fa-list-ol icon"></i>
+                            <input id="factionmanagerapp-dienstnummer" type="number" maxlength="32" placeholder="Dienstnummer eingeben.." spellcheck="false" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        </div>
+                        <button style="margin-top: 1rem;" type="button" id="factionmanagerAppInviteNewMember" class="btn btn-factionManagerHov"><i class="fas fa-check" style="padding-right: 6px;"></i>Mitarbeiter einstellen</button>
+                    </div>
+                </div>
+                <div id="FactionManagerApp-Area-RankManage">
+                    <div class="box">
+                        <p style="margin-top: 0.5rem; margin-bottom: -1rem; font-size: 1.3rem;">GEHÄLTER VERWALTEN</p>
+                        <p style="font-size: 0.85rem; font-weight: 100; font-family: PEL; margin-bottom: -1rem;">Hier hast du die Möglichkeit die Gehälter deiner Fraktion anzupassen.<br>Ein Minimum von 1$ und ein Maximum von 10.000$ sind hier Minimal- und Maximalwerte.</p>
 
+                        <ul id="FactionManagerApp-Area-RankManage-List" class="list-group"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="JusticeApp-Area">
+                <div id="JusticeApp-Area-Overview">
+                    <div class="card text-white">
+                        <div class="card-header">Department of Justice (1)</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>Aktive Mitarbeiter: </b>
+                                <font id="JusticeApp-Area-Overview-DutyMemberCount">-1</font>
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-SearchPerson`);">
+                            <img src="img/multiple-users-silhouette.png">
+                            <p>Person überprüfen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-SearchLicense`);">
+                            <img src="img/driving-license.png">
+                            <p>Lizenz <br>abfragen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-SearchVehiclePlate`);">
+                            <img src="img/license.png">
+                            <p>Kennzeichen überprüfen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-ViewBankTransactions`);">
+                            <img src="img/bank/transaction.png">
+                            <p>Bankdaten überprüfen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-ViewFactionVehicles`);">
+                            <img src="img/parking.png">
+                            <p>Ausgeparkte Fahrzeuge</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-GiveWeaponLicense`);">
+                            <img src="img/gun.png">
+                            <p>Waffenschein vergeben</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="JusticeApp-Area-SearchPerson">
+                    <div class="box">
+                        <p class="title">NAME DER PERSON</p>
+                        <input id="JusticeApp-Area-SearchPerson-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
+                        <button onclick="JusticeAppSearchPerson();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
                         <div class="container">
-                            <table class="table table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Titel</th>
-                                        <th scope="col">Aufgabe</th>
-                                        <th scope="col">Aktion</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="TutorialApp-EntryList">
-                                    <tr id="TutorialApp-OpenTablet">
-                                        <td>Tablet öffnen</td>
-                                        <td>Öffne dein Tablet indem du die Taste "F4" dr&uuml;ckst. Hier hast du die Möglichkeit auf verschiedene Apps zuzugreifen, welche du dir vorab im Internet erwerben kannst.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr id="TutorialApp-OpenInventory">
-                                        <td>Inventar öffnen</td>
-                                        <td>Öffne dein Inventar indem du die Taste "I" dr&uuml;ckst, hier kannst du Gegenstände die du mit dir trägst einsehen, benutzen oder diese an andere, in der Nähe befindlichen Orte (bspw. Kofferräume) legen.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr id="TutorialApp-GetIdentitycard">
-                                        <td>Identifizierung</td>
-                                        <td>Begebe dich zum Rathaus und beantrage deinen Personalausweis.</td>
-                                        <td><button onclick="VehiclesAppLocateVehicle(-545.085, -204.337);" class="btn"><i class="fas fa-map-marker-alt"></i></button></td>
-                                    </tr>
-                                    <tr id="TutorialApp-acceptJob">
-                                        <td>Die Tür vom Arbeitsamt</td>
-                                        <td>Begebe dich zum Rathaus und nehme einen Beruf deiner Wahl an.</td>
-                                        <td><button onclick="VehiclesAppLocateVehicle(-534.574, -166.223);" class="btn"><i class="fas fa-map-marker-alt"></i></button></td>
-                                    </tr>
-                                    <tr id="TutorialApp-createBankAccount">
-                                        <td>Dein erstes Konto</td>
-                                        <td>Besuche eine Bankfiliale deiner Wahl und eröffne kostenlos ein Konto. Ohne Konto kannst du somit keine Zahlungen erhalten.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr id="TutorialApp-buyVehicle">
-                                        <td>Mobilität</td>
-                                        <td>Erwerbe dir ein Fahrzeug deiner Wahl.</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr id="TutorialApp-useGarage">
-                                        <td>Keine Schäden</td>
-                                        <td>Nutze eine Garage.</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <p><b>Name der Person:</b>
+                                <font id="JusticeApp-Area-SearchPerson-charName">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Geschlecht:</b>
+                                <font id="JusticeApp-Area-SearchPerson-gender">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Geburtsdatum:</b>
+                                <font id="JusticeApp-Area-SearchPerson-birthdate">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Geburtsort:</b>
+                                <font id="JusticeApp-Area-SearchPerson-birthplace">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Adresse:</b>
+                                <font id="JusticeApp-Area-SearchPerson-address">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Beruf:</b>
+                                <font id="JusticeApp-Area-SearchPerson-job">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Hauptkonto:</b>
+                                <font id="JusticeApp-Area-SearchPerson-mainBankAccNr">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Einreisedatum:</b>
+                                <font id="JusticeApp-Area-SearchPerson-firstJoinDate">-/-</font>
+                            </p>
                         </div>
                     </div>
                 </div>
-
-                <div id="VehiclesApp-Area">
+                <div id="JusticeApp-Area-SearchVehiclePlate">
                     <div class="box">
-                        <p class="title">FAHRZEUGE</p>
-                        <p class="description">In dieser App erhälst du eine &Uuml;bersicht aller deiner Fahrzeuge mit weiteren Informationen. <br>Besitzt dein Fahrzeug ein eingebautes GPS kannst du dieses hier orten.</p>
-
+                        <p class="title">KENNZEICHEN EINGEBEN</p>
+                        <input id="JusticeApp-Area-SearchVehiclePlate-InputPlate" type="text" maxlength="32" placeholder="Kennzeichen eingeben.." spellcheck="false">
+                        <button onclick="JusticeAppSearchVehiclePlate();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
                         <div class="container">
-                            <table class="table table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Kennzeichen</th>
-                                        <th scope="col">Letzte Garage</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Aktion</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="VehiclesApp-VehicleList">
-                                    <tr>
-                                        <th scope="row">-</th>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <p><b>Besitzer:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-charName">-/-</font>
+                            </p>
                         </div>
+                        <div class="container">
+                            <p><b>Fahrzeugname:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-vehName">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Hersteller:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-manufactor">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Kaufdatum:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-buydate">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Kofferraumgröße:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-trunk">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Tankgröße:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-fuel">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Tankart:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-fueltype">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Steuern:</b>
+                                <font id="JusticeApp-Area-SearchVehiclePlate-taxes">-/-</font>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="JusticeApp-Area-SearchLicense">
+                    <div class="box">
+                        <p class="title">NAME DER PERSON</p>
+                        <input id="JusticeApp-Area-SearchLicense-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
+                        <button onclick="JusticeAppSearchLicense();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="JusticeApp-Area-SearchLicense-List"></div>
+                    </div>
+                </div>
+                <div id="JusticeApp-Area-ViewFactionVehicles">
+                    <div class="box">
+                        <p class="title">AUSGEPARKTE FAHRZEUGE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="JusticeApp-Area-ViewFactionVehicles-List"></div>
+                    </div>
+                </div>
+                <div id="JusticeApp-Area-ViewBankTransactions">
+                    <div class="box">
+                        <p class="title">KONTOAKTIVITÄTEN CHECKEN</p>
+                        <input id="JusticeApp-Area-ViewBankTransactions-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
+                        <button onclick="JusticeAppSearchBankAccounts();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: -10;">
+                        <p class="title">KONTOAUSWAHL</p>
+                        <ul id="JusticeApp-Area-ViewBankTransactions-AccountList" class="list-group"></ul>
+                        <hr style="border-color: #0000004a; margin-bottom: -10;">
+                        <p class="title">KONTOVERLAUF</p>
+                        <ul id="JusticeApp-Area-ViewBankTransactions-HistoryList" class="list-group"></ul>
+                    </div>
+                </div>
+                <div id="JusticeApp-Area-GiveWeaponLicense">
+                    <div class="box">
+                        <p style="margin-top: 120px;">Waffenschein ausstellen</p>
+                        <div class="inputgroup">
+                            <i class="fas fa-align-left icon"></i>
+                            <input id="JusticeApp-Area-GiveWeaponLicense-InputName" type="text" maxlength="64" placeholder="Weitere Infos eingeben..." spellcheck="false">
+                        </div>
+                        <button type="button" onclick="JusticeAppGiveWeaponLicense();" class="btn btn-justicehov"><i class="fas fa-check" style="padding-right: 6px;"></i>Waffenschein ausstellen</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="LSPDApp-Area">
+                <div id="LSPDApp-Area-Overview">
+                    <div class="card text-white">
+                        <div class="card-header">Los Santos Police Department (2)</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>Aktuelle Notrufe: </b>
+                                <font id="LSPDApp-Area-Overview-DispatchCount">-1</font><br>
+                                <b>Aktive Mitarbeiter: </b>
+                                <font id="LSPDApp-Area-Overview-DutyMemberCount">-1</font><br>
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-SearchPerson`);">
+                            <img src="img/multiple-users-silhouette.png">
+                            <p>Person überprüfen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-SearchLicense`);">
+                            <img src="img/driving-license.png">
+                            <p>Lizenz <br>abfragen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-SearchVehiclePlate`);">
+                            <img src="img/license.png">
+                            <p>Kennzeichen überprüfen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`FactionManagerApp-Area-InviteNewMember`);">
+                            <img src="img/phonegps.png">
+                            <p>Telefonnummer überprüfen</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewDispatches`);">
+                            <img src="img/sos.png">
+                            <p>Aktuell aktive Notrufe</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewFactionVehicles`);">
+                            <img src="img/parking.png">
+                            <p>Ausgeparkte Fahrzeuge</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="LSPDApp-Area-SearchPerson">
+                    <div class="box">
+                        <p class="title">NAME DER PERSON</p>
+                        <input id="LSPDApp-Area-SearchPerson-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
+                        <button onclick="LSPDAppSearchPerson();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div class="container">
+                            <p><b>Name der Person:</b>
+                                <font id="LSPDApp-Area-SearchPerson-charName">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Geschlecht:</b>
+                                <font id="LSPDApp-Area-SearchPerson-gender">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Geburtsdatum:</b>
+                                <font id="LSPDApp-Area-SearchPerson-birthdate">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Geburtsort:</b>
+                                <font id="LSPDApp-Area-SearchPerson-birthplace">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Adresse:</b>
+                                <font id="LSPDApp-Area-SearchPerson-address">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Beruf:</b>
+                                <font id="LSPDApp-Area-SearchPerson-job">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Hauptkonto:</b>
+                                <font id="LSPDApp-Area-SearchPerson-mainBankAccNr">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Einreisedatum:</b>
+                                <font id="LSPDApp-Area-SearchPerson-firstJoinDate">-/-</font>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="LSPDApp-Area-SearchVehiclePlate">
+                    <div class="box">
+                        <p class="title">KENNZEICHEN EINGEBEN</p>
+                        <input id="LSPDApp-Area-SearchVehiclePlate-InputPlate" type="text" maxlength="32" placeholder="Kennzeichen eingeben.." spellcheck="false">
+                        <button onclick="LSPDAppSearchVehiclePlate();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div class="container">
+                            <p><b>Besitzer:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-charName">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Fahrzeugname:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-vehName">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Hersteller:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-manufactor">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Kaufdatum:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-buydate">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Kofferraumgröße:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-trunk">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Tankgröße:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-fuel">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Tankart:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-fueltype">-/-</font>
+                            </p>
+                        </div>
+                        <div class="container">
+                            <p><b>Steuern:</b>
+                                <font id="LSPDApp-Area-SearchVehiclePlate-taxes">-/-</font>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="LSPDApp-Area-SearchLicense">
+                    <div class="box">
+                        <p class="title">NAME DER PERSON</p>
+                        <input id="LSPDApp-Area-SearchLicense-InputName" type="text" maxlength="32" placeholder="Name der zu suchenden Person.." spellcheck="false">
+                        <button onclick="LSPDAppSearchLicense();" type="button" class="btn btn-sm">Suchen</button>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="LSPDApp-Area-SearchLicense-List"></div>
+                    </div>
+                </div>
+                <!--<div id="LSPDApp-Area-ViewFactionVehicles">
+                    <div class="box">
+                        <p class="title">AUSGEPARKTE FAHRZEUGE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="LSPDApp-Area-ViewFactionVehicles-List"></div>
+                    </div>
+                </div>-->
+                <div id="LSPDApp-Area-ViewDispatches">
+                    <div class="box">
+                        <p class="title">AKTUELLE NOTRUFE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="LSPDApp-Area-ViewDispatches-List"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="LSMDApp-Area">
+                <div id="LSMDApp-Area-Overview">
+                    <div class="card text-white">
+                        <div class="card-header">Los Santos Medical Department (3)</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>Aktuelle Notrufe: </b>
+                                <font id="LSMDApp-Area-Overview-DispatchCount">-1</font><br>
+                                <b>Aktive Mitarbeiter: </b>
+                                <font id="LSMDApp-Area-Overview-DutyMemberCount">-1</font><br>
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item" onclick="openSubWindow(`LSMDApp-Area-ViewDispatches`);">
+                            <img src="img/sos.png">
+                            <p>Aktuell aktive Notrufe</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSMDApp-Area-ViewFactionVehicles`);">
+                            <img src="img/parking.png">
+                            <p>Ausgeparkte Fahrzeuge</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="LSMDApp-Area-ViewFactionVehicles">
+                    <div class="box">
+                        <p class="title">AUSGEPARKTE FAHRZEUGE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="LSMDApp-Area-ViewFactionVehicles-List"></div>
+                    </div>
+                </div>
+                <div id="LSMDApp-Area-ViewDispatches">
+                    <div class="box">
+                        <p class="title">AKTUELLE NOTRUFE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="LSMDApp-Area-ViewDispatches-List"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ACLSApp-Area">
+                <div id="ACLSApp-Area-Overview">
+                    <div class="card text-white">
+                        <div class="card-header">Auto Club Los Santos (4)</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>Aktuelle Notrufe: </b>
+                                <font id="ACLSApp-Area-Overview-DispatchCount">-1</font><br>
+                                <b>Aktive Mitarbeiter: </b>
+                                <font id="ACLSApp-Area-Overview-DutyMemberCount">-1</font><br>
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item" onclick="openSubWindow(`ACLSApp-Area-ViewDispatches`);">
+                            <img src="img/sos.png">
+                            <p>Aktuell aktive Notrufe</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`ACLSApp-Area-ViewFactionVehicles`);">
+                            <img src="img/parking.png">
+                            <p>Ausgeparkte Fahrzeuge</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="ACLSApp-Area-ViewFactionVehicles">
+                    <div class="box">
+                        <p class="title">AUSGEPARKTE FAHRZEUGE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="ACLSApp-Area-ViewFactionVehicles-List"></div>
+                    </div>
+                </div>
+                <div id="ACLSApp-Area-ViewDispatches">
+                    <div class="box">
+                        <p class="title">AKTUELLE NOTRUFE</p>
+                        <hr style="border-color: #0000004a; margin-bottom: 0;">
+                        <div id="ACLSApp-Area-ViewDispatches-List"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="EventsApp-Area">
+                <!-- Events App -->
+                <div id="EventsApp-Area-Overview">
+                    <button onclick="openSubWindow(`EventsApp-Area-CreateEvent`);" type="button" class="btn btn-success float-right eventcreate"><i class="fas fa-plus" style="padding-right: 6px;"></i>Event eintragen</button>
+                    <ul id="event-entry-list" class="list-group"></ul>
+                </div>
+                <div id="EventsApp-Area-CreateEvent">
+                    <div class="box">
+                        <p>EIN EVENT EINTRAGEN</p>
+                        <p id="EventsApp-CreateEvent-Error">Du hast ein falsches Datum ausgewählt.</p>
+                        <div class="inputgroup" style="margin-top: 1rem;">
+                            <i class="fas fa-pencil-alt icon"></i>
+                            <input id="eventsapp-title" type="text" maxlength="20" placeholder="Titel eingeben..." spellcheck="false">
+                        </div>
+                        <div class="inputgroup">
+                            <i class="fas fa-phone-alt icon"></i>
+                            <input id="eventsapp-callnumber" type="number" maxlength="13" placeholder="Telefonnr. eingeben (optional)" spellcheck="false" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        </div>
+                        <div class="inputgroup">
+                            <i class="far fa-calendar-alt icon"></i>
+                            <input id="eventsapp-date" type="text" maxlength="32" placeholder="Datum eingeben (01.01.2001)" spellcheck="false">
+                        </div>
+                        <div class="inputgroup">
+                            <i class="far fa-clock icon"></i>
+                            <input id="eventsapp-clock" type="text" maxlength="32" placeholder="Uhrzeit eingeben (12:00)" spellcheck="false">
+                        </div>
+                        <div class="inputgroup">
+                            <i class="fas fa-map-marker-alt icon" style="padding-left: 14px; padding-right: 14px;"></i>
+                            <input id="eventsapp-location" type="text" maxlength="32" placeholder="Standort eingeben..." spellcheck="false">
+                        </div>
+                        <div class="inputgroup">
+                            <i class="fas fa-certificate icon" style="padding-left: 10px; padding-right: 10px;"></i>
+                            <input id="eventsapp-eventtype" type="text" maxlength="20" placeholder="Art der Veranstaltung eingeben..." spellcheck="false">
+                        </div>
+                        <div class="inputgroup">
+                            <i class="fas fa-align-left icon"></i>
+                            <input id="eventsapp-info" type="text" maxlength="64" placeholder="Weitere Infos eingeben..." spellcheck="false">
+                        </div>
+                        <button type="button" id="createEventbtn" class="btn btn-eventhov"><i class="fas fa-check" style="padding-right: 6px;"></i>Event eintragen (250$)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="LifeinvaderApp-Area">
+                <!-- Lifeinvader App -->
+                <div id="LifeinvaderApp-Area-Overview">
+                    <div id="LifeinvaderApp-Area-NavBar">
+                        <div id="LifeinvaderApp-Area-NavBar-Inner">
+                            <div id="LifeinvaderApp-Area-NavBar-Container">
+                                <img id="brand" src="img/lifeinvader.png" />
+                                <button onclick="openSubWindow(`LifeinvaderApp-Area-CreateEvent`);" type="button">Werbung eintragen</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="advertisement-entry-list"></div>
+                </div>
+                <div id="LifeinvaderApp-Area-CreateEvent">
+                    <div class="box">
+                        <p>EINE WERBEANZEIGE EINTRAGEN</p>
+                        <p id="LifeinvaderApp-CreateEvent-Error"></p>
+                        <div class="inputgroup">
+                            <i class="fas fa-pencil-alt icon"></i>
+                            <textarea id="lifeinvaderapp-title" maxlength="64" placeholder="Titel eingeben..." spellcheck="false" style="resize: none; overflow-y: hidden; height: 30px;"></textarea>
+                        </div>
+                        <div class="inputgroup">
+                            <i class="fas fa-phone-alt icon"></i>
+                            <textarea id="lifeinvaderapp-callnumber" type="number" maxlength="6" placeholder="Telefonnr. eingeben" spellcheck="false" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="resize: none; overflow-y: hidden; height: 30px;"></textarea>
+                        </div>
+                        <div class="inputgroup">
+                            <i class="fas fa-align-left icon"></i>
+                            <textarea id="lifeinvaderapp-info" maxlength="1024" placeholder="Infos eingeben..." spellcheck="false" style="resize: none; overflow-y: hidden; height: 30px; margin-left: 1px;"></textarea>
+                        </div>
+                        <button type="button" id="createLifeinvaderbtn">Werbung eintragen (2000$)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="TutorialApp-Area">
+                <div class="box">
+                    <p class="title">TUTORIAL</p>
+                    <p class="description">Um dir den Einstieg zu erleichtern möchten wir dir mit den unten gelisteten Quests helfen. <br><b style="color: #ce2020">ACHTUNG:</b> OOC-Anspielungen wie bspw. 'Dr&uuml;cke Taste E' sind im RP nicht zu verwenden und dienen lediglich
+                        der Einf&uuml;hrung.
+                    </p>
+
+                    <div class="container">
+                        <table class="table table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">Titel</th>
+                                <th scope="col">Aufgabe</th>
+                                <th scope="col">Aktion</th>
+                            </tr>
+                            </thead>
+                            <tbody id="TutorialApp-EntryList">
+                            <tr id="TutorialApp-OpenTablet">
+                                <td>Tablet öffnen</td>
+                                <td>Öffne dein Tablet indem du die Taste "F4" dr&uuml;ckst. Hier hast du die Möglichkeit auf verschiedene Apps zuzugreifen, welche du dir vorab im Internet erwerben kannst.</td>
+                                <td>-</td>
+                            </tr>
+                            <tr id="TutorialApp-OpenInventory">
+                                <td>Inventar öffnen</td>
+                                <td>Öffne dein Inventar indem du die Taste "I" dr&uuml;ckst, hier kannst du Gegenstände die du mit dir trägst einsehen, benutzen oder diese an andere, in der Nähe befindlichen Orte (bspw. Kofferräume) legen.</td>
+                                <td>-</td>
+                            </tr>
+                            <tr id="TutorialApp-GetIdentitycard">
+                                <td>Identifizierung</td>
+                                <td>Begebe dich zum Rathaus und beantrage deinen Personalausweis.</td>
+                                <td><button onclick="VehiclesAppLocateVehicle(-545.085, -204.337);" class="btn"><i class="fas fa-map-marker-alt"></i></button></td>
+                            </tr>
+                            <tr id="TutorialApp-acceptJob">
+                                <td>Die Tür vom Arbeitsamt</td>
+                                <td>Begebe dich zum Rathaus und nehme einen Beruf deiner Wahl an.</td>
+                                <td><button onclick="VehiclesAppLocateVehicle(-534.574, -166.223);" class="btn"><i class="fas fa-map-marker-alt"></i></button></td>
+                            </tr>
+                            <tr id="TutorialApp-createBankAccount">
+                                <td>Dein erstes Konto</td>
+                                <td>Besuche eine Bankfiliale deiner Wahl und eröffne kostenlos ein Konto. Ohne Konto kannst du somit keine Zahlungen erhalten.</td>
+                                <td>-</td>
+                            </tr>
+                            <tr id="TutorialApp-buyVehicle">
+                                <td>Mobilität</td>
+                                <td>Erwerbe dir ein Fahrzeug deiner Wahl.</td>
+                                <td>-</td>
+                            </tr>
+                            <tr id="TutorialApp-useGarage">
+                                <td>Keine Schäden</td>
+                                <td>Nutze eine Garage.</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="VehiclesApp-Area">
+                <div class="box">
+                    <p class="title">FAHRZEUGE</p>
+                    <p class="description">In dieser App erhälst du eine &Uuml;bersicht aller deiner Fahrzeuge mit weiteren Informationen. <br>Besitzt dein Fahrzeug ein eingebautes GPS kannst du dieses hier orten.</p>
+
+                    <div class="container">
+                        <table class="table table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Kennzeichen</th>
+                                <th scope="col">Letzte Garage</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Aktion</th>
+                            </tr>
+                            </thead>
+                            <tbody id="VehiclesApp-VehicleList">
+                            <tr>
+                                <th scope="row">-</th>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
-    <script src="../utils/jquery-3.6.0.min.js"></script>
-    <script src="../utils/popper-1.14.7.min.js"></script>
-    <script src="../utils/bootstrap.min.js"></script>
-    <script src="../utils/anime.min.js"></script>
-    <script src="../utils/640357ffb4.js"></script>
+<script src="../utils/jquery-3.6.0.min.js"></script>
+<script src="../utils/popper-1.14.7.min.js"></script>
+<script src="../utils/bootstrap.min.js"></script>
+<script src="../utils/anime.min.js"></script>
+<script src="../utils/640357ffb4.js"></script>
 </body>
 <script>
     var curAppOpened = "none",
@@ -875,7 +875,7 @@
         selectedNoteColor = "schwarz",
         globalSelectedCompanyID = 0,
         globalSelectedFactionManagerFactionid = 0;
-        dispatchAudio = null;
+    dispatchAudio = null;
 
     $(document).ready(function() {
         alt.emit("Client:Tablet:cefIsReady");
@@ -1296,7 +1296,7 @@
             }
 
             if (appArray[i].lifeinvader == true) {
-                //hat die Lifeinvader App                
+                //hat die Lifeinvader App
                 if (appcounter == 3 || appcounter == 5) {
                     homeAppList += "<li class='list-group-item hide'></li><li class='list-group-item hide'></li><li class='list-group-item hide'></li>";
                 }
@@ -2109,7 +2109,7 @@
 
     function showError(area, errorMSG) {
         switch(area) {
-            case "EventsApp-Area-CreateEvent": 
+            case "EventsApp-Area-CreateEvent":
                 if(errorMSG != "none") {
                     $("#EventsApp-CreateEvent-Error").fadeIn(800);
                     $("#EventsApp-CreateEvent-Error").html(errorMSG);
@@ -2117,8 +2117,8 @@
                     $("#EventsApp-CreateEvent-Error").fadeOut(800);
                     $("#EventsApp-CreateEvent-Error").html("");
                 }
-            break;
-            case "LifeinvaderApp-Area-CreateEvent": 
+                break;
+            case "LifeinvaderApp-Area-CreateEvent":
                 if(errorMSG != "none") {
                     $("#LifeinvaderApp-CreateEvent-Error").fadeIn(800);
                     $("#LifeinvaderApp-CreateEvent-Error").html(errorMSG);
@@ -2126,8 +2126,8 @@
                     $("#LifeinvaderApp-CreateEvent-Error").fadeOut(800);
                     $("#LifeinvaderApp-CreateEvent-Error").html("");
                 }
-            break;
-            case "BankingApp-Area-NewTransactionArea": 
+                break;
+            case "BankingApp-Area-NewTransactionArea":
                 if(errorMSG != "none") {
                     $("#BankingApp-NewTransactionArea-Error").fadeIn(800);
                     $("#BankingApp-NewTransactionArea-Error").html(errorMSG);
@@ -2135,7 +2135,7 @@
                     $("#BankingApp-NewTransactionArea-Error").fadeOut(800);
                     $("#BankingApp-NewTransactionArea-Error").html("");
                 }
-            break;
+                break;
         }
     }
 
@@ -2155,11 +2155,11 @@
 
     //Alt:on Events
     alt.on("CEF:Tablet:openCEF", () => {
-         $(".TabletBG").hide();
-         $(".TabletBG").fadeIn(1000);
-         showArea("HomeApp-Area");
+        $(".TabletBG").hide();
+        $(".TabletBG").fadeIn(1000);
+        showArea("HomeApp-Area");
     });
-    
+
     alt.on("CEF:Tablet:showTabletArea", (area) => {
         showArea(area);
     });
@@ -2237,7 +2237,7 @@
         playDispatchAudio(filePath);
         setTimeout(() => {
             stopDispatchAudio();
-        }, 10000);        
-    })   
+        }, 10000);
+    })
 </script>
 </html>

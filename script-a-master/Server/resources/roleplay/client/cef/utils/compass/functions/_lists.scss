@@ -61,12 +61,11 @@
 
   $full: false;
   @each $item in $list {
-    @if index($rejects, $item) {}
-    @else {
+    @if index($rejects, $item) {
+    } @else {
       @if $full {
         $full: $full, $item;
-      }
-      @else {
+      } @else {
         $full: $item;
       }
     }
@@ -82,9 +81,9 @@
   $separator: list-separator($vars);
   $list: ();
   @each $var in $vars {
-      @if $var {
-          $list: append($list, $var, $separator);
-      }
+    @if $var {
+      $list: append($list, $var, $separator);
+    }
   }
   @return $list;
 }

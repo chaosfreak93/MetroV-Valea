@@ -2,6 +2,7 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
+
 var markers = [];
 
 alt.onServer("Client:ServerMarkers:LoadAllMarkers", (markerArray) => {

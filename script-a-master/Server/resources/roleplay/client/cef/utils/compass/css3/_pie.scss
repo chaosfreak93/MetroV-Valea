@@ -49,8 +49,7 @@ $pie-behavior: stylesheet-url("PIE.htc") !default;
   behavior: $pie-behavior;
   @if $approach == relative {
     position: relative;
-  }
-  @else if $approach == z-index {
+  } @else if $approach == z-index {
     z-index: $z-index;
   }
 }
@@ -60,8 +59,7 @@ $pie-behavior: stylesheet-url("PIE.htc") !default;
 @mixin pie($base-class: $pie-base-class) {
   @if $base-class {
     @extend .#{$base-class};
-  }
-  @else {
+  } @else {
     @include pie-element;
   }
 }

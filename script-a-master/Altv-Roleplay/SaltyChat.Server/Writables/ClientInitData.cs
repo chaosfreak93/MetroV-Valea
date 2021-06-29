@@ -4,13 +4,15 @@ namespace SaltyChat.Server.Writables
 {
     public class ClientInitData : IWritable
     {
-        public ClientInitData(string teamSpeakName) {
+        private string _teamSpeakName { get; set; }
+
+        public ClientInitData(string teamSpeakName)
+        {
             _teamSpeakName = teamSpeakName;
         }
 
-        private string _teamSpeakName { get; }
-
-        public void OnWrite(IMValueWriter writer) {
+        public void OnWrite(IMValueWriter writer)
+        {
             writer.BeginObject();
             writer.Name("serverIdentifier");
             writer.Value(VoiceManager.Configuration.ServerIdentifier);

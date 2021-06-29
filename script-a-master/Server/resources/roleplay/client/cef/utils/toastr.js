@@ -3,9 +3,9 @@
  * please go to https://cdnjs.com/libraries/toastr.js and pick a certain version you want to use,
  * make sure you copy the url from the website since the url may change between versions.
  * */
-! function(e) {
-    e(["jquery"], function(e) {
-        return function() {
+!function (e) {
+    e(["jquery"], function (e) {
+        return function () {
             function t(e, t, n) {
                 return g({
                     type: O.error,
@@ -61,7 +61,7 @@
 
             function c(t) {
                 var o = m();
-                return v || n(o), t && 0 === e(":focus", t).length ? void h(t) : void(v.children().length && v.remove())
+                return v || n(o), t && 0 === e(":focus", t).length ? void h(t) : void (v.children().length && v.remove())
             }
 
             function l(t) {
@@ -73,7 +73,7 @@
                 return !(!t || !s && 0 !== e(":focus", t).length) && (t[n.hideMethod]({
                     duration: n.hideDuration,
                     easing: n.hideEasing,
-                    complete: function() {
+                    complete: function () {
                         h(t)
                     }
                 }), !0)
@@ -151,9 +151,9 @@
                 }
 
                 function a() {
-                    E.closeOnHover && I.hover(H, D), !E.onclick && E.tapToDismiss && I.click(b), E.closeButton && j && j.click(function(e) {
+                    E.closeOnHover && I.hover(H, D), !E.onclick && E.tapToDismiss && I.click(b), E.closeButton && j && j.click(function (e) {
                         e.stopPropagation ? e.stopPropagation() : void 0 !== e.cancelBubble && e.cancelBubble !== !0 && (e.cancelBubble = !0), E.onCloseClick && E.onCloseClick(e), b(!0)
-                    }), E.onclick && I.click(function(e) {
+                    }), E.onclick && I.click(function (e) {
                         E.onclick(e), b()
                     })
                 }
@@ -215,7 +215,7 @@
                     if (!e(":focus", I).length || t) return clearTimeout(F.intervalId), I[n]({
                         duration: o,
                         easing: s,
-                        complete: function() {
+                        complete: function () {
                             h(I), clearTimeout(k), E.onHidden && "hidden" !== P.state && E.onHidden(), P.state = "hidden", P.endTime = new Date, f(P)
                         }
                     })
@@ -236,6 +236,7 @@
                     var e = (F.hideEta - (new Date).getTime()) / F.maxHideTime * 100;
                     q.width(e + "%")
                 }
+
                 var E = m(),
                     y = t.iconClass || E.iconClass;
                 if ("undefined" != typeof t.optionsOverride && (E = e.extend(E, t.optionsOverride), y = t.optionsOverride.iconClass || y), !O(E, t)) {
@@ -269,6 +270,7 @@
             function h(e) {
                 v || (v = n()), e.is(":visible") || (e.remove(), e = null, 0 === v.children().length && (v.remove(), w = void 0))
             }
+
             var v, C, w, T = 0,
                 O = {
                     error: "error",
@@ -291,7 +293,7 @@
             return b
         }()
     })
-}("function" == typeof define && define.amd ? define : function(e, t) {
+}("function" == typeof define && define.amd ? define : function (e, t) {
     "undefined" != typeof module && module.exports ? module.exports = t(require("jquery")) : window.toastr = t(window.jQuery)
 });
 //# sourceMappingURL=toastr.js.map

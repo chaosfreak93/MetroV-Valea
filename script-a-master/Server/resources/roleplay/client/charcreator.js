@@ -16,9 +16,9 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
         alt.toggleGameControls(false);
         game.setEntityAlpha(alt.Player.local.scriptID, 0, 0);
         game.triggerScreenblurFadeIn(1);
-        charcreatorCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+        charcreatorCam = game.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003.0, -98.6, 0, 0, 358, 18, true, 2);
         game.setCamActive(charcreatorCam, true);
-        game.renderScriptCams(true, false, 0, true, false);
+        game.renderScriptCams(true, false, 0, true, false, 0);
         charcreatorBrowser = new alt.WebView("http://resource/client/cef/charcreator/index.html");
         charcreatorBrowser.focus();
 
@@ -34,7 +34,7 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
         });
 
         charcreatorBrowser.on("Client:Charcreator:cefIsReady", () => {
-            alt.setTimeout(function() {
+            alt.setTimeout(function () {
                 charcreatorBrowser.emit("CEF:Charcreator:showArea", "sexarea");
             }, 1000);
         });
@@ -47,13 +47,13 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
             let facefeatures = JSON.parse(facefeaturesdata);
 
             for (let i = 0; i < 20; i++) {
-                game.setPedFaceFeature(pedHandle, i, facefeatures[i]);
+                game.setPedFaceFeature(pedHandle, i, parseFloat(facefeatures[i]));
             }
         });
 
         charcreatorBrowser.on("Client:Charcreator:UpdateHeadBlends", (headblendsdata) => {
             let headblends = JSON.parse(headblendsdata);
-            game.setPedHeadBlendData(pedHandle, headblends[0], headblends[1], 0, headblends[2], headblends[5], 0, headblends[3], headblends[4], 0, 0);
+            game.setPedHeadBlendData(pedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
         });
 
         charcreatorBrowser.on("Client:Charcreator:UpdateHeadOverlays", (headoverlaysarray) => {
@@ -109,13 +109,13 @@ alt.onServer("Client:Charcreator:showArea", (area) => {
 
 function spawnCreatorPed(gender) {
     if (gender == true) {
-        modelHash = game.getHashKey('mp_f_freemode_01');
+        modelHash = alt.hash('mp_f_freemode_01');
         game.requestModel(modelHash);
     } else if (gender == false) {
-        modelHash = game.getHashKey('mp_m_freemode_01');
+        modelHash = alt.hash('mp_m_freemode_01');
         game.requestModel(modelHash);
     }
-    let interval = alt.setInterval(function() {
+    let interval = alt.setInterval(function () {
         if (game.hasModelLoaded(modelHash)) {
             alt.clearInterval(interval);
             pedHandle = game.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
@@ -131,12 +131,12 @@ function spawnCreatorPed(gender) {
     }, 0);
 }
 
-let destroycharcreatorBrowser = function() {
+let destroycharcreatorBrowser = function () {
     if (charcreatorBrowser != null) {
         charcreatorBrowser.destroy();
     }
     charcreatorBrowser = null;
-    game.renderScriptCams(false, false, 0, true, false);
+    game.renderScriptCams(false, false, 0, true, false, 0);
     game.setCamActive(charcreatorCam, false);
     if (charcreatorCam != null) {
         game.destroyCam(charcreatorCam, true);

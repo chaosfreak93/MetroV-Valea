@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Text.Json;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
@@ -574,7 +573,8 @@ namespace Altv_Roleplay.Handler
 
                             ServerVehicles.SetVehicleInGarage(vehicle, true, currentGarageId2);
                             var plate = vehicle.NumberplateText;
-                            HUDHandler.SendNotification(player, 4, 5000, $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId2} ({ServerGarages.GetGarageName(currentGarageId2)}) eingeparkt");
+                            HUDHandler.SendNotification(player, 4, 5000,
+                                $"Fahrzeug mit dem Kennzeichen {plate} in Garage {currentGarageId2} ({ServerGarages.GetGarageName(currentGarageId2)}) eingeparkt");
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat das **Fahrzeug mit dem Kennzeichen " +
@@ -762,20 +762,20 @@ namespace Altv_Roleplay.Handler
             if (info == "on") {
                 if (!Characters.GetCharacterGender((int) player.GetCharacterMetaId())) {
                     //Männlich
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 1, 135, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 4, 114, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 6, 78, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 3, 3, 0);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 11, 287, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 99);
+                    player.SetClothes(1, 135, 2, 0);
+                    player.SetClothes(4, 114, 2, 0);
+                    player.SetClothes(6, 78, 2, 0);
+                    player.SetClothes(3, 3, 0, 0);
+                    player.SetClothes(11, 287, 2, 0);
+                    player.SetClothes(8, 1, 99, 0);
                 } else {
                     //Weiblich
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 1, 135, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 11, 300, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 4, 121, 2);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 3, 8, 0);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 8, 1, 99);
-                    player.EmitLocked("Client:SpawnArea:setCharClothes", 6, 82, 2);
+                    player.SetClothes(1, 135, 2, 0);
+                    player.SetClothes(11, 300, 2, 0);
+                    player.SetClothes(4, 121, 2, 0);
+                    player.SetClothes(3, 8, 0, 0);
+                    player.SetClothes(8, 1, 99, 0);
+                    player.SetClothes(6, 82, 2, 0);
                 }
             } else if (info == "off") {
                 Characters.SetCharacterCorrectClothes(player);

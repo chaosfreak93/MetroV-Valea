@@ -2,7 +2,7 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
-import { hudBrowser } from './hud.js';
+import {hudBrowser} from './hud.js';
 
 alt.setInterval(() => {
     if (!hudBrowser) return;

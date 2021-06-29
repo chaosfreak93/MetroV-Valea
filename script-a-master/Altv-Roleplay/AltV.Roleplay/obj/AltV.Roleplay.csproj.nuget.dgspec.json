@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj": {}
+    "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj": {
+    "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
+        "projectUniqueName": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
         "projectName": "AltV.Roleplay",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
+        "projectPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
         "packagesPath": "C:\\Users\\yanlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\obj\\",
+        "outputPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yanlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj"
+              "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj": {
+                "projectPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj"
               }
             }
           }
@@ -46,11 +46,11 @@
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[2.0.7, )"
+              "version": "[2.4.7-rc53, )"
             },
             "AltV.Net.Async": {
               "target": "Package",
-              "version": "[2.0.7, )"
+              "version": "[2.4.7-rc53, )"
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
@@ -66,13 +66,13 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -102,18 +102,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj": {
+    "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj",
+        "projectUniqueName": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj",
         "projectName": "DiscordWebhook",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj",
+        "projectPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj",
         "packagesPath": "C:\\Users\\yanlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Testserver\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\obj\\",
+        "outputPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yanlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -162,7 +162,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

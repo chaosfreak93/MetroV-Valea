@@ -4,7 +4,7 @@ import * as alt from 'alt-client';
 import * as game from 'natives';
 
 let player = alt.Player.local;
-let pos = { x: 4895.28, y: -5744.58, z: 26.351 };
+let pos = {x: 4895.28, y: -5744.58, z: 26.351};
 let loaded = false;
 
 alt.setInterval(load_island, 1000)
@@ -18,8 +18,7 @@ function load_island() {
         game.setAmbientZoneListStatePersistent("AZL_DLC_Hei4_Island_Zones", true, true);
         game.setAmbientZoneListStatePersistent("AZL_DLC_Hei4_Island_Disabled_Zones", false, true);
         loaded = true;
-    } 
-    else if (dist > 2000 && loaded) {
+    } else if (dist > 2000 && loaded) {
         game.setIslandHopperEnabled('HeistIsland', false);
         game.setScenarioGroupEnabled("Heist_Island_Peds", false);
         game.setAudioFlag("PlayerOnDLCHeist4Island", false);
@@ -29,7 +28,7 @@ function load_island() {
     }
 }
 
-alt.on("connectionComplete",()=>{
+alt.on("connectionComplete", () => {
     new alt.PointBlip(6500, -6500, 20).alpha = 0;
 
     game.doorControl(alt.hash("h4_prop_h4_gate_r_03a"), 4981.012, -5712.747, 20.78103, true, 0, 0, -10);

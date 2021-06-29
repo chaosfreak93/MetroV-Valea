@@ -54,7 +54,7 @@ div.Tablet {
     top: 65px;
 }
 
-div.Tablet>div.Taskbar {
+div.Tablet > div.Taskbar {
     width: 100%;
     height: 30px;
     background: rgba(0, 0, 0, 0.45);
@@ -64,14 +64,14 @@ div.Tablet>div.Taskbar {
     border-bottom: 1px solid #0c0c0c59;
 }
 
-div.Tablet>div.Taskbar>i.fas.fa-wifi,
-div.Tablet>div.Taskbar>i.fas.fa-battery-three-quarters {
+div.Tablet > div.Taskbar > i.fas.fa-wifi,
+div.Tablet > div.Taskbar > i.fas.fa-battery-three-quarters {
     color: #d2d2d2;
     font-size: 1rem;
     padding-left: 10px;
 }
 
-div.Tablet>div.Taskbar>span#time {
+div.Tablet > div.Taskbar > span#time {
     color: #d2d2d2;
     font-family: PT;
     font-weight: bold;
@@ -79,82 +79,82 @@ div.Tablet>div.Taskbar>span#time {
     padding-left: 10px;
 }
 
-div.Tablet>div.Tablet-UseableArea {
+div.Tablet > div.Tablet-UseableArea {
     position: absolute;
     width: 100%;
     top: 30px;
     height: 589px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent,
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory,
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area-NewNote,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Are>div#FactionManagerApp-Area-InviteNewMember,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Are>div#FactionManagerApp-Area-ViewAllMembers,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Are>div#FactionManagerApp-Area-RankManage,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewDispatches,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions,
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewDispatches,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewDispatches {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent,
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory,
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area-NewNote,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Are > div#FactionManagerApp-Area-InviteNewMember,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Are > div#FactionManagerApp-Area-ViewAllMembers,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Are > div#FactionManagerApp-Area-RankManage,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions,
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches {
     display: none;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview {
     display: flex;
     justify-content: center;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area {
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area {
     padding-left: 20%;
     padding-right: 20%;
     padding-top: 2%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>div.DispatchApp-Area-FactionBox {
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area > div.DispatchApp-Area-FactionBox {
     position: relative;
     width: 38%;
     height: 30%;
@@ -171,14 +171,14 @@ div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>div.DispatchApp-Area-Fact
     filter: grayscale(1);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>div.DispatchApp-Area-FactionBox:hover {
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area > div.DispatchApp-Area-FactionBox:hover {
     opacity: 1;
     cursor: pointer;
     transform: scale(1.02);
     filter: grayscale(0);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>div.DispatchApp-Area-FactionBox>span {
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area > div.DispatchApp-Area-FactionBox > span {
     position: absolute;
     text-align: center;
     top: 15%;
@@ -189,7 +189,7 @@ div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>div.DispatchApp-Area-Fact
     font-size: 13px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>textarea {
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area > textarea {
     outline: none;
     border: 1px solid #020202fc;
     text-align: left;
@@ -206,32 +206,32 @@ div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>textarea {
     font-family: PEL;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area>textarea::placeholder {
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area > textarea::placeholder {
     color: #d2d2d2a3;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area,
-div.Tablet>div.Tablet-UseableArea>div#DispatchApp-Area {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area,
+div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area {
     width: 100%;
     height: 100%;
     background: rgb(20, 21, 25) !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group {
     background: rgba(0, 0, 0, 0.15);
     margin-top: 2rem;
     width: 680px;
@@ -244,19 +244,19 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     overflow-y: auto;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group {
     height: 425px !important;
     max-height: 425px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group {
     height: 375px !important;
     max-height: 375px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.left,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.left,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.left {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.left,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.left,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.left {
     position: relative;
     max-width: 33%;
     margin-left: 0;
@@ -267,17 +267,17 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     float: left;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.left {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.left {
     max-width: 31.5%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.left {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.left {
     max-width: 14% !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.mid,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.mid,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.mid {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.mid,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.mid,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.mid {
     position: relative;
     max-width: 33%;
     margin-left: 24px;
@@ -287,17 +287,17 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     float: left;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.mid {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.mid {
     max-width: 10% !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.mid {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.mid {
     max-width: 30% !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.right,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.midright,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.midright {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.right,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.midright,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.midright {
     position: relative;
     max-width: 30%;
     margin-left: 0px;
@@ -306,8 +306,8 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     float: left;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.right,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.right {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.right,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.right {
     position: relative;
     max-width: 22%;
     margin-left: 0px;
@@ -316,53 +316,53 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     float: left;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.right {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.right {
     max-width: 32% !important;
 }
 
-ul#FactionManagerApp-Area-ViewAllMembers-List>li.list-group-item>div.container>p {
+ul#FactionManagerApp-Area-ViewAllMembers-List > li.list-group-item > div.container > p {
     font-size: 14px;
 }
 
-ul#FactionManagerApp-Area-ViewAllMembers-List>li.list-group-item>div.container>p>b {
+ul#FactionManagerApp-Area-ViewAllMembers-List > li.list-group-item > div.container > p > b {
     font-size: 15px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.midright {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.midright {
     border-right: 2px solid #a1252533;
     max-width: 32%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.midright {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.midright {
     border-right: 2px solid #a1252533;
     max-width: 20% !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container>hr,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container>hr {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container > hr,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container > hr {
     margin-top: 0.35rem;
     margin-bottom: 0.35rem;
     width: 180px;
     border: 0.35px solid #a12521d1;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container>p {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container > p {
     color: #d2d2d2;
     margin-bottom: 0;
     text-align: center;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container>p>b {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container > p > b {
     color: #a22525;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item {
     background: rgba(0, 0, 0, 0);
     padding-top: 16px;
     padding-bottom: 16px;
@@ -370,23 +370,23 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     padding: 2% 2%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.right>button {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.right > button {
     padding: .05rem .25rem;
     font-size: .65rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.right>button.red {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.right > button.red {
     background: #e43d3dbd !important;
     outline: none;
     border: none;
     color: #d2d2d2;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>ul.list-group>li.list-group-item>div.container.right>button:hover {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > ul.list-group > li.list-group-item > div.container.right > button:hover {
     transform: scale(1.08);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > ul.list-group {
     display: block;
     float: left;
     position: absolute;
@@ -394,7 +394,7 @@ div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group {
     top: 70px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group>li.list-group-item {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > ul.list-group > li.list-group-item {
     background: #3131319e;
     float: left;
     margin-left: 60px;
@@ -418,23 +418,23 @@ div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group>li.list-group-i
     cursor: none !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     transform: scale(1.05);
     background: #4a48489e;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group>li.list-group-item>span {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > ul.list-group > li.list-group-item > span {
     color: #d2d2d2;
     font-family: PEL;
     font-size: 0.85rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group>li.list-group-item>img {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > ul.list-group > li.list-group-item > img {
     margin-bottom: 0.3rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>div.DateBox {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > div.DateBox {
     background: rgba(255, 255, 255, 0.05);
     width: 375px;
     height: 90px;
@@ -447,7 +447,7 @@ div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>div.DateBox {
     box-shadow: 1px 4px 22px rgba(25, 25, 25, 0.8);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>div.DateBox>span#datetime {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > div.DateBox > span#datetime {
     color: #afafaf;
     font-family: PEL;
     font-size: 1.8rem;
@@ -456,7 +456,7 @@ div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>div.DateBox>span#datetime {
     bottom: 34px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>div.DateBox>span#datedate {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > div.DateBox > span#datedate {
     color: #d4d4d4;
     font-family: PT;
     font-size: 1.2rem;
@@ -465,8 +465,8 @@ div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>div.DateBox>span#datedate {
     bottom: 10px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list {
     display: block;
     float: left;
     position: absolute;
@@ -475,20 +475,20 @@ div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBa
     max-height: 535px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list {
     top: 46px !important;
     max-height: 542px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list>div.card,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list > div.card,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card {
     float: left;
     margin-left: 38px;
     background: rgba(255, 255, 255, 0.04) !important;
@@ -500,17 +500,17 @@ div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBa
     min-height: 16.2rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group {
     display: block;
     float: left;
     position: absolute;
@@ -522,10 +522,10 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ov
     margin-left: 18px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group {
     top: 170px !important;
     padding-right: 1.5rem !important;
     padding: 1.5rem !important;
@@ -534,7 +534,7 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overvi
     padding-bottom: 0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box {
     border-radius: 0px !important;
     box-shadow: 5px 5px 10px -2px rgba(33, 33, 33, 0.3) !important;
     float: left;
@@ -549,7 +549,7 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     min-width: 19rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>.btn-create {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > .btn-create {
     background-color: #333333 !important;
     color: #d2d2d2;
     transition: all 0.5s ease-in-out;
@@ -559,7 +559,7 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     font-size: 14px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group {
     top: 110px;
     overflow-y: auto;
     max-height: 400px;
@@ -568,7 +568,7 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ov
     min-width: 890px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group {
     padding-bottom: 4rem;
     padding-top: 4rem;
     padding-left: 2rem;
@@ -577,13 +577,13 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Over
     padding-right: 4.5rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>ul.list-group>p,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>ul.list-group>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>ul.list-group>p,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group>p,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group>p,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group>p {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > ul.list-group > p,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > ul.list-group > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > ul.list-group > p,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group > p,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group > p,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group > p {
     color: #ffffff;
     text-align: center;
     font-family: PEL;
@@ -591,14 +591,14 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overvi
     margin-top: -0.8rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group {
     top: 95px !important;
     max-width: 880px !important;
     padding-top: 0.2rem;
     padding-bottom: 15px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.newnote {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.newnote {
     border-radius: 0px !important;
     box-shadow: 5px 5px 10px -2px rgba(33, 33, 33, 0.3) !important;
     float: left;
@@ -619,14 +619,14 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ov
     border: 2px dashed #363940d9;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.newnote:hover {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.newnote:hover {
     cursor: pointer;
     background: #00ff964f !important;
     color: #ffffff9c;
     border-color: #ffffffc7;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note {
     border-radius: 0px !important;
     box-shadow: 5px 5px 10px -2px rgba(33, 33, 33, 0.3) !important;
     float: left;
@@ -638,7 +638,7 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ov
     margin-bottom: 20px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note>button.btn-delete {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note > button.btn-delete {
     font-size: 16px;
     border: none;
     border-radius: 4px;
@@ -650,43 +650,43 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ov
     border: 1px solid #000000b8;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note>button.btn-delete:hover {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note > button.btn-delete:hover {
     cursor: pointer;
     transform: scale(1.01);
     background: #a52323e0 !important;
     filter: grayscale(0);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.schwarz {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.schwarz {
     background: #00000057 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.schwarz>textarea {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.schwarz > textarea {
     color: #ffffffc7;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.weiß {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.weiß {
     background: #ffffffcf !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.gelb {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.gelb {
     background: #FFFD75 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.rot {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.rot {
     background: #ff7575 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.grün {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.grün {
     background: #89ff75 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.blau {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.blau {
     background: #75d1ff !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item>textarea.title,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>textarea.title {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item > textarea.title,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > textarea.title {
     background-color: transparent;
     padding-top: 14px;
     width: 100%;
@@ -699,8 +699,8 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     border: none;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item>textarea.text,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>textarea.text {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item > textarea.text,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > textarea.text {
     background-color: transparent;
     border: none;
     font-family: "Gloria Hallelujah", cursive;
@@ -714,45 +714,45 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     font-size: 16px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item>textarea.title::placeholder,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item>textarea.text::placeholder,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>textarea.title::placeholder,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>textarea.text::placeholder {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item > textarea.title::placeholder,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item > textarea.text::placeholder,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > textarea.title::placeholder,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > textarea.text::placeholder {
     color: #2f2f2f;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.schwarz>textarea.title::placeholder,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item.note.schwarz>textarea.text::placeholder {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.schwarz > textarea.title::placeholder,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item.note.schwarz > textarea.text::placeholder {
     color: #ffffffc7;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item>textarea.title:focus,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Overview>ul.list-group>li.list-group-item>textarea.text:focus,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>textarea.title:focus,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>textarea.text:focus {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item > textarea.title:focus,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-Overview > ul.list-group > li.list-group-item > textarea.text:focus,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > textarea.title:focus,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > textarea.text:focus {
     outline: none;
     border: none;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2) inset;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#HomeApp-Area>ul.list-group>li.list-group-item>img {
+div.Tablet > div.Tablet-UseableArea > div#HomeApp-Area > ul.list-group > li.list-group-item > img {
     width: 32px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item>img {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item > img {
     width: 46px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item {
     background: #313131e3 !important;
     float: left;
     padding: 2rem;
@@ -765,16 +765,16 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     transition: all 0.3s ease-in-out;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group>li.list-group-item,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group>li.list-group-item {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group > li.list-group-item,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group > li.list-group-item {
     margin-left: 15px !important;
     margin-right: 15px !important;
     margin-bottom: 15px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item {
     width: auto !important;
     background: #131519 !important;
     border-radius: 6px;
@@ -787,8 +787,8 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     margin-top: 0.6rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-circle.btn-sm,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-circle.btn-sm {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-circle.btn-sm,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-circle.btn-sm {
     width: 30px;
     height: 30px;
     padding: 6px 0px;
@@ -801,7 +801,7 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     margin-right: 1.5px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>p {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > p {
     color: #fff;
     font-family: PEL;
     text-transform: uppercase;
@@ -810,51 +810,51 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     margin-bottom: 3px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-red {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-red {
     background: rgb(195, 27, 27);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-red {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-red {
     background: #ff7575;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-green {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-green {
     background: rgb(27, 195, 88);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-green {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-green {
     background: #89ff75;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-yellow {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-yellow {
     background: rgba(243, 238, 14);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-yellow {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-yellow {
     background: #FFFD75;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-black {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-black {
     background: rgba(8, 8, 8, 0.9);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-black {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-black {
     background: #00000057;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-white {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-white {
     background: rgb(255, 255, 255);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-white {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-white {
     background: #ffffffcf;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.colorbox>button.btn-primary {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.colorbox > button.btn-primary {
     background: #75d1ff !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group {
     top: 115px !important;
     border-radius: 4px;
     background: rgba(101, 101, 101, 0.04);
@@ -865,12 +865,12 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     max-height: 27rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>img {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > img {
     margin-top: 1rem;
     margin-bottom: 0.6rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item {
     padding: 1rem;
     padding-top: 1rem;
     margin-left: 50px;
@@ -879,35 +879,35 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppS
     filter: grayscale(0.7);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item.install:hover {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item.install:hover {
     cursor: pointer;
     transform: scale(1.05);
     filter: grayscale(0);
     background: #23a55de0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item.uninstall:hover {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item.uninstall:hover {
     cursor: pointer;
     transform: scale(1.05);
     background: #a52323e0 !important;
     filter: grayscale(0);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group>li.list-group-item>p,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item>p.title {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group > li.list-group-item > p,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item > p.title {
     color: #fff;
     padding-top: 12px;
     font-family: PEL;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>p.title {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > p.title {
     color: #fff;
     padding-top: 0px;
     font-family: PT;
@@ -916,7 +916,7 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     margin-top: -0.5rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-vehstore {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-vehstore {
     background-color: #33333373 !important;
     color: #dedede;
     font-size: 14px;
@@ -931,7 +931,7 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     margin-bottom: -0.8rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>button.btn-vehstore:hover {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > button.btn-vehstore:hover {
     cursor: pointer;
     background: #23a55de0 !important;
     border: 1px solid rgba(0, 0, 0, 0.411);
@@ -939,7 +939,7 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     letter-spacing: 1px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>ul.list-group>li.list-group-item>p.desc {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > ul.list-group > li.list-group-item > p.desc {
     color: #d0d0d0;
     padding-top: 0px;
     font-family: PEL;
@@ -949,90 +949,90 @@ div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Vehi
     padding-left: 4px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item>p.title {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item > p.title {
     margin-bottom: 0rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>ul.list-group>li.list-group-item>p.description {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > ul.list-group > li.list-group-item > p.description {
     color: #fff;
     font-family: PT;
     font-size: 0.7rem;
     font-weight: bold;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>ul.list-group>li.list-group-item:hover,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > ul.list-group > li.list-group-item:hover,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #23a55de0 !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #a52323e0 !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #bf763f !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #2d67b3 !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #2d67b3 !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #2d67b3 !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>ul.list-group>li.list-group-item:hover {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > ul.list-group > li.list-group-item:hover {
     cursor: pointer;
     background: #2d67b3 !important;
     transform: scale(1.05);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group>li.list-group-item:nth-child(1):hover {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group > li.list-group-item:nth-child(1):hover {
     background: #a52323e0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group>li.list-group-item:nth-child(2):hover {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group > li.list-group-item:nth-child(2):hover {
     background: #9223a5e0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>ul.list-group>li.list-group-item:nth-child(3):hover {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > ul.list-group > li.list-group-item:nth-child(3):hover {
     background: #2368a5e0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card {
     background: rgba(255, 255, 255, 0.04) !important;
     box-shadow: 1px 2px 6px rgba(25, 25, 25, 0.8) !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card {
     top: 40px;
     min-width: 32rem;
     max-width: 32rem;
@@ -1041,40 +1041,40 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overvi
     border-left: .25rem solid #23a55d !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card {
     max-height: 8rem !important;
     min-height: 8rem !important;
     top: 25px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card {
     border-left: .25rem solid #a55b23 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card {
     border-left: .25rem solid #235ba5 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card {
     border-left: .25rem solid #235ba5 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card {
     border-left: .25rem solid #235ba5 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card {
     border-left: .25rem solid #235ba5 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card {
     border-left: .25rem solid #a52323e0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>p {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > p {
     color: #d2d2d2;
     font-family: PEL;
     font-size: 1.25rem;
@@ -1082,7 +1082,7 @@ div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBa
     text-align: center;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card {
     min-width: 28rem;
     max-width: 28rem;
     max-height: 12rem;
@@ -1092,127 +1092,127 @@ div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBa
     background: rgba(255, 255, 255, 0.04) !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card>div.card-body {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card > div.card-body {
     padding-bottom: 1rem !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card.green {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card.green {
     border-left: .25rem solid #23a55d !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card.green>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card.green > div.card-body > p.card-text > b {
     color: #23a55d !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card.red {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card.red {
     border-left: .25rem solid #a52f23 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card.red>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card.red > div.card-body > p.card-text > b {
     color: #a52f23 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card>div.card-header,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card>div.card-header {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card > div.card-header,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card > div.card-header {
     font-size: 0.9rem;
     font-family: PEL;
     letter-spacing: 0.1px;
     padding-left: 0.8rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list>div.card>div.card-body {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list > div.card > div.card-body {
     padding-bottom: 0rem;
     margin-top: -0.45rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card>div.card-body>h6.card-title,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card>div.card-body>h6.card-title {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card > div.card-body > h6.card-title,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card > div.card-body > h6.card-title {
     font-family: OSR;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card>div.card-body>p.card-text,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card>div.card-body>p.card-text {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card > div.card-body > p.card-text,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card > div.card-body > p.card-text {
     font-family: PEL;
     font-size: 0.95rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card>div.card-body,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card>div.card-body,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card>div.card-body,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card>div.card-body,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card>div.card-body,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card>div.card-body,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card>div.card-body {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card > div.card-body,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card > div.card-body,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card > div.card-body,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card > div.card-body,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card > div.card-body,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card > div.card-body,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card > div.card-body {
     padding-bottom: 0rem;
 }
 
 .border-left-warning {
-    border-left: .25rem solid #c87b1c!important;
+    border-left: .25rem solid #c87b1c !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>button.eventcreate,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>button.eventcreate {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > button.eventcreate,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > button.eventcreate {
     background-color: #74e66c82;
     border-color: #000000b8;
     margin-top: 0.5rem;
     margin-right: 1rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container {
     overflow-y: auto;
     max-height: 426px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table {
     width: 870px;
     margin-left: 28px;
     border: 1px solid rgba(0, 0, 0, 0.67) !important;
     text-align: center;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table {
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table {
     margin-left: 10px !important;
     border: 2px solid rgba(0, 0, 0, 0.67) !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>td {
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > td {
     max-width: 28rem !important;
     font-size: 0.85rem;
     vertical-align: middle;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr>td>button.btn,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>td>button.btn {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr > td > button.btn,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > td > button.btn {
     border: 2px solid #217a4bcc !important;
     color: #217a4b;
     font-size: 0.8rem;
     border-radius: 4px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>td>button.btn {
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > td > button.btn {
     border: 2px solid #1f2120cc !important;
     color: #dce2df;
     font-size: 0.8rem;
@@ -1222,61 +1222,61 @@ div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>tab
     border-radius: 4px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr>td>button.btn:hover {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr > td > button.btn:hover {
     cursor: pointer;
     background: #217a4b;
     border-color: #00000066 !important;
     color: #c7c7c7;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>td>button.btn:hover {
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > td > button.btn:hover {
     cursor: pointer;
     background: #2d65cc61;
     border-color: #00000066 !important;
     color: #c7c7c7;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>thead {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > thead {
     background: #20844de0;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>thead {
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > thead {
     background: #191919;
     border-bottom: 2px solid #0e0e0e !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr {
     color: #d2d2d2;
     font-family: PEL;
     font-weight: normal;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr>td,
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>thead>tr>td,
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>thead>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>thead>tr>td,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>thead>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>td,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>th {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr > td,
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > thead > tr > td,
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > thead > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > thead > tr > td,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > thead > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > td,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > th {
     border-right: 1px solid #0000009e !important;
     border-right-style: dashed !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>thead>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>thead>tr>th {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > thead > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > thead > tr > th {
     font-weight: normal;
     color: #d2d2d2;
     font-family: OSR;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr {
     border-top: 1px solid #0000006b !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr:nth-of-type(odd) {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr:nth-of-type(odd) {
     background: rgba(0, 0, 0, 0.4) !important;
 }
 
@@ -1289,14 +1289,14 @@ div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>tab
     background: repeating-linear-gradient( 30deg, #b31b1b9e, #e024246b 10px, #af1e1e82 10px, #af1e1e82 20px) !important;
 } */
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr:nth-of-type(even) {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr:nth-of-type(even) {
     background: rgba(0, 0, 0, 0.5) !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>thead>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>div.container>table>tbody>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>tbody>tr>th,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>table>thead>tr>th {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > thead > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > div.container > table > tbody > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > tbody > tr > th,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > div.container > table > thead > tr > th {
     border: none;
 }
 
@@ -1305,12 +1305,12 @@ div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>div.container>tab
     border-top: none !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box {
     background: rgba(255, 255, 255, 0.025);
     height: 540px;
     width: 930px;
@@ -1322,12 +1322,12 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box {
     border: 1px solid #0000004f;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>p.title {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > p.title {
     font-family: PT;
     color: #eae7e7;
     font-size: 1.45rem;
@@ -1336,44 +1336,44 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>p.title {
     margin-bottom: 0rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>p.title {
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > p.title {
     padding-top: 15px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#VehiclesApp-Area>div.box>p.description,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-Overview>div.box>p.description,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-AppStore>div.box>p.description,
-div.Tablet>div.Tablet-UseableArea>div#InternetApp-Area>div#InternetApp-Area-VehicleStore>div.box>p.description,
-div.Tablet>div.Tablet-UseableArea>div#TutorialApp-Area>div.box>p.description,
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>p.description {
+div.Tablet > div.Tablet-UseableArea > div#VehiclesApp-Area > div.box > p.description,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-Overview > div.box > p.description,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-AppStore > div.box > p.description,
+div.Tablet > div.Tablet-UseableArea > div#InternetApp-Area > div#InternetApp-Area-VehicleStore > div.box > p.description,
+div.Tablet > div.Tablet-UseableArea > div#TutorialApp-Area > div.box > p.description,
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > p.description {
     color: #d2d2d2;
     font-family: PEL;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember>div.box,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewDispatches>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewDispatches>div.box,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewDispatches>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember > div.box,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches > div.box,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box {
     background: rgba(255, 255, 255, 0.025);
     height: 525px;
     width: 800px;
@@ -1385,20 +1385,20 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBa
     border: 1px solid #0000004f;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewDispatches>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewDispatches>div.box,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewDispatches>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches > div.box,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box {
     width: 975px !important;
     left: 25px !important;
     top: 20px !important;
@@ -1407,20 +1407,20 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBa
     overflow-y: auto;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewDispatches>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewDispatches>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewDispatches>div.box>p.title,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>p.title {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches > div.box > p.title,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > p.title {
     color: #d2d2d2;
     margin-top: 15px;
     font-size: 18px;
@@ -1428,13 +1428,13 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFa
     margin-bottom: 0.5rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>input,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>input,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>input,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>input,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>input,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>input,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>input {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > input,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > input,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > input,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > input,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > input,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > input,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > input {
     outline: none;
     border: 1px solid #0e0e0e;
     text-align: center;
@@ -1447,13 +1447,13 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Search
     margin-right: 5px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>button,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>button,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>button,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>button,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>button,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>button,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>button {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > button,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > button,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > button,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > button,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > button,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > button,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > button {
     border: 1px solid transparent;
     background: #3e3e3e;
     font-family: PEL;
@@ -1462,13 +1462,13 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Search
     transition: all 0.3s ease-in-out;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>button:hover {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > button:hover {
     color: #ececec;
     cursor: pointer;
     letter-spacing: 2px;
@@ -1476,7 +1476,7 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Search
     opacity: .9;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>ul.list-group {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > ul.list-group {
     background: rgba(255, 255, 255, 0.02);
     width: 80%;
     height: 100px;
@@ -1492,7 +1492,7 @@ ul#JusticeApp-Area-ViewBankTransactions-HistoryList {
     height: 180px !important;
 }
 
-ul#JusticeApp-Area-ViewBankTransactions-HistoryList>li>div.container.left {
+ul#JusticeApp-Area-ViewBankTransactions-HistoryList > li > div.container.left {
     color: #d2d2d2;
     float: left;
     padding: 0 !important;
@@ -1503,19 +1503,19 @@ ul#JusticeApp-Area-ViewBankTransactions-HistoryList>li>div.container.left {
     font-size: 13px;
 }
 
-ul#JusticeApp-Area-ViewBankTransactions-HistoryList>li>div.container.left>p:nth-child(1) {
+ul#JusticeApp-Area-ViewBankTransactions-HistoryList > li > div.container.left > p:nth-child(1) {
     margin-bottom: 0;
     margin-top: 8px;
 }
 
-ul#JusticeApp-Area-ViewBankTransactions-HistoryList>li>div.container.left.text {
+ul#JusticeApp-Area-ViewBankTransactions-HistoryList > li > div.container.left.text {
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
     text-overflow: ellipsis;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>ul.list-group>li {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > ul.list-group > li {
     background: rgba(255, 255, 255, 0.02);
     height: 50%;
     max-height: 50%;
@@ -1523,49 +1523,49 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBa
     max-width: 100%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>ul.list-group>li>p {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > ul.list-group > li > p {
     font-family: PEL;
     color: #d2d2d2;
     float: left;
     margin-bottom: 0;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>ul.list-group>li>button {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > ul.list-group > li > button {
     float: right;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>ul.list-group>li:nth-child(odd) {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > ul.list-group > li:nth-child(odd) {
     background: rgba(255, 255, 255, 0.01);
     border-bottom: 1px solid #0000007a;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>ul.list-group>li {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > ul.list-group > li {
     height: 200px !important;
     max-height: 200px !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>div#LSPDApp-Area-SearchLicense-List>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>div#JusticeApp-Area-SearchLicense-List>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container:nth-child(odd),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container:nth-child(odd),
-div#LSPDApp-Area-ViewDispatches-List>div.container:nth-child(odd),
-div#LSMDApp-Area-ViewDispatches-List>div.container:nth-child(odd),
-div#ACLSApp-Area-ViewDispatches-List>div.container:nth-child(odd) {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > div#LSPDApp-Area-SearchLicense-List > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > div#JusticeApp-Area-SearchLicense-List > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container:nth-child(odd),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container:nth-child(odd),
+div#LSPDApp-Area-ViewDispatches-List > div.container:nth-child(odd),
+div#LSMDApp-Area-ViewDispatches-List > div.container:nth-child(odd),
+div#ACLSApp-Area-ViewDispatches-List > div.container:nth-child(odd) {
     background: #23232378;
     padding: 15px;
     font-size: 15px;
     border-bottom: 1px solid #0e0e0e;
 }
 
-div#LSPDApp-Area-ViewDispatches-List>div.container>div.left,
-div#LSMDApp-Area-ViewDispatches-List>div.container>div.left,
-div#ACLSApp-Area-ViewDispatches-List>div.container>div.left {
+div#LSPDApp-Area-ViewDispatches-List > div.container > div.left,
+div#LSMDApp-Area-ViewDispatches-List > div.container > div.left,
+div#ACLSApp-Area-ViewDispatches-List > div.container > div.left {
     height: 100%;
     width: 28%;
     display: flow-root;
@@ -1575,36 +1575,36 @@ div#ACLSApp-Area-ViewDispatches-List>div.container>div.left {
     float: left;
 }
 
-div#LSPDApp-Area-ViewDispatches-List>div.container>div.leftmid,
-div#LSMDApp-Area-ViewDispatches-List>div.container>div.leftmid,
-div#ACLSApp-Area-ViewDispatches-List>div.container>div.leftmid {
+div#LSPDApp-Area-ViewDispatches-List > div.container > div.leftmid,
+div#LSMDApp-Area-ViewDispatches-List > div.container > div.leftmid,
+div#ACLSApp-Area-ViewDispatches-List > div.container > div.leftmid {
     width: 40%;
 }
 
-div#LSPDApp-Area-ViewDispatches-List>div.container>div.left>button,
-div#LSMDApp-Area-ViewDispatches-List>div.container>div.left>button,
-div#ACLSApp-Area-ViewDispatches-List>div.container>div.left>button {
+div#LSPDApp-Area-ViewDispatches-List > div.container > div.left > button,
+div#LSMDApp-Area-ViewDispatches-List > div.container > div.left > button,
+div#ACLSApp-Area-ViewDispatches-List > div.container > div.left > button {
     margin-top: 15%;
     margin-left: 2%;
 }
 
-div#LSPDApp-Area-ViewDispatches-List>div.container>div.leftmid>p.title,
-div#LSMDApp-Area-ViewDispatches-List>div.container>div.leftmid>p.title,
-div#ACLSApp-Area-ViewDispatches-List>div.container>div.leftmid>p.title {
+div#LSPDApp-Area-ViewDispatches-List > div.container > div.leftmid > p.title,
+div#LSMDApp-Area-ViewDispatches-List > div.container > div.leftmid > p.title,
+div#ACLSApp-Area-ViewDispatches-List > div.container > div.leftmid > p.title {
     padding-top: 7% !important;
 }
 
-div#LSPDApp-Area-ViewDispatches-List>div.container>div.left>p,
-div#LSMDApp-Area-ViewDispatches-List>div.container>div.left>p,
-div#ACLSApp-Area-ViewDispatches-List>div.container>div.left>p {
+div#LSPDApp-Area-ViewDispatches-List > div.container > div.left > p,
+div#LSMDApp-Area-ViewDispatches-List > div.container > div.left > p,
+div#ACLSApp-Area-ViewDispatches-List > div.container > div.left > p {
     color: #d2d2d2;
     font-family: PEL;
     font-size: 14px
 }
 
-div#LSPDApp-Area-ViewDispatches-List>div.container>div.left>p.title,
-div#LSMDApp-Area-ViewDispatches-List>div.container>div.left>p.title,
-div#ACLSApp-Area-ViewDispatches-List>div.container>div.left>p.title {
+div#LSPDApp-Area-ViewDispatches-List > div.container > div.left > p.title,
+div#LSMDApp-Area-ViewDispatches-List > div.container > div.left > p.title,
+div#ACLSApp-Area-ViewDispatches-List > div.container > div.left > p.title {
     color: #d2d2d2;
     font-family: PEL;
     font-weight: bold;
@@ -1612,40 +1612,40 @@ div#ACLSApp-Area-ViewDispatches-List>div.container>div.left>p.title {
     margin-bottom: 0;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>div#LSPDApp-Area-SearchLicense-List>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>div#JusticeApp-Area-SearchLicense-List>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container:nth-child(even),
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container:nth-child(even),
-div#LSPDApp-Area-ViewDispatches-List>div.container:nth-child(even),
-div#LSMDApp-Area-ViewDispatches-List>div.container:nth-child(even),
-div#ACLSApp-Area-ViewDispatches-List>div.container:nth-child(even) {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > div#LSPDApp-Area-SearchLicense-List > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > div#JusticeApp-Area-SearchLicense-List > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container:nth-child(even),
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container:nth-child(even),
+div#LSPDApp-Area-ViewDispatches-List > div.container:nth-child(even),
+div#LSMDApp-Area-ViewDispatches-List > div.container:nth-child(even),
+div#ACLSApp-Area-ViewDispatches-List > div.container:nth-child(even) {
     background: #2f2f2f78;
     padding: 15px;
     border-bottom: 1px solid #0e0e0e;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container,
-div#LSPDApp-Area-ViewDispatches-List>div.container,
-div#LSMDApp-Area-ViewDispatches-List>div.container,
-div#ACLSApp-Area-ViewDispatches-List>div.container,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container,
+div#LSPDApp-Area-ViewDispatches-List > div.container,
+div#LSMDApp-Area-ViewDispatches-List > div.container,
+div#ACLSApp-Area-ViewDispatches-List > div.container,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container {
     float: left;
     max-height: 25%;
     height: 25%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.left,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.left,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.left,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.left {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.left,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.left,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.left,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.left {
     float: left;
     max-width: 25%;
     border-right: 3px outset #2c68c142;
@@ -1654,10 +1654,10 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFa
     height: 100%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid {
     float: left;
     max-width: 20%;
     width: 20%;
@@ -1667,10 +1667,10 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFa
     height: 100%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.name,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.name,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.name,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.name {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.name,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.name,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.name,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.name {
     float: left;
     max-width: 25%;
     width: 25%;
@@ -1680,18 +1680,18 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFa
     height: 100%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p {
     color: #d2d2d2;
     font-family: PEL;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p.name,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p.name,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p.name,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid>p.name {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p.name,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p.name,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p.name,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid > p.name {
     color: #d2d2d2;
     text-align: center;
     font-family: PEL;
@@ -1699,20 +1699,20 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFa
     margin-bottom: 5px
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex {
     display: flex;
     justify-content: center;
     align-items: center;
     border-right: none;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button {
     border: 1px solid #06060670;
     background: #171717;
     color: #d2d2d2;
@@ -1721,22 +1721,22 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFa
     transition: all 0.3s ease-in-out;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-ViewFactionVehicles>div.box>div#LSPDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-ViewFactionVehicles>div.box>div#LSMDApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-ViewFactionVehicles>div.box>div#ACLSApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button:hover,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewFactionVehicles>div.box>div#JusticeApp-Area-ViewFactionVehicles-List>div.container>div.leftmid.flex>button:hover {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > div#LSPDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > div#LSMDApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > div#ACLSApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button:hover,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > div#JusticeApp-Area-ViewFactionVehicles-List > div.container > div.leftmid.flex > button:hover {
     color: #d2d2d2;
     transform: scale(1.1);
     background: #3c88ca85;
     opacity: .9;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>div#LSPDApp-Area-SearchLicense-List>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>div#JusticeApp-Area-SearchLicense-List>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>div.container>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>div.container>p {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > div#LSPDApp-Area-SearchLicense-List > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > div#JusticeApp-Area-SearchLicense-List > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > div.container > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > div.container > p {
     color: #d2d2d2;
     font-family: PEL;
     text-align: right;
@@ -1745,24 +1745,24 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Search
     padding-right: 25px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchPerson>div.box>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchPerson>div.box>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchLicense>div.box>div#LSPDApp-Area-SearchLicense-List>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchLicense>div.box>div#JusticeApp-Area-SearchLicense-List>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-SearchVehiclePlate>div.box>div.container>p>b,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-SearchVehiclePlate>div.box>div.container>p>b {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > div#LSPDApp-Area-SearchLicense-List > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box > div#JusticeApp-Area-SearchLicense-List > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > div.container > p > b,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > div.container > p > b {
     float: left;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-ViewBankTransactions>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-ViewAllMembers>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-ViewAllMembers>div.box>p,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>p {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-ViewAllMembers > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-ViewAllMembers > div.box > p,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > p {
     font-family: PT;
     color: #eae7e7;
     font-size: 1.45rem;
@@ -1771,28 +1771,28 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     padding-top: 15px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense>div.box>div.inputgroup,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>div.inputgroup,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember>div.box>div.inputgroup,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box>div.inputgroup {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense > div.box > div.inputgroup,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > div.inputgroup,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember > div.box > div.inputgroup,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box > div.inputgroup {
     margin-bottom: 0.65rem;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-date,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-clock,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-location,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-eventtype,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-title,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-callnumber,
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>input#eventsapp-info,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>div.inputgroup>input#bankingapp-banknumber,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>div.inputgroup>input#bankingapp-transactiontext,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>div.inputgroup>input#bankingapp-moneyamount,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember>div.box>div.inputgroup>input#companyapp-name,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box>div.inputgroup>input#factionmanagerapp-name,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box>div.inputgroup>input#factionmanagerapp-dienstnummer,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense>div.box>div.inputgroup>input {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-date,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-clock,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-location,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-eventtype,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-title,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-callnumber,
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > input#eventsapp-info,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > div.inputgroup > input#bankingapp-banknumber,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > div.inputgroup > input#bankingapp-transactiontext,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > div.inputgroup > input#bankingapp-moneyamount,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember > div.box > div.inputgroup > input#companyapp-name,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box > div.inputgroup > input#factionmanagerapp-name,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box > div.inputgroup > input#factionmanagerapp-dienstnummer,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense > div.box > div.inputgroup > input {
     background: #232527;
     outline: none;
     border: 1px solid #0c0c0c;
@@ -1807,7 +1807,7 @@ div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWe
     width: 380px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-RankManage>div.box>ul.list-group>li.list-group-item>div.container.right>input {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-RankManage > div.box > ul.list-group > li.list-group-item > div.container.right > input {
     background: #b5464457;
     outline: none;
     border: 1px solid #0c0c0c;
@@ -1822,11 +1822,11 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     width: 50%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-CreateEvent>div.box>div.inputgroup>i.icon,
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense>div.box>div.inputgroup>i.icon,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>div.inputgroup>i.icon,
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember>div.box>div.inputgroup>i.icon,
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box>div.inputgroup>i.icon {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-CreateEvent > div.box > div.inputgroup > i.icon,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense > div.box > div.inputgroup > i.icon,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > div.inputgroup > i.icon,
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember > div.box > div.inputgroup > i.icon,
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box > div.inputgroup > i.icon {
     background: #c87b1c;
     color: #ffffffcf;
     font-size: 1.25rem;
@@ -1838,51 +1838,51 @@ div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerA
     line-height: 20px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-GiveWeaponLicense>div.box>div.inputgroup>i.icon {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense > div.box > div.inputgroup > i.icon {
     background: #ea6627e0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-InviteNewMember>div.box>div.inputgroup>i.icon {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-InviteNewMember > div.box > div.inputgroup > i.icon {
     background: #a52323e0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-InviteNewMember>div.box>div.inputgroup>i.icon {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-InviteNewMember > div.box > div.inputgroup > i.icon {
     background: #bf763f !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-NewTransactionArea>div.box>div.inputgroup>i.icon {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-NewTransactionArea > div.box > div.inputgroup > i.icon {
     background: #23a55de0 !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#EventsApp-Area>div#EventsApp-Area-Overview>ul#event-entry-list>div.card>div.card-body>p.card-text>b,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card>div.card-body>p.card-text>b,
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-ViewBankHistory>ul#bankapp-bankhistory-list>div.card>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#EventsApp-Area > div#EventsApp-Area-Overview > ul#event-entry-list > div.card > div.card-body > p.card-text > b,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card > div.card-body > p.card-text > b,
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-ViewBankHistory > ul#bankapp-bankhistory-list > div.card > div.card-body > p.card-text > b {
     font-family: OSL;
     color: #c87b1c;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#BankingApp-Area>div#BankingApp-Area-Overview>div.card>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#BankingApp-Area > div#BankingApp-Area-Overview > div.card > div.card-body > p.card-text > b {
     color: #23a55d !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#CompanyApp-Area>div#CompanyApp-Area-Overview>div.card>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#CompanyApp-Area > div#CompanyApp-Area-Overview > div.card > div.card-body > p.card-text > b {
     font-family: OSL;
     color: #c51b1b !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#FactionManagerApp-Area>div#FactionManagerApp-Area-Overview>div.card>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#FactionManagerApp-Area > div#FactionManagerApp-Area-Overview > div.card > div.card-body > p.card-text > b {
     font-family: OSL;
     color: #bf763f !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LSPDApp-Area>div#LSPDApp-Area-Overview>div.card>div.card-body>p.card-text>b,
-div.Tablet>div.Tablet-UseableArea>div#LSMDApp-Area>div#LSMDApp-Area-Overview>div.card>div.card-body>p.card-text>b,
-div.Tablet>div.Tablet-UseableArea>div#ACLSApp-Area>div#ACLSApp-Area-Overview>div.card>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Overview > div.card > div.card-body > p.card-text > b,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview > div.card > div.card-body > p.card-text > b,
+div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview > div.card > div.card-body > p.card-text > b {
     font-family: OSL;
     color: #3b74bf !important;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#JusticeApp-Area>div#JusticeApp-Area-Overview>div.card>div.card-body>p.card-text>b {
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview > div.card > div.card-body > p.card-text > b {
     font-family: OSL;
     color: #3b74bf !important;
 }
@@ -2004,7 +2004,7 @@ p#BankingApp-NewTransactionArea-Error {
 
 .btn-companyHov:hover {
     cursor: pointer;
-    background: #a52323e0!important;
+    background: #a52323e0 !important;
     transform: scale(1.02);
     border: 1px solid rgba(0, 0, 0, 0.411);
     color: #fff;
@@ -2018,7 +2018,7 @@ p#BankingApp-NewTransactionArea-Error {
     color: #fff;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-NewNote>div.box>.btn-create:hover {
+div.Tablet > div.Tablet-UseableArea > div#NotesApp-Area > div.box > div#NotesApp-Area-NewNote > div.box > .btn-create:hover {
     cursor: pointer;
     background: #23a55de0 !important;
     letter-spacing: 1px;
@@ -2026,7 +2026,7 @@ div.Tablet>div.Tablet-UseableArea>div#NotesApp-Area>div.box>div#NotesApp-Area-Ne
     color: #fff;
 }
 
-div.TabletBG>button.btn-circle {
+div.TabletBG > button.btn-circle {
     width: 45px;
     height: 45px;
     line-height: 45px;
@@ -2035,19 +2035,19 @@ div.TabletBG>button.btn-circle {
     border-radius: 50%;
 }
 
-div.TabletBG>button.btn-circle i {
+div.TabletBG > button.btn-circle i {
     position: relative;
     top: -1px;
 }
 
-div.TabletBG>button.btn-circle-sm {
+div.TabletBG > button.btn-circle-sm {
     width: 35px;
     height: 35px;
     line-height: 35px;
     font-size: 0.9rem;
 }
 
-div.TabletBG>button.btn-home {
+div.TabletBG > button.btn-home {
     position: absolute;
     bottom: 28px;
     right: 550px;
@@ -2056,7 +2056,7 @@ div.TabletBG>button.btn-home {
     color: #8e8b8b;
 }
 
-div.TabletBG>button.btn-home:focus {
+div.TabletBG > button.btn-home:focus {
     box-shadow: 0 0 0 0.2rem rgba(62, 70, 67, 0.25);
 }
 
@@ -2070,7 +2070,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar {
     background-color: #aa0101;
     background-image: linear-gradient(to bottom, #c60101, #aa0101);
     border-color: #860000;
@@ -2078,35 +2078,35 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     width: 100%;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner {
     padding: 0 15px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner::after,
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner::before {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner::after,
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner::before {
     display: table;
     line-height: 0;
     content: "";
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner>div#LifeinvaderApp-Area-NavBar-Container {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner > div#LifeinvaderApp-Area-NavBar-Container {
     padding: 0 50px;
     position: relative;
     min-height: 56px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner>div#LifeinvaderApp-Area-NavBar-Container::after,
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner>div#LifeinvaderApp-Area-NavBar-Container::before {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner > div#LifeinvaderApp-Area-NavBar-Container::after,
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner > div#LifeinvaderApp-Area-NavBar-Container::before {
     display: table;
     line-height: 0;
     content: "";
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner>div#LifeinvaderApp-Area-NavBar-Container>img {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner > div#LifeinvaderApp-Area-NavBar-Container > img {
     margin: 8px 0 0 0;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#LifeinvaderApp-Area-NavBar>div#LifeinvaderApp-Area-NavBar-Inner>div#LifeinvaderApp-Area-NavBar-Container>button {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#LifeinvaderApp-Area-NavBar > div#LifeinvaderApp-Area-NavBar-Inner > div#LifeinvaderApp-Area-NavBar-Container > button {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
@@ -2127,13 +2127,14 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     text-transform: uppercase;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview {
     display: flex;
     -webkit-flex-flow: column;
     flex-flow: column;
-	height: 100%;
+    height: 100%;
 }
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list {
+
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list {
     min-height: 0;
     flex: 1;
     justify-content: center;
@@ -2141,7 +2142,7 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     overflow: auto;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container {
     width: 450px;
     background-color: rgb(54, 57, 65) !important;
     border: 1px #EBC2C2 solid;
@@ -2149,18 +2150,18 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     padding: 5px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix {
     line-height: 32px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix::before,
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix::after {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix::before,
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix::after {
     display: table;
     line-height: 0;
     content: "";
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix>img.avatar {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix > img.avatar {
     float: left;
     margin-right: 5px;
     display: block;
@@ -2169,16 +2170,16 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     border: 0;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix>div.infos {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix > div.infos {
     color: rgb(255, 255, 255);
     font-size: 13px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix>div.infos>i.username {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix > div.infos > i.username {
     color: rgb(161, 73, 73);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>p.text {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > p.text {
     padding: 5px 5px 0 5px;
     margin-top: 5px;
     border-top: 1px #eee solid;
@@ -2186,14 +2187,14 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     font-size: 13px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-Overview>div#advertisement-entry-list>div.container>div.clearfix>div.infos>span.time {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-Overview > div#advertisement-entry-list > div.container > div.clearfix > div.infos > span.time {
     float: right;
     color: #aaa;
     margin-right: 5px;
     font-size: 13px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent {
     background: rgb(38, 40, 47) !important;
     width: 40%;
     height: 40%;
@@ -2204,11 +2205,11 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     transform: translate(-50%, -50%);
     border: 2px rgb(95, 95, 95) solid;
     border-radius: 25px;
-    -webkit-box-shadow: 0px 4px 10px 5px rgba(0,0,0,0.74); 
-    box-shadow: 0px 4px 10px 5px rgba(0,0,0,0.74);
+    -webkit-box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.74);
+    box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.74);
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent>div.box {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent > div.box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2216,12 +2217,12 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     text-align: center;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent>div.box>p {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent > div.box > p {
     color: rgb(255, 255, 255);
     font-size: 13px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent>div.box>div.inputgroup>textarea {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent > div.box > div.inputgroup > textarea {
     line-height: 15px;
     margin: 3px 0 0 0;
     font-size: 12px;
@@ -2242,7 +2243,7 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     border-radius: 3px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent>div.box>div.inputgroup>i {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent > div.box > div.inputgroup > i {
     float: left;
     margin-right: 2px;
     margin-top: 12px;
@@ -2250,7 +2251,7 @@ div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Are
     font-size: 13px;
 }
 
-div.Tablet>div.Tablet-UseableArea>div#LifeinvaderApp-Area>div#LifeinvaderApp-Area-CreateEvent>div.box>button {
+div.Tablet > div.Tablet-UseableArea > div#LifeinvaderApp-Area > div#LifeinvaderApp-Area-CreateEvent > div.box > button {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;

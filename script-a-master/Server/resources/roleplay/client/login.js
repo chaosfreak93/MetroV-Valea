@@ -7,13 +7,13 @@ let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
 let loginModelHash = null;
-const storage = alt.LocalStorage.get();
+const storage = alt.LocalStorage;
 
 alt.onServer('Client:Login:CreateCEF', () => {
     if (loginBrowser == null) {
-        loginCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 3280, 5220, 26, 0, 0, 240, 50, true, 2);
+        loginCam = game.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280.0, 5220.0, 26.0, 0, 0, 240, 50, true, 2);
         game.setCamActive(loginCam, true);
-        game.renderScriptCams(true, false, 0, true, false);
+        game.renderScriptCams(true, false, 0, true, false, 0);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -32,7 +32,10 @@ alt.onServer('Client:Login:CreateCEF', () => {
             if (storage.get("discordId")) {
                 alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, storage.get("discordId"));
             } else {
-                if (alt.Discord.currentUser == null) { loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu."); return; }
+                if (alt.Discord.currentUser == null) {
+                    loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
+                    return;
+                }
                 alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.Discord.currentUser.id);
             }
         });
@@ -63,7 +66,18 @@ alt.onServer('Client:Login:CreateCEF', () => {
         });
 
         loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr) => {
+            game.freezeEntityPosition(alt.Player.local.scriptID, true);
             alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
+        });
+
+        loginBrowser.on("Client:Charcreator:SwitchOut", () => {
+            if (loginCam != null) {
+                game.renderScriptCams(false, false, 0, true, false, 0);
+                game.setCamActive(loginCam, false);
+                game.destroyCam(loginCam, true);
+                loginCam = null;
+            }
+            game.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
         });
     }
 });
@@ -73,7 +87,7 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     let headblends = JSON.parse(headblendsarray);
     let headoverlays = JSON.parse(headoverlayarray);
 
-    game.setPedHeadBlendData(alt.Player.local.scriptID, headblends[0], headblends[1], 0, headblends[2], headblends[5], 0, headblends[3], headblends[4], 0, 0);
+    game.setPedHeadBlendData(alt.Player.local.scriptID, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 1, 1, parseInt(headoverlays[2][1]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 2, 1, parseInt(headoverlays[2][2]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 5, 2, parseInt(headoverlays[2][5]), 1);
@@ -95,21 +109,8 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     game.setPedHairColor(alt.Player.local.scriptID, parseInt(headoverlays[2][13]), parseInt(headoverlays[1][13]));
 
     for (let i = 0; i < 20; i++) {
-        game.setPedFaceFeature(alt.Player.local.scriptID, i, facefeatures[i]);
+        game.setPedFaceFeature(alt.Player.local.scriptID, i, parseFloat(facefeatures[i]));
     }
-});
-
-alt.onServer("Client:SpawnArea:setCharClothes", (componentId, drawableId, textureId) => {
-    //alt.log(`Component: ${componentId} - drawable: ${drawableId} - texture: ${textureId}`);
-    game.setPedComponentVariation(alt.Player.local.scriptID, parseInt(componentId), parseInt(drawableId), parseInt(textureId), 0);
-});
-
-alt.onServer("Client:SpawnArea:setCharAccessory", (componentId, drawableId, textureId) => {
-    game.setPedPropIndex(alt.Player.local.scriptID, componentId, drawableId, textureId, false);
-});
-
-alt.onServer("Client:SpawnArea:clearCharAccessory", (componentId) => {
-    game.clearPedProp(alt.Player.local.scriptID, componentId);
 });
 
 alt.onServer("Client:Charselector:ViewCharacter", (gender, facefeaturearray, headblendsarray, headoverlayarray) => {
@@ -134,15 +135,15 @@ alt.onServer("Client:Login:showArea", (area) => {
         loginBrowser.emit("CEF:Login:showArea", area);
         if (area == "charselect") {
             if (loginCam != null) {
-                game.renderScriptCams(false, false, 0, true, false);
+                game.renderScriptCams(false, false, 0, true, false, 0);
                 game.setCamActive(loginCam, false);
                 game.destroyCam(loginCam, true);
                 loginCam = null;
             }
             game.setEntityAlpha(alt.Player.local.scriptID, 0, 0);
-            loginCam = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+            loginCam = game.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003.0, -98.6, 0, 0, 358, 18, true, 2);
             game.setCamActive(loginCam, true);
-            game.renderScriptCams(true, false, 0, true, false);
+            game.renderScriptCams(true, false, 0, true, false, 0);
         }
     }
 });
@@ -153,26 +154,31 @@ alt.onServer("Client:Charselector:sendCharactersToCEF", (chars) => {
     }
 });
 
-let destroyLoginBrowser = function() {
+let destroyLoginBrowser = function () {
     if (loginBrowser != null) {
         loginBrowser.destroy();
     }
     loginBrowser = null;
-    game.renderScriptCams(false, false, 0, true, false);
-    game.setCamActive(loginCam, false);
+    game.renderScriptCams(false, false, 0, true, false, 0);
     if (loginCam != null) {
+        game.setCamActive(loginCam, false);
         game.destroyCam(loginCam, true);
+        loginCam = null;
     }
     if (loginPedHandle != null) {
         game.deletePed(loginPedHandle);
         loginPedHandle = null;
     }
-    loginCam = null;
     alt.showCursor(false);
     alt.toggleGameControls(true);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     game.setEntityAlpha(alt.Player.local.scriptID, 255, 0);
 }
+
+alt.onServer("Client:SpawnArea:SwitchIn", () => {
+    game.switchInPlayer(alt.Player.local.scriptID);
+    game.freezeEntityPosition(alt.Player.local.scriptID, false);
+});
 
 function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
     let facefeatures = JSON.parse(facefeaturearray);
@@ -185,13 +191,13 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
     }
 
     if (gender == true) {
-        loginModelHash = game.getHashKey('mp_f_freemode_01');
+        loginModelHash = alt.hash('mp_f_freemode_01');
         game.requestModel(loginModelHash);
     } else if (gender == false) {
-        loginModelHash = game.getHashKey('mp_m_freemode_01');
+        loginModelHash = alt.hash('mp_m_freemode_01');
         game.requestModel(loginModelHash);
     }
-    alt.setTimeout(function() {
+    alt.setTimeout(function () {
         if (game.hasModelLoaded(loginModelHash)) {
             loginPedHandle = game.createPed(4, loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);
             game.setEntityAlpha(loginPedHandle, 255, 0);
@@ -200,8 +206,8 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
             game.disablePedPainAudio(loginPedHandle, true);
             game.freezeEntityPosition(loginPedHandle, true);
             game.taskSetBlockingOfNonTemporaryEvents(loginPedHandle, true);
-
-            game.setPedHeadBlendData(loginPedHandle, headblends[0], headblends[1], 0, headblends[2], headblends[5], 0, headblends[3], headblends[4], 0, 0);
+            
+            game.setPedHeadBlendData(loginPedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
             game.setPedHeadOverlayColor(loginPedHandle, 1, 1, parseInt(headoverlays[2][1]), 1);
             game.setPedHeadOverlayColor(loginPedHandle, 2, 1, parseInt(headoverlays[2][2]), 1);
             game.setPedHeadOverlayColor(loginPedHandle, 5, 2, parseInt(headoverlays[2][5]), 1);
@@ -223,7 +229,7 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
             game.setPedHairColor(loginPedHandle, parseInt(headoverlays[2][13]), parseInt(headoverlays[1][13]));
 
             for (let i = 0; i < 20; i++) {
-                game.setPedFaceFeature(loginPedHandle, i, facefeatures[i]);
+                game.setPedFaceFeature(loginPedHandle, i, parseFloat(facefeatures[i]));
             }
         }
     }, 200);
@@ -231,6 +237,15 @@ function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headove
 
 alt.on('connectionComplete', () => {
     loadallIPLsAndInteriors();
+    game.startAudioScene("FBI_HEIST_H5_MUTE_AMBIENCE_SCENE");
+    game.cancelCurrentPoliceReport();
+    game.clearAmbientZoneState("AZ_COUNTRYSIDE_PRISON_01_ANNOUNCER_GENERAL", 1);
+    game.clearAmbientZoneState("AZ_COUNTRYSIDE_PRISON_01_ANNOUNCER_WARNING", 1);
+    game.clearAmbientZoneState("AZ_COUNTRYSIDE_PRISON_01_ANNOUNCER_ALARM", 1);
+    game.setAmbientZoneState(0, 0, 0);
+    game.clearAmbientZoneState("AZ_DISTANT_SASQUATCH", 0);
+    game.setAudioFlag("LoadMPData", true);
+    game.setAudioFlag("DisableFlightMusic", true);
     alt.setStat('stamina', 50);
     alt.setStat('strength', 50);
     alt.setStat('lung_capacity', 100);
@@ -244,17 +259,22 @@ alt.on('connectionComplete', () => {
     alt.setMsPerGameMinute(60000);
 });
 
+alt.setInterval(() => {
+    let date = new Date();
+    game.setClockTime(parseInt(date.getHours()), parseInt(date.getMinutes()), parseInt(date.getSeconds()));
+    alt.setMsPerGameMinute(60000);
+}, 3600000);
+
 function loadallIPLsAndInteriors() {
     alt.requestIpl("hei_hw1_blimp_interior_v_apart_midspaz_milo");
-    alt.requestIpl('canyonriver01');
     alt.requestIpl('chop_props');
     alt.requestIpl('FIBlobby');
     alt.removeIpl('FIBlobbyfake');
     alt.requestIpl('FBI_colPLUG');
     alt.requestIpl('FBI_repair');
     alt.requestIpl('v_tunnel_hole');
-    alt.requestIpl('TrevorsMP');
-    alt.requestIpl('TrevorsTrailer');
+    alt.removeIpl('TrevorsMP');
+    alt.removeIpl('TrevorsTrailer');
     alt.requestIpl('TrevorsTrailerTidy');
     alt.removeIpl('farm_burnt');
     alt.removeIpl('farm_burnt_lod');
@@ -272,16 +292,13 @@ function loadallIPLsAndInteriors() {
     alt.requestIpl('CS1_02_cf_onmission3');
     alt.requestIpl('CS1_02_cf_onmission4');
     alt.requestIpl('v_rockclub');
-    alt.requestIpl('v_janitor');
+    alt.removeIpl('v_janitor');
     alt.removeIpl('hei_bi_hw1_13_door');
     alt.requestIpl('bkr_bi_hw1_13_int');
     alt.removeIpl('ufo');
     alt.removeIpl('ufo_lod');
     alt.removeIpl('ufo_eye');
-    alt.removeIpl('v_carshowroom');
     alt.removeIpl('shutter_open');
-    alt.removeIpl('shutter_closed');
-    alt.removeIpl('shr_int');
     alt.requestIpl('csr_afterMission');
     alt.requestIpl('v_carshowroom');
     alt.requestIpl('shr_int');
@@ -350,25 +367,43 @@ function loadallIPLsAndInteriors() {
     alt.requestIpl('hei_carrier_LODLights');
     alt.requestIpl('bkr_bi_id1_23_door');
     alt.requestIpl('lr_cs6_08_grave_closed');
-    alt.requestIpl('hei_sm_16_interior_v_bahama_milo_');
+    alt.requestIpl('v_bahama');
     alt.removeIpl('CS3_07_MPGates');
     alt.requestIpl('cs5_4_trains');
     alt.requestIpl('v_lesters');
     alt.requestIpl('v_trevors');
     alt.requestIpl('v_michael');
+    alt.requestIpl('v_michael_garage');
     alt.requestIpl('v_comedy');
     alt.requestIpl('v_cinema');
-    alt.requestIpl('V_Sweat');
+    alt.requestIpl('v_sweat');
+    alt.removeIpl('v_sweatempty');
     alt.requestIpl('V_35_Fireman');
-    alt.requestIpl('redCarpet');
+    alt.removeIpl('redCarpet');
     alt.requestIpl('triathlon2_VBprops');
     alt.requestIpl('jetstegameurnel');
     alt.requestIpl('Jetsteal_ipl_grp1');
-    alt.requestIpl('v_hospital');
+    alt.removeIpl('v_hospital');
     alt.requestIpl('bh1_47_joshhse_unburnt');
+    alt.requestIpl('canyonriver01');
+    alt.requestIpl('canyonriver01_lod');
+    alt.requestIpl('cs3_05_water_grp1');
+    alt.requestIpl('cs3_05_water_grp1_lod');
+    alt.requestIpl('trv1_trail_start');
+    alt.requestIpl('CanyonRvrShallow');
+
+    alt.requestIpl('vw_casino_main');
+    alt.requestIpl('hei_dlc_windows_casino');
+    alt.requestIpl('hei_dlc_casino_door');
+    alt.requestIpl('vw_dlc_casino_door');
+    alt.requestIpl('vw_casino_door');
+    alt.requestIpl('hei_dlc_casino_aircon');
 
     // HIGH END APARTMENT IPL
     alt.requestIpl("apa_v_mp_h_02_a");
+
+    // NIGHTCLUB
+    alt.requestIpl("ba_dlc_int_01_ba");
 
     // CLOSE OPEN DOORS
     game.doorControl(3687927243, -1149.709, -1521.088, 10.78267, true, 0.0, 50.0, 0.0); // VESPUCCI HOUSE
@@ -383,74 +418,89 @@ function loadallIPLsAndInteriors() {
     game.doorControl(308207762, 7.518359, 539.5268, 176.17764, true, 0.0, 50.0, 0.0); // FRANKLIN'S NEW HOUSE
     game.doorControl(1145337974, 1273.8154, -1720.6969, 54.92143, true, 0.0, 50.0, 0.0); // LESTER'S HOUSE
     game.doorControl(132154435, 1972.769, 3815.366, 33.663258, true, 0.0, 50.0, 0.0); // TREVOR'S HOUSE
-   
-    alt.requestIpl('shr_int'); //Premium Deluxe Motorsports
-    game.activateInteriorEntitySet(game.getInteriorAtCoordsWithType(-38.62, -1099.01, 27.31, 'v_carshowroom'), 'csr_beforeMission'); //Premium Deluxe Motorsports
-    game.activateInteriorEntitySet(game.getInteriorAtCoordsWithType(-38.62, -1099.01, 27.31, 'v_carshowroom'), 'shutter_closed'); //Premium Deluxe Motorsports
+    game.doorControl(2739859149, -1607.536, -3005.431, -75.05607, true, 0.0, 50.0, 0.0); // NIGHTCLUB OFFICE
+    game.doorControl(1695461688, -1610.125, -3004.97, -78.84087, true, 0.0, 50.0, 0.0); // NIGHTCLUB GARAGE
 
-    var nightClubGalaxyIntId = game.getInteriorAtCoords(345.4899597168, 294.95315551758, 98.191421508789); //Galaxy Nightclub
-    //120834 Galaxy InteriorId
-    game.pinInteriorInMemory(nightClubGalaxyIntId);
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_security_upgrade"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_equipment_setup"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_Style01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_Style02"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_Style03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_style01_podium"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_style02_podium"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_style03_podium"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "int01_ba_lights_screen"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_Screen"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_bar_content"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_booze_01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_booze_02"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_booze_03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_dj01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_dj02"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_dj03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_dj04"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "DJ_01_Lights_01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_01_Lights_02"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_01_Lights_03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_01_Lights_04"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_02_Lights_01"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "DJ_02_Lights_02"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_02_Lights_03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_02_Lights_04"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_03_Lights_01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_03_Lights_02"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "DJ_03_Lights_03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_03_Lights_04"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_04_Lights_01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_04_Lights_02"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "DJ_04_Lights_03"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "DJ_04_Lights_04"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "light_rigs_off"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_lightgrid_01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_Clutter"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_equipment_upgrade"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_02"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_04"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_05"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_06"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_07"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_08"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_clubname_09"); //Galaxy Nightclub
-    game.activateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_dry_ice"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_deliverytruck"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy04"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy05"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy07"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy09"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy08"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy11"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy10"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy03"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy01"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trophy02"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_trad_lights"); //Galaxy Nightclub
-    game.deactivateInteriorEntitySet(nightClubGalaxyIntId, "Int01_ba_Worklamps"); //Galaxy Nightclub
-    game.refreshInterior(nightClubGalaxyIntId); //Galaxy Nightclub
+    activateIPLProps();
+}
+
+function activateIPLProps() {
+    let interiorID = game.getInteriorAtCoords(-38.62, -1099.01, 27.31);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, 'csr_beforeMission');
+        game.activateInteriorEntitySet(interiorID, 'shutter_closed');
+        game.refreshInterior(interiorID);
+    }
+
+    interiorID = game.getInteriorAtCoords(976.6364, 70.29476, 115.1641);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Tint_Shell');
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Pattern_09');
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Spa_Bar_Open');
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Media_Bar_Open');
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Arcade_Modern');
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Bar_Clutter');
+        game.activateInteriorEntitySet(interiorID, 'Set_Pent_Clutter_03');
+        game.activateInteriorEntitySet(interiorID, 'Set_pent_bar_light_02');
+        game.refreshInterior(interiorID);
+    }
+
+    interiorID = game.getInteriorAtCoordsWithType(-807.343, 174.9807, 71.16331);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, 'V_Michael_M_items');
+        game.activateInteriorEntitySet(interiorID, 'V_Michael_D_items');
+        game.activateInteriorEntitySet(interiorID, 'V_Michael_S_items');
+        game.activateInteriorEntitySet(interiorID, 'V_Michael_L_Items');
+        game.activateInteriorEntitySet(interiorID, 'V_Michael_bed_tidy');
+        game.removeModelHide(-802.73, 167.5, 77.58, 1, alt.hash("v_ilev_mm_windowwc"), false);
+        game.refreshInterior(interiorID);
+    }
+
+    interiorID = game.getInteriorAtCoords(-1153.183, -1518.348, 9.630823);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, 'swap_clean_apt');
+        game.activateInteriorEntitySet(interiorID, 'layer_torture');
+        game.activateInteriorEntitySet(interiorID, 'swap_sofa_A');
+        game.activateInteriorEntitySet(interiorID, 'layer_whiskey');
+        game.refreshInterior(interiorID);
+    }
+    
+    interiorID = game.getInteriorAtCoords(3.199463, 529.7808, 169.6262);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, 'franklin_unpacking');
+        game.activateInteriorEntitySet(interiorID, 'franklin_settled');
+        game.activateInteriorEntitySet(interiorID, 'progress_tshirt');
+        game.activateInteriorEntitySet(interiorID, 'bong_and_wine');
+        game.activateInteriorEntitySet(interiorID, 'progress_flyer');
+        game.activateInteriorEntitySet(interiorID, 'progress_tux');
+        game.activateInteriorEntitySet(interiorID, 'locked');
+        game.refreshInterior(interiorID);
+    }
+
+    interiorID = game.getInteriorAtCoords(-1604.664, -3012.583, -80);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_security_upgrade");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_equipment_setup");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_Style03");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_style03_podium");
+        game.activateInteriorEntitySet(interiorID, "int01_ba_lights_screen");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_Screen");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_bar_content");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_dj03");
+        game.activateInteriorEntitySet(interiorID, "DJ_01_Lights_01");
+        game.activateInteriorEntitySet(interiorID, "DJ_02_Lights_02");
+        game.activateInteriorEntitySet(interiorID, "DJ_03_Lights_03");
+        game.activateInteriorEntitySet(interiorID, "DJ_04_Lights_04");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_lightgrid_01");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_equipment_upgrade");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_clubname_01");
+        game.activateInteriorEntitySet(interiorID, "Int01_ba_dry_ice");
+        game.refreshInterior(interiorID);
+    }
 }

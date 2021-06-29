@@ -9,30 +9,30 @@
 </head>
 
 <body>
-    <div class="adminmenu-main noselect">
-        <p class="adminmenu-main-title">Adminmenü</p>
-        <hr>
-        <ul class="adminmenu-list adminmenu-main-list">
-            <li class="adminmenu-main-list-item adminmenu-main-list-item-player selected">PLAYER</li>
-            <li class="adminmenu-main-list-item adminmenu-main-list-item-online">ONLINE</li>
-            <li class="adminmenu-main-list-item adminmenu-main-list-item-misc">MISC</li>
-            <li class="adminmenu-main-list-item adminmenu-main-list-item-fahrzeug">FAHRZEUG</li>
-            <li class="adminmenu-main-list-item adminmenu-main-list-item-peds">PEDS</li>
-            <li class="adminmenu-main-list-item adminmenu-main-list-item-server">SERVER</li>
-        </ul>
-        <ul id="adminmenu-player-list" class="adminmenu-list adminmenu-player-list"></ul>
-        <ul id="adminmenu-online-list" class="adminmenu-list adminmenu-online-list"></ul>
-        <ul id="adminmenu-misc-list" class="adminmenu-list adminmenu-misc-list"></ul>
-        <ul id="adminmenu-fahrzeug-list" class="adminmenu-list adminmenu-fahrzeug-list"></ul>
-        <ul id="adminmenu-peds-list" class="adminmenu-list adminmenu-peds-list"></ul>
-        <ul id="adminmenu-server-list" class="adminmenu-list adminmenu-server-list"></ul>
-        <ul id="adminmenu-online_action-list" class="adminmenu-list adminmenu-online_action-list"></ul>
-        <input type="input" class="adminmenu-input" autocomplete="off" required>
-        <br><br>
-        <hr class="hr-bottom">
-    </div>
-    <script src="../utils/jquery-3.6.0.min.js"></script>
-    <script src="../utils/jquery-ui-1.12.1.min.js"></script>
+<div class="adminmenu-main noselect">
+    <p class="adminmenu-main-title">Adminmenü</p>
+    <hr>
+    <ul class="adminmenu-list adminmenu-main-list">
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-player selected">PLAYER</li>
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-online">ONLINE</li>
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-misc">MISC</li>
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-fahrzeug">FAHRZEUG</li>
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-peds">PEDS</li>
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-server">SERVER</li>
+    </ul>
+    <ul id="adminmenu-player-list" class="adminmenu-list adminmenu-player-list"></ul>
+    <ul id="adminmenu-online-list" class="adminmenu-list adminmenu-online-list"></ul>
+    <ul id="adminmenu-misc-list" class="adminmenu-list adminmenu-misc-list"></ul>
+    <ul id="adminmenu-fahrzeug-list" class="adminmenu-list adminmenu-fahrzeug-list"></ul>
+    <ul id="adminmenu-peds-list" class="adminmenu-list adminmenu-peds-list"></ul>
+    <ul id="adminmenu-server-list" class="adminmenu-list adminmenu-server-list"></ul>
+    <ul id="adminmenu-online_action-list" class="adminmenu-list adminmenu-online_action-list"></ul>
+    <input type="input" class="adminmenu-input" autocomplete="off" required>
+    <br><br>
+    <hr class="hr-bottom">
+</div>
+<script src="../utils/jquery-3.6.0.min.js"></script>
+<script src="../utils/jquery-ui-1.12.1.min.js"></script>
 </body>
 <script>
     let adminmenu_selectedfield = "player";
@@ -63,8 +63,8 @@
     let activatedmodules_peds = [];
     let activatedmodules_server = [];
 
-    function openadminmenu() { 
-        $(`.adminmenu-main`).show(); 
+    function openadminmenu() {
+        $(`.adminmenu-main`).show();
         if (!activatedmodulespushed) {
 
             activatedmodulespushed = true;
@@ -85,11 +85,11 @@
         }
     };
 
-    function closeadminmenu() { 
-        $(`.adminmenu-main`).hide(); 
+    function closeadminmenu() {
+        $(`.adminmenu-main`).hide();
     };
 
-    function ChangeSelectedField(UpOrDown) { 
+    function ChangeSelectedField(UpOrDown) {
         if (UpOrDown == 'up') {
             if (adminmenu_selectedmenu == "main" && adminmenu_selectedfield != adminmenu_main_items[0] && adminmenu_selectedfield != "inputfield") {
                 $(`.adminmenu-main-list-item`).removeClass("selected");
@@ -146,7 +146,7 @@
                             $(`.adminmenu-input`).addClass("selectedinput");
                             adminmenu_selectedfield = "inputfield";
                             $(`.adminmenu-input`).focus();
-                          alt.emit("Client:AdminMenu:SetGameControls", true);
+                            alt.emit("Client:AdminMenu:SetGameControls", true);
                         }
                     })
                 }
@@ -217,7 +217,7 @@
                 if (adminmenu_selectedfield == a) {
                     adminmenu_selectedmenu = a;
                     $(`.adminmenu-list`).hide();
-                    $(`.${"adminmenu-" + a + "-list"}`).show();  
+                    $(`.${"adminmenu-" + a + "-list"}`).show();
                     adminmenu_selectedfield = eval("adminmenu_" + a + "_items")[0];
                     $(`.adminmenu-main-list-item`).removeClass("selected");
                     $(`.${"adminmenu-" + adminmenu_selectedmenu + "-list-item-" + adminmenu_selectedfield}`).addClass("selected");
@@ -272,7 +272,7 @@
     function UseAllOnlinePlayerArray(AllOnlinePlayerArray) {
         adminmenu_online_items = [];
         var html = "";
-        
+
         AllOnlinePlayerArray = JSON.parse(AllOnlinePlayerArray);
 
         for (var i in AllOnlinePlayerArray) {
@@ -289,13 +289,13 @@
         if ($(`.${"adminmenu-" + a + "-list-item-" + b}`).hasClass("onoff")) {
             if (eval("activatedmodules_" + a)[eval("adminmenu_" + a + "_items").indexOf(b)] == 0) {
                 eval("activatedmodules_" + a)[eval("adminmenu_" + a + "_items").indexOf(b)] = 1;
-                $(`.${"adminmenu-" + a + "-list-item-" + b}`).text(b.toUpperCase().replace(/_/g, " ") + " [AN]"); 
+                $(`.${"adminmenu-" + a + "-list-item-" + b}`).text(b.toUpperCase().replace(/_/g, " ") + " [AN]");
                 $(`.${"adminmenu-" + a + "-list-item-" + b}`).addClass("on");
                 if (a == "online_action") alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "on", selecteduser, $(`.adminmenu-input`).val());
                 else alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "on", "none", $(`.adminmenu-input`).val());
             } else {
                 eval("activatedmodules_" + a)[eval("adminmenu_" + a + "_items").indexOf(b)] = 0;
-                $(`.${"adminmenu-" + a + "-list-item-" + b}`).text(b.toUpperCase().replace(/_/g, " ") + " [AUS]"); 
+                $(`.${"adminmenu-" + a + "-list-item-" + b}`).text(b.toUpperCase().replace(/_/g, " ") + " [AUS]");
                 $(`.${"adminmenu-" + a + "-list-item-" + b}`).addClass("off");
                 if (a == "online_action") alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "off", selecteduser, $(`.adminmenu-input`).val());
                 else alt.emit("Client:AdminMenu:DoAction", adminmenu_selectedfield, "off", "none", $(`.adminmenu-input`).val());

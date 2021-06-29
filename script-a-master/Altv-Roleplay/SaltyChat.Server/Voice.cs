@@ -5,13 +5,14 @@ namespace SaltyChat.Server
 {
     public class Voice : AsyncResource
     {
-        public override void OnStart() {
+        public override void OnStart()
+        {
             var voiceManager = new VoiceManager();
-            Alt.Log("SaltyChat enabled.");
         }
 
-        public override void OnStop() {
-            Alt.Log("SaltyChat disabled.");
+        public override void OnStop()
+        {
+            Alt.Log("[SaltyChat] New status: disabled");
         }
     }
 }

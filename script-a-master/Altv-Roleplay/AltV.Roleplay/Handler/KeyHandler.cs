@@ -63,8 +63,9 @@ namespace Altv_Roleplay.Handler
 
                     if (farmColData != null) {
                         //FarmingHandler.ProduceItem(player, farmColData.neededItem, farmColData.producedItem, farmColData.neededItemAmount, farmColData.producedItemAmount, farmColData.duration);
-                        FarmingHandler.openFarmingCEF(player, farmColData.neededItem, farmColData.neededItemAmount, farmColData.neededItemTWO, farmColData.neededItemTWOAmount, 
-                            farmColData.neededItemTHREE, farmColData.neededItemTHREEAmount, 
+                        FarmingHandler.openFarmingCEF(player, farmColData.neededItem, farmColData.neededItemAmount, farmColData.neededItemTWO,
+                            farmColData.neededItemTWOAmount,
+                            farmColData.neededItemTHREE, farmColData.neededItemTHREEAmount,
                             farmColData.producedItem, farmColData.producedItemAmount, farmColData.duration);
                         return;
                     }
@@ -150,6 +151,25 @@ namespace Altv_Roleplay.Handler
 
                 if (teleportsPos != null && !player.IsInVehicle) {
                     player.Position = new Position(teleportsPos.targetX, teleportsPos.targetY, teleportsPos.targetZ + 0.5f);
+                    return;
+                }
+                
+                Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
+                Position casinoExitPos = new Position(1089.6263f, 205.87253f, -49.80439453125f);
+                
+                bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 2f);
+
+                if (casinoEntrance && !player.IsInVehicle) {
+                    player.Emit("Casino:Enter");
+                    player.Position = new Position(casinoExitPos.X, casinoExitPos.Y, casinoExitPos.Z + 0.5f);
+                    return;
+                }
+                
+                bool casinoExit = player.Position.IsInRange(casinoExitPos, 2f);
+
+                if (casinoExit && !player.IsInVehicle) {
+                    player.Emit("Casino:Leave");
+                    player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
                     return;
                 }
 

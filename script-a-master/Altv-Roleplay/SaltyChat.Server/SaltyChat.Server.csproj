@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AltV.Net" Version="2.3.53-dev53" />
-    <PackageReference Include="AltV.Net.Async" Version="2.3.53-dev53" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="AltV.Net" Version="2.4.7-rc53" />
+    <PackageReference Include="AltV.Net.Async" Version="2.4.7-rc53" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +20,7 @@
     <PropertyGroup>
       <CopiedFiles>$(OutputPath)\publish\*.*</CopiedFiles>
 
-      <TargetLocation Condition=" '$(Configuration)' == 'Release' ">C:\Users\Administrator\Desktop\Testserver\script-a-master\Server\resources\SaltyClient\</TargetLocation>
+      <TargetLocation Condition=" '$(Configuration)' == 'Release' ">C:\Users\yanlu\RiderProjects\MetroV\script-a-master\Server\resources\SaltyClient\</TargetLocation>
     </PropertyGroup>
     <Copy Condition=" '$(TargetLocation)' != '' " SourceFiles="@(AllOutputFiles)" DestinationFolder="$(TargetLocation)" SkipUnchangedFiles="false" />
   </Target>

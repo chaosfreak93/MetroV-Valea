@@ -48,45 +48,45 @@
 // @doc on
 
 // The default x-origin for transforms
-$default-origin-x    : 50%                   !default;
+$default-origin-x: 50% !default;
 // The default y-origin for transforms
-$default-origin-y    : 50%                   !default;
+$default-origin-y: 50% !default;
 // The default z-origin for transforms
-$default-origin-z    : 50%                   !default;
+$default-origin-z: 50% !default;
 
 
 // The default x-multiplier for scaling
-$default-scale-x     : 1.25                  !default;
+$default-scale-x: 1.25 !default;
 // The default y-multiplier for scaling
-$default-scale-y     : $default-scale-x      !default;
+$default-scale-y: $default-scale-x !default;
 // The default z-multiplier for scaling
-$default-scale-z     : $default-scale-x      !default;
+$default-scale-z: $default-scale-x !default;
 
 
 // The default angle for rotations
-$default-rotate      : 45deg                 !default;
+$default-rotate: 45deg !default;
 
 
 // The default x-vector for the axis of 3d rotations
-$default-vector-x    : 1                     !default;
+$default-vector-x: 1 !default;
 // The default y-vector for the axis of 3d rotations
-$default-vector-y    : 1                     !default;
+$default-vector-y: 1 !default;
 // The default z-vector for the axis of 3d rotations
-$default-vector-z    : 1                     !default;
+$default-vector-z: 1 !default;
 
 
 // The default x-length for translations
-$default-translate-x : 1em                   !default;
+$default-translate-x: 1em !default;
 // The default y-length for translations
-$default-translate-y : $default-translate-x  !default;
+$default-translate-y: $default-translate-x !default;
 // The default z-length for translations
-$default-translate-z : $default-translate-x  !default;
+$default-translate-z: $default-translate-x !default;
 
 
 // The default x-angle for skewing
-$default-skew-x      : 5deg                  !default;
+$default-skew-x: 5deg !default;
 // The default y-angle for skewing
-$default-skew-y      : 5deg                  !default;
+$default-skew-y: 5deg !default;
 
 
 // **Transform-origin**
@@ -104,11 +104,11 @@ $default-skew-y      : 5deg                  !default;
   $only3d: $only3d or -compass-list-size(-compass-list($origin)) > 2;
   @if $only3d {
     @include experimental(transform-origin, $origin,
-      -moz, -webkit, -o, -ms, not(-khtml), official
+            -moz, -webkit, -o, -ms, not(-khtml), official
     );
   } @else {
     @include experimental(transform-origin, $origin,
-      -moz, -webkit, -o, -ms, not(-khtml), official
+            -moz, -webkit, -o, -ms, not(-khtml), official
     );
   }
 }
@@ -128,9 +128,21 @@ $default-skew-y      : 5deg                  !default;
 ) {
   $origin: unquote('');
   @if $origin-x or $origin-y or $origin-z {
-    @if $origin-x { $origin: $origin-x; } @else { $origin: 50%; }
-    @if $origin-y { $origin: $origin $origin-y; } @else { @if $origin-z { $origin: $origin 50%; }}
-    @if $origin-z { $origin: $origin $origin-z; }
+    @if $origin-x {
+      $origin: $origin-x;
+    } @else {
+      $origin: 50%;
+    }
+    @if $origin-y {
+      $origin: $origin $origin-y;
+    } @else {
+      @if $origin-z {
+        $origin: $origin 50%;
+      }
+    }
+    @if $origin-z {
+      $origin: $origin $origin-z;
+    }
     @include apply-origin($origin, $only3d);
   }
 }
@@ -147,11 +159,11 @@ $default-skew-y      : 5deg                  !default;
 ) {
   @if $only3d {
     @include experimental(transform, $transform,
-      -moz, -webkit, -o, -ms, not(-khtml), official
+            -moz, -webkit, -o, -ms, not(-khtml), official
     );
   } @else {
     @include experimental(transform, $transform,
-      -moz, -webkit, -o, -ms, not(-khtml), official
+            -moz, -webkit, -o, -ms, not(-khtml), official
     );
   }
 }
@@ -179,7 +191,7 @@ $default-skew-y      : 5deg                  !default;
 // values from 500 to 1000 are more-or-less "normal" - a good starting-point.
 @mixin perspective($p) {
   @include experimental(perspective, $p,
-    -moz, -webkit, -o, -ms, not(-khtml), official
+          -moz, -webkit, -o, -ms, not(-khtml), official
   );
 }
 
@@ -190,7 +202,7 @@ $default-skew-y      : 5deg                  !default;
 // where the two arguments represent x/y coordinates
 @mixin perspective-origin($origin: 50%) {
   @include experimental(perspective-origin, $origin,
-    -moz, -webkit, -o, -ms, not(-khtml), official
+          -moz, -webkit, -o, -ms, not(-khtml), official
   );
 }
 
@@ -202,7 +214,7 @@ $default-skew-y      : 5deg                  !default;
 // Browsers default to `flat`, mixin defaults to `preserve-3d`.
 @mixin transform-style($style: preserve-3d) {
   @include experimental(transform-style, $style,
-    -moz, -webkit, -o, -ms, not(-khtml), official
+          -moz, -webkit, -o, -ms, not(-khtml), official
   );
 }
 
@@ -214,7 +226,7 @@ $default-skew-y      : 5deg                  !default;
 // Browsers default to visible, mixin defaults to hidden
 @mixin backface-visibility($visibility: hidden) {
   @include experimental(backface-visibility, $visibility,
-    -moz, -webkit, -o, -ms, not(-khtml), official
+          -moz, -webkit, -o, -ms, not(-khtml), official
   );
 }
 
@@ -244,7 +256,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: scale($scale-x, $scale-y);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -258,7 +272,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: scaleX($scale);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -272,7 +288,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: scaleY($scale);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -285,7 +303,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: scaleZ($scale);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -300,7 +320,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: scale3d($scale-x, $scale-y, $scale-z);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -319,7 +341,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: rotate($rotate);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -343,7 +367,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: rotateX($rotate);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -356,7 +382,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: rotateY($rotate);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -375,7 +403,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: rotate3d($vector-x, $vector-y, $vector-z, $rotate);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -395,7 +425,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: translate($translate-x, $translate-y);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -409,7 +441,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: translateX($trans-x);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -423,7 +457,9 @@ $default-skew-y      : 5deg                  !default;
   $only3d:      false
 ) {
   $trans: translateY($trans-y);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform($trans, $only3d);
 }
 
@@ -436,7 +472,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: translateZ($trans-z);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -451,7 +489,9 @@ $default-skew-y      : 5deg                  !default;
   $perspective: false
 ) {
   $trans: translate3d($translate-x, $translate-y, $translate-z);
-  @if $perspective { $trans: perspective($perspective) $trans; }
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
   @include transform3d($trans);
 }
 
@@ -533,39 +573,72 @@ $default-skew-y      : 5deg                  !default;
   $trans: unquote("");
 
   // perspective
-  @if $perspective { $trans: perspective($perspective) ; }
+  @if $perspective {
+    $trans: perspective($perspective) ;
+  }
 
   // scale
   @if $scale-x and $scale-y {
-    @if $scale-z { $trans: $trans scale3d($scale-x, $scale-y, $scale-z); }
-    @else { $trans: $trans scale($scale-x, $scale-y); }
+    @if $scale-z {
+      $trans: $trans scale3d($scale-x, $scale-y, $scale-z);
+    } @else {
+      $trans: $trans scale($scale-x, $scale-y);
+    }
   } @else {
-    @if $scale-x { $trans: $trans scaleX($scale-x); }
-    @if $scale-y { $trans: $trans scaleY($scale-y); }
-    @if $scale-z { $trans: $trans scaleZ($scale-z); }
+    @if $scale-x {
+      $trans: $trans scaleX($scale-x);
+    }
+    @if $scale-y {
+      $trans: $trans scaleY($scale-y);
+    }
+    @if $scale-z {
+      $trans: $trans scaleZ($scale-z);
+    }
   }
 
   // rotate
-  @if $rotate-x { $trans: $trans rotateX($rotate-x); }
-  @if $rotate-y { $trans: $trans rotateY($rotate-y); }
-  @if $rotate-z { $trans: $trans rotateZ($rotate-z); }
-  @if $rotate3d { $trans: $trans rotate3d($rotate3d); }
+  @if $rotate-x {
+    $trans: $trans rotateX($rotate-x);
+  }
+  @if $rotate-y {
+    $trans: $trans rotateY($rotate-y);
+  }
+  @if $rotate-z {
+    $trans: $trans rotateZ($rotate-z);
+  }
+  @if $rotate3d {
+    $trans: $trans rotate3d($rotate3d);
+  }
 
   // translate
   @if $trans-x and $trans-y {
-    @if $trans-z { $trans: $trans translate3d($trans-x, $trans-y, $trans-z); }
-    @else { $trans: $trans translate($trans-x, $trans-y); }
+    @if $trans-z {
+      $trans: $trans translate3d($trans-x, $trans-y, $trans-z);
+    } @else {
+      $trans: $trans translate($trans-x, $trans-y);
+    }
   } @else {
-    @if $trans-x { $trans: $trans translateX($trans-x); }
-    @if $trans-y { $trans: $trans translateY($trans-y); }
-    @if $trans-z { $trans: $trans translateZ($trans-z); }
+    @if $trans-x {
+      $trans: $trans translateX($trans-x);
+    }
+    @if $trans-y {
+      $trans: $trans translateY($trans-y);
+    }
+    @if $trans-z {
+      $trans: $trans translateZ($trans-z);
+    }
   }
 
   // skew
-  @if $skew-x and $skew-y { $trans: $trans skew($skew-x, $skew-y); }
-  @else {
-    @if $skew-x { $trans: $trans skewX($skew-x); }
-    @if $skew-y { $trans: $trans skewY($skew-y); }
+  @if $skew-x and $skew-y {
+    $trans: $trans skew($skew-x, $skew-y);
+  } @else {
+    @if $skew-x {
+      $trans: $trans skewX($skew-x);
+    }
+    @if $skew-y {
+      $trans: $trans skewY($skew-y);
+    }
   }
 
   // apply it!
@@ -587,12 +660,12 @@ $default-skew-y      : 5deg                  !default;
   $origin-y: false
 ) {
   @include create-transform(
-    false,
-    $scale, $scale, false,
-    false, false, $rotate, false,
-    $trans-x, $trans-y, false,
-    $skew-x, $skew-y,
-    $origin-x, $origin-y, false,
-    false
+                  false,
+                  $scale, $scale, false,
+                  false, false, $rotate, false,
+                  $trans-x, $trans-y, false,
+                  $skew-x, $skew-y,
+                  $origin-x, $origin-y, false,
+                  false
   );
 }

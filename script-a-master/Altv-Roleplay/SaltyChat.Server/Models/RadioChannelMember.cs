@@ -2,16 +2,6 @@
 {
     public class RadioChannelMember
     {
-        #region Constructor
-
-        internal RadioChannelMember(RadioChannel radioChannel, VoiceClient voiceClient, bool isPrimary) {
-            RadioChannel = radioChannel;
-            VoiceClient = voiceClient;
-            IsPrimary = isPrimary;
-        }
-
-        #endregion
-
         #region Props / Fields
 
         internal RadioChannel RadioChannel { get; }
@@ -19,6 +9,17 @@
         internal bool IsPrimary { get; }
         internal bool IsSending { get; set; }
         internal bool IsSpeakerEnabled { get; set; }
+
+        #endregion
+
+        #region Constructor
+
+        internal RadioChannelMember(RadioChannel radioChannel, VoiceClient voiceClient, bool isPrimary)
+        {
+            RadioChannel = radioChannel;
+            VoiceClient = voiceClient;
+            IsPrimary = isPrimary;
+        }
 
         #endregion
     }

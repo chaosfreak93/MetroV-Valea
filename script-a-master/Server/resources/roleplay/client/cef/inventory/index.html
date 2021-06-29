@@ -12,41 +12,41 @@
 </head>
 
 <body>
-    <ul class='custom-menu'>
-        <li id="customMenuGiveItem"><i class="fas fa-user-friends"></i>Geben</li>
-        <li id="customMenuUseItem"><i class="fas fa-hand-rock" style="padding-right: 8px"></i>Benutzen</li>
-        <li id="customMenuDropItem"><i class="fas fa-chevron-down" style="padding-right: 10px"></i>Auf den Boden legen</li>
-        <li id="customMenuSwitchBagItem"><i class="fas fa-suitcase" style="padding-right: 6px"></i>
-            <font id="customMenuSwitchBagItem-Text">In den Rucksack</font>
-        </li>
-    </ul>
+<ul class='custom-menu'>
+    <li id="customMenuGiveItem"><i class="fas fa-user-friends"></i>Geben</li>
+    <li id="customMenuUseItem"><i class="fas fa-hand-rock" style="padding-right: 8px"></i>Benutzen</li>
+    <li id="customMenuDropItem"><i class="fas fa-chevron-down" style="padding-right: 10px"></i>Auf den Boden legen</li>
+    <li id="customMenuSwitchBagItem"><i class="fas fa-suitcase" style="padding-right: 6px"></i>
+        <font id="customMenuSwitchBagItem-Text">In den Rucksack</font>
+    </li>
+</ul>
 
-    <div id="InventoryBox">
-        <div class="headContainer float-left" onclick="changeSite(`inventory`);">
-            <span id="inventorySiteTitle" class="active">INVENTAR (<font id="inventoryWeight">0</font>/<font id="inventoryMaxWeight">20</font>kg)</span>
-        </div>
-        <div id="backpackHeadContainer" class="headContainer float-right" onclick="changeSite(`backpack`);">
-            <span id="backpackSiteTitle">RUCKSACK (??/<font id="backpackMaxWeight">??</font>kg)</span>
-        </div>
-
-        <div class="ContentArea">
-            <ul id="inventorySiteItemList" class="list-group"></ul>
-            <ul id="backpackSiteItemList" class="list-group" style="display: none"></ul>
-        </div>
-
-        <hr>
-
-        <p class="title">ANZAHL AUSWÄHLEN</p>
-        <p class="desc">Um festzulegen wieviel du von einem Gegenstand wegwerfen oder transferieren möchtest, trage die Anzahl unten ein.</p>
-        <input id="SelectedItemAmount" type="number" min="1" value="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+<div id="InventoryBox">
+    <div class="headContainer float-left" onclick="changeSite(`inventory`);">
+        <span id="inventorySiteTitle" class="active">INVENTAR (<font id="inventoryWeight">0</font>/<font id="inventoryMaxWeight">20</font>kg)</span>
+    </div>
+    <div id="backpackHeadContainer" class="headContainer float-right" onclick="changeSite(`backpack`);">
+        <span id="backpackSiteTitle">RUCKSACK (??/<font id="backpackMaxWeight">??</font>kg)</span>
     </div>
 
+    <div class="ContentArea">
+        <ul id="inventorySiteItemList" class="list-group"></ul>
+        <ul id="backpackSiteItemList" class="list-group" style="display: none"></ul>
+    </div>
 
-    <script src="../utils/jquery-3.6.0.min.js"></script>
-    <script src="../utils/popper-1.14.7.min.js"></script>
-    <script src="../utils/bootstrap.min.js"></script>
-    <script src="../utils/anime.min.js"></script>
-    <script src="../utils/640357ffb4.js"></script>
+    <hr>
+
+    <p class="title">ANZAHL AUSWÄHLEN</p>
+    <p class="desc">Um festzulegen wieviel du von einem Gegenstand wegwerfen oder transferieren möchtest, trage die Anzahl unten ein.</p>
+    <input id="SelectedItemAmount" type="number" min="1" value="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+</div>
+
+
+<script src="../utils/jquery-3.6.0.min.js"></script>
+<script src="../utils/popper-1.14.7.min.js"></script>
+<script src="../utils/bootstrap.min.js"></script>
+<script src="../utils/anime.min.js"></script>
+<script src="../utils/640357ffb4.js"></script>
 </body>
 
 <script>

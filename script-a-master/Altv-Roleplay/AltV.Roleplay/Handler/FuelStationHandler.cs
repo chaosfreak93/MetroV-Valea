@@ -15,21 +15,20 @@ namespace Altv_Roleplay.Handler
         public async void FuelVehicle(IPlayer player, int vID, int fuelstationId, string fueltype, int selectedLiterAmount,
             int selectedLiterPrice) {
             try {
-                if (player == null || !player.Exists || vID == 0 || fuelstationId == 0 || fueltype == "" || selectedLiterAmount <= 0 ||
-                    selectedLiterPrice == 0) return;
+                if (player is not {Exists: true} || vID == 0 || fuelstationId == 0 || fueltype == "" || selectedLiterAmount <= 0 || selectedLiterPrice == 0) return;
 
-                var vehID = Convert.ToInt64(vID);
+                var vehId = Convert.ToInt64(vID);
                 var charId = User.GetPlayerOnline(player);
-                if (vehID <= 0 || charId <= 0) return;
+                if (vehId <= 0 || charId <= 0) return;
 
                 if (player.HasPlayerHandcuffs() || player.HasPlayerRopeCuffs() || player.HasPlayerFootcuffs()) {
                     HUDHandler.SendNotification(player, 3, 5000, "Wie willst du das mit Handschellen/Fesseln machen?");
                     return;
                 }
 
-                var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehID);
+                var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
 
-                if (vehicle == null || !vehicle.Exists) {
+                if (vehicle is not {Exists: true}) {
                     HUDHandler.SendNotification(player, 3, 5000, "Ein unerwarteter Fehler ist aufgetreten. [FEHLERCODE: FUEL-004]");
                     return;
                 }
