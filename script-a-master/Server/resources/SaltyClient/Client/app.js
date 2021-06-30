@@ -67,6 +67,7 @@ export class SaltyVoice {
         loadAnimDict("facials@gen_male@variations@normal").catch((rej) => alt.logError(rej));
         this._webView = new alt.WebView("http://resource/Client/Public/webview.html");
         this._webSocket = new alt.WebSocketClient("ws://127.0.0.1:38088/");
+        this._webSocket.autoReconnect = true;
         this._webSocket.on("message", this.onMessage.bind(this));
         this._webSocket.on("error", this.onError.bind(this));
         this._webSocket.on("open", this.onConnected.bind(this));
