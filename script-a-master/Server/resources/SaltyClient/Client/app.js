@@ -72,6 +72,7 @@ export class SaltyVoice {
         this._webSocket.on("error", this.onError.bind(this));
         this._webSocket.on("open", this.onConnected.bind(this));
         this._webSocket.on("close", this.onDisconnected.bind(this));
+        this._webSocket.start();
     }
     get serverIdentifier() {
         return this._configuration ? this._configuration.serverIdentifier : null;
