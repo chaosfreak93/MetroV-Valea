@@ -254,7 +254,6 @@ export class SaltyVoice {
     }
     onMessage(messageJson) {
         let message = JSON.parse(messageJson);
-        if (!this.isConnected) return;
         if (message.ServerUniqueIdentifier != this.serverIdentifier)
             return;
         switch (message.Command) {
@@ -301,6 +300,7 @@ export class SaltyVoice {
         alt.logError(JSON.stringify(error));
     }
     executeCommand(command) {
+        if (!this.isConnected) return;
         if (!this.serverIdentifier)
             return;
         command.serverUniqueIdentifier = this.serverIdentifier;
