@@ -1,11 +1,12 @@
 ﻿using System;
+using AltV.Net;
 using AltV.Net.Elements.Entities;
 
 namespace Altv_Roleplay.Factories
 {
     public class ClassicColshape : ColShape
     {
-        public ClassicColshape(IntPtr nativePointer) : base(nativePointer) {
+        public ClassicColshape(IServer server, IntPtr nativePointer) : base(server, nativePointer) {
 
         }
 

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "AltV.Net/2.4.7-rc53": {
+      "AltV.Net/2.5.2-dev53": {
         "type": "package",
         "compile": {
           "lib/net5.0/AltV.Net.dll": {}
@@ -11,10 +11,10 @@
           "lib/net5.0/AltV.Net.dll": {}
         }
       },
-      "AltV.Net.Async/2.4.7-rc53": {
+      "AltV.Net.Async/2.5.2-dev53": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "2.4.7-rc53",
+          "AltV.Net": "2.5.2-dev53",
           "System.Threading.Channels": "5.0.0"
         },
         "compile": {
@@ -1644,33 +1644,31 @@
     }
   },
   "libraries": {
-    "AltV.Net/2.4.7-rc53": {
-      "sha512": "aLjRmP4iKjtBOmmpJxagV0QU2Dq+mRJWf0JyrQwF2/VBjASb2EPTXBMmHcgWMeC1hJR7UGPFcmxN4ZcWiRPOYw==",
+    "AltV.Net/2.5.2-dev53": {
+      "sha512": "t/jJQV+mQO7Jd0gADICD4p/T4oas2Ei2HCY1uoa0fbzFyFQgTYXbhGd/oQkJ6ncC6WLGNGORwqAxrosxhS68MQ==",
       "type": "package",
-      "path": "altv.net/2.4.7-rc53",
+      "path": "altv.net/2.5.2-dev53",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.2.4.7-rc53.nupkg.sha512",
+        "altv.net.2.5.2-dev53.nupkg.sha512",
         "altv.net.nuspec",
         "icon.png",
         "lib/net5.0/AltV.Net.dll",
-        "lib/netcoreapp3.1/AltV.Net.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.Async/2.4.7-rc53": {
-      "sha512": "KSIIt8AcIl1DqtgtiEHTVBvVJur9AtN3kG09gOONAfwJOnC9zHWNoiPz1zsfPwSOeGOwB6loNjCoWocXFj6liQ==",
+    "AltV.Net.Async/2.5.2-dev53": {
+      "sha512": "CMtuOTLCUqNmwMOI0QJbCoMq1F9ANGHh5DrEDOZAjTke2UPXT7cCrm2e2vmdaicHDajnUCqx4FHD1ijw5A6ueA==",
       "type": "package",
-      "path": "altv.net.async/2.4.7-rc53",
+      "path": "altv.net.async/2.5.2-dev53",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.async.2.4.7-rc53.nupkg.sha512",
+        "altv.net.async.2.5.2-dev53.nupkg.sha512",
         "altv.net.async.nuspec",
         "icon.png",
         "lib/net5.0/AltV.Net.Async.dll",
-        "lib/netcoreapp3.1/AltV.Net.Async.dll",
         "license.txt"
       ]
     },
@@ -5773,8 +5771,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "AltV.Net >= 2.4.7-rc53",
-      "AltV.Net.Async >= 2.4.7-rc53",
+      "AltV.Net >= 2.5.2-dev53",
+      "AltV.Net.Async >= 2.5.2-dev53",
       "AltV.Net.Resources.Chat.Api >= 1.48.0",
       "BCrypt.Net-Next >= 4.0.2",
       "Discord.Net >= 2.4.0",
@@ -5831,11 +5829,11 @@
         "dependencies": {
           "AltV.Net": {
             "target": "Package",
-            "version": "[2.4.7-rc53, )"
+            "version": "[2.5.2-dev53, )"
           },
           "AltV.Net.Async": {
             "target": "Package",
-            "version": "[2.4.7-rc53, )"
+            "version": "[2.5.2-dev53, )"
           },
           "AltV.Net.Resources.Chat.Api": {
             "target": "Package",
