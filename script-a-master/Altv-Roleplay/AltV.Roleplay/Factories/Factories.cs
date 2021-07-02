@@ -7,26 +7,26 @@ namespace Altv_Roleplay.Factories
 {
     public class VehicleFactory : IEntityFactory<IVehicle>
     {
-        public IVehicle Create(IntPtr nativePointer, ushort id) {
-            return new ClassicVehicle(nativePointer, id);
+        public IVehicle Create(IServer server, IntPtr nativePointer, ushort id) {
+            return new ClassicVehicle(server, nativePointer, id);
         }
 
-        public IVehicle Create(uint model, Position position, Rotation rotation) {
-            return new ClassicVehicle(model, position, rotation);
+        public IVehicle Create(IServer server, uint model, Position position, Rotation rotation) {
+            return new ClassicVehicle(server, model, position, rotation);
         }
     }
 
     public class AccountsFactory : IEntityFactory<IPlayer>
     {
-        public IPlayer Create(IntPtr playerPointer, ushort id) {
-            return new ClassicPlayer(playerPointer, id);
+        public IPlayer Create(IServer server, IntPtr playerPointer, ushort id) {
+            return new ClassicPlayer(server, playerPointer, id);
         }
     }
 
     public class ColshapeFactory : IBaseObjectFactory<IColShape>
     {
-        public IColShape Create(IntPtr entityPointer) {
-            return new ClassicColshape(entityPointer);
+        public IColShape Create(IServer server, IntPtr entityPointer) {
+            return new ClassicColshape(server, entityPointer);
         }
     }
 }
