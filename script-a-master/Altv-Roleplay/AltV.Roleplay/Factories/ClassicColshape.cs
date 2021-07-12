@@ -6,7 +6,7 @@ namespace Altv_Roleplay.Factories
 {
     public class ClassicColshape : ColShape
     {
-        public ClassicColshape(IServer server, IntPtr nativePointer) : base(server, nativePointer) {
+        public ClassicColshape(IntPtr nativePointer) : base(nativePointer) {
 
         }
 
