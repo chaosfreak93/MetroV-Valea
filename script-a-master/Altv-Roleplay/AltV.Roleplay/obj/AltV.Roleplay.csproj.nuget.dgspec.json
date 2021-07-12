@@ -46,11 +46,11 @@
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[2.5.2-dev53, )"
+              "version": "[2.4.9-rc56, )"
             },
             "AltV.Net.Async": {
               "target": "Package",
-              "version": "[2.5.2-dev53, )"
+              "version": "[2.4.9-rc56, )"
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
