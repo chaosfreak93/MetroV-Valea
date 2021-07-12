@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AltV.Net.Async" Version="2.5.2-dev53" />
+    <PackageReference Include="AltV.Net.Async" Version="2.4.9-rc56" />
   </ItemGroup>
 
   <ItemGroup>
