@@ -6,7 +6,7 @@ namespace Altv_Roleplay.Factories
 {
     public class ClassicPlayer : Player
     {
-        public ClassicPlayer(IntPtr nativePointer, ushort id) : base(nativePointer, id) {
+        public ClassicPlayer(IServer server, IntPtr nativePointer, ushort id) : base(server, nativePointer, id) {
         }
 
         public int accountId { get; set; } = 0;

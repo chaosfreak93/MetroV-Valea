@@ -7,7 +7,6 @@ let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
 let loginModelHash = null;
-const storage = alt.LocalStorage;
 
 alt.onServer('Client:Login:CreateCEF', () => {
     if (loginBrowser == null) {
@@ -21,16 +20,16 @@ alt.onServer('Client:Login:CreateCEF', () => {
         loginBrowser.focus();
         loginBrowser.on("Client:Login:cefIsReady", () => {
             alt.setTimeout(() => {
-                if (storage.get("username")) {
-                    loginBrowser.emit("CEF:Login:setStorage", storage.get("username"), storage.get("password"));
+                if (alt.LocalStorage.get("username")) {
+                    loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"), alt.LocalStorage.get("password"));
                 }
                 loginBrowser.emit("CEF:Login:showArea", "login");
             }, 2000);
         });
 
         loginBrowser.on("Client:Login:sendLoginDataToServer", (name, password) => {
-            if (storage.get("discordId")) {
-                alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, storage.get("discordId"));
+            if (alt.LocalStorage.get("discordId")) {
+                alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.LocalStorage.get("discordId"));
             } else {
                 if (alt.Discord.currentUser == null) {
                     loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
@@ -87,7 +86,7 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     let headblends = JSON.parse(headblendsarray);
     let headoverlays = JSON.parse(headoverlayarray);
 
-    game.setPedHeadBlendData(alt.Player.local.scriptID, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
+    game.setPedHeadBlendData(alt.Player.local.scriptID, parseInt(headblends[0]), parseInt(headblends[1]), 0, parseInt(headblends[2]), parseInt(headblends[5]), 0, parseFloat(headblends[3]), parseInt(headblends[4]), 0, 0);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 1, 1, parseInt(headoverlays[2][1]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 2, 1, parseInt(headoverlays[2][2]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 5, 2, parseInt(headoverlays[2][5]), 1);
@@ -118,10 +117,10 @@ alt.onServer("Client:Charselector:ViewCharacter", (gender, facefeaturearray, hea
 });
 
 alt.onServer("Client:Login:SaveLoginCredentialsToStorage", (name, password, discordId) => {
-    storage.set('username', name);
-    storage.set('password', password);
-    storage.set('discordId', discordId);
-    storage.save();
+    alt.LocalStorage.set('username', name);
+    alt.LocalStorage.set('password', password);
+    alt.LocalStorage.set('discordId', discordId);
+    alt.LocalStorage.save();
 });
 
 alt.onServer("Client:Login:showError", (msg) => {
