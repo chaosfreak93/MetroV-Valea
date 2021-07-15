@@ -77,6 +77,7 @@ alt.onServer('Client:Login:CreateCEF', () => {
                 loginCam = null;
             }
             game.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
+            game.freezeEntityPosition(alt.Player.local.scriptID, true);
         });
     }
 });
@@ -176,7 +177,9 @@ let destroyLoginBrowser = function () {
 
 alt.onServer("Client:SpawnArea:SwitchIn", () => {
     game.switchInPlayer(alt.Player.local.scriptID);
-    game.freezeEntityPosition(alt.Player.local.scriptID, false);
+    alt.setTimeout(() => {
+        game.freezeEntityPosition(alt.Player.local.scriptID, false);
+    }, 500);
 });
 
 function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
