@@ -38,10 +38,9 @@ namespace Altv_Roleplay.Handler
                 AltAsync.Emit("SaltyChat:SetPlayerAlive", player, false);
 
                 var killerPlayer = (ClassicPlayer) killer;
-                if (killerPlayer == null || !killerPlayer.Exists) return;
+                if (killer is not {Exists: true}) return;
 
                 var weaponModel = (WeaponModel) weapon;
-                if (weaponModel == WeaponModel.Fist) return;
 
                 foreach (var p in Alt.Server.GetPlayers().ToList()
                     .Where(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 && x.AdminLevel() > 0))
