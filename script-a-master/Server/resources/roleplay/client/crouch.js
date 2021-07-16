@@ -6,10 +6,10 @@ import * as game from 'natives';
 const movementClipSet = "move_ped_crouched";
 const strafeClipSet = "move_ped_crouched_strafing";
 const clipSetSwitchTime = 0.25;
-alt.onServer("Client:Crouch:toggleCrouch", (isCrouching) => {
+alt.onServer("Client:Crouch:toggleCrouch", async (isCrouching) => {
     if (!isCrouching) {
-        loadClipsetAsync(movementClipSet);
-        loadClipsetAsync(strafeClipSet);
+        await loadClipsetAsync(movementClipSet);
+        await loadClipsetAsync(strafeClipSet);
         game.setPedMovementClipset(alt.Player.local.scriptID, movementClipSet, clipSetSwitchTime);
         game.setPedStrafeClipset(alt.Player.local.scriptID, strafeClipSet);
     } else {
