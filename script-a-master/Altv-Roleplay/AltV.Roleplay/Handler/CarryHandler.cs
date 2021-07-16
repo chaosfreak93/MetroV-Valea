@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Async;
+using AltV.Net.Data;
 using Altv_Roleplay.Factories;
 
 namespace Altv_Roleplay.Handler
@@ -13,12 +14,10 @@ namespace Altv_Roleplay.Handler
 
             if (!isOnHands) {
                 await targetPlayer.SetSyncedMetaDataAsync("isOnHands", true);
-                targetPlayer.SetNetworkOwner(player, false);
-                AltAsync.EmitAllClients("Client:Carry", player, targetPlayer);
+                targetPlayer.AttachToEntity(player, 0, 0, new Position(0.5f, 0.5f, 0.0025f), new Rotation(0f, 0f, 0f), true, false);
             } else {
                 await targetPlayer.SetSyncedMetaDataAsync("isOnHands", false);
-                targetPlayer.SetNetworkOwner(targetPlayer, false);
-                AltAsync.EmitAllClients("Client:Detach", player, targetPlayer);
+                targetPlayer.Detach();
             }
         }
     }
