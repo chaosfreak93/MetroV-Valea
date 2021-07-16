@@ -24,11 +24,11 @@ namespace Altv_Roleplay.Handler
                 if (charId <= 0) return;
                 if (Characters.IsCharacterUnconscious(charId)) return;
 
-                if (Characters.IsCharacterInJail(charId)) {
+                /**if (Characters.IsCharacterInJail(charId)) {
                     player.Spawn(new Position(1691.4594f, 2565.7056f, 45.556763f), 0);
                     player.Position = new Position(1691.4594f, 2565.7056f, 45.556763f);
                     return;
-                }
+                }**/
 
                 openDeathscreen(player);
                 Characters.SetCharacterUnconscious(charId, true, 20); // Von 15 auf 20 geändert.
