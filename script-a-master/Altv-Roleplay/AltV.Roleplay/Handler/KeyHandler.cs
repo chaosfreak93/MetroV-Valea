@@ -157,7 +157,7 @@ namespace Altv_Roleplay.Handler
                 Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
                 Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.80439453125f);
                 
-                bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 2f);
+                bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 3f);
 
                 if (casinoEntrance && !player.IsInVehicle) {
                     player.Emit("Casino:Enter");
@@ -165,7 +165,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
                 
-                bool casinoExit = player.Position.IsInRange(casinoExitPos, 2f);
+                bool casinoExit = player.Position.IsInRange(casinoExitPos, 3f);
 
                 if (casinoExit && !player.IsInVehicle) {
                     player.Emit("Casino:Leave");
