@@ -30,6 +30,7 @@ view.on('chatmessage', (text) => {
     alt.emitServer('chat:message', text);
 
     opened = false;
+    view.unfocus();
     alt.toggleGameControls(true);
 })
 
