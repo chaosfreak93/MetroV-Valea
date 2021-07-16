@@ -106,9 +106,9 @@ namespace Altv_Roleplay
             Minijobs.Müllmann.Main.Initialize();
             Minijobs.Busfahrer.Main.Initialize();
             //TODO: Reaktivieren
-            //ACLSBot.Main();
-            //LSPDBot.Main();
-            //LSMDBot.Main();
+            ACLSBot.Main();
+            LSPDBot.Main();
+            LSMDBot.Main();
 
             //Events registrieren
             Alt.OnColShape += ColAction;
