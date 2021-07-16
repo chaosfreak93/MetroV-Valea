@@ -155,7 +155,7 @@ namespace Altv_Roleplay.Handler
                 }
                 
                 Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
-                Position casinoExitPos = new Position(1089.6263f, 205.87253f, -49.80439453125f);
+                Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.80439453125f);
                 
                 bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 2f);
 
