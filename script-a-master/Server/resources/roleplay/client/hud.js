@@ -1073,10 +1073,12 @@ alt.onServer("Client:Deathscreen:openCEF", () => {
         alt.toggleGameControls(false);
         deathScreen = new alt.WebView("http://resource/client/cef/deathscreen/death.html");
         deathScreen.focus();
-        // alt.setTimeout(() => {
-        //     hudBrowser.focus();
-        //     hudBrowser.emit("CEF:Deathscreen:openCEF");
-        // }, 3000);
+        alt.setTimeout(() => {
+             let pos = alt.Player.local.pos;
+             let int = game.getInteriorAtCoords(pos.x, pos.y, pos.z);
+
+             game.refreshInterior(int);
+         }, 500);
     }
 });
 
@@ -2035,7 +2037,7 @@ function playAnimation(animDict, animName, animFlag, animDuration) {
     let interval = alt.setInterval(() => {
         if (game.hasAnimDictLoaded(animDict)) {
             alt.clearInterval(interval);
-            game.taskPlayAnim(alt.Player.local.scriptID, animDict, animName, 8.0, 1, animDuration, animFlag, 1, false, false, false);
+            game.taskPlayAnim(alt.Player.local.scriptID, animDict, animName, 8.0, 8.0, animDuration, animFlag, 1, false, false, false);
         }
     }, 0);
 }
@@ -2043,14 +2045,14 @@ function playAnimation(animDict, animName, animFlag, animDuration) {
 function playWalking(anim) {
     if (anim == undefined) return;
     if (anim == "normal") {
-        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.2);
+        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.25);
         return;
     }
     game.requestAnimSet(anim);
     let interval = alt.setInterval(() => {
         if (game.hasAnimDictLoaded(anim)) {
             alt.clearInterval(interval);
-            game.setPedMovementClipset(alt.Player.local.scriptID, anim, 0.2);
+            game.setPedMovementClipset(alt.Player.local.scriptID, anim, 0.25);
         }
     }, 0);
 }
