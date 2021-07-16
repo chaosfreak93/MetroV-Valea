@@ -6,7 +6,6 @@ import {closeInventoryCEF} from './inventory.js';
 import {closeTabletCEF} from './tablet.js';
 import {clearTattoos, Raycast, setClothes, setCorrectTattoos, setTattoo} from './utilities.js';
 
-const storage = alt.LocalStorage;
 export let hudBrowser = null;
 export let browserReady = false;
 let deathScreen = null;
@@ -481,12 +480,12 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
                 alt.emit("Client:HUD:sendNotification", 4, 3500, "Der Inhalt des Hotkeys darf nur aus Num1 bis Num9 bestehen.");
                 return;
             }
-            storage.set(`${hotkey}Hotkey`, parseInt(animId));
-            storage.set(`${hotkey}AnimName`, animName);
-            storage.set(`${hotkey}AnimDict`, animDict);
-            storage.set(`${hotkey}AnimFlag`, animFlag);
-            storage.set(`${hotkey}AnimDuration`, animDuration);
-            storage.save();
+            alt.LocalStorage.set(`${hotkey}Hotkey`, parseInt(animId));
+            alt.LocalStorage.set(`${hotkey}AnimName`, animName);
+            alt.LocalStorage.set(`${hotkey}AnimDict`, animDict);
+            alt.LocalStorage.set(`${hotkey}AnimFlag`, animFlag);
+            alt.LocalStorage.set(`${hotkey}AnimDuration`, animDuration);
+            alt.LocalStorage.save();
             alt.emit("Client:HUD:sendNotification", 2, 2500, `Hotkey ${hotkey} erfolgreich belegt - AnimationsID: ${animId}.`);
         });
 
@@ -496,11 +495,11 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
                 alt.emit("Client:HUD:sendNotification", 4, 3500, "Der Inhalt des Hotkeys darf nur aus Num1 bis Num9 bestehen.");
                 return;
             }
-            storage.delete(`${hotkey}Hotkey`);
-            storage.delete(`${hotkey}AnimName`);
-            storage.delete(`${hotkey}AnimDict`);
-            storage.delete(`${hotkey}AnimFlag`);
-            storage.delete(`${hotkey}AnimDuration`);
+            alt.LocalStorage.delete(`${hotkey}Hotkey`);
+            alt.LocalStorage.delete(`${hotkey}AnimName`);
+            alt.LocalStorage.delete(`${hotkey}AnimDict`);
+            alt.LocalStorage.delete(`${hotkey}AnimFlag`);
+            alt.LocalStorage.delete(`${hotkey}AnimDuration`);
             alt.emit("Client:HUD:sendNotification", 2, 2500, `Hotkey ${hotkey} erfolgreich entfernt.`);
         });
 
@@ -1074,10 +1073,12 @@ alt.onServer("Client:Deathscreen:openCEF", () => {
         alt.toggleGameControls(false);
         deathScreen = new alt.WebView("http://resource/client/cef/deathscreen/death.html");
         deathScreen.focus();
-        // alt.setTimeout(() => {
-        //     hudBrowser.focus();
-        //     hudBrowser.emit("CEF:Deathscreen:openCEF");
-        // }, 3000);
+        alt.setTimeout(() => {
+             let pos = alt.Player.local.pos;
+             let int = game.getInteriorAtCoords(pos.x, pos.y, pos.z);
+
+             game.refreshInterior(int);
+         }, 500);
     }
 });
 
@@ -1573,8 +1574,6 @@ function InterActionMenuDoActionAnimationMenu(action) {
         } else if (action = 'close') {
             resolve(game.clearPedTasks(alt.Player.local.scriptID));
         }
-    }).then(() => {
-        console.log("Fehler aufgetreten...")
     });
 }
 
@@ -1603,8 +1602,6 @@ function InterActionMenuDoActionAnimationMenuPage2(action) {
         } else if (action = 'close') {
             resolve(game.clearPedTasks(alt.Player.local.scriptID));
         }
-    }).then(() => {
-        console.log("Fehler aufgetreten...")
     });
 }
 
@@ -1633,16 +1630,12 @@ function InterActionMenuDoActionAnimationMenuPage3(action) {
         } else if (action = 'close') {
             resolve(playWalking("normal"));
         }
-    }).then(() => {
-        console.log("Fehler aufgetreten...")
     });
 }
 
 function InterActionMenuDoActionClothesRadialMenu(action) {
     new Promise((resolve, reject) => {
         alt.emitServer("Server:ClothesRadial:SetNormalSkin", action);
-    }).then(() => {
-        console.log("Fehler aufgetreten...")
     });
 }
 
@@ -2019,15 +2012,15 @@ function initializeFavouriteAnims() {
     if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && AnimationMenuCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true) return;
         var animStuff = {
-            'Num1': storage.get('Num1Hotkey'),
-            'Num2': storage.get('Num2Hotkey'),
-            'Num3': storage.get('Num3Hotkey'),
-            'Num4': storage.get('Num4Hotkey'),
-            'Num5': storage.get('Num5Hotkey'),
-            'Num6': storage.get('Num6Hotkey'),
-            'Num7': storage.get('Num7Hotkey'),
-            'Num8': storage.get('Num8Hotkey'),
-            'Num9': storage.get('Num9Hotkey')
+            'Num1': alt.LocalStorage.get('Num1Hotkey'),
+            'Num2': alt.LocalStorage.get('Num2Hotkey'),
+            'Num3': alt.LocalStorage.get('Num3Hotkey'),
+            'Num4': alt.LocalStorage.get('Num4Hotkey'),
+            'Num5': alt.LocalStorage.get('Num5Hotkey'),
+            'Num6': alt.LocalStorage.get('Num6Hotkey'),
+            'Num7': alt.LocalStorage.get('Num7Hotkey'),
+            'Num8': alt.LocalStorage.get('Num8Hotkey'),
+            'Num9': alt.LocalStorage.get('Num9Hotkey')
         };
         hudBrowser.emit("CEF:Animations:setupAnimationMenu", animStuff);
         alt.emitServer("Server:CEF:setCefStatus", true);
@@ -2044,7 +2037,7 @@ function playAnimation(animDict, animName, animFlag, animDuration) {
     let interval = alt.setInterval(() => {
         if (game.hasAnimDictLoaded(animDict)) {
             alt.clearInterval(interval);
-            game.taskPlayAnim(alt.Player.local.scriptID, animDict, animName, 8.0, 1, animDuration, animFlag, 1, false, false, false);
+            game.taskPlayAnim(alt.Player.local.scriptID, animDict, animName, 8.0, 8.0, animDuration, animFlag, 1, false, false, false);
         }
     }, 0);
 }
@@ -2052,14 +2045,14 @@ function playAnimation(animDict, animName, animFlag, animDuration) {
 function playWalking(anim) {
     if (anim == undefined) return;
     if (anim == "normal") {
-        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.2);
+        game.resetPedMovementClipset(alt.Player.local.scriptID, 0.25);
         return;
     }
     game.requestAnimSet(anim);
     let interval = alt.setInterval(() => {
         if (game.hasAnimDictLoaded(anim)) {
             alt.clearInterval(interval);
-            game.setPedMovementClipset(alt.Player.local.scriptID, anim, 0.2);
+            game.setPedMovementClipset(alt.Player.local.scriptID, anim, 0.25);
         }
     }, 0);
 }

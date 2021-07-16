@@ -1734,7 +1734,7 @@
         if (rankId <= 0 || htmlElem == null || htmlElem == undefined) return;
         var inputElem = $(htmlElem).parent().find("input");
         var inputVal = $(inputElem).val();
-        if (inputVal == "" || inputVal == "" || inputVal < 1) return;
+        if (inputVal == "" || inputVal == "" || inputVal < 1 || inputVal > 10000) return;
         alt.emit("Client:Tablet:FactionManagerSetRankPaycheck", rankId, inputVal);
     }
 
@@ -1764,7 +1764,7 @@
         for (var i in rankArray) {
             factionManagerRankHTML += `<li class='list-group-item'><div class='container left'><p><b>Rank-ID</b></p><p>${rankArray[i].rankId}</p></div>` +
                 `<div class='container mid'><p><b>Rangname</b></p><p>${rankArray[i].rankName}</p></div>` +
-                `<div class='container midright'><p><b>Gehalt</b></p><p>${rankArray[i].rankCurPaycheck}$</p></div><div class='container right'><p><b>Neues Gehalt</b></p><input type='number' placeholder='Neues Gehalt..' spellcheck='false' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>` +
+                `<div class='container midright'><p><b>Gehalt</b></p><p>${rankArray[i].rankCurPaycheck}$</p></div><div class='container right'><p><b>Neues Gehalt</b></p><input type='number' min='1' max='10000' placeholder='Neues Gehalt..' spellcheck='false' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>` +
                 "<button onclick='FactionManagerSetRankPaycheck(" + rankArray[i].rankId + ", this);' type='btn' style='margin-top: 0; padding: .08rem .5rem;' class='btn btn-sm btn-factionManagerHov'>Setzen</button></div></li>";
         }
 

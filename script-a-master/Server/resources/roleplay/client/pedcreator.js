@@ -13,9 +13,6 @@ alt.onServer('Client:Pedcreator:spawnPed', (pedArray) => {
 function spawnPed(model, x, y, z, rotation) {
     let modelHash = alt.hash(model);
     new Promise((resolve, reject) => {
-        if (game.hasModelLoaded(modelHash)) {
-            resolve();
-        }
         game.requestModel(modelHash);
         const timer = alt.setInterval(() => {
             if (game.hasModelLoaded(modelHash)) {
@@ -26,11 +23,14 @@ function spawnPed(model, x, y, z, rotation) {
     }).then(() => {
         let deg = rotation * (180/Math.PI);
         let pedHandle = game.createPed(4, modelHash, x, y, z, deg, false, false);
-        game.setBlockingOfNonTemporaryEvents(pedHandle, true);
-        game.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
-        game.setEntityInvincible(pedHandle, true);
-        game.setPedFleeAttributes(pedHandle, 15, false);
-        game.disablePedPainAudio(pedHandle, true);
+        game.setEntityAsMissionEntity(pedHandle, true, false);
         game.freezeEntityPosition(pedHandle, true);
+        game.setPedCanRagdoll(pedHandle, false);
+        game.taskSetBlockingOfNonTemporaryEvents(pedHandle, 1);
+        game.setBlockingOfNonTemporaryEvents(pedHandle, 1);
+        game.setPedFleeAttributes(pedHandle, 0, 0);
+        game.setPedCombatAttributes(pedHandle, 17, 1);
+        game.setEntityInvincible(pedHandle, true);
+        game.setPedSeeingRange(pedHandle, 0);
     });
 }

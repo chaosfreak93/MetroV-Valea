@@ -25,11 +25,13 @@ alt.onServer("Player:ChangeWeapon", async (player, weapon) => {
                     blocked = false;
                 }, 1600);
             } else {
+                blocked = true;
                 game.taskPlayAnim(ped, "reaction@intimidation@1h", "outro", 8.0, 1.0, -1, 50, 0, 0, 0, 0);
                 alt.setTimeout(() => {
                     game.clearPedTasks(ped);
                     game.setCurrentPedWeapon(ped, weapon, true);
                     holstered = true;
+                    blocked = false;
                 }, 1600);
             }
         } else {

@@ -66,15 +66,6 @@ alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, i
     }
 });
 
-alt.onServer("Client:Carry", (player, targetPlayer) => {
-    game.attachEntityToEntity(targetPlayer.scriptID, player.scriptID, 0, 0.5, 0.5, 0.0025, 0.5, 0.5, 0, false, true, true, false, 2, false);
-});
-
-alt.onServer("Client:Detach", (player, targetPlayer) => {
-    game.detachEntity(targetPlayer.scriptID, true, true);
-    game.setEntityVisible(targetPlayer.scriptID, true);
-});
-
 alt.setInterval(() => {
     if ((alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) && !game.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 3)) {
         game.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 8.0, -8, -1, 49, 0, false, false, false);

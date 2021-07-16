@@ -236,6 +236,7 @@ namespace Altv_Roleplay.Handler
 
                     CharactersInventory.RemoveCharacterItemAmount(charId, "Verbandskasten", 1, fromContainer);
                     Characters.SetCharacterHealth(charId, 200);
+                    player.ClearBloodDamage();
                     player.Health = 200;
                 } else if (itemname == "Pflaster") {
                     if (player.Health == 200) {

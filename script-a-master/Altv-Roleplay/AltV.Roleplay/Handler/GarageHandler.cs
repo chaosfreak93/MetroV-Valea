@@ -224,7 +224,7 @@ namespace Altv_Roleplay.Handler
                         vehicle.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 15f) && x.garageId == garageid);
                     var garagePos = new Position(gData.posX, gData.posY, gData.posZ);
                     Alt.Log($"StorageVeh: {gData} - {gData.garageId} - {garagePos} - {garagePos.ToString()}");
-                    if (garagePos == null || garagePos == new Position(0, 0, 0)) return;
+                    if (garagePos == new Position(0, 0, 0)) return;
 
                     ServerVehicles.SetVehicleInGarage(vehicle, true, garageid);
                     HUDHandler.SendNotification(player, 2, 5000, "Fahrzeug erfolgreich eingeparkt.");

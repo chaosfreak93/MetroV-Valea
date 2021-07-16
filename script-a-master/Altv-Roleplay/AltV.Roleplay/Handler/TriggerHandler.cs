@@ -20,10 +20,10 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ScriptEvent(ScriptEventType.PlayerWeaponChange)]
+        /**[ScriptEvent(ScriptEventType.PlayerWeaponChange)]
         public bool WeaponChange(IPlayer player, uint oldWeapon, uint weapon) {
             player.Emit("Player:ChangeWeapon", player, weapon);
             return false;
-        }
+        }**/
     }
 }

@@ -75,6 +75,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "heilen":
+                            player.ClearBloodDamage();
                             player.Health = 200;
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",

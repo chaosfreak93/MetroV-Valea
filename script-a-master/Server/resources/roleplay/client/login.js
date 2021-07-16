@@ -7,7 +7,6 @@ let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
 let loginModelHash = null;
-const storage = alt.LocalStorage;
 
 alt.onServer('Client:Login:CreateCEF', () => {
     if (loginBrowser == null) {
@@ -21,16 +20,16 @@ alt.onServer('Client:Login:CreateCEF', () => {
         loginBrowser.focus();
         loginBrowser.on("Client:Login:cefIsReady", () => {
             alt.setTimeout(() => {
-                if (storage.get("username")) {
-                    loginBrowser.emit("CEF:Login:setStorage", storage.get("username"), storage.get("password"));
+                if (alt.LocalStorage.get("username")) {
+                    loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"), alt.LocalStorage.get("password"));
                 }
                 loginBrowser.emit("CEF:Login:showArea", "login");
             }, 2000);
         });
 
         loginBrowser.on("Client:Login:sendLoginDataToServer", (name, password) => {
-            if (storage.get("discordId")) {
-                alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, storage.get("discordId"));
+            if (alt.LocalStorage.get("discordId")) {
+                alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.LocalStorage.get("discordId"));
             } else {
                 if (alt.Discord.currentUser == null) {
                     loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
@@ -78,6 +77,7 @@ alt.onServer('Client:Login:CreateCEF', () => {
                 loginCam = null;
             }
             game.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
+            game.freezeEntityPosition(alt.Player.local.scriptID, true);
         });
     }
 });
@@ -87,7 +87,7 @@ alt.onServer("Client:SpawnArea:setCharSkin", (facefeaturearray, headblendsarray,
     let headblends = JSON.parse(headblendsarray);
     let headoverlays = JSON.parse(headoverlayarray);
 
-    game.setPedHeadBlendData(alt.Player.local.scriptID, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
+    game.setPedHeadBlendData(alt.Player.local.scriptID, parseInt(headblends[0]), parseInt(headblends[1]), 0, parseInt(headblends[2]), parseInt(headblends[5]), 0, parseFloat(headblends[3]), parseInt(headblends[4]), 0, 0);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 1, 1, parseInt(headoverlays[2][1]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 2, 1, parseInt(headoverlays[2][2]), 1);
     game.setPedHeadOverlayColor(alt.Player.local.scriptID, 5, 2, parseInt(headoverlays[2][5]), 1);
@@ -118,10 +118,10 @@ alt.onServer("Client:Charselector:ViewCharacter", (gender, facefeaturearray, hea
 });
 
 alt.onServer("Client:Login:SaveLoginCredentialsToStorage", (name, password, discordId) => {
-    storage.set('username', name);
-    storage.set('password', password);
-    storage.set('discordId', discordId);
-    storage.save();
+    alt.LocalStorage.set('username', name);
+    alt.LocalStorage.set('password', password);
+    alt.LocalStorage.set('discordId', discordId);
+    alt.LocalStorage.save();
 });
 
 alt.onServer("Client:Login:showError", (msg) => {
@@ -177,7 +177,9 @@ let destroyLoginBrowser = function () {
 
 alt.onServer("Client:SpawnArea:SwitchIn", () => {
     game.switchInPlayer(alt.Player.local.scriptID);
-    game.freezeEntityPosition(alt.Player.local.scriptID, false);
+    alt.setTimeout(() => {
+        game.freezeEntityPosition(alt.Player.local.scriptID, false);
+    }, 500);
 });
 
 function spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
@@ -246,17 +248,18 @@ alt.on('connectionComplete', () => {
     game.clearAmbientZoneState("AZ_DISTANT_SASQUATCH", 0);
     game.setAudioFlag("LoadMPData", true);
     game.setAudioFlag("DisableFlightMusic", true);
-    alt.setStat('stamina', 50);
-    alt.setStat('strength', 50);
-    alt.setStat('lung_capacity', 100);
-    alt.setStat('wheelie_ability', 100);
-    alt.setStat('flying_ability', 100);
-    alt.setStat('shooting_ability', 100);
-    alt.setStat('stealth_ability', 100);
+    alt.setStat('stamina', 75);
+    alt.setStat('strength', 60);
+    alt.setStat('lung_capacity', 50);
+    alt.setStat('wheelie_ability', 50);
+    alt.setStat('flying_ability', 75);
+    alt.setStat('shooting_ability', 50);
+    alt.setStat('stealth_ability', 0);
 
     let date = new Date();
     game.setClockTime(parseInt(date.getHours()), parseInt(date.getMinutes()), parseInt(date.getSeconds()));
     alt.setMsPerGameMinute(60000);
+    setMinimapData();
 });
 
 alt.setInterval(() => {
@@ -405,6 +408,13 @@ function loadallIPLsAndInteriors() {
     // NIGHTCLUB
     alt.requestIpl("ba_dlc_int_01_ba");
 
+    // PILLBOX HOSPITAL
+    alt.removeIpl('rc12b_destroyed');
+    alt.removeIpl('rc12b_default');
+    alt.removeIpl('rc12b_hospitalinterior_lod');
+    alt.removeIpl('rc12b_hospitalinterior');
+    alt.removeIpl('rc12b_fixed');
+
     // CLOSE OPEN DOORS
     game.doorControl(3687927243, -1149.709, -1521.088, 10.78267, true, 0.0, 50.0, 0.0); // VESPUCCI HOUSE
     game.doorControl(520341586, -14.868921, -1441.1823, 31.193226, true, 0.0, 50.0, 0.0); // FRANKLIN'S OLD HOUSE
@@ -503,4 +513,75 @@ function activateIPLProps() {
         game.activateInteriorEntitySet(interiorID, "Int01_ba_dry_ice");
         game.refreshInterior(interiorID);
     }
+
+    interiorID = game.getInteriorAtCoords(311.2546, -592.4204, 42.32737);
+    if (game.isValidInterior(interiorID)) {
+        game.pinInteriorInMemory(interiorID);
+        game.refreshInterior(interiorID);
+    }
+}
+
+function setMinimapData() {
+    const ZOOM_LEVEL_0 = alt.MapZoomData.get('ZOOM_LEVEL_0');
+    ZOOM_LEVEL_0.fZoomScale = 2.75;
+    ZOOM_LEVEL_0.fZoomSpeed = 0.9;
+    ZOOM_LEVEL_0.fScrollSpeed = 0.08;
+    ZOOM_LEVEL_0.vTilesX = 0.0;
+    ZOOM_LEVEL_0.vTilesY = 0.0;
+
+    const ZOOM_LEVEL_1 = alt.MapZoomData.get('ZOOM_LEVEL_1');
+    ZOOM_LEVEL_1.fZoomScale = 2.8;
+    ZOOM_LEVEL_1.fZoomSpeed = 0.9;
+    ZOOM_LEVEL_1.fScrollSpeed = 0.08;
+    ZOOM_LEVEL_1.vTilesX = 0.0;
+    ZOOM_LEVEL_1.vTilesY = 0.0;
+
+    const ZOOM_LEVEL_2 = alt.MapZoomData.get('ZOOM_LEVEL_2');
+    ZOOM_LEVEL_2.fZoomScale = 8.0;
+    ZOOM_LEVEL_2.fZoomSpeed = 0.9;
+    ZOOM_LEVEL_2.fScrollSpeed = 0.08;
+    ZOOM_LEVEL_2.vTilesX = 0.0;
+    ZOOM_LEVEL_2.vTilesY = 0.0;
+
+    const ZOOM_LEVEL_3 = alt.MapZoomData.get('ZOOM_LEVEL_3');
+    ZOOM_LEVEL_3.fZoomScale = 20.0;
+    ZOOM_LEVEL_3.fZoomSpeed = 0.9;
+    ZOOM_LEVEL_3.fScrollSpeed = 0.08;
+    ZOOM_LEVEL_3.vTilesX = 0.0;
+    ZOOM_LEVEL_3.vTilesY = 0.0;
+
+    const ZOOM_LEVEL_4 = alt.MapZoomData.get('ZOOM_LEVEL_4');
+    ZOOM_LEVEL_4.fZoomScale = 30.0;
+    ZOOM_LEVEL_4.fZoomSpeed = 0.9;
+    ZOOM_LEVEL_4.fScrollSpeed = 0.08;
+    ZOOM_LEVEL_4.vTilesX = 0.0;
+    ZOOM_LEVEL_4.vTilesY = 0.0;
+
+    const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get('ZOOM_LEVEL_GOLF_COURSE');
+    ZOOM_LEVEL_GOLF_COURSE.fZoomScale = 55.0;
+    ZOOM_LEVEL_GOLF_COURSE.fZoomSpeed = 0.0;
+    ZOOM_LEVEL_GOLF_COURSE.fScrollSpeed = 0.1;
+    ZOOM_LEVEL_GOLF_COURSE.vTilesX = 2.0;
+    ZOOM_LEVEL_GOLF_COURSE.vTilesY = 1.0;
+
+    const ZOOM_LEVEL_INTERIOR = alt.MapZoomData.get('ZOOM_LEVEL_INTERIOR');
+    ZOOM_LEVEL_INTERIOR.fZoomScale = 450.0;
+    ZOOM_LEVEL_INTERIOR.fZoomSpeed = 0.0;
+    ZOOM_LEVEL_INTERIOR.fScrollSpeed = 0.1;
+    ZOOM_LEVEL_INTERIOR.vTilesX = 1.0;
+    ZOOM_LEVEL_INTERIOR.vTilesY = 1.0;
+
+    const ZOOM_LEVEL_GALLERY = alt.MapZoomData.get('ZOOM_LEVEL_GALLERY');
+    ZOOM_LEVEL_GALLERY.fZoomScale = 4.5;
+    ZOOM_LEVEL_GALLERY.fZoomSpeed = 0.0;
+    ZOOM_LEVEL_GALLERY.fScrollSpeed = 0.0;
+    ZOOM_LEVEL_GALLERY.vTilesX = 0.0;
+    ZOOM_LEVEL_GALLERY.vTilesY = 0.0;
+
+    const ZOOM_LEVEL_GALLERY_MAXIMIZE = alt.MapZoomData.get('ZOOM_LEVEL_GALLERY_MAXIMIZE');
+    ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomScale = 11.0;
+    ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomSpeed = 0.0;
+    ZOOM_LEVEL_GALLERY_MAXIMIZE.fScrollSpeed = 0.0;
+    ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesX = 2.0;
+    ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesY = 3.0;
 }

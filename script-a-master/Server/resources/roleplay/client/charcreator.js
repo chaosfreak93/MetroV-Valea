@@ -40,7 +40,7 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
         });
 
         charcreatorBrowser.on("Client:Charcreator:SetRotation", (rot) => {
-            game.setEntityHeading(pedHandle, rot);
+            game.setEntityHeading(pedHandle, parseFloat(rot));
         });
 
         charcreatorBrowser.on("Client:Charcreator:UpdateFaceFeature", (facefeaturesdata) => {
@@ -53,7 +53,7 @@ alt.onServer('Client:Charcreator:CreateCEF', (player) => {
 
         charcreatorBrowser.on("Client:Charcreator:UpdateHeadBlends", (headblendsdata) => {
             let headblends = JSON.parse(headblendsdata);
-            game.setPedHeadBlendData(pedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, 0);
+            game.setPedHeadBlendData(pedHandle, parseInt(headblends[0]), parseInt(headblends[1]), 0, parseInt(headblends[2]), parseInt(headblends[5]), 0, parseFloat(headblends[3]), parseInt(headblends[4]), 0, 0);
         });
 
         charcreatorBrowser.on("Client:Charcreator:UpdateHeadOverlays", (headoverlaysarray) => {
