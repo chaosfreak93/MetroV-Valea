@@ -81,6 +81,7 @@ namespace Altv_Roleplay.Factions.LSMD
                 if (!player.Position.IsInRange(targetPlayer.Position, 3f)) return;
 
                 Characters.SetCharacterHealth(charId, 200);
+                targetPlayer.ClearBloodDamage();
                 targetPlayer.Health = 200;
                 HUDHandler.SendNotification(player, 2, 2000, "Spieler erfolgreich behandelt.");
                 HUDHandler.SendNotification(targetPlayer, 1, 2000, "Ein Arzt hat dich behandelt.");
