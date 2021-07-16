@@ -248,13 +248,13 @@ alt.on('connectionComplete', () => {
     game.clearAmbientZoneState("AZ_DISTANT_SASQUATCH", 0);
     game.setAudioFlag("LoadMPData", true);
     game.setAudioFlag("DisableFlightMusic", true);
-    alt.setStat('stamina', 50);
-    alt.setStat('strength', 50);
-    alt.setStat('lung_capacity', 100);
-    alt.setStat('wheelie_ability', 100);
-    alt.setStat('flying_ability', 100);
-    alt.setStat('shooting_ability', 100);
-    alt.setStat('stealth_ability', 100);
+    alt.setStat('stamina', 75);
+    alt.setStat('strength', 60);
+    alt.setStat('lung_capacity', 50);
+    alt.setStat('wheelie_ability', 50);
+    alt.setStat('flying_ability', 75);
+    alt.setStat('shooting_ability', 50);
+    alt.setStat('stealth_ability', 0);
 
     let date = new Date();
     game.setClockTime(parseInt(date.getHours()), parseInt(date.getMinutes()), parseInt(date.getSeconds()));
