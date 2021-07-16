@@ -70,7 +70,7 @@ alt.onServer('Client:Inventory:PlayAnimation', (animDict, animName, duration, fl
     let interval = alt.setInterval(() => {
         if (game.hasAnimDictLoaded(animDict)) {
             alt.clearInterval(interval);
-            game.taskPlayAnim(alt.Player.local.scriptID, animDict, animName, 8.0, 1, duration, flag, 1, lockpos, lockpos, lockpos);
+            game.taskPlayAnim(alt.Player.local.scriptID, animDict, animName, 8.0, 8.0, duration, flag, 1, lockpos, lockpos, lockpos);
         }
     }, 0);
 });
