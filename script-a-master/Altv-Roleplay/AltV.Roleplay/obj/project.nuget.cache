@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wrr8XkVNbCK2ZumoJJ2FXEf6++W7cXkHVNaZT8QcvrMaQs7de+LCx8860tJC+P+hwFpo34+ytHSLN3PbCjzVCw==",
+  "dgSpecHash": "Q4Trb5gTMrqA2wW/H96U0vW/o7RTkChAL0oQbENcXN83rt+hXlrgHrZbtl+UdYFwN1+tZ0gE6BruyTUHXmUWKQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\yanlu\\.nuget\\packages\\altv.net\\2.6.6-rc55\\altv.net.2.6.6-rc55.nupkg.sha512",
-    "C:\\Users\\yanlu\\.nuget\\packages\\altv.net.async\\2.6.6-rc55\\altv.net.async.2.6.6-rc55.nupkg.sha512",
+    "C:\\Users\\yanlu\\.nuget\\packages\\altv.net\\4.0.0\\altv.net.4.0.0.nupkg.sha512",
+    "C:\\Users\\yanlu\\.nuget\\packages\\altv.net.async\\4.0.0\\altv.net.async.4.0.0.nupkg.sha512",
     "C:\\Users\\yanlu\\.nuget\\packages\\altv.net.resources.chat.api\\1.48.0\\altv.net.resources.chat.api.1.48.0.nupkg.sha512",
     "C:\\Users\\yanlu\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\yanlu\\.nuget\\packages\\discord.net\\2.4.0\\discord.net.2.4.0.nupkg.sha512",
