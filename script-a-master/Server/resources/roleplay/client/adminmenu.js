@@ -260,7 +260,7 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
                 game.setTextColour(255, 255, 255, 255);
                 game.setTextOutline();
                 game.addTextComponentSubstringPlayerName(isChatting ? `${name}~r~*` : `${name}`);
-                game.endTextCommandDisplayText(0, 0);
+                game.endTextCommandDisplayText(0, 0, 0);
 
                 if (!game.isEntityDead(player.scriptID)) {
                     drawBarBackground(100, lineHeight, scale, 0.25, 0, 147, 29, 255);
