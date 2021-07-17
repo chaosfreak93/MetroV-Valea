@@ -179,7 +179,7 @@ alt.onServer("Client:AdminMenu:Spectate", async (target, info) => {
         game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
         await waitFor(game.isNewLoadSceneLoaded);
         game.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, 0, 0, 0, true);
-        spectate_camera = game.createCam("DEFAULT_SCRIPTED_CAMERA", true);
+        spectate_camera = game.createCamera(alt.hash("DEFAULT_SCRIPTED_CAMERA"), true);
         //spectate_camera = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', target.pos.x, target.pos.y, target.pos.z, 0, 0, 240, 50, true, 2);
         game.setCamActive(spectate_camera, true);
         await waitFor(game.isCamActive, spectate_camera);
