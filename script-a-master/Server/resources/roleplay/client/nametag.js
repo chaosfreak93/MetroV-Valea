@@ -51,5 +51,5 @@ function drawText(text, x, y, scale, r, g, b, a, outline) {
 
     game.beginTextCommandDisplayText("STRING");
     game.addTextComponentSubstringUnk(text);
-    game.endTextCommandDisplayText(x, y);
+    game.endTextCommandDisplayText(x, y, 0);
 };
