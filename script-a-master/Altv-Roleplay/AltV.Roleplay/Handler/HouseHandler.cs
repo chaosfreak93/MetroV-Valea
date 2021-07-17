@@ -371,7 +371,7 @@ namespace Altv_Roleplay.Handler
                         .FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) houseOwner);
 
                     if (ServerHouses.HasHouseAlarmUpgrade(houseId)) {
-                        ServerFactions.createFactionDispatch(player, 2, $"Hauseinbruch: {ServerHouses.GetHouseStreet(houseId)}",
+                        ServerFactions.createFactionDispatch(player, 1, $"Hauseinbruch: {ServerHouses.GetHouseStreet(houseId)}",
                             "Ein Einbruch in ein Haus wurde gemeldet - ein Dispatch wurde dazu in der Notrufverwaltung angelegt.");
 
                         if (houseOwnerPlayer != null && (CharactersInventory.ExistCharacterItem(houseOwner, "Tablet", "inventory") ||

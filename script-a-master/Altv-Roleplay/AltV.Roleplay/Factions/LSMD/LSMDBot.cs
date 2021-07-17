@@ -246,7 +246,7 @@ namespace Altv_Roleplay.Factions.LSMD
             public static ulong guild = 840995072362807299;
             public static ulong channel = 841051031001366549;
             public static ulong message = 841204411660501012;
-            public static int factionId = 3;
+            public static int factionId = 2;
         }
     }
 }

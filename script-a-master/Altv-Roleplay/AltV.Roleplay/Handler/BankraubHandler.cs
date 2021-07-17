@@ -140,8 +140,7 @@ namespace Altv_Roleplay.Handler
 
         [AsyncClientEvent("utk_oh:alarm_s")]
         public void alarm(ClassicPlayer player) {
-            ServerFactions.AddNewFactionDispatch(0, 2, "Aktiver Bankraub", player.Position);
-            ServerFactions.AddNewFactionDispatch(0, 12, "Aktiver Bankraub", player.Position);
+            ServerFactions.AddNewFactionDispatch(0, 1, "Aktiver Bankraub", player.Position);
 
             foreach (var p in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                 if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||

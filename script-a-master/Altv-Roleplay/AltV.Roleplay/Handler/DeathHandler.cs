@@ -32,7 +32,7 @@ namespace Altv_Roleplay.Handler
 
                 openDeathscreen(player);
                 Characters.SetCharacterUnconscious(charId, true, 20); // Von 15 auf 20 geändert.
-                ServerFactions.createFactionDispatch(player, 3, "HandyNotruf", "Eine Verletzte Person wurde gemeldet");
+                ServerFactions.createFactionDispatch(player, 2, "HandyNotruf", "Eine Verletzte Person wurde gemeldet");
 
                 AltAsync.Emit("Server:Smartphone:leaveRadioFrequence", player);
                 AltAsync.Emit("SaltyChat:SetPlayerAlive", player, false);

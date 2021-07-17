@@ -221,8 +221,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                ServerFactions.AddNewFactionDispatch(0, 2, "Aktiver Shopraub", player.Position);
-                ServerFactions.AddNewFactionDispatch(0, 12, "Aktiver Shopraub", player.Position);
+                ServerFactions.AddNewFactionDispatch(0, 1, "Aktiver Shopraub", player.Position);
 
                 foreach (var p in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                     if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||

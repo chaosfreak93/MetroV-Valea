@@ -145,8 +145,7 @@ namespace Altv_Roleplay.Handler
 
                                     if (jailTime > 0) {
                                         if (player.Position.distance2d(jail) >= 225) {
-                                            ServerFactions.AddNewFactionDispatch(0, 2, "Gefängnisausbruch", jail);
-                                            ServerFactions.AddNewFactionDispatch(0, 12, "Gefängnisausbruch", jail);
+                                            ServerFactions.AddNewFactionDispatch(0, 1, "Gefängnisausbruch", jail);
 
                                             foreach (var p in Alt.Server.GetPlayers()
                                                 .Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
