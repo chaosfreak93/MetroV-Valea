@@ -29,7 +29,7 @@ namespace Altv_Roleplay.Factions.LSPD
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 2 && ServerFactions.GetCharacterFactionId(charId) != 1) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 1 && ServerFactions.GetCharacterFactionId(charId) != 3) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Du bist nicht im L.S.P.D. oder der Justiz angestellt.");
                     return;
                 }

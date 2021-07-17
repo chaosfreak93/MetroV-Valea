@@ -73,15 +73,15 @@
             </div>
 
             <div id="DispatchApp-Area">
-                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(2);">
+                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(1);">
                     <span>Los Santos Police Department</span><br>
                     <img src="img/police-car.png">
                 </div>
-                <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(3);">
+                <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(2);">
                     <span>Los Santos Medical Department</span>
                     <img src="img/ambulance.png">
                 </div>
-                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(6);">
+                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(0);">
                     <span>United States Marshal Service</span>
                     <img src="img/marshal-car.png">
                 </div>
@@ -1607,9 +1607,9 @@
         advertisementsArray = JSON.parse(advertisementsArray);
         for (var i in advertisementsArray) {
             let img = "<img src='img/unknown.png' class='avatar'>";
-            if (advertisementsArray[i].factionId == 2) img = "<img src='img/police-car.png' class='avatar'>";
-            if (advertisementsArray[i].factionId == 3) img = "<img src='img/ambulance.png' class='avatar'>";
-            if (advertisementsArray[i].factionId == 4) img = "<img src='img/tow-truck.png' class='avatar'>";
+            if (advertisementsArray[i].factionId == 1) img = "<img src='img/police-car.png' class='avatar'>";
+            if (advertisementsArray[i].factionId == 2) img = "<img src='img/ambulance.png' class='avatar'>";
+            if (advertisementsArray[i].factionId == 3) img = "<img src='img/tow-truck.png' class='avatar'>";
             advertisementEntryHTML += `<div class='container'>` +
                 `<div class='clearfix'>` +
                 `${img}` +
@@ -2065,11 +2065,11 @@
                 `<div class='left'><button type='button' onclick='VehiclesAppLocateVehicle(${dispatchArray[i].posX}, ${dispatchArray[i].posY});' class='btn btn-success'><i class='fas fa-search'></i></button><button type='button' onclick='DeleteDispatch(${dispatchArray[i].factionId}, ${dispatchArray[i].senderCharId});' class='btn btn-danger'><i class='fas fa-times'></i></button></div></div>`;
         }
 
-        if (factionId == 2) {
+        if (factionId == 1) {
             $("#LSPDApp-Area-ViewDispatches-List").html(dispatchHTML);
-        } else if (factionId == 3) {
+        } else if (factionId == 2) {
             $("#LSMDApp-Area-ViewDispatches-List").html(dispatchHTML);
-        } else if (factionId == 4) {
+        } else if (factionId == 3) {
             $("#ACLSApp-Area-ViewDispatches-List").html(dispatchHTML);
         }
     }

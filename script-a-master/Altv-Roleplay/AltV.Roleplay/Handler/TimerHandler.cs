@@ -152,8 +152,7 @@ namespace Altv_Roleplay.Handler
                                                 .Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                                                 if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
                                                     !ServerFactions.IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||
-                                                    ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 2 &&
-                                                    ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 12) continue;
+                                                    ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 1) continue;
 
                                                 HUDHandler.SendNotification(p, 1, 9500, "Jemand ist aus dem Gefängnis ausgebrochen!");
                                             }

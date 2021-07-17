@@ -423,7 +423,7 @@ namespace Altv_Roleplay.Database
                 foreach (var pos in ServerFactions.ServerFactionPositions_)
                     if (pos.posType == "duty") {
                         var model = "";
-                        if (pos.factionId == 2) model = "s_m_y_cop_01";
+                        if (pos.factionId == 1) model = "s_m_y_cop_01";
                         else if (pos.factionId == 4) model = "s_m_y_construct_01";
                         var data = new Server_Peds {
                             model = model,

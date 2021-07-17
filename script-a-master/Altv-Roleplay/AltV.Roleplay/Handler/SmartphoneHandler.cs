@@ -421,8 +421,7 @@ namespace Altv_Roleplay.Handler
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;
 
                 if (!ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12 ||
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1 ||
                     !ServerFactions.IsCharacterInFactionDuty(player.CharacterId)) {
                     player.EmitLocked("Client:Smartphone:ShowLSPDIntranetApp", false, "[]");
                     return;
@@ -448,8 +447,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || string.IsNullOrWhiteSpace(name) ||
                     !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) || !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12) return;
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) return;
 
                 var containedPlayers = Characters.PlayerCharacters.ToList()
                     .Where(x => x.charname.ToLower().Contains(name.ToLower()) && User.IsCharacterOnline(x.charId)).Select(x => new {
@@ -469,8 +467,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || selectedCharId <= 0 || string.IsNullOrWhiteSpace(wanteds) ||
                     !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) || !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12) return;
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) return;
 
                 var decompiledWanteds = JsonSerializer.Deserialize<List<int>>(wanteds);
                 if (decompiledWanteds == null) return;
@@ -492,8 +489,7 @@ namespace Altv_Roleplay.Handler
                 foreach (ClassicPlayer policeMember in Alt.Server.GetPlayers().ToList().Where(x =>
                     x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                     ServerFactions.IsCharacterInAnyFaction(((ClassicPlayer) x).CharacterId) &&
-                    (ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 2 ||
-                     ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 12)))
+                    (ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 1)))
                     HUDHandler.SendNotification(policeMember, 1, 3000,
                         $"{Characters.GetCharacterName(player.CharacterId)} hat die Akte von {Characters.GetCharacterName(selectedCharId)} bearbeitet.");
             }
@@ -507,8 +503,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || selectedCharId <= 0 ||
                     !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) || !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12) return;
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) return;
 
                 var wantedList = JsonSerializer.Serialize(CharactersWanteds.CharactersWanteds_.Where(x => x.charId == selectedCharId).Select(
                     x => new {
@@ -529,10 +524,9 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
                     !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12) return;
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) return;
 
-                if (ServerFactions.GetCharacterFactionId(player.CharacterId) == 2 &&
+                if (ServerFactions.GetCharacterFactionId(player.CharacterId) == 1 &&
                     ServerFactions.GetCharacterFactionRank(player.CharacterId) < 6) {
                     HUDHandler.SendNotification(player, 3, 2500, "Keine Berechtigung: ab Rang 6.");
                     return;
@@ -557,8 +551,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || dbId <= 0 || !CharactersWanteds.ExistWantedEntry(dbId) ||
                     !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) || !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12) return;
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) return;
 
                 CharactersWanteds.RemoveWantedEntry(dbId);
                 requestLSPDIntranetPersonWanteds(player, selectedCharId);
@@ -566,8 +559,7 @@ namespace Altv_Roleplay.Handler
                 foreach (ClassicPlayer policeMember in Alt.Server.GetPlayers().ToList().Where(x =>
                     x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                     ServerFactions.IsCharacterInAnyFaction(((ClassicPlayer) x).CharacterId) &&
-                    (ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 2 ||
-                     ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 12)))
+                    (ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 1)))
                     HUDHandler.SendNotification(policeMember, 1, 3000,
                         $"{Characters.GetCharacterName(player.CharacterId)} hat die Akte von {Characters.GetCharacterName(selectedCharId)} bearbeitet.");
             }
@@ -593,8 +585,7 @@ namespace Altv_Roleplay.Handler
                     case "450200":
                     case "450300":
                         if (!ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
-                            ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                            ServerFactions.GetCharacterFactionId(player.CharacterId) != 12) {
+                            ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) {
                             HUDHandler.SendNotification(player, 4, 5000, "Dieser Funk ist Verschlüsselt!");
                             Characters.SetCharacterCurrentFunkFrequence(player.CharacterId, null);
                             player.EmitLocked("Client:Smartphone:setCurrentFunkFrequence", "null");
@@ -608,7 +599,7 @@ namespace Altv_Roleplay.Handler
                     case "451200":
                     case "451300":
                         if (!ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
-                            ServerFactions.GetCharacterFactionId(player.CharacterId) != 3) {
+                            ServerFactions.GetCharacterFactionId(player.CharacterId) != 2) {
                             HUDHandler.SendNotification(player, 4, 5000, "Dieser Funk ist Verschlüsselt!");
                             Characters.SetCharacterCurrentFunkFrequence(player.CharacterId, null);
                             player.EmitLocked("Client:Smartphone:setCurrentFunkFrequence", "null");

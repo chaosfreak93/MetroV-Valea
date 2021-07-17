@@ -135,18 +135,18 @@ namespace Altv_Roleplay.Handler
                     interactHTML +=
                         "<li class='interactitem' id='InteractionMenu-playerGiveBill' data-action='playergiveFactionBill' data-actionstring='Rechnung ausstellen (Fraktion)'><img src='../utils/img/bill.png'></li>";
 
-                    if ((ServerFactions.GetCharacterFactionId(charId) == 2 || ServerFactions.GetCharacterFactionId(charId) == 12) &&
+                    if ((ServerFactions.GetCharacterFactionId(charId) == 1) &&
                         player.Position.IsInRange(Constants.Positions.Arrest_Position, 5f) &&
                         targetPlayer.Position.IsInRange(Constants.Positions.Arrest_Position, 5f))
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-playerJail' data-action='playerJail' data-actionstring='Spieler inhaftieren'><img src='../utils/img/jail.png'></li>";
 
-                    if (ServerFactions.GetCharacterFactionId(charId) == 3 &&
+                    if (ServerFactions.GetCharacterFactionId(charId) == 2 &&
                         Characters.IsCharacterUnconscious((int) targetPlayer.GetCharacterMetaId()))
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-playerRevive' data-action='playerRevive' data-actionstring='Spieler wiederbeleben'><img src='../utils/img/revive.png'></li>";
 
-                    if (ServerFactions.GetCharacterFactionId(charId) == 3 && targetPlayer.Health < 200)
+                    if (ServerFactions.GetCharacterFactionId(charId) == 2 && targetPlayer.Health < 200)
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-HealPlayer' data-action='healPlayer' data-actionstring='Spieler heilen'><img src='../utils/img/inventory/Verbandskasten.png'></li>";
                 }
@@ -171,8 +171,7 @@ namespace Altv_Roleplay.Handler
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPlayer == null || !targetPlayer.Exists ||
                     targetPlayer.CharacterId <= 0 || !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
                     !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12 ||
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1 ||
                     Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
 
                 var jailTime = CharactersWanteds.GetCharacterWantedFinalJailTime(targetPlayer.CharacterId);

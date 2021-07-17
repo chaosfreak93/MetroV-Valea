@@ -210,22 +210,22 @@ namespace Altv_Roleplay.Handler
                         return;
                     }
 
-                    if (vehicleShopPos.id == 6 && ServerFactions.GetCharacterFactionId(charId) != 2) {
+                    if (vehicleShopPos.id == 6 && ServerFactions.GetCharacterFactionId(charId) != 1) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
 
-                    if (vehicleShopPos.id == 7 && ServerFactions.GetCharacterFactionId(charId) != 2) {
+                    if (vehicleShopPos.id == 7 && ServerFactions.GetCharacterFactionId(charId) != 1) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
 
-                    if (vehicleShopPos.id == 8 && ServerFactions.GetCharacterFactionId(charId) != 3) {
+                    if (vehicleShopPos.id == 8 && ServerFactions.GetCharacterFactionId(charId) != 2) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
 
-                    if (vehicleShopPos.id == 9 && ServerFactions.GetCharacterFactionId(charId) != 3) {
+                    if (vehicleShopPos.id == 9 && ServerFactions.GetCharacterFactionId(charId) != 2) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
@@ -312,7 +312,7 @@ namespace Altv_Roleplay.Handler
                         else
                             HUDHandler.SendNotification(player, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
 
-                        if (factionId == 2 || factionId == 12) SmartphoneHandler.RequestLSPDIntranet((ClassicPlayer) player);
+                        if (factionId == 1) SmartphoneHandler.RequestLSPDIntranet((ClassicPlayer) player);
                         return;
                     }
 

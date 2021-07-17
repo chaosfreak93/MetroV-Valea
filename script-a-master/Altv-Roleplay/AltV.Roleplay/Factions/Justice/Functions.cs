@@ -34,7 +34,7 @@ namespace Altv_Roleplay.Factions.Justice
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 1) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 3) {
                     HUDHandler.SendNotification(player, 3, 5000, "Du bist kein Angehöriger der Justiz.");
                     return;
                 }
@@ -92,7 +92,7 @@ namespace Altv_Roleplay.Factions.Justice
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 1) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 3) {
                     HUDHandler.SendNotification(player, 3, 5000, "Du bist kein Angehöriger der Justiz.");
                     return;
                 }
