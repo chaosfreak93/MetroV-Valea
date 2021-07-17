@@ -48,7 +48,7 @@ namespace Altv_Roleplay.Minijobs.Müllmann
                 var charId = User.GetPlayerOnline(player);
                 if (charId <= 0) return;
 
-                foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"MM-{charId}").ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"MM-{charId}").ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     ServerVehicles.RemoveVehiclePermanently(veh);
@@ -75,7 +75,7 @@ namespace Altv_Roleplay.Minijobs.Müllmann
 
                 player.EmitLocked("Client:Minijob:RemoveJobMarker");
 
-                foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"MM-{charId}").ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"MM-{charId}").ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     ServerVehicles.RemoveVehiclePermanently(veh);
@@ -172,7 +172,7 @@ namespace Altv_Roleplay.Minijobs.Müllmann
                     if (personalThrowCol != null && personalThrowCol.Exists) personalThrowCol.Remove();
                     //ToDo: Objeklt in Hand geben
                     InventoryHandler.InventoryAnimation(client, "farmPickup", 1100);
-                    var veh = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.Exists && x.NumberplateText == $"MM-{charId}");
+                    var veh = Alt.GetAllVehicles().ToList().FirstOrDefault(x => x.Exists && x.NumberplateText == $"MM-{charId}");
                     if (veh == null || !veh.Exists) return;
 
                     HUDHandler.SendNotification(client, 1, 1200, "Mülltonne geleert, werfe den Müll in den Wagen.");
@@ -238,7 +238,7 @@ namespace Altv_Roleplay.Minijobs.Müllmann
 
                 if (player.GetPlayerCurrentMinijob() == "Müllmann") {
                     //Job abbrechen
-                    foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"MM-{charId}").ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"MM-{charId}").ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         ServerVehicles.RemoveVehiclePermanently(veh);
@@ -256,7 +256,7 @@ namespace Altv_Roleplay.Minijobs.Müllmann
                     player.EmitLocked("Client:Minijob:RemoveJobMarker");
                 } else if (player.GetPlayerCurrentMinijob() == "None") {
                     //Job annehmen
-                    foreach (var veh in Alt.Server.GetVehicles().ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         if (veh.Position.IsInRange(Constants.Positions.Minijob_Müllmann_VehOutPos, 5f)) {

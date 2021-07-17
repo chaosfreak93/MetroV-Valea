@@ -75,7 +75,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || charId <= 0 || player.AdminLevel() <= 1) return;
 
-                var targetP = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x != null && x.Exists && User.GetPlayerOnline(x) == charId);
+                var targetP = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x != null && x.Exists && User.GetPlayerOnline(x) == charId);
                 if (targetP == null) return;
 
                 targetP.Kick("");
@@ -92,7 +92,7 @@ namespace Altv_Roleplay.Handler
                 if (player == null || !player.Exists || accId <= 0 || player.AdminLevel() <= 2) return;
 
                 User.SetPlayerBanned(accId, true, $"Gebannt von {Characters.GetCharacterName(User.GetPlayerOnline(player))}");
-                var targetP = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x != null && x.Exists && User.GetPlayerAccountId(x) == accId);
+                var targetP = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x != null && x.Exists && User.GetPlayerAccountId(x) == accId);
                 if (targetP != null) targetP.Kick("");
                 HUDHandler.SendNotification(player, 4, 5000, $"Spieler mit ID {accId} Erfolgreich gebannt.");
             }
@@ -146,7 +146,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                foreach (var client in Alt.Server.GetPlayers()) {
+                foreach (var client in Alt.GetAllPlayers()) {
                     if (client == null || !client.Exists) continue;
 
                     HUDHandler.SendNotification(client, 4, 5000, msg);
@@ -186,7 +186,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || User.GetPlayerOnline(player) <= 0) return;
 
-                foreach (var admin in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.AdminLevel() > 0))
+                foreach (var admin in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.AdminLevel() > 0))
                     admin.SendChatMessage(
                         $"[SUPPORT] {Characters.GetCharacterName(User.GetPlayerOnline(player))} (ID: {User.GetPlayerOnline(player)}) benötigt Support: {msg}");
             }
@@ -354,7 +354,7 @@ namespace Altv_Roleplay.Handler
 
                 var msg = "Liste aller Spieler:<br>";
 
-                foreach (var p in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0))
+                foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0))
                     msg += $"{Characters.GetCharacterName((int) p.GetCharacterMetaId())} ({p.GetCharacterMetaId()})<br>";
 
                 HUDHandler.SendNotification(player, 1, 8000, msg);
@@ -454,7 +454,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.AdminLevel() <= 8 || vehId <= 0) return;
 
-                var vehicle = Alt.Server.GetVehicles().ToList()
+                var vehicle = Alt.GetAllVehicles().ToList()
                     .FirstOrDefault(x => x != null && x.Exists && x.HasVehicleId() && (int) x.GetVehicleId() == vehId);
                 if (vehicle == null) return;
 
@@ -478,7 +478,7 @@ namespace Altv_Roleplay.Handler
 
                 var count = 0;
 
-                foreach (var veh in Alt.Server.GetVehicles().ToList().Where(x => x != null && x.Exists && x.HasVehicleId())) {
+                foreach (var veh in Alt.GetAllVehicles().ToList().Where(x => x != null && x.Exists && x.HasVehicleId())) {
                     if (veh == null || !veh.Exists || !veh.HasVehicleId()) continue;
 
                     var currentGarageId = ServerVehicles.GetVehicleGarageId(veh);
@@ -500,7 +500,7 @@ namespace Altv_Roleplay.Handler
             try {
                 if (player == null || !player.Exists || player.AdminLevel() <= 1 || string.IsNullOrWhiteSpace(plate)) return;
 
-                var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x =>
+                var vehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x =>
                     x != null && x.Exists && x.HasVehicleId() && (int) x.GetVehicleId() > 0 && x.NumberplateText.ToLower() == plate.ToLower());
                 if (vehicle == null) return;
 
@@ -582,7 +582,7 @@ namespace Altv_Roleplay.Handler
             var charName = Characters.GetCharacterName(targetId);
             if (!Characters.ExistCharacterName(charName)) return;
 
-            var tp = Alt.Server.GetPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) targetId);
+            var tp = Alt.GetAllPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) targetId);
 
             if (tp != null) {
                 tp.Health = 200;
@@ -660,7 +660,7 @@ namespace Altv_Roleplay.Handler
                    if(User.IsPlayerBanned(targetAccId)) { HUDHandler.SendNotification(player, 1, 5000, "Der Spieler ist bereits gebannt."); return; }
                    User.SetPlayerBanned(targetAccId, true, reason);
                    HUDHandler.SendNotification(player, 2, 5000, $"Du hast den Spieler {targetCharName} (CharId: {targetId} - SpielerID: {targetAccId}) gebannt. Grund: {reason}");
-                   var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong)targetId);
+                   var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong)targetId);
                    if(targetPlayer != null && targetPlayer.Exists)
                    {
                        targetPlayer.kickWithMessage("Du wurdest gebannt.");
@@ -689,7 +689,7 @@ namespace Altv_Roleplay.Handler
             int targetAccId = Characters.GetCharacterAccountId(targetId);
             if (targetAccId <= 0) return;
             HUDHandler.SendNotification(player, 2, 5000, $"Du hast den Spieler {targetCharName} (CharId: {targetId} - SpielerID: {targetAccId}) gekickt. Grund: {reason}");
-            var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong)targetId);
+            var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong)targetId);
             if (targetPlayer != null && targetPlayer.Exists)
             {
                 targetPlayer.Kick(reason);
@@ -726,7 +726,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) targetId);
+                var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) targetId);
 
                 if (targetPlayer == null || !targetPlayer.Exists) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Spieler ist nicht online.");
@@ -772,7 +772,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) targetId);
+                var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) targetId);
 
                 if (targetPlayer == null || !targetPlayer.Exists) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Spieler ist nicht online.");
@@ -872,7 +872,7 @@ namespace Altv_Roleplay.Handler
                     HUDHandler.SendNotification(player, 3, 5000, $"Warnung: Der angegebene Charaktername wurde nicht gefunden ({targetCharName} - ID: {targetId}).");
                     return;
                 }
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong)targetId);
+                var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong)targetId);
                 if (targetPlayer == null || !targetPlayer.Exists) { HUDHandler.SendNotification(player, 4, 5000, "Fehler: Spieler ist nicht online."); return; }
                 player.EmitLocked("SaltyChat_EstablishedCall",targetPlayer);
                 targetplayer.EmitLocked("SaltyChat_EstablishedCall",player);
@@ -890,7 +890,7 @@ namespace Altv_Roleplay.Handler
         public void command(string name, string[] args) {
             switch (name) {
                 case "announce":
-                    foreach (var client in Alt.Server.GetPlayers()) {
+                    foreach (var client in Alt.GetAllPlayers()) {
                         if (client == null || !client.Exists) continue;
 
                         HUDHandler.SendNotification(client, 4, 5000, "Sonnenwende in " + args[0] + "Minuten!");

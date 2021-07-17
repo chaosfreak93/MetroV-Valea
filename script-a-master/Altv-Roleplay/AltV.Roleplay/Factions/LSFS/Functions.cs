@@ -40,7 +40,7 @@ namespace Altv_Roleplay.Factions.LSFS
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
                 if (targetPlayer == null || !targetPlayer.Exists) return;
 
                 if (targetCharId != (int) targetPlayer.GetCharacterMetaId())

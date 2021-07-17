@@ -26,7 +26,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
+                var vehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
 
                 if (vehicle is not {Exists: true}) {
                     HUDHandler.SendNotification(player, 3, 5000, "Ein unerwarteter Fehler ist aufgetreten. [FEHLERCODE: FUEL-004]");

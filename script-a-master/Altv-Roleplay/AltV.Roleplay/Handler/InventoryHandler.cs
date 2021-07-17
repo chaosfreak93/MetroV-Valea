@@ -471,7 +471,7 @@ namespace Altv_Roleplay.Handler
                 var itemWeight = ServerItems.GetItemWeight(itemname) * itemAmount;
                 var invWeight = CharactersInventory.GetCharacterItemWeight(targetPlayerId, "inventory");
                 var backpackWeight = CharactersInventory.GetCharacterItemWeight(targetPlayerId, "backpack");
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetPlayerId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetPlayerId);
                 if (targetPlayer == null) return;
 
                 if (!player.Position.IsInRange(targetPlayer.Position, 5f)) {
@@ -521,7 +521,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenTargetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenTargetCharId);
                 var targetCharId = (int) targetPlayer.GetCharacterMetaId();
                 if (targetCharId != givenTargetCharId) return;
                 if (targetPlayer == null || !targetPlayer.Exists) return;

@@ -343,7 +343,7 @@ namespace Altv_Roleplay
         }
 
         public override void OnStop() {
-            foreach (var player in Alt.Server.GetPlayers().Where(p => p is {Exists: true}))
+            foreach (var player in Alt.GetAllPlayers().Where(p => p is {Exists: true}))
                 player.kickWithMessage("Server wird heruntergefahren...");
 
             ACLSBot.Stop();

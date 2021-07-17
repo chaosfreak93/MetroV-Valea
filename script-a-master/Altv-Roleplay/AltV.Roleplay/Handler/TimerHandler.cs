@@ -23,7 +23,7 @@ namespace Altv_Roleplay.Handler
                 var stopwatch = new Stopwatch();
                 stopwatch.Start();
 
-                foreach (var player in Alt.Server.GetPlayers().ToList()) {
+                foreach (var player in Alt.GetAllPlayers().ToList()) {
                     if (player == null) continue;
 
                     using (var playerReference = new PlayerRef(player)) {
@@ -61,7 +61,7 @@ namespace Altv_Roleplay.Handler
                 var stopwatch = new Stopwatch();
                 stopwatch.Start();
 
-                foreach (var Veh in Alt.Server.GetVehicles().ToList()) {
+                foreach (var Veh in Alt.GetAllVehicles().ToList()) {
                     if (Veh == null || !Veh.Exists)
                         continue;
 
@@ -90,7 +90,7 @@ namespace Altv_Roleplay.Handler
                 stopwatch.Reset();
                 stopwatch.Start();
 
-                foreach (var player in Alt.Server.GetPlayers().ToList()) {
+                foreach (var player in Alt.GetAllPlayers().ToList()) {
                     if (player == null) continue;
 
                     using (var playerReference = new PlayerRef(player)) {
@@ -147,7 +147,7 @@ namespace Altv_Roleplay.Handler
                                         if (player.Position.distance2d(jail) >= 225) {
                                             ServerFactions.AddNewFactionDispatch(0, 1, "Gefängnisausbruch", jail);
 
-                                            foreach (var p in Alt.Server.GetPlayers()
+                                            foreach (var p in Alt.GetAllPlayers()
                                                 .Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                                                 if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
                                                     !ServerFactions.IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||
@@ -304,7 +304,7 @@ namespace Altv_Roleplay.Handler
         }
 
         // Automatice Vehicle Park Fetch
-        //foreach(IVehicle vehicle in Alt.Server.GetVehicles().ToList().Where(x => x.GetVehicleId() != 0))
+        //foreach(IVehicle vehicle in Alt.GetAllVehicles().ToList().Where(x => x.GetVehicleId() != 0))
         //{
         //    if (vehicle == null) return;
         //    using (var vehicleRef = new VehicleRef(vehicle))
@@ -334,7 +334,7 @@ namespace Altv_Roleplay.Handler
                     var oldOwnerId = hotelApartment.ownerId;
                     ServerHotels.SetApartmentOwner(hotelApartment.hotelId, hotelApartment.id, 0);
 
-                    foreach (var players in Alt.Server.GetPlayers().ToList()
+                    foreach (var players in Alt.GetAllPlayers().ToList()
                         .Where(x => x is {Exists: true} && User.GetPlayerOnline(x) == oldOwnerId))
                         HUDHandler.SendNotification(players, 1, 5000, "Deine Mietdauer im Hotel ist ausgelaufen, dein Zimmer wurde gekündigt");
                 }
@@ -347,7 +347,7 @@ namespace Altv_Roleplay.Handler
         internal static void OnDesireTimer(object sender, ElapsedEventArgs e) {
             //Alt.Log("OnDesireTimer Timer aufgerufen");
 
-            foreach (var player in Alt.Server.GetPlayers().ToList()) {
+            foreach (var player in Alt.GetAllPlayers().ToList()) {
                 if (player == null || Characters.IsCharacterAnimal(((ClassicPlayer) player).CharacterId)) continue;
 
                 using (var pRef = new PlayerRef(player)) {
@@ -391,7 +391,7 @@ namespace Altv_Roleplay.Handler
         
         public static void WeatherSyncTimer(object sender, ElapsedEventArgs e) {
             try {
-                foreach (var player in Alt.Server.GetPlayers().ToList().Where(player => player is {Exists: true})) {
+                foreach (var player in Alt.GetAllPlayers().ToList().Where(player => player is {Exists: true})) {
                     WeatherHandler.SetRealWeather(player);
                 }
             }

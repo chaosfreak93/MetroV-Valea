@@ -690,7 +690,7 @@ namespace Altv_Roleplay.Handler
                 var charId = User.GetPlayerOnline(player);
                 if (charId == 0) return;
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
                 if (targetPlayer == null || !targetPlayer.Exists) return;
 
                 var factionCompanyId = 0;
@@ -741,7 +741,7 @@ namespace Altv_Roleplay.Handler
                 var targetCharId = User.GetPlayerOnline(player);
                 if (targetCharId <= 0) return;
 
-                var givenBillPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenBillOwnerCharId);
+                var givenBillPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenBillOwnerCharId);
                 if (givenBillPlayer == null || !givenBillPlayer.Exists) return;
 
                 var factionCompanyName = "None";

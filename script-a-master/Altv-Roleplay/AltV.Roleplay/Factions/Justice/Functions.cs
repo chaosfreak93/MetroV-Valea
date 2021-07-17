@@ -47,7 +47,7 @@ namespace Altv_Roleplay.Factions.Justice
                 var targetCharId = Characters.GetCharacterIdFromCharName(targetCharName);
                 if (targetCharId <= 0) return;
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
                 if (targetPlayer == null || !targetPlayer.Exists) return;
 
                 if (!player.Position.IsInRange(targetPlayer.Position, 5f)) {

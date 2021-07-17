@@ -89,7 +89,7 @@ namespace Altv_Roleplay.Handler
                             break;
                         // ONLINE
                         case "spieler_kicken":
-                            var kickedPlayer = Alt.Server.GetPlayers().ToList()
+                            var kickedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             if (player.AdminLevel() <= kickedPlayer.AdminLevel()) {
@@ -112,7 +112,7 @@ namespace Altv_Roleplay.Handler
 
                             break;
                         case "spieler_bannen":
-                            var bannedPlayer = Alt.Server.GetPlayers().ToList()
+                            var bannedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             if (player.AdminLevel() <= bannedPlayer.AdminLevel()) {
@@ -139,7 +139,7 @@ namespace Altv_Roleplay.Handler
 
                             break;
                         case "spieler_einfrieren":
-                            var kickedPlayerr = Alt.Server.GetPlayers().ToList()
+                            var kickedPlayerr = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             AltAsync.EmitAllClients("Client:AdminMenu:SetFreezed", kickedPlayerr, info);
 
@@ -148,7 +148,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) kickedPlayerr.GetCharacterMetaId()) + " **eingefroren**.");
                             break;
                         case "spieler_spectaten":
-                            var spectatedPlayer = Alt.Server.GetPlayers().ToList()
+                            var spectatedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             player.EmitLocked("Client:AdminMenu:Spectate", spectatedPlayer, info);
 
@@ -165,7 +165,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "spieler_heilen":
-                            var HealedPlayer = Alt.Server.GetPlayers().ToList()
+                            var HealedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             HealedPlayer.Health = 200;
 
@@ -174,7 +174,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) HealedPlayer.GetCharacterMetaId()) + " **geheilt**.");
                             break;
                         case "spieler_wiederbeleben":
-                            var RevivedPlayer = Alt.Server.GetPlayers().ToList()
+                            var RevivedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             DeathHandler.revive(RevivedPlayer);
 
@@ -183,7 +183,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) RevivedPlayer.GetCharacterMetaId()) + " zu sich **wiederbelebt**.");
                             break;
                         case "tp_zu_spieler":
-                            var TeleportToPlayer = Alt.Server.GetPlayers().ToList()
+                            var TeleportToPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             player.Position = new Position(TeleportToPlayer.Position.X, TeleportToPlayer.Position.Y, TeleportToPlayer.Position.Z);
 
@@ -192,7 +192,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) TeleportToPlayer.GetCharacterMetaId()) + " **teleportiert**.");
                             break;
                         case "spieler_zu_mir_tp":
-                            var TeleportPlayer = Alt.Server.GetPlayers().ToList()
+                            var TeleportPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             TeleportPlayer.Position = new Position(player.Position.X, player.Position.Y, player.Position.Z);
 
@@ -213,7 +213,7 @@ namespace Altv_Roleplay.Handler
                                 break;
                             }
 
-                            var GiveItemPlayer = Alt.Server.GetPlayers().ToList()
+                            var GiveItemPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             CharactersInventory.AddCharacterItem((int) GiveItemPlayer.GetCharacterMetaId(), inputvalue, 1, "inventory");
@@ -230,7 +230,7 @@ namespace Altv_Roleplay.Handler
 
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            var GiveAdminPlayer = Alt.Server.GetPlayers().ToList()
+                            var GiveAdminPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             if (!int.TryParse(inputvalue, out var newinputvaluea)) {
@@ -523,7 +523,7 @@ namespace Altv_Roleplay.Handler
 
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            foreach (var client in Alt.Server.GetPlayers()) {
+                            foreach (var client in Alt.GetAllPlayers()) {
                                 if (client == null || !client.Exists) continue;
 
                                 HUDHandler.SendNotification(client, 4, 5000, inputvalue);
@@ -560,7 +560,7 @@ namespace Altv_Roleplay.Handler
                         case "fahrzeug_einparken":
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x =>
+                            var vehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x =>
                                 x != null && x.Exists && x.HasVehicleId() && (int) x.GetVehicleId() > 0 &&
                                 x.NumberplateText.ToLower() == inputvalue.ToLower());
 
@@ -589,7 +589,7 @@ namespace Altv_Roleplay.Handler
 
                             var count = 0;
 
-                            foreach (var veh in Alt.Server.GetVehicles().ToList().Where(x => x != null && x.Exists && x.HasVehicleId())) {
+                            foreach (var veh in Alt.GetAllVehicles().ToList().Where(x => x != null && x.Exists && x.HasVehicleId())) {
                                 if (veh == null || !veh.Exists || !veh.HasVehicleId()) continue;
 
                                 var currentGarageId = ServerVehicles.GetVehicleGarageId(veh);
@@ -607,7 +607,7 @@ namespace Altv_Roleplay.Handler
                         case "fahrzeuginhaber_finden":
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            var fvehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x =>
+                            var fvehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x =>
                                 x != null && x.Exists && x.HasVehicleId() && (int) x.GetVehicleId() > 0 &&
                                 x.NumberplateText.ToLower() == inputvalue.ToLower());
 
@@ -702,7 +702,7 @@ namespace Altv_Roleplay.Handler
                         dynamic array = new JArray();
                         dynamic entry = new JObject();
 
-                        foreach (var plr in Alt.Server.GetPlayers().Where(p => p != null && p.Exists)) {
+                        foreach (var plr in Alt.GetAllPlayers().Where(p => p != null && p.Exists)) {
                             if (((ClassicPlayer) plr).accountId == 0 || (int) plr.GetCharacterMetaId() == 0 ||
                                 Characters.GetCharacterName((int) plr.GetCharacterMetaId()) == "SYSTEM" ||
                                 User.GetPlayerUsername(((ClassicPlayer) plr).accountId) == "Undefined") continue;
@@ -748,7 +748,7 @@ namespace Altv_Roleplay.Handler
         public void GetPlayer(IPlayer player, string reason, string username, string other) {
             try {
                 if (player.AdminLevel() != 0) {
-                    var GetPlayerPlayer = Alt.Server.GetPlayers().ToList()
+                    var GetPlayerPlayer = Alt.GetAllPlayers().ToList()
                         .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == username);
                     if (reason == "GetPlayerMeta") player.Emit("Client:Adminmenu:ReceiveMeta", GetPlayerPlayer);
                     else if (reason == "SetMeta") player.Emit("Client:Adminmenu:SetMetaDef", GetPlayerPlayer, other);

@@ -56,7 +56,7 @@ namespace Altv_Roleplay.Handler
                         return;
                     }
 
-                    var targetServicePlayer = (ClassicPlayer) Alt.Server.GetPlayers().ToList()
+                    var targetServicePlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList()
                         .FirstOrDefault(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId == currentOwnerId);
 
                     if (targetServicePlayer == null || !targetServicePlayer.Exists || !Characters.IsCharacterPhoneEquipped(currentOwnerId) ||
@@ -97,7 +97,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = (ClassicPlayer) Alt.Server.GetPlayers().ToList().FirstOrDefault(x =>
+                var targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
                     x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                     Characters.GetCharacterPhonenumber(((ClassicPlayer) x).CharacterId) == targetPhoneNumber);
 
@@ -132,7 +132,7 @@ namespace Altv_Roleplay.Handler
                 if (Characters.GetCharacterCurrentlyRecieveCaller(player.CharacterId) <= 0) return;
 
                 var callerId = Characters.GetCharacterCurrentlyRecieveCaller(player.CharacterId);
-                var caller = (ClassicPlayer) Alt.Server.GetPlayers().ToList()
+                var caller = (ClassicPlayer) Alt.GetAllPlayers().ToList()
                     .FirstOrDefault(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId == callerId);
                 if (caller == null || !caller.Exists) return;
 
@@ -172,7 +172,7 @@ namespace Altv_Roleplay.Handler
 
                 if (Characters.GetCharacterCurrentlyRecieveCaller(player.CharacterId) != 0) {
                     var callerId = Characters.GetCharacterCurrentlyRecieveCaller(player.CharacterId); //ID vom Spieler der Anruft
-                    var targetPlayer = (ClassicPlayer) Alt.Server.GetPlayers().ToList()
+                    var targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList()
                         .FirstOrDefault(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId == callerId);
 
                     if (targetPlayer != null && targetPlayer.Exists && targetPlayer.CharacterId > 0) {
@@ -193,7 +193,7 @@ namespace Altv_Roleplay.Handler
                     var phoneNumber = Characters.GetCharacterPhoneTargetNumber(player.CharacterId);
                     if (!Characters.ExistPhoneNumber(phoneNumber)) return;
 
-                    var targetPlayer = (ClassicPlayer) Alt.Server.GetPlayers().ToList().FirstOrDefault(x =>
+                    var targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
                         x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                         Characters.GetCharacterPhonenumber(((ClassicPlayer) x).CharacterId) == phoneNumber &&
                         Characters.GetCharacterPhoneTargetNumber(((ClassicPlayer) x).CharacterId) ==
@@ -300,7 +300,7 @@ namespace Altv_Roleplay.Handler
                 CharactersPhone.CreatePhoneChatMessage(chatId, phoneNumber, targetPhoneNumber, unix, message);
                 requestChatMessages(player, chatId);
 
-                var targetPlayer = (ClassicPlayer) Alt.Server.GetPlayers().ToList().FirstOrDefault(x =>
+                var targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
                     x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                     Characters.GetCharacterPhonenumber(((ClassicPlayer) x).CharacterId) == targetPhoneNumber);
                 if (targetPlayer == null || !targetPlayer.Exists) return;
@@ -472,7 +472,7 @@ namespace Altv_Roleplay.Handler
                 var decompiledWanteds = JsonSerializer.Deserialize<List<int>>(wanteds);
                 if (decompiledWanteds == null) return;
 
-                var targetPlayer = (ClassicPlayer) Alt.Server.GetPlayers().ToList()
+                var targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList()
                     .FirstOrDefault(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId == selectedCharId);
 
                 if (targetPlayer == null || !targetPlayer.Exists) {
@@ -486,7 +486,7 @@ namespace Altv_Roleplay.Handler
                 CharactersWanteds.CreateCharacterWantedEntry(selectedCharId, givenString, decompiledWanteds);
                 requestLSPDIntranetPersonWanteds(player, selectedCharId);
 
-                foreach (ClassicPlayer policeMember in Alt.Server.GetPlayers().ToList().Where(x =>
+                foreach (ClassicPlayer policeMember in Alt.GetAllPlayers().ToList().Where(x =>
                     x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                     ServerFactions.IsCharacterInAnyFaction(((ClassicPlayer) x).CharacterId) &&
                     (ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 1)))
@@ -556,7 +556,7 @@ namespace Altv_Roleplay.Handler
                 CharactersWanteds.RemoveWantedEntry(dbId);
                 requestLSPDIntranetPersonWanteds(player, selectedCharId);
 
-                foreach (ClassicPlayer policeMember in Alt.Server.GetPlayers().ToList().Where(x =>
+                foreach (ClassicPlayer policeMember in Alt.GetAllPlayers().ToList().Where(x =>
                     x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 &&
                     ServerFactions.IsCharacterInAnyFaction(((ClassicPlayer) x).CharacterId) &&
                     (ServerFactions.GetCharacterFactionId(((ClassicPlayer) x).CharacterId) == 1)))

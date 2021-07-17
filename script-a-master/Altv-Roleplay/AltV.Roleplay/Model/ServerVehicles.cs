@@ -677,7 +677,7 @@ namespace Altv_Roleplay.Model
         public static string GetAllParkedOutFactionVehicles(string factionShort) {
             if (factionShort == "") return "";
 
-            var items = Alt.Server.GetVehicles().ToList().Where(x => x.NumberplateText.Contains(factionShort)).Select(x => new {
+            var items = Alt.GetAllVehicles().ToList().Where(x => x.NumberplateText.Contains(factionShort)).Select(x => new {
                 vehName = GetVehicleNameOnHash(x.Model),
                 vehHash = x.Model,
                 vehPlate = x.NumberplateText,

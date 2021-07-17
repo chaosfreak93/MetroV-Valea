@@ -42,7 +42,7 @@ namespace Altv_Roleplay.Handler
 
                 var weaponModel = (WeaponModel) weapon;
 
-                foreach (var p in Alt.Server.GetPlayers().ToList()
+                foreach (var p in Alt.GetAllPlayers().ToList()
                     .Where(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 && x.AdminLevel() > 0))
                     p.SendChatMessage(
                         $"{Characters.GetCharacterName(killerPlayer.CharacterId)} ({killerPlayer.CharacterId}) hat {Characters.GetCharacterName(player.CharacterId)} ({player.CharacterId}) getötet. Waffe: {weaponModel}");
@@ -52,7 +52,7 @@ namespace Altv_Roleplay.Handler
                     killerPlayer.Kick("");
                     player.Health = 200;
 
-                    foreach (var p in Alt.Server.GetPlayers().ToList()
+                    foreach (var p in Alt.GetAllPlayers().ToList()
                         .Where(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 && x.AdminLevel() > 0))
                         p.SendChatMessage($"{Characters.GetCharacterName(killerPlayer.CharacterId)} wurde gebannt: Waffenhack[2] - {weaponModel}");
 
