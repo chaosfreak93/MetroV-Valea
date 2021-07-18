@@ -25,7 +25,7 @@ alt.onServer("Client:HUD:CreateCEF", () => {
         });
 
         clothesStoreBrowser.on("Client:Clothesstore:SetRotation", (rot) => {
-            game.setEntityHeading(alt.Player.local.scriptID, rot);
+            game.setEntityHeading(alt.Player.local.scriptID, parseFloat(rot));
         });
     }
 });
