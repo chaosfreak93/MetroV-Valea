@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /home/altv/
+cd /home/MetroV/script-a-master/Server/
 screen -dmS "altv" ./altv-server
