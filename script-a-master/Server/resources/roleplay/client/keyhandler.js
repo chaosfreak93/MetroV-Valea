@@ -21,7 +21,7 @@ alt.on('keyup', (key) => {
         alt.emitServer("Server:KeyHandler:PressU");
     } else if (key == 'Y'.charCodeAt(0)) {
         let result = Raycast.line(1.5, 2.5);
-        if (result == undefined && !alt.Player.local.vehicle) return;
+        if (result == undefined || !alt.Player.local.vehicle) return;
         if (result.isHit && result.entityType != 0) {
             if (result.entityType == 1) {
                 let player = alt.Player.all.find(x => x.scriptID == result.hitEntity);
