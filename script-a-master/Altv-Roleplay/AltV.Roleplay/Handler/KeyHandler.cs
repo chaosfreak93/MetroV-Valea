@@ -6,6 +6,7 @@ using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
+using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
 
 namespace Altv_Roleplay.Handler
@@ -285,6 +286,30 @@ namespace Altv_Roleplay.Handler
 
                 if (barberPos != null && !player.IsInVehicle) {
                     player.EmitLocked("Client:Barber:barberCreateCEF", Characters.GetCharacterHeadOverlays(charId));
+                    return;
+                }
+                
+                Server_Dropped_Items droppedItem = ServerDroppedItems.ServerDroppedItems_.ToList().FirstOrDefault(x => player.Position.IsInRange(x.pos, 2f));
+                if (droppedItem != null && !player.IsInVehicle)
+                {
+                    float weight = ServerItems.GetItemWeight(droppedItem.itemName) * droppedItem.itemAmount;
+                    if (CharactersInventory.GetCharacterItemWeight(User.GetPlayerOnline(player), "inventory") + weight > 15f)
+                    {
+                        if (CharactersInventory.GetCharacterItemWeight(User.GetPlayerOnline(player), "backpack") + weight > CharactersInventory.GetCharacterItemWeight(charId, "backpack"))
+                        {
+                            HUDHandler.SendNotification(player, 4, 1500, "Du hast keinen Platz dafür.");
+                            return;
+                        } else
+                        {
+                            CharactersInventory.AddCharacterItem(User.GetPlayerOnline(player), droppedItem.itemName, droppedItem.itemAmount, "backpack");
+                            ServerDroppedItems.RemoveItem(droppedItem);
+                            HUDHandler.SendNotification(player, 2, 1500, $"Du hast den Gegenstand {droppedItem.itemName} ({droppedItem.itemAmount}x) aufgehoben.");
+                            return;
+                        }
+                    }
+                    CharactersInventory.AddCharacterItem(User.GetPlayerOnline(player), droppedItem.itemName, droppedItem.itemAmount, "inventory");
+                    ServerDroppedItems.RemoveItem(droppedItem);
+                    HUDHandler.SendNotification(player, 2, 1500, $"Du hast den Gegenstand {droppedItem.itemName} ({droppedItem.itemAmount}x) aufgehoben.");
                     return;
                 }
 

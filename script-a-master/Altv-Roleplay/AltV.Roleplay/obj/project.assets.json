@@ -24,6 +24,33 @@
           "lib/net5.0/AltV.Net.Async.dll": {}
         }
       },
+      "AltV.Net.EntitySync/1.12.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Channels": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/AltV.Net.EntitySync.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/AltV.Net.EntitySync.dll": {}
+        }
+      },
+      "AltV.Net.EntitySync.ServerEvent/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AltV.Net": "1.0.0",
+          "AltV.Net.Async": "1.0.0",
+          "AltV.Net.EntitySync": "1.11.2",
+          "System.Threading.Channels": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/AltV.Net.EntitySync.ServerEvent.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/AltV.Net.EntitySync.ServerEvent.dll": {}
+        }
+      },
       "AltV.Net.Resources.Chat.Api/1.48.0": {
         "type": "package",
         "dependencies": {
@@ -1669,6 +1696,34 @@
         "altv.net.async.nuspec",
         "icon.png",
         "lib/net5.0/AltV.Net.Async.dll",
+        "license.txt"
+      ]
+    },
+    "AltV.Net.EntitySync/1.12.0": {
+      "sha512": "GZgxj5NClNCudZW0v//mSoY6GfiFfve7Ld62rxB6f2QK5+grc/7QhnksJAxqdkFwcOpund9t5k1beAbAnrTtvA==",
+      "type": "package",
+      "path": "altv.net.entitysync/1.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "altv.net.entitysync.1.12.0.nupkg.sha512",
+        "altv.net.entitysync.nuspec",
+        "icon.png",
+        "lib/net5.0/AltV.Net.EntitySync.dll",
+        "license.txt"
+      ]
+    },
+    "AltV.Net.EntitySync.ServerEvent/4.0.0": {
+      "sha512": "LO3O/zOPeUad7KL8BOjv2jZfRUkxI22w0Ik+To8M4BrZbw+leZz47QbzQ2v3a5VjY47ytZCBvEP9JStv9uYOVA==",
+      "type": "package",
+      "path": "altv.net.entitysync.serverevent/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "altv.net.entitysync.serverevent.4.0.0.nupkg.sha512",
+        "altv.net.entitysync.serverevent.nuspec",
+        "icon.png",
+        "lib/net5.0/AltV.Net.EntitySync.ServerEvent.dll",
         "license.txt"
       ]
     },
@@ -5773,6 +5828,8 @@
     "net5.0": [
       "AltV.Net >= 4.0.0",
       "AltV.Net.Async >= 4.0.0",
+      "AltV.Net.EntitySync >= 1.12.0",
+      "AltV.Net.EntitySync.ServerEvent >= 4.0.0",
       "AltV.Net.Resources.Chat.Api >= 1.48.0",
       "BCrypt.Net-Next >= 4.0.2",
       "Discord.Net >= 2.4.0",
@@ -5832,6 +5889,14 @@
             "version": "[4.0.0, )"
           },
           "AltV.Net.Async": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "AltV.Net.EntitySync": {
+            "target": "Package",
+            "version": "[1.12.0, )"
+          },
+          "AltV.Net.EntitySync.ServerEvent": {
             "target": "Package",
             "version": "[4.0.0, )"
           },

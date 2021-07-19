@@ -8,6 +8,11 @@ using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
 using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
 
 namespace Altv_Roleplay.Database
 {
@@ -1289,6 +1294,15 @@ namespace Altv_Roleplay.Database
                 using (var db = new gtaContext()) {
                     ServerItems.ServerItems_ = new List<Server_Items>(db.Server_Items);
                     Alt.Log($"{ServerItems.ServerItems_.Count} Server-Items wurden geladen.");
+
+                    ServerDroppedItems.ServerDroppedItems_ = new List<Server_Dropped_Items>(db.Server_Dropped_Items);
+                }
+
+                foreach (Server_Dropped_Items item in Model.ServerDroppedItems.ServerDroppedItems_)
+                {
+                    item.prop = EntityStreamer.PropStreamer.Create("prop_paper_bag_01", item.pos, new Vector3(0), dimension: item.dimension, frozen: true, streamRange: 100);
+                    item.textLabel = EntityStreamer.TextLabelStreamer.Create($"Drücke E um den Gegenstand '{item.itemName} ({item.itemAmount}x)' aufzuheben. ", item.pos, item.dimension, streamRange: 3);
+
                 }
             }
             catch (Exception e) {

@@ -52,6 +52,14 @@
               "target": "Package",
               "version": "[4.0.0, )"
             },
+            "AltV.Net.EntitySync": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "AltV.Net.EntitySync.ServerEvent": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
               "version": "[1.48.0, )"
