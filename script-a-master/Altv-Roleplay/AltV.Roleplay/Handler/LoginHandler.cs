@@ -266,7 +266,7 @@ namespace Altv_Roleplay.Handler
             client.EmitLocked("Client:SpawnArea:setCharSkin", Characters.GetCharacterSkin("facefeatures", charid),
                 Characters.GetCharacterSkin("headblendsdata", charid), Characters.GetCharacterSkin("headoverlays", charid));
             var dbPos = Characters.GetCharacterLastPosition(charid);
-            dbPos.Z += 0.5f;
+            dbPos.Z += 0.75f;
 
             lock (client) {
                 if (client is not {Exists: true}) return;
