@@ -138,11 +138,12 @@ alt.onServer("Client:AdminMenu:GetWaypointInfo", () => {
     const waypoint = game.getFirstBlipInfoId(8);
     if (game.doesBlipExist(waypoint)) {
         let coords = game.getBlipInfoIdCoord(waypoint);
-        game.setEntityCoords(alt.Player.local.scriptID, coords.x, coords.y, 150);
+        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z, alt.Player.local.rot.toDegrees(), false, true, false);
         alt.setTimeout(() => {
-            const [found, groundZ] = game.getGroundZFor3dCoord(coords.x, coords.y, coords.z + 100, 5, false, false);
-            coords = new alt.Vector3(coords.x, coords.y, groundZ + 1);
-            alt.emitServer('Server:AdminMenu:TeleportWaypoint', coords.x, coords.y, coords.z);
+            game.updatePlayerTeleport(alt.Player.local.scriptID);
+            alt.setTimeout(() => {
+                game.stopPlayerTeleport();
+            }, 50);
         }, 50);
     }
 });
