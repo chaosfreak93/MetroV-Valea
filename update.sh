@@ -12,5 +12,5 @@ rm cdn_upload/ -r
 sleep 1
 ./altv-server --host 5.181.151.136 --port 7788 --justpack
 sleep 1
-sudo mv cdn_upload/* /var/www/html/cdn/
+sudo mv cdn_upload/* /var/www/cdn/
 echo 'CDN packed!'
