@@ -893,10 +893,10 @@
       <buoyancySphereSizeScale value="1.000000" />
       <pOverrideRagdollThreshold type="NULL" />
       <firstPersonDrivebyData>
-        <Item>RANGER_RANCHERXL_FRONT_LEFT</Item>
         <Item>VAN_RUMPO_FRONT_RIGHT</Item>
-        <Item>VAN_PONY_REAR_LEFT</Item>
+        <Item>VAN_RUMPO_FRONT_LEFT</Item>
         <Item>VAN_PONY_REAR_RIGHT</Item>
+        <Item>VAN_PONY_REAR_LEFT</Item>
       </firstPersonDrivebyData>
     </Item>
 	<Item>
