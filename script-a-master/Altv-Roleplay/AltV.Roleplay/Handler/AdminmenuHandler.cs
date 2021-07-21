@@ -7,6 +7,7 @@ using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
+using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
 using Newtonsoft.Json.Linq;
 
@@ -77,7 +78,7 @@ namespace Altv_Roleplay.Handler
                             SetAdminClothes(player, info);
 
                             if (info == "on") text = " hat sich das **Adminoutfit angezogen**.";
-                            else text = " hat sich das **Adminoutfit angezogen**.";
+                            else text = " hat sich das **Adminoutfit ausgezogen**.";
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
@@ -104,7 +105,7 @@ namespace Altv_Roleplay.Handler
                             player.Health = 200;
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + "hat sich * *geheilt * *.");
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + "hat sich **geheilt**.");
                             break;
                         case "wiederbeleben":
                             if (player.AdminLevel() < 4) {
@@ -241,7 +242,7 @@ namespace Altv_Roleplay.Handler
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat " +
-                                Characters.GetCharacterName((int) RevivedPlayer.GetCharacterMetaId()) + " zu sich **wiederbelebt**.");
+                                Characters.GetCharacterName((int) RevivedPlayer.GetCharacterMetaId()) + " **wiederbelebt**.");
                             break;
                         case "tp_zu_spieler":
                             if (player.AdminLevel() < 3) {
@@ -796,7 +797,7 @@ namespace Altv_Roleplay.Handler
                             User.SetPlayerBanned(unbannedPlayer, false, $"Entbannt von {Characters.GetCharacterName(User.GetPlayerOnline(player))}");
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs", 
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat " + 
-                                unbannedPlayer + " **entbannt**.");
+                                User.GetPlayerUsername(unbannedPlayer) + " **entbannt**.");
                             break;
                         // DEFAULT
                         default:
