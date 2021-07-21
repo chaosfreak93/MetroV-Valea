@@ -23,7 +23,7 @@ namespace Altv_Roleplay.Handler
             player.SetPlayerIsCuffed("handcuffs", false);
             player.SetPlayerIsCuffed("footcuffs", false);
             player.SetPlayerIsCuffed("ropecuffs", false);
-            player.SetSyncedMetaData("isOnHands", false);
+            player.SetStreamSyncedMetaData("isOnHands", false);
             setCefStatus(player, false);
             player.SetPlayerCurrentMinijob("None");
             player.SetPlayerCurrentMinijobRouteId(0);

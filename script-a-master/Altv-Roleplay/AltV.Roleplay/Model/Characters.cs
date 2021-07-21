@@ -3440,10 +3440,12 @@ namespace Altv_Roleplay.Model
                 if (charId <= 0) return;
 
                 var chars = PlayerCharacters.FirstOrDefault(x => x.charId == charId);
+                var player = Alt.GetAllPlayers().ToList().FirstOrDefault(x => ((ClassicPlayer) x).CharacterId == charId);
 
                 if (chars != null) {
                     chars.isUnconscious = isUnconscious;
                     chars.unconsciousTime = unconsciousTime;
+                    player.SetStreamSyncedMetaData("IsUnconscious", isUnconscious);
 
                     using (var db = new gtaContext()) {
                         db.AccountsCharacters.Update(chars);

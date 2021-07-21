@@ -26,9 +26,7 @@ alt.on('keyup', (key) => {
             if (result.entityType == 1) {
                 let player = alt.Player.all.find(x => x.scriptID == result.hitEntity);
                 if (!player.valid || player == undefined) return;
-                if (player.getSyncedMeta("HasFootCuffs") == true) {
-                    alt.emitServer("Server:CarryPlayer", player);
-                }
+                alt.emitServer("Server:CarryPlayer", player, player.getStreamSyncedMeta("IsUnconscious"), player.getSyncedMeta("HasFootCuffs"));
             }
         }
     }
