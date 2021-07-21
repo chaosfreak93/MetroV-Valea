@@ -105,7 +105,7 @@ namespace Altv_Roleplay.Handler
                             player.Health = 200;
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + "hat sich **geheilt**.");
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich **geheilt**.");
                             break;
                         case "wiederbeleben":
                             if (player.AdminLevel() < 4) {
@@ -116,7 +116,7 @@ namespace Altv_Roleplay.Handler
                             DeathHandler.revive(player);
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + "hat sich **wiederbelebt**.");
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich **wiederbelebt**.");
                             break;
                         // ONLINE
                         case "spieler_kicken":
