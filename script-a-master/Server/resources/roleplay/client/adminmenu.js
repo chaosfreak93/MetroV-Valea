@@ -138,13 +138,13 @@ alt.onServer("Client:AdminMenu:GetWaypointInfo", () => {
     const waypoint = game.getFirstBlipInfoId(8);
     if (game.doesBlipExist(waypoint)) {
         let coords = game.getBlipInfoIdCoord(waypoint);
-        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z, alt.Player.local.rot.toDegrees(), false, true, false);
+        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z, alt.Player.local.rot.toDegrees(), true, true, true);
         alt.setTimeout(() => {
             game.updatePlayerTeleport(alt.Player.local.scriptID);
             alt.setTimeout(() => {
                 game.stopPlayerTeleport();
-            }, 50);
-        }, 50);
+            }, 100);
+        }, 100);
     }
 });
 
