@@ -404,7 +404,7 @@ namespace Altv_Roleplay.Handler
                                 break;
                             }
 
-                            if (player.Vehicle == null || !player.Vehicle.Exists) break;
+                            if (player.Vehicle == null || !player.Vehicle.Exists || !player.IsInVehicle) break;
 
                             player.Vehicle.Remove();
 
