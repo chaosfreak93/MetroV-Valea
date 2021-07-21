@@ -138,7 +138,7 @@ alt.onServer("Client:AdminMenu:GetWaypointInfo", () => {
     const waypoint = game.getFirstBlipInfoId(8);
     if (game.doesBlipExist(waypoint)) {
         let coords = game.getBlipInfoIdCoord(waypoint);
-        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z, alt.Player.local.rot.toDegrees(), true, true, true);
+        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z + 1, alt.Player.local.rot.toDegrees(), false, true, false);
         alt.setTimeout(() => {
             game.updatePlayerTeleport(alt.Player.local.scriptID);
             alt.setTimeout(() => {
