@@ -290,10 +290,11 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
             if (!username || username == undefined) continue;
 
             playerblips_blip[player.scriptID] = game.addBlipForEntity(player.scriptID);
-            game.setBlipColour(playerblips_blip[player.scriptID], 8);
+            game.setBlipColour(playerblips_blip[player.scriptID], 4);
             game.setBlipScale(playerblips_blip[player.scriptID], 0.9);
+            game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
             game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
-            game.setBlipRotation(player.rot.toDegrees());
+            game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegrees());
             game.beginTextCommandSetBlipName('STRING');
             game.addTextComponentSubstringPlayerName(username);
             game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
@@ -312,8 +313,9 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
                     playerblips_blip[player.scriptID] = game.addBlipForEntity(player.scriptID);
                     game.setBlipColour(playerblips_blip[player.scriptID], 4);
                     game.setBlipScale(playerblips_blip[player.scriptID], 0.9);
+                    game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
                     game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
-                    game.setBlipRotation(player.rot.toDegrees());
+                    game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegrees());
                     game.beginTextCommandSetBlipName('STRING');
                     game.addTextComponentSubstringPlayerName(username);
                     game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
