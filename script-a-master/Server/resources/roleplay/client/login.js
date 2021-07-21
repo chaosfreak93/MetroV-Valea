@@ -573,7 +573,7 @@ const activateInterior = (id, interiors) => {
 
 function setMinimapData() {
     const ZOOM_LEVEL_0 = alt.MapZoomData.get('ZOOM_LEVEL_0');
-    ZOOM_LEVEL_0.fZoomScale = 2.75;
+    ZOOM_LEVEL_0.fZoomScale = 2.73;
     ZOOM_LEVEL_0.fZoomSpeed = 0.9;
     ZOOM_LEVEL_0.fScrollSpeed = 0.08;
     ZOOM_LEVEL_0.vTilesX = 0.0;
@@ -594,14 +594,14 @@ function setMinimapData() {
     ZOOM_LEVEL_2.vTilesY = 0.0;
 
     const ZOOM_LEVEL_3 = alt.MapZoomData.get('ZOOM_LEVEL_3');
-    ZOOM_LEVEL_3.fZoomScale = 20.0;
+    ZOOM_LEVEL_3.fZoomScale = 11.0;
     ZOOM_LEVEL_3.fZoomSpeed = 0.9;
     ZOOM_LEVEL_3.fScrollSpeed = 0.08;
     ZOOM_LEVEL_3.vTilesX = 0.0;
     ZOOM_LEVEL_3.vTilesY = 0.0;
 
     const ZOOM_LEVEL_4 = alt.MapZoomData.get('ZOOM_LEVEL_4');
-    ZOOM_LEVEL_4.fZoomScale = 30.0;
+    ZOOM_LEVEL_4.fZoomScale = 16.0;
     ZOOM_LEVEL_4.fZoomSpeed = 0.9;
     ZOOM_LEVEL_4.fScrollSpeed = 0.08;
     ZOOM_LEVEL_4.vTilesX = 0.0;
