@@ -63,12 +63,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        500.000000
-        500.000000
-        500.000000
-        500.000000
-        500.000000
-        500.000000
+        50.000000
+        250.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.85" />
       <identicalModelSpawnDistance value="20" />
@@ -112,25 +112,11 @@
         <Item>STD_DOMINATOR_FRONT_RIGHT</Item>
       </firstPersonDrivebyData>
     </Item>
-
-
-
-
-
-
-
-
-
-
   </InitDatas>
   <txdRelationships>
     <Item>
       <parent>vehicles_dom_interior</parent>
       <child>mcvors</child>
     </Item>
-
-
-
-	
   </txdRelationships>
 </CVehicleModelInfo__InitDataList>

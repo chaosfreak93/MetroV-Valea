@@ -74,12 +74,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="1.048" />
       <identicalModelSpawnDistance value="20" />
@@ -201,12 +201,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.966" />
       <identicalModelSpawnDistance value="20" />
@@ -336,12 +336,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="1.048" />
       <identicalModelSpawnDistance value="20" />
@@ -463,12 +463,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.839" />
       <identicalModelSpawnDistance value="20" />
@@ -592,12 +592,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.839" />
       <identicalModelSpawnDistance value="20" />
@@ -711,12 +711,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.966" />
       <identicalModelSpawnDistance value="20" />
@@ -840,12 +840,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.946" />
       <identicalModelSpawnDistance value="20" />
@@ -893,10 +893,10 @@
       <buoyancySphereSizeScale value="1.000000" />
       <pOverrideRagdollThreshold type="NULL" />
       <firstPersonDrivebyData>
-        <Item>VAN_RUMPO_FRONT_RIGHT</Item>
         <Item>VAN_RUMPO_FRONT_LEFT</Item>
-        <Item>VAN_PONY_REAR_RIGHT</Item>
+        <Item>VAN_RUMPO_FRONT_RIGHT</Item>
         <Item>VAN_PONY_REAR_LEFT</Item>
+        <Item>VAN_PONY_REAR_RIGHT</Item>
       </firstPersonDrivebyData>
     </Item>
 	<Item>
@@ -965,12 +965,12 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        80.000000
-        160.000000
-        320.000000
-        640.000000
-        1280.000000
-        2560.000000
+        50.000000
+        250.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="1.057" />
       <identicalModelSpawnDistance value="20" />

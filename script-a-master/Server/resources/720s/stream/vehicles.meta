@@ -63,12 +63,12 @@
       <steerWheelMult value="0.600000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        100.000000
+        50.000000
         250.000000
-        500.000000
-        1000.000000
-        2500.000000
-        5000.000000
+        750.000000
+        1500.000000
+        2000.000000
+        3000.000000
       </lodDistances>
       <minSeatHeight value="0.868" />
       <identicalModelSpawnDistance value="20" />
