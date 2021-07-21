@@ -1398,10 +1398,10 @@ namespace Altv_Roleplay.Database
                     db.SaveChanges();
 
                     foreach (var veh in db.Server_Vehicles) {
-                        if (!veh.isInGarage && DateTime.Now.Subtract(veh.lastUsage).TotalHours >= 720) {
+                        /**if (!veh.isInGarage && DateTime.Now.Subtract(veh.lastUsage).TotalHours >= 720) {
                             veh.isInGarage = true;
                             db.Server_Vehicles.Update(veh);
-                        }
+                        }**/
 
                         if (veh.vehType == 2 || veh.charid == 0) {
                             var mod = ServerVehicles.ServerVehiclesMod_.FirstOrDefault(x => x.vehId == veh.id);
