@@ -5,6 +5,7 @@ using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using AltV.Net.Interactions;
 using Altv_Roleplay.Database;
 using Altv_Roleplay.Factions.ACLS;
 using Altv_Roleplay.Factions.LSMD;
@@ -125,6 +126,7 @@ namespace Altv_Roleplay
             DatabaseHandler.LoadAllTattooStuff();
 
             WeatherHandler.GetRealWeatherType();
+            AltInteractions.Init();
 
             //Database.DatabaseHandler.RenewAll();
 
@@ -362,6 +364,7 @@ namespace Altv_Roleplay
             ACLSBot.Stop();
             //LSPDBot.Stop();
             LSMDBot.Stop();
+            AltInteractions.Dispose();
             AltAsync.Log("Server ist gestoppt.");
         }
     }

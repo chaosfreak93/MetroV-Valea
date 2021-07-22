@@ -4,6 +4,7 @@ using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using AltV.Net.Interactions;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
 using Altv_Roleplay.models;
@@ -431,34 +432,7 @@ namespace Altv_Roleplay.Handler
                         return;
                     }
 
-                    var serverDoorLockCol =
-                        (ClassicColshape) ServerDoors.ServerDoorsLockColshapes_.FirstOrDefault(x =>
-                            ((ClassicColshape) x).IsInRange((ClassicPlayer) player));
-
-                    if (serverDoorLockCol != null) {
-                        var doorColData = ServerDoors.ServerDoors_.FirstOrDefault(x => x.id == (int) serverDoorLockCol.GetColShapeId());
-
-                        if (doorColData != null) {
-                            var doorKey = doorColData.doorKey;
-                            var doorKey2 = doorColData.doorKey2;
-                            if (doorKey == null || doorKey2 == null) return;
-                            if (!CharactersInventory.ExistCharacterItem(charId, doorKey, "inventory") &&
-                                !CharactersInventory.ExistCharacterItem(charId, doorKey, "backpack") &&
-                                !CharactersInventory.ExistCharacterItem(charId, doorKey2, "inventory") &&
-                                !CharactersInventory.ExistCharacterItem(charId, doorKey2, "backpack")) return;
-
-                            if (!doorColData.state)
-                                HUDHandler.SendNotification(player, 4, 1500, "Tür abgeschlossen.");
-                            else
-                                HUDHandler.SendNotification(player, 2, 1500, "Tür aufgeschlossen.");
-
-                            doorColData.state = !doorColData.state;
-                            AltAsync.EmitAllClients("Client:DoorManager:ManageDoor", doorColData.doorHash, doorColData.doorHash2,
-                                new Position(doorColData.posX, doorColData.posY, doorColData.posZ),
-                                new Position(doorColData.posX2, doorColData.posY2, doorColData.posZ2), doorColData.state);
-                            return;
-                        }
-                    }
+                    AltInteractions.TriggerInteractions(player);
 
                     if (player.Dimension >= 5000) {
                         var houseInteriorCount = ServerHouses.GetMaxInteriorsCount();

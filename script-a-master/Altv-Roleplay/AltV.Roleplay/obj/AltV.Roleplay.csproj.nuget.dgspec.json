@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[4.0.0, )"
             },
+            "AltV.Net.Interactions": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
               "version": "[1.48.0, )"
