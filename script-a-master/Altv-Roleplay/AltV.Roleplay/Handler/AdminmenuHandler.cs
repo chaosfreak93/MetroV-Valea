@@ -406,7 +406,7 @@ namespace Altv_Roleplay.Handler
 
                             if (player.Vehicle == null || !player.Vehicle.Exists || !player.IsInVehicle) break;
 
-                            player.Vehicle.Remove();
+                            player.Vehicle.RemoveAsync();
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sein **Fahrzeug gelöscht**");
