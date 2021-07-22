@@ -11,7 +11,6 @@ let adminmenu_latestonlineactionarray = [];
 
 let spectate_lastpos = null;
 let spectate_camera = null;
-let spectate_interval = null;
 let spectate_tick = null;
 
 let nametags_tick = null;
@@ -19,7 +18,6 @@ let nametags_tick = null;
 let playerblips_allblips = [];
 let playerblips_blip = {};
 let playerblips_interval = null;
-let playerblips_allplayer = [];
 
 alt.onServer("Client:HUD:CreateCEF", () => {
     if (adminMenuBrowser == null) {
@@ -267,60 +265,56 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
     }
 });
 
-alt.onServer("Client:AdminMenu:GetAllPlayer", (player) => {
-    playerblips_allplayer = player;
-});
-
-alt.setInterval(() => {
-    alt.emitServer("Server:AdminMenu:GetAllPlayer");
-}, 250);
-
 alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
     if (info == "on") {
-        for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
-            let player = playerblips_allplayer[i];
-            if (player.scriptID == undefined) continue;
+        for (let i = 0, n = alt.Player.all.length; i < n; i++) {
+            let player = alt.Player.all[i];
+            if (!player.valid || player.scriptID == undefined) continue;
 
             const username = player.getSyncedMeta('NAME');
             if (!username || username == undefined) continue;
 
-            playerblips_blip[player.scriptID] = new alt.PointBlip(player.pos.x, player.pos.y, player.pos.z);
-            playerblips_blip[player.scriptID].color = 4;
-            playerblips_blip[player.scriptID].scale = 0.9;
-            playerblips_blip[player.scriptID].display = 2;
-            playerblips_blip[player.scriptID].showCone = true;
-            playerblips_blip[player.scriptID].name = username;
-            playerblips_blip[player.scriptID].heading = player.rot.toDegress().z;
+            playerblips_blip[player.scriptID] = game.addBlipForEntity(player);
+            game.setBlipColour(playerblips_blip[player.scriptID], 4);
+            game.setBlipScale(playerblips_blip[player.scriptID], 0.9);
+            game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
+            game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
+            game.beginTextCommandSetBlipName("STRING");
+            game.addTextComponentSubstringBlipName(username);
+            game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
+            game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegress().z);
             playerblips_allblips.push(playerblips_blip[player.scriptID]);
         }
 
         playerblips_interval = alt.setInterval(() => {
-            for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
-                let player = playerblips_allplayer[i];
-                if (player.scriptID == undefined) continue;
+            for (let i = 0, n = alt.Player.all.length; i < n; i++) {
+                let player = alt.Player.all[i];
+                if (!player.valid || player.scriptID == undefined) continue;
 
                 const username = player.getSyncedMeta('NAME');
                 if (!username || username == undefined) continue;
 
                 if (playerblips_blip[player.scriptID] == undefined) {
-                    playerblips_blip[player.scriptID] = new alt.PointBlip(player.pos.x, player.pos.y, player.pos.z);
-                    playerblips_blip[player.scriptID].color = 4;
-                    playerblips_blip[player.scriptID].scale = 0.9;
-                    playerblips_blip[player.scriptID].display = 2;
-                    playerblips_blip[player.scriptID].showCone = true;
-                    playerblips_blip[player.scriptID].name = username;
+                    playerblips_blip[player.scriptID] = game.addBlipForEntity(player);
+                    game.setBlipColour(playerblips_blip[player.scriptID], 4);
+                    game.setBlipScale(playerblips_blip[player.scriptID], 0.9);
+                    game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
+                    game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
+                    game.beginTextCommandSetBlipName("STRING");
+                    game.addTextComponentSubstringBlipName(username);
+                    game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
+                    game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegress().z);
                     playerblips_allblips.push(playerblips_blip[player.scriptID]);
                 }
 
-                playerblips_blip[player.scriptID].heading = player.rot.toDegrees().z;
-                playerblips_blip[player.scriptID].pos = new alt.Vector3(player.pos.x, player.pos.y, player.pos.z);
+                game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegress().z);
             }
         }, 500);
     } else if (info == "off") {
         if (playerblips_interval == null) return;
         alt.clearInterval(playerblips_interval);
-        for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
-            let player = playerblips_allplayer[i];
+        for (let i = 0, n = alt.Player.all.length; i < n; i++) {
+            let player = alt.Player.all[i];
             if (player.scriptID == undefined || !game.doesBlipExist(playerblips_blip[player.scriptID])) continue;
             game.removeBlip(playerblips_blip[player.scriptID]);
             const elementindex = playerblips_allblips.indexOf(5);
