@@ -14,7 +14,7 @@
 
     <Item type="CHandlingData">
       <handlingName>DVDT3</handlingName>
-      <fMass value="1650.000000" />
+      <fMass value="1.200.000000" />
       <fInitialDragCoeff value="6.250000" />
       <fPercentSubmerged value="85.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.065000" z="-0.110000" />
