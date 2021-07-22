@@ -134,7 +134,7 @@ namespace Altv_Roleplay
             Minijobs.Busfahrer.Main.Initialize();
             //TODO: Reaktivieren
             ACLSBot.Main();
-            LSPDBot.Main();
+            //LSPDBot.Main();
             LSMDBot.Main();
 
             //Events registrieren
@@ -374,7 +374,7 @@ namespace Altv_Roleplay
                 player.kickWithMessage("Server wird heruntergefahren...");
 
             ACLSBot.Stop();
-            LSPDBot.Stop();
+            //LSPDBot.Stop();
             LSMDBot.Stop();
             AltAsync.Log("Server ist gestoppt.");
         }
