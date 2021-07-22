@@ -293,8 +293,8 @@ alt.setInterval(() => {
 
 alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
     if (info == "on") {
-        for (let i = 0, n = alt.Player.all.length; i < n; i++) {
-            let player = alt.Player.all[i];
+        for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
+            let player = playerblips_allplayer[i];
             if (!player.valid || player.scriptID == undefined) continue;
 
             const username = player.getSyncedMeta('NAME');
@@ -313,8 +313,8 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
         }
 
         playerblips_interval = alt.setInterval(() => {
-            for (let i = 0, n = alt.Player.all.length; i < n; i++) {
-                let player = alt.Player.all[i];
+            for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
+                let player = playerblips_allplayer[i];
                 if (!player.valid || player.scriptID == undefined) continue;
 
                 const username = player.getSyncedMeta('NAME');
