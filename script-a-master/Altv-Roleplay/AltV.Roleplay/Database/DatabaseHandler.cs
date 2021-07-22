@@ -379,10 +379,10 @@ namespace Altv_Roleplay.Database
                         ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     } else if (door.type == "Gate") {
                         var lockCol =
-                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 4f);
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 6f);
                         lockCol.SetColShapeName("DoorShape");
                         lockCol.SetColShapeId(door.id);
-                        lockCol.Radius = 4f;
+                        lockCol.Radius = 6f;
                         ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     }
                 }
