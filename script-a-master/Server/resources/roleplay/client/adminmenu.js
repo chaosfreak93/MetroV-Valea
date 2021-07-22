@@ -19,6 +19,7 @@ let nametags_tick = null;
 let playerblips_allblips = [];
 let playerblips_blip = {};
 let playerblips_interval = null;
+let playerblips_allplayer = [];
 
 alt.onServer("Client:HUD:CreateCEF", () => {
     if (adminMenuBrowser == null) {
@@ -279,6 +280,15 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
         alt.clearEveryTick(nametags_tick);
     }
 });
+
+alt.onServer("Client:AdminMenu:GetAllPlayer", (player) => {
+    alt.log(Array.from(player).toString());
+    playerblips_allplayer = Array.from(player);
+});
+
+alt.setInterval(() => {
+    alt.emitServer("Server:AdminMenu:GetAllPlayer");
+}, 250);
 
 alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
     if (info == "on") {
