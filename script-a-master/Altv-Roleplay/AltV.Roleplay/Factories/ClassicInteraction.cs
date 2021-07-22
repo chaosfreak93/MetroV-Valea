@@ -19,7 +19,7 @@ namespace Altv_Roleplay.Factories
             var cPlayer = (ClassicPlayer) player;
             var charId = cPlayer.CharacterId;
             var serverDoorLockCol =
-                ServerDoors.ServerDoorsLockColshapes_.FirstOrDefault(x => Extensions.IsInRange(player.Position, x.Position, 20));
+                ServerDoors.ServerDoorsLockColshapes_.FirstOrDefault(x => x.Position == interactionPosition);
 
             if (serverDoorLockCol != null) {
                 var doorColData = ServerDoors.ServerDoors_.FirstOrDefault(x => x.id == (int) serverDoorLockCol.Id);
