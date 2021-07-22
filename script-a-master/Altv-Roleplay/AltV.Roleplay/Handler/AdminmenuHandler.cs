@@ -666,6 +666,8 @@ namespace Altv_Roleplay.Handler
                                 break;
                             }
 
+                            if (!vehicle.Exists) break;
+
                             var currentGarageId2 = ServerVehicles.GetVehicleGarageId(vehicle);
                             if (currentGarageId2 <= 0) return;
 
