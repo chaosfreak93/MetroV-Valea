@@ -882,6 +882,16 @@ namespace Altv_Roleplay.Handler
                 Alt.Log($"{e}");
             }
         }
+        
+        [AsyncClientEvent("Server:AdminMenu:GetAllPlayer")]
+        public void GetAllPlayer(IPlayer player) {
+            try {
+                player.Emit("Client:AdminMenu:GetAllPlayer", Alt.GetAllPlayers().ToString());
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
 
         public static void SetAdminClothes(IPlayer player, string info) {
             if (info == "on") {
