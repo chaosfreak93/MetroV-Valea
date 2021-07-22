@@ -178,23 +178,24 @@ function waitFor(func, ...args) {
 alt.onServer("Client:AdminMenu:Spectate", async (target, info) => {
     if (info == "on") {
         spectate_lastpos = game.getEntityCoords(alt.Player.local.scriptID);
-        game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
-        await waitFor(game.isNewLoadSceneLoaded);
-        game.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, 0, 0, 0, true);
-        spectate_camera = game.createCamera(alt.hash("DEFAULT_SCRIPTED_CAMERA"), true);
-        //spectate_camera = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', target.pos.x, target.pos.y, target.pos.z, 0, 0, 240, 50, true, 2);
-        game.setCamActive(spectate_camera, true);
-        await waitFor(game.isCamActive, spectate_camera);
-        game.freezeEntityPosition(alt.Player.local.scriptID, true);
-        game.attachCamToEntity(spectate_camera, target.scriptID, 0, -2.0, 1.0, true);
-        game.renderScriptCams(true, false, 0, true, false, 0);
-        await waitFor(game.isCamRendering, spectate_camera);
-        game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
-        await waitFor(game.isNewLoadSceneLoaded);
-        spectate_tick = alt.everyTick(() => {
-            game.pointCamAtCoord(spectate_camera, target.pos.x, target.pos.y, target.pos.z);
-            game.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, 0, 0, 0, true);
-        });
+        game.startPlayerTeleport(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, alt.Player.local.rot.toDegrees(), false, false, false);
+        alt.setTimeout(() => {
+            game.updatePlayerTeleport(alt.Player.local.scriptID);
+            alt.setTimeout(() => {
+                game.stopPlayerTeleport();
+                game.freezeEntityPosition(alt.Player.local.scriptID, true);
+                spectate_camera = game.createCamera(alt.hash("DEFAULT_SCRIPTED_CAMERA"), true);
+                //spectate_camera = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', target.pos.x, target.pos.y, target.pos.z, 0, 0, 240, 50, true, 2);
+                game.setCamActive(spectate_camera, true);
+                game.attachCamToEntity(spectate_camera, target.scriptID, 0, -2.0, 1.0, true);
+                game.renderScriptCams(true, false, 0, true, false, 0);
+                game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
+                spectate_tick = alt.everyTick(() => {
+                    game.pointCamAtCoord(spectate_camera, target.pos.x, target.pos.y, target.pos.z);
+                    game.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, 0, 0, 0, true);
+                });
+            }, 50);
+        }, 50);
     } else if (info == "off") {
         if (spectate_camera == null) return;
         alt.clearEveryTick(spectate_tick);
