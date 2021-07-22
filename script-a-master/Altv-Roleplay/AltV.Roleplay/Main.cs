@@ -139,8 +139,6 @@ namespace Altv_Roleplay
 
             //Events registrieren
             Alt.OnColShape += ColAction;
-            AppDomain.CurrentDomain.ProcessExit += OnProcessExit;
-            Console.CancelKeyPress += OnCancelKeyExit;
             //Alt.OnClient<IPlayer, string, string>("Server:Login:ValidateLoginCredentials", LoginHandler.ValidateLoginCredentials);
             //Alt.OnClient<IPlayer, int>("Server:Charselector:PreviewCharacter", LoginHandler.PreviewCharacter);
             //Alt.OnClient<IPlayer, string, string>("Server:Charselector:spawnChar", Handler.LoginHandler.CharacterSelectedSpawnPlace);
@@ -355,18 +353,6 @@ namespace Altv_Roleplay
             if (player == null) return;
 
             player.Position = new Position(x, y, z);
-        }
-
-        private static void OnCancelKeyExit(object sender, ConsoleCancelEventArgs e) {
-            OnExit();
-        }
-
-        private static void OnProcessExit(object sender, EventArgs e) {
-            OnExit();
-        }
-
-        private static void OnExit() {
-            Alt.Resource.Stop();
         }
 
         public override void OnStop() {
