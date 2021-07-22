@@ -73,7 +73,7 @@ alt.onServer("Client:Sirens:setVehicleHasMutedSirensForAll", (vehId, state) => {
     game.setVehicleHasMutedSirens(alt.Vehicle.getByID(vehId).scriptID, state);
 });
 
-alt.setInterval(() => {
+alt.everyTick(() => {
     // Passenger
     game.disableControlAction(0, 58, true);
     if (game.isDisabledControlJustPressed(0, 58)) {
