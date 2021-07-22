@@ -74,19 +74,20 @@ alt.onServer("Client:Sirens:setVehicleHasMutedSirensForAll", (vehId, state) => {
 });
 
 alt.setInterval(() => {
-        // Passenger
-       native.disableControlAction(0, 58, true);
-       if (native.isDisabledControlJustPressed(0, 58)) {
-           enterVehicleAsPassenger();
-           return;
-       }
-       // Driver
-       native.disableControlAction(0, 23, true);
-       if (native.isDisabledControlJustPressed(0, 23)) {
-           enterVehicleAsDriver();
-           return;
-       }
-   });
+    // Passenger
+    game.disableControlAction(0, 58, true);
+    if (game.isDisabledControlJustPressed(0, 58)) {
+        enterVehicleAsPassenger();
+        return;
+    }
+    
+    // Driver
+    game.disableControlAction(0, 23, true);
+    if (game.isDisabledControlJustPressed(0, 23)) {
+        enterVehicleAsDriver();
+        return;
+    }
+});
 
 function enterVehicleAsDriver() {
     if (alt.Player.local.vehicle == null) {
@@ -114,26 +115,26 @@ function enterVehicleAsDriver() {
 
         alt.log('Vehicle: ' + vehicle);
 
-        let boneFLDoor = native.getEntityBoneIndexByName(vehicle, 'door_dside_f');//Front Left
-        const posFLDoor = native.getWorldPositionOfEntityBone(vehicle, boneFLDoor);
+        let boneFLDoor = game.getEntityBoneIndexByName(vehicle, 'door_dside_f');//Front Left
+        const posFLDoor = game.getWorldPositionOfEntityBone(vehicle, boneFLDoor);
         const distFLDoor = distance({ x: posFLDoor.x, y: posFLDoor.y, z: posFLDoor.z }, alt.Player.local.pos);
 
-        let boneFRDoor = native.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front Right
-        const posFRDoor = native.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
+        let boneFRDoor = game.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front Right
+        const posFRDoor = game.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
         const distFRDoor = distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
 
-        if (native.isVehicleSeatFree(vehicle, -1, false)) {
-            let vehicleClass = native.getVehicleClass(vehicle);
+        if (game.isVehicleSeatFree(vehicle, -1, false)) {
+            let vehicleClass = game.getVehicleClass(vehicle);
             if (vehicleClass == 14) {
                 // Boats
-                native.setPedIntoVehicle(player.scriptID, vehicle, -1);
+                game.setPedIntoVehicle(player.scriptID, vehicle, -1);
             } else {
-                native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, -1, 2, 1, 0);
+                game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, -1, 2, 1, 0);
             }
         } else {
             if (distFRDoor < distFLDoor) return;
 
-            native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, -1, 2, 1, 0);
+            game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, -1, 2, 1, 0);
         }
     }
 }
@@ -164,18 +165,18 @@ function enterVehicleAsPassenger() {
 
     alt.log('Vehicle: ' + vehicle);
 
-    if (!native.isVehicleSeatFree(vehicle, 0, false) && !native.isVehicleSeatFree(vehicle, 1, false) && !native.isVehicleSeatFree(vehicle, 2, false)) return;
+    if (!game.isVehicleSeatFree(vehicle, 0, false) && !game.isVehicleSeatFree(vehicle, 1, false) && !game.isVehicleSeatFree(vehicle, 2, false)) return;
 
-    let boneFRDoor = native.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front right
-    const posFRDoor = native.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
+    let boneFRDoor = game.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front right
+    const posFRDoor = game.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
     const distFRDoor = distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
 
-    let boneBLDoor = native.getEntityBoneIndexByName(vehicle, 'door_dside_r');//Back Left
-    const posBLDoor = native.getWorldPositionOfEntityBone(vehicle, boneBLDoor);
+    let boneBLDoor = game.getEntityBoneIndexByName(vehicle, 'door_dside_r');//Back Left
+    const posBLDoor = game.getWorldPositionOfEntityBone(vehicle, boneBLDoor);
     const distBLDoor = distance({ x: posBLDoor.x, y: posBLDoor.y, z: posBLDoor.z }, alt.Player.local.pos);
 
-    let boneBRDoor = native.getEntityBoneIndexByName(vehicle, 'door_pside_r');//Back Right
-    const posBRDoor = native.getWorldPositionOfEntityBone(vehicle, boneBRDoor);
+    let boneBRDoor = game.getEntityBoneIndexByName(vehicle, 'door_pside_r');//Back Right
+    const posBRDoor = game.getWorldPositionOfEntityBone(vehicle, boneBRDoor);
     const distBRDoor = distance({ x: posBRDoor.x, y: posBRDoor.y, z: posBRDoor.z }, alt.Player.local.pos);
 
     let minDist = Math.min(distFRDoor, distBLDoor, distBRDoor);
@@ -183,10 +184,10 @@ function enterVehicleAsPassenger() {
     if (minDist == distFRDoor) {
         if (minDist > 1.8) return;
 
-        if (native.isVehicleSeatFree(vehicle, 0, false)) {
-            native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 0, 2, 1, 0);
-        } else if (native.isVehicleSeatFree(vehicle, 2, false)) {
-            native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 2, 2, 1, 0);
+        if (game.isVehicleSeatFree(vehicle, 0, false)) {
+            game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 0, 2, 1, 0);
+        } else if (game.isVehicleSeatFree(vehicle, 2, false)) {
+            game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 2, 2, 1, 0);
         }
         else {
             return;
@@ -195,8 +196,8 @@ function enterVehicleAsPassenger() {
     if (minDist == distBLDoor) {
         if (minDist > 1.8) return;
 
-        if (native.isVehicleSeatFree(vehicle, 1, false)) {
-            native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 1, 2, 1, 0);
+        if (game.isVehicleSeatFree(vehicle, 1, false)) {
+            game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 1, 2, 1, 0);
         } else {
             return;
         }
@@ -204,10 +205,10 @@ function enterVehicleAsPassenger() {
     if (minDist == distBRDoor) {
         if (minDist > 1.8) return;
 
-        if (native.isVehicleSeatFree(vehicle, 2, false)) {
-            native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 2, 2, 1, 0);
-        } else if (native.isVehicleSeatFree(vehicle, 0, false)) {
-            native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 0, 2, 1, 0);
+        if (game.isVehicleSeatFree(vehicle, 2, false)) {
+            game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 2, 2, 1, 0);
+        } else if (game.isVehicleSeatFree(vehicle, 0, false)) {
+            game.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, 0, 2, 1, 0);
         } else {
             return;
         }
