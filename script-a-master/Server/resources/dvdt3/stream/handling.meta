@@ -2,6 +2,16 @@
 
 <CHandlingDataMgr>
   <HandlingData>
+
+
+
+
+
+
+
+
+
+
     <Item type="CHandlingData">
       <handlingName>DVDT3</handlingName>
       <fMass value="1200.000000" />
@@ -15,7 +25,7 @@
       <fDriveInertia value="1.020000" />
       <fClutchChangeRateScaleUpShift value="7.700000" />
       <fClutchChangeRateScaleDownShift value="6.600000" />
-      <fInitialDriveMaxFlatVel value="300.000000" />
+      <fInitialDriveMaxFlatVel value=270.0000" />
       <fBrakeForce value="0.900000" />
       <fBrakeBiasFront value="0.650000" />
       <fHandBrakeForce value="0.750000" />
@@ -63,5 +73,15 @@
         <Item type="NULL" />
       </SubHandlingData>
     </Item>
+
+
+
+
+
+
+
+
+
+
   </HandlingData>
 </CHandlingDataMgr>
