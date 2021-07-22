@@ -57,13 +57,13 @@ alt.on('keydown', (key) => {
     } else if (key === 18 && alt.Player.local.vehicle && alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
         if (game.isVehicleSirenOn(alt.Player.local.vehicle.scriptID) && !game.isVehicleSirenAudioOn(alt.Player.local.vehicle.scriptID)) alt.emitServer("Server:Sirens:ForwardSirenMute", alt.Player.local.vehicle.id, false);
         else if (game.isVehicleSirenOn(alt.Player.local.vehicle.scriptID) && game.isVehicleSirenAudioOn(alt.Player.local.vehicle.scriptID)) alt.emitServer("Server:Sirens:ForwardSirenMute", alt.Player.local.vehicle.id, true);
-    } else if (key == "J".charCodeAt(0) && alt.Player.local.vehicle && alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
+    } else if (key == "J".charCodeAt(0) && alt.Player.local.vehicle && (alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) || alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0)) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
         alt.emit("SaltyChat:UseMegaphone", true);
     }
 });
 
 alt.on('keyup', (key) => {
-    if (key == "J".charCodeAt(0) && alt.Player.local.vehicle && alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
+    if (key == "J".charCodeAt(0) && alt.Player.local.vehicle && (alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1) || alt.Player.local.scriptID == game.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0)) && game.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
         alt.emit("SaltyChat:UseMegaphone", false);
     }
 });
