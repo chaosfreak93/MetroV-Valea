@@ -340,13 +340,6 @@ namespace Altv_Roleplay
                 var vehprice = colShape.GetColshapeCarDealerVehPrice();
                 var vehname = colShape.GetColshapeCarDealerVehName();
                 HUDHandler.SendNotification(client, 1, 2500, $"Name: {vehname}<br>Preis: {vehprice}$");
-            } else if (colshapeName == "DoorShape" && state) {
-                var doorData = ServerDoors.ServerDoors_.FirstOrDefault(x => x.id == (int) colshapeId);
-                if (doorData == null) return;
-
-                client.EmitLocked("Client:DoorManager:ManageDoor", doorData.doorHash, doorData.doorHash2,
-                    new Position(doorData.posX, doorData.posY, doorData.posZ), new Position(doorData.posX2, doorData.posY2, doorData.posZ2),
-                    doorData.state);
             }
         }
 

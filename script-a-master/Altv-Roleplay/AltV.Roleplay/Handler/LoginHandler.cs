@@ -319,6 +319,12 @@ namespace Altv_Roleplay.Handler
             }
 
             ServerAnimations.RequestAnimationMenuContent(client);
+            
+            foreach (var door in ServerDoors.ServerDoors_) {
+                client.EmitLocked("Client:DoorManager:ManageDoor", door.doorHash, door.doorHash2,
+                    new Position(door.posX, door.posY, door.posZ), new Position(door.posX2, door.posY2, door.posZ2),
+                    door.state);
+            }
 
             if (Characters.IsCharacterPhoneEquipped(charid) && CharactersInventory.ExistCharacterItem(charid, "Smartphone", "inventory") &&
                 CharactersInventory.GetCharacterItemAmount(charid, "Smartphone", "inventory") > 0) {
