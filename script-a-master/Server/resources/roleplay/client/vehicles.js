@@ -103,7 +103,7 @@ function enterVehicleAsDriver() {
 
         vehicles.forEach(vehicle => {
             var vehiclePosition = vehicle.pos;
-            var distance = extension.Distance(playerPos, vehiclePosition);
+            var distance = Distance(playerPos, vehiclePosition);
             if (distance < lastDistance) {
                 closestVehicle = vehicle;
                 lastDistance = distance;
@@ -117,11 +117,11 @@ function enterVehicleAsDriver() {
 
         let boneFLDoor = game.getEntityBoneIndexByName(vehicle, 'door_dside_f');//Front Left
         const posFLDoor = game.getWorldPositionOfEntityBone(vehicle, boneFLDoor);
-        const distFLDoor = distance({ x: posFLDoor.x, y: posFLDoor.y, z: posFLDoor.z }, alt.Player.local.pos);
+        const distFLDoor = Distance({ x: posFLDoor.x, y: posFLDoor.y, z: posFLDoor.z }, alt.Player.local.pos);
 
         let boneFRDoor = game.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front Right
         const posFRDoor = game.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
-        const distFRDoor = distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
+        const distFRDoor = Distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
 
         if (game.isVehicleSeatFree(vehicle, -1, false)) {
             let vehicleClass = game.getVehicleClass(vehicle);
@@ -153,7 +153,7 @@ function enterVehicleAsPassenger() {
 
     vehicles.forEach(vehicle => {
         var vehiclePosition = vehicle.pos;
-        var distance = extension.Distance(playerPos, vehiclePosition);
+        var distance = Distance(playerPos, vehiclePosition);
         if (distance < lastDistance) {
             closestVehicle = vehicle;
             lastDistance = distance;
@@ -169,15 +169,15 @@ function enterVehicleAsPassenger() {
 
     let boneFRDoor = game.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front right
     const posFRDoor = game.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
-    const distFRDoor = distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
+    const distFRDoor = Distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
 
     let boneBLDoor = game.getEntityBoneIndexByName(vehicle, 'door_dside_r');//Back Left
     const posBLDoor = game.getWorldPositionOfEntityBone(vehicle, boneBLDoor);
-    const distBLDoor = distance({ x: posBLDoor.x, y: posBLDoor.y, z: posBLDoor.z }, alt.Player.local.pos);
+    const distBLDoor = Distance({ x: posBLDoor.x, y: posBLDoor.y, z: posBLDoor.z }, alt.Player.local.pos);
 
     let boneBRDoor = game.getEntityBoneIndexByName(vehicle, 'door_pside_r');//Back Right
     const posBRDoor = game.getWorldPositionOfEntityBone(vehicle, boneBRDoor);
-    const distBRDoor = distance({ x: posBRDoor.x, y: posBRDoor.y, z: posBRDoor.z }, alt.Player.local.pos);
+    const distBRDoor = Distance({ x: posBRDoor.x, y: posBRDoor.y, z: posBRDoor.z }, alt.Player.local.pos);
 
     let minDist = Math.min(distFRDoor, distBLDoor, distBRDoor);
 
