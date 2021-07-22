@@ -55,6 +55,7 @@ alt.on('keydown', (key) => {
 });
 
 alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, isLocked) => {
+    alt.log(doorHash + ", " + doorHash2 + ", " + pos + ", " + pos2 + ", " + isLocked);
     if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
         // game.doorControl(alt.hash(hash), pos.x, pos.y, pos.z, isLocked, 0.0, 50.0, 0.0); //isLocked (0) = Open | isLocked (1) = True
         game.setStateOfClosestDoorOfType(alt.hash(doorHash), pos.x, pos.y, pos.z, isLocked, 0, 0);
