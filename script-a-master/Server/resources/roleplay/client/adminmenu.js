@@ -139,9 +139,9 @@ alt.onServer("Client:AdminMenu:GetWaypointInfo", () => {
     const waypoint = game.getFirstBlipInfoId(8);
     if (game.doesBlipExist(waypoint)) {
         let coords = game.getBlipInfoIdCoord(waypoint);
-        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z + 1, alt.Player.local.rot.toDegrees().x, alt.Player.local.rot.toDegrees().y. alt.Player.local.rot.toDegrees().z, false, true, false);
+        game.startPlayerTeleport(alt.Player.local, coords.x, coords.y, coords.z + 1, alt.Player.local.rot.toDegrees().z, false, true, false);
         alt.setTimeout(() => {
-            game.updatePlayerTeleport(alt.Player.local.scriptID);
+            game.updatePlayerTeleport(alt.Player.local);
             alt.setTimeout(() => {
                 game.stopPlayerTeleport();
             }, 100);
@@ -159,26 +159,10 @@ alt.onServer("Client:AdminMenu:Godmode", (info) => {
     else if (info == "off") game.setPlayerInvincible(alt.Player.local.scriptID, false);
 });
 
-function waitFor(func, ...args) {
-    return new Promise((resolve, reject) => {
-        const interval = alt.setInterval(() => {
-            if (!func(...args)) return;
-            resolve();
-            alt.clearInterval(interval);
-            alt.clearTimeout(timeout);
-        }, 50);
-
-        const timeout = alt.setTimeout(() => {
-            alt.clearInterval(interval);
-            reject();
-        }, 10000);
-    });
-}
-
 alt.onServer("Client:AdminMenu:Spectate", async (target, info) => {
     if (info == "on") {
         spectate_lastpos = game.getEntityCoords(alt.Player.local.scriptID);
-        game.startPlayerTeleport(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, alt.Player.local.rot.toDegrees().x, alt.Player.local.rot.toDegrees().y. alt.Player.local.rot.toDegrees().z, false, false, false);
+        game.startPlayerTeleport(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, alt.Player.local.rot.toDegrees().z, false, false, false);
         alt.setTimeout(() => {
             game.updatePlayerTeleport(alt.Player.local.scriptID);
             alt.setTimeout(() => {
@@ -306,7 +290,7 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
             playerblips_blip[player.scriptID].display = 2;
             playerblips_blip[player.scriptID].showCone = true;
             playerblips_blip[player.scriptID].name = username;
-            playerblips_blip[player.scriptID].heading = player.rot.toDregress().z;
+            playerblips_blip[player.scriptID].heading = player.rot.toDegress().z;
             playerblips_allblips.push(playerblips_blip[player.scriptID]);
         }
 
@@ -328,7 +312,7 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
                     playerblips_allblips.push(playerblips_blip[player.scriptID]);
                 }
 
-                playerblips_blip[player.scriptID].heading = player.rot.toDregress().z;
+                playerblips_blip[player.scriptID].heading = player.rot.toDegrees().z;
                 playerblips_blip[player.scriptID].pos = new alt.Vector3(player.pos.x, player.pos.y, player.pos.z);
             }
         }, 500);
