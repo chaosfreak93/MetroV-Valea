@@ -364,6 +364,8 @@ namespace Altv_Roleplay.Database
                     ServerDoors.ServerDoors_ = new List<Server_Doors>(db.Server_Doors);
                     Alt.Log($"{ServerDoors.ServerDoors_.Count} Server-Doors wurden geladen.");
                 }
+                
+                Alt.Log(ServerDoors.ServerDoors_.ToString());
 
                 foreach (var door in ServerDoors.ServerDoors_) {
                     var Int = new ClassicInteraction(1, ulong.Parse(door.id.ToString()), new Position(door.posX, door.posY, door.posZ), 0, 20);

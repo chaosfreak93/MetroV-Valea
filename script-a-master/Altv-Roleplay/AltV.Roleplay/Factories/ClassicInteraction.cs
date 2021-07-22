@@ -42,9 +42,11 @@ namespace Altv_Roleplay.Factories
                     AltAsync.EmitAllClients("Client:DoorManager:ManageDoor", doorColData.doorHash, doorColData.doorHash2,
                         new Position(doorColData.posX, doorColData.posY, doorColData.posZ),
                         new Position(doorColData.posX2, doorColData.posY2, doorColData.posZ2), doorColData.state);
+                    return true;
                 }
+                return false;
             }
-            return true;
+            return false;
         }
     }
 }
