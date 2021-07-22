@@ -372,17 +372,17 @@ namespace Altv_Roleplay.Database
 
                     if (door.type == "Door") {
                         var lockCol =
-                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 1.5f);
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 2f);
                         lockCol.SetColShapeName("DoorShape");
                         lockCol.SetColShapeId(door.id);
-                        lockCol.Radius = 1.5f;
+                        lockCol.Radius = 2f;
                         ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     } else if (door.type == "Gate") {
                         var lockCol =
-                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 2.5f);
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 4f);
                         lockCol.SetColShapeName("DoorShape");
                         lockCol.SetColShapeId(door.id);
-                        lockCol.Radius = 2.5f;
+                        lockCol.Radius = 4f;
                         ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     }
                 }
