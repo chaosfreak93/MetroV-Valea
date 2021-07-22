@@ -362,8 +362,6 @@ namespace Altv_Roleplay.Database
                     ServerDoors.ServerDoors_ = new List<Server_Doors>(db.Server_Doors);
                     Alt.Log($"{ServerDoors.ServerDoors_.Count} Server-Doors wurden geladen.");
                 }
-                
-                Alt.Log(ServerDoors.ServerDoors_.ToString());
 
                 foreach (var door in ServerDoors.ServerDoors_) {
                     var cols = (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.posX, door.posY, door.posZ), 20f);
