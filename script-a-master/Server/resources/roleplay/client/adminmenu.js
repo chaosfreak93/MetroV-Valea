@@ -139,7 +139,7 @@ alt.onServer("Client:AdminMenu:GetWaypointInfo", () => {
     const waypoint = game.getFirstBlipInfoId(8);
     if (game.doesBlipExist(waypoint)) {
         let coords = game.getBlipInfoIdCoord(waypoint);
-        game.startPlayerTeleport(alt.Player.local.scriptID, coords.x, coords.y, coords.z + 1, alt.Player.local.rot.toDegrees(), true, true, false);
+        game.startPlayerTeleport(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z + 1, alt.Player.local.rot.toDegrees().x, alt.Player.local.rot.toDegrees().y. alt.Player.local.rot.toDegrees().z, false, true, false);
         alt.setTimeout(() => {
             game.updatePlayerTeleport(alt.Player.local.scriptID);
             alt.setTimeout(() => {
@@ -178,22 +178,24 @@ function waitFor(func, ...args) {
 alt.onServer("Client:AdminMenu:Spectate", async (target, info) => {
     if (info == "on") {
         spectate_lastpos = game.getEntityCoords(alt.Player.local.scriptID);
-        game.startPlayerTeleport(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, alt.Player.local.rot.toDegrees(), false, false, false);
+        game.startPlayerTeleport(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, alt.Player.local.rot.toDegrees().x, alt.Player.local.rot.toDegrees().y. alt.Player.local.rot.toDegrees().z, false, false, false);
         alt.setTimeout(() => {
             game.updatePlayerTeleport(alt.Player.local.scriptID);
             alt.setTimeout(() => {
                 game.stopPlayerTeleport();
                 game.freezeEntityPosition(alt.Player.local.scriptID, true);
-                spectate_camera = game.createCamera(alt.hash("DEFAULT_SCRIPTED_CAMERA"), true);
-                //spectate_camera = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', target.pos.x, target.pos.y, target.pos.z, 0, 0, 240, 50, true, 2);
-                game.setCamActive(spectate_camera, true);
-                game.attachCamToEntity(spectate_camera, target.scriptID, 0, -2.0, 1.0, true);
-                game.renderScriptCams(true, false, 0, true, false, 0);
-                game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
-                spectate_tick = alt.everyTick(() => {
-                    game.pointCamAtCoord(spectate_camera, target.pos.x, target.pos.y, target.pos.z);
-                    game.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, 0, 0, 0, true);
-                });
+                alt.setTimeout(() => {
+                    spectate_camera = game.createCamera(alt.hash("DEFAULT_SCRIPTED_CAMERA"), true);
+                    //spectate_camera = game.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', target.pos.x, target.pos.y, target.pos.z, 0, 0, 240, 50, true, 2);
+                    game.setCamActive(spectate_camera, true);
+                    game.attachCamToEntity(spectate_camera, target.scriptID, 0, -2.0, 1.0, true);
+                    game.renderScriptCams(true, false, 0, true, false, 0);
+                    game.newLoadSceneStartSphere(target.pos.x, target.pos.y, target.pos.z, 100, 0);
+                    spectate_tick = alt.everyTick(() => {
+                        game.pointCamAtCoord(spectate_camera, target.pos.x, target.pos.y, target.pos.z);
+                        game.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, 0, 0, 0, true);
+                    });
+                }, 50);
             }, 50);
         }, 50);
     } else if (info == "off") {
@@ -283,7 +285,6 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
 });
 
 alt.onServer("Client:AdminMenu:GetAllPlayer", (player) => {
-    alt.log(player);
     playerblips_allplayer = player;
 });
 
@@ -295,52 +296,52 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
     if (info == "on") {
         for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
             let player = playerblips_allplayer[i];
-            if (!player.valid || player.scriptID == undefined) continue;
+            if (!player.valid || player == undefined) continue;
 
             const username = player.getSyncedMeta('NAME');
             if (!username || username == undefined) continue;
 
-            playerblips_blip[player.scriptID] = game.addBlipForEntity(player.scriptID);
-            game.setBlipColour(playerblips_blip[player.scriptID], 4);
-            game.setBlipScale(playerblips_blip[player.scriptID], 0.9);
-            game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
-            game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
-            game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegrees());
+            playerblips_blip[player] = game.addBlipForEntity(player);
+            game.setBlipColour(playerblips_blip[player], 4);
+            game.setBlipScale(playerblips_blip[player], 0.9);
+            game.setBlipDisplay(playerblips_blip[player], 2);
+            game.setBlipShowCone(playerblips_blip[player], true, 0);
+            game.setBlipRotation(playerblips_blip[player], player.rot.toDegrees());
             game.beginTextCommandSetBlipName('STRING');
             game.addTextComponentSubstringPlayerName(username);
-            game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
-            playerblips_allblips.push(playerblips_blip[player.scriptID]);
+            game.endTextCommandSetBlipName(playerblips_blip[player]);
+            playerblips_allblips.push(playerblips_blip[player]);
         }
 
         playerblips_interval = alt.setInterval(() => {
             for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
                 let player = playerblips_allplayer[i];
-                if (!player.valid || player.scriptID == undefined) continue;
+                if (!player.valid || player == undefined) continue;
 
                 const username = player.getSyncedMeta('NAME');
                 if (!username || username == undefined) continue;
 
-                if (playerblips_blip[player.scriptID] == undefined) {
-                    playerblips_blip[player.scriptID] = game.addBlipForEntity(player.scriptID);
-                    game.setBlipColour(playerblips_blip[player.scriptID], 4);
-                    game.setBlipScale(playerblips_blip[player.scriptID], 0.9);
-                    game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
-                    game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
-                    game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegrees());
+                if (playerblips_blip[player] == undefined) {
+                    playerblips_blip[player] = game.addBlipForEntity(player);
+                    game.setBlipColour(playerblips_blip[player], 4);
+                    game.setBlipScale(playerblips_blip[player], 0.9);
+                    game.setBlipDisplay(playerblips_blip[player], 2);
+                    game.setBlipShowCone(playerblips_blip[player], true, 0);
+                    game.setBlipRotation(playerblips_blip[player], player.rot.toDegrees());
                     game.beginTextCommandSetBlipName('STRING');
                     game.addTextComponentSubstringPlayerName(username);
-                    game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
-                    playerblips_allblips.push(playerblips_blip[player.scriptID]);
+                    game.endTextCommandSetBlipName(playerblips_blip[player]);
+                    playerblips_allblips.push(playerblips_blip[player]);
                 }
             }
         }, 500);
     } else if (info == "off") {
         if (playerblips_interval == null) return;
         alt.clearInterval(playerblips_interval);
-        for (let i = 0, n = alt.Player.all.length; i < n; i++) {
-            let player = alt.Player.all[i];
-            if (player.scriptID == undefined || !game.doesBlipExist(playerblips_blip[player.scriptID])) continue;
-            game.removeBlip(playerblips_blip[player.scriptID]);
+        for (let i = 0, n = playerblips_allplayer.length; i < n; i++) {
+            let player = playerblips_allplayer[i];
+            if (player == undefined || !game.doesBlipExist(playerblips_blip[player])) continue;
+            game.removeBlip(playerblips_blip[player]);
             const elementindex = playerblips_allblips.indexOf(5);
             if (elementindex > -1) elementindex.splice(index, 1);
         }
