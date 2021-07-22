@@ -886,7 +886,7 @@ namespace Altv_Roleplay.Handler
         [AsyncClientEvent("Server:AdminMenu:GetAllPlayer")]
         public void GetAllPlayer(IPlayer player) {
             try {
-                player.Emit("Client:AdminMenu:GetAllPlayer", Alt.GetAllPlayers().ToString());
+                player.Emit("Client:AdminMenu:GetAllPlayer", Alt.GetAllPlayers());
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

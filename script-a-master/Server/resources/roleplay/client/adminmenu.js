@@ -283,8 +283,8 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info) => {
 });
 
 alt.onServer("Client:AdminMenu:GetAllPlayer", (player) => {
-    alt.log(Array.from(player).toString());
-    playerblips_allplayer = Array.from(player);
+    alt.log(player);
+    playerblips_allplayer = player;
 });
 
 alt.setInterval(() => {
