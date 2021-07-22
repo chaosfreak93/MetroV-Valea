@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Jh+vWxWbg1l8kq9m35C/1XapIdFRkOsWPXpd90Sg8F8VDiV7TsZ8EXMb0v+hRcwqt6Bx55iHSEiMWdeYGazrjg==",
+  "dgSpecHash": "dQ8xjj+c+tnND+L9MGySNN2lDMCMbiYqaq+odl0xITVPtpQUpJ9S0awYCaU8XyHIMoC+H1ba2Mspln/0WJUqcQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\yanlu\\RiderProjects\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,6 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\altv.net.async\\4.0.0\\altv.net.async.4.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\altv.net.entitysync\\1.12.0\\altv.net.entitysync.1.12.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\altv.net.entitysync.serverevent\\4.0.0\\altv.net.entitysync.serverevent.4.0.0.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\altv.net.interactions\\1.2.0\\altv.net.interactions.1.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\altv.net.resources.chat.api\\1.48.0\\altv.net.resources.chat.api.1.48.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\discord.net\\2.4.0\\discord.net.2.4.0.nupkg.sha512",

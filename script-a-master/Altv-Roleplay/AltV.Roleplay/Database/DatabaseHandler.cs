@@ -13,8 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
-using AltV.Net.Interactions;
-using Altv_Roleplay.Handler;
 
 namespace Altv_Roleplay.Database
 {
@@ -368,18 +366,26 @@ namespace Altv_Roleplay.Database
                 Alt.Log(ServerDoors.ServerDoors_.ToList().ToString());
 
                 foreach (var door in ServerDoors.ServerDoors_) {
-                    var Int = new ClassicInteraction(1, ulong.Parse(door.id.ToString()), new Position(door.posX, door.posY, door.posZ), 0, 20);
-                    AltInteractions.AddInteraction(Int);
-                    ServerDoors.ServerDoorsColshapes_.Add(Int);
+                    var cols = (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.posX, door.posY, door.posZ), 20f);
+                    cols.SetColShapeName("DoorShape");
+                    cols.SetColShapeId(door.id);
+                    cols.Radius = 20f;
+                    ServerDoors.ServerDoorsColshapes_.Add(cols);
 
                     if (door.type == "Door") {
-                        var lockInt = new ClassicInteraction(2, ulong.Parse(door.id.ToString()), new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 0, 2);
-                        AltInteractions.AddInteraction(lockInt);
-                        ServerDoors.ServerDoorsLockColshapes_.Add(lockInt);
+                        var lockCol =
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 2f);
+                        lockCol.SetColShapeName("DoorShape");
+                        lockCol.SetColShapeId(door.id);
+                        lockCol.Radius = 2f;
+                        ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     } else if (door.type == "Gate") {
-                        var lockInt = new ClassicInteraction(3, ulong.Parse(door.id.ToString()), new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 0, 6);
-                        AltInteractions.AddInteraction(lockInt);
-                        ServerDoors.ServerDoorsLockColshapes_.Add(lockInt);
+                        var lockCol =
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 4f);
+                        lockCol.SetColShapeName("DoorShape");
+                        lockCol.SetColShapeId(door.id);
+                        lockCol.Radius = 4f;
+                        ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     }
                 }
             }
