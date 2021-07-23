@@ -3445,7 +3445,6 @@ namespace Altv_Roleplay.Model
                 if (chars != null) {
                     chars.isUnconscious = isUnconscious;
                     chars.unconsciousTime = unconsciousTime;
-                    player.SetStreamSyncedMetaData("IsUnconscious", isUnconscious);
 
                     using (var db = new gtaContext()) {
                         db.AccountsCharacters.Update(chars);
