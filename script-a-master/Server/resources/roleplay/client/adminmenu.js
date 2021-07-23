@@ -280,9 +280,8 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
             game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
             game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
             game.beginTextCommandSetBlipName("STRING");
-            game.addTextComponentSubstringBlipName(username);
+            game.addTextComponentSubstringTextLabel(username);
             game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
-            game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegress().z);
             playerblips_allblips.push(playerblips_blip[player.scriptID]);
         }
 
@@ -301,13 +300,10 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info) => {
                     game.setBlipDisplay(playerblips_blip[player.scriptID], 2);
                     game.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
                     game.beginTextCommandSetBlipName("STRING");
-                    game.addTextComponentSubstringBlipName(username);
+                    game.addTextComponentSubstringTextLabel(username);
                     game.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
-                    game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegress().z);
                     playerblips_allblips.push(playerblips_blip[player.scriptID]);
                 }
-
-                game.setBlipRotation(playerblips_blip[player.scriptID], player.rot.toDegress().z);
             }
         }, 500);
     } else if (info == "off") {
