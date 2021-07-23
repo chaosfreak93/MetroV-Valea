@@ -56,7 +56,6 @@ namespace Altv_Roleplay.Handler
 
         public static void OnEntityTimer(object sender, ElapsedEventArgs e) {
             try {
-                WeatherHandler.GetRealWeatherType();
                 //Console.WriteLine($"Timer - Thread = {Thread.CurrentThread.ManagedThreadId}");
                 var stopwatch = new Stopwatch();
                 stopwatch.Start();
@@ -111,7 +110,6 @@ namespace Altv_Roleplay.Handler
 
                                 Characters.SetCharacterHealth(charId, player.Health);
                                 Characters.SetCharacterArmor(charId, player.Armor);
-                                if (!WeatherHandler.isNotDifferentWeather) WeatherHandler.SetRealWeather(player);
 
                                 if (player.IsInVehicle) {
                                     player.EmitLocked("Client:HUD:GetDistanceForVehicleKM");
@@ -391,8 +389,12 @@ namespace Altv_Roleplay.Handler
         
         public static void WeatherSyncTimer(object sender, ElapsedEventArgs e) {
             try {
-                foreach (var player in Alt.GetAllPlayers().ToList().Where(player => player is {Exists: true})) {
-                    WeatherHandler.SetRealWeather(player);
+                WeatherHandler.GetRealWeatherType();
+
+                if (!WeatherHandler.isNotDifferentWeather) {
+                    foreach (var player in Alt.GetAllPlayers().ToList().Where(player => player is {Exists: true})) {
+                        WeatherHandler.SetRealWeather(player);
+                    }
                 }
             }
             catch (Exception ex) {
