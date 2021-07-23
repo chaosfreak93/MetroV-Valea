@@ -77,6 +77,11 @@ namespace Altv_Roleplay.Handler
                         else isNotDifferentWeather = false;
                         currentWeatherType = "Foggy";
                         break;
+                    case "Haze":
+                        if (currentWeatherType == "Foggy") isNotDifferentWeather = true;
+                        else isNotDifferentWeather = false;
+                        currentWeatherType = "Foggy";
+                        break;
                     case "Mist":
                         if (currentWeatherType == "Foggy") isNotDifferentWeather = true;
                         else isNotDifferentWeather = false;
