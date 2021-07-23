@@ -674,7 +674,13 @@ namespace Altv_Roleplay.Handler
                             }
 
                             Characters.SetPlayerICWhitelistState(Characters.GetCharacterIdFromCharName(inputvalue), true);
-                            HUDHandler.SendNotification(player, 1, 3000, inputvalue + " wurde erfolgreich gewhitelisted");
+
+                            var playerEntry = Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
+                                ((ClassicPlayer) x).CharacterId == Characters.GetCharacterIdFromCharName(inputvalue));
+                            
+                            TownhallHandler.tryCreateIdentityCardApplyForm(playerEntry);
+                            
+                            HUDHandler.SendNotification(player, 1, 3000, inputvalue + " darf nun einreisen");
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat **" + inputvalue + " gewhitelistet**");
