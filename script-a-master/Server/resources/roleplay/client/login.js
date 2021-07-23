@@ -608,7 +608,7 @@ function setMinimapData() {
     ZOOM_LEVEL_4.vTilesX = 0.0;
     ZOOM_LEVEL_4.vTilesY = 0.0;
 
-    /**const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get('ZOOM_LEVEL_GOLF_COURSE');
+    const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get('ZOOM_LEVEL_GOLF_COURSE');
     ZOOM_LEVEL_GOLF_COURSE.fZoomScale = 55.0;
     ZOOM_LEVEL_GOLF_COURSE.fZoomSpeed = 0.0;
     ZOOM_LEVEL_GOLF_COURSE.fScrollSpeed = 0.1;
@@ -634,5 +634,9 @@ function setMinimapData() {
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomSpeed = 0.0;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fScrollSpeed = 0.0;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesX = 2.0;
-    ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesY = 3.0;**/
+    ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesY = 3.0;
 }
+
+alt.everyTick(() => {
+    game.setRadarZoom(1100);
+});
