@@ -1,0 +1,3 @@
+[submodule "script-a-master/Server/cars"]
+	path = script-a-master/Server/cars
+	url = https://github.com/chaosfreak93/MetroV-Cars
