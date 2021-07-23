@@ -19,10 +19,6 @@ namespace Altv_Roleplay.Handler
     {
         public static void OnCheckTimer(object sender, ElapsedEventArgs e) {
             try {
-                //Console.WriteLine($"Timer - Thread = {Thread.CurrentThread.ManagedThreadId}");
-                var stopwatch = new Stopwatch();
-                stopwatch.Start();
-
                 foreach (var player in Alt.GetAllPlayers().ToList()) {
                     if (player == null) continue;
 
@@ -45,9 +41,6 @@ namespace Altv_Roleplay.Handler
                         }
                     }
                 }
-
-                stopwatch.Stop();
-                //Alt.Log($"OnCheckTimer: Player Foreach benötigte: {stopwatch.Elapsed}");
             }
             catch (Exception ex) {
                 Alt.Log($"{ex}");
@@ -56,9 +49,6 @@ namespace Altv_Roleplay.Handler
 
         public static void OnEntityTimer(object sender, ElapsedEventArgs e) {
             try {
-                //Console.WriteLine($"Timer - Thread = {Thread.CurrentThread.ManagedThreadId}");
-                var stopwatch = new Stopwatch();
-                stopwatch.Start();
 
                 foreach (var Veh in Alt.GetAllVehicles().ToList()) {
                     if (Veh == null || !Veh.Exists)
@@ -82,12 +72,6 @@ namespace Altv_Roleplay.Handler
                         }
                     }
                 }
-
-                stopwatch.Stop();
-                //Alt.Log($"OnEntityTimer: Vehicle Foreach benötigte: {stopwatch.Elapsed}");
-
-                stopwatch.Reset();
-                stopwatch.Start();
 
                 foreach (var player in Alt.GetAllPlayers().ToList()) {
                     if (player == null) continue;
@@ -292,9 +276,6 @@ namespace Altv_Roleplay.Handler
                         }
                     }
                 }
-
-                stopwatch.Stop();
-                //Alt.Log($"OnEntityTimer: Player Foreach benötigte: {stopwatch.Elapsed}");
             }
             catch (Exception ex) {
                 Alt.Log($"{ex}");
@@ -343,8 +324,6 @@ namespace Altv_Roleplay.Handler
         }
 
         internal static void OnDesireTimer(object sender, ElapsedEventArgs e) {
-            //Alt.Log("OnDesireTimer Timer aufgerufen");
-
             foreach (var player in Alt.GetAllPlayers().ToList()) {
                 if (player == null || Characters.IsCharacterAnimal(((ClassicPlayer) player).CharacterId)) continue;
 
@@ -378,7 +357,6 @@ namespace Altv_Roleplay.Handler
                                 HUDHandler.SendNotification(player, 1, 5000, "Du hast Durst.");
                             }
 
-                            //Alt.Log($"Essen/Durst Anzeige update: {Characters.GetCharacterHunger(charId)} | {Characters.GetCharacterThirst(charId)}");
                             player.EmitLocked("Client:HUD:UpdateDesire", Characters.GetCharacterHunger(charId),
                                 Characters.GetCharacterThirst(charId)); //Hunger & Durst Anzeige aktualisieren
                         }
