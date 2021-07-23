@@ -39,19 +39,6 @@ namespace Altv_Roleplay.Utils
             public static readonly Position SpawnPos_Airport = new((float) -1045.6615, (float) -2751.1912, (float) 21.360474);
             public static readonly Rotation SpawnRot_Airport = new(0, 0, (float) 0.44526514);
 
-            public static readonly Position SpawnPos_Beach = new((float) -1483.6483, (float) -1484.611, (float) 2.5897217);
-            public static readonly Rotation SpawnRot_Beach = new(0, 0, (float) 1.3852693);
-
-            public static readonly Position
-                SpawnPos_SandyShores = new((float) 1533.5868, (float) 3629.6177, (float) 34.57068); //ToDo: Bushaltestelle mappen
-
-            public static readonly Rotation SpawnRot_SandyShores = new(0, 0, (float) -0.54421294);
-
-            public static readonly Position
-                SpawnPos_PaletoBay = new((float) -158.67693, (float) 6390.8438, (float) 31.470337); //ToDo: Bushaltestelle mappen
-
-            public static readonly Rotation SpawnRot_PaletoBay = new(0, 0, (float) 2.572643);
-
             public static readonly Position Minijob_Elektrolieferent_StartPos =
                 new((float) 727.170654296875, (float) 135.3732147216797, (float) 80.75458526611328);
 

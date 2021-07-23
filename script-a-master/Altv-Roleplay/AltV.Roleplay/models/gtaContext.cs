@@ -120,7 +120,8 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.hardwareId).IsRequired().HasColumnName("hwid").HasMaxLength(255).IsUnicode(false);
                 entity.Property(e => e.password).IsRequired().HasColumnName("password").HasMaxLength(256);
                 entity.Property(e => e.Online).HasColumnName("online").HasColumnType("int(1)").HasDefaultValueSql("0");
-                entity.Property(e => e.whitelisted).HasColumnName("whitelisted");
+                entity.Property(e => e.TSWhitelist).HasColumnName("TSWhitelist");
+                entity.Property(e => e.ICWhitelist).HasColumnName("ICWhitelist");
                 entity.Property(e => e.ban).HasColumnName("ban");
                 entity.Property(e => e.banReason).HasColumnName("banReason").HasMaxLength(128);
                 entity.Property(e => e.adminLevel).HasColumnName("adminlevel").HasColumnType("int(11)");

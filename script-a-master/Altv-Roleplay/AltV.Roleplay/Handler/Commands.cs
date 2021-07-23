@@ -516,8 +516,8 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [Command("whitelist")]
-        public void WhitelistCMD(IPlayer player, int targetAccId) {
+        [Command("whitelistts")]
+        public void WhitelistTSCMD(IPlayer player, int targetAccId) {
             try {
                 if (player == null || !player.Exists || targetAccId <= 0 || player.GetCharacterMetaId() <= 0) return;
 
@@ -531,12 +531,40 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                if (User.IsPlayerWhitelisted(targetAccId)) {
+                if (User.IsPlayerTSWhitelisted(targetAccId)) {
                     HUDHandler.SendNotification(player, 4, 5000, "Der Spieler ist bereits gewhitelisted.");
                     return;
                 }
 
-                User.SetPlayerWhitelistState(targetAccId, true);
+                User.SetPlayerTSWhitelistState(targetAccId, true);
+                player.SendChatMessage($"Du hast den Spieler {targetAccId} gewhitelistet.");
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
+        
+        [Command("whitelistic")]
+        public void WhitelistICCMD(IPlayer player, int targetAccId) {
+            try {
+                if (player == null || !player.Exists || targetAccId <= 0 || player.GetCharacterMetaId() <= 0) return;
+
+                if (player.AdminLevel() <= 0) {
+                    HUDHandler.SendNotification(player, 4, 5000, "Keine Rechte.");
+                    return;
+                }
+
+                if (!User.ExistPlayerById(targetAccId)) {
+                    HUDHandler.SendNotification(player, 4, 5000, $"Diese ID existiert nicht {targetAccId}");
+                    return;
+                }
+
+                if (User.IsPlayerICWhitelisted(targetAccId)) {
+                    HUDHandler.SendNotification(player, 4, 5000, "Der Spieler ist bereits gewhitelisted.");
+                    return;
+                }
+
+                User.SetPlayerICWhitelistState(targetAccId, true);
                 player.SendChatMessage($"Du hast den Spieler {targetAccId} gewhitelistet.");
             }
             catch (Exception e) {
