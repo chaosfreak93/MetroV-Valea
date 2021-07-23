@@ -3,7 +3,7 @@
 cd /home/MetroV/
 echo 'Check for Update...'
 sleep 1
-git pull
+git pull --recurse-submodules
 sleep 1
 echo 'Update Done!'
 cd /home/MetroV/script-a-master/Server/
