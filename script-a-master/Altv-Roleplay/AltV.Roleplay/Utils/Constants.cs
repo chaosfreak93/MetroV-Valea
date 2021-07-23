@@ -17,10 +17,6 @@ namespace Altv_Roleplay.Utils
         {
             public static readonly Position Empty = new(0, 0, 0);
 
-            public static readonly Position IdentityCardApply =
-                new((float) -545.1900024414062, (float) -203.81515502929688,
-                    (float) 38.21517562866211); //Einreiseformular (Personalausweis beantragen)
-
             public static readonly Position
                 TownhallHouseSelector = new((float) -555.468, (float) -228.237, (float) 38.15); //Einwohnermeldeamt
 

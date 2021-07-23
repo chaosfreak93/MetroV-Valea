@@ -401,13 +401,14 @@ namespace Altv_Roleplay.Handler
                     TownhallHandler.openHouseSelector(player);
                     return;
                 }
-
-                if (player.Position.IsInRange(Constants.Positions.IdentityCardApply, 2.5f) && Characters.GetCharacterAccState(charId) == 0 &&
-                    !player.IsInVehicle) //Rathaus IdentityCardApply
+                
+                //TODO: Move to Admin or Interaction Menu
+                /**if (player.Position.IsInRange(Constants.Positions.IdentityCardApply, 2.5f) && Characters.GetCharacterAccState(charId) == 0 &&
+                    !player.IsInVehicle)
                 {
                     TownhallHandler.tryCreateIdentityCardApplyForm(player);
                     return;
-                }
+                }**/
 
                 var tattooShop = ServerTattooShops.ServerTattooShops_.ToList().FirstOrDefault(x =>
                     x.owner != 0 && player.Position.IsInRange(new Position(x.pedX, x.pedY, x.pedZ), 2.5f));
