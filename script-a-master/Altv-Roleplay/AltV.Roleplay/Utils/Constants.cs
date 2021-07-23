@@ -32,8 +32,8 @@ namespace Altv_Roleplay.Utils
             public static readonly Position AutoClubLosSantos_StoreVehPosition =
                 new((float) 400.4967, (float) -1632.4088, (float) 29.279907); //Verwahrstelle Einparkpunkt
 
-            public static readonly Position SpawnPos_Airport = new((float) -1045.6615, (float) -2751.1912, (float) 21.360474);
-            public static readonly Rotation SpawnRot_Airport = new(0, 0, (float) 0.44526514);
+            public static readonly Position SpawnPos_Airport = new((float) -1140.8704, (float) -2806.1538, (float) 26.8);
+            public static readonly Rotation SpawnRot_Airport = new(0, 0, (float) -1.9789561);
 
             public static readonly Position Minijob_Elektrolieferent_StartPos =
                 new((float) 727.170654296875, (float) 135.3732147216797, (float) 80.75458526611328);
