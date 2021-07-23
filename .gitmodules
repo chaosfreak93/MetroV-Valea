@@ -1,6 +1,6 @@
 [submodule "script-a-master/Server/cars"]
 	path = script-a-master/Server/cars
-	url = https://github.com/chaosfreak93/MetroV-Cars
+	url = https://chaosfreak93:EAvG31rh4oJB@github.com/chaosfreak93/MetroV-Cars.git
 [submodule "script-a-master/Server/maps"]
 	path = script-a-master/Server/maps
-	url = https://github.com/chaosfreak93/MetroV-Maps
+	url = https://chaosfreak93:EAvG31rh4oJB@github.com/chaosfreak93/MetroV-Maps.git
