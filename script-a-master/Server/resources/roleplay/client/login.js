@@ -572,37 +572,36 @@ const activateInterior = (id, interiors) => {
 };
 
 function setMinimapData() {
-    game.setRadarZoom(1100);
     const ZOOM_LEVEL_0 = alt.MapZoomData.get('ZOOM_LEVEL_0');
-    ZOOM_LEVEL_0.fZoomScale = 0.96;
+    ZOOM_LEVEL_0.fZoomScale = 2.73;
     ZOOM_LEVEL_0.fZoomSpeed = 0.9;
     ZOOM_LEVEL_0.fScrollSpeed = 0.08;
     ZOOM_LEVEL_0.vTilesX = 0.0;
     ZOOM_LEVEL_0.vTilesY = 0.0;
 
     const ZOOM_LEVEL_1 = alt.MapZoomData.get('ZOOM_LEVEL_1');
-    ZOOM_LEVEL_1.fZoomScale = 1.6;
+    ZOOM_LEVEL_1.fZoomScale = 2.8;
     ZOOM_LEVEL_1.fZoomSpeed = 0.9;
     ZOOM_LEVEL_1.fScrollSpeed = 0.08;
     ZOOM_LEVEL_1.vTilesX = 0.0;
     ZOOM_LEVEL_1.vTilesY = 0.0;
 
     const ZOOM_LEVEL_2 = alt.MapZoomData.get('ZOOM_LEVEL_2');
-    ZOOM_LEVEL_2.fZoomScale = 8.6;
+    ZOOM_LEVEL_2.fZoomScale = 8.0;
     ZOOM_LEVEL_2.fZoomSpeed = 0.9;
     ZOOM_LEVEL_2.fScrollSpeed = 0.08;
     ZOOM_LEVEL_2.vTilesX = 0.0;
     ZOOM_LEVEL_2.vTilesY = 0.0;
 
     const ZOOM_LEVEL_3 = alt.MapZoomData.get('ZOOM_LEVEL_3');
-    ZOOM_LEVEL_3.fZoomScale = 12.3;
+    ZOOM_LEVEL_3.fZoomScale = 11.0;
     ZOOM_LEVEL_3.fZoomSpeed = 0.9;
     ZOOM_LEVEL_3.fScrollSpeed = 0.08;
     ZOOM_LEVEL_3.vTilesX = 0.0;
     ZOOM_LEVEL_3.vTilesY = 0.0;
 
     const ZOOM_LEVEL_4 = alt.MapZoomData.get('ZOOM_LEVEL_4');
-    ZOOM_LEVEL_4.fZoomScale = 22.3;
+    ZOOM_LEVEL_4.fZoomScale = 16.0;
     ZOOM_LEVEL_4.fZoomSpeed = 0.9;
     ZOOM_LEVEL_4.fScrollSpeed = 0.08;
     ZOOM_LEVEL_4.vTilesX = 0.0;
