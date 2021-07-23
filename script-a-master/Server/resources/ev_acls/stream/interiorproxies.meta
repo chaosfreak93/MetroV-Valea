@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SInteriorOrderData>
+  <startFrom value="12000" />
+  <proxies>
+	<Item>av_acls_so_milo</Item>
+  <Item>ev_acls_milo</Item>
+	</proxies>
+</SInteriorOrderData>
