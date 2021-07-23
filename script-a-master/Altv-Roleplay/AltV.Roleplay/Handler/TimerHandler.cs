@@ -388,5 +388,16 @@ namespace Altv_Roleplay.Handler
                 }
             }
         }
+        
+        public static void WeatherSyncTimer(object sender, ElapsedEventArgs e) {
+            try {
+                foreach (var player in Alt.GetAllPlayers().ToList().Where(player => player is {Exists: true})) {
+                    WeatherHandler.SetRealWeather(player);
+                }
+            }
+            catch (Exception ex) {
+                Alt.Log($"{ex}");
+            }
+        }
     }
 }
