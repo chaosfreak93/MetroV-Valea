@@ -10,7 +10,7 @@ cd /home/MetroV/script-a-master/Server/
 echo 'Packing CDN...'
 rm cdn_upload/ -r
 sleep 1
-./altv-server --extra-res-folder cars --host 5.181.151.136 --port 7788 --justpack
+./altv-server --extra-res-folder cars/ --host 5.181.151.136 --port 7788 --justpack
 sleep 1
 sudo mv cdn_upload/* /var/www/cdn/
 echo 'CDN packed!'
