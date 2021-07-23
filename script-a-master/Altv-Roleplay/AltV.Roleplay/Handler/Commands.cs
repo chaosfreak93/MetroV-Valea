@@ -402,7 +402,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SendChatMessage($"X: {player.Position.X}, Y: {player.Position.Y}, Z: {player.Position.Z - 0.83}");
+            player.SendChatMessage($"X: {player.Position.X}, Y: {player.Position.Y}, Z: {player.Position.Z - 0.93}");
         }
 
         [Command("rot")]
