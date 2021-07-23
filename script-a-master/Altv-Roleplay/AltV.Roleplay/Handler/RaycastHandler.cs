@@ -25,7 +25,6 @@ namespace Altv_Roleplay.Handler
 
                 var vehID = veh.GetVehicleId();
                 var charId = (int) player.GetCharacterMetaId();
-                Alt.Log($"GetVehicleItems: {vehID} - {charId}");
                 var vehTrunkIsOpen = veh.GetVehicleTrunkState(); //false = zu || true = offen
                 var vehEngineHoodIsOpen = veh.GetVehicleEngineHoodState(); //false = zu || true = offen
                 if (charId <= 0 || vehID <= 0) return;
@@ -547,8 +546,6 @@ namespace Altv_Roleplay.Handler
                 var vehicleGloveboxArray = ServerVehicles.GetVehicleTrunkItems(veh.VehicleId, true); //Handschuhfach Items
                 var curVehWeight = ServerVehicles.GetVehicleVehicleTrunkWeight(veh.VehicleId, true);
                 var maxVehWeight = 5f;
-                Alt.Log(
-                    $"{player.Name} ({player.CharacterId}) öffnet Handschuhfach von {veh.VehicleId}: {characterInvArray} ||| {vehicleGloveboxArray}");
                 player.EmitLocked("Client:VehicleTrunk:openCEF", player.CharacterId, veh.VehicleId, "glovebox", characterInvArray,
                     vehicleGloveboxArray, curVehWeight, maxVehWeight); //trunk oder glovebox
             }
