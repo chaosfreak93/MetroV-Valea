@@ -121,7 +121,6 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.password).IsRequired().HasColumnName("password").HasMaxLength(256);
                 entity.Property(e => e.Online).HasColumnName("online").HasColumnType("int(1)").HasDefaultValueSql("0");
                 entity.Property(e => e.TSWhitelist).HasColumnName("TSWhitelist");
-                entity.Property(e => e.ICWhitelist).HasColumnName("ICWhitelist");
                 entity.Property(e => e.ban).HasColumnName("ban");
                 entity.Property(e => e.banReason).HasColumnName("banReason").HasMaxLength(128);
                 entity.Property(e => e.adminLevel).HasColumnName("adminlevel").HasColumnType("int(11)");
@@ -215,6 +214,7 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.wallpaper).HasColumnName("wallpaper").HasColumnType("int(11)");
                 entity.Property(e => e.pedName).HasColumnName("pedName").HasMaxLength(64);
                 entity.Property(e => e.isAnimalPed).HasColumnName("isAnimalPed").HasColumnType("int(11)");
+                entity.Property(e => e.ICWhitelist).HasColumnName("ICWhitelist");
             });
 
             modelBuilder.Entity<Characters_Bank>(entity =>

@@ -631,7 +631,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat eine Ankündigung gemacht: **" + inputvalue +
                                 "**");
                             break;
-                        case "ts_whitelist":
+                        case "account_aktivieren":
                             if (player.AdminLevel() < 2) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
@@ -655,7 +655,7 @@ namespace Altv_Roleplay.Handler
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat **" + inputvalue + " gewhitelistet**");
                             break;
-                        case "ic_whitelist":
+                        case "einreisen":
                             if (player.AdminLevel() < 2) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
@@ -663,17 +663,17 @@ namespace Altv_Roleplay.Handler
 
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            if (!User.ExistPlayerName(inputvalue)) {
+                            if (!Characters.ExistCharacterName(inputvalue)) {
                                 HUDHandler.SendNotification(player, 4, 3000, $"Benutzername {inputvalue} wurde nicht gefunden");
                                 break;
                             }
 
-                            if (User.IsPlayerICWhitelisted(inputvalue)) {
+                            if (Characters.IsPlayerICWhitelisted(inputvalue)) {
                                 HUDHandler.SendNotification(player, 4, 3000, $"Spieler {inputvalue} ist bereits gewhitelisted");
                                 break;
                             }
 
-                            User.SetPlayerICWhitelistState(User.GetPlayerAccountIdByUsername(inputvalue), true);
+                            Characters.SetPlayerICWhitelistState(Characters.GetCharacterIdFromCharName(inputvalue), true);
                             HUDHandler.SendNotification(player, 1, 3000, inputvalue + " wurde erfolgreich gewhitelisted");
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",

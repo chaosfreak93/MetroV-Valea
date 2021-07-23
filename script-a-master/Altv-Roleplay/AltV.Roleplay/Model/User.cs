@@ -24,7 +24,6 @@ namespace Altv_Roleplay.Model
                 hardwareId = 0,
                 Online = 0,
                 TSWhitelist = false,
-                ICWhitelist = false,
                 ban = false,
                 banReason = "",
                 adminLevel = 0
@@ -84,24 +83,6 @@ namespace Altv_Roleplay.Model
 
             if (pl != null)
                 return pl.TSWhitelist;
-
-            return false;
-        }
-        
-        public static bool IsPlayerICWhitelisted(string playerName) {
-            var pl = Player.FirstOrDefault(p => p.playerName == playerName);
-
-            if (pl != null)
-                return pl.ICWhitelist;
-
-            return false;
-        }
-
-        public static bool IsPlayerICWhitelisted(int playerId) {
-            var pl = Player.FirstOrDefault(p => p.playerid == playerId);
-
-            if (pl != null)
-                return pl.ICWhitelist;
 
             return false;
         }
@@ -428,26 +409,6 @@ namespace Altv_Roleplay.Model
 
                 if (pl != null) {
                     pl.TSWhitelist = state;
-
-                    using (var db = new gtaContext()) {
-                        db.Accounts.Update(pl);
-                        db.SaveChanges();
-                    }
-                }
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-        }
-        
-        public static void SetPlayerICWhitelistState(int playerId, bool state) {
-            try {
-                if (playerId <= 0) return;
-
-                var pl = Player.FirstOrDefault(x => x.playerid == playerId);
-
-                if (pl != null) {
-                    pl.ICWhitelist = state;
 
                     using (var db = new gtaContext()) {
                         db.Accounts.Update(pl);

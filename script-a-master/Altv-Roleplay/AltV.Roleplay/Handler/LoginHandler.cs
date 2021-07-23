@@ -244,9 +244,14 @@ namespace Altv_Roleplay.Handler
                 client.Rotation = Constants.Positions.SpawnRot_Airport;
             }
             
-            if (!User.IsPlayerICWhitelisted(client.accountId)) {
+            if (!Characters.IsPlayerICWhitelisted(client.accountId)) {
                 foreach (var admin in Alt.GetAllPlayers().ToList().Where(x => x.AdminLevel() > 1)) {
                     HUDHandler.SendNotification(admin, 3, 5000, "Es ist ein neuer User im Airport!");
+                }
+
+                if (Characters.GetCharacterFirstJoin(charid) && Characters.GetCharacterFirstSpawnPlace(client, charid) == "unset") {
+                    Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_Airport, 0);
+                    client.Rotation = Constants.Positions.SpawnRot_Airport;
                 }
             }
 
