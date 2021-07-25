@@ -13,7 +13,7 @@ alt.onServer("Client:ServerMarkers:LoadAllMarkers", (markerArray) => {
             type: markerArray[i].type,
             x: markerArray[i].posX,
             y: markerArray[i].posY,
-            z: markerArray[i].posZ,
+            z: markerArray[i].posZ + 1,
             scaleX: markerArray[i].scaleX,
             scaleY: markerArray[i].scaleY,
             scaleZ: markerArray[i].scaleZ,
