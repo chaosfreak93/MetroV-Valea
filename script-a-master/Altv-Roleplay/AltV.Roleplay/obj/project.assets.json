@@ -24,7 +24,7 @@
           "lib/net5.0/AltV.Net.Async.dll": {}
         }
       },
-      "AltV.Net.EntitySync/1.12.0": {
+      "AltV.Net.EntitySync/1.13.0": {
         "type": "package",
         "dependencies": {
           "System.Threading.Channels": "5.0.0"
@@ -1699,14 +1699,14 @@
         "license.txt"
       ]
     },
-    "AltV.Net.EntitySync/1.12.0": {
-      "sha512": "GZgxj5NClNCudZW0v//mSoY6GfiFfve7Ld62rxB6f2QK5+grc/7QhnksJAxqdkFwcOpund9t5k1beAbAnrTtvA==",
+    "AltV.Net.EntitySync/1.13.0": {
+      "sha512": "b0DkilzzJqXd0PTI7h9f/k5OVDKn60h95NU3z13y3Nz+pxlgS2V1lSE8MbVwqkdFr2Jl+3dZUwRAOs9Ic77Sbg==",
       "type": "package",
-      "path": "altv.net.entitysync/1.12.0",
+      "path": "altv.net.entitysync/1.13.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.entitysync.1.12.0.nupkg.sha512",
+        "altv.net.entitysync.1.13.0.nupkg.sha512",
         "altv.net.entitysync.nuspec",
         "icon.png",
         "lib/net5.0/AltV.Net.EntitySync.dll",
@@ -5828,7 +5828,7 @@
     "net5.0": [
       "AltV.Net >= 4.0.0",
       "AltV.Net.Async >= 4.0.0",
-      "AltV.Net.EntitySync >= 1.12.0",
+      "AltV.Net.EntitySync >= 1.13.0",
       "AltV.Net.EntitySync.ServerEvent >= 4.0.0",
       "AltV.Net.Resources.Chat.Api >= 1.48.0",
       "BCrypt.Net-Next >= 4.0.2",
@@ -5842,24 +5842,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gtasa\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Server\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
+      "projectUniqueName": "C:\\Users\\yanlu\\RiderProjects\\MetroV-Valea\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
       "projectName": "AltV.Roleplay",
-      "projectPath": "D:\\Server\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
-      "packagesPath": "C:\\Users\\gtasa\\.nuget\\packages\\",
-      "outputPath": "D:\\Server\\MetroV\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\obj\\",
+      "projectPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV-Valea\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\AltV.Roleplay.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV-Valea\\script-a-master\\Altv-Roleplay\\AltV.Roleplay\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gtasa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5873,8 +5868,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Server\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj": {
-              "projectPath": "D:\\Server\\MetroV\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj"
+            "C:\\Users\\yanlu\\RiderProjects\\MetroV-Valea\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj": {
+              "projectPath": "C:\\Users\\yanlu\\RiderProjects\\MetroV-Valea\\script-a-master\\Altv-Roleplay\\DiscordWebhook\\DiscordWebhook.csproj"
             }
           }
         }
@@ -5899,7 +5894,7 @@
           },
           "AltV.Net.EntitySync": {
             "target": "Package",
-            "version": "[1.12.0, )"
+            "version": "[1.13.0, )"
           },
           "AltV.Net.EntitySync.ServerEvent": {
             "target": "Package",
@@ -5950,20 +5945,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

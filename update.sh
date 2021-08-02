@@ -6,7 +6,7 @@ sleep 1
 git pull --recurse-submodules
 sleep 1
 echo 'Update Done!'
-cd /home/MetroV/script-a-master/Server/
+cd /home/MetroV-Valea/script-a-master/Server/
 echo 'Packing CDN...'
 rm cdn_upload/ -r
 sleep 1

@@ -181,7 +181,7 @@ export class Raycast {
 alt.everyTick(() => {
     if (markers.length >= 1) {
         for (var i = 0; i < markers.length; i++) {
-            game.drawRect(0, 0, 0, 0, 0, 0, 0, 0);
+            game.drawRect(0, 0, 0, 0, 0, 0, 0, 0, 0);
             game.drawMarker(markers[i].type, markers[i].x, markers[i].y, markers[i].z, 0, 0, 0, 0, 0, 0, markers[i].scaleX, markers[i].scaleY, markers[i].scaleZ, markers[i].red, markers[i].green, markers[i].blue, markers[i].alpha, markers[i].bobUpAndDown, false, 2, false, undefined, undefined, false);
         }
     }
