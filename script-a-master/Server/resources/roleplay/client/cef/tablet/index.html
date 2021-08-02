@@ -1034,14 +1034,23 @@
                 $("#LSMDApp-Area-Overview").fadeIn(500);
                 $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSMDApp-Area-ViewFactionVehicles":
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeIn(500);
-                $("#LSMDApp-Area-Overview").fadeOut(100);
                 $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
+                $("#LSMDApp-Area-Overview").fadeOut(100);
                 break;
             case "LSMDApp-Area-ViewDispatches":
                 $("#LSMDApp-Area-ViewDispatches").fadeIn(500);
+                $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
+                $("#LSMDApp-Area-Overview").fadeOut(100);
+                break;
+            case "LSMDApp-Area-ViewEmergencyOS":
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeIn(500);
+                $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSMDApp-Area-Overview").fadeOut(100);
                 break;
@@ -1067,6 +1076,7 @@
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-SearchPerson":
                 $("#LSPDApp-Area-SearchPerson").fadeIn(500);
@@ -1075,6 +1085,7 @@
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-SearchVehiclePlate":
                 $("#LSPDApp-Area-SearchVehiclePlate").fadeIn(500);
@@ -1083,6 +1094,7 @@
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-ViewFactionVehicles":
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeIn(500);
@@ -1091,6 +1103,7 @@
                 $("#LSPDApp-Area-SearchVehiclePlate").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-SearchLicense":
                 $("#LSPDApp-Area-SearchLicense").fadeIn(500);
@@ -1099,9 +1112,20 @@
                 $("#LSPDApp-Area-SearchPerson").fadeOut(100);
                 $("#LSPDApp-Area-SearchVehiclePlate").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-ViewDispatches":
                 $("#LSPDApp-Area-ViewDispatches").fadeIn(500);
+                $("#LSPDApp-Area-SearchLicense").fadeOut(100);
+                $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#LSPDApp-Area-Overview").fadeOut(100);
+                $("#LSPDApp-Area-SearchPerson").fadeOut(100);
+                $("#LSPDApp-Area-SearchVehiclePlate").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
+                break;
+            case "LSPDApp-Area-ViewEmergencyOS":
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeIn(500);
+                $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-Overview").fadeOut(100);
@@ -1116,6 +1140,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-SearchPerson":
                 $("#JusticeApp-Area-SearchPerson").fadeIn(500);
@@ -1125,6 +1150,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-SearchVehiclePlate":
                 $("#JusticeApp-Area-SearchVehiclePlate").fadeIn(500);
@@ -1134,6 +1160,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-SearchLicense":
                 $("#JusticeApp-Area-SearchLicense").fadeIn(500);
@@ -1143,6 +1170,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-ViewFactionVehicles":
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeIn(500);
@@ -1152,6 +1180,7 @@
                 $("#JusticeApp-Area-SearchPerson").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-GiveWeaponLicense":
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeIn(500);
@@ -1161,9 +1190,21 @@
                 $("#JusticeApp-Area-SearchPerson").fadeOut(100);
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-ViewBankTransactions":
                 $("#JusticeApp-Area-ViewBankTransactions").fadeIn(500);
+                $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
+                $("#JusticeApp-Area-SearchLicense").fadeOut(100);
+                $("#JusticeApp-Area-SearchVehiclePlate").fadeOut(100);
+                $("#JusticeApp-Area-Overview").fadeOut(100);
+                $("#JusticeApp-Area-SearchPerson").fadeOut(100);
+                $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
+                break;
+            case "JusticeApp-Area-ViewEmergencyOS":
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeIn(500);
+                $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-SearchLicense").fadeOut(100);
                 $("#JusticeApp-Area-SearchVehiclePlate").fadeOut(100);
