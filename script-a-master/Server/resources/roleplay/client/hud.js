@@ -1562,8 +1562,8 @@ function InterActionMenuDoActionAnimationMenu(action) {
         } else if (action == "hug3") {
             playAnimation("mp_ped_interaction", "hugs_guy_a", 1, 3000)
         } else if (action == "inspect") {
-            playAnimation("random@train_tracks", "idle_e", 1, 300000)
-        } else if (action == "kneel2") {
+            playAnimation("amb@prop_human_seat_chair@male@generic@base", "base", 1, 300000)
+        } else if (action == "sit") {
             playAnimation("rcmextreme3", "idle", 1, 300000)
         } else if (action == "lean4") {
             playAnimation("amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", 1, 300000)
