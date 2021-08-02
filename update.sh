@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/MetroV/
+cd /home/MetroV-Valea/
 echo 'Check for Update...'
 sleep 1
 git pull --recurse-submodules
