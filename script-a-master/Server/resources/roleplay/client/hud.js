@@ -1564,7 +1564,7 @@ function InterActionMenuDoActionAnimationMenu(action) {
         } else if (action == "inspect") {
             playAnimation("random@train_tracks", "idle_e", 1, 300000)
         } else if (action == "sit") {
-            playAnimation("timetable@reunited@ig_10", "base_amanda", 1, 300000)
+            playAnimation("timetable@ron@ig_3_couch", "base", 1, 300000)
         } else if (action == "lean4") {
             playAnimation("amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", 1, 300000)
         } else if (action == "mechanic") {
