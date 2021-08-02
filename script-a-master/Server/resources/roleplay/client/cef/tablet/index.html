@@ -1,7 +1,7 @@
 ﻿<html>
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -311,6 +311,10 @@
                             <img src="img/gun.png">
                             <p>Waffenschein vergeben</p>
                         </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png">
+                            <p>EmergencyOS</p>
+                        </li>
                     </ul>
                 </div>
                 <div id="JusticeApp-Area-SearchPerson">
@@ -448,6 +452,9 @@
                         <button type="button" onclick="JusticeAppGiveWeaponLicense();" class="btn btn-justicehov"><i class="fas fa-check" style="padding-right: 6px;"></i>Waffenschein ausstellen</button>
                     </div>
                 </div>
+                <div id="JusticeApp-Area-ViewEmergencyOS">
+                    <iframe src="https://server.emergencyos.de/"></iframe>
+                </div>
             </div>
 
             <div id="LSPDApp-Area">
@@ -487,6 +494,10 @@
                         <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewFactionVehicles`);">
                             <img src="img/parking.png">
                             <p>Ausgeparkte Fahrzeuge</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png">
+                            <p>EmergencyOS</p>
                         </li>
                     </ul>
                 </div>
@@ -609,6 +620,9 @@
                         <div id="LSPDApp-Area-ViewDispatches-List"></div>
                     </div>
                 </div>
+                <div id="LSPDApp-Area-ViewEmergencyOS">
+                    <iframe src="https://server.emergencyos.de/"></iframe>
+                </div>
             </div>
 
             <div id="LSMDApp-Area">
@@ -633,6 +647,10 @@
                             <img src="img/parking.png">
                             <p>Ausgeparkte Fahrzeuge</p>
                         </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSMDApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png">
+                            <p>EmergencyOS</p>
+                        </li>
                     </ul>
                 </div>
                 <div id="LSMDApp-Area-ViewFactionVehicles">
@@ -648,6 +666,9 @@
                         <hr style="border-color: #0000004a; margin-bottom: 0;">
                         <div id="LSMDApp-Area-ViewDispatches-List"></div>
                     </div>
+                </div>
+                <div id="LSMDApp-Area-ViewEmergencyOS">
+                    <iframe src="https://server.emergencyos.de/"></iframe>
                 </div>
             </div>
 
@@ -673,6 +694,10 @@
                             <img src="img/parking.png">
                             <p>Ausgeparkte Fahrzeuge</p>
                         </li>
+                        <!--<li class="list-group-item" onclick="openSubWindow(`ACLSApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png">
+                            <p>EmergencyOS</p>
+                        </li>-->
                     </ul>
                 </div>
                 <div id="ACLSApp-Area-ViewFactionVehicles">
