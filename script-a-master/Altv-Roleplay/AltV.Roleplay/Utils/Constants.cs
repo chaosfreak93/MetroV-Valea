@@ -34,6 +34,10 @@ namespace Altv_Roleplay.Utils
 
             public static readonly Position SpawnPos_Airport = new((float) -1140.8704, (float) -2806.1538, (float) 26.8);
             public static readonly Rotation SpawnRot_Airport = new(0, 0, (float) -1.9789561);
+            
+            public static readonly Position ExitTPPos_Airport = new((float) -1065.68, (float) -2798.35, (float) 26.8659);
+            public static readonly Position ExitTargetPos_Airport = new((float) -1043.12, (float) -2746.98, (float) 20.5136);
+            public static readonly Rotation ExitTargetRot_Airport = new(0, 0, (float) -1.9789561);
 
             public static readonly Position Minijob_Elektrolieferent_StartPos =
                 new((float) 727.170654296875, (float) 135.3732147216797, (float) 80.75458526611328);

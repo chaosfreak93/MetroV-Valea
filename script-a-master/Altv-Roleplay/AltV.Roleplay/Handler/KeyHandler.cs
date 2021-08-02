@@ -173,6 +173,14 @@ namespace Altv_Roleplay.Handler
                     player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
                     return;
                 }
+                
+                bool airportExit = player.Position.IsInRange(Constants.Positions.ExitTPPos_Airport, 3f);
+
+                if (airportExit && !player.IsInVehicle && Characters.GetCharacterAccState(charId) == 1) {
+                    player.Position = new Position(Constants.Positions.ExitTargetPos_Airport.X, Constants.Positions.ExitTargetPos_Airport.Y, Constants.Positions.ExitTargetPos_Airport.Z + 0.5f);
+                    player.Rotation = Constants.Positions.ExitTargetRot_Airport;
+                    return;
+                }
 
                 var shopPos = ServerShops.ServerShops_.FirstOrDefault(x => player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 3f));
 
