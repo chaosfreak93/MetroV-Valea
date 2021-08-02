@@ -38,7 +38,7 @@
     <PropertyGroup>
       <CopiedFiles>$(OutputPath)\publish\*.*</CopiedFiles>
 
-      <TargetLocation Condition=" '$(Configuration)' == 'Release' ">C:\Users\yanlu\RiderProjects\MetroV\script-a-master\Server\resources\roleplay\</TargetLocation>
+      <TargetLocation Condition=" '$(Configuration)' == 'Release' ">C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\Server\resources\roleplay\</TargetLocation>
     </PropertyGroup>
     <Copy Condition=" '$(TargetLocation)' != '' " SourceFiles="@(AllOutputFiles)" DestinationFolder="$(TargetLocation)" SkipUnchangedFiles="false" />
   </Target>

@@ -1561,10 +1561,10 @@ function InterActionMenuDoActionAnimationMenu(action) {
             playAnimation("missminuteman_1ig_2", "handsup_base", 1, 300000)
         } else if (action == "hug3") {
             playAnimation("mp_ped_interaction", "hugs_guy_a", 1, 3000)
+        } else if (action == "inspect") {
+            playAnimation("random@train_tracks", "idle_e", 1, 300000)
         } else if (action == "sit") {
-            playAnimation("amb@prop_human_seat_chair@male@generic@base", "base", 1, 300000)
-        } else if (action == "kneel2") {
-            playAnimation("rcmextreme3", "idle", 1, 300000)
+            playAnimation("timetable@ron@ig_5_p3", "ig_5_p3_base", 1, 300000)
         } else if (action == "lean4") {
             playAnimation("amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", 1, 300000)
         } else if (action == "mechanic") {
