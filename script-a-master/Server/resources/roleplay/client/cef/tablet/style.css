@@ -1367,13 +1367,10 @@ div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-Search
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box,
-div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches > div.box,
-div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches > div.box,
-div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box,
@@ -1391,19 +1388,30 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
     border: 1px solid #0000004f;
 }
 
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
+    background: rgba(255, 255, 255, 0.025);
+    height: 525px;
+    width: 800px;
+    top: 36px;
+    position: absolute;
+    left: 100px;
+    border-radius: 7px;
+    text-align: center;
+    border: 1px solid #0000004f;
+}
+
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchLicense > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box,
-div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches > div.box,
-div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches > div.box,
-div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box,
@@ -1413,6 +1421,17 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
     top: 20px !important;
     height: 550px !important;
     max-height: 550px;
+    overflow-y: auto;
+}
+
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
+    width: 1025px !important;
+    left: -2px !important;
+    top: -15px !important;
+    height: 589px !important;
+    max-height: 600px;
     overflow-y: auto;
 }
 
