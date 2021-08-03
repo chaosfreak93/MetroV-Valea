@@ -1429,9 +1429,9 @@ div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEm
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
     width: 1025px !important;
     left: -2px !important;
-    top: -15px !important;
-    height: 589px !important;
-    max-height: 600px;
+    top: -30px !important;
+    height: 619px !important;
+    max-height: 630px;
     overflow-y: auto;
 }
 
@@ -1442,13 +1442,10 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate > div.box > p.title,
-div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches > div.box > p.title,
-div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches > div.box > p.title,
-div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewDispatches > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles > div.box > p.title {
@@ -1457,6 +1454,15 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
     font-size: 18px;
     font-family: PEL;
     margin-bottom: 0.5rem;
+}
+
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
+    color: #d2d2d2;
+    margin: 0;
+    font-size: 18px;
+    font-family: PEL;
 }
 
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > input,
