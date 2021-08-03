@@ -1234,13 +1234,13 @@ namespace Altv_Roleplay.Database
                         int bColor = 2,
                             bSprite = 500;
 
-                        if (bank.zoneName == "Maze Bank") {
-                            bName = "Maze Bank";
+                        if (bank.zoneName == "Staatsbank") {
+                            bName = "Staatsbank";
                             bColor = 1;
                             bSprite = 605;
                         }
 
-                        if (bank.zoneName != "Maze Bank Fraktion" && bank.zoneName != "Maze Bank Company") {
+                        if (bank.zoneName != "Staatsbank Fraktion" && bank.zoneName != "Staatsbank Company") {
                             var ServerBankBlipData = new Server_Blips {
                                 name = bName,
                                 color = bColor,

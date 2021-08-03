@@ -50,7 +50,7 @@ namespace Altv_Roleplay.Handler
             if (accountNumber == 0 || charid == 0) return;
 
             if (action == "generatepin") {
-                var rndPin = new Random().Next(0000, 9999);
+                var rndPin = new Random().Next(1000, 9999);
                 CharactersBank.ChangeBankAccountPIN(accountNumber, rndPin);
                 HUDHandler.SendNotification(player, 2, 5000, $"Sie haben Ihren PIN erfolgreich geändert, neuer PIN: {rndPin}.");
             } else if (action == "lock") {

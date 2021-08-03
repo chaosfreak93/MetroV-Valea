@@ -256,7 +256,7 @@ namespace Altv_Roleplay.Handler
                 var bankPos = ServerBanks.ServerBanks_.FirstOrDefault(x => player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 1f));
 
                 if (bankPos != null && !player.IsInVehicle) {
-                    if (bankPos.zoneName == "Maze Bank Fraktion") {
+                    if (bankPos.zoneName == "Staatsbank Fraktion") {
                         if (!ServerFactions.IsCharacterInAnyFaction(charId)) return;
 
                         if (ServerFactions.GetCharacterFactionRank(charId) !=
@@ -270,7 +270,7 @@ namespace Altv_Roleplay.Handler
                         return;
                     }
 
-                    if (bankPos.zoneName == "Maze Bank Company") {
+                    if (bankPos.zoneName == "Staatsbank Company") {
                         if (!ServerCompanys.IsCharacterInAnyServerCompany(charId)) return;
 
                         if (ServerCompanys.GetCharacterServerCompanyRank(charId) != 1 &&
