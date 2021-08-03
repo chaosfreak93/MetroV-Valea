@@ -454,7 +454,7 @@
                 </div>
                 <div id="JusticeApp-Area-ViewEmergencyOS">
                     <div class="box">
-                        <iframe src="https://server.emergencyos.de/" style="width: 100%; height: 100%;"></iframe>
+                        <iframe id="Justice-EmergencyOS" src="" style="width: 100%; height: 100%;"></iframe>
                     </div>
                 </div>
             </div>
@@ -624,7 +624,7 @@
                 </div>
                 <div id="LSPDApp-Area-ViewEmergencyOS">
                     <div class="box">
-                        <iframe src="https://server.emergencyos.de/" style="width: 100%; height: 100%;"></iframe>
+                        <iframe id="LSPD-EmergencyOS" src="" style="width: 100%; height: 100%;"></iframe>
                     </div>
                 </div>
             </div>
@@ -673,7 +673,7 @@
                 </div>
                 <div id="LSMDApp-Area-ViewEmergencyOS">
                     <div class="box">
-                        <iframe src="https://server.emergencyos.de/" style="width: 100%; height: 100%;"></iframe>
+                        <iframe id="LSMD-EmergencyOS" src="" style="width: 100%; height: 100%;"></iframe>
                     </div>
                 </div>
             </div>
@@ -914,6 +914,9 @@
         //showArea("HomeApp-Area");
 
         updateTime();
+        document.getElementById("Justice-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        document.getElementById("LSPD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        document.getElementById("LSMD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
 
         //später entfernen, beispielwerte setzen
         //Notizen Einträge setzen
