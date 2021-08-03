@@ -43,7 +43,7 @@
     let activatedmodulespushed = false;
     let selecteduser = "None";
 
-    const adminmenu_main_items = ["player", "online", "misc", "fahrzeug", "peds", "server"];
+    const adminmenu_main_items = ["player", "online", "misc", "fahrzeug", "peds", "server", "einreise"];
     const adminmenu_player_items = ["noclip", "unsichtbar", "adminoutfit", "godmode", "heilen", "wiederbeleben"];
     const adminmenu_player_items_type = ["onoff", "onoff", "onoff", "onoff", "button", "button"];
     var adminmenu_online_items = [];
@@ -107,15 +107,15 @@
                 if (adminmenu_selectedmenu == "main") {
                     $(`.adminmenu-main-list-item-${adminmenu_main_items[adminmenu_main_items.length - 1]}`).addClass("selected");
                     adminmenu_selectedfield = adminmenu_main_items[adminmenu_main_items.length - 1];
-                    if (adminmenu_main_items.length > 8) $(".adminmenu-main-list").scrollTop($(".adminmenu-main-list").height());
+                    if (adminmenu_main_items.length > 9) $(".adminmenu-main-list").scrollTop($(".adminmenu-main-list").height());
                 } else if (adminmenu_selectedmenu == "onlineaction") {
                     $(`.adminmenu-online_action-list-item-${adminmenu_online_action_items[adminmenu_online_action_items.length - 1]}`).addClass("selected");
                     adminmenu_selectedfield = adminmenu_online_action_items[adminmenu_online_action_items.length - 1];
-                    if (adminmenu_online_action_items.length > 8) $(".adminmenu-online_action-list").scrollTop($(".adminmenu-online_action-list").height());
+                    if (adminmenu_online_action_items.length > 9) $(".adminmenu-online_action-list").scrollTop($(".adminmenu-online_action-list").height());
                 } else {
                     $(`.adminmenu-${adminmenu_selectedmenu}-list-item-${eval("adminmenu_" + adminmenu_selectedmenu + "_items")[eval("adminmenu_" + adminmenu_selectedmenu + "_items").length - 1]}`).addClass("selected");
                     adminmenu_selectedfield = eval("adminmenu_" + adminmenu_selectedmenu + "_items")[eval("adminmenu_" + adminmenu_selectedmenu + "_items").length - 1];
-                    if (eval("adminmenu_" + adminmenu_selectedmenu + "_items").length > 8) $(`.adminmenu-${adminmenu_selectedmenu}-list`).scrollTop($(`.adminmenu-${adminmenu_selectedmenu}-list`).height());
+                    if (eval("adminmenu_" + adminmenu_selectedmenu + "_items").length > 9) $(`.adminmenu-${adminmenu_selectedmenu}-list`).scrollTop($(`.adminmenu-${adminmenu_selectedmenu}-list`).height());
                 }
             } else if (adminmenu_selectedfield == adminmenu_main_items[0]) {
                 $(`.adminmenu-main-list-item`).removeClass("selected");
@@ -186,7 +186,7 @@
                     $(`.adminmenu-main-list-item`).removeClass("selected");
                     $(`.${"adminmenu-online_action-list-item"}-${eval("adminmenu_online_action_items")[eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) + 1]}`).addClass("selected");
                     adminmenu_selectedfield = eval("adminmenu_online_action_items")[eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) + 1];
-                    if(eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) > 8) {
+                    if(eval("adminmenu_online_action_items").indexOf(adminmenu_selectedfield) > 9) {
                         document.getElementById(`adminmenu-online_action-list`).scrollBy(0, 3.45 * window.innerHeight/100);
                     }
                 } else if (adminmenu_selectedmenu == "onlineaction" && adminmenu_selectedfield == adminmenu_online_action_items[adminmenu_online_action_items.length - 1]) {
@@ -201,7 +201,7 @@
                             $(`.adminmenu-main-list-item`).removeClass("selected");
                             $(`.${"adminmenu-" + b + "-list-item"}-${eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) + 1]}`).addClass("selected");
                             adminmenu_selectedfield = eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) + 1];
-                            if(eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) > 8) {
+                            if(eval("adminmenu_" + b + "_items").indexOf(adminmenu_selectedfield) > 9) {
                                 document.getElementById(`adminmenu-${b}-list`).scrollBy(0, 3.45 * window.innerHeight/100);
                             }
                         } else if (adminmenu_selectedmenu == b && adminmenu_selectedfield == eval("adminmenu_" + b + "_items")[eval("adminmenu_" + b + "_items").length - 1]) {
