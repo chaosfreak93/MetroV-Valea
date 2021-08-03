@@ -21,7 +21,7 @@ let playerblips_interval = null;
 
 alt.onServer("Client:WritePosAndRot", (pos, rot) => {
     alt.log(`-----------------------------------------------`);
-    alt.log(`Position: ${pos.x} , ${pos.y} , ${pos.z + 0.95}`);
+    alt.log(`Position: ${pos.x} , ${pos.y} , ${pos.z - 0.95}`);
     alt.log(`Rotation: ${rot.x} , ${rot.y} , ${rot.z}`);
 });
 
