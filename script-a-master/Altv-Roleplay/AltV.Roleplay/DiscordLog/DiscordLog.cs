@@ -11,11 +11,11 @@ namespace Altv_Roleplay.DiscordLog
             switch (type) {
                 case "adminmenu":
                     hook.HookUrl =
-                        "https://discord.com/api/webhooks/793996686606467085/3_MzOWmeUrsnZm9mFUXRFxbollbJevxf_n71Zb0bPsh8-ywbYy2PW1LX2fmMA9QlS9Yd";
+                        "https://discord.com/api/webhooks/872123901486972948/r-AxEdFOp7fIv9C-AOq4JyA-GJbnEFQaFnRWPJtB7ANrkfePBYXGgyrpxEAlGevWBKPr";
                     break;
                 default:
                     hook.HookUrl =
-                        "https://discord.com/api/webhooks/793996686606467085/3_MzOWmeUrsnZm9mFUXRFxbollbJevxf_n71Zb0bPsh8-ywbYy2PW1LX2fmMA9QlS9Yd";
+                        "https://discord.com/api/webhooks/872123901486972948/r-AxEdFOp7fIv9C-AOq4JyA-GJbnEFQaFnRWPJtB7ANrkfePBYXGgyrpxEAlGevWBKPr";
                     break;
             }
 
