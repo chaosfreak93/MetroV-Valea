@@ -953,6 +953,18 @@
             document.getElementById("LSMD-EmergencyOS").setAttribute("src", "");
         }
 
+        if (area == "LSMDApp-Area") {
+            document.getElementById("LSMD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        }
+
+        if (area == "LSPDApp-Area") {
+            document.getElementById("LSPD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        }
+
+        if (area == "JusticeApp-Area") {
+            document.getElementById("Justice-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        }
+
         if (curAppOpened != "none") {
             $(`#${curAppOpened}`).fadeOut(400);
         }
@@ -1044,7 +1056,6 @@
                 $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
-                document.getElementById("LSMD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
                 break;
             case "LSMDApp-Area-ViewFactionVehicles":
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeIn(500);
@@ -1087,7 +1098,6 @@
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
-                document.getElementById("LSPD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
                 break;
             case "LSPDApp-Area-SearchPerson":
                 $("#LSPDApp-Area-SearchPerson").fadeIn(500);
@@ -1152,7 +1162,6 @@
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
                 $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
-                document.getElementById("Justice-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
                 break;
             case "JusticeApp-Area-SearchPerson":
                 $("#JusticeApp-Area-SearchPerson").fadeIn(500);
