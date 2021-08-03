@@ -19,6 +19,7 @@
         <li class="adminmenu-main-list-item adminmenu-main-list-item-fahrzeug">FAHRZEUG</li>
         <li class="adminmenu-main-list-item adminmenu-main-list-item-peds">PEDS</li>
         <li class="adminmenu-main-list-item adminmenu-main-list-item-server">SERVER</li>
+        <li class="adminmenu-main-list-item adminmenu-main-list-item-einreise">EINREISE</li>
     </ul>
     <ul id="adminmenu-player-list" class="adminmenu-list adminmenu-player-list"></ul>
     <ul id="adminmenu-online-list" class="adminmenu-list adminmenu-online-list"></ul>
@@ -27,6 +28,7 @@
     <ul id="adminmenu-peds-list" class="adminmenu-list adminmenu-peds-list"></ul>
     <ul id="adminmenu-server-list" class="adminmenu-list adminmenu-server-list"></ul>
     <ul id="adminmenu-online_action-list" class="adminmenu-list adminmenu-online_action-list"></ul>
+    <ul id="adminmenu-einreise-list" class="adminmenu-list adminmenu-einreise-list"></ul>
     <input type="input" class="adminmenu-input" autocomplete="off" required>
     <br><br>
     <hr class="hr-bottom">
@@ -53,8 +55,10 @@
     const adminmenu_fahrzeug_items_type = ["button", "button", "button"];
     const adminmenu_peds_items = ["zurücksetzen", "a_c_boar", "a_c_cat_01", "a_c_chickenhawk", "a_c_chimp", "a_c_chop", "a_c_cormorant", "a_c_cow", "a_c_coyote", "a_c_crow", "a_c_deer", "a_c_dolphin", "a_c_fish", "a_c_sharkhammer", "a_c_hen", "a_c_humpback", "a_c_husky", "a_c_killerwhale", "a_c_mtlion", "a_c_pig", "a_c_pigeon", "a_c_poodle", "a_c_pug", "a_c_rabbit_01", "a_c_rat", "a_c_retriever", "a_c_rhesus", "a_c_rottweiler", "a_c_seagull", "a_c_shepherd", "a_c_stingray", "a_c_sharktiger", "a_c_westy", "a_c_panther", "other"];
     const adminmenu_peds_items_type = ["button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button", "button"];
-    const adminmenu_server_items = ["ankündigung", "account_aktivieren", "einreisen", "fahrzeug_einparken", "alle_fahrzeuge_einparken", "hardwareid_zurücksetzen", "socialclubid_zurücksetzen", "passwort_zurücksetzen", "spieler_entbannen"];
-    const adminmenu_server_items_type = ["button", "button", "button", "button", "button", "button", "button", "button", "button"];
+    const adminmenu_server_items = ["ankündigung", "fahrzeug_einparken", "alle_fahrzeuge_einparken", "hardwareid_zurücksetzen", "socialclubid_zurücksetzen", "passwort_zurücksetzen", "spieler_entbannen"];
+    const adminmenu_server_items_type = ["button", "button", "button", "button", "button", "button", "button"];
+    const adminmenu_einreise_items = ["account_aktivieren", "einreisen", "tp_airport"];
+    const adminmenu_einreise_items_type = ["button", "button", "button"];
 
     let activatedmodules_player = [];
     let activatedmodules_online_action = [];
@@ -62,6 +66,7 @@
     let activatedmodules_fahrzeug = [];
     let activatedmodules_peds = [];
     let activatedmodules_server = [];
+    let activatedmodules_einreise = [];
 
     function openadminmenu() {
         $(`.adminmenu-main`).show();

@@ -685,6 +685,15 @@ namespace Altv_Roleplay.Handler
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat **" + inputvalue + " gewhitelistet**");
                             break;
+                        case "tp_airport":
+                            if (player.AdminLevel() < 2) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+
+                            player.Position = Constants.Positions.AdminPos_Airport;
+                            player.Rotation = Constants.Positions.AdminRot_Airport;
+                            break;
                         case "fahrzeug_einparken":
                             if (player.AdminLevel() < 4) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
