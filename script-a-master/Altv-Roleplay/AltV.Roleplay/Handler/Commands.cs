@@ -402,7 +402,8 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SendChatMessage($"X: {player.Position.X}, Y: {player.Position.Y}, Z: {player.Position.Z - 0.95}");
+            player.Emit("Client:WritePosAndRot", player.Position, player.Rotation);
+            player.SendChatMessage("Check F8");
         }
 
         [Command("rot")]
@@ -414,7 +415,8 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.SendChatMessage($"{player.Rotation.ToString()}");
+            player.Emit("Client:WritePosAndRot", player.Position, player.Rotation);
+            player.SendChatMessage("Check F8");
         }
 
         [Command("torso")]
