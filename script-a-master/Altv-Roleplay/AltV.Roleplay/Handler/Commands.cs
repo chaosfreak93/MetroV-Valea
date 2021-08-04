@@ -804,6 +804,48 @@ namespace Altv_Roleplay.Handler
             }
         }
 
+        [Command("setstore")]
+        public void SetstoreCmd(IPlayer player, int shopid, string shopname)
+        {
+            try
+            {
+                int charId = User.GetPlayerOnline(player);
+                if (player.AdminLevel() < 6)
+                {
+                    HUDHandler.SendNotification(player, 4, 5000, "Keine Rechte.");
+                    return;
+                }
+                ServerShops.CreateServerShop(player, shopid, shopname, player.Position);
+                HUDHandler.SendNotification(player, 1, 5000, $"Shop gesetzt > {shopname} - ID: {shopid}");
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"{e}");
+                HUDHandler.SendNotification(player, 1, 5000, $"ein fehler ist aufgetreten!");
+            }
+        }
+
+        [Command("setstoreitem")]
+        public void Setstore7Cmd(IPlayer player, int shopid, string item, int itempreis)
+        {
+            try
+            {
+                int charId = User.GetPlayerOnline(player);
+                if (player.AdminLevel() < 6)
+                {
+                    HUDHandler.SendNotification(player, 4, 5000, "Keine Rechte.");
+                    return;
+                }
+                ServerShopsItems.CreateServerShopItem(player, shopid, item, 1, itempreis);
+                HUDHandler.SendNotification(player, 1, 5000, $"Shopitem: {item} in Shop {shopid} mit Preis {itempreis} gesetzt");
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"{e}");
+                HUDHandler.SendNotification(player, 1, 5000, $"ein fehler ist aufgetreten!");
+            }
+        }
+
         [Command("resethwid")]
         public void CMD_ResetHwId(IPlayer player, int accountId) {
             try {
