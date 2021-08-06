@@ -20,13 +20,10 @@ function blackout(speed) {
 alt.setInterval(() => {
     let vehicle = game.getVehiclePedIsIn(alt.Player.local.scriptID, false);
     if (game.doesEntityExist(vehicle)) {
-        alt.log("Entity exist");
         let currentDamage = game.getVehicleBodyHealth(vehicle);
         let currentSpeed = game.getEntitySpeed(vehicle) * 2.23;
         if (currentDamage != oldBodyDamage) {
-            alt.log("Health changed");
             if (!isBlackedOut && (currentDamage < oldBodyDamage) && ((oldBodyDamage - currentDamage) >= 25)) {
-                alt.log("Blackout");
                 blackout(currentSpeed);
             }
             oldBodyDamage = currentDamage;
