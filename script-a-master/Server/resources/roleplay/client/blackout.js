@@ -25,7 +25,8 @@ alt.setInterval(() => {
         let currentDamage = game.getVehicleBodyHealth(vehicle);
         if (currentDamage != oldBodyDamage) {
             if (!isBlackedOut && (currentDamage < oldBodyDamage) && ((oldBodyDamage - currentDamage) >= 25)) {
-                blackout(game.getEntitySpeed(vehicle) * 3.6);
+                let currentSpeed = game.getEntitySpeed(vehicle) * 3.6;
+                blackout(currentSpeed);
             }
             oldBodyDamage = currentDamage;
         }
