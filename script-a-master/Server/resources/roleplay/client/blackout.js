@@ -8,12 +8,14 @@ let oldBodyDamage = 0;
 
 function blackout(speed) {
     if (!isBlackedOut) {
+        let blackoutTime = 1000 * (speed / 10);
+        alt.log(blackoutTime);
         isBlackedOut = true;
         game.doScreenFadeOut(100);
         alt.setTimeout(() => {
             game.doScreenFadeIn(250);
             isBlackedOut = false;
-        }, 1000 * (speed / 12));
+        }, blackoutTime);
     }
 }
 
