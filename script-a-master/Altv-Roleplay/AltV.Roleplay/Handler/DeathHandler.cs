@@ -16,13 +16,13 @@ namespace Altv_Roleplay.Handler
     internal class DeathHandler : IScript
     {
         [ScriptEvent(ScriptEventType.PlayerDead)]
-        public void OnPlayerDeath(ClassicPlayer player, IEntity killer, uint weapon) {
+        public bool OnPlayerDeath(ClassicPlayer player, IEntity killer, uint weapon) {
             try {
-                if (player == null || !player.Exists) return;
+                if (player == null || !player.Exists) return false;
 
                 var charId = (int) player.GetCharacterMetaId();
-                if (charId <= 0) return;
-                if (Characters.IsCharacterUnconscious(charId)) return;
+                if (charId <= 0) return false;
+                if (Characters.IsCharacterUnconscious(charId)) return false;
 
                 /**if (Characters.IsCharacterInJail(charId)) {
                     player.Spawn(new Position(1691.4594f, 2565.7056f, 45.556763f), 0);
@@ -37,8 +37,9 @@ namespace Altv_Roleplay.Handler
                 AltAsync.Emit("Server:Smartphone:leaveRadioFrequence", player);
                 AltAsync.Emit("SaltyChat:SetPlayerAlive", player, false);
 
+                if (killer is ClassicVehicle) return true;
                 var killerPlayer = (ClassicPlayer) killer;
-                if (killer is not {Exists: true}) return;
+                if (killer is not {Exists: true}) return false;
 
                 var weaponModel = (WeaponModel) weapon;
 
@@ -56,11 +57,16 @@ namespace Altv_Roleplay.Handler
                         .Where(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 && x.AdminLevel() > 0))
                         p.SendChatMessage($"{Characters.GetCharacterName(killerPlayer.CharacterId)} wurde gebannt: Waffenhack[2] - {weaponModel}");
 
+                    return false;
                 }
+
+                return true;
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
+
+            return false;
         }
 
         internal static async Task openDeathscreen(IPlayer player) {
