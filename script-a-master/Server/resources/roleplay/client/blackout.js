@@ -19,7 +19,7 @@ function blackout(speed) {
     }
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     let vehicle = alt.Player.local.vehicle;
     if (vehicle != null && vehicle.valid) {
         let currentDamage = game.getVehicleBodyHealth(vehicle.scriptID);
@@ -30,6 +30,8 @@ alt.everyTick(() => {
             }
             oldBodyDamage = currentDamage;
         }
+    } else {
+        oldBodyDamage = 0;
     }
 
     if (isBlackedOut) {
@@ -39,4 +41,4 @@ alt.everyTick(() => {
         game.disableControlAction(0, 64, true);
         game.disableControlAction(0, 75, true);
     }
-});
+}, 10);
