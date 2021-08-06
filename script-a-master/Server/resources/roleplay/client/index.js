@@ -1,4 +1,5 @@
 import '/client/adminmenu.js';
+import '/client/blackout.js';
 import '/client/clothesstore.js';
 import '/client/fingerpoint.js';
 import '/client/cayoperico.js';
