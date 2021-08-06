@@ -809,7 +809,6 @@ namespace Altv_Roleplay.Handler
         {
             try
             {
-                int charId = User.GetPlayerOnline(player);
                 if (player.AdminLevel() < 6)
                 {
                     HUDHandler.SendNotification(player, 4, 5000, "Keine Rechte.");
