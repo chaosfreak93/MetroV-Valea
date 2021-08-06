@@ -5,6 +5,7 @@ import * as game from 'natives';
 
 let isBlackedOut = false;
 let oldBodyDamage = 0;
+let oldBodyDamage2 = 0;
 
 function blackout(speed) {
     if (!isBlackedOut) {
@@ -22,15 +23,22 @@ function blackout(speed) {
 alt.setInterval(() => {
     let vehicle = alt.Player.local.vehicle;
     if (vehicle != null) {
-        let currentDamage = game.getVehicleBodyHealth(vehicle.scriptID);
-        if (currentDamage != oldBodyDamage) {
-            if (!isBlackedOut && (currentDamage < oldBodyDamage) && ((oldBodyDamage - currentDamage) >= 25)) {
+        let currentBodyDamage = game.getVehicleBodyHealth(vehicle.scriptID);
+        let currentBodyDamage2 = game.getVehicleBodyHealth2(vehicle.scriptID);
+        if (currentBodyDamage != oldBodyDamage) {
+            if (!isBlackedOut && (currentBodyDamage < oldBodyDamage) && ((oldBodyDamage - currentBodyDamage) >= 25)) {
                 blackout(vehicle.speed * 3.6);
             }
-            oldBodyDamage = currentDamage;
+            oldBodyDamage = currentBodyDamage;
+        } else if (currentBodyDamage2 != oldBodyDamage2) {
+            if (!isBlackedOut && (currentBodyDamage2 < oldBodyDamage2) && ((oldBodyDamage2 - currentBodyDamage2) >= 25)) {
+                blackout(vehicle.speed * 3.6);
+            }
+            oldBodyDamage2 = currentBodyDamage2;
         }
     } else {
         oldBodyDamage = 0;
+        oldBodyDamage2 = 0;
     }
 
     if (isBlackedOut) {
