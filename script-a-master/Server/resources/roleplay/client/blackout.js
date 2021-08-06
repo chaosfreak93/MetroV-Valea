@@ -19,13 +19,14 @@ function blackout(speed) {
     }
 }
 
-alt.setInterval(() => {
-    let vehicle = game.getVehiclePedIsIn(alt.Player.local.scriptID, false);
-    if (game.doesEntityExist(vehicle)) {
-        let currentDamage = game.getVehicleBodyHealth(vehicle);
+alt.everyTick(() => {
+    let vehicle = alt.Player.local.vehicle;
+    if (vehicle != null && vehicle.valid) {
+        let currentDamage = game.getVehicleBodyHealth(vehicle.scriptID);
+        let speed = game.getEntitySpeed(vehicle.scriptID);
         if (currentDamage != oldBodyDamage) {
             if (!isBlackedOut && (currentDamage < oldBodyDamage) && ((oldBodyDamage - currentDamage) >= 25)) {
-                blackout(game.getEntitySpeed(vehicle) * 3.6);
+                blackout(speed * 3.6);
             }
             oldBodyDamage = currentDamage;
         }
@@ -38,4 +39,4 @@ alt.setInterval(() => {
         game.disableControlAction(0, 64, true);
         game.disableControlAction(0, 75, true);
     }
-}, 10);
+});
