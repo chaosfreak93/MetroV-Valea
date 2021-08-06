@@ -6,8 +6,9 @@ import * as game from 'natives';
 let isBlackedOut = false;
 let oldBodyDamage = 0;
 
-function blackout(blackoutTime) {
+function blackout(speed) {
     if (!isBlackedOut) {
+        let blackoutTime = 100 * speed;
         alt.log(blackoutTime);
         isBlackedOut = true;
         game.doScreenFadeOut(100);
@@ -18,14 +19,13 @@ function blackout(blackoutTime) {
     }
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     let vehicle = game.getVehiclePedIsIn(alt.Player.local.scriptID, false);
     if (game.doesEntityExist(vehicle)) {
         let currentDamage = game.getVehicleBodyHealth(vehicle);
         if (currentDamage != oldBodyDamage) {
             if (!isBlackedOut && (currentDamage < oldBodyDamage) && ((oldBodyDamage - currentDamage) >= 25)) {
-                let currentSpeed = 1000 * ((game.getEntitySpeed(vehicle) * 3.6) / 10);
-                blackout(currentSpeed);
+                blackout(game.getEntitySpeed(vehicle) * 3.6);
             }
             oldBodyDamage = currentDamage;
         }
@@ -38,4 +38,4 @@ alt.everyTick(() => {
         game.disableControlAction(0, 64, true);
         game.disableControlAction(0, 75, true);
     }
-});
+}, 10);
