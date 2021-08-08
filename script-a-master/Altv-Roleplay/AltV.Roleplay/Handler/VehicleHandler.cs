@@ -282,8 +282,8 @@ namespace Altv_Roleplay.Handler
 
                 if (action == "anmelden") {
                     var notAllowedStrings = new[] {
-                        "LSPD", "DOJ", "LSFD", "LSMD", "ACLS", "LSF", "FIB", "LSF-", "LSPD-", "DOJ-", "LSFD-", "LSMD-", "ACLS-", "FIB-", "NL",
-                        "EL-", "MM-", "PL-", "SWAT", "S.W.A.T", "SWAT-", "NOOSE", "N.O.O.S.E"
+                        "LSPD", "DOJ", "LSFD", "LSMD", "ACLS", "LSF", "FIB", "LSF-", "LSPD-", "DOJ-", "LSFD-", "LSMD-", "ACLS-", "FIB-", "NL", "NL-",
+                        "EL-", "MM-", "PL-", "SWAT", "S.W.A.T", "SWAT-", "NOOSE", "N.O.O.S.E", "ALTV", "ADMIN"
                     };
                     newPlate = newPlate.Replace(" ", "-");
 
