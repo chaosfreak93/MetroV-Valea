@@ -110,6 +110,11 @@ namespace Altv_Roleplay.Factions.LSPD
                     return;
                 }
 
+                if (targetPlate.Contains("NL")) {
+                    HUDHandler.SendNotification(player, 3, 5000, "Fehler: Dieses Fahrzeug ist nicht angemeldet.");
+                    return;
+                }
+
                 var vehicleId = ServerVehicles.GetVehicleIdByPlate(targetPlate);
                 if (vehicleId <= 0) return;
 
