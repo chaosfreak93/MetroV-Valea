@@ -3939,8 +3939,7 @@
                 licenseHTML += `<li class='list-group-item'><div class='container left'><p class='title'>FAHRZEUGNAME</p><p class='name'>${vehArray[i].vehName}</p></div>` +
                     `<div class='container mid'><p class='title'>KENNZEICHEN</p><p class='name'>${vehArray[i].vehPlate}</p></div>` +
                     `<div class='container right'><p class='title'>FAHRZEUG ANMELDEN?</p><input type='text' spellcheck='false' maxlength='8'>` +
-                    "<button type='button' onclick='VehicleLicensingCEFAction(`anmelden`, " + vehArray[i].vehId + ", `" + vehArray[i].vehPlate + "`, this);' class='btn btn-sm btn-anmelden'><i class='fas fa-check'></i></button>" +
-                    "<button type='button' onclick='VehicleLicensingCEFAction(`abmelden`, " + vehArray[i].vehId + ", `" + vehArray[i].vehPlate + "`, this);' class='btn btn-sm btn-abmelden'><i class='fas fa-times'></i></button></div></li>";
+                    "<button type='button' onclick='VehicleLicensingCEFAction(`anmelden`, " + vehArray[i].vehId + ", `" + vehArray[i].vehPlate + "`, this);' class='btn btn-sm btn-anmelden'><i class='fas fa-check'></i></button></div></li>";
             }
 
             $("#VehicleLicensingCEFBox-List").html(licenseHTML);
@@ -4435,7 +4434,7 @@
 
         function VehicleLicensingCEFAction(action, vehId, vehPlate, htmlElem) {
             if (vehId <= 0 || vehPlate == "" || htmlElem == undefined || vehPlate == undefined || vehId == undefined || action == undefined || action == "") return;
-            if (action != "anmelden" && action != "abmelden") return;
+            if (action != "anmelden") return;
             var inputElem = $(htmlElem).parent().find("input");
             var inputVal = $(inputElem).val().replace(/^\s+|\s+$/g, "");
             closeVehicleLicensingCEFBox();
@@ -4443,8 +4442,6 @@
                 if (inputVal == "" || inputVal.length <= 0) return;
                 var newPlate = inputVal.replace(" ", "-");
                 alt.emit("Client:VehicleLicensing:LicensingAction", action, vehId, vehPlate, newPlate.toUpperCase());
-            } else if (action == "abmelden") {
-                alt.emit("Client:VehicleLicensing:LicensingAction", action, vehId, vehPlate, "");
             }
         }
 
