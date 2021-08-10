@@ -218,7 +218,7 @@ namespace Altv_Roleplay.Minijobs.Busfahrer
             }
         }
 
-        [AsyncClientEvent("Server:MinijobBusdriver:StartJob")]
+        [ClientEvent("Server:MinijobBusdriver:StartJob")]
         public void StartMiniJob(IPlayer player, int routeId) {
             try {
                 if (player == null || !player.Exists || routeId <= 0) return;

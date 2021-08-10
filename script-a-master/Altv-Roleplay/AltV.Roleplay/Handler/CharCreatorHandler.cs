@@ -9,7 +9,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class CharCreatorHandler : IScript
     {
-        [AsyncClientEvent("Server:Charcreator:CreateCEF")]
+        [ClientEvent("Server:Charcreator:CreateCEF")]
         public void CreateCefBrowser(IPlayer client) {
             if (client == null || !client.Exists) return;
 
@@ -19,7 +19,7 @@ namespace Altv_Roleplay.Handler
             client.Rotation = new Rotation(0, 0, (float) 3.1168559);
         }
 
-        [AsyncClientEvent("Server:Charcreator:CreateCharacter")]
+        [ClientEvent("Server:Charcreator:CreateCharacter")]
         public void CreateCharacter(IPlayer client, string charname, string birthdate, bool gender, string facefeaturesarray,
             string headblendsdataarray, string headoverlaysarray) {
             if (client == null || !client.Exists) return;
@@ -35,7 +35,7 @@ namespace Altv_Roleplay.Handler
             LoginHandler.CreateLoginBrowser(client);
         }
 
-        [AsyncClientEvent("Server:Barber:finishBarber")]
+        [ClientEvent("Server:Barber:finishBarber")]
         public void finishBarber(IPlayer player, string headoverlaysarray) {
             if (player == null || !player.Exists) return;
 
@@ -53,7 +53,7 @@ namespace Altv_Roleplay.Handler
             Characters.SetCharacterHeadOverlays(charId, headoverlaysarray);
         }
 
-        [AsyncClientEvent("Server:Barber:RequestCurrentSkin")]
+        [ClientEvent("Server:Barber:RequestCurrentSkin")]
         public void SetCorrectCharacterSkin(IPlayer player) {
             if (player == null || !player.Exists) return;
 

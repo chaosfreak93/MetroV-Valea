@@ -11,7 +11,7 @@ namespace Altv_Roleplay.Factions.LSPD
 {
     internal class Functions : IScript
     {
-        [AsyncClientEvent("Server:Tablet:LSPDAppSearchPerson")]
+        [ClientEvent("Server:Tablet:LSPDAppSearchPerson")]
         public void LSPDAppSearchPerson(IPlayer player, string targetCharname) {
             try {
                 if (player == null || !player.Exists || targetCharname == "") return;
@@ -77,7 +77,7 @@ namespace Altv_Roleplay.Factions.LSPD
             }
         }
 
-        [AsyncClientEvent("Server:Tablet:LSPDAppSearchVehiclePlate")]
+        [ClientEvent("Server:Tablet:LSPDAppSearchVehiclePlate")]
         public void LSPDAppSearchVehiclePlate(IPlayer player, string targetPlate) {
             try {
                 if (player == null || !player.Exists || targetPlate == "") return;
@@ -138,7 +138,7 @@ namespace Altv_Roleplay.Factions.LSPD
             }
         }
 
-        [AsyncClientEvent("Server:Tablet:LSPDAppSearchLicense")]
+        [ClientEvent("Server:Tablet:LSPDAppSearchLicense")]
         public void LSPDAppSearchLicense(IPlayer player, string targetCharname) {
             try {
                 if (player == null || !player.Exists || targetCharname == "") return;
@@ -184,7 +184,7 @@ namespace Altv_Roleplay.Factions.LSPD
             }
         }
 
-        [AsyncClientEvent("Server:Tablet:LSPDAppTakeLicense")]
+        [ClientEvent("Server:Tablet:LSPDAppTakeLicense")]
         public void LSPDAppTakeLicense(IPlayer player, string targetCharname, string licName) {
             try {
                 if (player == null || !player.Exists || targetCharname == "" || licName == "") return;

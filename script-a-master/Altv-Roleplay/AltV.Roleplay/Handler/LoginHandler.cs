@@ -52,7 +52,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:CEF:setCefStatus")]
+        [ClientEvent("Server:CEF:setCefStatus")]
         public static void setCefStatus(IPlayer player, bool status) {
             if (player is not {Exists: true}) return;
 
@@ -68,7 +68,7 @@ namespace Altv_Roleplay.Handler
             client.EmitLocked("Client:Login:CreateCEF"); //Login triggern
         }
 
-        [AsyncClientEvent("Server:Login:ValidateLoginCredentials")]
+        [ClientEvent("Server:Login:ValidateLoginCredentials")]
         public void ValidateLoginCredentials(ClassicPlayer client, string username, string password, string discordId) {
             if (client is not {Exists: true}) return;
 
@@ -154,7 +154,7 @@ namespace Altv_Roleplay.Handler
             if (stopwatch.Elapsed.Milliseconds > 30) Alt.Log($"ValidateLoginCredentials benötigte {stopwatch.Elapsed.Milliseconds}ms");
         }
 
-        [AsyncClientEvent("Server:Login:resetPW")]
+        [ClientEvent("Server:Login:resetPW")]
         public void resetPW(IPlayer client, string password) {
             if (client is not {Exists: true}) return;
             
@@ -162,7 +162,7 @@ namespace Altv_Roleplay.Handler
             client.EmitLocked("Client:Login:showArea", "login");
         }
 
-        [AsyncClientEvent("Server:Charselector:PreviewCharacter")]
+        [ClientEvent("Server:Charselector:PreviewCharacter")]
         public void PreviewCharacter(IPlayer client, int charid) {
             if (client is not {Exists: true}) return;
 

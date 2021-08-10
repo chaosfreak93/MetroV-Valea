@@ -14,7 +14,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class InventoryHandler : IScript
     {
-        [AsyncClientEvent("Server:Inventory:RequestInventoryItems")]
+        [ClientEvent("Server:Inventory:RequestInventoryItems")]
         public static void RequestInventoryItems(IPlayer player) {
             try {
                 var stopwatch = new Stopwatch();
@@ -39,14 +39,14 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Inventory:closeCEF")]
+        [ClientEvent("Server:Inventory:closeCEF")]
         public void CloseInventoryCEF(IPlayer player) {
             if (player == null || !player.Exists) return;
 
             player.EmitLocked("Client:Inventory:closeCEF");
         }
 
-        [AsyncClientEvent("Server:Inventory:switchItemToDifferentInv")]
+        [ClientEvent("Server:Inventory:switchItemToDifferentInv")]
         public void switchItemToDifferentInv(ClassicPlayer player, string itemname, int itemAmount, string fromContainer, string toContainer) {
             try {
                 if (player == null || !player.Exists || itemname == "" || itemAmount <= 0 || fromContainer == "" || toContainer == "" ||
@@ -99,7 +99,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Inventory:UseItem")]
+        [ClientEvent("Server:Inventory:UseItem")]
         public void UseItem(ClassicPlayer player, string itemname, int itemAmount, string fromContainer) {
             try {
                 string ECData = null,
@@ -345,7 +345,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Inventory:DropItem")]
+        [ClientEvent("Server:Inventory:DropItem")]
         public void DropItem(ClassicPlayer player, string itemname, int itemAmount, string fromContainer) {
             try {
                 Vector3 forwardVector = ((ClassicPlayer)player).getForwardVector();
@@ -440,7 +440,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Inventory:GiveItem")]
+        [ClientEvent("Server:Inventory:GiveItem")]
         public void GiveItem(ClassicPlayer player, string itemname, int itemAmount, string fromContainer, int targetPlayerId) {
             try {
                 if (player == null || !player.Exists || itemname == "" || itemAmount <= 0 || fromContainer == "" || targetPlayerId == 0) return;
@@ -510,7 +510,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:PlayerSearch:TakeItem")]
+        [ClientEvent("Server:PlayerSearch:TakeItem")]
         public void PlayerSearchTakeItem(ClassicPlayer player, int givenTargetCharId, string itemName, string itemLocation, int itemAmount) {
             try {
                 if (player == null || !player.Exists || givenTargetCharId <= 0 || itemName == "" || itemAmount <= 0 || itemLocation == "") return;

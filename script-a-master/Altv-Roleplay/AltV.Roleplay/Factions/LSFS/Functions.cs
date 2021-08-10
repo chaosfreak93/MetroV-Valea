@@ -12,7 +12,7 @@ namespace Altv_Roleplay.Factions.LSFS
 {
     internal class Functions : IScript
     {
-        [AsyncClientEvent("Server:GivePlayerLicense:GiveLicense")]
+        [ClientEvent("Server:GivePlayerLicense:GiveLicense")]
         public void GiveLicense(IPlayer player, int targetCharId, string licShort) {
             try {
                 if (player == null || !player.Exists || targetCharId <= 0 || licShort == "") return;

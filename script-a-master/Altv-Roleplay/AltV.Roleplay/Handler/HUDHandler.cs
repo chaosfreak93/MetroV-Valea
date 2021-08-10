@@ -68,7 +68,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Vehicle:UpdateVehicleKM")]
+        [ClientEvent("Server:Vehicle:UpdateVehicleKM")]
         public void UpdateVehicleKM(IPlayer player, float km) {
             //KM = bei 600 Meter = 600
             //600 / 1000 = 0,6   = 0,6km ?

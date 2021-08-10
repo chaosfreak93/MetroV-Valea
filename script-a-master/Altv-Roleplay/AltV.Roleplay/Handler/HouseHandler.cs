@@ -29,7 +29,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:House:BuyHouse")]
+        [ClientEvent("Server:House:BuyHouse")]
         public void BuyHouse(IPlayer player, int houseId) {
             try {
                 if (player == null || houseId <= 0 || !player.Exists) return;
@@ -101,7 +101,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:House:EnterHouse")]
+        [ClientEvent("Server:House:EnterHouse")]
         public void EnterHouse(IPlayer player, int houseId) {
             try {
                 if (player == null || houseId <= 0 || !player.Exists) return;
@@ -213,7 +213,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseStorage:StorageItem")]
+        [ClientEvent("Server:HouseStorage:StorageItem")]
         public void StorageItem(IPlayer player, int houseId, string itemName, int itemAmount, string fromContainer) {
             try {
                 if (player == null || !player.Exists || houseId <= 0 || itemName == "" || itemName == "undefined" || itemAmount <= 0 ||
@@ -270,7 +270,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseStorage:TakeItem")]
+        [ClientEvent("Server:HouseStorage:TakeItem")]
         public void TakeItem(IPlayer player, int houseId, string itemName, int itemAmount) {
             try {
                 if (player == null || !player.Exists || (houseId <= 0) | (itemAmount <= 0) || itemName == "" || itemName == "undefined") return;
@@ -417,7 +417,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:House:setMainHouse")]
+        [ClientEvent("Server:House:setMainHouse")]
         public void setMainHouse(IPlayer player, int houseId) {
             try {
                 if (player == null || !player.Exists || houseId <= 0) return;
@@ -439,7 +439,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:House:SellHouse")]
+        [ClientEvent("Server:House:SellHouse")]
         public void SellHouse(IPlayer player, int houseId) {
             try {
                 if (player == null || !player.Exists || houseId <= 0) return;
@@ -474,7 +474,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseManage:DepositMoney")]
+        [ClientEvent("Server:HouseManage:DepositMoney")]
         public void DepositMoney(IPlayer player, int houseId, int money) {
             if (player == null || !player.Exists || houseId <= 0 || money <= 0) return;
 
@@ -503,7 +503,7 @@ namespace Altv_Roleplay.Handler
             HUDHandler.SendNotification(player, 2, 2500, $"Du hast erfolgreich {money}$ in den Tresor gelagert.");
         }
 
-        [AsyncClientEvent("Server:HouseManage:WithdrawMoney")]
+        [ClientEvent("Server:HouseManage:WithdrawMoney")]
         public void WithdrawMoney(IPlayer player, int houseId, int money) {
             try {
                 if (player == null || !player.Exists || houseId <= 0 || money <= 0) return;
@@ -537,7 +537,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseManage:BuyUpgrade")]
+        [ClientEvent("Server:HouseManage:BuyUpgrade")]
         public void BuyUpgrade(IPlayer player, int houseId, string upgrade) {
             try {
                 if (player == null || !player.Exists || houseId <= 0) return;
@@ -628,7 +628,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseManage:RemoveRenter")]
+        [ClientEvent("Server:HouseManage:RemoveRenter")]
         public void RemoveRenter(IPlayer player, int houseId, int renterId) {
             try {
                 if (player == null || !player.Exists || houseId <= 0 || renterId <= 0) return;
@@ -667,7 +667,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseManage:setRentState")]
+        [ClientEvent("Server:HouseManage:setRentState")]
         public void setRentState(IPlayer player, int houseId, string rentState) {
             try {
                 if (player == null || !player.Exists || houseId <= 0) return;
@@ -700,7 +700,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HouseManage:setRentPrice")]
+        [ClientEvent("Server:HouseManage:setRentPrice")]
         public void setRentPrice(IPlayer player, int houseId, int rentPrice) {
             try {
                 if (player == null || !player.Exists || houseId <= 0 || rentPrice <= 0) return;
@@ -737,7 +737,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:House:RentHouse")]
+        [ClientEvent("Server:House:RentHouse")]
         public void RentHouse(IPlayer player, int houseId) {
             try {
                 if (player == null || !player.Exists || houseId <= 0) return;
@@ -794,7 +794,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:House:UnrentHouse")]
+        [ClientEvent("Server:House:UnrentHouse")]
         public void UnrentHouse(IPlayer player, int houseId) {
             try {
                 if (player == null || !player.Exists || houseId <= 0) return;

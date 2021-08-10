@@ -15,7 +15,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class AdminmenuHandler : IScript
     {
-        [AsyncClientEvent("Server:AdminMenu:OpenMenu")]
+        [ClientEvent("Server:AdminMenu:OpenMenu")]
         public void AdminmenuOpenMenu(IPlayer player) {
             try {
                 if (player.AdminLevel() != 0) player.EmitLocked("Client:Adminmenu:OpenMenu");
@@ -25,7 +25,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:AdminMenu:CloseMenu")]
+        [ClientEvent("Server:AdminMenu:CloseMenu")]
         public void AdminmenuCloseMenu(IPlayer player) {
             try {
                 if (player.AdminLevel() != 0) player.EmitLocked("Client:Adminmenu:CloseMenu");
@@ -35,7 +35,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:AdminMenu:DoAction")]
+        [ClientEvent("Server:AdminMenu:DoAction")]
         public void AdminmenuDoAction(IPlayer player, string action, string info, string addinfo, string inputvalue) {
             try {
                 if (player.AdminLevel() != 0)
@@ -857,7 +857,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:AdminMenu:RequestAllOnlinePlayers")]
+        [ClientEvent("Server:AdminMenu:RequestAllOnlinePlayers")]
         public void RequestAllOnlinePlayers(IPlayer player) {
             try {
                 if (player.AdminLevel() != 0)
@@ -889,7 +889,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:AdminMenu:TeleportWaypoint")]
+        [ClientEvent("Server:AdminMenu:TeleportWaypoint")]
         public void TeleportWaypoint(IPlayer player, int x, int y, int z) {
             try {
                 if (player.AdminLevel() != 0)
@@ -907,7 +907,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:AdminMenu:GetPlayer")]
+        [ClientEvent("Server:AdminMenu:GetPlayer")]
         public void GetPlayer(IPlayer player, string reason, string username, string other) {
             try {
                 if (player.AdminLevel() != 0) {

@@ -11,7 +11,7 @@ namespace Altv_Roleplay.Factions.Justice
 {
     internal class Functions : IScript
     {
-        [AsyncClientEvent("Server:Tablet:JusticeAppGiveWeaponLicense")]
+        [ClientEvent("Server:Tablet:JusticeAppGiveWeaponLicense")]
         public void GiveWeaponLicense(IPlayer player, string targetCharName) {
             try {
                 if (player == null || !player.Exists || targetCharName == "") return;
@@ -69,7 +69,7 @@ namespace Altv_Roleplay.Factions.Justice
             }
         }
 
-        [AsyncClientEvent("Server:Tablet:JusticeAppSearchBankAccounts")]
+        [ClientEvent("Server:Tablet:JusticeAppSearchBankAccounts")]
         public void SearchBankAccounts(IPlayer player, string targetCharName) {
             try {
                 if (player == null || !player.Exists || targetCharName == "") return;
@@ -119,7 +119,7 @@ namespace Altv_Roleplay.Factions.Justice
             }
         }
 
-        [AsyncClientEvent("Server:Tablet:JusticeAppViewBankTransactions")]
+        [ClientEvent("Server:Tablet:JusticeAppViewBankTransactions")]
         public void ViewBankTransactions(IPlayer player, int accNumber) {
             try {
                 if (player == null || !player.Exists || accNumber <= 0) return;

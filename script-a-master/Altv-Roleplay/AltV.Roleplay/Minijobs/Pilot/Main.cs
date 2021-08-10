@@ -228,7 +228,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
             }
         }
 
-        [AsyncClientEvent("Server:MinijobPilot:StartJob")]
+        [ClientEvent("Server:MinijobPilot:StartJob")]
         public void StartMiniJob(IPlayer player, int level) {
             try {
                 if (player == null || !player.Exists || level <= 0) return;

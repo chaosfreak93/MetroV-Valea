@@ -17,7 +17,7 @@ namespace Altv_Roleplay.Handler
     {
         #region Shops
 
-        [AsyncClientEvent("Server:Shop:buyItem")]
+        [ClientEvent("Server:Shop:buyItem")]
         public void buyShopItem(IPlayer player, int shopId, int amount, string itemname) {
             if (player == null || !player.Exists || shopId <= 0 || amount <= 0 || itemname == "") return;
 
@@ -262,7 +262,7 @@ namespace Altv_Roleplay.Handler
         }
 
 
-        [AsyncClientEvent("Server:Shop:sellItem")]
+        [ClientEvent("Server:Shop:sellItem")]
         public void sellShopItem(IPlayer player, int shopId, int amount, string itemname) {
             if (player == null || !player.Exists || shopId <= 0 || amount <= 0 || itemname == "") return;
 
@@ -331,7 +331,7 @@ namespace Altv_Roleplay.Handler
             player.EmitLocked("Client:VehicleShop:OpenCEF", shopId, shopname, array);
         }
 
-        [AsyncClientEvent("Server:VehicleShop:BuyVehicle")]
+        [ClientEvent("Server:VehicleShop:BuyVehicle")]
         public void BuyVehicle(IPlayer player, int shopid, string hash) {
             try {
                 var stopwatch = new Stopwatch();
@@ -426,7 +426,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Clothesstore:BuyCloth")]
+        [ClientEvent("Server:Clothesstore:BuyCloth")]
         public void buyClothesShopItem(ClassicPlayer player, int clothId, bool isProp) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 ||
@@ -452,7 +452,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Clothesstore:SetPerfectTorso")]
+        [ClientEvent("Server:Clothesstore:SetPerfectTorso")]
         public void ClothesshopSetPerfectTorso(ClassicPlayer player, int BestTorsoDrawable, int BestTorsoTexture) {
             try {
                 var clothId = ServerClothes.GetClothesId(3, BestTorsoDrawable, BestTorsoTexture,
@@ -480,7 +480,7 @@ namespace Altv_Roleplay.Handler
             player.Emit("Client:TattooShop:openShop", gender, tattooShop.id, CharactersTattoos.GetAccountOwnTattoos(player.CharacterId));
         }
 
-        [AsyncClientEvent("Server:TattooShop:buyTattoo")]
+        [ClientEvent("Server:TattooShop:buyTattoo")]
         public void ClientEvent_buyTattoo(ClassicPlayer player, int shopId, int tattooId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || shopId <= 0 || tattooId <= 0 ||
@@ -506,7 +506,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:TattooShop:deleteTattoo")]
+        [ClientEvent("Server:TattooShop:deleteTattoo")]
         public void ClientEvent_deleteTattoo(ClassicPlayer player, int tattooId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || tattooId <= 0 ||

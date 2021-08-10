@@ -9,7 +9,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class TownhallHandler : IScript
     {
-        [AsyncClientEvent("Server:HUD:sendIdentityCardApplyForm")]
+        [ClientEvent("Server:HUD:sendIdentityCardApplyForm")]
         public void sendIdentityCardApplyForm(IPlayer player, string birthplace) {
             if (player == null || !player.Exists) return;
 
@@ -47,7 +47,7 @@ namespace Altv_Roleplay.Handler
             player.EmitLocked("Client:Jobcenter:OpenCEF", jobs);
         }
 
-        [AsyncClientEvent("Server:Jobcenter:SelectJob")]
+        [ClientEvent("Server:Jobcenter:SelectJob")]
         public void SelectJobcenterJob(IPlayer player, string jobName) {
             try {
                 if (player == null || !player.Exists || jobName == "" || jobName == "undefined") return;

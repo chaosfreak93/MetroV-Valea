@@ -461,7 +461,7 @@ namespace Altv_Roleplay.Model
             }
         }
 
-        [AsyncClientEvent("Server:Charselector:KillCharacter")]
+        [ClientEvent("Server:Charselector:KillCharacter")]
         public void KillCharacter(IPlayer client, int charId) {
             try {
                 if (client == null || !client.Exists) return;
@@ -2970,7 +2970,7 @@ namespace Altv_Roleplay.Model
             player.SetClothes(3, CTorso, 0, 0);
         }
 
-        [AsyncClientEvent("Server:ClothesShop:RequestCurrentSkin")]
+        [ClientEvent("Server:ClothesShop:RequestCurrentSkin")]
         public static void SetCharacterCorrectClothes(IPlayer player) {
             if (player == null || !player.Exists) return;
 
@@ -3373,7 +3373,7 @@ namespace Altv_Roleplay.Model
             }
         }
 
-        [AsyncClientEvent("Server:ClothesStorage:setCharacterClothes")]
+        [ClientEvent("Server:ClothesStorage:setCharacterClothes")]
         public static void SwitchCharacterClothes(ClassicPlayer player, int clothId, bool isProp) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;

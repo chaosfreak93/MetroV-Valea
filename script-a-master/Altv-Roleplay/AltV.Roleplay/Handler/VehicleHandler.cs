@@ -14,7 +14,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class VehicleHandler : IScript
     {
-        [AsyncClientEvent("Server:VehicleTrunk:StorageItem")]
+        [ClientEvent("Server:VehicleTrunk:StorageItem")]
         public void VehicleTrunkStorageItem(ClassicPlayer player, int vehId, int charId, string itemName, int itemAmount, string fromContainer,
             string type) {
             try {
@@ -111,7 +111,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:VehicleTrunk:TakeItem")]
+        [ClientEvent("Server:VehicleTrunk:TakeItem")]
         public void VehicleTrunkTakeItem(ClassicPlayer player, int vehId, int charId, string itemName, int itemAmount, string type) {
             try {
                 if (player == null || !player.Exists || vehId <= 0 || charId <= 0 || itemName == "" || itemAmount <= 0) return;
@@ -248,7 +248,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:VehicleLicensing:LicensingAction")]
+        [ClientEvent("Server:VehicleLicensing:LicensingAction")]
         public void LicensingAction(IPlayer player, string action, int vehId, string vehPlate, string newPlate) {
             try {
                 if (player == null || !player.Exists || vehId <= 0 || vehPlate == "") return;
@@ -343,7 +343,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Sirens:ForwardSirenMute")]
+        [ClientEvent("Server:Sirens:ForwardSirenMute")]
         public void SetVehicleHasMutedSirensForAll(ClassicPlayer player, int vehId, bool state) {
             try {
                 AltAsync.EmitAllClients("Client:Sirens:setVehicleHasMutedSirensForAll", vehId, state);

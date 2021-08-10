@@ -28,7 +28,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Hotel:RentHotel")]
+        [ClientEvent("Server:Hotel:RentHotel")]
         public void RentHotel(IPlayer player, int hotelId, int apartmentId) {
             try {
                 if (player == null || !player.Exists || hotelId <= 0 || apartmentId <= 0) return;
@@ -85,7 +85,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Hotel:LockHotel")]
+        [ClientEvent("Server:Hotel:LockHotel")]
         public static void LockHotel(IPlayer player, int hotelId, int apartmentId) {
             try {
                 if (player == null || !player.Exists || hotelId <= 0 || apartmentId <= 0) return;
@@ -120,7 +120,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Hotel:EnterHotel")]
+        [ClientEvent("Server:Hotel:EnterHotel")]
         public void EnterHotel(IPlayer player, int hotelId, int apartmentId) {
             try {
                 if (player == null || !player.Exists || hotelId <= 0 || apartmentId <= 0) return;
@@ -206,7 +206,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HotelStorage:StorageItem")]
+        [ClientEvent("Server:HotelStorage:StorageItem")]
         public void StorageHotelItem(IPlayer player, int apartmentId, string itemName, int itemAmount, string fromContainer) {
             try {
                 if (player == null || !player.Exists || apartmentId <= 0 || itemName == "" || itemName == "undefined" || itemAmount <= 0 ||
@@ -253,7 +253,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:HotelStorage:TakeItem")]
+        [ClientEvent("Server:HotelStorage:TakeItem")]
         public void TakeHotelItem(IPlayer player, int apartmentId, string itemName, int itemAmount) {
             try {
                 if (player == null || !player.Exists || (apartmentId <= 0) | (itemAmount <= 0) || itemName == "" || itemName == "undefined") return;

@@ -10,7 +10,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class FactionHandler : IScript
     {
-        [AsyncClientEvent("Server:FactionStorage:StorageItem")]
+        [ClientEvent("Server:FactionStorage:StorageItem")]
         public void FactionStorageStorageItem(IPlayer player, int factionId, int charId, string itemName, int amount, string fromContainer) {
             try {
                 if (player == null || !player.Exists || factionId <= 0 || charId <= 0 || itemName == "" || itemName == "undefined" || amount <= 0 ||
@@ -64,7 +64,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:FactionStorage:TakeItem")]
+        [ClientEvent("Server:FactionStorage:TakeItem")]
         public void FactionStorageTakeItem(IPlayer player, int factionId, int charId, string itemName, int amount) {
             try {
                 if (player == null || !player.Exists || factionId <= 0 || charId <= 0 || amount <= 0 || itemName == "" ||
