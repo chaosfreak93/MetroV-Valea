@@ -352,5 +352,26 @@ namespace Altv_Roleplay.Handler
                 Alt.Log($"{e}");
             }
         }
+
+        [AsyncScriptEvent(ScriptEventType.PlayerEnterVehicle)]
+        public void playerEnterVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
+            if (seat == 2) {
+                vehicle.SetStreamSyncedMetaData("passengerCharId", player.CharacterId);
+            }
+        }
+
+        [AsyncScriptEvent(ScriptEventType.PlayerLeaveVehicle)]
+        public void playerLeaveVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
+            if (seat == 2) {
+                vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
+            }
+        }
+        
+        [AsyncScriptEvent(ScriptEventType.PlayerChangeVehicleSeat)]
+        public void playerChangeVehicleSeat(ClassicVehicle vehicle, ClassicPlayer player, byte oldSeat, byte newSeat) {
+            if (oldSeat == 2) {
+                vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
+            }
+        }
     }
 }
