@@ -562,6 +562,51 @@ namespace Altv_Roleplay.Handler
                 Alt.Log($"{e}");
             }
         }
+        
+        [AsyncClientEvent("Server:Raycast:GiveCar")]
+        public void GiveCar(IPlayer player, IVehicle veh) {
+            if (player == null || !player.Exists || veh == null || !veh.Exists) return;
+
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+            var charId = User.GetPlayerOnline(player);
+            var vehID = veh.GetVehicleId();
+            var vehPlate = veh.NumberplateText;
+            if (charId <= 0 || vehID <= 0 || player.Seat != 1) return;
+
+            if (player.HasPlayerHandcuffs() || player.HasPlayerRopeCuffs() || player.HasPlayerFootcuffs()) {
+                HUDHandler.SendNotification(player, 3, 5000, "Wie willst du das mit Handschellen/Fesseln machen?");
+                return;
+            }
+
+            if (!player.Position.IsInRange(veh.Position, 2f)) {
+                HUDHandler.SendNotification(player, 4, 5000, "Du hast dich zu weit vom Fahrzeug entfernt.");
+                return;
+            }
+
+            if (ServerVehicles.GetVehicleOwner(veh) != charId) {
+                HUDHandler.SendNotification(player, 4, 5000, "Das Fahrzeug gehört nicht dir.");
+                return;
+            }
+            
+            veh.GetStreamSyncedMetaData("passengerCharId", out int passengerCharId);
+
+            ServerVehicles.SetVehicleOwner(veh, passengerCharId);
+            
+            CharactersInventory.RemoveCharacterItem(charId, "Fahrzeugschluessel " + veh.NumberplateText, "inventory");
+            CharactersInventory.RemoveCharacterItem(charId, "Fahrzeugschluessel " + veh.NumberplateText, "backpack");
+            
+            CharactersInventory.AddCharacterItem(charId, "Fahrzeugschluessel " + veh.NumberplateText, 2, "inventory");
+
+            IPlayer test = Alt.GetAllPlayers().FirstOrDefault(x => ((ClassicPlayer)x).CharacterId == passengerCharId);
+            
+            HUDHandler.SendNotification(test, 2, 5000, $"Das Fahrzeug mit dem Kennzeichen {veh.NumberplateText} gehört jetzt dir!");
+            HUDHandler.SendNotification(player, 2, 5000, $"Das Fahrzeug gehört jetzt {Characters.GetCharacterName(passengerCharId)}");
+
+            stopwatch.Stop();
+            if (stopwatch.Elapsed.Milliseconds > 30) Alt.Log($"{charId} - GiveCar benötigte {stopwatch.Elapsed.Milliseconds}ms");
+        }
+        
 
         [AsyncClientEvent("Server:Raycast:showPlayerSupportId")]
         public void showPlayerSupportId(IPlayer player, IPlayer targetPlayer) {

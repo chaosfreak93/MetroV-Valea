@@ -545,6 +545,27 @@ namespace Altv_Roleplay.Model
                 Alt.Log($"{e}");
             }
         }
+        
+        public static void SetVehicleOwner(IVehicle veh, int newCharId) {
+            try {
+                var vehID = veh.GetVehicleId();
+                if (veh == null || !veh.Exists || vehID == 0) return;
+
+                var vehs = ServerVehicles_.FirstOrDefault(v => v.id == vehID);
+
+                if (vehs != null) {
+                    vehs.charid = newCharId;
+
+                    using (var db = new gtaContext()) {
+                        db.Server_Vehicles.Update(vehs);
+                        db.SaveChanges();
+                    }
+                }
+            } 
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
 
         public static bool IsVehicleInGarage(IVehicle veh) {
             var vehID = veh.GetVehicleId();

@@ -1493,6 +1493,8 @@ function InterActionMenuDoAction(type, action) {
                 alt.emitServer("Server:Raycast:towVehicle", vehicle);
             } else if (action == "vehTuning") {
                 alt.emitServer("Server:Raycast:tuneVehicle", vehicle);
+            } else if (action == "giveCar") {
+                alt.emitServer("Server:Raycast:GiveCar", vehicle);
             }
             vehicle = null;
         } else if (type == "player") {
