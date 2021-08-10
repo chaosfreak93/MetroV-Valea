@@ -364,6 +364,10 @@ namespace Altv_Roleplay.Handler
         public void playerLeaveVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
             if (seat == 2) {
                 vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
+            } else if (seat == 1) {
+                var dbVehicle = ServerVehicles.ServerVehicles_.FirstOrDefault(v => v.id == (int) vehicle.GetVehicleId());
+                if (dbVehicle == null) return;
+                dbVehicle.lastUsage = DateTime.Now;
             }
         }
         
