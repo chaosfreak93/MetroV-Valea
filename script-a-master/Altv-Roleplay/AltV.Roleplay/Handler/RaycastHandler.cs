@@ -72,6 +72,15 @@ namespace Altv_Roleplay.Handler
                     interactHTML +=
                         "<li class='interactitem' id='InteractionMenu-vehtoggleEngine' data-action='vehtoggleEngine' data-actionstring='Motor an/ausmachen'><img src='../utils/img/vehengine.png'></li>";
 
+                    if (player.IsInVehicle && (player.Seat == 1)) {
+                        veh.GetStreamSyncedMetaData("passengerCharId", out int passengerCharId);
+
+                        if (passengerCharId != null && passengerCharId != 0) {
+                            interactHTML +=
+                                "<li class='interactitem' id='InteractionMenu-giveCar' data-action='giveCar' data-actionstring='Fahrzeug an den Beifahrer übertragen'><img src='../utils/img/vehengine.png'></li>";
+                        }
+                    }
+
                     if (player.IsInVehicle && (player.Seat == 1 || player.Seat == 2) && ServerVehicles.GetVehicleType(veh) != 2)
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-vehViewGloveboxContent' data-action='vehViewGloveboxContent' data-actionstring='Handschuhfach ansehen'><img src='../utils/img/viewglovebox.png'></li>";
