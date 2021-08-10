@@ -900,23 +900,5 @@ namespace Altv_Roleplay.Handler
         }
 
     */
-
-        [AsyncScriptEvent(ScriptEventType.ConsoleCommand)]
-        public void command(string name, string[] args) {
-            switch (name) {
-                case "announce":
-                    foreach (var client in Alt.GetAllPlayers()) {
-                        if (client == null || !client.Exists) continue;
-
-                        HUDHandler.SendNotification(client, 4, 5000, "Sonnenwende in " + args[0] + "Minuten!");
-                    }
-
-                    Alt.Log("Sonnenwende in " + args[0] + "Minuten!");
-                    break;
-                case "shutdown":
-                    Environment.Exit(0);
-                    break;
-            }
-        }
     }
 }

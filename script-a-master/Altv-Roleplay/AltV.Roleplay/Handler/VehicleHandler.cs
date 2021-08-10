@@ -353,14 +353,14 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncScriptEvent(ScriptEventType.PlayerEnterVehicle)]
+        [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
         public void playerEnterVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
             if (seat == 2) {
                 vehicle.SetStreamSyncedMetaData("passengerCharId", player.CharacterId);
             }
         }
 
-        [AsyncScriptEvent(ScriptEventType.PlayerLeaveVehicle)]
+        [ScriptEvent(ScriptEventType.PlayerLeaveVehicle)]
         public void playerLeaveVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
             if (seat == 2) {
                 vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
@@ -371,7 +371,7 @@ namespace Altv_Roleplay.Handler
             }
         }
         
-        [AsyncScriptEvent(ScriptEventType.PlayerChangeVehicleSeat)]
+        [ScriptEvent(ScriptEventType.PlayerChangeVehicleSeat)]
         public void playerChangeVehicleSeat(ClassicVehicle vehicle, ClassicPlayer player, byte oldSeat, byte newSeat) {
             if (oldSeat == 2) {
                 vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
