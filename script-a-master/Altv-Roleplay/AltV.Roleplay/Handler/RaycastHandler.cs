@@ -77,7 +77,7 @@ namespace Altv_Roleplay.Handler
 
                         if (passengerCharId != null && passengerCharId != 0) {
                             interactHTML +=
-                                "<li class='interactitem' id='InteractionMenu-giveCar' data-action='giveCar' data-actionstring='Fahrzeug an den Beifahrer übertragen'><img src='../utils/img/vehengine.png'></li>";
+                                "<li class='interactitem' id='InteractionMenu-giveCar' data-action='giveCar' data-actionstring='Fahrzeug an den Beifahrer übertragen'><img src='../utils/img/inventory/Fahrzeugschluessel.png'></li>";
                         }
                     }
 
