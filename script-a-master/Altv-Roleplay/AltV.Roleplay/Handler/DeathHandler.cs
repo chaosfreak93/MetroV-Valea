@@ -32,10 +32,9 @@ namespace Altv_Roleplay.Handler
 
                 openDeathscreen(player);
                 Characters.SetCharacterUnconscious(charId, true, 20); // Von 15 auf 20 geändert.
-                ServerFactions.createFactionDispatch(player, 2, "HandyNotruf", "Eine Verletzte Person wurde gemeldet");
 
-                AltAsync.Emit("Server:Smartphone:leaveRadioFrequence", player);
-                AltAsync.Emit("SaltyChat:SetPlayerAlive", player, false);
+                Alt.Emit("Server:Smartphone:leaveRadioFrequence", player);
+                Alt.Emit("SaltyChat:SetPlayerAlive", player, false);
 
                 if (killer is ClassicVehicle) return true;
                 var killerPlayer = (ClassicPlayer) killer;
@@ -69,7 +68,7 @@ namespace Altv_Roleplay.Handler
             return false;
         }
 
-        internal static async Task openDeathscreen(IPlayer player) {
+        internal static void openDeathscreen(IPlayer player) {
             try {
                 if (player == null || !player.Exists) return;
 
@@ -78,7 +77,6 @@ namespace Altv_Roleplay.Handler
 
                 var pos = new Position(player.Position.X, player.Position.Y, player.Position.Z + 1);
                 player.Spawn(pos);
-                await Task.Delay(50);
                 player.EmitLocked("Client:Inventory:PlayAnimation", "missheistfbi3b_ig8_2", "cower_loop_victim", -1, 1, false);
                 player.EmitLocked("Client:Deathscreen:openCEF"); // Deathscreen öffnen
                 player.SetPlayerIsUnconscious(true);
@@ -102,7 +100,7 @@ namespace Altv_Roleplay.Handler
                 Characters.SetCharacterUnconscious(charId, false, 0);
                 Characters.SetCharacterFastFarm(charId, false, 0);
                 player.EmitLocked("Client:Inventory:StopEffect", "DrugsMichaelAliensFight");
-                AltAsync.Emit("SaltyChat:SetPlayerAlive", player, true);
+                Alt.Emit("SaltyChat:SetPlayerAlive", player, true);
 
                 foreach (var item in CharactersInventory.CharactersInventory_.ToList().Where(x => x.charId == charId)) {
                     if (item.itemName.Contains("EC Karte") || item.itemName.Contains("Ausweis") || item.itemName.Contains("Fahrzeugschluessel") ||
@@ -140,7 +138,7 @@ namespace Altv_Roleplay.Handler
                 player.SetPlayerIsUnconscious(false);
                 player.EmitLocked("Client:Inventory:StopAnimation");
                 Characters.SetCharacterUnconscious(charId, false, 0);
-                AltAsync.Emit("SaltyChat:SetPlayerAlive", player, true);
+                Alt.Emit("SaltyChat:SetPlayerAlive", player, true);
                 ServerFactions.SetFactionBankMoney(3, ServerFactions.GetFactionBankMoney(3) + 1500); //ToDo: Preis anpassen
             }
             catch (Exception e) {
