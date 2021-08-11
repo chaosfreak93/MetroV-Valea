@@ -11,7 +11,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class BankHandler : IScript
     {
-        [ClientEvent("Server:Bank:CreateNewBankAccount")]
+        [AsyncClientEvent("Server:Bank:CreateNewBankAccount")]
         public void CreateNewBankAccount(IPlayer player, string zoneName) {
             if (player == null || !player.Exists || zoneName == "") return;
 
@@ -41,7 +41,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Bank:BankAccountAction")]
+        [AsyncClientEvent("Server:Bank:BankAccountAction")]
         public void BankAccountAction(IPlayer player, string action, string accountNumberStr) {
             if (player == null || !player.Exists || action == "" || accountNumberStr == "") return;
 
@@ -92,7 +92,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:ATM:requestBankData")]
+        [AsyncClientEvent("Server:ATM:requestBankData")]
         public void requestATMBankData(ClassicPlayer player, int accountNumber) {
             if (player == null || !player.Exists || player.CharacterId <= 0) return;
 
@@ -100,7 +100,7 @@ namespace Altv_Roleplay.Handler
                 ServerBankPapers.GetBankAccountBankPaper(player, accountNumber));
         }
 
-        [ClientEvent("Server:ATM:WithdrawMoney")]
+        [AsyncClientEvent("Server:ATM:WithdrawMoney")]
         public void WithdrawATMMoney(IPlayer player, int accountNumber, int amount, string zoneName) {
             if (player == null || !player.Exists || accountNumber == 0 || amount < 1) return;
 
@@ -130,7 +130,7 @@ namespace Altv_Roleplay.Handler
             HUDHandler.SendNotification(player, 2, 5000, $"Sie haben {amount}$ von Ihrem Bankkonto abgehoben.");
         }
 
-        [ClientEvent("Server:ATM:TryPin")]
+        [AsyncClientEvent("Server:ATM:TryPin")]
         public void TryATMPin(IPlayer player, string action, int accountNumber) {
             if (player == null || !player.Exists) return;
 
@@ -154,7 +154,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:ATM:DepositMoney")]
+        [AsyncClientEvent("Server:ATM:DepositMoney")]
         public void DepositATMMoney(IPlayer player, int accountNumber, int amount, string zoneName) {
             if (player == null || !player.Exists || accountNumber == 0 || amount < 1) return;
 
@@ -185,7 +185,7 @@ namespace Altv_Roleplay.Handler
             HUDHandler.SendNotification(player, 2, 5000, $"Sie haben {amount}$ auf Ihr Bankkonto eingezahlt.");
         }
 
-        [ClientEvent("Server:ATM:TransferMoney")]
+        [AsyncClientEvent("Server:ATM:TransferMoney")]
         public void TransferATMMoney(IPlayer player, int accountNumber, int targetNumber, int amount, string zoneName) {
             if (player == null || !player.Exists || accountNumber == 0 || targetNumber == 0 || amount < 1) return;
 
@@ -226,7 +226,7 @@ namespace Altv_Roleplay.Handler
                 $"Sie haben erfolgreich {amount}$ an das Konto mit der Kontonummer {targetNumber} überwiesen.");
         }
 
-        [ClientEvent("Server:FactionBank:DepositMoney")]
+        [AsyncClientEvent("Server:FactionBank:DepositMoney")]
         public void DepositFactionMoney(IPlayer player, string type, int factionId, int moneyAmount) //Type: faction | company
         {
             try {
@@ -294,7 +294,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:FactionBank:WithdrawMoney")]
+        [AsyncClientEvent("Server:FactionBank:WithdrawMoney")]
         public void WithdrawFactionMoney(IPlayer player, string type, int factionId, int moneyAmount) //Type: faction | company
         {
             try {

@@ -13,7 +13,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class TabletHandler : IScript
     {
-        [ClientEvent("Server:Tablet:openCEF")]
+        [AsyncClientEvent("Server:Tablet:openCEF")]
         public void openCEF(IPlayer player) {
             try {
                 if (player == null || !player.Exists) return;
@@ -39,7 +39,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:RequestTabletData")]
+        [AsyncClientEvent("Server:Tablet:RequestTabletData")]
         public void RequestTabletData(IPlayer player) {
             try {
                 if (player == null || !player.Exists) return;
@@ -145,7 +145,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:AppStoreInstallUninstallApp")]
+        [AsyncClientEvent("Server:Tablet:AppStoreInstallUninstallApp")]
         public void AppStoreInstallUninstallApp(IPlayer player, string appName, bool isInstalling) {
             try {
                 if (player == null || !player.Exists || appName == "" || appName == "undefined") return;
@@ -190,7 +190,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:BankingAppNewTransaction")]
+        [AsyncClientEvent("Server:Tablet:BankingAppNewTransaction")]
         public void BankingAppNewTransaction(IPlayer player, int targetAccountNumber, string transactionMessage, int moneyAmount) {
             try {
                 if (player == null || targetAccountNumber == 0 || moneyAmount < 1) return;
@@ -231,7 +231,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:EventsAppNewEntry")]
+        [AsyncClientEvent("Server:Tablet:EventsAppNewEntry")]
         public void EventsAppNewEntry(IPlayer player, string title, string callNumber, string eventDate, string eventTime, string location,
             string eventType, string information) {
             try {
@@ -278,7 +278,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:LifeinvaderAppNewEntry")]
+        [AsyncClientEvent("Server:Tablet:LifeinvaderAppNewEntry")]
         public void LifeinvaderAppNewEntry(IPlayer player, string title, string callNumber, string information) {
             try {
                 if (player == null || !player.Exists || title == "" || title == "undefined" || information == "") return;
@@ -326,7 +326,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:VehicleStoreBuyVehicle")]
+        [AsyncClientEvent("Server:Tablet:VehicleStoreBuyVehicle")]
         public void VehicleStoreBuyVehicle(IPlayer player, string hash, int shopId, string color) {
             try {
                 if (player == null || !player.Exists || hash == "" || hash == "undefined" || shopId <= 0 || color == "" ||
@@ -399,7 +399,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:NotesAppNewNote")]
+        [AsyncClientEvent("Server:Tablet:NotesAppNewNote")]
         public void NotesAppNewNote(IPlayer player, string title, string text, string color) {
             try {
                 if (player == null || !player.Exists || title == "" || text == "" || color == "") return;
@@ -416,7 +416,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:NotesAppDeleteNote")]
+        [AsyncClientEvent("Server:Tablet:NotesAppDeleteNote")]
         public void NotesAppDeleteNote(IPlayer player, int noteId) {
             try {
                 if (player == null || !player.Exists || noteId == 0) return;
@@ -432,7 +432,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:DeleteFactionDispatch")]
+        [AsyncClientEvent("Server:Tablet:DeleteFactionDispatch")]
         public void DeleteFactionDispatch(IPlayer player, int factionId, int senderId) {
             try {
                 if (player == null || !player.Exists || factionId <= 0 || senderId < 0) return;
@@ -449,7 +449,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:CompanyAppInviteNewMember")]
+        [AsyncClientEvent("Server:Tablet:CompanyAppInviteNewMember")]
         public void CompanyAppInviteNewMember(IPlayer player, string targetCharName, int companyId) {
             try {
                 if (targetCharName == "" || targetCharName == "undefined" || companyId <= 0 || !player.Exists || player == null) return;
@@ -518,7 +518,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:FactionManagerAppInviteNewMember")]
+        [AsyncClientEvent("Server:Tablet:FactionManagerAppInviteNewMember")]
         public void FactionManagerAppInviteNewMember(IPlayer player, string targetCharName, int dienstnummer, int factionId) {
             try {
                 if (targetCharName == "" || targetCharName == "undefined" || factionId <= 0 || !player.Exists || player == null) return;
@@ -586,7 +586,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:CompanyAppLeaveCompany")]
+        [AsyncClientEvent("Server:Tablet:CompanyAppLeaveCompany")]
         public void CompanyAppLeaveCompany(IPlayer player) {
             try {
                 if (player == null || !player.Exists) return;
@@ -629,7 +629,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:CompanyAppRankAction")]
+        [AsyncClientEvent("Server:Tablet:CompanyAppRankAction")]
         public void CompanyAppRankAction(IPlayer player, int rankId, int targetCharId) {
             try {
                 if (player == null || !player.Exists || targetCharId <= 0) return;
@@ -724,7 +724,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:FactionManagerRankAction")]
+        [AsyncClientEvent("Server:Tablet:FactionManagerRankAction")]
         public void FactionManagerRankAction(IPlayer player, string action, int targetCharId) {
             try {
                 if (player == null || !player.Exists || targetCharId <= 0) return;
@@ -868,7 +868,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:FactionManagerSetRankPaycheck")]
+        [AsyncClientEvent("Server:Tablet:FactionManagerSetRankPaycheck")]
         public void FactionManagerSetRankPaycheck(IPlayer player, int rankId, int paycheck) {
             try {
                 if (player == null || !player.Exists || rankId <= 0 || paycheck <= 0) return;
@@ -919,7 +919,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Tablet:sendDispatchToFaction")]
+        [AsyncClientEvent("Server:Tablet:sendDispatchToFaction")]
         public void sendDispatchToFaction(IPlayer player, int factionId, string msg) {
             try {
                 if (player == null || !player.Exists || factionId <= 0 || msg.Length <= 0) return;

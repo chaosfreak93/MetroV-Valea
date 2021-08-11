@@ -13,7 +13,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class SmartphoneHandler : IScript
     {
-        [ClientEvent("Server:Smartphone:requestPhoneLicenses")]
+        [AsyncClientEvent("Server:Smartphone:requestPhoneLicenses")]
         public void requestPhoneLicenses(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;
@@ -29,7 +29,7 @@ namespace Altv_Roleplay.Handler
 
         #region Anrufsystem
 
-        [ClientEvent("Server:Smartphone:tryCall")]
+        [AsyncClientEvent("Server:Smartphone:tryCall")]
         public void tryCall(ClassicPlayer player, int targetPhoneNumber) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPhoneNumber <= 0 ||
@@ -125,7 +125,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:acceptCall")]
+        [AsyncClientEvent("Server:Smartphone:acceptCall")]
         public void acceptCall(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;
@@ -165,7 +165,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:denyCall")]
+        [AsyncClientEvent("Server:Smartphone:denyCall")]
         public void denyCall(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;
@@ -223,7 +223,7 @@ namespace Altv_Roleplay.Handler
 
         #region SMS System
 
-        [ClientEvent("Server:Smartphone:requestChats")]
+        [AsyncClientEvent("Server:Smartphone:requestChats")]
         public void requestSmartphoneChats(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || Characters.IsCharacterPhoneFlyModeEnabled(player.CharacterId) ||
@@ -240,7 +240,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:requestChatMessages")]
+        [AsyncClientEvent("Server:Smartphone:requestChatMessages")]
         public static void requestChatMessages(ClassicPlayer player, int chatId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || chatId <= 0) return;
@@ -273,7 +273,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:createNewChat")]
+        [AsyncClientEvent("Server:Smartphone:createNewChat")]
         public void createNewChat(ClassicPlayer player, int targetPhoneNumber) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPhoneNumber <= 0) return;
@@ -290,7 +290,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:sendChatMessage")]
+        [AsyncClientEvent("Server:Smartphone:sendChatMessage")]
         public void sendChatMessage(ClassicPlayer player, int chatId, int phoneNumber, int targetPhoneNumber, int unix, string message) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || chatId <= 0 || phoneNumber <= 0 || targetPhoneNumber <= 0 ||
@@ -312,7 +312,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:deleteChat")]
+        [AsyncClientEvent("Server:Smartphone:deleteChat")]
         public void deleteChat(ClassicPlayer player, int chatId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || chatId <= 0 || !CharactersPhone.ExistChatById(chatId)) return;
@@ -329,7 +329,7 @@ namespace Altv_Roleplay.Handler
 
         #region Kontaktesystem
 
-        [ClientEvent("Server:Smartphone:requestPhoneContacts")]
+        [AsyncClientEvent("Server:Smartphone:requestPhoneContacts")]
         public void requestPhoneContacts(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;
@@ -359,7 +359,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:editContact")]
+        [AsyncClientEvent("Server:Smartphone:editContact")]
         public void editContact(ClassicPlayer player, int contactId, string name, int contactNumber) {
             if (player == null || !player.Exists || player.CharacterId <= 0 || contactId <= 0 || name == "" || contactNumber <= 0) return;
 
@@ -375,7 +375,7 @@ namespace Altv_Roleplay.Handler
             requestPhoneContacts(player);
         }
 
-        [ClientEvent("Server:Smartphone:addNewContact")]
+        [AsyncClientEvent("Server:Smartphone:addNewContact")]
         public void addNewContact(ClassicPlayer player, string name, int contactNumber) {
             try {
                 if (player == null || !player.Exists || contactNumber <= 0 || name == "" || player.CharacterId <= 0) return;
@@ -396,7 +396,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:deleteContact")]
+        [AsyncClientEvent("Server:Smartphone:deleteContact")]
         public void deleteContact(ClassicPlayer player, int contactId) {
             try {
                 if (player == null || !player.Exists || contactId <= 0 || player.CharacterId <= 0) return;
@@ -442,7 +442,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:SearchLSPDIntranetPeople")]
+        [AsyncClientEvent("Server:Smartphone:SearchLSPDIntranetPeople")]
         public void SearchLSPDIntranetPeople(ClassicPlayer player, string name) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || string.IsNullOrWhiteSpace(name) ||
@@ -462,7 +462,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:GiveLSPDIntranetWanteds")]
+        [AsyncClientEvent("Server:Smartphone:GiveLSPDIntranetWanteds")]
         public void GiveLSPDIntranetWanteds(ClassicPlayer player, int selectedCharId, string wanteds) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || selectedCharId <= 0 || string.IsNullOrWhiteSpace(wanteds) ||
@@ -498,7 +498,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:requestLSPDIntranetPersonWanteds")]
+        [AsyncClientEvent("Server:Smartphone:requestLSPDIntranetPersonWanteds")]
         public static void requestLSPDIntranetPersonWanteds(ClassicPlayer player, int selectedCharId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || selectedCharId <= 0 ||
@@ -519,7 +519,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:requestPoliceAppMostWanteds")]
+        [AsyncClientEvent("Server:Smartphone:requestPoliceAppMostWanteds")]
         public void requestPoliceAppMostWanteds(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
@@ -546,7 +546,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:DeleteLSPDIntranetWanted")]
+        [AsyncClientEvent("Server:Smartphone:DeleteLSPDIntranetWanted")]
         public void DeleteLSPDIntranetWanted(ClassicPlayer player, int dbId, int selectedCharId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || dbId <= 0 || !CharactersWanteds.ExistWantedEntry(dbId) ||
@@ -572,7 +572,7 @@ namespace Altv_Roleplay.Handler
 
         #region Funksystem
 
-        [ClientEvent("Server:Smartphone:joinRadioFrequence")]
+        [AsyncClientEvent("Server:Smartphone:joinRadioFrequence")]
         public void joinRadioFrequence(ClassicPlayer player, string radioFrequence) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || string.IsNullOrWhiteSpace(radioFrequence)) return;
@@ -658,7 +658,7 @@ namespace Altv_Roleplay.Handler
         }
 
 
-        [ClientEvent("Server:Smartphone:leaveRadioFrequence")]
+        [AsyncClientEvent("Server:Smartphone:leaveRadioFrequence")]
         public void leaveRadioFrequence(ClassicPlayer player) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 ||
@@ -678,7 +678,7 @@ namespace Altv_Roleplay.Handler
 
         #region Utilities
 
-        [ClientEvent("Server:Smartphone:setFlyModeEnabled")]
+        [AsyncClientEvent("Server:Smartphone:setFlyModeEnabled")]
         public void setFlyModeEnabled(ClassicPlayer player, bool isEnabled) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;
@@ -690,7 +690,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Smartphone:setWallpaperId")]
+        [AsyncClientEvent("Server:Smartphone:setWallpaperId")]
         public void setWallpaperId(ClassicPlayer player, int wallpaperId) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0) return;

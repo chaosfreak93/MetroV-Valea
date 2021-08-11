@@ -52,7 +52,7 @@ namespace Altv_Roleplay.Factions.ACLS
             }
         }
 
-        [ClientEvent("Server:Raycast:towVehicle")]
+        [AsyncClientEvent("Server:Raycast:towVehicle")]
         public void TowVehicle(IPlayer player, IVehicle vehicle) {
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
@@ -89,7 +89,7 @@ namespace Altv_Roleplay.Factions.ACLS
         }
 
 
-        [ClientEvent("Server:Raycast:tuneVehicle")]
+        [AsyncClientEvent("Server:Raycast:tuneVehicle")]
         public void openTuningMenu(IPlayer player, IVehicle vehicle) {
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
@@ -202,7 +202,7 @@ namespace Altv_Roleplay.Factions.ACLS
             }
         }
 
-        [ClientEvent("Server:Tuning:switchTuningColor")]
+        [AsyncClientEvent("Server:Tuning:switchTuningColor")]
         public void switchTuningColor(IPlayer player, IVehicle vehicle, string Type, string Data, int R, int G, int B) {
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
@@ -247,7 +247,7 @@ namespace Altv_Roleplay.Factions.ACLS
             }
         }
 
-        [ClientEvent("Server:Tuning:resetToNormal")]
+        [AsyncClientEvent("Server:Tuning:resetToNormal")]
         public void resetTuningToNormal(IPlayer player, IVehicle vehicle) {
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
@@ -260,7 +260,7 @@ namespace Altv_Roleplay.Factions.ACLS
             }
         }
 
-        [ClientEvent("Server:Tuning:switchTuning")]
+        [AsyncClientEvent("Server:Tuning:switchTuning")]
         public void switchTuning(IPlayer player, IVehicle vehicle, string Type, int ModType, string Action) {
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;

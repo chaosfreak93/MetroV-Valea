@@ -32,9 +32,10 @@ namespace Altv_Roleplay.Handler
 
                 openDeathscreen(player);
                 Characters.SetCharacterUnconscious(charId, true, 20); // Von 15 auf 20 geändert.
+                ServerFactions.createFactionDispatch(player, 2, "HandyNotruf", "Eine Verletzte Person wurde gemeldet");
 
-                Alt.Emit("Server:Smartphone:leaveRadioFrequence", player);
-                Alt.Emit("SaltyChat:SetPlayerAlive", player, false);
+                AltAsync.Emit("Server:Smartphone:leaveRadioFrequence", player);
+                AltAsync.Emit("SaltyChat:SetPlayerAlive", player, false);
 
                 if (killer is ClassicVehicle) return true;
                 var killerPlayer = (ClassicPlayer) killer;
@@ -77,6 +78,7 @@ namespace Altv_Roleplay.Handler
 
                 var pos = new Position(player.Position.X, player.Position.Y, player.Position.Z + 1);
                 player.Spawn(pos);
+                await Task.Delay(50);
                 player.EmitLocked("Client:Inventory:PlayAnimation", "missheistfbi3b_ig8_2", "cower_loop_victim", -1, 1, false);
                 player.EmitLocked("Client:Deathscreen:openCEF"); // Deathscreen öffnen
                 player.SetPlayerIsUnconscious(true);

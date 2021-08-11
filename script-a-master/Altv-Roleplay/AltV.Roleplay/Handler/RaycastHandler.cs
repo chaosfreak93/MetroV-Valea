@@ -15,7 +15,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class RaycastHandler : IScript
     {
-        [ClientEvent("Server:InteractionMenu:GetMenuVehicleItems")]
+        [AsyncClientEvent("Server:InteractionMenu:GetMenuVehicleItems")]
         public void GetMenuVehicleItems(IPlayer player, string type, IVehicle veh) {
             try {
                 var stopwatch = new Stopwatch();
@@ -95,7 +95,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:InteractionMenu:GetMenuPlayerItems")]
+        [AsyncClientEvent("Server:InteractionMenu:GetMenuPlayerItems")]
         public void GetMenuPlayerItems(IPlayer player, string type, IPlayer targetPlayer) {
             try {
                 if (player == null || !player.Exists || type != "player" || targetPlayer == null || !targetPlayer.Exists) return;
@@ -173,7 +173,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:jailPlayer")]
+        [AsyncClientEvent("Server:Raycast:jailPlayer")]
         public void jailPlayer(ClassicPlayer player, ClassicPlayer targetPlayer) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPlayer == null || !targetPlayer.Exists ||
@@ -216,7 +216,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:OpenVehicleFuelMenu")]
+        [AsyncClientEvent("Server:Raycast:OpenVehicleFuelMenu")]
         public void OpenVehicleFuelMenu(IPlayer player, IVehicle veh) {
             try {
                 if (player == null || !player.Exists || veh == null || !veh.Exists) return;
@@ -276,7 +276,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:LockVehicle")]
+        [AsyncClientEvent("Server:Raycast:LockVehicle")]
         public void LockVehicle(IPlayer player, IVehicle veh) {
             if (player == null || !player.Exists || veh == null || !veh.Exists) return;
 
@@ -351,7 +351,7 @@ namespace Altv_Roleplay.Handler
             if (stopwatch.Elapsed.Milliseconds > 30) Alt.Log($"{charId} - LocKVehicle benötigte {stopwatch.Elapsed.Milliseconds}ms");
         }
 
-        [ClientEvent("Server:Raycast:ToggleVehicleEngine")]
+        [AsyncClientEvent("Server:Raycast:ToggleVehicleEngine")]
         public void ToggleVehicleEngine(IPlayer player, IVehicle veh) {
             if (player == null || !player.Exists || veh == null || !veh.Exists) return;
 
@@ -424,7 +424,7 @@ namespace Altv_Roleplay.Handler
             if (stopwatch.Elapsed.Milliseconds > 30) Alt.Log($"{charId} - ToggleVehicleEngine benötigte {stopwatch.Elapsed.Milliseconds}ms");
         }
 
-        [ClientEvent("Server:Raycast:OpenCloseVehicleTrunk")]
+        [AsyncClientEvent("Server:Raycast:OpenCloseVehicleTrunk")]
         public void OpenCloseVehicleTrunk(IPlayer player, IVehicle veh) {
             try {
                 if (player == null || !player.Exists || veh == null || !veh.Exists) return;
@@ -466,7 +466,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:OpenCloseEngineHood")]
+        [AsyncClientEvent("Server:Raycast:OpenCloseEngineHood")]
         public void OpenCloseVehicleEngineHood(IPlayer player, IVehicle veh) {
             try {
                 if (player == null || !player.Exists || veh == null || !veh.Exists) return;
@@ -508,7 +508,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:ViewVehicleTrunk")]
+        [AsyncClientEvent("Server:Raycast:ViewVehicleTrunk")]
         public void ViewVehicleTrunk(ClassicPlayer player, ClassicVehicle veh) {
             try {
                 if (player == null || !player.Exists || veh == null || !veh.Exists || player.CharacterId <= 0 || veh.VehicleId <= 0) return;
@@ -544,7 +544,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:ViewVehicleGlovebox")]
+        [AsyncClientEvent("Server:Raycast:ViewVehicleGlovebox")]
         public void ViewVehicleGlovebox(ClassicPlayer player, ClassicVehicle veh) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || veh == null || !veh.Exists || veh.VehicleId <= 0) return;
@@ -563,7 +563,7 @@ namespace Altv_Roleplay.Handler
             }
         }
         
-        [ClientEvent("Server:Raycast:GiveCar")]
+        [AsyncClientEvent("Server:Raycast:GiveCar")]
         public void GiveCar(IPlayer player, IVehicle veh) {
             if (player == null || !player.Exists || veh == null || !veh.Exists) return;
 
@@ -608,7 +608,7 @@ namespace Altv_Roleplay.Handler
         }
         
 
-        [ClientEvent("Server:Raycast:showPlayerSupportId")]
+        [AsyncClientEvent("Server:Raycast:showPlayerSupportId")]
         public void showPlayerSupportId(IPlayer player, IPlayer targetPlayer) {
             if (player == null || !player.Exists || targetPlayer == null || !targetPlayer.Exists) return;
 
@@ -618,7 +618,7 @@ namespace Altv_Roleplay.Handler
             HUDHandler.SendNotification(player, 1, 5000, $"Die Charakter-ID des Spielers lautet: {targetCharId}");
         }
 
-        [ClientEvent("Server:Raycast:givePlayerItemRequest")]
+        [AsyncClientEvent("Server:Raycast:givePlayerItemRequest")]
         public void givePlayerItemRequest(IPlayer player, IPlayer targetPlayer) {
             if (player == null || !player.Exists || targetPlayer == null || !targetPlayer.Exists) return;
 
@@ -639,7 +639,7 @@ namespace Altv_Roleplay.Handler
             if (stopwatch.Elapsed.Milliseconds > 30) Alt.Log($"{charId} - givePlayerItemRequest benötigte {stopwatch.Elapsed.Milliseconds}ms");
         }
 
-        [ClientEvent("Server:Raycast:OpenGivePlayerBillCEF")]
+        [AsyncClientEvent("Server:Raycast:OpenGivePlayerBillCEF")]
         public void OpenGivePlayerBillCEF(IPlayer player, IPlayer targetPlayer, string type) //Types:  faction | company
         {
             try {
@@ -688,7 +688,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:openGivePlayerLicenseCEF")]
+        [AsyncClientEvent("Server:Raycast:openGivePlayerLicenseCEF")]
         public void openGivePlayerLicenseCEF(IPlayer player, IPlayer targetPlayer) {
             try {
                 if (player == null || !player.Exists || targetPlayer == null || !targetPlayer.Exists) return;
@@ -725,7 +725,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:PlayerBill:giveBill")]
+        [AsyncClientEvent("Server:PlayerBill:giveBill")]
         public void PlayerBillGiveBill(IPlayer player, string type, string reason, int targetCharId, int moneyAmount) //Types:  faction | company
         {
             try {
@@ -780,7 +780,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:PlayerBill:BillAction")]
+        [AsyncClientEvent("Server:PlayerBill:BillAction")]
         public void PlayerBillAction(IPlayer player, string action, string type, int factionCompanyId, int moneyAmount, string reason,
             int givenBillOwnerCharId) {
             try {
@@ -880,7 +880,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:GiveTakeHandcuffs")]
+        [AsyncClientEvent("Server:Raycast:GiveTakeHandcuffs")]
         public void GiveTakeHandcuffs(IPlayer player, IPlayer targetPlayer) {
             try {
                 if (player == null || targetPlayer == null || !player.Exists || !targetPlayer.Exists) return;
@@ -1032,7 +1032,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:GiveTakeFootcuffs")]
+        [AsyncClientEvent("Server:Raycast:GiveTakeFootcuffs")]
         public void GiveTakeFootcuffs(IPlayer player, IPlayer targetPlayer) {
             try {
                 if (player == null || targetPlayer == null || !player.Exists || !targetPlayer.Exists) return;
@@ -1184,7 +1184,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:GiveTakeRopeCuffs")]
+        [AsyncClientEvent("Server:Raycast:GiveTakeRopeCuffs")]
         public void GiveTakeRopeCuffs(IPlayer player, IPlayer targetPlayer) {
             try {
                 if (player == null || targetPlayer == null || !player.Exists || !targetPlayer.Exists) return;
@@ -1283,7 +1283,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:SearchPlayerInventory")]
+        [AsyncClientEvent("Server:Raycast:SearchPlayerInventory")]
         public void SearchPlayerInventory(IPlayer player, IPlayer targetPlayer) {
             try {
                 if (player == null || targetPlayer == null || !player.Exists || !targetPlayer.Exists) return;
@@ -1315,7 +1315,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:Raycast:showIdcard")]
+        [AsyncClientEvent("Server:Raycast:showIdcard")]
         public void showIdCard(IPlayer player, IPlayer targetPlayer) {
             try {
                 if (player == null || targetPlayer == null || !player.Exists || !targetPlayer.Exists) return;

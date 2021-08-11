@@ -7,7 +7,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class AnimationMenuHandler : IScript
     {
-        [ClientEvent("Server:AnimationMenu:GetAnimationItems")]
+        [AsyncClientEvent("Server:AnimationMenu:GetAnimationItems")]
         public void GetAnimationItems(IPlayer player) {
             try {
                 var interactHTML = "";
@@ -42,7 +42,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:AnimationMenuPage2:GetAnimationItems")]
+        [AsyncClientEvent("Server:AnimationMenuPage2:GetAnimationItems")]
         public void GetAnimationItemsPage2(IPlayer player) {
             try {
                 var interactHTML = "";
@@ -79,7 +79,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:AnimationMenuPage3:GetAnimationItems")]
+        [AsyncClientEvent("Server:AnimationMenuPage3:GetAnimationItems")]
         public void GetAnimationItemsPage3(IPlayer player) {
             try {
                 var interactHTML = "";

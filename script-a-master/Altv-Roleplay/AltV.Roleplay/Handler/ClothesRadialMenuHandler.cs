@@ -9,7 +9,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class ClothesRadialMenuHandler : IScript
     {
-        [ClientEvent("Server:ClothesRadial:GetClothesRadialItems")]
+        [AsyncClientEvent("Server:ClothesRadial:GetClothesRadialItems")]
         public void GetAnimationItems(IPlayer player) {
             try {
                 var interactHTML = "";
@@ -40,7 +40,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:ClothesRadial:SetNormalSkin")]
+        [AsyncClientEvent("Server:ClothesRadial:SetNormalSkin")]
         public static void SetNormalSkin(IPlayer player, string action) {
             if (player == null || !player.Exists) return;
 

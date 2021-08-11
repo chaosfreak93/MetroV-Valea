@@ -13,7 +13,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class KeyHandler : IScript
     {
-        [ClientEvent("Server:KeyHandler:PressE")]
+        [AsyncClientEvent("Server:KeyHandler:PressE")]
         public void PressE(IPlayer player) {
             lock (player) {
                 if (player == null || !player.Exists) return;
@@ -426,7 +426,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [ClientEvent("Server:KeyHandler:PressU")]
+        [AsyncClientEvent("Server:KeyHandler:PressU")]
         public void PressU(IPlayer player) {
             try {
                 lock (player) {
