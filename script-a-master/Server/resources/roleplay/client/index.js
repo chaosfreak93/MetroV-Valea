@@ -22,3 +22,4 @@ import '/client/weather.js';
 import '/client/helicam.js';
 import '/client/weapon.js';
 import '/client/misc.js';
+import '/client/noclip.js';
