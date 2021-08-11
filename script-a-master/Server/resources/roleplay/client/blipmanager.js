@@ -11,28 +11,8 @@ alt.onServer("Client:ServerBlips:LoadAllBlips", (blipArray) => {
     }
 });
 
-alt.on("consoleCommand", (name, args) => {
-    if (name == "rot") {
-        alt.log(`Rotation: ${JSON.stringify(game.getEntityRotation(alt.Player.local.scriptID, 2))}`);
-    }
-});
-
 alt.onServer("Client:ServerBlips:AddNewBlip", (name, color, scale, shortRange, sprite, X, Y, Z) => {
     createBlip(X, Y, Z, sprite, scale, color, shortRange, name);
-});
-
-alt.on('keyup', (key) => { //ToDo: entfernen
-    if (key == 'N'.charCodeAt(0)) {
-        var waypoint = game.getFirstBlipInfoId(8);
-
-        if (game.doesBlipExist(waypoint)) {
-            var coords = game.getBlipInfoIdCoord(waypoint);
-            // alt.Player.local.pos = coords;
-            var res = game.getGroundZFor3dCoord(coords.x, coords.y, coords.z + 100, undefined, undefined);
-            var newZCoord = res + 1;
-            alt.emitServer("ServerBlip:TpWayPoint", coords.x, coords.y, newZCoord);
-        }
-    }
 });
 
 function createBlip(X, Y, Z, sprite, scale, color, shortRange, name) {
