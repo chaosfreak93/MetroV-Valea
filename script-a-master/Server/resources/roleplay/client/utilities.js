@@ -2,9 +2,6 @@
 /// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
 import * as game from 'natives';
-import Ragdoll from './ragdoll';
-
-const ragdoll = new Ragdoll(alt.Player.local);
 
 let blip = null;
 let markers = [];
@@ -68,16 +65,6 @@ alt.onServer("Client:Minijob:RemoveJobMarker", () => {
     markers = [];
     if (blip != null)
         blip.destroy();
-});
-
-alt.onServer("Client:Ragdoll:SetPedToRagdoll", (state, delay) => {
-    alt.setTimeout(() => {
-        if (state) {
-            ragdoll.start();
-        } else {
-            ragdoll.stop();
-        }
-    }, delay);
 });
 
 alt.onServer("Client:Minijob:RemoveJobMarkerWithFreeze", (delay) => {
