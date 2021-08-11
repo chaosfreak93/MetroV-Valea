@@ -52,8 +52,7 @@ function camVectorForward(camRot) {
         y: camRot.y * (Math.PI / 180),
         z: camRot.z * (Math.PI / 180) + Math.PI / 2
     };
-    const camDir = new alt.Vector3(Math.cos(rotInRad.z), Math.sin(rotInRad.z), Math.sin(rotInRad.x));
-    return camDir;
+    return new alt.Vector3(Math.cos(rotInRad.z), Math.sin(rotInRad.z), Math.sin(rotInRad.x));
 }
 function camVectorRight(camRot) {
     let rotInRad = {
@@ -61,8 +60,7 @@ function camVectorRight(camRot) {
         y: camRot.y * (Math.PI / 180),
         z: camRot.z * (Math.PI / 180)
     };
-    const camDir = new alt.Vector3(Math.cos(rotInRad.z), Math.sin(rotInRad.z), Math.sin(rotInRad.x));
-    return camDir;
+    return new alt.Vector3(Math.cos(rotInRad.z), Math.sin(rotInRad.z), Math.sin(rotInRad.x));
 }
 function isVectorEqual(vector1, vector2) {
     return vector1.x === vector2.x && vector1.y === vector2.y && vector1.z === vector2.z;
