@@ -593,14 +593,6 @@ namespace Altv_Roleplay.Handler
 
             ServerVehicles.SetVehicleOwner(veh, passengerCharId);
 
-            int invAmount = CharactersInventory.GetCharacterItemAmount(charId, "Fahrzeugschluessel " + veh.NumberplateText, "inventory");
-            int backAmount = CharactersInventory.GetCharacterItemAmount(charId, "Fahrzeugschluessel " + veh.NumberplateText, "backpack");
-            CharactersInventory.RemoveCharacterItem(charId, "Fahrzeugschluessel " + veh.NumberplateText, "inventory");
-            CharactersInventory.RemoveCharacterItem(charId, "Fahrzeugschluessel " + veh.NumberplateText, "backpack");
-            
-            CharactersInventory.AddCharacterItem(passengerCharId, "Fahrzeugschluessel " + veh.NumberplateText, invAmount, "inventory");
-            CharactersInventory.AddCharacterItem(passengerCharId, "Fahrzeugschluessel " + veh.NumberplateText, backAmount, "inventory");
-
             IPlayer test = Alt.GetAllPlayers().FirstOrDefault(x => ((ClassicPlayer)x).CharacterId == passengerCharId);
             
             HUDHandler.SendNotification(test, 2, 5000, $"Das Fahrzeug mit dem Kennzeichen {veh.NumberplateText} gehört jetzt dir!");
