@@ -1,5 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+import BlipManager from './blipmanager';
 import NoClip from './noclip';
 export let adminMenuBrowser;
 export let browserReady = false;
@@ -185,9 +186,10 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info)=>{
             for(let i = 0, n = alt.Player.all.length; i < n; i++){
                 let player = alt.Player.all[i];
                 if (!player.valid || player.scriptID == undefined) continue;
-                /*if (player.scriptID === alt.Player.local.scriptID) {
+                if (player.scriptID === alt.Player.local.scriptID) {
                     continue;
-                }*/ const name = player.getSyncedMeta('NAME');
+                }
+                const name = player.getSyncedMeta('NAME');
                 if (!name) continue;
                 if (!native.hasEntityClearLosToEntity(alt.Player.local.scriptID, player.scriptID, 17)) continue;
                 let dist = distance2d(player.pos, alt.Player.local.pos);
@@ -235,14 +237,7 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info)=>{
             if (!player.valid || player.scriptID == undefined) continue;
             const username = player.getSyncedMeta('NAME');
             if (!username || username == undefined) continue;
-            playerblips_blip[player.scriptID] = native.addBlipForEntity(player);
-            native.setBlipColour(playerblips_blip[player.scriptID], 4);
-            native.setBlipScale(playerblips_blip[player.scriptID], 0.9);
-            native.setBlipDisplay(playerblips_blip[player.scriptID], 2);
-            native.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
-            native.beginTextCommandSetBlipName("STRING");
-            native.addTextComponentSubstringTextLabel(username);
-            native.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
+            playerblips_blip[player.scriptID] = BlipManager.createBlip(player.pos.x, player.pos.y, player.pos.z, 0, 0.9, 4, false, true, username);
             playerblips_allblips.push(playerblips_blip[player.scriptID]);
         }
         playerblips_interval = alt.setInterval(()=>{
@@ -252,16 +247,11 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info)=>{
                 const username = player.getSyncedMeta('NAME');
                 if (!username || username == undefined) continue;
                 if (playerblips_blip[player.scriptID] == undefined) {
-                    playerblips_blip[player.scriptID] = native.addBlipForEntity(player);
-                    native.setBlipColour(playerblips_blip[player.scriptID], 4);
-                    native.setBlipScale(playerblips_blip[player.scriptID], 0.9);
-                    native.setBlipDisplay(playerblips_blip[player.scriptID], 2);
-                    native.setBlipShowCone(playerblips_blip[player.scriptID], true, 0);
-                    native.beginTextCommandSetBlipName("STRING");
-                    native.addTextComponentSubstringTextLabel(username);
-                    native.endTextCommandSetBlipName(playerblips_blip[player.scriptID]);
+                    playerblips_blip[player.scriptID] = BlipManager.createBlip(player.pos.x, player.pos.y, player.pos.z, 0, 0.9, 4, false, true, username);
                     playerblips_allblips.push(playerblips_blip[player.scriptID]);
                 }
+                playerblips_blip[player.scriptID].pos = player.pos;
+                playerblips_blip[player.scriptID].heading = player.rot.z;
             }
         }, 500);
     } else if (info == "off") {
@@ -269,14 +259,14 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info)=>{
         alt.clearInterval(playerblips_interval);
         for(let i = 0, n = alt.Player.all.length; i < n; i++){
             let player = alt.Player.all[i];
-            if (player.scriptID == undefined || !native.doesBlipExist(playerblips_blip[player.scriptID])) continue;
-            native.removeBlip(playerblips_blip[player.scriptID]);
+            if (player.scriptID == undefined || !playerblips_blip[player.scriptID].valid) continue;
+            playerblips_blip[player.scriptID].destroy();
             const elementindex = playerblips_allblips.indexOf(playerblips_blip[player.scriptID]);
             if (elementindex > -1) playerblips_allblips.splice(elementindex, 1);
         }
         playerblips_blip = [];
         playerblips_allblips.forEach((a)=>{
-            if (a != undefined && a != null) native.removeBlip(a);
+            if (a != undefined && a.valid) a.destroy;
         });
     }
 });

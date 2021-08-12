@@ -1,25 +1,37 @@
-/// <reference types="@altv/types-client" />
-/// <reference types="@altv/types-natives" />
 import * as alt from 'alt-client';
-import * as game from 'natives';
-
-alt.onServer("Client:ServerBlips:LoadAllBlips", (blipArray) => {
-    blipArray = JSON.parse(blipArray);
-
-    for (var i in blipArray) {
-        createBlip(blipArray[i].posX, blipArray[i].posY, blipArray[i].posZ, blipArray[i].sprite, blipArray[i].scale, blipArray[i].color, blipArray[i].shortRange, blipArray[i].name);
+class BlipManager {
+    static createBlip(x, y, z, sprite, scale, color, shortRange, showCone, name) {
+        const blip = new alt.PointBlip(x, y, z);
+        blip.sprite = sprite;
+        blip.scale = scale;
+        blip.color = color;
+        blip.shortRange = shortRange;
+        blip.showCone = showCone;
+        blip.name = name;
+        return blip;
     }
-});
-
-alt.onServer("Client:ServerBlips:AddNewBlip", (name, color, scale, shortRange, sprite, X, Y, Z) => {
-    createBlip(X, Y, Z, sprite, scale, color, shortRange, name);
-});
-
-function createBlip(X, Y, Z, sprite, scale, color, shortRange, name) {
-    const blip = new alt.PointBlip(X, Y, Z);
-    blip.sprite = sprite;
-    blip.scale = scale;
-    blip.color = color;
-    blip.shortRange = shortRange;
-    blip.name = name;
+    static createBlipWithRoute(x, y, z, sprite, scale, color, shortRange, showCone, name) {
+        const blip = new alt.PointBlip(x, y, z);
+        blip.sprite = sprite;
+        blip.scale = scale;
+        blip.color = color;
+        blip.shortRange = shortRange;
+        blip.showCone = showCone;
+        blip.name = name;
+        blip.secondaryColor = color;
+        blip.route = true;
+        return blip;
+    }
 }
+export { BlipManager as default };
+function LoadAllBlips(blipArray) {
+    const blipJson = JSON.parse(blipArray);
+    for(let i in blipJson){
+        BlipManager.createBlip(blipJson[i].posX, blipJson[i].posY, blipJson[i].posZ, blipJson[i].sprite, blipJson[i].scale, blipJson[i].color, blipJson[i].shortRange, false, blipJson[i].name);
+    }
+}
+function AddNewBlip(name, color, scale, shortRange, sprite, x, y, z) {
+    BlipManager.createBlip(x, y, z, sprite, scale, color, shortRange, false, name);
+}
+alt.onServer("Client:ServerBlips:LoadAllBlips", LoadAllBlips);
+alt.onServer("Client:ServerBlips:AddNewBlip", AddNewBlip);
