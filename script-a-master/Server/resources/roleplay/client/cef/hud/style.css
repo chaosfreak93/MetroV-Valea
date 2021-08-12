@@ -4173,6 +4173,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 
 #phone-app-police {
     padding-left: 8px;
+    display: none;
 }
 
 #phone-screen-police > div > h3 {
