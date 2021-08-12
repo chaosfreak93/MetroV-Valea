@@ -119,6 +119,9 @@ alt.setInterval(()=>{
     native.setRadarAsExteriorThisFrame();
     native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700, -5145, 0, 0);
 }, 1);
+const webview = new alt.WebView('https://www.youtube.com/embed/6eXcAHZils4?mute=1&autoplay=1', alt.hash("v_ilev_cin_screen"), "script_rt_cinscreen");
+webview.isVisible = true;
+webview.focus();
 export default {
     setMinimapData,
     setAudioData

@@ -22,7 +22,7 @@ class VehicleHandler {
             native.setVehicleDeformationFixed(curVeh.scriptID);
         }
     }
-    static async setIntoVehicle(curVeh) {
+    static async setPedIntoVehicle(curVeh) {
         await setIntoVehicle(curVeh);
     }
     static toggleDoor(vehicle, doorid, state) {
@@ -53,7 +53,7 @@ class VehicleHandler {
 export { VehicleHandler as default };
 alt.onServer("returnVehicleMods", VehicleHandler.returnVehicleMods);
 alt.onServer("Client:Utilities:repairVehicle", VehicleHandler.repairVehicle);
-alt.onServer("Client:Utilities:setIntoVehicle", VehicleHandler.setIntoVehicle);
+alt.onServer("Client:Utilities:setIntoVehicle", VehicleHandler.setPedIntoVehicle);
 alt.onServer("Client:Vehicles:ToggleDoorState", VehicleHandler.toggleDoor);
 alt.onServer("Client:Sirens:setVehicleHasMutedSirensForAll", VehicleHandler.setVehicleHasMutedSirensForAll);
 alt.on("gameEntityCreate", VehicleHandler.gameEntityCreate);
