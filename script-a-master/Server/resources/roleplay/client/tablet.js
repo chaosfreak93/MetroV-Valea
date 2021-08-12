@@ -96,7 +96,7 @@ alt.onServer("Client:Tablet:SetFactionManagerAppContent", (factionId, infoArray,
 });
 alt.onServer("Client:Tablet:SetFactionAppContent", (dutyMemberCount, dispatchCount, vehicleArray)=>{
     if (tabletBrowser != null) {
-        tabletBrowser.emit("CEF:Tablet:SetFactionAppContent", dutyMemberCount, dispatchCount, vehicleArray);
+        tabletBrowser.emit("CEF:Tablet:SetFactionAppContent", dutyMemberCount, dispatchCount, JSON.parse(vehicleArray));
     }
 });
 alt.onServer("Client:Tablet:SetLSPDAppPersonSearchData", (charName, gender, birthdate, birthplace, address, job, mainBankAcc, firstJoinDate)=>{
