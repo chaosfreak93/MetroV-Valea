@@ -6055,9 +6055,9 @@
         showPhoneNotification(message, app, fn, sound)
     });
 
-    alt.on("CEF:Smartphone:ShowLSPDIntranetApp", (shouldBeVisible, serverWanteds) => {
+    /**alt.on("CEF:Smartphone:ShowLSPDIntranetApp", (shouldBeVisible, serverWanteds) => {
         ShowLSPDIntranetApp(shouldBeVisible, serverWanteds);
-    });
+    });**/
 
     alt.on("CEF:Smartphone:SetLSPDIntranetSearchedPeople", (searchedPersonJSON) => {
         SetLSPDIntranetSearchedPeople(searchedPersonJSON);
