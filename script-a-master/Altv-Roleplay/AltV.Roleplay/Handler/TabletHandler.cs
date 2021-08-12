@@ -72,7 +72,6 @@ namespace Altv_Roleplay.Handler
                     HUDHandler.SendNotification(player, 1, 5000, "Erfolg abgeschlossen: Tablet öffnen.");
                 }
 
-                var appArray = CharactersTablet.GetCharacterTabletApps(charId);
                 var vehicleStoreArray = ServerVehicleShops.GetTabletVehicleStoreItems();
                 player.EmitLocked("Client:Tablet:setTabletHomeAppData", CharactersTablet.GetCharacterTabletApps(charId));
                 player.EmitLocked("Client:Tablet:SetVehicleStoreAppContent", vehicleStoreArray);
