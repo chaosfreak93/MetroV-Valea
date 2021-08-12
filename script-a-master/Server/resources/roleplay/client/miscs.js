@@ -106,7 +106,7 @@ alt.everyTick(()=>{
     if (native.isDisabledControlJustPressed(0, 243)) {
         alt.emit("SaltyChat:ToggleRange");
     }
-    if (alt.Player.local.vehicle || native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
+    if (alt.Player.local.vehicle && native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
         native.disableControlAction(1, 86, true);
     }
 });
