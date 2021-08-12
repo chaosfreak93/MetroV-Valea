@@ -704,7 +704,7 @@ namespace Altv_Roleplay.Model
                 vehPlate = x.NumberplateText,
                 vehPosX = x.Position.X,
                 vehPosY = x.Position.Y
-            }).ToList();
+            });
 
             return items.ToString();
         }
