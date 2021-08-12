@@ -98,6 +98,7 @@ alt.everyTick(()=>{
     native.drawRect(0, 0, 0, 0, 0, 0, 0, 0, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 241, true);
     native.setPedConfigFlag(alt.Player.local.scriptID, 429, true);
+    native.disableControlAction(0, 36, true);
     if (!alt.Player.local.vehicle || native.getVehicleClass(alt.Player.local.vehicle.scriptID) != 18) return;
     native.disableControlAction(1, 86, true);
 });
