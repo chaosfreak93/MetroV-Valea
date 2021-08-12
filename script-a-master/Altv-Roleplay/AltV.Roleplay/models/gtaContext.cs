@@ -563,8 +563,6 @@ namespace Altv_Roleplay.models
                 entity.ToTable("server_clothesshops_items", Constants.DatabaseConfig.Database);
                 entity.HasIndex(e => e.id).HasDatabaseName("id");
                 entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
-                entity.Property(e => e.shopId).HasColumnName("shopid").HasColumnType("int(11)");
-                entity.Property(e => e.name).HasColumnName("name");
                 entity.Property(e => e.componentId).HasColumnName("componentId").HasColumnType("int(11)");
                 entity.Property(e => e.drawableId).HasColumnName("drawableId").HasColumnType("int(11)");
                 entity.Property(e => e.textureId).HasColumnName("textureId").HasColumnType("int(11)");
