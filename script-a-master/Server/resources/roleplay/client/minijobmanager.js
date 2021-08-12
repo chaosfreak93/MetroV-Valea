@@ -3,7 +3,7 @@ import * as native from 'natives';
 import BlipManager from './blipmanager';
 import MarkerManager from './markermanager';
 let blip = null;
-let markerCache = null;
+let markerCache = [];
 class MinijobManager {
     static CreateJobMarker(name, color, sprite, markersprite, X, Y, Z, bobUpAndDown) {
         blip = BlipManager.createBlipWithRoute(X, Y, Z, sprite, 0.8, color, true, false, name);
