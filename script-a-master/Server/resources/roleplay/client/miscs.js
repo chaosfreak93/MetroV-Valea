@@ -98,11 +98,17 @@ alt.everyTick(()=>{
     native.drawRect(0, 0, 0, 0, 0, 0, 0, 0, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 184, true);
     native.setPedConfigFlag(alt.Player.local.scriptID, 241, true);
-    native.setPedConfigFlag(alt.Player.local.scriptID, 423, true);
+    native.setPedConfigFlag(alt.Player.local.scriptID, 331, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 429, true);
     native.disableControlAction(0, 36, true);
-    if (!alt.Player.local.vehicle || native.getVehicleClass(alt.Player.local.vehicle.scriptID) != 18) return;
-    native.disableControlAction(1, 86, true);
+    native.disableControlAction(1, 243, true);
+    native.disableControlAction(1, 249, true);
+    if (native.isDisabledControlJustPressed(0, 243)) {
+        alt.emit("SaltyChat:ToggleRange");
+    }
+    if (alt.Player.local.vehicle || native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
+        native.disableControlAction(1, 86, true);
+    }
 });
 export function setAudioData() {
     native.startAudioScene("FBI_HEIST_H5_MUTE_AMBIENCE_SCENE");
