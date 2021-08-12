@@ -2029,8 +2029,7 @@
     }
 
     function SetFactionAppViewFactionVehicleData(vehicleArray) {
-        var viewFactionHTML = "",
-            vehicleArray = JSON.parse(vehicleArray);
+        var viewFactionHTML = "";
 
         for (var i in vehicleArray) {
             viewFactionHTML += `<div class='container'><div class='left'><img src='../utils/img/vehicles/${vehicleArray[i].vehHash}.png'></div><div class='leftmid name'><p class='name'><b>Fahrzeugname</b></p><p>${vehicleArray[i].vehName}</p></div>` +

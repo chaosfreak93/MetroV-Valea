@@ -915,7 +915,7 @@ alt.onServer("Client:Deathscreen:openCEF", ()=>{
     }
 });
 alt.onServer("Client:Deathscreen:closeCEF", ()=>{
-    if (hudBrowser != null && DeathscreenCefOpened) {
+    if (hudBrowser != null && DeathscreenCefOpened == true) {
         deathScreen.destroy();
         hudBrowser.emit("CEF:Deathscreen:closeCEF");
         alt.emitServer("Server:CEF:setCefStatus", false);
