@@ -376,13 +376,10 @@ namespace Altv_Roleplay.Handler
                 !CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + vehPlate, "inventory")) {
                 HUDHandler.SendNotification(player, 3, 5000, "Du hast keinen Schlüssel für dieses Fahrzeug.");
                 return;
-            }
-
-            if (ServerVehicles.GetVehicleFactionId(veh) != 0 &&
-                vehPlate.Contains(ServerFactions.GetFactionShortName(ServerVehicles.GetVehicleFactionId(veh)))) {
+            } else if (vehPlate.Contains(ServerFactions.GetFactionShortName(ServerVehicles.GetVehicleFactionId(veh)))) {
                 var factionPlate = ServerFactions.GetFactionShortName(ServerVehicles.GetVehicleFactionId(veh));
 
-                if (!CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + factionPlate, "inventory") || !CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + vehPlate, "inventory")) {
+                if (!CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + factionPlate, "inventory")) {
                     HUDHandler.SendNotification(player, 3, 5000, $"Du hast keinen Schlüssel für dieses Fahrzeug ({factionPlate}).");
                     return;
                 }
@@ -392,7 +389,7 @@ namespace Altv_Roleplay.Handler
                 var factionPlate = ServerFactions.GetFactionShortName(ServerVehicles.GetVehicleFactionId(veh));
                 if (!vehPlate.Contains(factionPlate)) return;
 
-                if (!CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + factionPlate, "inventory") || !CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + vehPlate, "inventory")) {
+                if (!CharactersInventory.ExistCharacterItem(charId, "Fahrzeugschluessel " + factionPlate, "inventory")) {
                     HUDHandler.SendNotification(player, 3, 5000, $"Du hast keinen Schlüssel für dieses Fahrzeug ({factionPlate}).");
                     return;
                 }
