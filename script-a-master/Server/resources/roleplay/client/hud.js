@@ -4,7 +4,7 @@ import * as game from 'natives';
 import { closeTabletCEF } from './tablet';
 import { clearTattoos, setTattoo, setCorrectTattoos, setClothes } from './utilities';
 import Raycast from './raycast';
-import Inventory from './inventory';
+import { Inventory } from './inventory';
 export let hudBrowser = null;
 export let browserReady = false;
 let deathScreen = null;
