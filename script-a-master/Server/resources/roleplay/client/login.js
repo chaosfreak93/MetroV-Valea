@@ -234,6 +234,7 @@ export { LoginHandler as default };
 alt.onServer("Client:Login:CreateCEF", LoginHandler.CreateCEF);
 alt.onServer("Client:SpawnArea:setCharSkin", LoginHandler.setCharSkin);
 alt.onServer("Client:Charselector:ViewCharacter", LoginHandler.ViewCharacter);
+alt.onServer("Client:Charselector:sendCharactersToCEF", LoginHandler.sendCharactersToCEF);
 alt.onServer("Client:Login:SaveLoginCredentialsToStorage", LoginHandler.SaveLoginCredentialsToStorage);
 alt.onServer("Client:Login:showError", LoginHandler.showError);
 alt.onServer("Client:Login:showArea", LoginHandler.showArea);
