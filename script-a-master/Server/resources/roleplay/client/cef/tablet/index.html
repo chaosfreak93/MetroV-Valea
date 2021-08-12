@@ -1340,10 +1340,10 @@
             appcounter = 0;
         appArray = JSON.parse(appArray);
 
-        homeAppList += "<li class='list-group-item' onclick='showArea(`InternetApp-Area`);'><img src='img/appicons/globe.png'><br><span>Internet</span></li><li class='list-group-item'><img src='img/appicons/gmail.png'><br><span>E-Mail</span></li><li class='list-group-item' onclick='showArea(`TutorialApp-Area`);'><img src='img/appicons/tutorial.png'><br><span>Tutorial</span></li>";
+        homeAppList += "<li class='list-group-item' onclick='showArea(`InternetApp-Area`);'><img src='img/appicons/globe.png'><br><span>Internet</span></li><li class='list-group-item' onclick='showArea(`TutorialApp-Area`);'><img src='img/appicons/tutorial.png'><br><span>Tutorial</span></li>";
 
         for (var i in appArray) {
-            if (appArray[i].weather == true) {
+            /**if (appArray[i].weather == true) {
                 //hat die Wetter App
                 if (appcounter == 3 || appcounter == 5) {
                     homeAppList += "<li class='list-group-item hide'></li><li class='list-group-item hide'></li><li class='list-group-item hide'></li>";
@@ -1367,7 +1367,7 @@
             } else {
                 //hat die News App nicht
                 appStoreHTML += "<li class='list-group-item install' onclick='AppStoreInstallUninstallApp(`install`, `news`);'><img src='img/appicons/text-lines.png'><p class='title'>News</p><p class='description'>Nachrichten einsehen</p></li>";
-            }
+            }**/
 
             if (appArray[i].banking == true) {
                 //hat die Banking App
