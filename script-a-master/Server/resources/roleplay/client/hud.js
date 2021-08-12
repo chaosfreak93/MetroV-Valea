@@ -537,14 +537,6 @@ alt.on("Client:HUD:sendNotification", (type, duration, msg)=>{
         hudBrowser.emit("CEF:HUD:sendNotification", type, duration, msg);
     }
 });
-alt.everyTick(()=>{
-    game.disableControlAction(1, 243, true);
-    game.disableControlAction(1, 249, true);
-    // SPRACHREICHWEITEN-CONTROL �NDERN
-    if (game.isDisabledControlJustPressed(0, 243)) {
-        alt.emit("SaltyChat:ToggleRange");
-    }
-});
 let localRange = 3;
 alt.on("SaltyChat:StateChanged", (gameInstanceState, micState, speakerState)=>{
     if (gameInstanceState != 2) return;
@@ -558,7 +550,7 @@ alt.on("SaltyChat:VoiceRangeChanged", (voiceRange, voiceIndex)=>{
     hudBrowser.emit("CEF:HUD:updateHUDVoice", voiceRange);
     localRange = voiceRange;
     let drawmarkertick = alt.everyTick(()=>{
-        if (voiceRange != 0) game.drawMarker(1, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z - 0.95, 0, 0, 0, 0, 0, 0, voiceRange * 2, voiceRange * 2, 0.2, 52, 152, 219, 50, false, false, 2, false, undefined, undefined, false);
+        if (voiceRange != 0) game.drawMarker(1, alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z - 1, 0, 0, 0, 0, 0, 0, voiceRange * 2, voiceRange * 2, 0.6, 52, 152, 219, 50, false, false, 2, false, undefined, undefined, false);
     });
     alt.setTimeout(()=>{
         alt.clearEveryTick(drawmarkertick);
@@ -1189,7 +1181,6 @@ alt.on('keydown', (key)=>{
     } else if (key === 'N'.charCodeAt(0)) {
         if (currentRadioFrequence == null || currentRadioFrequence == undefined || alt.Player.local.getSyncedMeta("IsCefOpen")) return;
         alt.emit("SaltyChat:UseRadio", true, true);
-        hudBrowser.emit("CEF:Sound:PlayOnce", "../utils/sounds/radio/startspeak.mp3");
     }
 });
 alt.on('keyup', (key)=>{
@@ -1255,8 +1246,6 @@ alt.on('keyup', (key)=>{
     } else if (key === 'N'.charCodeAt(0)) {
         if (currentRadioFrequence == null || currentRadioFrequence == undefined) return;
         alt.emit("SaltyChat:UseRadio", true, false);
-        game.stopAnimTask(alt.Player.local.scriptID, "random@arrests", "generic_radio_chatter", 1);
-        hudBrowser.emit("CEF:Sound:PlayOnce", "../utils/sounds/radio/stopspeak.mp3");
     }
 });
 function InterActionMenuDoAction(type, action) {
@@ -1486,21 +1475,9 @@ alt.everyTick(()=>{
         }
     }
     if (hudBrowser == null) return;
-    hudBrowser.emit("CEF:HUD:updatePosAndRot", alt.Player.local.pos, alt.Player.local.rot);
     if (alt.Player.local.vehicle == null) return;
-    const street = game.getStreetNameAtCoord(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z);
-    const zoneName = game.getLabelText(game.getNameOfZone(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z));
-    const streetName = game.getStreetNameFromHashKey(street[1]);
-    hudBrowser.emit("CEF:HUD:updateStreetLocation", streetName + ", " + zoneName);
     GetVehicleSpeed();
     hudBrowser.emit("CEF:HUD:SetPlayerHUDVehicleSpeed", curSpeed);
-    if (alt.Player.local.vehicle.model != 2621610858 && alt.Player.local.vehicle.model != 1341619767 && alt.Player.local.vehicle.model != 2999939664) {
-        game.setPedConfigFlag(alt.Player.local.scriptID, 429, true);
-    } else {
-        game.setPedConfigFlag(alt.Player.local.scriptID, 429, false);
-    }
-    game.setPedConfigFlag(alt.Player.local.scriptID, 184, true);
-    game.setAudioFlag("DisableFlightMusic", true);
 });
 let closeFarmingCEF = function() {
     alt.emitServer("Server:CEF:setCefStatus", false);
