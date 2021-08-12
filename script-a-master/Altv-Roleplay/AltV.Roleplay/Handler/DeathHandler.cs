@@ -50,7 +50,7 @@ namespace Altv_Roleplay.Handler
                 if (Enum.IsDefined(typeof(AntiCheat.forbiddenWeapons), (AntiCheat.forbiddenWeapons) weaponModel)) {
                     User.SetPlayerBanned(killerPlayer, true, $"Waffen Hack[2]: {weaponModel}");
                     killerPlayer.Kick("");
-                    player.Health = 200;
+                    revive(player);
 
                     foreach (var p in Alt.GetAllPlayers().ToList()
                         .Where(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 && x.AdminLevel() > 0))
