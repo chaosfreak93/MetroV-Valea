@@ -554,7 +554,7 @@ alt.on("SaltyChat:VoiceRangeChanged", (voiceRange, voiceIndex)=>{
     });
     alt.setTimeout(()=>{
         alt.clearEveryTick(drawmarkertick);
-    }, 500);
+    }, 1000);
 });
 alt.onServer("Client:HUD:createIdentityCardApplyForm", (charname, gender, adress, birthdate, curBirthpl)=>{
     if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && curBirthpl == "None" && identityCardApplyCEFopened == false) {
