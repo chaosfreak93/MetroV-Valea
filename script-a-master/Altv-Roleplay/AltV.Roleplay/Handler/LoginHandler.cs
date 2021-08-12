@@ -222,7 +222,7 @@ namespace Altv_Roleplay.Handler
                 CharactersInventory.AddCharacterItem(charid, "Smartphone", 1, "inventory");
 
                 // First-Spawn Kleider
-                if (!Characters.GetCharacterGender((int) client.GetCharacterMetaId())) {
+                /**if (!Characters.GetCharacterGender((int) client.GetCharacterMetaId())) {
                     //Männlich
                     Characters.SwitchCharacterClothes(client, 5048, false);
                     Characters.SwitchCharacterClothes(client, 7761, false);
@@ -238,7 +238,7 @@ namespace Altv_Roleplay.Handler
                     CharactersClothes.CreateCharacterOwnedClothes(client.CharacterId, 17018);
                     CharactersClothes.CreateCharacterOwnedClothes(client.CharacterId, 21383);
                     CharactersClothes.CreateCharacterOwnedClothes(client.CharacterId, 27501);
-                }
+                }**/
                 
                 Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_Airport, 0);
                 client.Rotation = Constants.Positions.SpawnRot_Airport;
