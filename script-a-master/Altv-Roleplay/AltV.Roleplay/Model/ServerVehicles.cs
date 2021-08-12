@@ -706,7 +706,7 @@ namespace Altv_Roleplay.Model
                 vehPosY = x.Position.Y
             });
 
-            return items.ToString();
+            return JsonSerializer.Serialize(items);
         }
 
 
