@@ -27,6 +27,8 @@ namespace Altv_Roleplay.Model
                     normalName = "Fahrzeugschluessel";
                 else if (itemName.Contains("Generalschluessel"))
                     normalName = "Generalschluessel";
+                else if (itemName.Contains("Schluessel"))
+                    normalName = "Schluessel";
 
                 return normalName;
             }
