@@ -1,32 +1,44 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+let enabled = false;
+let defaultSpeed = 1;
+let everyTick = null;
+const KEYS = {
+    FORWARD: 32,
+    BACKWARD: 33,
+    LEFT: 34,
+    RIGHT: 35,
+    UP: 22,
+    DOWN: 36,
+    SHIFT: 21
+};
 class NoClip {
     static start() {
-        if (NoClip.enabled) return;
-        NoClip.enabled = true;
+        if (enabled) return;
+        enabled = true;
         native.freezeEntityPosition(alt.Player.local.scriptID, true);
-        this.everyTick = alt.everyTick(NoClip.keyHandler);
+        everyTick = alt.everyTick(NoClip.keyHandler);
     }
     static stop() {
-        if (!NoClip.enabled) return;
-        NoClip.enabled = false;
+        if (!enabled) return;
+        enabled = false;
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
-        alt.clearEveryTick(this.everyTick);
+        alt.clearEveryTick(everyTick);
     }
     static keyHandler() {
         let currentPos = alt.Player.local.pos;
-        let speed = NoClip.speed;
+        let speed = defaultSpeed;
         let rot = native.getGameplayCamRot(2);
         let dirForward = this.camVectorForward(rot);
         let dirRight = this.camVectorRight(rot);
-        if (native.isControlPressed(0, NoClip.KEYS.SHIFT)) speed = speed * 5;
-        if (native.isControlPressed(0, NoClip.KEYS.FORWARD)) currentPos = this.addSpeedToVector(currentPos, dirForward, speed);
-        if (native.isControlPressed(0, NoClip.KEYS.BACKWARD)) currentPos = this.addSpeedToVector(currentPos, dirForward, -speed);
-        if (native.isControlPressed(0, NoClip.KEYS.LEFT)) currentPos = this.addSpeedToVector(currentPos, dirRight, -speed, true);
-        if (native.isControlPressed(0, NoClip.KEYS.RIGHT)) currentPos = this.addSpeedToVector(currentPos, dirRight, speed, true);
+        if (native.isControlPressed(0, KEYS.SHIFT)) speed = speed * 5;
+        if (native.isControlPressed(0, KEYS.FORWARD)) currentPos = this.addSpeedToVector(currentPos, dirForward, speed);
+        if (native.isControlPressed(0, KEYS.BACKWARD)) currentPos = this.addSpeedToVector(currentPos, dirForward, -speed);
+        if (native.isControlPressed(0, KEYS.LEFT)) currentPos = this.addSpeedToVector(currentPos, dirRight, -speed, true);
+        if (native.isControlPressed(0, KEYS.RIGHT)) currentPos = this.addSpeedToVector(currentPos, dirRight, speed, true);
         let zModifier = 0;
-        if (native.isControlPressed(0, NoClip.KEYS.UP)) zModifier += speed;
-        if (native.isControlPressed(0, NoClip.KEYS.DOWN)) zModifier -= speed;
+        if (native.isControlPressed(0, KEYS.UP)) zModifier += speed;
+        if (native.isControlPressed(0, KEYS.DOWN)) zModifier -= speed;
         if (!this.isVectorEqual(new alt.Vector3(currentPos.x, currentPos.y, currentPos.z + zModifier), alt.Player.local.pos)) native.setEntityCoordsNoOffset(alt.Player.local.scriptID, currentPos.x, currentPos.y, currentPos.z + zModifier, false, false, false);
     }
     static addSpeedToVector(vector1, vector2, speed, lr = false) {
@@ -52,16 +64,4 @@ class NoClip {
         return vector1.x === vector2.x && vector1.y === vector2.y && vector1.z === vector2.z;
     }
 }
-NoClip.enabled = false;
-NoClip.speed = 1;
-NoClip.everyTick = null;
-NoClip.KEYS = {
-    FORWARD: 32,
-    BACKWARD: 33,
-    LEFT: 34,
-    RIGHT: 35,
-    UP: 22,
-    DOWN: 36,
-    SHIFT: 21
-};
 export { NoClip as default };

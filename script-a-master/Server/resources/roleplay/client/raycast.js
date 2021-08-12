@@ -27,5 +27,4 @@ class Raycast {
         return new alt.Vector3(-Math.sin(z) * num, Math.cos(z) * num, Math.sin(x));
     }
 }
-Raycast.player = alt.Player.local;
 export { Raycast as default };

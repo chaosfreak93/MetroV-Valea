@@ -2,11 +2,13 @@ import * as alt from 'alt-client';
 import * as native from 'natives';
 import BlipManager from './blipmanager';
 import MarkerManager from './markermanager';
+let blip = null;
+let markerCache = null;
 class MinijobManager {
     static CreateJobMarker(name, color, sprite, markersprite, X, Y, Z, bobUpAndDown) {
-        this.blip = BlipManager.createBlipWithRoute(X, Y, Z, sprite, 0.8, color, true, false, name);
+        blip = BlipManager.createBlipWithRoute(X, Y, Z, sprite, 0.8, color, true, false, name);
         MarkerManager.addMarker(markersprite, X, Y, Z, 1, 1, 1, 46, 133, 232, 150, bobUpAndDown);
-        this.markerCache.push({
+        markerCache.push({
             type: markersprite,
             x: X,
             y: Y,
@@ -22,14 +24,14 @@ class MinijobManager {
         });
     }
     static RemoveJobMarker() {
-        this.blip.destroy();
-        for(var marker in this.markerCache){
+        blip.destroy();
+        for(var marker in markerCache){
             MarkerManager.removeMarkerByData(marker);
         }
     }
     static RemoveJobMarkerWithFreeze(delay) {
-        this.blip.destroy();
-        for(var marker in this.markerCache){
+        blip.destroy();
+        for(var marker in markerCache){
             MarkerManager.removeMarkerByData(marker);
         }
         alt.setTimeout(()=>{

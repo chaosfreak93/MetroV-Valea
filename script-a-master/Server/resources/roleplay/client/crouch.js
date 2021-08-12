@@ -1,25 +1,25 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 import { loadClipsetAsync } from './utilities';
+const player = alt.Player.local;
+let enabled = false;
+const movementClipSet = "move_ped_crouched";
+const strafeClipSet = "move_ped_crouched_strafing";
+const clipSetSwitchTime = 0.25;
 class Crouch {
     static async start() {
-        if (Crouch.enabled) return;
-        Crouch.enabled = true;
-        await loadClipsetAsync(this.movementClipSet);
-        await loadClipsetAsync(this.strafeClipSet);
-        native.setPedMovementClipset(this.player.scriptID, this.movementClipSet, this.clipSetSwitchTime);
-        native.setPedStrafeClipset(this.player.scriptID, this.strafeClipSet);
+        if (enabled) return;
+        enabled = true;
+        await loadClipsetAsync(movementClipSet);
+        await loadClipsetAsync(strafeClipSet);
+        native.setPedMovementClipset(player.scriptID, movementClipSet, clipSetSwitchTime);
+        native.setPedStrafeClipset(player.scriptID, strafeClipSet);
     }
     static stop() {
-        if (!Crouch.enabled) return;
-        Crouch.enabled = false;
-        native.resetPedMovementClipset(this.player.scriptID, this.clipSetSwitchTime);
-        native.resetPedStrafeClipset(this.player.scriptID);
+        if (!enabled) return;
+        enabled = false;
+        native.resetPedMovementClipset(player.scriptID, clipSetSwitchTime);
+        native.resetPedStrafeClipset(player.scriptID);
     }
 }
-Crouch.player = alt.Player.local;
-Crouch.enabled = false;
-Crouch.movementClipSet = "move_ped_crouched";
-Crouch.strafeClipSet = "move_ped_crouched_strafing";
-Crouch.clipSetSwitchTime = 0.25;
 export { Crouch as default };

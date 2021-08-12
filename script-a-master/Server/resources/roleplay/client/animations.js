@@ -44,16 +44,16 @@ alt.on('keyup', (key)=>{
         AnimationHandler.playAnimation(storage.get('Num9AnimDict'), storage.get('Num9AnimName'), storage.get('Num9AnimDuration'), storage.get('Num9AnimFlag'), false);
     }
 });
+const player = alt.Player.local;
 class AnimationHandler {
     static async playAnimation(animDict, animName, duration, flag, lockpos) {
         await loadAnimDictAsync(animDict);
-        native.taskPlayAnim(this.player.scriptID, animDict, animName, 8, 8, duration, flag, 1, lockpos, lockpos, lockpos);
+        native.taskPlayAnim(player.scriptID, animDict, animName, 8, 8, duration, flag, 1, lockpos, lockpos, lockpos);
     }
     static stopAnimation() {
-        native.clearPedTasks(this.player.scriptID);
+        native.clearPedTasks(player.scriptID);
     }
 }
-AnimationHandler.player = alt.Player.local;
 export { AnimationHandler as default };
 alt.onServer("Client:Inventory:PlayAnimation", AnimationHandler.playAnimation);
 alt.onServer("Client:Inventory:StopAnimation", AnimationHandler.stopAnimation);

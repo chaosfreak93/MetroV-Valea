@@ -1,5 +1,8 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+const player = alt.Player.local;
+let cayoPericoPos = new alt.Vector3(4895.28, -5744.58, 26.351);
+let isCayoPericoLoaded = false;
 class IPLManager {
     static loadIPL(name) {
         alt.requestIpl(name);
@@ -289,26 +292,23 @@ class IPLManager {
         }
     }
     static loadCayoPerico() {
-        let dist = native.getDistanceBetweenCoords(this.cayoPericoPos.x, this.cayoPericoPos.y, this.cayoPericoPos.z, this.player.pos.x, this.player.pos.y, this.player.pos.z, false);
-        if (dist <= 2500 && !this.isCayoPericoLoaded) {
+        let dist = native.getDistanceBetweenCoords(cayoPericoPos.x, cayoPericoPos.y, cayoPericoPos.z, player.pos.x, player.pos.y, player.pos.z, false);
+        if (dist <= 2500 && !isCayoPericoLoaded) {
             native.setIslandHopperEnabled('HeistIsland', true);
             native.setScenarioGroupEnabled('Heist_Island_Peds', true);
             native.setAudioFlag("PlayerOnDLCHeist4Island", true);
             native.setAmbientZoneListStatePersistent("AZL_DLC_Hei4_Island_Zones", true, true);
             native.setAmbientZoneListStatePersistent("AZL_DLC_Hei4_Island_Disabled_Zones", false, true);
-            this.isCayoPericoLoaded = true;
-        } else if (dist > 2500 && this.isCayoPericoLoaded) {
+            isCayoPericoLoaded = true;
+        } else if (dist > 2500 && isCayoPericoLoaded) {
             native.setIslandHopperEnabled('HeistIsland', false);
             native.setScenarioGroupEnabled("Heist_Island_Peds", false);
             native.setAudioFlag("PlayerOnDLCHeist4Island", false);
             native.setAmbientZoneListStatePersistent("AZL_DLC_Hei4_Island_Zones", false, false);
             native.setAmbientZoneListStatePersistent("AZL_DLC_Hei4_Island_Disabled_Zones", false, false);
-            this.isCayoPericoLoaded = false;
+            isCayoPericoLoaded = false;
         }
     }
 }
-IPLManager.player = alt.Player.local;
-IPLManager.cayoPericoPos = new alt.Vector3(4895.28, -5744.58, 26.351);
-IPLManager.isCayoPericoLoaded = false;
 export { IPLManager as default };
 alt.setInterval(IPLManager.loadCayoPerico, 1000);

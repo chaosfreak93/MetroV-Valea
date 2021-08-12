@@ -3,65 +3,69 @@ import * as native from 'natives';
 import IPLManager from './iplmanager';
 import { setAudioData, setMinimapData } from "./miscs";
 import { loadModelAsync } from './utilities';
+let loginBrowser = null;
+let loginCam = null;
+let loginPedHandle = null;
+let loginModelHash = null;
 class LoginHandler {
     static CreateCEF() {
-        if (this.loginBrowser == null) {
-            this.loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
-            native.setCamActive(this.loginCam, true);
+        if (loginBrowser == null) {
+            loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
+            native.setCamActive(loginCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
             alt.showCursor(true);
             alt.toggleGameControls(false);
-            this.loginBrowser = new alt.WebView("http://resource/client/cef/login/index.html");
-            this.loginBrowser.focus();
-            this.loginBrowser.on("Client:Login:cefIsReady", ()=>{
+            loginBrowser = new alt.WebView("http://resource/client/cef/login/index.html");
+            loginBrowser.focus();
+            loginBrowser.on("Client:Login:cefIsReady", ()=>{
                 alt.setTimeout(()=>{
                     if (alt.LocalStorage.get("username")) {
-                        this.loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"), alt.LocalStorage.get("password"));
+                        loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"), alt.LocalStorage.get("password"));
                     }
-                    this.loginBrowser.emit("CEF:Login:showArea", "login");
+                    loginBrowser.emit("CEF:Login:showArea", "login");
                 }, 2000);
             });
-            this.loginBrowser.on("Client:Login:sendLoginDataToServer", (name, password)=>{
+            loginBrowser.on("Client:Login:sendLoginDataToServer", (name, password)=>{
                 if (alt.LocalStorage.get("discordId")) {
                     alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.LocalStorage.get("discordId"));
                 } else {
                     if (alt.Discord.currentUser == null) {
-                        this.loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
+                        loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
                         return;
                     }
                     alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.Discord.currentUser.id);
                 }
             });
-            this.loginBrowser.on("Client:Login:resetPW", (password)=>{
+            loginBrowser.on("Client:Login:resetPW", (password)=>{
                 alt.emitServer("Server:Login:resetPW", password);
             });
-            this.loginBrowser.on("Client:Register:sendRegisterDataToServer", (name, email, password, passwordrepeat)=>{
+            loginBrowser.on("Client:Register:sendRegisterDataToServer", (name, email, password, passwordrepeat)=>{
                 alt.emitServer("Server:Register:RegisterNewPlayer", name, email, password, passwordrepeat);
             });
-            this.loginBrowser.on("Client:Charcreator:OpenCreator", ()=>{
+            loginBrowser.on("Client:Charcreator:OpenCreator", ()=>{
                 alt.emitServer("Server:Charcreator:CreateCEF");
                 this.DestroyCEF();
             });
-            this.loginBrowser.on("Client:Login:DestroyCEF", ()=>{
+            loginBrowser.on("Client:Login:DestroyCEF", ()=>{
                 this.DestroyCEF();
             });
-            this.loginBrowser.on("Client:Charselector:KillCharacter", (charid)=>{
+            loginBrowser.on("Client:Charselector:KillCharacter", (charid)=>{
                 alt.emitServer("Server:Charselector:KillCharacter", charid);
             });
-            this.loginBrowser.on("Client:Charselector:PreviewCharacter", (charid)=>{
+            loginBrowser.on("Client:Charselector:PreviewCharacter", (charid)=>{
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
-            this.loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr)=>{
+            loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr)=>{
                 native.freezeEntityPosition(alt.Player.local.scriptID, true);
                 alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
             });
-            this.loginBrowser.on("Client:Charcreator:SwitchOut", ()=>{
-                if (this.loginCam != null) {
+            loginBrowser.on("Client:Charcreator:SwitchOut", ()=>{
+                if (loginCam != null) {
                     native.renderScriptCams(false, false, 0, true, false, 0);
-                    native.setCamActive(this.loginCam, false);
-                    native.destroyCam(this.loginCam, true);
-                    this.loginCam = null;
+                    native.setCamActive(loginCam, false);
+                    native.destroyCam(loginCam, true);
+                    loginCam = null;
                 }
                 native.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
                 native.freezeEntityPosition(alt.Player.local.scriptID, true);
@@ -69,19 +73,19 @@ class LoginHandler {
         }
     }
     static DestroyCEF() {
-        if (this.loginBrowser != null) {
-            this.loginBrowser.destroy();
+        if (loginBrowser != null) {
+            loginBrowser.destroy();
         }
-        this.loginBrowser = null;
+        loginBrowser = null;
         native.renderScriptCams(false, false, 0, true, false, 0);
-        if (this.loginCam != null) {
-            native.setCamActive(this.loginCam, false);
-            native.destroyCam(this.loginCam, true);
-            this.loginCam = null;
+        if (loginCam != null) {
+            native.setCamActive(loginCam, false);
+            native.destroyCam(loginCam, true);
+            loginCam = null;
         }
-        if (this.loginPedHandle != null) {
-            native.deletePed(this.loginPedHandle);
-            this.loginPedHandle = null;
+        if (loginPedHandle != null) {
+            native.deletePed(loginPedHandle);
+            loginPedHandle = null;
         }
         alt.showCursor(false);
         alt.toggleGameControls(true);
@@ -126,30 +130,30 @@ class LoginHandler {
         alt.LocalStorage.save();
     }
     static showError(msg) {
-        if (this.loginBrowser != null) {
-            this.loginBrowser.emit("CEF:Login:showError", msg);
+        if (loginBrowser != null) {
+            loginBrowser.emit("CEF:Login:showError", msg);
         }
     }
     static showArea(area) {
-        if (this.loginBrowser != null) {
-            this.loginBrowser.emit("CEF:Login:showArea", area);
+        if (loginBrowser != null) {
+            loginBrowser.emit("CEF:Login:showArea", area);
             if (area == "charselect") {
-                if (this.loginCam != null) {
+                if (loginCam != null) {
                     native.renderScriptCams(false, false, 0, true, false, 0);
-                    native.setCamActive(this.loginCam, false);
-                    native.destroyCam(this.loginCam, true);
-                    this.loginCam = null;
+                    native.setCamActive(loginCam, false);
+                    native.destroyCam(loginCam, true);
+                    loginCam = null;
                 }
                 native.setEntityAlpha(alt.Player.local.scriptID, 0, false);
-                this.loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
-                native.setCamActive(this.loginCam, true);
+                loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+                native.setCamActive(loginCam, true);
                 native.renderScriptCams(true, false, 0, true, false, 0);
             }
         }
     }
     static sendCharactersToCEF(chars) {
-        if (this.loginBrowser != null) {
-            this.loginBrowser.emit("CEF:Charselector:sendCharactersToCEF", chars);
+        if (loginBrowser != null) {
+            loginBrowser.emit("CEF:Charselector:sendCharactersToCEF", chars);
         }
     }
     static SwitchIn() {
@@ -167,46 +171,46 @@ class LoginHandler {
         let facefeatures = JSON.parse(facefeaturearray);
         let headblends = JSON.parse(headblendsarray);
         let headoverlays = JSON.parse(headoverlayarray);
-        if (this.loginPedHandle != null) {
-            native.deletePed(this.loginPedHandle);
-            this.loginPedHandle = null;
+        if (loginPedHandle != null) {
+            native.deletePed(loginPedHandle);
+            loginPedHandle = null;
         }
         if (gender == 1) {
-            this.loginModelHash = alt.hash('mp_f_freemode_01');
-            await loadModelAsync(this.loginModelHash);
+            loginModelHash = alt.hash('mp_f_freemode_01');
+            await loadModelAsync(loginModelHash);
         } else if (gender == 0) {
-            this.loginModelHash = alt.hash('mp_m_freemode_01');
-            await loadModelAsync(this.loginModelHash);
+            loginModelHash = alt.hash('mp_m_freemode_01');
+            await loadModelAsync(loginModelHash);
         }
-        this.loginPedHandle = native.createPed(4, this.loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);
-        native.setEntityAlpha(this.loginPedHandle, 255, false);
-        native.setEntityHeading(this.loginPedHandle, 180);
-        native.setEntityInvincible(this.loginPedHandle, true);
-        native.disablePedPainAudio(this.loginPedHandle, true);
-        native.freezeEntityPosition(this.loginPedHandle, true);
-        native.taskSetBlockingOfNonTemporaryEvents(this.loginPedHandle, true);
-        native.setPedHeadBlendData(this.loginPedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, false);
-        native.setPedHeadOverlayColor(this.loginPedHandle, 1, 1, parseInt(headoverlays[2][1]), 1);
-        native.setPedHeadOverlayColor(this.loginPedHandle, 2, 1, parseInt(headoverlays[2][2]), 1);
-        native.setPedHeadOverlayColor(this.loginPedHandle, 5, 2, parseInt(headoverlays[2][5]), 1);
-        native.setPedHeadOverlayColor(this.loginPedHandle, 8, 2, parseInt(headoverlays[2][8]), 1);
-        native.setPedHeadOverlayColor(this.loginPedHandle, 10, 1, parseInt(headoverlays[2][10]), 1);
-        native.setPedEyeColor(this.loginPedHandle, parseInt(headoverlays[0][14]));
-        native.setPedHeadOverlay(this.loginPedHandle, 0, parseInt(headoverlays[0][0]), parseInt(headoverlays[1][0]));
-        native.setPedHeadOverlay(this.loginPedHandle, 1, parseInt(headoverlays[0][1]), parseFloat(headoverlays[1][1]));
-        native.setPedHeadOverlay(this.loginPedHandle, 2, parseInt(headoverlays[0][2]), parseFloat(headoverlays[1][2]));
-        native.setPedHeadOverlay(this.loginPedHandle, 3, parseInt(headoverlays[0][3]), parseInt(headoverlays[1][3]));
-        native.setPedHeadOverlay(this.loginPedHandle, 4, parseInt(headoverlays[0][4]), parseInt(headoverlays[1][4]));
-        native.setPedHeadOverlay(this.loginPedHandle, 5, parseInt(headoverlays[0][5]), parseInt(headoverlays[1][5]));
-        native.setPedHeadOverlay(this.loginPedHandle, 6, parseInt(headoverlays[0][6]), parseInt(headoverlays[1][6]));
-        native.setPedHeadOverlay(this.loginPedHandle, 7, parseInt(headoverlays[0][7]), parseInt(headoverlays[1][7]));
-        native.setPedHeadOverlay(this.loginPedHandle, 8, parseInt(headoverlays[0][8]), parseInt(headoverlays[1][8]));
-        native.setPedHeadOverlay(this.loginPedHandle, 9, parseInt(headoverlays[0][9]), parseInt(headoverlays[1][9]));
-        native.setPedHeadOverlay(this.loginPedHandle, 10, parseInt(headoverlays[0][10]), parseInt(headoverlays[1][10]));
-        native.setPedComponentVariation(this.loginPedHandle, 2, parseInt(headoverlays[0][13]), 0, 0);
-        native.setPedHairColor(this.loginPedHandle, parseInt(headoverlays[2][13]), parseInt(headoverlays[1][13]));
+        loginPedHandle = native.createPed(4, loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);
+        native.setEntityAlpha(loginPedHandle, 255, false);
+        native.setEntityHeading(loginPedHandle, 180);
+        native.setEntityInvincible(loginPedHandle, true);
+        native.disablePedPainAudio(loginPedHandle, true);
+        native.freezeEntityPosition(loginPedHandle, true);
+        native.taskSetBlockingOfNonTemporaryEvents(loginPedHandle, true);
+        native.setPedHeadBlendData(loginPedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, false);
+        native.setPedHeadOverlayColor(loginPedHandle, 1, 1, parseInt(headoverlays[2][1]), 1);
+        native.setPedHeadOverlayColor(loginPedHandle, 2, 1, parseInt(headoverlays[2][2]), 1);
+        native.setPedHeadOverlayColor(loginPedHandle, 5, 2, parseInt(headoverlays[2][5]), 1);
+        native.setPedHeadOverlayColor(loginPedHandle, 8, 2, parseInt(headoverlays[2][8]), 1);
+        native.setPedHeadOverlayColor(loginPedHandle, 10, 1, parseInt(headoverlays[2][10]), 1);
+        native.setPedEyeColor(loginPedHandle, parseInt(headoverlays[0][14]));
+        native.setPedHeadOverlay(loginPedHandle, 0, parseInt(headoverlays[0][0]), parseInt(headoverlays[1][0]));
+        native.setPedHeadOverlay(loginPedHandle, 1, parseInt(headoverlays[0][1]), parseFloat(headoverlays[1][1]));
+        native.setPedHeadOverlay(loginPedHandle, 2, parseInt(headoverlays[0][2]), parseFloat(headoverlays[1][2]));
+        native.setPedHeadOverlay(loginPedHandle, 3, parseInt(headoverlays[0][3]), parseInt(headoverlays[1][3]));
+        native.setPedHeadOverlay(loginPedHandle, 4, parseInt(headoverlays[0][4]), parseInt(headoverlays[1][4]));
+        native.setPedHeadOverlay(loginPedHandle, 5, parseInt(headoverlays[0][5]), parseInt(headoverlays[1][5]));
+        native.setPedHeadOverlay(loginPedHandle, 6, parseInt(headoverlays[0][6]), parseInt(headoverlays[1][6]));
+        native.setPedHeadOverlay(loginPedHandle, 7, parseInt(headoverlays[0][7]), parseInt(headoverlays[1][7]));
+        native.setPedHeadOverlay(loginPedHandle, 8, parseInt(headoverlays[0][8]), parseInt(headoverlays[1][8]));
+        native.setPedHeadOverlay(loginPedHandle, 9, parseInt(headoverlays[0][9]), parseInt(headoverlays[1][9]));
+        native.setPedHeadOverlay(loginPedHandle, 10, parseInt(headoverlays[0][10]), parseInt(headoverlays[1][10]));
+        native.setPedComponentVariation(loginPedHandle, 2, parseInt(headoverlays[0][13]), 0, 0);
+        native.setPedHairColor(loginPedHandle, parseInt(headoverlays[2][13]), parseInt(headoverlays[1][13]));
         for(let i = 0; i < 20; i++){
-            native.setPedFaceFeature(this.loginPedHandle, i, parseFloat(facefeatures[i]));
+            native.setPedFaceFeature(loginPedHandle, i, parseFloat(facefeatures[i]));
         }
     }
     static connectionComplete() {

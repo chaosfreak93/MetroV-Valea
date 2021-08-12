@@ -1,6 +1,7 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 import { setIntoVehicle } from './utilities';
+let dict = [];
 class VehicleHandler {
     static returnVehicleMods(curVeh, modId) {
         if (curVeh == null || curVeh == undefined) return;
@@ -33,7 +34,7 @@ class VehicleHandler {
     }
     static gameEntityCreate(entity) {
         if (entity instanceof alt.Vehicle) {
-            if (this.dict[entity.id] != undefined) native.setVehicleHasMutedSirens(alt.Vehicle.getByID(entity.id).scriptID, this.dict[entity.id]);
+            if (dict[entity.id] != undefined) native.setVehicleHasMutedSirens(alt.Vehicle.getByID(entity.id).scriptID, dict[entity.id]);
             if (!entity.hasStreamSyncedMeta("IsVehicleCardealer")) return;
             if (entity.getStreamSyncedMeta("IsVehicleCardealer") == true) {
                 native.freezeEntityPosition(entity.scriptID, true);
@@ -45,12 +46,10 @@ class VehicleHandler {
         if (native.getVehicleClass(vehicle.scriptID) == 18) native.setVehicleRadioEnabled(vehicle.scriptID, false);
     }
     static setVehicleHasMutedSirensForAll(vehId, state) {
-        this.dict[vehId] = state;
+        dict[vehId] = state;
         native.setVehicleHasMutedSirens(alt.Vehicle.getByID(vehId).scriptID, state);
     }
 }
-VehicleHandler.dict = {
-};
 export { VehicleHandler as default };
 alt.onServer("returnVehicleMods", VehicleHandler.returnVehicleMods);
 alt.onServer("Client:Utilities:repairVehicle", VehicleHandler.repairVehicle);

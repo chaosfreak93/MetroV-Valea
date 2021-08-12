@@ -1,10 +1,11 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+let markers = null;
 class MarkerManager {
     static LoadAllMarkers(markerArray) {
         markerArray = JSON.parse(markerArray);
         for(var i in markerArray){
-            this.markers.push({
+            markers.push({
                 type: markerArray[i].type,
                 x: markerArray[i].posX,
                 y: markerArray[i].posY,
@@ -21,7 +22,7 @@ class MarkerManager {
         }
     }
     static addMarker(type, x, y, z, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown) {
-        this.markers.push({
+        markers.push({
             type: type,
             x: x,
             y: y,
@@ -37,13 +38,13 @@ class MarkerManager {
         });
     }
     static removeMarkerByData(marker) {
-        let index = this.markers.indexOf(marker, 1);
-        this.markers.splice(index, 1);
+        let index = markers.indexOf(marker, 1);
+        markers.splice(index, 1);
     }
     static drawMarker() {
-        if (this.markers.length >= 1) {
-            for(var i = 0; i < this.markers.length; i++){
-                native.drawMarker(this.markers[i].type, this.markers[i].x, this.markers[i].y, this.markers[i].z, 0, 0, 0, 0, 0, 0, this.markers[i].scaleX, this.markers[i].scaleY, this.markers[i].scaleZ, this.markers[i].red, this.markers[i].green, this.markers[i].blue, this.markers[i].alpha, this.markers[i].bobUpAndDown, false, 2, false, undefined, undefined, false);
+        if (markers.length >= 1) {
+            for(var i = 0; i < markers.length; i++){
+                native.drawMarker(markers[i].type, markers[i].x, markers[i].y, markers[i].z, 0, 0, 0, 0, 0, 0, markers[i].scaleX, markers[i].scaleY, markers[i].scaleZ, markers[i].red, markers[i].green, markers[i].blue, markers[i].alpha, markers[i].bobUpAndDown, false, 2, false, undefined, undefined, false);
             }
         }
     }
