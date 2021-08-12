@@ -42,6 +42,7 @@ class MarkerManager {
         markers.splice(index, 1);
     }
     static drawMarker() {
+        if (markers == null || markers == undefined) return;
         if (markers.length >= 1) {
             for(var i = 0; i < markers.length; i++){
                 native.drawMarker(markers[i].type, markers[i].x, markers[i].y, markers[i].z, 0, 0, 0, 0, 0, 0, markers[i].scaleX, markers[i].scaleY, markers[i].scaleZ, markers[i].red, markers[i].green, markers[i].blue, markers[i].alpha, markers[i].bobUpAndDown, false, 2, false, undefined, undefined, false);
