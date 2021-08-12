@@ -82,7 +82,7 @@
   ],
   "RequestTalkStates": true,
   "RequestRadioTrafficStates": false,
-  "MinimumPluginVersion": "2.3.5",
+  "MinimumPluginVersion": "2.3.6",
   "MegaphoneRange": 125.0,
   "NamePattern": "{guid}",
   "RadioRangeUltraShort": 2800.0,
