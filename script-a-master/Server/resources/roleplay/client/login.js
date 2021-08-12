@@ -45,10 +45,10 @@ class LoginHandler {
             });
             loginBrowser.on("Client:Charcreator:OpenCreator", ()=>{
                 alt.emitServer("Server:Charcreator:CreateCEF");
-                this.DestroyCEF();
+                LoginHandler.DestroyCEF();
             });
             loginBrowser.on("Client:Login:DestroyCEF", ()=>{
-                this.DestroyCEF();
+                LoginHandler.DestroyCEF();
             });
             loginBrowser.on("Client:Charselector:KillCharacter", (charid)=>{
                 alt.emitServer("Server:Charselector:KillCharacter", charid);
@@ -121,7 +121,7 @@ class LoginHandler {
         }
     }
     static ViewCharacter(gender, facefeaturearray, headblendsarray, headoverlayarray) {
-        this.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
+        LoginHandler.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
     }
     static SaveLoginCredentialsToStorage(name, password, discordId) {
         alt.LocalStorage.set('username', name);
@@ -219,14 +219,13 @@ class LoginHandler {
         IPLManager.initializeDoorControl();
         setMinimapData();
         setAudioData();
-        alt.setStat(alt.StatName.Stamina, 75);
+        /**alt.setStat(alt.StatName.Stamina, 75);
         alt.setStat(alt.StatName.Strength, 60);
         alt.setStat(alt.StatName.LungCapacity, 50);
         alt.setStat(alt.StatName.Wheelie, 50);
         alt.setStat(alt.StatName.Flying, 75);
         alt.setStat(alt.StatName.Shooting, 50);
-        alt.setStat(alt.StatName.Stealth, 0);
-        alt.setMsPerGameMinute(60000);
+        alt.setStat(alt.StatName.Stealth, 0);**/ alt.setMsPerGameMinute(60000);
         let date = new Date();
         native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
     }

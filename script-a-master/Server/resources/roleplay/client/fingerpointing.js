@@ -46,7 +46,7 @@ class Fingerpointing {
     static process() {
         if (active) {
             native.isTaskMoveNetworkActive(player.scriptID);
-            let camPitch = this.getRelativePitch();
+            let camPitch = Fingerpointing.getRelativePitch();
             if (camPitch < -70) {
                 camPitch = -70;
             } else if (camPitch > 42) {

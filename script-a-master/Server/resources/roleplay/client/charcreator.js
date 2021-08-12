@@ -21,11 +21,11 @@ class CharCreator {
             charcreatorBrowser.on("Client:Charcreator:ChangeGender", (gender)=>{
                 native.triggerScreenblurFadeOut(0);
                 charcreatorBrowser.emit("CEF:Charcreator:showArea", "creatorarea");
-                this.spawnCreatorPed(gender);
+                CharCreator.spawnCreatorPed(gender);
             });
             charcreatorBrowser.on("Client:Charcreator:cefIsReady", ()=>{
                 alt.setTimeout(function() {
-                    this.charcreatorBrowser.emit("CEF:Charcreator:showArea", "sexarea");
+                    charcreatorBrowser.emit("CEF:Charcreator:showArea", "sexarea");
                 }, 1000);
             });
             charcreatorBrowser.on("Client:Charcreator:SetRotation", (rot)=>{
@@ -109,9 +109,9 @@ class CharCreator {
             native.requestModel(modelHash);
         }
         let interval = alt.setInterval(function() {
-            if (native.hasModelLoaded(this.modelHash)) {
+            if (native.hasModelLoaded(modelHash)) {
                 alt.clearInterval(interval);
-                pedHandle = native.createPed(4, this.modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
+                pedHandle = native.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
                 native.setEntityHeading(pedHandle, 180);
                 native.setEntityInvincible(pedHandle, true);
                 native.disablePedPainAudio(pedHandle, true);

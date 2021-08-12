@@ -3,10 +3,10 @@ import * as native from 'natives';
 class Raycast {
     static line(radius, distance) {
         let position = native.getPedBoneCoords(alt.Player.local.scriptID, 31086, 0.5, 0, 0);
-        let direction = this.GetDirectionFromRotation(native.getGameplayCamRot(2));
+        let direction = Raycast.GetDirectionFromRotation(native.getGameplayCamRot(2));
         let farAway = new alt.Vector3(direction.x * distance + position.x, direction.y * distance + position.y, direction.z * distance + position.z);
         let ray = native.startShapeTestCapsule(position.x, position.y, position.z, farAway.x, farAway.y, farAway.z, radius, -1, alt.Player.local.scriptID, 7);
-        return this.result(ray);
+        return Raycast.result(ray);
     }
     static result(ray) {
         let result = native.getShapeTestResult(ray, undefined, undefined, undefined, undefined);

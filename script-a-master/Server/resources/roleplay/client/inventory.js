@@ -13,18 +13,18 @@ export class Inventory {
                 if (!requestItems) return;
                 alt.emitServer("Server:Inventory:RequestInventoryItems");
             });
-            inventoryBrowser.on("Client:Inventory:UseInvItem", this.UseItem);
-            inventoryBrowser.on("Client:Inventory:DropInvItem", this.DropItem);
-            inventoryBrowser.on("Client:Inventory:switchItemToDifferentInv", this.switchItemToDifferentInv);
-            inventoryBrowser.on("Client:Inventory:giveItem", this.GiveItem);
+            inventoryBrowser.on("Client:Inventory:UseInvItem", Inventory.UseItem);
+            inventoryBrowser.on("Client:Inventory:DropInvItem", Inventory.DropItem);
+            inventoryBrowser.on("Client:Inventory:switchItemToDifferentInv", Inventory.switchItemToDifferentInv);
+            inventoryBrowser.on("Client:Inventory:giveItem", Inventory.GiveItem);
         }
     }
     static closeInventoryCEF() {
         if (inventoryBrowser != null) {
-            inventoryBrowser.off("Client:Inventory:UseInvItem", this.UseItem);
-            inventoryBrowser.off("Client:Inventory:DropInvItem", this.DropItem);
-            inventoryBrowser.off("Client:Inventory:switchItemToDifferentInv", this.switchItemToDifferentInv);
-            inventoryBrowser.off("Client:Inventory:giveItem", this.GiveItem);
+            inventoryBrowser.off("Client:Inventory:UseInvItem", Inventory.UseItem);
+            inventoryBrowser.off("Client:Inventory:DropInvItem", Inventory.DropItem);
+            inventoryBrowser.off("Client:Inventory:switchItemToDifferentInv", Inventory.switchItemToDifferentInv);
+            inventoryBrowser.off("Client:Inventory:giveItem", Inventory.GiveItem);
             inventoryBrowser.unfocus();
             inventoryBrowser.destroy();
             inventoryBrowser = null;
@@ -37,27 +37,27 @@ export class Inventory {
         return lastInteract + 1000 < Date.now();
     }
     static UseItem(itemname, itemAmount, fromContainer) {
-        if (!this.canInteract) return;
+        if (!Inventory.canInteract) return;
         lastInteract = Date.now();
         alt.emitServer("Server:Inventory:UseItem", itemname, parseInt(itemAmount), fromContainer);
     }
     static DropItem(itemname, itemAmount, fromContainer) {
-        if (!this.canInteract) return;
+        if (!Inventory.canInteract) return;
         lastInteract = Date.now();
         alt.emitServer("Server:Inventory:DropItem", itemname, parseInt(itemAmount), fromContainer);
     }
     static switchItemToDifferentInv(itemname, itemAmount, fromContainer, toContainer) {
-        if (!this.canInteract) return;
+        if (!Inventory.canInteract) return;
         lastInteract = Date.now();
         alt.emitServer("Server:Inventory:switchItemToDifferentInv", itemname, parseInt(itemAmount), fromContainer, toContainer);
     }
     static GiveItem(itemname, itemAmount, fromContainer, targetPlayerID) {
-        if (!this.canInteract) return;
+        if (!Inventory.canInteract) return;
         lastInteract = Date.now();
         alt.emitServer("Server:Inventory:GiveItem", itemname, parseInt(itemAmount), fromContainer, parseInt(targetPlayerID));
     }
     static CreateInventory(invArray, backpackSize, targetPlayerID) {
-        this.openInventoryCEF(false);
+        Inventory.openInventoryCEF(false);
         alt.setTimeout(()=>{
             if (inventoryBrowser != null) {
                 inventoryBrowser.emit('CEF:Inventory:AddInventoryItems', invArray, backpackSize, parseInt(targetPlayerID));

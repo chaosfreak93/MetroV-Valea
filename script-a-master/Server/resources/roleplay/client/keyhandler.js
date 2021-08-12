@@ -11,7 +11,7 @@ class KeyHandler {
         return lastInteract + 1000 < Date.now();
     }
     static keyup(key) {
-        if (!this.canInteract) return;
+        if (!KeyHandler.canInteract) return;
         lastInteract = Date.now();
         if (key == 'E'.charCodeAt(0)) {
             alt.emitServer("Server:KeyHandler:PressE");
@@ -57,7 +57,7 @@ class KeyHandler {
         }
     }
     static keydown(key) {
-        if (!this.canInteract) return;
+        if (!KeyHandler.canInteract) return;
         lastInteract = Date.now();
         if (key == 17) {
             if (!toggleCrouch) {

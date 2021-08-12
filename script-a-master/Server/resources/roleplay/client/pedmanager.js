@@ -5,7 +5,7 @@ class PedManager {
     static getPedsToSpawn(pedArray) {
         pedArray = JSON.parse(pedArray);
         for(var i in pedArray){
-            this.spawnPed(pedArray[i].model, pedArray[i].posX, pedArray[i].posY, pedArray[i].posZ, pedArray[i].rotation);
+            PedManager.spawnPed(pedArray[i].model, pedArray[i].posX, pedArray[i].posY, pedArray[i].posZ, pedArray[i].rotation);
         }
     }
     static async spawnPed(model, x, y, z, rotation) {
