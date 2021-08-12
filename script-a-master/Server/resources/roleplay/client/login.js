@@ -8,9 +8,13 @@ let loginCam = null;
 let loginPedHandle = null;
 let loginModelHash = null;
 class LoginHandler {
-    static CreateCEF() {
+    static async CreateCEF() {
         if (loginBrowser == null) {
-            loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
+            loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 320.5892, 264.1335, 85.25568, 0, 0, 180, 50, true, 2);
+            //loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280.0, 5220.0, 26.0, 0, 0, 240, 50, true, 2);
+            const webview = new alt.WebView('https://www.youtube.com/embed/6eXcAHZils4?mute=1&autoplay=1', alt.hash('v_ilev_cin_screen'), 'script_rt_cinscreen');
+            webview.isVisible = true;
+            webview.focus();
             native.setCamActive(loginCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
