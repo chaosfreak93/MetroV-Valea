@@ -411,7 +411,6 @@ namespace Altv_Roleplay.Handler
                             }
                             catch (Exception e) {
                                 Alt.Log(e.ToString());
-                                throw;
                             }
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
