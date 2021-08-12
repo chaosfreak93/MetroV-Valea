@@ -1,5 +1,5 @@
 export class MuffleEffect {
-    constructor(intensity) {
+    constructor(intensity){
         this.intensity = intensity;
     }
 }

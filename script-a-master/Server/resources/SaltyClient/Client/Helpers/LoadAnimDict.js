@@ -1,7 +1,7 @@
 import { doesAnimDictExist, hasAnimDictLoaded, requestAnimDict } from "natives";
 import { setInterval, clearInterval } from "alt-client";
 export function loadAnimDict(animDict) {
-    return new Promise((res, rej) => {
+    return new Promise((res, rej)=>{
         if (!doesAnimDictExist(animDict)) {
             rej("Invalid animation dictionary");
             return;
@@ -11,17 +11,15 @@ export function loadAnimDict(animDict) {
             return;
         }
         let tries = 0;
-        let interval = setInterval(() => {
+        let interval = setInterval(()=>{
             if (tries >= 100) {
                 clearInterval(interval);
                 rej(`Timeout reached loading dictionary ${animDict}`);
-            }
-            else {
+            } else {
                 if (!hasAnimDictLoaded(animDict)) {
                     requestAnimDict(animDict);
                     tries++;
-                }
-                else {
+                } else {
                     clearInterval(interval);
                     res(true);
                 }

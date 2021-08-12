@@ -1,10 +1,11 @@
 export var FromClient;
-(function (FromClient) {
-    FromClient["useRadio"] = "SaltyChat:UseRadio";
-    FromClient["useMegaphone"] = "SaltyChat:UseMegaphone";
-    FromClient["toggleRange"] = "SaltyChat:ToggleRange";
-    FromClient["setRadioVolume"] = "SaltyChat:SetRadioVolume";
-    FromClient["toggleRadioSpeaker"] = "SaltyChat:ToggleRadioSpeaker";
-    FromClient["playSound"] = "SaltyChat:PlaySound";
-    FromClient["stopSound"] = "SaltyChat:StopSound";
-})(FromClient || (FromClient = {}));
+(function(FromClient1) {
+    FromClient1["useRadio"] = "SaltyChat:UseRadio";
+    FromClient1["useMegaphone"] = "SaltyChat:UseMegaphone";
+    FromClient1["toggleRange"] = "SaltyChat:ToggleRange";
+    FromClient1["setRadioVolume"] = "SaltyChat:SetRadioVolume";
+    FromClient1["toggleRadioSpeaker"] = "SaltyChat:ToggleRadioSpeaker";
+    FromClient1["playSound"] = "SaltyChat:PlaySound";
+    FromClient1["stopSound"] = "SaltyChat:StopSound";
+})(FromClient || (FromClient = {
+}));

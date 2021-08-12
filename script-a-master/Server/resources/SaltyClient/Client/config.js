@@ -1,8 +1,6 @@
-import {RadioType} from "./Enum/SaltyChat/RadioType";
-
+import { RadioType } from "./Enum/SaltyChat/RadioType";
 export class Config {
 }
-
 Config.radioRange = RadioType.longRange;
 Config.enableRadioAnimation = true;
 Config.enableLipSync = true;
@@ -11,5 +9,5 @@ Config.enableSignalStrength = true;
 Config.enableRadioSound = true;
 Config.enableOverlay = true;
 Config.overlayLanguage = "de";
-Config.overlayAddress = "metrov.de";
+Config.overlayAddress = "ts.metrov.de";
 Config.automaticPlayerHealth = true;

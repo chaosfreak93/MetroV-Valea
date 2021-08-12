@@ -1,5 +1,5 @@
 export class BulkUpdate {
-    constructor(playerStates, selfState) {
+    constructor(playerStates, selfState){
         this.playerStates = playerStates;
         this.selfState = selfState;
     }
