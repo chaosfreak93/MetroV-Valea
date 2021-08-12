@@ -1,4 +1,4 @@
-//TODO: Rework HUD.ts
+//TODO: Rework HUD
 import * as alt from 'alt-client';
 import * as game from 'natives';
 import { closeTabletCEF } from './tablet';

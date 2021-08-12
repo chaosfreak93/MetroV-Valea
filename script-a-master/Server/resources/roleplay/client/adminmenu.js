@@ -6,14 +6,14 @@ export let adminMenuBrowser;
 export let browserReady = false;
 let adminmenu_isopened = false;
 let adminmenu_isfocused = false;
-let adminmenu_latestonlineactionarray;
-let spectate_lastpos;
-let spectate_camera;
-let spectate_tick;
-let nametags_tick;
-let playerblips_allblips;
-let playerblips_blip;
-let playerblips_interval;
+let adminmenu_latestonlineactionarray = [];
+let spectate_lastpos = null;
+let spectate_camera = null;
+let spectate_tick = null;
+let nametags_tick = null;
+let playerblips_allblips = [];
+let playerblips_blip = [];
+let playerblips_interval = null;
 alt.onServer("Client:WritePosAndRot", (pos, rot)=>{
     alt.log(`-----------------------------------------------`);
     alt.log(`Position - 1: ${pos.x} , ${pos.y} , ${pos.z - 1}`);
@@ -186,10 +186,9 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info)=>{
             for(let i = 0, n = alt.Player.all.length; i < n; i++){
                 let player = alt.Player.all[i];
                 if (!player.valid || player.scriptID == undefined) continue;
-                if (player.scriptID === alt.Player.local.scriptID) {
+                /**if (player.scriptID === alt.Player.local.scriptID) {
                     continue;
-                }
-                const name = player.getSyncedMeta('NAME');
+                }**/ const name = player.getSyncedMeta('NAME');
                 if (!name) continue;
                 if (!native.hasEntityClearLosToEntity(alt.Player.local.scriptID, player.scriptID, 17)) continue;
                 let dist = distance2d(player.pos, alt.Player.local.pos);
