@@ -11,10 +11,6 @@ class LoginHandler {
     static async CreateCEF() {
         if (loginBrowser == null) {
             loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
-            await loadModelAsync('v_ilev_cin_screen');
-            const webview = new alt.WebView('https://www.youtube.com/embed/6eXcAHZils4?mute=1&autoplay=1', alt.hash('v_ilev_cin_screen'), 'script_rt_cinscreen');
-            webview.isVisible = true;
-            webview.focus();
             native.setCamActive(loginCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
