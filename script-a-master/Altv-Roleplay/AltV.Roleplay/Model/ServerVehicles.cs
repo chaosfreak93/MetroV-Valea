@@ -545,6 +545,27 @@ namespace Altv_Roleplay.Model
                 Alt.Log($"{e}");
             }
         }
+        
+        public static void SetVehicleOwner(IVehicle veh, int newCharId) {
+            try {
+                var vehID = veh.GetVehicleId();
+                if (veh == null || !veh.Exists || vehID == 0) return;
+
+                var vehs = ServerVehicles_.FirstOrDefault(v => v.id == vehID);
+
+                if (vehs != null) {
+                    vehs.charid = newCharId;
+
+                    using (var db = new gtaContext()) {
+                        db.Server_Vehicles.Update(vehs);
+                        db.SaveChanges();
+                    }
+                }
+            } 
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
 
         public static bool IsVehicleInGarage(IVehicle veh) {
             var vehID = veh.GetVehicleId();
@@ -677,13 +698,13 @@ namespace Altv_Roleplay.Model
         public static string GetAllParkedOutFactionVehicles(string factionShort) {
             if (factionShort == "") return "";
 
-            var items = Alt.Server.GetVehicles().ToList().Where(x => x.NumberplateText.Contains(factionShort)).Select(x => new {
+            var items = Alt.GetAllVehicles().ToList().Where(x => x.NumberplateText.Contains(factionShort)).Select(x => new {
                 vehName = GetVehicleNameOnHash(x.Model),
                 vehHash = x.Model,
                 vehPlate = x.NumberplateText,
                 vehPosX = x.Position.X,
                 vehPosY = x.Position.Y
-            }).ToList();
+            });
 
             return JsonSerializer.Serialize(items);
         }

@@ -24,7 +24,7 @@ namespace Altv_Roleplay.Handler
                     User.SetPlayerBanned(player, true, $"Waffen Hack[2]: {weaponModel}");
                     player.Kick("");
 
-                    foreach (var p in Alt.Server.GetPlayers().ToList()
+                    foreach (var p in Alt.GetAllPlayers().ToList()
                         .Where(x => x != null && x.Exists && ((ClassicPlayer) x).CharacterId > 0 && x.AdminLevel() > 0))
                         p.SendChatMessage($"{Characters.GetCharacterName(player.CharacterId)} wurde gebannt: Waffenhack[2] - {weaponModel}");
 

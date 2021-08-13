@@ -51,6 +51,7 @@ namespace Altv_Roleplay.models
         public int wallpaper { get; set; }
         public string pedName { get; set; }
         public int isAnimalPed { get; set; }
+        public bool ICWhitelist { get; set; }
 
         [NotMapped] public bool isPhoneFlyModeActivated { get; set; } = false; //Flugmodus
 

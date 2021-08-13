@@ -72,7 +72,6 @@ namespace Altv_Roleplay.Handler
                     HUDHandler.SendNotification(player, 1, 5000, "Erfolg abgeschlossen: Tablet öffnen.");
                 }
 
-                var appArray = CharactersTablet.GetCharacterTabletApps(charId);
                 var vehicleStoreArray = ServerVehicleShops.GetTabletVehicleStoreItems();
                 player.EmitLocked("Client:Tablet:setTabletHomeAppData", CharactersTablet.GetCharacterTabletApps(charId));
                 player.EmitLocked("Client:Tablet:SetVehicleStoreAppContent", vehicleStoreArray);
@@ -267,7 +266,7 @@ namespace Altv_Roleplay.Handler
                     "Sie haben erfolgreich ein Event für eine Gebühr von 250$ eingetragen. Die Anzeigedauer beträgt 7 Tage.");
                 RefreshTabletData(player, false);
 
-                foreach (var client in Alt.Server.GetPlayers().ToList()) {
+                foreach (var client in Alt.GetAllPlayers().ToList()) {
                     if (client == null || !client.Exists) continue;
 
                     HUDHandler.SendNotification(client, 1, 5000, "Ein neues Event wurde eingetragen, checke die Events-App im Tablet!");
@@ -315,7 +314,7 @@ namespace Altv_Roleplay.Handler
                     "Sie haben erfolgreich ein Werberanzeige für eine Gebühr von 2000$ eingetragen. Die Anzeigedauer beträgt 7 Tage.");
                 RefreshTabletData(player, false);
 
-                foreach (var client in Alt.Server.GetPlayers().ToList()) {
+                foreach (var client in Alt.GetAllPlayers().ToList()) {
                     if (client == null || !client.Exists) continue;
 
                     HUDHandler.SendNotification(client, 1, 5000, "Ein neue Werberanzeige wurde eingetragen, checke die Lifeinvader-App im Tablet!");
@@ -484,7 +483,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
 
                 if (targetPlayer == null || !targetPlayer.Exists) {
                     HUDHandler.SendNotification(player, 4, 5000,
@@ -558,7 +557,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
 
                 if (targetPlayer == null || !targetPlayer.Exists) {
                     HUDHandler.SendNotification(player, 4, 5000,
@@ -680,7 +679,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
 
                 if (rankId == 1337) {
                     //Entlasse Spieler aus Unternehmen.
@@ -763,7 +762,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
                 var factionId = ServerFactions.GetCharacterFactionId(charId);
                 var currentTargetRank = ServerFactions.GetCharacterFactionRank(targetCharId);
                 var currentActorRank = ServerFactions.GetCharacterFactionRank(charId);
@@ -943,7 +942,7 @@ namespace Altv_Roleplay.Handler
                 ServerFactions.AddNewFactionDispatch(charId, factionId, msg, player.Position);
                 HUDHandler.SendNotification(player, 2, 2500, "Notruf erfolgreich gesendet.");
 
-                foreach (var p in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
+                foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                     if (p == null || !p.Exists) continue;
                     if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
                         !ServerFactions.IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||

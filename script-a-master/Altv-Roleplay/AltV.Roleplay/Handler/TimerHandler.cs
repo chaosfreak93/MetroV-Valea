@@ -19,11 +19,7 @@ namespace Altv_Roleplay.Handler
     {
         public static void OnCheckTimer(object sender, ElapsedEventArgs e) {
             try {
-                //Console.WriteLine($"Timer - Thread = {Thread.CurrentThread.ManagedThreadId}");
-                var stopwatch = new Stopwatch();
-                stopwatch.Start();
-
-                foreach (var player in Alt.Server.GetPlayers().ToList()) {
+                foreach (var player in Alt.GetAllPlayers().ToList()) {
                     if (player == null) continue;
 
                     using (var playerReference = new PlayerRef(player)) {
@@ -45,9 +41,6 @@ namespace Altv_Roleplay.Handler
                         }
                     }
                 }
-
-                stopwatch.Stop();
-                //Alt.Log($"OnCheckTimer: Player Foreach benötigte: {stopwatch.Elapsed}");
             }
             catch (Exception ex) {
                 Alt.Log($"{ex}");
@@ -56,12 +49,8 @@ namespace Altv_Roleplay.Handler
 
         public static void OnEntityTimer(object sender, ElapsedEventArgs e) {
             try {
-                WeatherHandler.GetRealWeatherType();
-                //Console.WriteLine($"Timer - Thread = {Thread.CurrentThread.ManagedThreadId}");
-                var stopwatch = new Stopwatch();
-                stopwatch.Start();
 
-                foreach (var Veh in Alt.Server.GetVehicles().ToList()) {
+                foreach (var Veh in Alt.GetAllVehicles().ToList()) {
                     if (Veh == null || !Veh.Exists)
                         continue;
 
@@ -84,13 +73,7 @@ namespace Altv_Roleplay.Handler
                     }
                 }
 
-                stopwatch.Stop();
-                //Alt.Log($"OnEntityTimer: Vehicle Foreach benötigte: {stopwatch.Elapsed}");
-
-                stopwatch.Reset();
-                stopwatch.Start();
-
-                foreach (var player in Alt.Server.GetPlayers().ToList()) {
+                foreach (var player in Alt.GetAllPlayers().ToList()) {
                     if (player == null) continue;
 
                     using (var playerReference = new PlayerRef(player)) {
@@ -111,7 +94,6 @@ namespace Altv_Roleplay.Handler
 
                                 Characters.SetCharacterHealth(charId, player.Health);
                                 Characters.SetCharacterArmor(charId, player.Armor);
-                                if (!WeatherHandler.isNotDifferentWeather) WeatherHandler.SetRealWeather(player);
 
                                 if (player.IsInVehicle) {
                                     player.EmitLocked("Client:HUD:GetDistanceForVehicleKM");
@@ -145,15 +127,13 @@ namespace Altv_Roleplay.Handler
 
                                     if (jailTime > 0) {
                                         if (player.Position.distance2d(jail) >= 225) {
-                                            ServerFactions.AddNewFactionDispatch(0, 2, "Gefängnisausbruch", jail);
-                                            ServerFactions.AddNewFactionDispatch(0, 12, "Gefängnisausbruch", jail);
+                                            ServerFactions.AddNewFactionDispatch(0, 1, "Gefängnisausbruch", jail);
 
-                                            foreach (var p in Alt.Server.GetPlayers()
+                                            foreach (var p in Alt.GetAllPlayers()
                                                 .Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                                                 if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
                                                     !ServerFactions.IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||
-                                                    ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 2 &&
-                                                    ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 12) continue;
+                                                    ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 1) continue;
 
                                                 HUDHandler.SendNotification(p, 1, 9500, "Jemand ist aus dem Gefängnis ausgebrochen!");
                                             }
@@ -296,9 +276,6 @@ namespace Altv_Roleplay.Handler
                         }
                     }
                 }
-
-                stopwatch.Stop();
-                //Alt.Log($"OnEntityTimer: Player Foreach benötigte: {stopwatch.Elapsed}");
             }
             catch (Exception ex) {
                 Alt.Log($"{ex}");
@@ -306,7 +283,7 @@ namespace Altv_Roleplay.Handler
         }
 
         // Automatice Vehicle Park Fetch
-        //foreach(IVehicle vehicle in Alt.Server.GetVehicles().ToList().Where(x => x.GetVehicleId() != 0))
+        //foreach(IVehicle vehicle in Alt.GetAllVehicles().ToList().Where(x => x.GetVehicleId() != 0))
         //{
         //    if (vehicle == null) return;
         //    using (var vehicleRef = new VehicleRef(vehicle))
@@ -336,7 +313,7 @@ namespace Altv_Roleplay.Handler
                     var oldOwnerId = hotelApartment.ownerId;
                     ServerHotels.SetApartmentOwner(hotelApartment.hotelId, hotelApartment.id, 0);
 
-                    foreach (var players in Alt.Server.GetPlayers().ToList()
+                    foreach (var players in Alt.GetAllPlayers().ToList()
                         .Where(x => x is {Exists: true} && User.GetPlayerOnline(x) == oldOwnerId))
                         HUDHandler.SendNotification(players, 1, 5000, "Deine Mietdauer im Hotel ist ausgelaufen, dein Zimmer wurde gekündigt");
                 }
@@ -347,9 +324,7 @@ namespace Altv_Roleplay.Handler
         }
 
         internal static void OnDesireTimer(object sender, ElapsedEventArgs e) {
-            //Alt.Log("OnDesireTimer Timer aufgerufen");
-
-            foreach (var player in Alt.Server.GetPlayers().ToList()) {
+            foreach (var player in Alt.GetAllPlayers().ToList()) {
                 if (player == null || Characters.IsCharacterAnimal(((ClassicPlayer) player).CharacterId)) continue;
 
                 using (var pRef = new PlayerRef(player)) {
@@ -382,7 +357,6 @@ namespace Altv_Roleplay.Handler
                                 HUDHandler.SendNotification(player, 1, 5000, "Du hast Durst.");
                             }
 
-                            //Alt.Log($"Essen/Durst Anzeige update: {Characters.GetCharacterHunger(charId)} | {Characters.GetCharacterThirst(charId)}");
                             player.EmitLocked("Client:HUD:UpdateDesire", Characters.GetCharacterHunger(charId),
                                 Characters.GetCharacterThirst(charId)); //Hunger & Durst Anzeige aktualisieren
                         }
@@ -393,8 +367,12 @@ namespace Altv_Roleplay.Handler
         
         public static void WeatherSyncTimer(object sender, ElapsedEventArgs e) {
             try {
-                foreach (var player in Alt.Server.GetPlayers().ToList().Where(player => player is {Exists: true})) {
-                    WeatherHandler.SetRealWeather(player);
+                WeatherHandler.GetRealWeatherType();
+
+                if (!WeatherHandler.isNotDifferentWeather) {
+                    foreach (var player in Alt.GetAllPlayers().ToList().Where(player => player is {Exists: true})) {
+                        WeatherHandler.SetRealWeather(player);
+                    }
                 }
             }
             catch (Exception ex) {

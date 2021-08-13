@@ -8,7 +8,6 @@ namespace Altv_Roleplay.models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
-
         public int shopId { get; set; }
         public string itemName { get; set; }
         public int itemAmount { get; set; }

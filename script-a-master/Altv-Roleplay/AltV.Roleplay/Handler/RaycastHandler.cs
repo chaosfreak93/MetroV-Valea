@@ -25,7 +25,6 @@ namespace Altv_Roleplay.Handler
 
                 var vehID = veh.GetVehicleId();
                 var charId = (int) player.GetCharacterMetaId();
-                Alt.Log($"GetVehicleItems: {vehID} - {charId}");
                 var vehTrunkIsOpen = veh.GetVehicleTrunkState(); //false = zu || true = offen
                 var vehEngineHoodIsOpen = veh.GetVehicleEngineHoodState(); //false = zu || true = offen
                 if (charId <= 0 || vehID <= 0) return;
@@ -72,6 +71,15 @@ namespace Altv_Roleplay.Handler
                         "<li class='interactitem' id='InteractionMenu-vehtoggleLock' data-action='vehtoggleLock' data-actionstring='Fahrzeug auf/abschließen'><img src='../utils/img/vehlock.png'></li>";
                     interactHTML +=
                         "<li class='interactitem' id='InteractionMenu-vehtoggleEngine' data-action='vehtoggleEngine' data-actionstring='Motor an/ausmachen'><img src='../utils/img/vehengine.png'></li>";
+
+                    if (player.IsInVehicle && (player.Seat == 1)) {
+                        veh.GetStreamSyncedMetaData("passengerCharId", out int passengerCharId);
+
+                        if (passengerCharId != null && passengerCharId != 0) {
+                            interactHTML +=
+                                "<li class='interactitem' id='InteractionMenu-giveCar' data-action='giveCar' data-actionstring='Fahrzeug an den Beifahrer übertragen'><img src='../utils/img/inventory/Fahrzeugschluessel.png'></li>";
+                        }
+                    }
 
                     if (player.IsInVehicle && (player.Seat == 1 || player.Seat == 2) && ServerVehicles.GetVehicleType(veh) != 2)
                         interactHTML +=
@@ -135,18 +143,18 @@ namespace Altv_Roleplay.Handler
                     interactHTML +=
                         "<li class='interactitem' id='InteractionMenu-playerGiveBill' data-action='playergiveFactionBill' data-actionstring='Rechnung ausstellen (Fraktion)'><img src='../utils/img/bill.png'></li>";
 
-                    if ((ServerFactions.GetCharacterFactionId(charId) == 2 || ServerFactions.GetCharacterFactionId(charId) == 12) &&
+                    if ((ServerFactions.GetCharacterFactionId(charId) == 1) &&
                         player.Position.IsInRange(Constants.Positions.Arrest_Position, 5f) &&
                         targetPlayer.Position.IsInRange(Constants.Positions.Arrest_Position, 5f))
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-playerJail' data-action='playerJail' data-actionstring='Spieler inhaftieren'><img src='../utils/img/jail.png'></li>";
 
-                    if (ServerFactions.GetCharacterFactionId(charId) == 3 &&
+                    if (ServerFactions.GetCharacterFactionId(charId) == 2 &&
                         Characters.IsCharacterUnconscious((int) targetPlayer.GetCharacterMetaId()))
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-playerRevive' data-action='playerRevive' data-actionstring='Spieler wiederbeleben'><img src='../utils/img/revive.png'></li>";
 
-                    if (ServerFactions.GetCharacterFactionId(charId) == 3 && targetPlayer.Health < 200)
+                    if (ServerFactions.GetCharacterFactionId(charId) == 2 && targetPlayer.Health < 200)
                         interactHTML +=
                             "<li class='interactitem' id='InteractionMenu-HealPlayer' data-action='healPlayer' data-actionstring='Spieler heilen'><img src='../utils/img/inventory/Verbandskasten.png'></li>";
                 }
@@ -171,8 +179,7 @@ namespace Altv_Roleplay.Handler
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPlayer == null || !targetPlayer.Exists ||
                     targetPlayer.CharacterId <= 0 || !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
                     !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 2 &&
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 12 ||
+                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1 ||
                     Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
 
                 var jailTime = CharactersWanteds.GetCharacterWantedFinalJailTime(targetPlayer.CharacterId);
@@ -548,8 +555,6 @@ namespace Altv_Roleplay.Handler
                 var vehicleGloveboxArray = ServerVehicles.GetVehicleTrunkItems(veh.VehicleId, true); //Handschuhfach Items
                 var curVehWeight = ServerVehicles.GetVehicleVehicleTrunkWeight(veh.VehicleId, true);
                 var maxVehWeight = 5f;
-                Alt.Log(
-                    $"{player.Name} ({player.CharacterId}) öffnet Handschuhfach von {veh.VehicleId}: {characterInvArray} ||| {vehicleGloveboxArray}");
                 player.EmitLocked("Client:VehicleTrunk:openCEF", player.CharacterId, veh.VehicleId, "glovebox", characterInvArray,
                     vehicleGloveboxArray, curVehWeight, maxVehWeight); //trunk oder glovebox
             }
@@ -557,6 +562,46 @@ namespace Altv_Roleplay.Handler
                 Alt.Log($"{e}");
             }
         }
+        
+        [AsyncClientEvent("Server:Raycast:GiveCar")]
+        public void GiveCar(IPlayer player, IVehicle veh) {
+            if (player == null || !player.Exists || veh == null || !veh.Exists) return;
+
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+            var charId = User.GetPlayerOnline(player);
+            var vehID = veh.GetVehicleId();
+            var vehPlate = veh.NumberplateText;
+            if (charId <= 0 || vehID <= 0 || player.Seat != 1) return;
+
+            if (player.HasPlayerHandcuffs() || player.HasPlayerRopeCuffs() || player.HasPlayerFootcuffs()) {
+                HUDHandler.SendNotification(player, 3, 5000, "Wie willst du das mit Handschellen/Fesseln machen?");
+                return;
+            }
+
+            if (!player.Position.IsInRange(veh.Position, 2f)) {
+                HUDHandler.SendNotification(player, 4, 5000, "Du hast dich zu weit vom Fahrzeug entfernt.");
+                return;
+            }
+
+            if (ServerVehicles.GetVehicleOwner(veh) != charId) {
+                HUDHandler.SendNotification(player, 4, 5000, "Das Fahrzeug gehört nicht dir.");
+                return;
+            }
+            
+            veh.GetStreamSyncedMetaData("passengerCharId", out int passengerCharId);
+
+            ServerVehicles.SetVehicleOwner(veh, passengerCharId);
+
+            IPlayer test = Alt.GetAllPlayers().FirstOrDefault(x => ((ClassicPlayer)x).CharacterId == passengerCharId);
+            
+            HUDHandler.SendNotification(test, 2, 5000, $"Das Fahrzeug mit dem Kennzeichen {veh.NumberplateText} gehört jetzt dir!");
+            HUDHandler.SendNotification(player, 2, 5000, $"Das Fahrzeug gehört jetzt {Characters.GetCharacterName(passengerCharId)}");
+
+            stopwatch.Stop();
+            if (stopwatch.Elapsed.Milliseconds > 30) Alt.Log($"{charId} - GiveCar benötigte {stopwatch.Elapsed.Milliseconds}ms");
+        }
+        
 
         [AsyncClientEvent("Server:Raycast:showPlayerSupportId")]
         public void showPlayerSupportId(IPlayer player, IPlayer targetPlayer) {
@@ -691,7 +736,7 @@ namespace Altv_Roleplay.Handler
                 var charId = User.GetPlayerOnline(player);
                 if (charId == 0) return;
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetCharId);
                 if (targetPlayer == null || !targetPlayer.Exists) return;
 
                 var factionCompanyId = 0;
@@ -742,7 +787,7 @@ namespace Altv_Roleplay.Handler
                 var targetCharId = User.GetPlayerOnline(player);
                 if (targetCharId <= 0) return;
 
-                var givenBillPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenBillOwnerCharId);
+                var givenBillPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenBillOwnerCharId);
                 if (givenBillPlayer == null || !givenBillPlayer.Exists) return;
 
                 var factionCompanyName = "None";

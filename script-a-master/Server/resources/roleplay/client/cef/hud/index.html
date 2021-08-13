@@ -44,8 +44,6 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated" id="speechbox" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 50%; background-color: #34972b;"></div>
         </div>
     </div>
-    <p id="pos">Position</p>
-    <p id="rot">Rotation</p>
 </div>
 
 <div id="vehicleHUD">
@@ -834,7 +832,7 @@
     <span class="nameTitle">Vor- und Nachname</span>
     <span id="UserIdCard-name">Maximilian von Mustermann</span>
     <span class="addresstitle">Anschrift</span>
-    <span id="UserIdCard-address">Boulevard del Perro 211a</span>
+    <span id="UserIdCard-address">Obdachlos</span>
     <span class="birthdatetitle">Geburtsdatum</span>
     <span id="UserIdCard-birthdate">18.02.2019</span>
     <span class="birthplacetitle">Geburtsort</span>
@@ -1331,35 +1329,35 @@
                 </div>
                 <div id="phone-police-addwanteds-stgb">
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb1">
-                        §1 Geschwindigkeitsüberschreitungen
+                        §1 Strafgesetzbuch (StGB)
                     </button>
                     <div class="collapse" id="stgb1"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb2">
-                        §2 Verkehrsvergehen
+                        §2 Straßenverkehrsordnung (StVO)
                     </button>
                     <div class="collapse" id="stgb2"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb3">
-                        §3 Flugverkehr
+                        §3 Waffengesetz (WaffG)
                     </button>
                     <div class="collapse" id="stgb3"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb4">
-                        §4 Allgemeine Straftaten
+                        §4 Betäubungsmittelgesetz (BtMG) / Illegales
                     </button>
                     <div class="collapse" id="stgb4"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb5">
-                        §5 Körperliche Vergehen
+                        §5 Beamtenberechtigungsgesetz (BBG)
                     </button>
                     <div class="collapse" id="stgb5"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb6">
-                        §6 Drogendelikte
+                        §6 Handeslgestzbuch (HGB)
                     </button>
                     <div class="collapse" id="stgb6"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb7">
-                        §7 Sonstiges
+                        §7 Luft- und Wasserwegeverordnung (LWVO)
                     </button>
                     <div class="collapse" id="stgb7"></div>
                     <button class="btn btn-elegant" type="button" data-toggle="collapse" data-target="#stgb8">
-                        §8 Umgang mit Staatsbeamten
+                        §8 Medizinische Grundverordnung (MzGv)
                     </button>
                     <div class="collapse" id="stgb8"></div>
                 </div>
@@ -1546,7 +1544,7 @@
 
 <script src="../utils/jquery-3.6.0.min.js"></script>
 <script src="../utils/jquery-ui-1.12.1.min.js"></script>
-<script src="../utils/popper-1.14.7.min.js"></script>
+<script src="../utils/popper.min.js"></script>
 <script src="../utils/bootstrap.min.js"></script>
 <script src="../utils/mdb/js/mdb.min.js"></script>
 <script src="../utils/anime.min.js"></script>
@@ -3939,8 +3937,7 @@
                 licenseHTML += `<li class='list-group-item'><div class='container left'><p class='title'>FAHRZEUGNAME</p><p class='name'>${vehArray[i].vehName}</p></div>` +
                     `<div class='container mid'><p class='title'>KENNZEICHEN</p><p class='name'>${vehArray[i].vehPlate}</p></div>` +
                     `<div class='container right'><p class='title'>FAHRZEUG ANMELDEN?</p><input type='text' spellcheck='false' maxlength='8'>` +
-                    "<button type='button' onclick='VehicleLicensingCEFAction(`anmelden`, " + vehArray[i].vehId + ", `" + vehArray[i].vehPlate + "`, this);' class='btn btn-sm btn-anmelden'><i class='fas fa-check'></i></button>" +
-                    "<button type='button' onclick='VehicleLicensingCEFAction(`abmelden`, " + vehArray[i].vehId + ", `" + vehArray[i].vehPlate + "`, this);' class='btn btn-sm btn-abmelden'><i class='fas fa-times'></i></button></div></li>";
+                    "<button type='button' onclick='VehicleLicensingCEFAction(`anmelden`, " + vehArray[i].vehId + ", `" + vehArray[i].vehPlate + "`, this);' class='btn btn-sm btn-anmelden'><i class='fas fa-check'></i></button></div></li>";
             }
 
             $("#VehicleLicensingCEFBox-List").html(licenseHTML);
@@ -4435,7 +4432,7 @@
 
         function VehicleLicensingCEFAction(action, vehId, vehPlate, htmlElem) {
             if (vehId <= 0 || vehPlate == "" || htmlElem == undefined || vehPlate == undefined || vehId == undefined || action == undefined || action == "") return;
-            if (action != "anmelden" && action != "abmelden") return;
+            if (action != "anmelden") return;
             var inputElem = $(htmlElem).parent().find("input");
             var inputVal = $(inputElem).val().replace(/^\s+|\s+$/g, "");
             closeVehicleLicensingCEFBox();
@@ -4443,8 +4440,6 @@
                 if (inputVal == "" || inputVal.length <= 0) return;
                 var newPlate = inputVal.replace(" ", "-");
                 alt.emit("Client:VehicleLicensing:LicensingAction", action, vehId, vehPlate, newPlate.toUpperCase());
-            } else if (action == "abmelden") {
-                alt.emit("Client:VehicleLicensing:LicensingAction", action, vehId, vehPlate, "");
             }
         }
 
@@ -4708,8 +4703,9 @@
         function unixToTime(unix) {
             let date = new Date(unix * 1000);
             hour = checkTime(date.getHours()),
-                minute = checkTime(date.getMinutes());
-            let str = hour + ":" + minute;
+                minute = checkTime(date.getMinutes()),
+                    seconds = checkTime(date.getSeconds());
+            let str = hour + ":" + minute + "." + seconds;
             return (str);
         }
 
@@ -6059,9 +6055,9 @@
         showPhoneNotification(message, app, fn, sound)
     });
 
-    alt.on("CEF:Smartphone:ShowLSPDIntranetApp", (shouldBeVisible, serverWanteds) => {
+    /**alt.on("CEF:Smartphone:ShowLSPDIntranetApp", (shouldBeVisible, serverWanteds) => {
         ShowLSPDIntranetApp(shouldBeVisible, serverWanteds);
-    });
+    });**/
 
     alt.on("CEF:Smartphone:SetLSPDIntranetSearchedPeople", (searchedPersonJSON) => {
         SetLSPDIntranetSearchedPeople(searchedPersonJSON);

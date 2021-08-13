@@ -94,7 +94,7 @@ namespace Altv_Roleplay.Minijobs.Elektrolieferant
                 var charId = User.GetPlayerOnline(player);
                 if (charId <= 0) return;
 
-                foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"EL-{charId}").ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"EL-{charId}").ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     ServerVehicles.RemoveVehiclePermanently(veh);
@@ -215,7 +215,7 @@ namespace Altv_Roleplay.Minijobs.Elektrolieferant
                            vehicle.Position.IsInRange(Constants.Positions.Minijob_Elektrolieferant_VehOutPos, 8f)) {
                     player.EmitLocked("Client:Minijob:RemoveJobMarker");
 
-                    foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"EL-{charId}").ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"EL-{charId}").ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         ServerVehicles.RemoveVehiclePermanently(veh);
@@ -331,7 +331,7 @@ namespace Altv_Roleplay.Minijobs.Elektrolieferant
 
                 if (player.GetPlayerCurrentMinijob() == "Elektrolieferant") {
                     //Job abbrechen
-                    foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"EL-{charId}").ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"EL-{charId}").ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         ServerVehicles.RemoveVehiclePermanently(veh);
@@ -345,7 +345,7 @@ namespace Altv_Roleplay.Minijobs.Elektrolieferant
                     player.SetPlayerCurrentMinijobRouteId(0);
                 } else if (player.GetPlayerCurrentMinijob() == "None") {
                     //Job annehmen
-                    foreach (var veh in Alt.Server.GetVehicles().ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         if (veh.Position.IsInRange(Constants.Positions.Minijob_Elektrolieferant_VehOutPos, 5f)) {

@@ -53,7 +53,7 @@ namespace Altv_Roleplay.Model
 
         public static void sendMsg(int fId, string msg) {
             try {
-                foreach (var p in Alt.Server.GetPlayers().Where(x =>
+                foreach (var p in Alt.GetAllPlayers().Where(x =>
                         x != null && x.Exists && x.GetCharacterMetaId() > 0 && IsCharacterInAnyFaction((int) x.GetCharacterMetaId()) &&
                         IsCharacterInFactionDuty((int) x.GetCharacterMetaId()) && GetCharacterFactionId((int) x.GetCharacterMetaId()) == fId)
                     .ToList()) {
@@ -208,7 +208,7 @@ namespace Altv_Roleplay.Model
 
                 AddNewFactionDispatch(charId, factionId, msg, player.Position);
 
-                foreach (var p in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
+                foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                     if (p == null || !p.Exists) continue;
                     if (!IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) || !IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||
                         GetCharacterFactionId((int) p.GetCharacterMetaId()) != factionId) continue;
@@ -563,7 +563,7 @@ namespace Altv_Roleplay.Model
 
                 memberCount = ServerFactionMembers_.Where(x =>
                     x.factionId == factionId && x.isDuty &&
-                    Alt.Server.GetPlayers().ToList().FirstOrDefault(p => p.GetCharacterMetaId() == (ulong) x.charId) != null).Count();
+                    Alt.GetAllPlayers().ToList().FirstOrDefault(p => p.GetCharacterMetaId() == (ulong) x.charId) != null).Count();
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

@@ -7,8 +7,8 @@ namespace Altv_Roleplay.Utils
         public static class DatabaseConfig
         {
             public static string Host = "127.0.0.1";
-            public static string User = "yanlu";
-            public static string Password = "J)CWN5s8Mx2BCpho";
+            public static string User = "altv";
+            public static string Password = "qS*qD7tc@cv#aJtu";
             public static string Port = "3306";
             public static string Database = "gta";
         }
@@ -16,10 +16,6 @@ namespace Altv_Roleplay.Utils
         public static class Positions
         {
             public static readonly Position Empty = new(0, 0, 0);
-
-            public static readonly Position IdentityCardApply =
-                new((float) -545.1900024414062, (float) -203.81515502929688,
-                    (float) 38.21517562866211); //Einreiseformular (Personalausweis beantragen)
 
             public static readonly Position
                 TownhallHouseSelector = new((float) -555.468, (float) -228.237, (float) 38.15); //Einwohnermeldeamt
@@ -36,21 +32,15 @@ namespace Altv_Roleplay.Utils
             public static readonly Position AutoClubLosSantos_StoreVehPosition =
                 new((float) 400.4967, (float) -1632.4088, (float) 29.279907); //Verwahrstelle Einparkpunkt
 
-            public static readonly Position SpawnPos_Airport = new((float) -1045.6615, (float) -2751.1912, (float) 21.360474);
-            public static readonly Rotation SpawnRot_Airport = new(0, 0, (float) 0.44526514);
-
-            public static readonly Position SpawnPos_Beach = new((float) -1483.6483, (float) -1484.611, (float) 2.5897217);
-            public static readonly Rotation SpawnRot_Beach = new(0, 0, (float) 1.3852693);
-
-            public static readonly Position
-                SpawnPos_SandyShores = new((float) 1533.5868, (float) 3629.6177, (float) 34.57068); //ToDo: Bushaltestelle mappen
-
-            public static readonly Rotation SpawnRot_SandyShores = new(0, 0, (float) -0.54421294);
-
-            public static readonly Position
-                SpawnPos_PaletoBay = new((float) -158.67693, (float) 6390.8438, (float) 31.470337); //ToDo: Bushaltestelle mappen
-
-            public static readonly Rotation SpawnRot_PaletoBay = new(0, 0, (float) 2.572643);
+            public static readonly Position SpawnPos_Airport = new((float) -1140.8704, (float) -2806.1538, (float) 26.8);
+            public static readonly Rotation SpawnRot_Airport = new(0, 0, (float) -1.9789561);
+            
+            public static readonly Position ExitTPPos_Airport = new((float) -1065.68, (float) -2798.35, (float) 26.8659);
+            public static readonly Position ExitTargetPos_Airport = new((float) -1043.12, (float) -2746.98, (float) 20.5136);
+            public static readonly Rotation ExitTargetRot_Airport = new(0, 0, (float) -0.5);
+            
+            public static readonly Position AdminPos_Airport = new((float) -1114.4967041015625, (float) -2801.327392578125, (float) 27.6959228515625);
+            public static readonly Rotation AdminRot_Airport = new(0, 0, (float) 1.1378997564315796);
 
             public static readonly Position Minijob_Elektrolieferent_StartPos =
                 new((float) 727.170654296875, (float) 135.3732147216797, (float) 80.75458526611328);

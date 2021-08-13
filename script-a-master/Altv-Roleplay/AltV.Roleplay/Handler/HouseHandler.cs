@@ -367,11 +367,11 @@ namespace Altv_Roleplay.Handler
 
                     var curPos = player.Position;
                     var duration = 300000;
-                    var houseOwnerPlayer = Alt.Server.GetPlayers().ToList()
+                    var houseOwnerPlayer = Alt.GetAllPlayers().ToList()
                         .FirstOrDefault(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) houseOwner);
 
                     if (ServerHouses.HasHouseAlarmUpgrade(houseId)) {
-                        ServerFactions.createFactionDispatch(player, 2, $"Hauseinbruch: {ServerHouses.GetHouseStreet(houseId)}",
+                        ServerFactions.createFactionDispatch(player, 1, $"Hauseinbruch: {ServerHouses.GetHouseStreet(houseId)}",
                             "Ein Einbruch in ein Haus wurde gemeldet - ein Dispatch wurde dazu in der Notrufverwaltung angelegt.");
 
                         if (houseOwnerPlayer != null && (CharactersInventory.ExistCharacterItem(houseOwner, "Tablet", "inventory") ||
@@ -655,7 +655,7 @@ namespace Altv_Roleplay.Handler
                 ServerHouses.RemoveServerHouseRenter(houseId, renterId);
                 HUDHandler.SendNotification(player, 2, 2000, $"Du hast den Mieter {Characters.GetCharacterName(renterId)} erfolgreich gekündigt.");
 
-                foreach (var renterPlayer in Alt.Server.GetPlayers().ToList()
+                foreach (var renterPlayer in Alt.GetAllPlayers().ToList()
                     .Where(x => x != null && x.Exists && x.GetCharacterMetaId() == (ulong) renterId)) {
                     HUDHandler.SendNotification(renterPlayer, 3, 2000,
                         $"Dein Mietvertrag in dem Haus '{ServerHouses.GetHouseStreet(houseId)}' wurde gekündigt.");

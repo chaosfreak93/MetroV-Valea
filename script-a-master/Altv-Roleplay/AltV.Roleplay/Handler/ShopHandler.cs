@@ -221,14 +221,12 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                ServerFactions.AddNewFactionDispatch(0, 2, "Aktiver Shopraub", player.Position);
-                ServerFactions.AddNewFactionDispatch(0, 12, "Aktiver Shopraub", player.Position);
+                ServerFactions.AddNewFactionDispatch(0, 1, "Aktiver Shopraub", player.Position);
 
-                foreach (var p in Alt.Server.GetPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
+                foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                     if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
                         !ServerFactions.IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||
-                        ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 2 &&
-                        ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 12) continue;
+                        ServerFactions.GetCharacterFactionId((int) p.GetCharacterMetaId()) != 1) continue;
 
                     p.EmitLocked("Client:Tablet:sendDispatchSound", "../utils/sounds/dispatch.mp3");
                     p.Emit("Client:Tablet:sendDispatchSound", "../utils/sounds/dispatch.mp3");
@@ -349,7 +347,7 @@ namespace Altv_Roleplay.Handler
                 var ParkOut = ServerVehicleShops.GetVehicleShopOutPosition(shopid);
                 var RotOut = ServerVehicleShops.GetVehicleShopOutRotation(shopid);
 
-                foreach (var veh in Alt.Server.GetVehicles().ToList())
+                foreach (var veh in Alt.GetAllVehicles().ToList())
                     if (veh.Position.IsInRange(ParkOut, 2f)) {
                         PlaceFree = false;
                         break;

@@ -378,13 +378,13 @@ namespace Altv_Roleplay.Model
                     ServerFactions.GetFactionMaxRankCount(
                         ServerFactions.GetCharacterFactionId(charId)) - 2,
                 lspdapp = ServerFactions.IsCharacterInAnyFaction(charId) && ServerFactions.IsCharacterInFactionDuty(charId) &&
-                          ServerFactions.GetCharacterFactionId(charId) == 2,
+                          ServerFactions.GetCharacterFactionId(charId) == 1,
                 lsfdapp = ServerFactions.IsCharacterInAnyFaction(charId) && ServerFactions.IsCharacterInFactionDuty(charId) &&
-                          ServerFactions.GetCharacterFactionId(charId) == 3,
-                aclsapp = ServerFactions.IsCharacterInAnyFaction(charId) && ServerFactions.IsCharacterInFactionDuty(charId) &&
-                          ServerFactions.GetCharacterFactionId(charId) == 4,
+                          ServerFactions.GetCharacterFactionId(charId) == 2,
                 justiceapp = ServerFactions.IsCharacterInAnyFaction(charId) && ServerFactions.IsCharacterInFactionDuty(charId) &&
-                             ServerFactions.GetCharacterFactionId(charId) == 1
+                             ServerFactions.GetCharacterFactionId(charId) == 3,
+                aclsapp = ServerFactions.IsCharacterInAnyFaction(charId) && ServerFactions.IsCharacterInFactionDuty(charId) &&
+                          ServerFactions.GetCharacterFactionId(charId) == 4
             }).ToList();
 
             return JsonSerializer.Serialize(items);

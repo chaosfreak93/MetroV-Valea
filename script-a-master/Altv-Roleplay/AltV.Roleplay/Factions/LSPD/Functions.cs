@@ -29,7 +29,7 @@ namespace Altv_Roleplay.Factions.LSPD
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 2 && ServerFactions.GetCharacterFactionId(charId) != 1) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 1 && ServerFactions.GetCharacterFactionId(charId) != 3) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Du bist nicht im L.S.P.D. oder der Justiz angestellt.");
                     return;
                 }
@@ -95,7 +95,7 @@ namespace Altv_Roleplay.Factions.LSPD
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 2 && ServerFactions.GetCharacterFactionId(charId) != 1) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 3 && ServerFactions.GetCharacterFactionId(charId) != 1) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Du bist nicht im L.S.P.D. oder der Justiz angestellt.");
                     return;
                 }
@@ -107,6 +107,11 @@ namespace Altv_Roleplay.Factions.LSPD
 
                 if (!ServerVehicles.ExistServerVehiclePlate(targetPlate)) {
                     HUDHandler.SendNotification(player, 3, 5000, "Fehler: Das angegebene Kennzeichen wurde nicht gefunden.");
+                    return;
+                }
+
+                if (targetPlate.Contains("NL")) {
+                    HUDHandler.SendNotification(player, 3, 5000, "Fehler: Dieses Fahrzeug ist nicht angemeldet.");
                     return;
                 }
 
@@ -151,7 +156,7 @@ namespace Altv_Roleplay.Factions.LSPD
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 2 && ServerFactions.GetCharacterFactionId(charId) != 1) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 3 && ServerFactions.GetCharacterFactionId(charId) != 1) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Du bist nicht im L.S.P.D. oder der Justiz angestellt.");
                     return;
                 }
@@ -197,7 +202,7 @@ namespace Altv_Roleplay.Factions.LSPD
                     return;
                 }
 
-                if (ServerFactions.GetCharacterFactionId(charId) != 2) {
+                if (ServerFactions.GetCharacterFactionId(charId) != 1) {
                     HUDHandler.SendNotification(player, 4, 5000, "Fehler: Du bist nicht im L.S.P.D. angestellt.");
                     return;
                 }

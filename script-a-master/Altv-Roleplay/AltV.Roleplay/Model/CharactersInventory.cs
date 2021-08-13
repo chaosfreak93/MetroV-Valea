@@ -71,7 +71,7 @@ namespace Altv_Roleplay.Model
                 }
 
                 if (itemName == "Bargeld") {
-                    var tplayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => User.GetPlayerOnline(x) == charId);
+                    var tplayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => User.GetPlayerOnline(x) == charId);
                     tplayer.Emit("Client:HUD:updateMoney",
                         GetCharacterItemAmount(User.GetPlayerOnline(tplayer), "Bargeld", "inventory"));
                 }
@@ -101,7 +101,7 @@ namespace Altv_Roleplay.Model
                     }
 
                 if (itemName == "Bargeld") {
-                    var tplayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => User.GetPlayerOnline(x) == charId);
+                    var tplayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => User.GetPlayerOnline(x) == charId);
                     tplayer.Emit("Client:HUD:updateMoney",
                         GetCharacterItemAmount(User.GetPlayerOnline(tplayer), "Bargeld", "inventory"));
                 }

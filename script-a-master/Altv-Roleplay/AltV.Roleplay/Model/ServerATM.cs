@@ -33,7 +33,7 @@ namespace Altv_Roleplay.Model
 
                 HUDHandler.SendNotification(client, 2, 5000, $"ATM in der Zone ({ServerATMData.zoneName}) an deiner Position erstellt.");
 
-                foreach (var player in Alt.Server.GetPlayers()) {
+                foreach (var player in Alt.GetAllPlayers()) {
                     if (player == null || !player.Exists) return;
 
                     player.EmitLocked("Client:ServerBlips:AddNewBlip", "Bankautomat", 2, 0.8, true, 277, pos.X, pos.Y, pos.Z);

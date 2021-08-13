@@ -8,6 +8,11 @@ using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
 using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
 
 namespace Altv_Roleplay.Database
 {
@@ -367,17 +372,17 @@ namespace Altv_Roleplay.Database
 
                     if (door.type == "Door") {
                         var lockCol =
-                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 1.5f);
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 2f);
                         lockCol.SetColShapeName("DoorShape");
                         lockCol.SetColShapeId(door.id);
-                        lockCol.Radius = 1.5f;
+                        lockCol.Radius = 2f;
                         ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     } else if (door.type == "Gate") {
                         var lockCol =
-                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 2.5f);
+                            (ClassicColshape) Alt.CreateColShapeSphere(new Position(door.lockPosX, door.lockPosY, door.lockPosZ), 6.5f);
                         lockCol.SetColShapeName("DoorShape");
                         lockCol.SetColShapeId(door.id);
-                        lockCol.Radius = 2.5f;
+                        lockCol.Radius = 6.5f;
                         ServerDoors.ServerDoorsLockColshapes_.Add(lockCol);
                     }
                 }
@@ -423,7 +428,7 @@ namespace Altv_Roleplay.Database
                 foreach (var pos in ServerFactions.ServerFactionPositions_)
                     if (pos.posType == "duty") {
                         var model = "";
-                        if (pos.factionId == 2) model = "s_m_y_cop_01";
+                        if (pos.factionId == 1) model = "s_m_y_cop_01";
                         else if (pos.factionId == 4) model = "s_m_y_construct_01";
                         var data = new Server_Peds {
                             model = model,
@@ -1229,13 +1234,13 @@ namespace Altv_Roleplay.Database
                         int bColor = 2,
                             bSprite = 500;
 
-                        if (bank.zoneName == "Maze Bank") {
-                            bName = "Maze Bank";
+                        if (bank.zoneName == "Staatsbank") {
+                            bName = "Staatsbank";
                             bColor = 1;
                             bSprite = 605;
                         }
 
-                        if (bank.zoneName != "Maze Bank Fraktion" && bank.zoneName != "Maze Bank Company") {
+                        if (bank.zoneName != "Staatsbank Fraktion" && bank.zoneName != "Staatsbank Company") {
                             var ServerBankBlipData = new Server_Blips {
                                 name = bName,
                                 color = bColor,
@@ -1289,6 +1294,15 @@ namespace Altv_Roleplay.Database
                 using (var db = new gtaContext()) {
                     ServerItems.ServerItems_ = new List<Server_Items>(db.Server_Items);
                     Alt.Log($"{ServerItems.ServerItems_.Count} Server-Items wurden geladen.");
+
+                    ServerDroppedItems.ServerDroppedItems_ = new List<Server_Dropped_Items>(db.Server_Dropped_Items);
+                }
+
+                foreach (Server_Dropped_Items item in Model.ServerDroppedItems.ServerDroppedItems_)
+                {
+                    item.prop = EntityStreamer.PropStreamer.Create("prop_paper_bag_01", item.pos, new Vector3(0), dimension: item.dimension, frozen: true, streamRange: 100);
+                    item.textLabel = EntityStreamer.TextLabelStreamer.Create($"Drücke E um den Gegenstand '{item.itemName} ({item.itemAmount}x)' aufzuheben. ", item.pos, item.dimension, streamRange: 3);
+
                 }
             }
             catch (Exception e) {
@@ -1384,10 +1398,10 @@ namespace Altv_Roleplay.Database
                     db.SaveChanges();
 
                     foreach (var veh in db.Server_Vehicles) {
-                        if (!veh.isInGarage && DateTime.Now.Subtract(veh.lastUsage).TotalHours >= 720) {
+                        /**if (!veh.isInGarage && DateTime.Now.Subtract(veh.lastUsage).TotalHours >= 720) {
                             veh.isInGarage = true;
                             db.Server_Vehicles.Update(veh);
-                        }
+                        }**/
 
                         if (veh.vehType == 2 || veh.charid == 0) {
                             var mod = ServerVehicles.ServerVehiclesMod_.FirstOrDefault(x => x.vehId == veh.id);
