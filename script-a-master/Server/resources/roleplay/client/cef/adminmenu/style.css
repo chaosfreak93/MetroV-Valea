@@ -24,7 +24,7 @@
     border-left: none;
 }
 
-.adminmenu-main, .adminmenu-player-list, .adminmenu-online-list, .adminmenu-misc-list, .adminmenu-server-list, .adminmenu-peds-list, .adminmenu-fahrzeug-list, .adminmenu-online_action-list, ::-webkit-scrollbar {
+.adminmenu-main, .adminmenu-player-list, .adminmenu-online-list, .adminmenu-misc-list, .adminmenu-server-list, .adminmenu-peds-list, .adminmenu-fahrzeug-list, .adminmenu-online_action-list, .adminmenu-einreise-list, ::-webkit-scrollbar {
     display: none;
 }
 

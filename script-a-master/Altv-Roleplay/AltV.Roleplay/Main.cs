@@ -32,6 +32,33 @@ namespace Altv_Roleplay
         }
 
         public override void OnStart() {
+            AltV.Net.EntitySync.AltEntitySync.Init(7, (threadId) => 200, (threadId) => false,
+                (threadCount, repository) => new AltV.Net.EntitySync.ServerEvent.ServerEventNetworkLayer(threadCount, repository),
+                (entity, threadCount) => entity.Type,
+                (entityId, entityType, threadCount) => entityType,
+                (threadId) =>
+                {
+                    return threadId switch
+                    {
+                        // Marker
+                        0 => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 75, 10_000, 10_000, 64),
+                        // Text
+                        1 => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 75, 10_000, 10_000, 32),
+                        // Props
+                        2 => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 1500),
+                        // Help Text
+                        3 => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 1),
+                        // Blips
+                        4 => new EntityStreamer.GlobalEntity(),
+                        // Dynamic Blip
+                        5 => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 200),
+                        // Ped
+                        6 => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 64),
+                        _ => new AltV.Net.EntitySync.SpatialPartitions.LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 115),
+                    };
+                },
+                new AltV.Net.EntitySync.IdProvider());
+            
             Environment.SetEnvironmentVariable("COMPlus_legacyCorruptedState­­ExceptionsPolicy", "1");
 
             //Datenbank laden
@@ -106,14 +133,12 @@ namespace Altv_Roleplay
             Minijobs.Müllmann.Main.Initialize();
             Minijobs.Busfahrer.Main.Initialize();
             //TODO: Reaktivieren
-            //ACLSBot.Main();
+            ACLSBot.Main();
             //LSPDBot.Main();
-            //LSMDBot.Main();
+            LSMDBot.Main();
 
             //Events registrieren
             Alt.OnColShape += ColAction;
-            AppDomain.CurrentDomain.ProcessExit += OnProcessExit;
-            Console.CancelKeyPress += OnCancelKeyExit;
             //Alt.OnClient<IPlayer, string, string>("Server:Login:ValidateLoginCredentials", LoginHandler.ValidateLoginCredentials);
             //Alt.OnClient<IPlayer, int>("Server:Charselector:PreviewCharacter", LoginHandler.PreviewCharacter);
             //Alt.OnClient<IPlayer, string, string>("Server:Charselector:spawnChar", Handler.LoginHandler.CharacterSelectedSpawnPlace);
@@ -330,24 +355,12 @@ namespace Altv_Roleplay
             player.Position = new Position(x, y, z);
         }
 
-        private static void OnCancelKeyExit(object sender, ConsoleCancelEventArgs e) {
-            OnExit();
-        }
-
-        private static void OnProcessExit(object sender, EventArgs e) {
-            OnExit();
-        }
-
-        private static void OnExit() {
-            Alt.Resource.Stop();
-        }
-
         public override void OnStop() {
-            foreach (var player in Alt.Server.GetPlayers().Where(p => p is {Exists: true}))
+            foreach (var player in Alt.GetAllPlayers().Where(p => p is {Exists: true}))
                 player.kickWithMessage("Server wird heruntergefahren...");
 
             ACLSBot.Stop();
-            LSPDBot.Stop();
+            //LSPDBot.Stop();
             LSMDBot.Stop();
             AltAsync.Log("Server ist gestoppt.");
         }

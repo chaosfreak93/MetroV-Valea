@@ -102,11 +102,11 @@ namespace Altv_Roleplay.Handler
             var gData = ServerGarages.ServerGarageSlots_.FirstOrDefault(x => x.garageId == garageId);
 
             if (isFaction == false)
-                vehicles = Alt.Server.GetVehicles().Where(x =>
+                vehicles = Alt.GetAllVehicles().Where(x =>
                     x != null && x.Exists && x.HasVehicleId() && x.GetVehicleId() > 0 &&
                     x.Position.IsInRange(new Position(gData.posX, gData.posY, gData.posZ), 15f)).ToList();
             else if (isFaction)
-                vehicles = Alt.Server.GetVehicles().Where(x =>
+                vehicles = Alt.GetAllVehicles().Where(x =>
                     x != null && x.Exists && x.HasVehicleId() && x.GetVehicleId() > 0 &&
                     x.Position.IsInRange(new Position(gData.posX, gData.posY, gData.posZ), 15f) &&
                     ServerVehicles.GetVehicleFactionId(x) == factionId && x.NumberplateText.Contains(factionShort)).ToList();
@@ -214,7 +214,7 @@ namespace Altv_Roleplay.Handler
                 var charId = User.GetPlayerOnline(player);
                 if (charId <= 0) return;
 
-                var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehID);
+                var vehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehID);
 
                 if (action == "storage") {
                     //Fahrzeug einparken
@@ -235,7 +235,7 @@ namespace Altv_Roleplay.Handler
                     var slotAreFree = true;
 
                     foreach (var x in ServerGarages.ServerGarageSlots_.Where(x => x.garageId == garageid)) {
-                        foreach (var veh in Alt.Server.GetVehicles().ToList())
+                        foreach (var veh in Alt.GetAllVehicles().ToList())
                             if (veh.Position.IsInRange(ServerGarages.GetGarageSlotPosition(garageid, curPid), 2f)) {
                                 slotAreFree = false;
                                 curPid++;

@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
@@ -347,6 +348,7 @@ namespace Altv_Roleplay.Handler
         [AsyncClientEvent("Server:Inventory:DropItem")]
         public void DropItem(ClassicPlayer player, string itemname, int itemAmount, string fromContainer) {
             try {
+                Vector3 forwardVector = ((ClassicPlayer)player).getForwardVector();
                 if (player == null || !player.Exists || itemname == "" || itemAmount <= 0 || fromContainer == "" ||
                     User.GetPlayerOnline(player) == 0) return;
 
@@ -384,36 +386,36 @@ namespace Altv_Roleplay.Handler
                         }
 
                         CharactersInventory.RemoveCharacterItemAmount(charId, itemname, itemAmount, fromContainer);
+                        ServerDroppedItems.AddItem(itemname, itemAmount, new AltV.Net.Data.Position(player.Position.X + forwardVector.X, player.Position.Y + forwardVector.Y, player.Position.Z - 1 + forwardVector.Z), DateTime.Now, player.Dimension);
                         InventoryAnimation(player, "drop", 0);
-                        HUDHandler.SendNotification(player, 2, 5000,
-                            $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich weggeworfen ({fromContainer}).");
+                        HUDHandler.SendNotification(player, 2, 5000, $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich auf den Boden geworfen ({fromContainer}).");
                         return;
                     }
 
                     CharactersInventory.RemoveCharacterItemAmount(charId, itemname, itemAmount, fromContainer);
+                    ServerDroppedItems.AddItem(itemname, itemAmount, new AltV.Net.Data.Position(player.Position.X + forwardVector.X, player.Position.Y + forwardVector.Y, player.Position.Z - 1 + forwardVector.Z), DateTime.Now, player.Dimension);
                     InventoryAnimation(player, "drop", 0);
-                    HUDHandler.SendNotification(player, 2, 5000,
-                        $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich weggeworfen ({fromContainer}).");
+                    HUDHandler.SendNotification(player, 2, 5000, $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich auf den Boden geworfen ({fromContainer}).");
                     return;
                 } else if (itemname == "Tasche") {
                     if (Characters.GetCharacterBackpack(charId) == 45) {
                         if (CharactersInventory.GetCharacterItemAmount(charId, "Tasche", "inventory") == itemAmount) {
-                            HUDHandler.SendNotification(player, 3, 5000, "Du musst zuerst deine Tasche ablegen, bevor du diese wegwerfen kannst.");
+                            HUDHandler.SendNotification(player, 3, 5000, "Du musst zuerst deine Tasche ablegen, bevor du diese auf den Boden werfen kannst.");
                             return;
                         }
 
                         CharactersInventory.RemoveCharacterItemAmount(charId, itemname, itemAmount, fromContainer);
+                        ServerDroppedItems.AddItem(itemname, itemAmount, new AltV.Net.Data.Position(player.Position.X + forwardVector.X, player.Position.Y + forwardVector.Y, player.Position.Z - 1 + forwardVector.Z), DateTime.Now, player.Dimension);
                         InventoryAnimation(player, "drop", 0);
-                        HUDHandler.SendNotification(player, 2, 5000,
-                            $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich weggeworfen ({fromContainer}).");
+                        HUDHandler.SendNotification(player, 2, 5000, $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich auf den Boden geworfen ({fromContainer}).");
                         RequestInventoryItems(player);
                         return;
                     }
 
                     CharactersInventory.RemoveCharacterItemAmount(charId, itemname, itemAmount, fromContainer);
+                    ServerDroppedItems.AddItem(itemname, itemAmount, new AltV.Net.Data.Position(player.Position.X + forwardVector.X, player.Position.Y + forwardVector.Y, player.Position.Z - 1 + forwardVector.Z), DateTime.Now, player.Dimension);
                     InventoryAnimation(player, "drop", 0);
-                    HUDHandler.SendNotification(player, 2, 5000,
-                        $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich weggeworfen ({fromContainer}).");
+                    HUDHandler.SendNotification(player, 2, 5000, $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich auf den Boden geworfen ({fromContainer}).");
                     RequestInventoryItems(player);
                     return;
                 } else if (ServerItems.GetItemType(itemname) == "weapon") {
@@ -428,9 +430,9 @@ namespace Altv_Roleplay.Handler
                 }
 
                 CharactersInventory.RemoveCharacterItemAmount(charId, itemname, itemAmount, fromContainer);
+                ServerDroppedItems.AddItem(itemname, itemAmount, new AltV.Net.Data.Position(player.Position.X + forwardVector.X, player.Position.Y + forwardVector.Y, player.Position.Z - 1 + forwardVector.Z), DateTime.Now, player.Dimension);
                 InventoryAnimation(player, "drop", 0);
-                HUDHandler.SendNotification(player, 2, 5000,
-                    $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich weggeworfen ({fromContainer}).");
+                HUDHandler.SendNotification(player, 2, 5000, $"Der Gegenstand {itemname} ({itemAmount}) wurde erfolgreich auf den Boden geworfen ({fromContainer}).");
                 RequestInventoryItems(player);
             }
             catch (Exception e) {
@@ -471,7 +473,7 @@ namespace Altv_Roleplay.Handler
                 var itemWeight = ServerItems.GetItemWeight(itemname) * itemAmount;
                 var invWeight = CharactersInventory.GetCharacterItemWeight(targetPlayerId, "inventory");
                 var backpackWeight = CharactersInventory.GetCharacterItemWeight(targetPlayerId, "backpack");
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetPlayerId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) targetPlayerId);
                 if (targetPlayer == null) return;
 
                 if (!player.Position.IsInRange(targetPlayer.Position, 5f)) {
@@ -521,7 +523,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var targetPlayer = Alt.Server.GetPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenTargetCharId);
+                var targetPlayer = Alt.GetAllPlayers().ToList().FirstOrDefault(x => x.GetCharacterMetaId() == (ulong) givenTargetCharId);
                 var targetCharId = (int) targetPlayer.GetCharacterMetaId();
                 if (targetCharId != givenTargetCharId) return;
                 if (targetPlayer == null || !targetPlayer.Exists) return;

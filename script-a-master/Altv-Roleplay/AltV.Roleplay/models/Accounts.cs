@@ -15,7 +15,7 @@ namespace Altv_Roleplay.models
         public ulong hardwareId { get; set; }
         public string password { get; set; }
         public int Online { get; set; } //CharakterID mit welchem der Spieler eingeloggt ist - 0 = offline.
-        public bool whitelisted { get; set; }
+        public bool TSWhitelist { get; set; }
         public bool ban { get; set; }
         public string banReason { get; set; }
         public int adminLevel { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Async;
@@ -7,6 +8,7 @@ using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
+using Altv_Roleplay.models;
 using Altv_Roleplay.Services;
 using Altv_Roleplay.Utils;
 
@@ -23,7 +25,7 @@ namespace Altv_Roleplay.Handler
             player.SetPlayerIsCuffed("handcuffs", false);
             player.SetPlayerIsCuffed("footcuffs", false);
             player.SetPlayerIsCuffed("ropecuffs", false);
-            player.SetSyncedMetaData("isOnHands", false);
+            player.SetStreamSyncedMetaData("isOnHands", false);
             setCefStatus(player, false);
             player.SetPlayerCurrentMinijob("None");
             player.SetPlayerCurrentMinijobRouteId(0);
@@ -112,8 +114,8 @@ namespace Altv_Roleplay.Handler
                 User.SetPlayerSocialID(client);
             }
 
-            if (!User.IsPlayerWhitelisted(username)) {
-                client.EmitLocked("Client:Login:showError", "Dieser Benutzeraccount wurde noch nicht im Support aktiviert.");
+            if (!User.IsPlayerTSWhitelisted(username)) {
+                client.EmitLocked("Client:Login:showError", "Dieser Benutzeraccount wurde noch nicht im TS Support aktiviert.");
                 LoggingService.NewLoginLog(username, client.SocialClubId, client.Ip, client.HardwareIdHash, false,
                     $"Dieser Benutzeraccount wurde noch nicht im Support aktiviert ({username}).");
                 return;
@@ -220,7 +222,7 @@ namespace Altv_Roleplay.Handler
                 CharactersInventory.AddCharacterItem(charid, "Smartphone", 1, "inventory");
 
                 // First-Spawn Kleider
-                if (!Characters.GetCharacterGender((int) client.GetCharacterMetaId())) {
+                /**if (!Characters.GetCharacterGender((int) client.GetCharacterMetaId())) {
                     //Männlich
                     Characters.SwitchCharacterClothes(client, 5048, false);
                     Characters.SwitchCharacterClothes(client, 7761, false);
@@ -236,22 +238,15 @@ namespace Altv_Roleplay.Handler
                     CharactersClothes.CreateCharacterOwnedClothes(client.CharacterId, 17018);
                     CharactersClothes.CreateCharacterOwnedClothes(client.CharacterId, 21383);
                     CharactersClothes.CreateCharacterOwnedClothes(client.CharacterId, 27501);
-                }
-
-
-                switch (spawnstr) {
-                    case "lsairport":
-                        Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_Airport, 0);
-                        break;
-                    case "beach":
-                        Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_Beach, 0);
-                        break;
-                    case "sandyshores":
-                        Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_SandyShores, 0);
-                        break;
-                    case "paletobay":
-                        Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_PaletoBay, 0);
-                        break;
+                }**/
+                
+                Characters.CreateCharacterLastPos(charid, Constants.Positions.SpawnPos_Airport, 0);
+                client.Rotation = Constants.Positions.SpawnRot_Airport;
+            }
+            
+            if (!Characters.IsPlayerICWhitelisted(client.accountId)) {
+                foreach (var admin in Alt.GetAllPlayers().ToList().Where(x => x.AdminLevel() > 1)) {
+                    HUDHandler.SendNotification(admin, 3, 5000, "Es ist ein neuer User im Airport!");
                 }
             }
 
@@ -266,7 +261,7 @@ namespace Altv_Roleplay.Handler
             client.EmitLocked("Client:SpawnArea:setCharSkin", Characters.GetCharacterSkin("facefeatures", charid),
                 Characters.GetCharacterSkin("headblendsdata", charid), Characters.GetCharacterSkin("headoverlays", charid));
             var dbPos = Characters.GetCharacterLastPosition(charid);
-            dbPos.Z += 0.5f;
+            dbPos.Z += 1.25f;
 
             lock (client) {
                 if (client is not {Exists: true}) return;

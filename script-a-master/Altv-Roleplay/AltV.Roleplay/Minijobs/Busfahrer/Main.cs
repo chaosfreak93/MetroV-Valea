@@ -55,7 +55,7 @@ namespace Altv_Roleplay.Minijobs.Busfahrer
 
                 player.EmitLocked("Client:Minijob:RemoveJobMarker");
 
-                foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"BUS-{charId}").ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"BUS-{charId}").ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     ServerVehicles.RemoveVehiclePermanently(veh);
@@ -189,7 +189,7 @@ namespace Altv_Roleplay.Minijobs.Busfahrer
 
                 if (player.GetPlayerCurrentMinijob() == "Busfahrer") {
                     //Job abbrechen
-                    foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"BUS-{charId}").ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"BUS-{charId}").ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         ServerVehicles.RemoveVehiclePermanently(veh);
@@ -234,7 +234,7 @@ namespace Altv_Roleplay.Minijobs.Busfahrer
                     return;
                 }
 
-                foreach (var veh in Alt.Server.GetVehicles().ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     if (veh.Position.IsInRange(Constants.Positions.Minijob_Busdriver_VehOutPos, 8f)) {

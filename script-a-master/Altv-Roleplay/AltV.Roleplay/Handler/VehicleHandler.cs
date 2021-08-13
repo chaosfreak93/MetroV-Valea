@@ -33,7 +33,7 @@ namespace Altv_Roleplay.Handler
                 var cCharId = player.CharacterId;
                 if (cCharId != charId) return;
 
-                var targetVehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
+                var targetVehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
                 if (targetVehicle == null || !targetVehicle.Exists) return;
 
                 if (!player.Position.IsInRange(targetVehicle.Position, 5f)) {
@@ -129,7 +129,7 @@ namespace Altv_Roleplay.Handler
                 var cCharId = player.CharacterId;
                 if (cCharId != charId) return;
 
-                var targetVehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
+                var targetVehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x => x.GetVehicleId() == vehId);
                 if (targetVehicle == null || !targetVehicle.Exists) return;
 
                 if (!player.Position.IsInRange(targetVehicle.Position, 5f)) {
@@ -225,7 +225,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                var vehicleList = Alt.Server.GetVehicles().Where(x =>
+                var vehicleList = Alt.GetAllVehicles().Where(x =>
                     x.GetVehicleId() > 0 && x.Position.IsInRange(Constants.Positions.VehicleLicensing_VehPosition, 10f) &&
                     ServerVehicles.GetVehicleOwner(x) == charId).Select(x => new {
                     vehId = x.GetVehicleId(),
@@ -257,7 +257,7 @@ namespace Altv_Roleplay.Handler
                 var charId = User.GetPlayerOnline(player);
                 if (charId <= 0) return;
 
-                var veh = Alt.Server.GetVehicles().ToList()
+                var veh = Alt.GetAllVehicles().ToList()
                     .FirstOrDefault(x => x.GetVehicleId() == vehId && x.NumberplateText == vehPlate);
 
                 if (veh == null || !veh.Exists) {
@@ -282,8 +282,8 @@ namespace Altv_Roleplay.Handler
 
                 if (action == "anmelden") {
                     var notAllowedStrings = new[] {
-                        "LSPD", "DOJ", "LSFD", "LSMD", "ACLS", "LSF", "FIB", "LSF-", "LSPD-", "DOJ-", "LSFD-", "LSMD-", "ACLS-", "FIB-", "NL",
-                        "EL-", "MM-", "PL-", "SWAT", "S.W.A.T", "SWAT-", "NOOSE", "N.O.O.S.E"
+                        "LSPD", "DOJ", "LSFD", "LSMD", "ACLS", "LSF", "FIB", "LSF-", "LSPD-", "DOJ-", "LSFD-", "LSMD-", "ACLS-", "FIB-", "NL", "NL-",
+                        "EL-", "MM-", "PL-", "SWAT", "S.W.A.T", "SWAT-", "NOOSE", "N.O.O.S.E", "ALTV", "ADMIN"
                     };
                     newPlate = newPlate.Replace(" ", "-");
 
@@ -350,6 +350,31 @@ namespace Altv_Roleplay.Handler
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
+            }
+        }
+
+        [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
+        public void playerEnterVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
+            if (seat == 2) {
+                vehicle.SetStreamSyncedMetaData("passengerCharId", player.CharacterId);
+            }
+        }
+
+        [ScriptEvent(ScriptEventType.PlayerLeaveVehicle)]
+        public void playerLeaveVehicle(ClassicVehicle vehicle, ClassicPlayer player, byte seat) {
+            if (seat == 2) {
+                vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
+            } else if (seat == 1) {
+                var dbVehicle = ServerVehicles.ServerVehicles_.FirstOrDefault(v => v.id == (int) vehicle.GetVehicleId());
+                if (dbVehicle == null) return;
+                dbVehicle.lastUsage = DateTime.Now;
+            }
+        }
+        
+        [ScriptEvent(ScriptEventType.PlayerChangeVehicleSeat)]
+        public void playerChangeVehicleSeat(ClassicVehicle vehicle, ClassicPlayer player, byte oldSeat, byte newSeat) {
+            if (oldSeat == 2) {
+                vehicle.SetStreamSyncedMetaData("passengerCharId", 0);
             }
         }
     }

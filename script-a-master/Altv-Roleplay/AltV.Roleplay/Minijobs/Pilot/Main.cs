@@ -64,7 +64,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
                 var charId = User.GetPlayerOnline(player);
                 if (charId <= 0) return;
 
-                foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"PL-{charId}").ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"PL-{charId}").ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     ServerVehicles.RemoveVehiclePermanently(veh);
@@ -92,7 +92,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
                     vehicle.Position.IsInRange(Constants.Positions.Minijob_Pilot_VehOutPos, 10f)) {
                     var model = vehicle.Model;
 
-                    foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"PL-{charId}").ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"PL-{charId}").ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         ServerVehicles.RemoveVehiclePermanently(veh);
@@ -237,7 +237,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
                 if (charId <= 0) return;
                 if (player.GetPlayerCurrentMinijob() != "None") return;
 
-                foreach (var veh in Alt.Server.GetVehicles().ToList()) {
+                foreach (var veh in Alt.GetAllVehicles().ToList()) {
                     if (veh == null || !veh.Exists) continue;
 
                     if (veh.Position.IsInRange(Constants.Positions.Minijob_Pilot_VehOutPos, 8f)) {
@@ -294,7 +294,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
 
                 if (player.GetPlayerCurrentMinijob() == "Pilot") {
                     //Job abbrechen
-                    foreach (var veh in Alt.Server.GetVehicles().Where(x => x.NumberplateText == $"PL-{charId}").ToList()) {
+                    foreach (var veh in Alt.GetAllVehicles().Where(x => x.NumberplateText == $"PL-{charId}").ToList()) {
                         if (veh == null || !veh.Exists) continue;
 
                         ServerVehicles.RemoveVehiclePermanently(veh);

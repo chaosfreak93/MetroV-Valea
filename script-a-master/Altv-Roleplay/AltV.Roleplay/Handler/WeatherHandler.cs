@@ -32,7 +32,7 @@ namespace Altv_Roleplay.Handler
                 // PLEASE GENERATE YOUR OWN API KEY AT https://openweathermap.org/ FOR FREE
                 var apiKey = "28f5c573c6681dcc51cd39973c2cd4e0";
 
-                var urljson = wc.DownloadString("http://api.openweathermap.org/data/2.5/weather?q=dortmund&appid=" + apiKey);
+                var urljson = wc.DownloadString("http://api.openweathermap.org/data/2.5/weather?q=los+angeles&appid=" + apiKey);
 
                 /**var weather = "Clear";
                 switch (weather)**/
@@ -73,6 +73,11 @@ namespace Altv_Roleplay.Handler
                         currentWeatherType = "Foggy";
                         break;
                     case "Fog":
+                        if (currentWeatherType == "Foggy") isNotDifferentWeather = true;
+                        else isNotDifferentWeather = false;
+                        currentWeatherType = "Foggy";
+                        break;
+                    case "Haze":
                         if (currentWeatherType == "Foggy") isNotDifferentWeather = true;
                         else isNotDifferentWeather = false;
                         currentWeatherType = "Foggy";

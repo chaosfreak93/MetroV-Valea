@@ -1,2 +1,2 @@
-export class RadioTrafficState {
+class RadioTrafficState {
 }

@@ -7,6 +7,7 @@ using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
+using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
 using Newtonsoft.Json.Linq;
 
@@ -41,6 +42,11 @@ namespace Altv_Roleplay.Handler
                     switch (action) {
                         // PLAYER
                         case "noclip":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             player.EmitLocked("Client:AdminMenu:Noclip", info);
 
                             var text = "";
@@ -50,6 +56,11 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "unsichtbar":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             if (player.Visible) player.Visible = false;
                             else player.Visible = true;
 
@@ -59,14 +70,24 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "adminoutfit":
+                            if (player.AdminLevel() < 3) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             SetAdminClothes(player, info);
 
                             if (info == "on") text = " hat sich das **Adminoutfit angezogen**.";
-                            else text = " hat sich das **Adminoutfit angezogen**.";
+                            else text = " hat sich das **Adminoutfit ausgezogen**.";
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "godmode":
+                            if (player.AdminLevel() < 5) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             player.EmitLocked("Client:AdminMenu:Godmode", info);
 
                             if (info == "on") text = " hat den **Godmode** angemacht.";
@@ -75,21 +96,36 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "heilen":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             player.ClearBloodDamage();
                             player.Health = 200;
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + "hat sich * *geheilt * *.");
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich **geheilt**.");
                             break;
                         case "wiederbeleben":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             DeathHandler.revive(player);
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + "hat sich **wiederbelebt**.");
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich **wiederbelebt**.");
                             break;
                         // ONLINE
                         case "spieler_kicken":
-                            var kickedPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 3) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var kickedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             if (player.AdminLevel() <= kickedPlayer.AdminLevel()) {
@@ -112,7 +148,12 @@ namespace Altv_Roleplay.Handler
 
                             break;
                         case "spieler_bannen":
-                            var bannedPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var bannedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             if (player.AdminLevel() <= bannedPlayer.AdminLevel()) {
@@ -139,7 +180,12 @@ namespace Altv_Roleplay.Handler
 
                             break;
                         case "spieler_einfrieren":
-                            var kickedPlayerr = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var kickedPlayerr = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             AltAsync.EmitAllClients("Client:AdminMenu:SetFreezed", kickedPlayerr, info);
 
@@ -148,7 +194,12 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) kickedPlayerr.GetCharacterMetaId()) + " **eingefroren**.");
                             break;
                         case "spieler_spectaten":
-                            var spectatedPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var spectatedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             player.EmitLocked("Client:AdminMenu:Spectate", spectatedPlayer, info);
 
@@ -165,25 +216,41 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + text);
                             break;
                         case "spieler_heilen":
-                            var HealedPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var HealedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
+                            HealedPlayer.ClearBloodDamage();
                             HealedPlayer.Health = 200;
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich zu " +
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat " +
                                 Characters.GetCharacterName((int) HealedPlayer.GetCharacterMetaId()) + " **geheilt**.");
                             break;
                         case "spieler_wiederbeleben":
-                            var RevivedPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var RevivedPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             DeathHandler.revive(RevivedPlayer);
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat " +
-                                Characters.GetCharacterName((int) RevivedPlayer.GetCharacterMetaId()) + " zu sich **wiederbelebt**.");
+                                Characters.GetCharacterName((int) RevivedPlayer.GetCharacterMetaId()) + " **wiederbelebt**.");
                             break;
                         case "tp_zu_spieler":
-                            var TeleportToPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 3) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var TeleportToPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             player.Position = new Position(TeleportToPlayer.Position.X, TeleportToPlayer.Position.Y, TeleportToPlayer.Position.Z);
 
@@ -192,7 +259,12 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) TeleportToPlayer.GetCharacterMetaId()) + " **teleportiert**.");
                             break;
                         case "spieler_zu_mir_tp":
-                            var TeleportPlayer = Alt.Server.GetPlayers().ToList()
+                            if (player.AdminLevel() < 3) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            var TeleportPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             TeleportPlayer.Position = new Position(player.Position.X, player.Position.Y, player.Position.Z);
 
@@ -201,7 +273,7 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) TeleportPlayer.GetCharacterMetaId()) + " zu sich **teleportiert**.");
                             break;
                         case "item_geben":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 4) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
@@ -213,7 +285,7 @@ namespace Altv_Roleplay.Handler
                                 break;
                             }
 
-                            var GiveItemPlayer = Alt.Server.GetPlayers().ToList()
+                            var GiveItemPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             CharactersInventory.AddCharacterItem((int) GiveItemPlayer.GetCharacterMetaId(), inputvalue, 1, "inventory");
@@ -223,14 +295,14 @@ namespace Altv_Roleplay.Handler
                                 " gegeben**.");
                             break;
                         case "adminlevel_geben":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 5) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
 
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            var GiveAdminPlayer = Alt.Server.GetPlayers().ToList()
+                            var GiveAdminPlayer = Alt.GetAllPlayers().ToList()
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
 
                             if (!int.TryParse(inputvalue, out var newinputvaluea)) {
@@ -247,9 +319,19 @@ namespace Altv_Roleplay.Handler
                             break;
                         // MISC
                         case "zum_wegpunkt":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             player.Emit("Client:AdminMenu:GetWaypointInfo");
                             break;
                         case "nametags":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             player.Emit("Client:Adminmenu:ToggleNametags", info);
                             string infoString = null;
 
@@ -262,6 +344,11 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich die Nametags " + infoString + "!");
                             break;
                         case "spieler_auf_der_karte_anzeigen":
+                            if (player.AdminLevel() < 5) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             player.Emit("Client:Adminmenu:TogglePlayerBlips", info);
                             string info2String = null;
 
@@ -275,7 +362,7 @@ namespace Altv_Roleplay.Handler
                             break;
                         // FARHEUG
                         case "fahrzeug_spawnen":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 5) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
@@ -297,6 +384,11 @@ namespace Altv_Roleplay.Handler
                                 break;
                             }
                         case "reparieren":
+                            if (player.AdminLevel() < 5) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
                             if (player.Vehicle == null || !player.Vehicle.Exists) break;
 
                             ServerVehicles.SetVehicleEngineHealthy(player.Vehicle, true);
@@ -307,14 +399,19 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sein **Fahrzeug repariert**");
                             break;
                         case "fahrzeug_löschen":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 5) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
 
-                            if (player.Vehicle == null || !player.Vehicle.Exists) break;
+                            if (player.Vehicle == null || !player.Vehicle.Exists || !player.IsInVehicle) break;
 
-                            player.Vehicle.Remove();
+                            try {
+                                player.Vehicle.Remove();
+                            }
+                            catch (Exception e) {
+                                Alt.Log(e.ToString());
+                            }
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sein **Fahrzeug gelöscht**");
@@ -516,14 +613,14 @@ namespace Altv_Roleplay.Handler
                             }
                         // SERVER
                         case "ankündigung":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 4) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
 
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            foreach (var client in Alt.Server.GetPlayers()) {
+                            foreach (var client in Alt.GetAllPlayers()) {
                                 if (client == null || !client.Exists) continue;
 
                                 HUDHandler.SendNotification(client, 4, 5000, inputvalue);
@@ -533,8 +630,8 @@ namespace Altv_Roleplay.Handler
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat eine Ankündigung gemacht: **" + inputvalue +
                                 "**");
                             break;
-                        case "whitelist":
-                            if (player.AdminLevel() < 9) {
+                        case "account_aktivieren":
+                            if (player.AdminLevel() < 2) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
@@ -546,21 +643,65 @@ namespace Altv_Roleplay.Handler
                                 break;
                             }
 
-                            if (User.IsPlayerWhitelisted(inputvalue)) {
+                            if (User.IsPlayerTSWhitelisted(inputvalue)) {
                                 HUDHandler.SendNotification(player, 4, 3000, $"Spieler {inputvalue} ist bereits gewhitelisted");
                                 break;
                             }
 
-                            User.SetPlayerWhitelistState(User.GetPlayerAccountIdByUsername(inputvalue), true);
+                            User.SetPlayerTSWhitelistState(User.GetPlayerAccountIdByUsername(inputvalue), true);
                             HUDHandler.SendNotification(player, 1, 3000, inputvalue + " wurde erfolgreich gewhitelisted");
 
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat **" + inputvalue + " gewhitelistet**");
                             break;
-                        case "fahrzeug_einparken":
+                        case "einreisen":
+                            if (player.AdminLevel() < 2) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            var vehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x =>
+                            if (!Characters.ExistCharacterName(inputvalue)) {
+                                HUDHandler.SendNotification(player, 4, 3000, $"Benutzername {inputvalue} wurde nicht gefunden");
+                                break;
+                            }
+
+                            if (Characters.IsPlayerICWhitelisted(inputvalue)) {
+                                HUDHandler.SendNotification(player, 4, 3000, $"Spieler {inputvalue} ist bereits gewhitelisted");
+                                break;
+                            }
+
+                            Characters.SetPlayerICWhitelistState(Characters.GetCharacterIdFromCharName(inputvalue), true);
+
+                            var playerEntry = Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
+                                ((ClassicPlayer) x).CharacterId == Characters.GetCharacterIdFromCharName(inputvalue));
+                            
+                            TownhallHandler.tryCreateIdentityCardApplyForm(playerEntry);
+                            
+                            HUDHandler.SendNotification(player, 1, 3000, inputvalue + " darf nun einreisen");
+
+                            DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat **" + inputvalue + " gewhitelistet**");
+                            break;
+                        case "tp_airport":
+                            if (player.AdminLevel() < 2) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+
+                            player.Position = Constants.Positions.AdminPos_Airport;
+                            player.Rotation = Constants.Positions.AdminRot_Airport;
+                            break;
+                        case "fahrzeug_einparken":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+                            
+                            if (string.IsNullOrWhiteSpace(inputvalue)) break;
+
+                            var vehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x =>
                                 x != null && x.Exists && x.HasVehicleId() && (int) x.GetVehicleId() > 0 &&
                                 x.NumberplateText.ToLower() == inputvalue.ToLower());
 
@@ -568,6 +709,8 @@ namespace Altv_Roleplay.Handler
                                 HUDHandler.SendNotification(player, 4, 2000, $"Fahrzeug mit dem Kennzeichen {inputvalue} existiert nicht");
                                 break;
                             }
+
+                            if (!vehicle.Exists) break;
 
                             var currentGarageId2 = ServerVehicles.GetVehicleGarageId(vehicle);
                             if (currentGarageId2 <= 0) return;
@@ -582,14 +725,14 @@ namespace Altv_Roleplay.Handler
                                 inputvalue + " eingeparkt**");
                             break;
                         case "alle_fahrzeuge_einparken":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 8) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
 
                             var count = 0;
 
-                            foreach (var veh in Alt.Server.GetVehicles().ToList().Where(x => x != null && x.Exists && x.HasVehicleId())) {
+                            foreach (var veh in Alt.GetAllVehicles().ToList().Where(x => x != null && x.Exists && x.HasVehicleId())) {
                                 if (veh == null || !veh.Exists || !veh.HasVehicleId()) continue;
 
                                 var currentGarageId = ServerVehicles.GetVehicleGarageId(veh);
@@ -607,7 +750,7 @@ namespace Altv_Roleplay.Handler
                         case "fahrzeuginhaber_finden":
                             if (string.IsNullOrWhiteSpace(inputvalue)) break;
 
-                            var fvehicle = Alt.Server.GetVehicles().ToList().FirstOrDefault(x =>
+                            var fvehicle = Alt.GetAllVehicles().ToList().FirstOrDefault(x =>
                                 x != null && x.Exists && x.HasVehicleId() && (int) x.GetVehicleId() > 0 &&
                                 x.NumberplateText.ToLower() == inputvalue.ToLower());
 
@@ -627,7 +770,7 @@ namespace Altv_Roleplay.Handler
                                 findvehownermsg + "**");
                             break;
                         case "hardwareid_zurücksetzen":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 5) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
@@ -646,7 +789,7 @@ namespace Altv_Roleplay.Handler
                                 " wurde zurückgesetzt**");
                             break;
                         case "socialclubid_zurücksetzen":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 5) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
@@ -665,7 +808,7 @@ namespace Altv_Roleplay.Handler
                                 " wurde zurückgesetzt**");
                             break;
                         case "passwort_zurücksetzen":
-                            if (player.AdminLevel() < 9) {
+                            if (player.AdminLevel() < 5) {
                                 HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
                                 break;
                             }
@@ -682,6 +825,25 @@ namespace Altv_Roleplay.Handler
                             DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                 Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat das **Passwort von " + inputvalue +
                                 " wurde zurückgesetzt**");
+                            break;
+                        case "spieler_entbannen":
+                            if (player.AdminLevel() < 4) {
+                                HUDHandler.SendNotification(player, 4, 3000, "Dazu hast du keine Rechte!");
+                                break;
+                            }
+
+                            if (string.IsNullOrWhiteSpace(inputvalue)) break;
+                            
+                            if (!User.ExistPlayerName(inputvalue)) {
+                                HUDHandler.SendNotification(player, 4, 3000, $"Benutzername {inputvalue} wurde nicht gefunden");
+                                break;
+                            }
+
+                            int unbannedPlayer = User.GetPlayerAccountIdByUsername(inputvalue);
+                            User.SetPlayerBanned(unbannedPlayer, false, $"Entbannt von {Characters.GetCharacterName(User.GetPlayerOnline(player))}");
+                            DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs", 
+                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat " + 
+                                User.GetPlayerUsername(unbannedPlayer) + " **entbannt**.");
                             break;
                         // DEFAULT
                         default:
@@ -702,7 +864,7 @@ namespace Altv_Roleplay.Handler
                         dynamic array = new JArray();
                         dynamic entry = new JObject();
 
-                        foreach (var plr in Alt.Server.GetPlayers().Where(p => p != null && p.Exists)) {
+                        foreach (var plr in Alt.GetAllPlayers().Where(p => p != null && p.Exists)) {
                             if (((ClassicPlayer) plr).accountId == 0 || (int) plr.GetCharacterMetaId() == 0 ||
                                 Characters.GetCharacterName((int) plr.GetCharacterMetaId()) == "SYSTEM" ||
                                 User.GetPlayerUsername(((ClassicPlayer) plr).accountId) == "Undefined") continue;
@@ -748,7 +910,7 @@ namespace Altv_Roleplay.Handler
         public void GetPlayer(IPlayer player, string reason, string username, string other) {
             try {
                 if (player.AdminLevel() != 0) {
-                    var GetPlayerPlayer = Alt.Server.GetPlayers().ToList()
+                    var GetPlayerPlayer = Alt.GetAllPlayers().ToList()
                         .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == username);
                     if (reason == "GetPlayerMeta") player.Emit("Client:Adminmenu:ReceiveMeta", GetPlayerPlayer);
                     else if (reason == "SetMeta") player.Emit("Client:Adminmenu:SetMetaDef", GetPlayerPlayer, other);

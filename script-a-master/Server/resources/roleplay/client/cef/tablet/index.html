@@ -73,15 +73,15 @@
             </div>
 
             <div id="DispatchApp-Area">
-                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(2);">
+                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(1);">
                     <span>Los Santos Police Department</span><br>
                     <img src="img/police-car.png">
                 </div>
-                <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(3);">
+                <div class="DispatchApp-Area-FactionBox" onclick="SendDispatchToFaction(2);">
                     <span>Los Santos Medical Department</span>
                     <img src="img/ambulance.png">
                 </div>
-                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(6);">
+                <div class="DispatchApp-Area-FactionBox" style="margin-left: 12%;" onclick="SendDispatchToFaction(0);">
                     <span>United States Marshal Service</span>
                     <img src="img/marshal-car.png">
                 </div>
@@ -278,7 +278,7 @@
             <div id="JusticeApp-Area">
                 <div id="JusticeApp-Area-Overview">
                     <div class="card text-white">
-                        <div class="card-header">Department of Justice (1)</div>
+                        <div class="card-header">Department of Justice (3)</div>
                         <div class="card-body">
                             <p class="card-text">
                                 <b>Aktive Mitarbeiter: </b>
@@ -310,6 +310,10 @@
                         <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-GiveWeaponLicense`);">
                             <img src="img/gun.png">
                             <p>Waffenschein vergeben</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`JusticeApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png" height="64" width="64">
+                            <p>EmergencyOS</p>
                         </li>
                     </ul>
                 </div>
@@ -448,12 +452,17 @@
                         <button type="button" onclick="JusticeAppGiveWeaponLicense();" class="btn btn-justicehov"><i class="fas fa-check" style="padding-right: 6px;"></i>Waffenschein ausstellen</button>
                     </div>
                 </div>
+                <div id="JusticeApp-Area-ViewEmergencyOS">
+                    <div class="box">
+                        <iframe id="Justice-EmergencyOS" src="" style="width: 100%; height: 100%;"></iframe>
+                    </div>
+                </div>
             </div>
 
             <div id="LSPDApp-Area">
                 <div id="LSPDApp-Area-Overview">
                     <div class="card text-white">
-                        <div class="card-header">Los Santos Police Department (2)</div>
+                        <div class="card-header">Los Santos Police Department (1)</div>
                         <div class="card-body">
                             <p class="card-text">
                                 <b>Aktuelle Notrufe: </b>
@@ -487,6 +496,10 @@
                         <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewFactionVehicles`);">
                             <img src="img/parking.png">
                             <p>Ausgeparkte Fahrzeuge</p>
+                        </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSPDApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png" height="64" width="64">
+                            <p>EmergencyOS</p>
                         </li>
                     </ul>
                 </div>
@@ -595,13 +608,13 @@
                         <div id="LSPDApp-Area-SearchLicense-List"></div>
                     </div>
                 </div>
-                <!--<div id="LSPDApp-Area-ViewFactionVehicles">
+                <div id="LSPDApp-Area-ViewFactionVehicles">
                     <div class="box">
                         <p class="title">AUSGEPARKTE FAHRZEUGE</p>
                         <hr style="border-color: #0000004a; margin-bottom: 0;">
                         <div id="LSPDApp-Area-ViewFactionVehicles-List"></div>
                     </div>
-                </div>-->
+                </div>
                 <div id="LSPDApp-Area-ViewDispatches">
                     <div class="box">
                         <p class="title">AKTUELLE NOTRUFE</p>
@@ -609,12 +622,17 @@
                         <div id="LSPDApp-Area-ViewDispatches-List"></div>
                     </div>
                 </div>
+                <div id="LSPDApp-Area-ViewEmergencyOS">
+                    <div class="box">
+                        <iframe id="LSPD-EmergencyOS" src="" style="width: 100%; height: 100%;"></iframe>
+                    </div>
+                </div>
             </div>
 
             <div id="LSMDApp-Area">
                 <div id="LSMDApp-Area-Overview">
                     <div class="card text-white">
-                        <div class="card-header">Los Santos Medical Department (3)</div>
+                        <div class="card-header">Los Santos Medical Department (2)</div>
                         <div class="card-body">
                             <p class="card-text">
                                 <b>Aktuelle Notrufe: </b>
@@ -633,6 +651,10 @@
                             <img src="img/parking.png">
                             <p>Ausgeparkte Fahrzeuge</p>
                         </li>
+                        <li class="list-group-item" onclick="openSubWindow(`LSMDApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png" height="64" width="64">
+                            <p>EmergencyOS</p>
+                        </li>
                     </ul>
                 </div>
                 <div id="LSMDApp-Area-ViewFactionVehicles">
@@ -647,6 +669,11 @@
                         <p class="title">AKTUELLE NOTRUFE</p>
                         <hr style="border-color: #0000004a; margin-bottom: 0;">
                         <div id="LSMDApp-Area-ViewDispatches-List"></div>
+                    </div>
+                </div>
+                <div id="LSMDApp-Area-ViewEmergencyOS">
+                    <div class="box">
+                        <iframe id="LSMD-EmergencyOS" src="" style="width: 100%; height: 100%;"></iframe>
                     </div>
                 </div>
             </div>
@@ -673,6 +700,10 @@
                             <img src="img/parking.png">
                             <p>Ausgeparkte Fahrzeuge</p>
                         </li>
+                        <!--<li class="list-group-item" onclick="openSubWindow(`ACLSApp-Area-ViewEmergencyOS`);">
+                            <img src="img/emergencyos.png">
+                            <p>EmergencyOS</p>
+                        </li>-->
                     </ul>
                 </div>
                 <div id="ACLSApp-Area-ViewFactionVehicles">
@@ -864,7 +895,7 @@
 
 
 <script src="../utils/jquery-3.6.0.min.js"></script>
-<script src="../utils/popper-1.14.7.min.js"></script>
+<script src="../utils/popper.min.js"></script>
 <script src="../utils/bootstrap.min.js"></script>
 <script src="../utils/anime.min.js"></script>
 <script src="../utils/640357ffb4.js"></script>
@@ -917,6 +948,21 @@
             openSubWindow("JusticeApp-Area-Overview");
             openSubWindow("LSMDApp-Area-Overview");
             openSubWindow("ACLSApp-Area-Overview");
+            document.getElementById("Justice-EmergencyOS").setAttribute("src", "");
+            document.getElementById("LSPD-EmergencyOS").setAttribute("src", "");
+            document.getElementById("LSMD-EmergencyOS").setAttribute("src", "");
+        }
+
+        if (area == "LSMDApp-Area") {
+            document.getElementById("LSMD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        }
+
+        if (area == "LSPDApp-Area") {
+            document.getElementById("LSPD-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
+        }
+
+        if (area == "JusticeApp-Area") {
+            document.getElementById("Justice-EmergencyOS").setAttribute("src", "https://server.emergencyos.de/");
         }
 
         if (curAppOpened != "none") {
@@ -1009,14 +1055,23 @@
                 $("#LSMDApp-Area-Overview").fadeIn(500);
                 $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSMDApp-Area-ViewFactionVehicles":
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeIn(500);
-                $("#LSMDApp-Area-Overview").fadeOut(100);
                 $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
+                $("#LSMDApp-Area-Overview").fadeOut(100);
                 break;
             case "LSMDApp-Area-ViewDispatches":
                 $("#LSMDApp-Area-ViewDispatches").fadeIn(500);
+                $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeOut(100);
+                $("#LSMDApp-Area-Overview").fadeOut(100);
+                break;
+            case "LSMDApp-Area-ViewEmergencyOS":
+                $("#LSMDApp-Area-ViewEmergencyOS").fadeIn(500);
+                $("#LSMDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSMDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSMDApp-Area-Overview").fadeOut(100);
                 break;
@@ -1042,6 +1097,7 @@
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-SearchPerson":
                 $("#LSPDApp-Area-SearchPerson").fadeIn(500);
@@ -1050,6 +1106,7 @@
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-SearchVehiclePlate":
                 $("#LSPDApp-Area-SearchVehiclePlate").fadeIn(500);
@@ -1058,6 +1115,7 @@
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-ViewFactionVehicles":
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeIn(500);
@@ -1066,6 +1124,7 @@
                 $("#LSPDApp-Area-SearchVehiclePlate").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-SearchLicense":
                 $("#LSPDApp-Area-SearchLicense").fadeIn(500);
@@ -1074,9 +1133,20 @@
                 $("#LSPDApp-Area-SearchPerson").fadeOut(100);
                 $("#LSPDApp-Area-SearchVehiclePlate").fadeOut(100);
                 $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "LSPDApp-Area-ViewDispatches":
                 $("#LSPDApp-Area-ViewDispatches").fadeIn(500);
+                $("#LSPDApp-Area-SearchLicense").fadeOut(100);
+                $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#LSPDApp-Area-Overview").fadeOut(100);
+                $("#LSPDApp-Area-SearchPerson").fadeOut(100);
+                $("#LSPDApp-Area-SearchVehiclePlate").fadeOut(100);
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeOut(100);
+                break;
+            case "LSPDApp-Area-ViewEmergencyOS":
+                $("#LSPDApp-Area-ViewEmergencyOS").fadeIn(500);
+                $("#LSPDApp-Area-ViewDispatches").fadeOut(100);
                 $("#LSPDApp-Area-SearchLicense").fadeOut(100);
                 $("#LSPDApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#LSPDApp-Area-Overview").fadeOut(100);
@@ -1091,6 +1161,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-SearchPerson":
                 $("#JusticeApp-Area-SearchPerson").fadeIn(500);
@@ -1100,6 +1171,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-SearchVehiclePlate":
                 $("#JusticeApp-Area-SearchVehiclePlate").fadeIn(500);
@@ -1109,6 +1181,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-SearchLicense":
                 $("#JusticeApp-Area-SearchLicense").fadeIn(500);
@@ -1118,6 +1191,7 @@
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-ViewFactionVehicles":
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeIn(500);
@@ -1127,6 +1201,7 @@
                 $("#JusticeApp-Area-SearchPerson").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-GiveWeaponLicense":
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeIn(500);
@@ -1136,9 +1211,21 @@
                 $("#JusticeApp-Area-SearchPerson").fadeOut(100);
                 $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
                 $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
                 break;
             case "JusticeApp-Area-ViewBankTransactions":
                 $("#JusticeApp-Area-ViewBankTransactions").fadeIn(500);
+                $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
+                $("#JusticeApp-Area-SearchLicense").fadeOut(100);
+                $("#JusticeApp-Area-SearchVehiclePlate").fadeOut(100);
+                $("#JusticeApp-Area-Overview").fadeOut(100);
+                $("#JusticeApp-Area-SearchPerson").fadeOut(100);
+                $("#JusticeApp-Area-ViewFactionVehicles").fadeOut(100);
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeOut(100);
+                break;
+            case "JusticeApp-Area-ViewEmergencyOS":
+                $("#JusticeApp-Area-ViewEmergencyOS").fadeIn(500);
+                $("#JusticeApp-Area-ViewBankTransactions").fadeOut(100);
                 $("#JusticeApp-Area-GiveWeaponLicense").fadeOut(100);
                 $("#JusticeApp-Area-SearchLicense").fadeOut(100);
                 $("#JusticeApp-Area-SearchVehiclePlate").fadeOut(100);
@@ -1253,10 +1340,10 @@
             appcounter = 0;
         appArray = JSON.parse(appArray);
 
-        homeAppList += "<li class='list-group-item' onclick='showArea(`InternetApp-Area`);'><img src='img/appicons/globe.png'><br><span>Internet</span></li><li class='list-group-item'><img src='img/appicons/gmail.png'><br><span>E-Mail</span></li><li class='list-group-item' onclick='showArea(`TutorialApp-Area`);'><img src='img/appicons/tutorial.png'><br><span>Tutorial</span></li>";
+        homeAppList += "<li class='list-group-item' onclick='showArea(`InternetApp-Area`);'><img src='img/appicons/globe.png'><br><span>Internet</span></li><li class='list-group-item' onclick='showArea(`TutorialApp-Area`);'><img src='img/appicons/tutorial.png'><br><span>Tutorial</span></li>";
 
         for (var i in appArray) {
-            if (appArray[i].weather == true) {
+            /**if (appArray[i].weather == true) {
                 //hat die Wetter App
                 if (appcounter == 3 || appcounter == 5) {
                     homeAppList += "<li class='list-group-item hide'></li><li class='list-group-item hide'></li><li class='list-group-item hide'></li>";
@@ -1280,7 +1367,7 @@
             } else {
                 //hat die News App nicht
                 appStoreHTML += "<li class='list-group-item install' onclick='AppStoreInstallUninstallApp(`install`, `news`);'><img src='img/appicons/text-lines.png'><p class='title'>News</p><p class='description'>Nachrichten einsehen</p></li>";
-            }
+            }**/
 
             if (appArray[i].banking == true) {
                 //hat die Banking App
@@ -1363,8 +1450,6 @@
                 homeAppList += "<li class='list-group-item' onclick='showArea(`FactionManagerApp-Area`);'><img src='img/appicons/price-tag.png'><br><span>Frakmanager</span></li>";
                 appcounter++;
             }
-
-            homeAppList += "<li class='list-group-item'><img src='img/appicons/gear.png'><br><span>Einstellungen</span></li>";
 
             if (appArray[i].lspdapp == true) {
                 if (appcounter == 3 || appcounter == 5 || appcounter == 10) {
@@ -1607,9 +1692,9 @@
         advertisementsArray = JSON.parse(advertisementsArray);
         for (var i in advertisementsArray) {
             let img = "<img src='img/unknown.png' class='avatar'>";
-            if (advertisementsArray[i].factionId == 2) img = "<img src='img/police-car.png' class='avatar'>";
-            if (advertisementsArray[i].factionId == 3) img = "<img src='img/ambulance.png' class='avatar'>";
-            if (advertisementsArray[i].factionId == 4) img = "<img src='img/tow-truck.png' class='avatar'>";
+            if (advertisementsArray[i].factionId == 1) img = "<img src='img/police-car.png' class='avatar'>";
+            if (advertisementsArray[i].factionId == 2) img = "<img src='img/ambulance.png' class='avatar'>";
+            if (advertisementsArray[i].factionId == 3) img = "<img src='img/tow-truck.png' class='avatar'>";
             advertisementEntryHTML += `<div class='container'>` +
                 `<div class='clearfix'>` +
                 `${img}` +
@@ -1944,8 +2029,7 @@
     }
 
     function SetFactionAppViewFactionVehicleData(vehicleArray) {
-        var viewFactionHTML = "",
-            vehicleArray = JSON.parse(vehicleArray);
+        var viewFactionHTML = "";
 
         for (var i in vehicleArray) {
             viewFactionHTML += `<div class='container'><div class='left'><img src='../utils/img/vehicles/${vehicleArray[i].vehHash}.png'></div><div class='leftmid name'><p class='name'><b>Fahrzeugname</b></p><p>${vehicleArray[i].vehName}</p></div>` +
@@ -2065,11 +2149,11 @@
                 `<div class='left'><button type='button' onclick='VehiclesAppLocateVehicle(${dispatchArray[i].posX}, ${dispatchArray[i].posY});' class='btn btn-success'><i class='fas fa-search'></i></button><button type='button' onclick='DeleteDispatch(${dispatchArray[i].factionId}, ${dispatchArray[i].senderCharId});' class='btn btn-danger'><i class='fas fa-times'></i></button></div></div>`;
         }
 
-        if (factionId == 2) {
+        if (factionId == 1) {
             $("#LSPDApp-Area-ViewDispatches-List").html(dispatchHTML);
-        } else if (factionId == 3) {
+        } else if (factionId == 2) {
             $("#LSMDApp-Area-ViewDispatches-List").html(dispatchHTML);
-        } else if (factionId == 4) {
+        } else if (factionId == 3) {
             $("#ACLSApp-Area-ViewDispatches-List").html(dispatchHTML);
         }
     }

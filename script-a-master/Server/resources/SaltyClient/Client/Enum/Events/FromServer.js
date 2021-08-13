@@ -1,17 +1,18 @@
 export var FromServer;
-(function (FromServer) {
-    FromServer["initialize"] = "SaltyChat:Initialize";
-    FromServer["syncClients"] = "SaltyChat:SyncClients";
-    FromServer["updateClient"] = "SaltyChat:UpdateClient";
-    FromServer["updateClientAlive"] = "SaltyChat:UpdateClientAlive";
-    FromServer["updateClientRange"] = "SaltyChat:UpdateClientRange";
-    FromServer["removeClient"] = "SaltyChat:RemoveClient";
-    FromServer["phoneEstablish"] = "SaltyChat:PhoneEstablish";
-    FromServer["phoneEnd"] = "SaltyChat:PhoneEnd";
-    FromServer["radioSetChannel"] = "SaltyChat:RadioSetChannel";
-    FromServer["radioLeaveChannel"] = "SaltyChat:RadioLeaveChannel";
-    FromServer["playerIsSending"] = "SaltyChat:PlayerIsSending";
-    FromServer["playerIsSendingRelayed"] = "SaltyChat:PlayerIsSendingRelayed";
-    FromServer["updateRadioTowers"] = "SaltyChat:UpdateRadioTowers";
-    FromServer["isUsingMegaphone"] = "SaltyChat:IsUsingMegaphone";
-})(FromServer || (FromServer = {}));
+(function(FromServer1) {
+    FromServer1["initialize"] = "SaltyChat:Initialize";
+    FromServer1["syncClients"] = "SaltyChat:SyncClients";
+    FromServer1["updateClient"] = "SaltyChat:UpdateClient";
+    FromServer1["updateClientAlive"] = "SaltyChat:UpdateClientAlive";
+    FromServer1["updateClientRange"] = "SaltyChat:UpdateClientRange";
+    FromServer1["removeClient"] = "SaltyChat:RemoveClient";
+    FromServer1["phoneEstablish"] = "SaltyChat:PhoneEstablish";
+    FromServer1["phoneEnd"] = "SaltyChat:PhoneEnd";
+    FromServer1["radioSetChannel"] = "SaltyChat:RadioSetChannel";
+    FromServer1["radioLeaveChannel"] = "SaltyChat:RadioLeaveChannel";
+    FromServer1["playerIsSending"] = "SaltyChat:PlayerIsSending";
+    FromServer1["playerIsSendingRelayed"] = "SaltyChat:PlayerIsSendingRelayed";
+    FromServer1["updateRadioTowers"] = "SaltyChat:UpdateRadioTowers";
+    FromServer1["isUsingMegaphone"] = "SaltyChat:IsUsingMegaphone";
+})(FromServer || (FromServer = {
+}));

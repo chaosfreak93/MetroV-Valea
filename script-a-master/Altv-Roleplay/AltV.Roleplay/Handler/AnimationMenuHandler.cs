@@ -27,7 +27,7 @@ namespace Altv_Roleplay.Handler
                 interactHTML +=
                     "<li class='interactitem' id='InteractionMenu-inspect' data-action='inspect' data-actionstring='Untersuchen'><img src='../utils/img/inspect.png'></li>";
                 interactHTML +=
-                    "<li class='interactitem' id='InteractionMenu-kneel2' data-action='kneel2' data-actionstring='Knien'><img src='../utils/img/kneel.png'></li>";
+                    "<li class='interactitem' id='InteractionMenu-sit' data-action='sit' data-actionstring='Sitzen'><img src='../utils/img/kneel.png'></li>";
                 interactHTML +=
                     "<li class='interactitem' id='InteractionMenu-lean4' data-action='lean4' data-actionstring='Anlehnen'><img src='../utils/img/lean.png'></li>";
                 interactHTML +=

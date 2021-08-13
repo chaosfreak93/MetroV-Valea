@@ -117,6 +117,7 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchVehiclePlate,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewFactionVehicles,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewDispatches,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewFactionVehicles,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-Overview,
@@ -124,11 +125,13 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchVehiclePlate,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-GiveWeaponLicense,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewBankTransactions,
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS,
 div.Tablet > div.Tablet-UseableArea > div#DispatchApp-Area,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-Overview,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewFactionVehicles,
 div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewDispatches,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-Overview,
 div.Tablet > div.Tablet-UseableArea > div#ACLSApp-Area > div#ACLSApp-Area-ViewFactionVehicles,
@@ -1385,6 +1388,20 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
     border: 1px solid #0000004f;
 }
 
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
+    background: rgba(255, 255, 255, 0.025);
+    height: 525px;
+    width: 800px;
+    top: 36px;
+    position: absolute;
+    left: 100px;
+    border-radius: 7px;
+    text-align: center;
+    border: 1px solid #0000004f;
+}
+
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box,
@@ -1407,6 +1424,17 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
     overflow-y: auto;
 }
 
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
+    width: 1025px !important;
+    left: -2px !important;
+    top: -30px !important;
+    height: 619px !important;
+    max-height: 630px;
+    overflow-y: auto;
+}
+
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-SearchPerson > div.box > p.title,
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchLicense > div.box > p.title,
@@ -1426,6 +1454,15 @@ div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-
     font-size: 18px;
     font-family: PEL;
     margin-bottom: 0.5rem;
+}
+
+div.Tablet > div.Tablet-UseableArea > div#JusticeApp-Area > div#JusticeApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-ViewEmergencyOS > div.box,
+div.Tablet > div.Tablet-UseableArea > div#LSMDApp-Area > div#LSMDApp-Area-ViewEmergencyOS > div.box {
+    color: #d2d2d2;
+    margin: 0;
+    font-size: 18px;
+    font-family: PEL;
 }
 
 div.Tablet > div.Tablet-UseableArea > div#LSPDApp-Area > div#LSPDApp-Area-SearchPerson > div.box > input,

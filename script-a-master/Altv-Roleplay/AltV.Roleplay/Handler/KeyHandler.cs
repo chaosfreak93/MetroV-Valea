@@ -6,6 +6,7 @@ using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using Altv_Roleplay.Factories;
 using Altv_Roleplay.Model;
+using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
 
 namespace Altv_Roleplay.Handler
@@ -172,6 +173,14 @@ namespace Altv_Roleplay.Handler
                     player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
                     return;
                 }
+                
+                bool airportExit = player.Position.IsInRange(Constants.Positions.ExitTPPos_Airport, 3f);
+
+                if (airportExit && !player.IsInVehicle && Characters.GetCharacterAccState(charId) == 1) {
+                    player.Position = new Position(Constants.Positions.ExitTargetPos_Airport.X, Constants.Positions.ExitTargetPos_Airport.Y, Constants.Positions.ExitTargetPos_Airport.Z + 0.5f);
+                    player.Rotation = Constants.Positions.ExitTargetRot_Airport;
+                    return;
+                }
 
                 var shopPos = ServerShops.ServerShops_.FirstOrDefault(x => player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 3f));
 
@@ -210,22 +219,22 @@ namespace Altv_Roleplay.Handler
                         return;
                     }
 
-                    if (vehicleShopPos.id == 6 && ServerFactions.GetCharacterFactionId(charId) != 2) {
+                    if (vehicleShopPos.id == 6 && ServerFactions.GetCharacterFactionId(charId) != 1) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
 
-                    if (vehicleShopPos.id == 7 && ServerFactions.GetCharacterFactionId(charId) != 2) {
+                    if (vehicleShopPos.id == 7 && ServerFactions.GetCharacterFactionId(charId) != 1) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
 
-                    if (vehicleShopPos.id == 8 && ServerFactions.GetCharacterFactionId(charId) != 3) {
+                    if (vehicleShopPos.id == 8 && ServerFactions.GetCharacterFactionId(charId) != 2) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
 
-                    if (vehicleShopPos.id == 9 && ServerFactions.GetCharacterFactionId(charId) != 3) {
+                    if (vehicleShopPos.id == 9 && ServerFactions.GetCharacterFactionId(charId) != 2) {
                         HUDHandler.SendNotification(player, 3, 5000, "Du hast hier keinen Zugriff drauf.");
                         return;
                     }
@@ -247,7 +256,7 @@ namespace Altv_Roleplay.Handler
                 var bankPos = ServerBanks.ServerBanks_.FirstOrDefault(x => player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 1f));
 
                 if (bankPos != null && !player.IsInVehicle) {
-                    if (bankPos.zoneName == "Maze Bank Fraktion") {
+                    if (bankPos.zoneName == "Staatsbank Fraktion") {
                         if (!ServerFactions.IsCharacterInAnyFaction(charId)) return;
 
                         if (ServerFactions.GetCharacterFactionRank(charId) !=
@@ -261,7 +270,7 @@ namespace Altv_Roleplay.Handler
                         return;
                     }
 
-                    if (bankPos.zoneName == "Maze Bank Company") {
+                    if (bankPos.zoneName == "Staatsbank Company") {
                         if (!ServerCompanys.IsCharacterInAnyServerCompany(charId)) return;
 
                         if (ServerCompanys.GetCharacterServerCompanyRank(charId) != 1 &&
@@ -285,6 +294,30 @@ namespace Altv_Roleplay.Handler
 
                 if (barberPos != null && !player.IsInVehicle) {
                     player.EmitLocked("Client:Barber:barberCreateCEF", Characters.GetCharacterHeadOverlays(charId));
+                    return;
+                }
+                
+                Server_Dropped_Items droppedItem = ServerDroppedItems.ServerDroppedItems_.ToList().FirstOrDefault(x => player.Position.IsInRange(x.pos, 2f));
+                if (droppedItem != null && !player.IsInVehicle)
+                {
+                    float weight = ServerItems.GetItemWeight(droppedItem.itemName) * droppedItem.itemAmount;
+                    if (CharactersInventory.GetCharacterItemWeight(User.GetPlayerOnline(player), "inventory") + weight > 15f)
+                    {
+                        if (CharactersInventory.GetCharacterItemWeight(User.GetPlayerOnline(player), "backpack") + weight > CharactersInventory.GetCharacterItemWeight(charId, "backpack"))
+                        {
+                            HUDHandler.SendNotification(player, 4, 1500, "Du hast keinen Platz dafür.");
+                            return;
+                        } else
+                        {
+                            CharactersInventory.AddCharacterItem(User.GetPlayerOnline(player), droppedItem.itemName, droppedItem.itemAmount, "backpack");
+                            ServerDroppedItems.RemoveItem(droppedItem);
+                            HUDHandler.SendNotification(player, 2, 1500, $"Du hast den Gegenstand {droppedItem.itemName} ({droppedItem.itemAmount}x) aufgehoben.");
+                            return;
+                        }
+                    }
+                    CharactersInventory.AddCharacterItem(User.GetPlayerOnline(player), droppedItem.itemName, droppedItem.itemAmount, "inventory");
+                    ServerDroppedItems.RemoveItem(droppedItem);
+                    HUDHandler.SendNotification(player, 2, 1500, $"Du hast den Gegenstand {droppedItem.itemName} ({droppedItem.itemAmount}x) aufgehoben.");
                     return;
                 }
 
@@ -312,7 +345,7 @@ namespace Altv_Roleplay.Handler
                         else
                             HUDHandler.SendNotification(player, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
 
-                        if (factionId == 2 || factionId == 12) SmartphoneHandler.RequestLSPDIntranet((ClassicPlayer) player);
+                        if (factionId == 1) SmartphoneHandler.RequestLSPDIntranet((ClassicPlayer) player);
                         return;
                     }
 
@@ -376,13 +409,14 @@ namespace Altv_Roleplay.Handler
                     TownhallHandler.openHouseSelector(player);
                     return;
                 }
-
-                if (player.Position.IsInRange(Constants.Positions.IdentityCardApply, 2.5f) && Characters.GetCharacterAccState(charId) == 0 &&
-                    !player.IsInVehicle) //Rathaus IdentityCardApply
+                
+                //TODO: Move to Admin or Interaction Menu
+                /**if (player.Position.IsInRange(Constants.Positions.IdentityCardApply, 2.5f) && Characters.GetCharacterAccState(charId) == 0 &&
+                    !player.IsInVehicle)
                 {
                     TownhallHandler.tryCreateIdentityCardApplyForm(player);
                     return;
-                }
+                }**/
 
                 var tattooShop = ServerTattooShops.ServerTattooShops_.ToList().FirstOrDefault(x =>
                     x.owner != 0 && player.Position.IsInRange(new Position(x.pedX, x.pedY, x.pedZ), 2.5f));

@@ -1,25 +1,31 @@
 export var Command;
-(function (Command) {
-    Command[Command["pluginState"] = 0] = "pluginState";
-    Command[Command["initiate"] = 1] = "initiate";
-    Command[Command["reset"] = 2] = "reset";
-    Command[Command["ping"] = 3] = "ping";
-    Command[Command["pong"] = 4] = "pong";
-    Command[Command["instanceState"] = 5] = "instanceState";
-    Command[Command["soundState"] = 6] = "soundState";
-    Command[Command["selfStateUpdate"] = 7] = "selfStateUpdate";
-    Command[Command["playerStateUpdate"] = 8] = "playerStateUpdate";
-    Command[Command["bulkUpdate"] = 9] = "bulkUpdate";
-    Command[Command["removePlayer"] = 10] = "removePlayer";
-    Command[Command["talkState"] = 11] = "talkState";
-    Command[Command["playSound"] = 18] = "playSound";
-    Command[Command["stopSound"] = 19] = "stopSound";
-    Command[Command["phoneCommunicationUpdate"] = 20] = "phoneCommunicationUpdate";
-    Command[Command["stopPhoneCommunication"] = 21] = "stopPhoneCommunication";
-    Command[Command["radioCommunicationUpdate"] = 30] = "radioCommunicationUpdate";
-    Command[Command["stopRadioCommunication"] = 31] = "stopRadioCommunication";
-    Command[Command["radioTowerUpdate"] = 32] = "radioTowerUpdate";
-    Command[Command["radioTrafficState"] = 33] = "radioTrafficState";
-    Command[Command["megaphoneCommunicationUpdate"] = 40] = "megaphoneCommunicationUpdate";
-    Command[Command["stopMegaphoneCommunication"] = 41] = "stopMegaphoneCommunication";
-})(Command || (Command = {}));
+(function(Command1) {
+    Command1[Command1[// Plugin
+    "pluginState"] = 0] = "pluginState";
+    Command1[Command1["initiate"] = 1] = "initiate";
+    Command1[Command1["reset"] = 2] = "reset";
+    Command1[Command1["ping"] = 3] = "ping";
+    Command1[Command1["pong"] = 4] = "pong";
+    Command1[Command1["instanceState"] = 5] = "instanceState";
+    Command1[Command1["soundState"] = 6] = "soundState";
+    Command1[Command1["selfStateUpdate"] = 7] = "selfStateUpdate";
+    Command1[Command1["playerStateUpdate"] = 8] = "playerStateUpdate";
+    Command1[Command1["bulkUpdate"] = 9] = "bulkUpdate";
+    Command1[Command1["removePlayer"] = 10] = "removePlayer";
+    Command1[Command1["talkState"] = 11] = "talkState";
+    Command1[Command1[// Sounds
+    "playSound"] = 18] = "playSound";
+    Command1[Command1["stopSound"] = 19] = "stopSound";
+    Command1[Command1[// Phone
+    "phoneCommunicationUpdate"] = 20] = "phoneCommunicationUpdate";
+    Command1[Command1["stopPhoneCommunication"] = 21] = "stopPhoneCommunication";
+    Command1[Command1[// Radio
+    "radioCommunicationUpdate"] = 30] = "radioCommunicationUpdate";
+    Command1[Command1["stopRadioCommunication"] = 31] = "stopRadioCommunication";
+    Command1[Command1["radioTowerUpdate"] = 32] = "radioTowerUpdate";
+    Command1[Command1["radioTrafficState"] = 33] = "radioTrafficState";
+    Command1[Command1[// Megaphone
+    "megaphoneCommunicationUpdate"] = 40] = "megaphoneCommunicationUpdate";
+    Command1[Command1["stopMegaphoneCommunication"] = 41] = "stopMegaphoneCommunication";
+})(Command || (Command = {
+}));

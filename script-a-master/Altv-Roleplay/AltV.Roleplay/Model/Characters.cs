@@ -65,7 +65,8 @@ namespace Altv_Roleplay.Model
                     isInJail = false,
                     jailTime = 0,
                     pedName = "none",
-                    isAnimalPed = 0
+                    isAnimalPed = 0,
+                    ICWhitelist = false,
                 };
                 PlayerCharacters.Add(CharData);
 
@@ -122,6 +123,44 @@ namespace Altv_Roleplay.Model
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
+        }
+        
+        public static void SetPlayerICWhitelistState(int charId, bool state) {
+            try {
+                if (charId <= 0) return;
+
+                var pl = PlayerCharacters.FirstOrDefault(x => x.charId == charId);
+
+                if (pl != null) {
+                    pl.ICWhitelist = state;
+
+                    using (var db = new gtaContext()) {
+                        db.AccountsCharacters.Update(pl);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
+        
+        public static bool IsPlayerICWhitelisted(string charName) {
+            var pl = PlayerCharacters.FirstOrDefault(p => p.charname == charName);
+
+            if (pl != null)
+                return pl.ICWhitelist;
+
+            return false;
+        }
+
+        public static bool IsPlayerICWhitelisted(int charID) {
+            var pl = PlayerCharacters.FirstOrDefault(p => p.charId == charID);
+
+            if (pl != null)
+                return pl.ICWhitelist;
+
+            return false;
         }
 
         public static void SetCharacterCurrentFunkFrequence(int charId, string frequence) {
@@ -3440,6 +3479,7 @@ namespace Altv_Roleplay.Model
                 if (charId <= 0) return;
 
                 var chars = PlayerCharacters.FirstOrDefault(x => x.charId == charId);
+                var player = Alt.GetAllPlayers().ToList().FirstOrDefault(x => ((ClassicPlayer) x).CharacterId == charId);
 
                 if (chars != null) {
                     chars.isUnconscious = isUnconscious;

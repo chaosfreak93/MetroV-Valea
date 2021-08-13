@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Numerics;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
@@ -331,6 +332,20 @@ namespace Altv_Roleplay.Utils
             var newPos = new Position(position.X + (float) (distance * Math.Sin(-radius)), position.Y + (float) (distance * Math.Cos(-radius)),
                 position.Z);
             return newPos;
+        }
+        
+        public static Vector3 getForwardVector(this ClassicPlayer player)
+        {
+            Vector3 rotation = player.Rotation;
+            float z = -rotation.Z;
+            float x = rotation.X;
+            double num = Math.Abs(Math.Cos(x));
+            return new Vector3
+            {
+                X = (float)(Math.Sin(z) * num),
+                Y = (float)(Math.Cos(z) * num),
+                Z = (float)Math.Sin(x)
+            };
         }
     }
 }

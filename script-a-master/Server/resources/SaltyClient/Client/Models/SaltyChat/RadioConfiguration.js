@@ -1,5 +1,5 @@
 export class RadioConfiguration {
-    constructor() {
+    constructor(){
         this.volume = 1;
     }
 }
