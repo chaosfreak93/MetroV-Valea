@@ -3284,7 +3284,7 @@
                     playPhoneAudio("../utils/sounds/phone/msg_send.wav");
                     let encodedText = encodeText(text);
                     document.getElementById("phone-chat-input").value = null;
-                    let unix = Date.now();
+                    let unix = new Date.now();
                     targetMessageUser = document.getElementById('phone-chat-disp-name').dataset.target;
                     globalChatMessagesArray = [];
                     alt.emit("Client:Smartphone:sendChatMessage", selectedChatId, userPhoneNumber, targetMessageUser, unix, encodedText);
