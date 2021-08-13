@@ -55,6 +55,22 @@ export function loadAnimDictAsync(animDict: string): Promise<any> {
     });
 }
 
+export function loadStreamedTextureDictAsync(streamedTextureDict: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        if (native.hasStreamedTextureDictLoaded(streamedTextureDict))
+            return resolve(true);
+
+        native.requestStreamedTextureDict(streamedTextureDict, true);
+
+        let interval = alt.setInterval(() => {
+            if (native.hasStreamedTextureDictLoaded(streamedTextureDict)) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
+
 export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
     return new Promise((resolve, reject) => {
         if (alt.Player.local.vehicle)
@@ -71,17 +87,17 @@ export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
     });
 }
 
-export function clearTattoos(entity) {
-    native.clearPedDecorations(entity);
+export function clearTattoos(entity: alt.Entity): void {
+    native.clearPedDecorations(entity.scriptID);
 }
 
-export function setTattoo(entity, collection, hash) {
-    native.addPedDecorationFromHashes(entity, alt.hash(collection), alt.hash(hash));
+export function setTattoo(entity: alt.Entity, collection: string, hash: string): void {
+    native.addPedDecorationFromHashes(entity.scriptID, alt.hash(collection), alt.hash(hash));
 }
 
-export function setCorrectTattoos() {
-    clearTattoos(alt.Player.local.scriptID);
-    for (var i in playerTattoos) setTattoo(alt.Player.local.scriptID, playerTattoos[i].collection, playerTattoos[i].hash);
+export function setCorrectTattoos(): void {
+    clearTattoos(alt.Player.local);
+    for (var i in playerTattoos) setTattoo(alt.Player.local, playerTattoos[i].collection, playerTattoos[i].hash);
 }
 
 alt.onServer("Client:Utilities:setTattoos", (tattooJSON) => {
@@ -89,13 +105,14 @@ alt.onServer("Client:Utilities:setTattoos", (tattooJSON) => {
     setCorrectTattoos();
 });
 
-export function setClothes(entity, compId, draw, tex) {
-    native.setPedComponentVariation(entity, compId, draw, tex, 0);
+export function setClothes(entity: alt.Entity, compId: number, draw: number, tex: number): void {
+    native.setPedComponentVariation(entity.scriptID, compId, draw, tex, 0);
 }
 
 export default {
     loadClipsetAsync,
     loadAnimDictAsync,
+    loadStreamedTextureDictAsync,
     loadModelAsync,
     setIntoVehicle,
     clearTattoos,

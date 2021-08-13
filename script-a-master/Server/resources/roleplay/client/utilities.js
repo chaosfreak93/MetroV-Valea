@@ -40,6 +40,18 @@ export function loadAnimDictAsync(animDict) {
         }, 0);
     });
 }
+export function loadStreamedTextureDictAsync(streamedTextureDict) {
+    return new Promise((resolve, reject)=>{
+        if (native.hasStreamedTextureDictLoaded(streamedTextureDict)) return resolve(true);
+        native.requestStreamedTextureDict(streamedTextureDict, true);
+        let interval = alt.setInterval(()=>{
+            if (native.hasStreamedTextureDictLoaded(streamedTextureDict)) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
 export function setIntoVehicle(vehicle) {
     return new Promise((resolve, reject)=>{
         if (alt.Player.local.vehicle) return resolve(true);
@@ -53,14 +65,14 @@ export function setIntoVehicle(vehicle) {
     });
 }
 export function clearTattoos(entity) {
-    native.clearPedDecorations(entity);
+    native.clearPedDecorations(entity.scriptID);
 }
 export function setTattoo(entity, collection, hash) {
-    native.addPedDecorationFromHashes(entity, alt.hash(collection), alt.hash(hash));
+    native.addPedDecorationFromHashes(entity.scriptID, alt.hash(collection), alt.hash(hash));
 }
 export function setCorrectTattoos() {
-    clearTattoos(alt.Player.local.scriptID);
-    for(var i in playerTattoos)setTattoo(alt.Player.local.scriptID, playerTattoos[i].collection, playerTattoos[i].hash);
+    clearTattoos(alt.Player.local);
+    for(var i in playerTattoos)setTattoo(alt.Player.local, playerTattoos[i].collection, playerTattoos[i].hash);
 }
 alt.onServer("Client:Utilities:setTattoos", (tattooJSON)=>{
     playerTattoos = JSON.parse(tattooJSON);
@@ -72,6 +84,7 @@ export function setClothes(entity, compId, draw, tex) {
 export default {
     loadClipsetAsync,
     loadAnimDictAsync,
+    loadStreamedTextureDictAsync,
     loadModelAsync,
     setIntoVehicle,
     clearTattoos,

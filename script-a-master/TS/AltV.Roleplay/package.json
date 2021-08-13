@@ -5,8 +5,8 @@
   "author": "Yan-Luca L.",
   "type": "module",
   "scripts": {
-    "clean": "rimraf ./resources",
-    "build": "swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet"
+    "clean": "rimraf ../../Server/resources/roleplay/client",
+    "build": "npm run clean && swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet"
   },
   "devDependencies": {
     "@altv/types-client": "^1.7.6",

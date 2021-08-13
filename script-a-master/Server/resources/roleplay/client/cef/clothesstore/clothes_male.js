@@ -146439,4 +146439,4 @@ let clothes_male = [
         "BestTorsoDrawable": "none",
         "BestTorsoTexture": "none"
     }
-]
+];
