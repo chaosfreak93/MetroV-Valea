@@ -19,8 +19,6 @@ namespace Altv_Roleplay.Model
         public static List<Server_Vehicles_Mod> ServerVehiclesMod_ = new();
         public static List<Server_Vehicle_Items> ServerVehicleTrunkItems_ = new();
 
-        public static List<Server_All_Vehicle_Mods> ServerAllVehicleMods_ = new();
-
         //this two
         public static List<Server_Vehicles> ServerVehiclesLocked_
         {
@@ -715,51 +713,74 @@ namespace Altv_Roleplay.Model
                 var vehMods = new Server_Vehicles_Mod {
                     id = args[0],
                     vehId = args[1],
-                    colorPrimary = (byte) args[2],
-                    colorSecondary = (byte) args[3],
-                    spoiler = (byte) args[4],
-                    front_bumper = (byte) args[5],
-                    rear_bumper = (byte) args[6],
-                    side_skirt = (byte) args[7],
-                    exhaust = (byte) args[8],
-                    frame = (byte) args[9],
-                    grille = (byte) args[10],
-                    hood = (byte) args[11],
-                    fender = (byte) args[12],
-                    right_fender = (byte) args[13],
-                    roof = (byte) args[14],
-                    engine = (byte) args[15],
-                    brakes = (byte) args[16],
-                    transmission = (byte) args[17],
-                    horns = (byte) args[18],
-                    suspension = (byte) args[19],
-                    armor = (byte) args[20],
-                    turbo = (byte) args[21],
-                    xenon = (byte) args[22],
-                    wheel_type = (byte) args[23],
-                    wheels = (byte) args[24],
-                    wheelcolor = (byte) args[25],
-                    plate_holder = (byte) args[26],
-                    trim_design = (byte) args[27],
-                    ornaments = (byte) args[28],
-                    dial_design = (byte) args[29],
-                    steering_wheel = (byte) args[30],
-                    shift_lever = (byte) args[31],
-                    plaques = (byte) args[32],
-                    hydraulics = (byte) args[33],
-                    airfilter = (byte) args[34],
-                    window_tint = (byte) args[35],
-                    livery = (byte) args[36],
-                    plate = (byte) args[37],
-                    neon = (byte) args[38],
-                    neon_r = (byte) args[39],
-                    neon_g = (byte) args[40],
-                    neon_b = (byte) args[41],
-                    smoke_r = (byte) args[42],
-                    smoke_g = (byte) args[43],
-                    smoke_b = (byte) args[44],
-                    colorPearl = (byte) args[45],
-                    headlightColor = (byte) args[46]
+                    colorPrimaryType = (byte)args[2],
+                    colorSecondaryType = (byte)args[3],
+                    spoiler = (byte)args[4],
+                    front_bumper = (byte)args[5],
+                    rear_bumper = (byte)args[6],
+                    side_skirt = (byte)args[7],
+                    exhaust = (byte)args[8],
+                    frame = (byte)args[9],
+                    grille = (byte)args[10],
+                    hood = (byte)args[11],
+                    fender = (byte)args[12],
+                    right_fender = (byte)args[13],
+                    roof = (byte)args[14],
+                    engine = (byte)args[15],
+                    brakes = (byte)args[16],
+                    transmission = (byte)args[17],
+                    horns = (byte)args[18],
+                    suspension = (byte)args[19],
+                    armor = (byte)args[20],
+                    turbo = (byte)args[21],
+                    xenon = (byte)args[22],
+                    wheel_type = (byte)args[23],
+                    wheels = (byte)args[24],
+                    wheelcolor = (byte)args[25],
+                    plate_holder = (byte)args[26],
+                    trim_design = (byte)args[27],
+                    ornaments = (byte)args[28],
+                    dial_design = (byte)args[29],
+                    steering_wheel = (byte)args[30],
+                    shift_lever = (byte)args[31],
+                    plaques = (byte)args[32],
+                    hydraulics = (byte)args[33],
+                    airfilter = (byte)args[34],
+                    window_tint = (byte)args[35],
+                    livery = (byte)args[36],
+                    plate = (byte)args[37],
+                    neon = (byte)args[38],
+                    neon_r = (byte)args[39],
+                    neon_g = (byte)args[40],
+                    neon_b = (byte)args[41],
+                    smoke_r = (byte)args[42],
+                    smoke_g = (byte)args[43],
+                    smoke_b = (byte)args[44],
+                    colorPearl = (byte)args[45],
+                    headlightColor = (byte)args[46],
+                    colorPrimary_r = (byte)args[47],
+                    colorPrimary_g = (byte)args[48],
+                    colorPrimary_b = (byte)args[49],
+                    colorSecondary_r = (byte)args[50],
+                    colorSecondary_g = (byte)args[51],
+                    colorSecondary_b = (byte)args[52],
+                    back_wheels = (byte)args[53],
+                    plate_vanity = (byte)args[54],
+                    door_interior = (byte)args[55],
+                    seats = (byte)args[56],
+                    rear_shelf = (byte)args[57],
+                    trunk = (byte)args[58],
+                    engine_block = (byte)args[59],
+                    strut_bar = (byte)args[60],
+                    arch_cover = (byte)args[61],
+                    antenna = (byte)args[62],
+                    exterior_parts = (byte)args[63],
+                    tank = (byte)args[64],
+                    rear_hydraulics = (byte)args[65],
+                    door = (byte)args[66],
+                    plate_color = (byte)args[67],
+                    interior_color = (byte)args[68],
+                    smoke = (byte)args[69]
                 };
 
                 ServerVehiclesMod_.Add(vehMods);
@@ -778,129 +799,84 @@ namespace Altv_Roleplay.Model
             }
         }
 
-        public static byte GetCurrentVehMod(IVehicle veh, int modTyp) {
-            if (veh == null || !veh.Exists) return 0;
-
-            var vehID = veh.GetVehicleId();
-            if (vehID == 0) return 0;
-
-            var vMod = ServerVehiclesMod_.FirstOrDefault(v => v.vehId == (int) vehID);
-
-            if (vMod != null)
-                switch (modTyp) {
-                    case 0: return (byte) vMod.spoiler;
-                    case 1: return (byte) vMod.front_bumper;
-                    case 2: return (byte) vMod.rear_bumper;
-                    case 3: return (byte) vMod.side_skirt;
-                    case 4: return (byte) vMod.exhaust;
-                    case 5: return (byte) vMod.frame;
-                    case 6: return (byte) vMod.grille;
-                    case 7: return (byte) vMod.hood;
-                    case 8: return (byte) vMod.fender;
-                    case 9: return (byte) vMod.right_fender;
-                    case 10: return (byte) vMod.roof;
-                    case 11: return (byte) vMod.engine;
-                    case 12: return (byte) vMod.brakes;
-                    case 13: return (byte) vMod.transmission;
-                    case 14: return (byte) vMod.horns;
-                    case 15: return (byte) vMod.suspension;
-                    case 16: return (byte) vMod.armor;
-                    case 18: return (byte) vMod.turbo;
-                    case 22: return (byte) vMod.xenon;
-                    case 131: return (byte) vMod.wheel_type;
-                    case 23: return (byte) vMod.wheels;
-                    case 132: return (byte) vMod.wheelcolor;
-                    case 25: return (byte) vMod.plate_holder;
-                    case 27: return (byte) vMod.trim_design;
-                    case 28: return (byte) vMod.ornaments;
-                    case 30: return (byte) vMod.dial_design;
-                    case 33: return (byte) vMod.steering_wheel;
-                    case 34: return (byte) vMod.shift_lever;
-                    case 35: return (byte) vMod.plaques;
-                    case 38: return (byte) vMod.hydraulics;
-                    case 40: return (byte) vMod.airfilter;
-                    case 46: return (byte) vMod.window_tint;
-                    case 48: return (byte) vMod.livery;
-                    case 62: return (byte) vMod.plate;
-                    case 100: return (byte) vMod.colorPrimary;
-                    case 200: return (byte) vMod.colorSecondary;
-                    case 250: return (byte) vMod.colorPearl;
-                    case 280: return (byte) vMod.headlightColor;
-                    case 299: return (byte) vMod.neon;
-                    case 300: return (byte) vMod.neon_r;
-                    case 301: return (byte) vMod.neon_g;
-                    case 302: return (byte) vMod.neon_b;
-                    case 400: return (byte) vMod.smoke_r;
-                    case 401: return (byte) vMod.smoke_g;
-                    case 402: return (byte) vMod.smoke_b;
-                    default: return 0;
-                }
-
-            return 0;
-        }
-
         public static void SetVehicleModsCorrectly(IVehicle veh) {
             try {
                 if (veh == null || !veh.Exists) return;
 
                 veh.ModKit = 1;
-                veh.SetMod(0, GetCurrentVehMod(veh, 0));
-                veh.SetMod(1, GetCurrentVehMod(veh, 1));
-                veh.SetMod(2, GetCurrentVehMod(veh, 2));
-                veh.SetMod(3, GetCurrentVehMod(veh, 3));
-                veh.SetMod(4, GetCurrentVehMod(veh, 4));
-                veh.SetMod(5, GetCurrentVehMod(veh, 5));
-                veh.SetMod(6, GetCurrentVehMod(veh, 6));
-                veh.SetMod(7, GetCurrentVehMod(veh, 7));
-                veh.SetMod(8, GetCurrentVehMod(veh, 8));
-                veh.SetMod(9, GetCurrentVehMod(veh, 9));
-                veh.SetMod(10, GetCurrentVehMod(veh, 10));
-                veh.SetMod(11, GetCurrentVehMod(veh, 11));
-                veh.SetMod(12, GetCurrentVehMod(veh, 12));
-                veh.SetMod(13, GetCurrentVehMod(veh, 13));
-                veh.SetMod(14, GetCurrentVehMod(veh, 14));
-                veh.SetMod(15, GetCurrentVehMod(veh, 15));
-                veh.SetMod(16, GetCurrentVehMod(veh, 16));
-                veh.SetMod(18, GetCurrentVehMod(veh, 18));
-                veh.SetMod(22, GetCurrentVehMod(veh, 22));
-                veh.SetWheels(0, GetCurrentVehMod(veh, 23));
-                veh.SetMod(25, GetCurrentVehMod(veh, 25));
-                veh.SetMod(27, GetCurrentVehMod(veh, 27));
-                veh.SetMod(28, GetCurrentVehMod(veh, 28));
-                veh.SetMod(30, GetCurrentVehMod(veh, 30));
-                veh.SetMod(33, GetCurrentVehMod(veh, 33));
-                veh.SetMod(34, GetCurrentVehMod(veh, 34));
-                veh.SetMod(35, GetCurrentVehMod(veh, 35));
-                veh.SetMod(38, GetCurrentVehMod(veh, 38));
-                veh.SetMod(40, GetCurrentVehMod(veh, 40));
-                veh.SetMod(48, GetCurrentVehMod(veh, 48));
-                veh.SetMod(62, GetCurrentVehMod(veh, 62));
-                veh.PrimaryColor = GetCurrentVehMod(veh, 100);
-                veh.SecondaryColor = GetCurrentVehMod(veh, 200);
-                veh.PearlColor = GetCurrentVehMod(veh, 250);
-                veh.HeadlightColor = GetCurrentVehMod(veh, 280);
-                veh.WheelColor = GetCurrentVehMod(veh, 132);
+                var mod = ServerVehiclesMod_.FirstOrDefault(x => x.vehId == (int)veh.GetVehicleId());
+                if (mod != null)
+                {
+                    veh.SetMod(0, (byte)mod.spoiler);
+                    veh.SetMod(1, (byte)mod.front_bumper);
+                    veh.SetMod(2, (byte)mod.rear_bumper);
+                    veh.SetMod(3, (byte)mod.side_skirt);
+                    veh.SetMod(4, (byte)mod.exhaust);
+                    veh.SetMod(5, (byte)mod.frame);
+                    veh.SetMod(6, (byte)mod.grille);
+                    veh.SetMod(7, (byte)mod.hood);
+                    veh.SetMod(8, (byte)mod.fender);
+                    veh.SetMod(9, (byte)mod.right_fender);
+                    veh.SetMod(10, (byte)mod.roof);
+                    veh.SetMod(11, (byte)mod.engine);
+                    veh.SetMod(12, (byte)mod.brakes);
+                    veh.SetMod(13, (byte)mod.transmission);
+                    veh.SetMod(14, (byte)mod.horns);
+                    veh.SetMod(15, (byte)mod.suspension);
+                    veh.SetMod(16, (byte)mod.armor);
+                    veh.SetMod(18, (byte)mod.turbo);
+                    veh.SetMod(20, (byte)mod.smoke);
+                    veh.SetMod(22, (byte)mod.xenon);
+                    veh.SetWheels(0, (byte)mod.wheels);
+                    //veh.SetWheels(0, (byte)mod.back_wheels); BACK WHEELS
+                    veh.SetMod(25, (byte)mod.plate_holder);
+                    veh.SetMod(26, (byte)mod.plate_vanity);
+                    veh.SetMod(27, (byte)mod.trim_design);
+                    veh.SetMod(28, (byte)mod.ornaments);
+                    veh.SetMod(30, (byte)mod.dial_design);
+                    veh.SetMod(31, (byte)mod.door_interior);
+                    veh.SetMod(32, (byte)mod.seats);
+                    veh.SetMod(33, (byte)mod.steering_wheel);
+                    veh.SetMod(34, (byte)mod.shift_lever);
+                    veh.SetMod(35, (byte)mod.plaques);
+                    veh.SetMod(36, (byte)mod.rear_shelf);
+                    veh.SetMod(37, (byte)mod.trunk);
+                    veh.SetMod(38, (byte)mod.hydraulics);
+                    veh.SetMod(39, (byte)mod.engine_block);
+                    veh.SetMod(40, (byte)mod.airfilter);
+                    veh.SetMod(41, (byte)mod.strut_bar);
+                    veh.SetMod(42, (byte)mod.arch_cover);
+                    veh.SetMod(43, (byte)mod.antenna);
+                    veh.SetMod(44, (byte)mod.exterior_parts);
+                    veh.SetMod(45, (byte)mod.tank);
+                    veh.SetMod(46, (byte)mod.door);
+                    veh.SetMod(47, (byte)mod.rear_hydraulics);
+                    veh.SetMod(48, (byte)mod.livery);
+                    veh.SetWheels((byte)mod.wheel_type, veh.WheelVariation);
+                    veh.SetWheels(veh.WheelType, (byte)mod.wheels);
+                    veh.WheelColor = (byte)mod.wheelcolor;
+                    veh.WindowTint = (byte)mod.window_tint;
+                    veh.NumberplateIndex = (byte)mod.plate_color;
+                    veh.PrimaryColor = (byte)mod.colorPrimaryType;
+                    veh.SecondaryColor = (byte)mod.colorSecondaryType;
+                    veh.PearlColor = (byte)mod.colorPearl;
+                    veh.InteriorColor = (byte)mod.interior_color;
+                    veh.HeadlightColor = (byte)mod.headlightColor;
+                    if (mod.neon == 0) veh.SetNeonActive(false, false, false, false);
+                    else veh.SetNeonActive(true, true, true, true);
 
-                if (GetCurrentVehMod(veh, 299) == 1) {
-                    veh.SetNeonActive(true, true, true, true);
-                    veh.NeonColor = new Rgba(GetCurrentVehMod(veh, 300), GetCurrentVehMod(veh, 301), GetCurrentVehMod(veh, 302), 1);
-                } else if (GetCurrentVehMod(veh, 299) == 0) {
-                    veh.SetNeonActive(false, false, false, false);
-                    veh.NeonColor = new Rgba(GetCurrentVehMod(veh, 300), GetCurrentVehMod(veh, 301), GetCurrentVehMod(veh, 302), 1);
+                    veh.PrimaryColorRgb = new Rgba((byte)mod.colorPrimary_r, (byte)mod.colorPrimary_g, (byte)mod.colorPrimary_b, 255);
+                    veh.SecondaryColorRgb = new Rgba((byte)mod.colorSecondary_r, (byte)mod.colorSecondary_g, (byte)mod.colorSecondary_b, 255);
+                    veh.NeonColor = new Rgba((byte)mod.neon_r, (byte)mod.neon_g, (byte)mod.neon_b, 255);
+                    veh.TireSmokeColor = new Rgba((byte)mod.smoke_r, (byte)mod.smoke_g, (byte)mod.smoke_b, 255);
                 }
-
-                veh.CustomTires = true;
-                veh.TireSmokeColor = new Rgba(GetCurrentVehMod(veh, 400), GetCurrentVehMod(veh, 401), GetCurrentVehMod(veh, 402), 255);
-                veh.WindowTint = GetCurrentVehMod(veh, 46);
-                //veh.WheelType = GetCurrentVehMod(veh, 131); todo
-
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
         }
 
-        public static void InstallVehicleMod(IVehicle veh, int modType, int modId) {
+        public static void InstallBoughtMod(IVehicle veh, int modType, int modId) {
             try {
                 if (veh == null || !veh.Exists) return;
                 if (veh.GetVehicleId() <= 0) return;
@@ -983,23 +959,26 @@ namespace Altv_Roleplay.Model
                             mod.turbo = modId;
                             veh.SetMod((byte) modType, (byte) modId);
                             break;
+                        case 20: 
+                            mod.smoke = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
                         case 22:
                             mod.xenon = modId;
                             veh.SetMod((byte) modType, (byte) modId);
                             break;
-                        //ToDo: Reifentyp
-                        //case 131: mod.wheel_type = modId; mod.wheels = -1; veh.WheelType = modId; veh.SetMod(23, -1); break;
                         case 23:
                             mod.wheels = modId;
                             veh.SetWheels(0, (byte) modId);
                             break;
-                        case 132:
-                            mod.wheelcolor = modId;
-                            veh.WheelColor = (byte) modId;
-                            break;
+                        //case 24: mod.back_wheels = modId; veh.SetWheels(0, (byte)modId); break; BACK WHEELS
                         case 25:
                             mod.plate_holder = modId;
                             veh.SetMod((byte) modType, (byte) modId);
+                            break;
+                        case 26: 
+                            mod.plate_vanity = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
                             break;
                         case 27:
                             mod.trim_design = modId;
@@ -1013,6 +992,14 @@ namespace Altv_Roleplay.Model
                             mod.dial_design = modId;
                             veh.SetMod((byte) modType, (byte) modId);
                             break;
+                        case 31: 
+                            mod.door_interior = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
+                        case 32: 
+                            mod.seats = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
                         case 33:
                             mod.steering_wheel = modId;
                             veh.SetMod((byte) modType, (byte) modId);
@@ -1025,77 +1012,67 @@ namespace Altv_Roleplay.Model
                             mod.plaques = modId;
                             veh.SetMod((byte) modType, (byte) modId);
                             break;
+                        case 36: 
+                            mod.rear_shelf = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
+                        case 37: 
+                            mod.trunk = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
                         case 38:
                             mod.hydraulics = modId;
                             veh.SetMod((byte) modType, (byte) modId);
+                            break;
+                        case 39: 
+                            mod.engine_block = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
                             break;
                         case 40:
                             mod.airfilter = modId;
                             veh.SetMod((byte) modType, (byte) modId);
                             break;
-                        case 46:
-                            mod.window_tint = modId;
-                            veh.WindowTint = (byte) modId;
+                        case 41: 
+                            mod.strut_bar = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
                             break;
+                        case 42: 
+                            mod.arch_cover = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
+                        case 43: 
+                            mod.antenna = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
+                        case 44: 
+                            mod.exterior_parts = modId; 
+                            veh.SetMod((byte)modType, (byte)modId); 
+                            break;
+                        case 45: mod.tank = modId; veh.SetMod((byte)modType, (byte)modId); break;
+                        case 46: mod.door = modId; veh.SetMod((byte)modType, (byte)modId); break;
+                        case 47: mod.rear_hydraulics = modId; veh.SetMod((byte)modType, (byte)modId); break;
                         case 48:
                             mod.livery = modId;
                             veh.SetMod((byte) modType, (byte) modId);
                             veh.Livery = (byte) modId;
                             break;
-                        case 62:
-                            mod.plate = modId;
-                            veh.SetMod((byte) modType, (byte) modId);
-                            break;
-                        case 100:
-                            mod.colorPrimary = modId;
-                            veh.PrimaryColor = (byte) modId;
-                            break;
-                        case 200:
-                            mod.colorSecondary = modId;
-                            veh.SecondaryColor = (byte) modId;
-                            break;
-                        case 250:
-                            mod.colorPearl = modId;
-                            veh.PearlColor = (byte) modId;
-                            break;
-                        case 280:
-                            mod.headlightColor = modId;
-                            veh.HeadlightColor = (byte) modId;
-                            break;
-                        case 299:
-                            mod.neon = modId;
-                            veh.SetNeonActive(false, false, false, false);
-                            break;
-                        case 300:
-                            mod.neon_r = modId;
-                            veh.SetNeonActive(true, true, true, true);
-                            veh.NeonColor = new Rgba((byte) mod.neon_r, (byte) mod.neon_g, (byte) mod.neon_b, 255);
-                            mod.neon = 1;
-                            break;
-                        case 301:
-                            mod.neon_g = modId;
-                            veh.SetNeonActive(true, true, true, true);
-                            veh.NeonColor = new Rgba((byte) mod.neon_r, (byte) mod.neon_g, (byte) mod.neon_b, 255);
-                            mod.neon = 1;
-                            break;
-                        case 302:
-                            mod.neon_b = modId;
-                            veh.SetNeonActive(true, true, true, true);
-                            veh.NeonColor = new Rgba((byte) mod.neon_r, (byte) mod.neon_g, (byte) mod.neon_b, 255);
-                            mod.neon = 1;
-                            break;
-                        case 400:
-                            mod.smoke_r = modId;
-                            veh.TireSmokeColor = new Rgba((byte) mod.smoke_r, (byte) mod.smoke_g, (byte) mod.smoke_b, 255);
-                            break;
-                        case 401:
-                            mod.smoke_g = modId;
-                            veh.TireSmokeColor = new Rgba((byte) mod.smoke_r, (byte) mod.smoke_g, (byte) mod.smoke_b, 255);
-                            break;
-                        case 402:
-                            mod.smoke_b = modId;
-                            veh.TireSmokeColor = new Rgba((byte) mod.smoke_r, (byte) mod.smoke_g, (byte) mod.smoke_b, 255);
-                            break;
+                        case 50: mod.wheel_type = modId; veh.SetWheels((byte)modId, veh.WheelVariation); break;
+                        case 51: mod.wheels = modId; veh.SetWheels(veh.WheelType, (byte)modId); break;
+                        case 52: mod.wheelcolor = modId; veh.WheelColor = (byte)modId; break;
+                        case 53: mod.window_tint = modId; veh.WindowTint = (byte)modId; break;
+                        case 54: mod.plate_color = modId; veh.NumberplateIndex = (uint)modId; break;
+                        case 55: mod.colorPrimaryType = modId; veh.PrimaryColor = (byte)modId; break;
+                        case 59: mod.colorSecondary_b = modId; veh.SecondaryColor = (byte)modId; break;
+                        case 63: mod.colorPearl = modId; veh.PearlColor = (byte)modId; break;
+                        case 80: mod.interior_color = modId; veh.InteriorColor = (byte)modId; break;
+                        case 81: mod.neon = modId; if (modId == 0) veh.SetNeonActive(false, false, false, false); else veh.SetNeonActive(true, true, true, true); break;
+                        case 82: mod.neon_r = modId; veh.NeonColor = new Rgba((byte)mod.neon_r, (byte)mod.neon_g, (byte)mod.neon_b, 255); break;
+                        case 83: mod.neon_g = modId; veh.NeonColor = new Rgba((byte)mod.neon_r, (byte)mod.neon_g, (byte)mod.neon_b, 255); break;
+                        case 84: mod.neon_b = modId; veh.NeonColor = new Rgba((byte)mod.neon_r, (byte)mod.neon_g, (byte)mod.neon_b, 255); break;
+                        case 85: mod.smoke_r = modId; veh.TireSmokeColor = new Rgba((byte)mod.smoke_r, (byte)mod.smoke_g, (byte)mod.smoke_b, 255); break;
+                        case 86: mod.smoke_g = modId; veh.TireSmokeColor = new Rgba((byte)mod.smoke_r, (byte)mod.smoke_g, (byte)mod.smoke_b, 255); break;
+                        case 87: mod.smoke_b = modId; veh.TireSmokeColor = new Rgba((byte)mod.smoke_r, (byte)mod.smoke_g, (byte)mod.smoke_b, 255); break;
+                        case 88: mod.headlightColor = modId; veh.HeadlightColor = (byte)modId; break;
                     }
 
                     using (var db = new gtaContext()) {
@@ -1108,9 +1085,39 @@ namespace Altv_Roleplay.Model
                 Alt.Log($"{e}");
             }
         }
+        
+        public static void InstallBoughtModRgb(IVehicle veh, int modType, int colorR, int colorG, int colorB)
+        {
+            try
+            {
+                if (veh == null || !veh.Exists) return;
+                if (veh.GetVehicleId() <= 0) return;
+                var mod = ServerVehiclesMod_.FirstOrDefault(x => x.vehId == (int)veh.GetVehicleId());
+                if (mod != null)
+                {
+                    veh.ModKit = 1;
+                    switch (modType)
+                    {
+                        case 100: mod.colorPrimary_r = colorR; mod.colorPrimary_g = colorG; mod.colorPrimary_b = colorB; veh.PrimaryColorRgb = new Rgba((byte)colorR, (byte)colorG, (byte)colorB, 255); break;
+                        case 200: mod.colorSecondary_r = colorR; mod.colorSecondary_g = colorG; mod.colorSecondary_b = colorB; veh.SecondaryColorRgb = new Rgba((byte)colorR, (byte)colorG, (byte)colorB, 255); break;
+                        case 300: mod.neon_r = colorR; mod.neon_g = colorG; mod.neon_b = colorB; veh.NeonColor = new Rgba((byte)colorR, (byte)colorG, (byte)colorB, 255); break;
+                        case 400: mod.smoke_r = colorR; mod.smoke_g = colorG; mod.smoke_b = colorB; veh.TireSmokeColor = new Rgba((byte)colorR, (byte)colorG, (byte)colorB, 255); break;
+                    }
 
-        public static void CreateVehicle(long hash, int charid, int vehtype, int faction, bool isInGarage, int garageId, Position pos, Rotation rot,
-            string plate, int primaryColor, int secondaryColor) {
+                    using (gtaContext db = new gtaContext())
+                    {
+                        db.Server_Vehicles_Mods.Update(mod);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"{e}");
+            }
+        }
+
+        public static void CreateVehicle(long hash, int charid, int vehtype, int faction, bool isInGarage, int garageId, Position pos, Rotation rot, string plate, int colorR, int colorG, int colorB) {
             try {
                 var nVehicle = new Server_Vehicles {
                     charid = charid,
@@ -1141,10 +1148,8 @@ namespace Altv_Roleplay.Model
                     db.SaveChanges();
                 }
 
-                if (vehtype != 2)
-                    AddVehicleModToList(nVehicle.id, nVehicle.id, primaryColor, secondaryColor, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 0, 0, 0, 0);
-
+                if (vehtype != 2) { AddVehicleModToList(nVehicle.id, nVehicle.id, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 0, 0, 0, 0, colorR, colorG, colorB, colorR, colorG, colorB, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); }
+                
                 if (isInGarage) return;
 
                 var veh = (ClassicVehicle) Alt.CreateVehicle((uint) hash, pos, rot);
@@ -1197,267 +1202,6 @@ namespace Altv_Roleplay.Model
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
-        }
-
-        public static int ReturnMaxVehicleMods(IVehicle veh, int modType) {
-            var maxMods = 0;
-
-            try {
-                maxMods = ServerAllVehicleMods_.Where(x => x.vehicleHash == veh.Model && x.modType == modType).Count();
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-
-            return maxMods;
-        }
-
-        public static int ReturnMaxTuningWheels(int modType) {
-            try {
-                var count = ServerAllVehicleMods_.Where(x => (int) x.vehicleHash == 0 && x.modType == modType).Count();
-                return count;
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-
-            return 0;
-        }
-
-        public static void SetVehicleModID(IVehicle veh, string Type, string Action, int ModType) {
-            try {
-                if (veh == null || !veh.Exists) return;
-                if (veh.GetVehicleId() <= 0) return;
-
-                veh.ModKit = 1;
-
-                if (Type == "Preview") {
-                    if (Action == "<") {
-                        byte CurModID = 0;
-                        if (ModType == 280) CurModID = veh.HeadlightColor;
-                        else CurModID = veh.GetMod((byte) ModType);
-                        if (CurModID == 255) CurModID = 0;
-
-                        if (ModType != 131) {
-                            if (ModType != 46) {
-                                if (ModType != 132) {
-                                    if (ModType == 23) CurModID = veh.WheelVariation;
-                                    else if (ModType == 100) CurModID = veh.PrimaryColor;
-                                    else if (ModType == 200) CurModID = veh.SecondaryColor;
-                                    else if (ModType == 250) CurModID = veh.PearlColor;
-                                    else if (ModType == 280) CurModID = veh.HeadlightColor;
-
-                                    if (CurModID <= 0) {
-                                        if (ModType == 23) {
-                                            int WheelT = veh.WheelType;
-                                            if (WheelT == 255) WheelT = 0;
-                                            veh.SetWheels(0, (byte) ReturnMaxTuningWheels(Convert.ToInt32(ModType + "" + WheelT)));
-                                        } else if (ModType == 100) {
-                                            veh.PrimaryColor = Convert.ToByte(ReturnMaxTuningWheels(132));
-                                        } else if (ModType == 200) {
-                                            veh.SecondaryColor = Convert.ToByte(ReturnMaxTuningWheels(132));
-                                        } else if (ModType == 250) {
-                                            veh.PearlColor = Convert.ToByte(ReturnMaxTuningWheels(132));
-                                        } else if (ModType == 280) {
-                                            veh.HeadlightColor = Convert.ToByte(ReturnMaxTuningWheels(280));
-                                        } else if (ModType == 11 || ModType == 12 || ModType == 13 || ModType == 14 || ModType == 15 ||
-                                                   ModType == 22) {
-                                            veh.SetMod((byte) ModType, (byte) ReturnMaxTuningWheels(ModType));
-                                        } else {
-                                            veh.SetMod((byte) ModType, (byte) ReturnMaxVehicleMod(veh, ModType));
-                                        }
-                                    } else if (CurModID > 0) {
-                                        if (ModType == 23) {
-                                            CurModID = veh.WheelVariation;
-                                            veh.SetWheels(0, Convert.ToByte(CurModID - 1));
-                                        } else if (ModType == 100) {
-                                            CurModID = veh.PrimaryColor;
-                                            veh.PrimaryColor = Convert.ToByte(CurModID - 1);
-                                        } else if (ModType == 200) {
-                                            CurModID = veh.SecondaryColor;
-                                            veh.SecondaryColor = Convert.ToByte(CurModID - 1);
-                                        } else if (ModType == 250) {
-                                            CurModID = veh.PearlColor;
-                                            veh.PearlColor = Convert.ToByte(CurModID - 1);
-                                        } else if (ModType == 280) {
-                                            CurModID = veh.HeadlightColor;
-                                            veh.HeadlightColor = Convert.ToByte(CurModID - 1);
-                                        } else {
-                                            veh.SetMod((byte) ModType, Convert.ToByte(CurModID - 1));
-                                        }
-                                    }
-                                } else if (ModType == 132) {
-                                    CurModID = veh.WheelColor;
-
-                                    if (CurModID <= 0)
-                                        veh.WheelColor = (byte) ReturnMaxTuningWheels(ModType);
-                                    else if (CurModID > 0)
-                                        veh.WheelColor = Convert.ToByte(CurModID - 1);
-                                }
-                            } else if (ModType == 46) {
-                                CurModID = veh.WindowTint;
-                                if (CurModID == 255) CurModID = 0;
-                                if (CurModID == 0) veh.WindowTint = (byte) ReturnMaxTuningWheels(46);
-                                else veh.WindowTint = Convert.ToByte(CurModID - 1);
-                            }
-                        } else if (ModType == 131) {
-                            CurModID = veh.WheelType;
-                            if (CurModID == 255) CurModID = 0;
-                            //ToDo: Reifentyp
-                            //if (CurModID == 0) veh.WheelType = (byte)ReturnMaxTuningWheels(131);
-                            //else if (CurModID != 0) veh.WheelType = Convert.ToByte(CurModID - 1);
-                        }
-                    } else if (Action == ">") {
-                        var CurModID = 0;
-                        if (ModType == 280) CurModID = veh.HeadlightColor;
-                        else CurModID = veh.GetMod((byte) ModType);
-                        if (CurModID == 255) CurModID = 0;
-
-                        if (ModType == 23) {
-                            CurModID = veh.WheelVariation;
-                            int WheelT = veh.WheelType;
-                            if (WheelT == 255) WheelT = 0;
-                            if (CurModID == ReturnMaxTuningWheels(Convert.ToInt32(ModType + "" + WheelT))) veh.SetWheels(0, 0);
-                            else veh.SetWheels(0, Convert.ToByte(CurModID + 1));
-                        } else if (ModType == 46) {
-                            CurModID = veh.WindowTint;
-                            if (CurModID == 255) CurModID = 0;
-
-                            if (CurModID == ReturnMaxTuningWheels(46)) veh.WindowTint = 0;
-                            else veh.WindowTint = Convert.ToByte(CurModID + 1);
-                        } else if (ModType == 131) {
-                            CurModID = veh.WheelType;
-                            if (CurModID == 255) CurModID = 0;
-                            //ToDo: Reifentyp
-                            //if (CurModID == 9) veh.WheelType = 0;
-                            //else veh.WheelType = CurModID + 1;
-                        } else if (ModType == 132) {
-                            CurModID = veh.WheelColor;
-                            if (CurModID == 255) CurModID = 0;
-                            if (CurModID == ReturnMaxTuningWheels(132)) veh.WheelColor = 0;
-                            else veh.WheelColor = Convert.ToByte(CurModID + 1);
-                        } else if (ModType == 100) {
-                            CurModID = veh.PrimaryColor;
-                            if (CurModID == 255) CurModID = 0;
-                            if (CurModID == ReturnMaxTuningWheels(132)) veh.PrimaryColor = 0;
-                            else veh.PrimaryColor = Convert.ToByte(CurModID + 1);
-                        } else if (ModType == 200) {
-                            CurModID = veh.SecondaryColor;
-                            if (CurModID == 255) CurModID = 0;
-                            if (CurModID == ReturnMaxTuningWheels(132)) veh.SecondaryColor = 0;
-                            else veh.SecondaryColor = Convert.ToByte(CurModID + 1);
-                        } else if (ModType == 250) {
-                            CurModID = veh.PearlColor;
-                            if (CurModID == 255) CurModID = 0;
-                            if (CurModID == ReturnMaxTuningWheels(132)) veh.PearlColor = 0;
-                            else veh.PearlColor = Convert.ToByte(CurModID + 1);
-                        } else if (ModType == 280) {
-                            CurModID = veh.HeadlightColor;
-                            if (CurModID == 255) CurModID = 0;
-                            if (CurModID == ReturnMaxTuningWheels(280)) veh.HeadlightColor = 0;
-                            else veh.HeadlightColor = Convert.ToByte(CurModID + 1);
-                        } else if (ModType == 11 || ModType == 12 || ModType == 13 || ModType == 14 || ModType == 15 || ModType == 22) {
-                            if (CurModID == ReturnMaxTuningWheels(ModType)) veh.SetMod((byte) ModType, 0);
-                            else
-                                veh.SetMod((byte) ModType, Convert.ToByte(CurModID + 1));
-                        } else {
-                            if (CurModID == ReturnMaxVehicleMod(veh, ModType)) veh.SetMod((byte) ModType, 0);
-                            else veh.SetMod((byte) ModType, Convert.ToByte(CurModID + 1));
-                        }
-                    }
-                } else if (Type == "Build") {
-                    byte curModId = 0;
-
-                    if (ModType == 131) {
-                        curModId = veh.WheelType;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 132) {
-                        curModId = veh.WheelColor;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 46) {
-                        curModId = veh.WindowTint;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 23) {
-                        curModId = veh.WheelVariation;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 100) {
-                        curModId = veh.PrimaryColor;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 200) {
-                        curModId = veh.SecondaryColor;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 250) {
-                        curModId = veh.PearlColor;
-                        if (curModId == 255) curModId = 0;
-                    } else if (ModType == 280) {
-                        curModId = veh.HeadlightColor;
-                        if (curModId == 255) curModId = 0;
-                    } else {
-                        curModId = veh.GetMod((byte) ModType);
-                        if (curModId == 255) curModId = 0;
-                    }
-
-                    InstallVehicleMod(veh, ModType, curModId);
-                }
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-        }
-
-        public static int ReturnMaxVehicleMod(IVehicle veh, int modType) {
-            var maxMods = 0;
-
-            try {
-                for (var i = 0; i < ServerAllVehicleMods_.Count; i++)
-                    if (ServerAllVehicleMods_[i].vehicleHash == veh.Model)
-                        if (ServerAllVehicleMods_[i].modType == modType)
-                            maxMods++;
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-
-            return maxMods;
-        }
-
-        public static bool AddVehicleMods(uint hash, string modName, int modType, int ModID) {
-            try {
-                var mod = ServerAllVehicleMods_.FirstOrDefault(x =>
-                    x.modName == modName && x.modType == modType && x.modId == ModID && x.vehicleHash == hash);
-                if (mod != null) return false;
-
-                var allMods = new Server_All_Vehicle_Mods {
-                    vehicleHash = hash,
-                    modName = modName,
-                    modType = modType,
-                    modId = ModID
-                };
-
-                ServerAllVehicleMods_.Add(allMods);
-
-                using (var db = new gtaContext()) {
-                    db.Server_All_Vehicle_Mods.Add(allMods);
-                    return db.SaveChanges() != 0;
-                }
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-
-            return false;
-        }
-
-        public static string GetVehicleModName(uint vehHash, int modType, int modId) {
-            try {
-                var mod = ServerAllVehicleMods_.FirstOrDefault(x => x.vehicleHash == vehHash && x.modType == modType && x.modId == modId);
-                if (mod != null) return mod.modName;
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-
-            return "";
         }
     }
 }

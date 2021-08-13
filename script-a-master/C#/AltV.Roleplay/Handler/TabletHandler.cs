@@ -337,7 +337,9 @@ namespace Altv_Roleplay.Handler
 
                 var Price = ServerVehicleShops.GetVehicleShopPrice(shopId, fHash);
                 var rnd = new Random().Next(100000, 999999);
-                var fColor = 0;
+                int color_R = 0,
+                    color_G = 0,
+                    color_B = 0;
 
                 if (ServerVehicles.ExistServerVehiclePlate($"NL{rnd}")) {
                     VehicleStoreBuyVehicle(player, hash, shopId, color);
@@ -362,24 +364,12 @@ namespace Altv_Roleplay.Handler
                 }
 
                 switch (color) {
-                    case "schwarz":
-                        fColor = 0;
-                        break;
-                    case "weiß":
-                        fColor = 112;
-                        break;
-                    case "blau":
-                        fColor = 64;
-                        break;
-                    case "rot":
-                        fColor = 27;
-                        break;
-                    case "grün":
-                        fColor = 57;
-                        break;
-                    case "gelb":
-                        fColor = 42;
-                        break;
+                    case "schwarz": color_R = 0; color_G = 0; color_B = 0; break;
+                    case "weiß": color_R = 255; color_G = 255; color_B = 255; break;
+                    case "blau": color_R = 0; color_G = 0; color_B = 255; break;
+                    case "rot": color_R = 255; color_G = 0; color_B = 0; break;
+                    case "grün": color_R = 0; color_G = 255; color_B = 0; break;
+                    case "gelb": color_R = 255; color_G = 255; color_B = 0; break;
                 }
 
                 var dateTime = DateTime.Now;
@@ -387,8 +377,7 @@ namespace Altv_Roleplay.Handler
                 ServerBankPapers.CreateNewBankPaper(bankAccountNumber, dateTime.ToString("dd.MM.yyyy"), dateTime.ToString("HH.mm"),
                     "Ausgehende Überweisung", "Online Fahrzeugshop", $"Fahrzeugkauf: {ServerVehicles.GetVehicleNameOnHash(fHash)}", $"-{Price}",
                     "Online Banking");
-                ServerVehicles.CreateVehicle(fHash, charId, 0, 0, true, 1, new Position(0, 0, 0), new Rotation(0, 0, 0), $"NL{rnd}", fColor,
-                    fColor);
+                ServerVehicles.CreateVehicle(fHash, charId, 0, 0, true, 1, new Position(0, 0, 0), new Rotation(0, 0, 0), $"NL{rnd}", color_R, color_G, color_B);
                 CharactersInventory.AddCharacterItem(charId, $"Fahrzeugschluessel NL{rnd}", 2, "inventory");
                 HUDHandler.SendNotification(player, 2, 5000,
                     $"Fahrzeug '{ServerVehicles.GetVehicleNameOnHash(fHash)}' erfolgreich für {Price}$ erworben.<br>Lieferort: La Mesa Fahrzeuggarage.");

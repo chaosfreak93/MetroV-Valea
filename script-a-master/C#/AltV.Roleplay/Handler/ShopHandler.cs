@@ -374,19 +374,19 @@ namespace Altv_Roleplay.Handler
                 CharactersInventory.RemoveCharacterItemAmount(charId, "Bargeld", Price, "inventory");
 
                 if (shopid == 6)
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 2, false, 8, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 2, false, 8, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
                 else if (shopid == 7)
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 2, false, 9, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 2, false, 9, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
                 else if (shopid == 8)
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 3, false, 16, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 3, false, 16, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
                 else if (shopid == 9)
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 3, false, 21, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 3, false, 21, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
                 else if (shopid == 10)
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 4, false, 17, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 4, false, 17, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
                 else if (shopid == 11)
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 5, false, 22, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 4, false, 22, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
                 else
-                    ServerVehicles.CreateVehicle(fHash, charId, 0, 0, false, 1, ParkOut, RotOut, $"NL{rnd}", 134, 134);
+                    ServerVehicles.CreateVehicle(fHash, charId, 0, 0, false, 1, ParkOut, RotOut, $"NL{rnd}", 255, 255, 255);
 
                 CharactersInventory.AddCharacterItem(charId, $"Fahrzeugschluessel NL{rnd}", 2, "inventory");
                 HUDHandler.SendNotification(player, 2, 5000, "Fahrzeug erfolgreich gekauft.");

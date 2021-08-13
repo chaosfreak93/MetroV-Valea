@@ -4,6 +4,7 @@ import BlipManager from './blipmanager';
 import MarkerManager from './markermanager';
 
 let blip: alt.PointBlip = null;
+let vehicle: alt.Vehicle = alt.Player.local.vehicle;
 let markerCache: any[] = [];
 
 export default class MinijobManager {
@@ -27,30 +28,30 @@ export default class MinijobManager {
     }
 
     static RemoveJobMarker(): void {
-        blip.destroy();
+        if (blip != null)
+            blip.destroy();
         for (var marker in markerCache) {
             MarkerManager.removeMarkerByData(marker);
         }
     }
 
     static RemoveJobMarkerWithFreeze(delay: number): void {
-        blip.destroy();
+        if (blip != null)
+            blip.destroy();
         for (var marker in markerCache) {
             MarkerManager.removeMarkerByData(marker);
         }
 
         alt.setTimeout(() => {
-            native.freezeEntityPosition(alt.Player.local.scriptID, true);
-            if (alt.Player.local.vehicle != null) {
-                native.freezeEntityPosition(alt.Player.local.vehicle.scriptID, true);
+            if (vehicle != null) {
+                native.freezeEntityPosition(vehicle, true);    
             }
             alt.setTimeout(() => {
-                native.freezeEntityPosition(alt.Player.local.scriptID, false);
-                if (alt.Player.local.vehicle != null) {
-                    native.freezeEntityPosition(alt.Player.local.vehicle.scriptID, false);
+                if (vehicle != null) {
+                    native.freezeEntityPosition(vehicle, false);    
                 }
             }, delay);
-        }, 1500);
+        }, 500);
     }
 }
 

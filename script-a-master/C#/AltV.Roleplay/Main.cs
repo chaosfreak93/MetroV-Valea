@@ -90,7 +90,6 @@ namespace Altv_Roleplay
             DatabaseHandler.LoadAllServerTeleports();
             DatabaseHandler.LoadAllGarages();
             DatabaseHandler.LoadAllGarageSlots();
-            DatabaseHandler.LoadAllServerVehicleMods();
             DatabaseHandler.LoadAllVehicleMods();
             DatabaseHandler.LoadAllVehicles();
             DatabaseHandler.LoadAllVehicleTrunkItems();
@@ -254,7 +253,6 @@ namespace Altv_Roleplay
             //Alt.OnClient<IPlayer, IVehicle, string, string, int, int, int>("Server:Tuning:switchTuningColor", Factions.ACLS.Functions.switchTuningColor);
             //Alt.OnClient<IPlayer, IVehicle>("Server:Tuning:resetToNormal", Factions.ACLS.Functions.resetTuningToNormal);
             //Alt.OnClient<IPlayer, IVehicle, string, int, string>("Server:Tuning:switchTuning", Factions.ACLS.Functions.switchTuning);
-            Alt.OnClient<IPlayer, string, int, int>("Server:Utilities:createNewMod", createnewmod);
             Alt.OnClient<IPlayer, string>("Server:Utilities:BanMe", banme);
 
             //Timer initialisieren
@@ -292,32 +290,6 @@ namespace Altv_Roleplay
                 if (charId <= 0) return;
 
                 User.SetPlayerBanned(Characters.GetCharacterAccountId(charId), true, $"Grund: {msg}");
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-        }
-
-        private void createnewmod(IPlayer player, string MName, int MType, int MID) {
-            try {
-                if (player == null || !player.Exists) return;
-
-                if (player.IsInVehicle) {
-                    if (player.Vehicle == null || !player.Vehicle.Exists) return;
-
-                    var vehHash = player.Vehicle.Model;
-
-                    var success = ServerVehicles.AddVehicleMods(vehHash, MName, MType, MID);
-
-                    if (success) {
-                        HUDHandler.SendNotification(player, 2, 2500, $"Mod gespeichert: {vehHash} - {MName} - {MType} - {MID}");
-                        Alt.Log("Mod erfolgreich gespeichert");
-                    } else {
-                        HUDHandler.SendNotification(player, 4, 2500,
-                            $"Mod konnte nicht gespeichert werden (existiert er schon?): {vehHash} - {MName} - {MType} - {MID}");
-                        Alt.Log($"FEHLER: MOD NICHT GESPEICHERT {MType} - {MID} - {MName}");
-                    }
-                }
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

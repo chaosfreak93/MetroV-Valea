@@ -243,8 +243,7 @@ namespace Altv_Roleplay.Minijobs.Busfahrer
                     }
                 }
 
-                ServerVehicles.CreateVehicle(Model.GetRouteVehicleHash(routeId), charId, 2, 0, false, 0,
-                    Constants.Positions.Minijob_Busdriver_VehOutPos, Constants.Positions.Minijob_Busdriver_VehOutRot, $"BUS-{charId}", 132, 132);
+                ServerVehicles.CreateVehicle(Model.GetRouteVehicleHash(routeId), charId, 2, 0, false, 0, Constants.Positions.Minijob_Busdriver_VehOutPos, Constants.Positions.Minijob_Busdriver_VehOutRot, $"BUS-{charId}", 255, 255, 255);
                 player.SetPlayerCurrentMinijob("Busfahrer");
                 player.SetPlayerCurrentMinijobStep("FirstStepInVehicle");
                 player.SetPlayerCurrentMinijobRouteId(routeId);

@@ -86,7 +86,6 @@ namespace Altv_Roleplay.models
         public virtual DbSet<Server_Vehicle_Items> Server_Vehicle_Items { get; set; }
         public virtual DbSet<Server_Vehicle_Shops> Server_Vehicle_Shops { get; set; }
         public virtual DbSet<Server_Vehicle_Shops_Items> Server_Vehicle_Shops_Items { get; set; }
-        public virtual DbSet<Server_All_Vehicle_Mods> Server_All_Vehicle_Mods { get; set; }
         public virtual DbSet<Server_Wanteds> Server_Wanteds { get; set; }
         public virtual DbSet<LogsLogin> LogsLogin { get; set; }
         public virtual DbSet<Logs_Company> LogsCompany { get; set; }
@@ -1193,8 +1192,14 @@ namespace Altv_Roleplay.models
                 entity.HasIndex(e => e.id).HasDatabaseName("id");
                 entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
                 entity.Property(e => e.vehId).HasColumnName("vehId").HasColumnType("int(11)");
-                entity.Property(e => e.colorPrimary).HasColumnName("colorPrimary").HasColumnType("int(11)");
-                entity.Property(e => e.colorSecondary).HasColumnName("colorSecondary").HasColumnType("int(11)");
+                entity.Property(e => e.colorPrimaryType).HasColumnName("colorPrimaryType");
+                entity.Property(e => e.colorPrimary_r).HasColumnName("colorPrimary_r");
+                entity.Property(e => e.colorPrimary_g).HasColumnName("colorPrimary_g");
+                entity.Property(e => e.colorPrimary_b).HasColumnName("colorPrimary_b"); 
+                entity.Property(e => e.colorSecondaryType).HasColumnName("colorSecondaryType");
+                entity.Property(e => e.colorSecondary_r).HasColumnName("colorSecondary_r");
+                entity.Property(e => e.colorSecondary_g).HasColumnName("colorSecondary_g");
+                entity.Property(e => e.colorSecondary_b).HasColumnName("colorSecondary_b");
                 entity.Property(e => e.colorPearl).HasColumnName("colorPearl").HasColumnType("int(11)");
                 entity.Property(e => e.headlightColor).HasColumnName("headlightColor").HasColumnType("int(11)");
                 entity.Property(e => e.spoiler).HasColumnName("spoiler").HasColumnType("int(11)");
@@ -1218,19 +1223,35 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.xenon).HasColumnName("xenon").HasColumnType("int(11)");
                 entity.Property(e => e.wheel_type).HasColumnName("wheel_type").HasColumnType("int(11)");
                 entity.Property(e => e.wheels).HasColumnName("wheels").HasColumnType("int(11)");
+                entity.Property(e => e.back_wheels).HasColumnName("back_wheels").HasColumnType("int(11)");
                 entity.Property(e => e.wheelcolor).HasColumnName("wheelcolor").HasColumnType("int(11)");
                 entity.Property(e => e.plate_holder).HasColumnName("plate_holder").HasColumnType("int(11)");
+                entity.Property(e => e.plate_vanity).HasColumnName("plate_vanity").HasColumnType("int(11)");
                 entity.Property(e => e.trim_design).HasColumnName("trim_design").HasColumnType("int(11)");
                 entity.Property(e => e.ornaments).HasColumnName("ornaments").HasColumnType("int(11)");
                 entity.Property(e => e.dial_design).HasColumnName("dial_design").HasColumnType("int(11)");
+                entity.Property(e => e.door_interior).HasColumnName("door_interior").HasColumnType("int(11)");
+                entity.Property(e => e.seats).HasColumnName("seats").HasColumnType("int(11)");
                 entity.Property(e => e.steering_wheel).HasColumnName("steering_wheel").HasColumnType("int(11)");
                 entity.Property(e => e.shift_lever).HasColumnName("shift_lever").HasColumnType("int(11)");
                 entity.Property(e => e.plaques).HasColumnName("plaques").HasColumnType("int(11)");
                 entity.Property(e => e.hydraulics).HasColumnName("hydraulics").HasColumnType("int(11)");
+                entity.Property(e => e.rear_shelf).HasColumnName("rear_shelf").HasColumnType("int(11)");
+                entity.Property(e => e.engine_block).HasColumnName("engine_block").HasColumnType("int(11)");
+                entity.Property(e => e.trunk).HasColumnName("trunk").HasColumnType("int(11)");
                 entity.Property(e => e.airfilter).HasColumnName("airfilter").HasColumnType("int(11)");
+                entity.Property(e => e.strut_bar).HasColumnName("strut_bar").HasColumnType("int(11)");
+                entity.Property(e => e.arch_cover).HasColumnName("arch_cover").HasColumnType("int(11)");
+                entity.Property(e => e.antenna).HasColumnName("antenna").HasColumnType("int(11)");
+                entity.Property(e => e.exterior_parts).HasColumnName("exterior_parts").HasColumnType("int(11)");
+                entity.Property(e => e.tank).HasColumnName("tank").HasColumnType("int(11)");
+                entity.Property(e => e.door).HasColumnName("door").HasColumnType("int(11)");
                 entity.Property(e => e.window_tint).HasColumnName("window_tint").HasColumnType("int(11)");
+                entity.Property(e => e.rear_hydraulics).HasColumnName("rear_hydraulics").HasColumnType("int(11)");
                 entity.Property(e => e.livery).HasColumnName("livery").HasColumnType("int(11)");
                 entity.Property(e => e.plate).HasColumnName("plate").HasColumnType("int(11)");
+                entity.Property(e => e.plate_color).HasColumnName("plate_color").HasColumnType("int(11)"); 
+                entity.Property(e => e.interior_color).HasColumnName("interior_color");
                 entity.Property(e => e.neon).HasColumnName("neon");
                 entity.Property(e => e.neon_r).HasColumnName("neon_r");
                 entity.Property(e => e.neon_g).HasColumnName("neon_g");
@@ -1238,6 +1259,7 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.smoke_r).HasColumnName("smoke_r");
                 entity.Property(e => e.smoke_g).HasColumnName("smoke_g");
                 entity.Property(e => e.smoke_b).HasColumnName("smoke_b");
+                entity.Property(e => e.smoke).HasColumnName("smoke");
             });
 
             modelBuilder.Entity<Server_Vehicle_Items>(entity =>
@@ -1288,18 +1310,6 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.rotY).HasColumnName("rotY");
                 entity.Property(e => e.rotZ).HasColumnName("rotZ");
                 entity.Property(e => e.isOnlyOnlineAvailable).HasColumnName("isOnlyOnlineAvailable");
-            });
-
-            modelBuilder.Entity<Server_All_Vehicle_Mods>(entity =>
-            {
-                entity.HasKey(e => e.id);
-                entity.ToTable("server_all_vehicle_mods", Constants.DatabaseConfig.Database);
-                entity.HasIndex(e => e.id).HasDatabaseName("id");
-                entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
-                entity.Property(e => e.vehicleHash).HasColumnName("vehiclehash");
-                entity.Property(e => e.modName).HasColumnName("modname");
-                entity.Property(e => e.modType).HasColumnName("modtype");
-                entity.Property(e => e.modId).HasColumnName("modid");
             });
 
             modelBuilder.Entity<Server_Wanteds>(entity =>

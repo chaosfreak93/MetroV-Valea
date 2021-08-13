@@ -354,8 +354,7 @@ namespace Altv_Roleplay.Minijobs.Elektrolieferant
                         }
                     }
 
-                    ServerVehicles.CreateVehicle(2307837162, charId, 2, 0, false, 0, Constants.Positions.Minijob_Elektrolieferant_VehOutPos,
-                        Constants.Positions.Minijob_Elektrolieferant_VehOutRot, $"EL-{charId}", 132, 132);
+                    ServerVehicles.CreateVehicle(2307837162, charId, 2, 0, false, 0, Constants.Positions.Minijob_Elektrolieferant_VehOutPos, Constants.Positions.Minijob_Elektrolieferant_VehOutRot, $"EL-{charId}", 255, 255, 255);
                     player.SetPlayerCurrentMinijob("Elektrolieferant");
                     player.SetPlayerCurrentMinijobStep("FirstStepInVehicle");
                     HUDHandler.SendNotification(player, 1, 2500,

@@ -140,7 +140,7 @@ namespace Altv_Roleplay.Handler
             }
 
 
-            if (TypeText == "none") return;
+            if (TypeText == "none" || Characters.GetCharacterClothes(charid, TypeText) == -2) return;
 
             if (ClothesType == "Prop") {
                 player.SetProps(type, 

@@ -137,18 +137,6 @@ namespace Altv_Roleplay.Database
             }
         }
 
-        internal static void LoadAllServerVehicleMods() {
-            try {
-                using (var db = new gtaContext()) {
-                    ServerVehicles.ServerAllVehicleMods_ = new List<Server_All_Vehicle_Mods>(db.Server_All_Vehicle_Mods);
-                    Alt.Log($"{ServerVehicles.ServerAllVehicleMods_.Count} All-Server-Vehicle-Mods wurden geladen.");
-                }
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-        }
-
         internal static void LoadAllServerShopItems() {
             try {
                 var methPrice = new Random().Next(80, 120);
@@ -1100,12 +1088,7 @@ namespace Altv_Roleplay.Database
             try {
                 using (var db = new gtaContext()) {
                     foreach (var m in db.Server_Vehicles_Mods)
-                        ServerVehicles.AddVehicleModToList(m.id, m.vehId, m.colorPrimary, m.colorSecondary, m.spoiler, m.front_bumper,
-                            m.rear_bumper, m.side_skirt, m.exhaust, m.frame, m.grille, m.hood, m.fender, m.right_fender, m.roof, m.engine, m.brakes,
-                            m.transmission, m.horns, m.suspension, m.armor, m.turbo, m.xenon, m.wheel_type, m.wheels, m.wheelcolor, m.plate_holder,
-                            m.trim_design, m.ornaments, m.dial_design, m.steering_wheel, m.shift_lever, m.plaques, m.hydraulics, m.airfilter,
-                            m.window_tint, m.livery, m.plate, m.neon, m.neon_r, m.neon_g, m.neon_b, m.smoke_r, m.smoke_g, m.smoke_b, m.colorPearl,
-                            m.headlightColor);
+                        ServerVehicles.AddVehicleModToList(m.id, m.vehId, m.colorPrimaryType, m.colorSecondaryType, m.spoiler, m.front_bumper, m.rear_bumper, m.side_skirt, m.exhaust, m.frame, m.grille, m.hood, m.fender, m.right_fender, m.roof, m.engine, m.brakes, m.transmission, m.horns, m.suspension, m.armor, m.turbo, m.xenon, m.wheel_type, m.wheels, m.wheelcolor, m.plate_holder, m.trim_design, m.ornaments, m.dial_design, m.steering_wheel, m.shift_lever, m.plaques, m.hydraulics, m.airfilter, m.window_tint, m.livery, m.plate, m.neon, m.neon_r, m.neon_g, m.neon_b, m.smoke_r, m.smoke_g, m.smoke_b, m.colorPearl, m.headlightColor, m.colorPrimary_r, m.colorPrimary_g, m.colorPrimary_b, m.colorSecondary_r, m.colorSecondary_g, m.colorSecondary_b, m.back_wheels, m.plate_vanity, m.door_interior, m.seats, m.rear_shelf, m.trunk, m.engine_block, m.strut_bar, m.arch_cover, m.antenna, m.exterior_parts, m.tank, m.rear_hydraulics, m.door, m.plate_color, m.interior_color, m.smoke);
 
                     Alt.Log($"{ServerVehicles.ServerVehiclesMod_.Count} Server-Vehicle-Mods wurden geladen.");
                 }

@@ -248,8 +248,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
 
                 switch (level) {
                     case 1:
-                        ServerVehicles.CreateVehicle(2621610858, charId, 2, 0, false, 0, Constants.Positions.Minijob_Pilot_VehOutPos,
-                            Constants.Positions.Minijob_Pilot_VehOutRot, $"PL-{charId}", 132, 132);
+                        ServerVehicles.CreateVehicle(2621610858, charId, 2, 0, false, 0, Constants.Positions.Minijob_Pilot_VehOutPos, Constants.Positions.Minijob_Pilot_VehOutRot, $"PL-{charId}", 255, 255, 255);
                         break;
                     case 2:
                         if (CharactersMinijobs.GetCharacterMinijobEXP(charId, "Pilot") < 50) {
@@ -258,8 +257,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
                             return;
                         }
 
-                        ServerVehicles.CreateVehicle(1341619767, charId, 2, 0, false, 0, Constants.Positions.Minijob_Pilot_VehOutPos,
-                            Constants.Positions.Minijob_Pilot_VehOutRot, $"PL-{charId}", 132, 132);
+                        ServerVehicles.CreateVehicle(1341619767, charId, 2, 0, false, 0, Constants.Positions.Minijob_Pilot_VehOutPos, Constants.Positions.Minijob_Pilot_VehOutRot, $"PL-{charId}", 255, 255, 255);
                         break;
                     case 3:
                         if (CharactersMinijobs.GetCharacterMinijobEXP(charId, "Pilot") < 100) {
@@ -268,8 +266,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
                             return;
                         }
 
-                        ServerVehicles.CreateVehicle(2999939664, charId, 2, 0, false, 0, Constants.Positions.Minijob_Pilot_VehOutPos,
-                            Constants.Positions.Minijob_Pilot_VehOutRot, $"PL-{charId}", 132, 132);
+                        ServerVehicles.CreateVehicle(2999939664, charId, 2, 0, false, 0, Constants.Positions.Minijob_Pilot_VehOutPos, Constants.Positions.Minijob_Pilot_VehOutRot, $"PL-{charId}", 255, 255, 255);
                         break;
                 }
 

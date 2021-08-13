@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Linq;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
@@ -88,158 +89,122 @@ namespace Altv_Roleplay.Factions.ACLS
             }
         }
 
-
+        int[] modPrices = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+        
         [AsyncClientEvent("Server:Raycast:tuneVehicle")]
-        public void openTuningMenu(IPlayer player, IVehicle vehicle) {
+        public void openTuningMenu(IPlayer player, IVehicle veh) {
             try {
-                if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
+                if (player == null || !player.Exists || veh == null || !veh.Exists) return;
 
                 var charId = (int) player.GetCharacterMetaId();
-                var vehId = (int) vehicle.GetVehicleId();
+                var vehId = (int) veh.GetVehicleId();
                 if (charId <= 0 || vehId <= 0) return;
+                veh.ModKit = 1;
 
-                vehicle.ModKit = 1;
-                var tuningItems = "Primärfarbe:100;Sekundärfarbe:200;Pearl-Effekt:250;Neonröhren:300";
+                var mod = ServerVehicles.ServerVehiclesMod_.FirstOrDefault(x => x.vehId == (int)veh.GetVehicleId());
+                if (mod != null)
+                {
+                    int[] possibleMods = { };
+                    int[] installedMods = { };
 
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 0) != 0)
-                    tuningItems += ";Spoiler:0";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 1) != 0)
-                    tuningItems += ";Frontstoßstange:1";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 2) != 0)
-                    tuningItems += ";Heckstoßstange:2";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 3) != 0)
-                    tuningItems += ";Seitenverkleidung:3";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 4) != 0)
-                    tuningItems += ";Auspuff:4";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 5) != 0)
-                    tuningItems += ";Überrollkäfig:5";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 6) != 0)
-                    tuningItems += ";Kühlergrill:6";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 7) != 0)
-                    tuningItems += ";Motorhaube:7";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 8) != 0)
-                    tuningItems += ";Linker Kotflügel:8";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 9) != 0)
-                    tuningItems += ";Rechter Kotflügel:9";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 10) != 0)
-                    tuningItems += ";Dach:10";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(11) != 0)
-                    tuningItems += ";Motor:11";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(12) != 0)
-                    tuningItems += ";Bremsen:12";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(13) != 0)
-                    tuningItems += ";Getriebe:13";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(14) != 0)
-                    tuningItems += ";Hupe:14";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(15) != 0)
-                    tuningItems += ";Federung:15";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(22) != 0)
-                    tuningItems += ";Xenon:22";
-
-                tuningItems += ";Scheinwerferfarbe:280";
-                //ToDo: Reifentyp
-                //if (ServerVehicles.ReturnMaxTuningWheels(131) != 0) { tuningItems += ";Reifen Typ:131"; }
-
-                int wheelT = vehicle.WheelType;
-                if (wheelT == 255 || wheelT == 0) wheelT = 0;
-
-                if (ServerVehicles.ReturnMaxTuningWheels(Convert.ToInt32(23 + "" + wheelT)) != 0)
-                    tuningItems += ";Reifen:23";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(132) != 0)
-                    tuningItems += ";Reifen Farbe:132";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 25) != 0)
-                    tuningItems += ";Nummernschild Rahmen:25";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 27) != 0)
-                    tuningItems += ";Innenpolster:27";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 28) != 0)
-                    tuningItems += ";Wackelkopf:28";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 30) != 0)
-                    tuningItems += ";Tacho Design:30";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 33) != 0)
-                    tuningItems += ";Lenkrad:33";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 34) != 0)
-                    tuningItems += ";Schaltknüppel:34";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 35) != 0)
-                    tuningItems += ";Tafel:35";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 40) != 0)
-                    tuningItems += ";Luftfilter:40";
-
-                if (ServerVehicles.ReturnMaxTuningWheels(46) != 0)
-                    tuningItems += ";Fenstertönung:46";
-
-                if (ServerVehicles.ReturnMaxVehicleMods(vehicle, 48) != 0)
-                    tuningItems += ";Vinyls:48";
-
-                player.EmitLocked("Client:Tuning:openTuningMenu", vehicle, tuningItems);
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-        }
-
-        [AsyncClientEvent("Server:Tuning:switchTuningColor")]
-        public void switchTuningColor(IPlayer player, IVehicle vehicle, string Type, string Data, int R, int G, int B) {
-            try {
-                if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
-
-                var charId = (int) player.GetCharacterMetaId();
-                var vehId = (int) vehicle.GetVehicleId();
-                if (charId <= 0 || vehId <= 0) return;
-
-                vehicle.ModKit = 1;
-
-                if (Type == "Test") {
-                    switch (Data) {
-                        case "Neonröhren":
-                            vehicle.NeonColor = new Rgba((byte) R, (byte) G, (byte) B, 255);
-                            vehicle.SetNeonActive(true, true, true, true);
-                            break;
-                        case "Reifenqualm":
-                            vehicle.TireSmokeColor = new Rgba((byte) R, (byte) G, (byte) B, 255);
-                            break;
-                    }
-                } else if (Type == "Build") {
-                    switch (Data) {
-                        case "Neonröhren":
-                            vehicle.SetNeonActive(true, true, true, true);
-                            ServerVehicles.InstallVehicleMod(vehicle, 300, R);
-                            ServerVehicles.InstallVehicleMod(vehicle, 301, G);
-                            ServerVehicles.InstallVehicleMod(vehicle, 302, B);
-                            break;
-                        case "Reifenqualm":
-                            ServerVehicles.InstallVehicleMod(vehicle, 400, R);
-                            ServerVehicles.InstallVehicleMod(vehicle, 401, G);
-                            ServerVehicles.InstallVehicleMod(vehicle, 402, B);
-                            break;
+                    for (var i = 0; i < 85; i++)
+                    {
+                        Array.Resize(ref possibleMods, i);
+                        Array.Resize(ref installedMods, i);
                     }
 
-                    LoggingService.NewFactionLog(4, charId, vehId, "tuneVehColor",
-                        $"{Characters.GetCharacterName(charId)} hat Fahrzeug ({vehId}) modifiziert ({Data} - ({R}-{G}-{B}))");
+                    for (var i = 0; i < 49; i++)
+                    {
+                        possibleMods[i] = veh.GetModsCount((byte)i);
+                        installedMods[i] = veh.GetMod((byte)i);
+                    }
+
+                    possibleMods[49] = 15;
+                    installedMods[49] = 0;
+
+                    possibleMods[50] = 11;
+                    installedMods[50] = mod.wheel_type;
+
+                    possibleMods[51] = 160;
+                    installedMods[51] = mod.wheels;
+
+                    possibleMods[52] = 160;
+                    installedMods[52] = mod.wheelcolor;
+
+                    possibleMods[53] = 3;
+                    installedMods[53] = mod.window_tint;
+
+                    possibleMods[54] = 4;
+                    installedMods[54] = mod.plate_color;
+
+                    possibleMods[55] = 5;
+                    installedMods[55] = mod.colorPrimaryType;
+
+                    possibleMods[56] = 0;
+                    installedMods[56] = mod.colorPrimary_r;
+
+                    possibleMods[57] = 0;
+                    installedMods[57] = mod.colorPrimary_g;
+
+                    possibleMods[58] = 0;
+                    installedMods[58] = mod.colorPrimary_b;
+
+                    possibleMods[59] = 5;
+                    installedMods[59] = mod.colorSecondaryType;
+
+                    possibleMods[60] = 0;
+                    installedMods[60] = mod.colorSecondary_r;
+
+                    possibleMods[61] = 0;
+                    installedMods[61] = mod.colorSecondary_g;
+
+                    possibleMods[62] = 0;
+                    installedMods[62] = mod.colorSecondary_b;
+
+                    possibleMods[63] = 160;
+                    installedMods[63] = mod.colorPearl;
+
+                    possibleMods[64] = 100;
+                    installedMods[64] = 0;
+
+                    for (var i = 0; i < 16; i++)
+                    {
+                        Array.Resize(ref possibleMods, possibleMods.Length + 1);
+                        possibleMods[possibleMods.GetUpperBound(0)] = 1;
+
+                        Array.Resize(ref installedMods, installedMods.Length + 1);
+                        installedMods[installedMods.GetUpperBound(0)] = Convert.ToInt32(veh.IsExtraOn((byte)i));
+                    }
+
+                    possibleMods[80] = 160;
+                    installedMods[80] = mod.interior_color;
+
+                    possibleMods[81] = 1;
+                    if (Convert.ToBoolean(mod.neon)) installedMods[81] = 1;
+                    else installedMods[81] = 0;
+
+                    possibleMods[82] = 0;
+                    installedMods[82] = mod.neon_r;
+
+                    possibleMods[83] = 0;
+                    installedMods[83] = mod.neon_g;
+
+                    possibleMods[84] = 0;
+                    installedMods[84] = mod.neon_b;
+                    
+                    possibleMods[85] = 0;
+                    installedMods[85] = mod.smoke_r;
+
+                    possibleMods[86] = 0;
+                    installedMods[86] = mod.smoke_g;
+
+                    possibleMods[87] = 0;
+                    installedMods[87] = mod.smoke_b;
+                    
+                    possibleMods[88] = 12;
+                    installedMods[88] = mod.headlightColor;
+
+                    player.Emit("Client:Tuningmenu:OpenMenu", veh, possibleMods, installedMods, modPrices);
                 }
             }
             catch (Exception e) {
@@ -252,7 +217,6 @@ namespace Altv_Roleplay.Factions.ACLS
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
                 if (player.GetCharacterMetaId() <= 0 || vehicle.GetVehicleId() <= 0) return;
-
                 ServerVehicles.SetVehicleModsCorrectly(vehicle);
             }
             catch (Exception e) {
@@ -260,135 +224,35 @@ namespace Altv_Roleplay.Factions.ACLS
             }
         }
 
-        [AsyncClientEvent("Server:Tuning:switchTuning")]
-        public void switchTuning(IPlayer player, IVehicle vehicle, string Type, int ModType, string Action) {
+        [AsyncClientEvent("Server:Tuningmenu:EquipTuneItem")]
+        public void buyTuningPart(IPlayer player, IVehicle vehicle, int type, int index)
+        {
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
                 if (player.GetCharacterMetaId() <= 0 || vehicle.GetVehicleId() <= 0) return;
+                int charId = User.GetPlayerOnline(player);
+                int price = modPrices[type];
 
-                vehicle.ModKit = 1;
+                if (!CharactersInventory.ExistCharacterItem(charId, "Bargeld", "inventory") || CharactersInventory.GetCharacterItemAmount(charId, "Bargeld", "inventory") < price) HUDHandler.SendNotification(player, 3, 5000, $"Du hast nicht genug Bargeld dabei (${price}).");
+                CharactersInventory.RemoveCharacterItemAmount(charId, "Bargeld", price, "inventory");
 
-                if (Type == "Preview") {
-                    ServerVehicles.SetVehicleModID(vehicle, Type, Action, ModType);
-                    byte modId = 0;
-                    if (ModType == 280) modId = vehicle.HeadlightColor;
-                    else modId = vehicle.GetMod(Convert.ToByte(ModType));
-                    if (modId == 255) modId = 0;
+                ServerVehicles.InstallBoughtMod(vehicle, type, index);
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
 
-                    if (ModType == 46) {
-                        modId = vehicle.WindowTint;
-                        if (modId == 255) modId = 0;
-                    } else if (ModType == 132) {
-                        modId = vehicle.WheelColor;
-                    } else if (ModType == 23) {
-                        modId = vehicle.WheelVariation;
-                    } else if (ModType == 100) {
-                        modId = vehicle.PrimaryColor;
-                    } else if (ModType == 200) {
-                        modId = vehicle.SecondaryColor;
-                    } else if (ModType == 250) {
-                        modId = vehicle.PearlColor;
-                    } else if (ModType == 280) {
-                        modId = vehicle.HeadlightColor;
-                    }
+        [AsyncClientEvent("Server:Tuningmenu:EquipRGBTuneItem")]
+        public void buyRGBTuningPart(IPlayer player, IVehicle vehicle, int type, int colorR, int colorG, int colorB, int paintType)
+        {
+            try {
+                if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
+                if (player.GetCharacterMetaId() <= 0 || vehicle.GetVehicleId() <= 0) return;
+                ServerVehicles.InstallBoughtModRgb(vehicle, type, colorR, colorG, colorB);
 
-                    if (modId > 0) {
-                        if (ModType == 23) {
-                            int WheelT = vehicle.WheelType;
-                            if (WheelT == 255) WheelT = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, Convert.ToInt32(ModType + "" + WheelT), modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        } else if (ModType == 46) {
-                            modId = vehicle.WindowTint;
-                            if (modId == 255) modId = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, 46, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        } else if (ModType == 11 || ModType == 12 || ModType == 13 || ModType == 14 || ModType == 15 || ModType == 22) {
-                            var modName = ServerVehicles.GetVehicleModName(0, ModType, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        } else if (ModType == 100) {
-                            modId = vehicle.PrimaryColor;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod-Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        } else if (ModType == 200) {
-                            modId = vehicle.SecondaryColor;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod-Name: {modName} | Mod-ID: {modId}| Mod-Type: {ModType}");
-                        } else if (ModType == 250) {
-                            modId = vehicle.PearlColor;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod-Name: {modName} | Mod-ID: {modId}| Mod-Type: {ModType}");
-                        } else if (ModType == 280) {
-                            modId = vehicle.HeadlightColor;
-                            var modName = ServerVehicles.GetVehicleModName(0, 280, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod-Name: {modName} | Mod-ID: {modId}| Mod-Type: {ModType}");
-                        } else if (ModType == 131) {
-                            modId = vehicle.WheelType;
-                            var modName = ServerVehicles.GetVehicleModName(0, 131, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        } else if (ModType == 132) {
-                            modId = vehicle.WheelColor;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        } else {
-                            var modName = ServerVehicles.GetVehicleModName(0, ModType, modId);
-                            HUDHandler.SendNotification(player, 1, 3500, $"Mod Name: {modName} | Mod-ID: {modId} | Mod-Type: {ModType}");
-                        }
-                    } else if (modId <= 0) {
-                        HUDHandler.SendNotification(player, 4, 2000, $"Tuning Teil entfernt. [ModType: {ModType}].");
-                    }
-                } else if (Type == "Build") {
-                    ServerVehicles.SetVehicleModID(vehicle, Type, Action, ModType);
-                    int ModID = ServerVehicles.GetCurrentVehMod(vehicle, ModType);
-                    if (ModID == 255) ModID = 0;
-
-                    if (ModID > 0) {
-                        if (ModType == 23) {
-                            int WheelT = vehicle.WheelType;
-                            if (WheelT == 255) WheelT = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, Convert.ToInt32(ModType + "" + WheelT), ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 46) {
-                            ModID = vehicle.WindowTint;
-                            if (ModID == 255) ModID = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, 46, ModID);
-                        } else if (ModType == 11 || ModType == 12 || ModType == 13 || ModType == 14 || ModType == 15 || ModType == 22) {
-                            var modName = ServerVehicles.GetVehicleModName(0, ModType, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 100) {
-                            ModID = vehicle.PrimaryColor;
-                            if (ModID == 255) ModID = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 200) {
-                            ModID = vehicle.SecondaryColor;
-                            if (ModID == 255) ModID = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 250) {
-                            ModID = vehicle.PearlColor;
-                            if (ModID == 255) ModID = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 280) {
-                            ModID = vehicle.HeadlightColor;
-                            if (ModID == 255) ModID = 0;
-                            var modName = ServerVehicles.GetVehicleModName(0, 280, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 131) {
-                            var modName = ServerVehicles.GetVehicleModName(0, 131, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else if (ModType == 132) {
-                            var modName = ServerVehicles.GetVehicleModName(0, 132, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        } else {
-                            var modName = ServerVehicles.GetVehicleModName(vehicle.Model, ModType, ModID);
-                            HUDHandler.SendNotification(player, 1, 1500, $"Mod-Name: {modName} | Mod-ID: {ModID} | Mod-Type: {ModType}");
-                        }
-                    } else if (ModID <= 0) {
-                        HUDHandler.SendNotification(player, 4, 2000, $"Tuning Teil entfernt. [ModType: {ModType} - ModID: {ModID}].");
-                    }
-                }
+                //if (paintType == 100) ServerVehicles.InstallBoughtMod(vehicle, 55, paintType);
+                //else if (paintType == 200) ServerVehicles.InstallBoughtMod(vehicle, 59, paintType);
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

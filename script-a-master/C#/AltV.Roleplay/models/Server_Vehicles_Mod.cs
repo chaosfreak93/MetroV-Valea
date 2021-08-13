@@ -10,8 +10,14 @@ namespace Altv_Roleplay.models
         public int id { get; set; }
 
         public int vehId { get; set; }
-        public int colorPrimary { get; set; }
-        public int colorSecondary { get; set; }
+        public int colorPrimaryType { get; set; }
+        public int colorPrimary_r { get; set; }
+        public int colorPrimary_g { get; set; }
+        public int colorPrimary_b { get; set; }
+        public int colorSecondaryType { get; set; }
+        public int colorSecondary_r { get; set; }
+        public int colorSecondary_g { get; set; }
+        public int colorSecondary_b { get; set; }
         public int colorPearl { get; set; }
         public int headlightColor { get; set; }
         public int spoiler { get; set; }
@@ -35,19 +41,35 @@ namespace Altv_Roleplay.models
         public int xenon { get; set; }
         public int wheel_type { get; set; }
         public int wheels { get; set; }
+        public int back_wheels { get; set; }
         public int wheelcolor { get; set; }
         public int plate_holder { get; set; }
+        public int plate_vanity { get; set; }
         public int trim_design { get; set; }
         public int ornaments { get; set; }
         public int dial_design { get; set; }
+        public int door_interior { get; set; }
+        public int seats { get; set; }
         public int steering_wheel { get; set; }
         public int shift_lever { get; set; }
         public int plaques { get; set; }
         public int hydraulics { get; set; }
+        public int rear_shelf { get; set; }
+        public int trunk { get; set; }
+        public int engine_block { get; set; }
         public int airfilter { get; set; }
+        public int strut_bar { get; set; }
+        public int arch_cover { get; set; }
+        public int antenna { get; set; }
+        public int exterior_parts { get; set; }
+        public int tank { get; set; }
+        public int door { get; set; }
         public int window_tint { get; set; }
+        public int rear_hydraulics { get; set; }
         public int livery { get; set; }
+        public int plate_color { get; set; }
         public int plate { get; set; }
+        public int interior_color { get; set; }
         public int neon { get; set; }
         public int neon_r { get; set; }
         public int neon_g { get; set; }
@@ -55,5 +77,6 @@ namespace Altv_Roleplay.models
         public int smoke_r { get; set; }
         public int smoke_g { get; set; }
         public int smoke_b { get; set; }
+        public int smoke { get; set; }
     }
 }

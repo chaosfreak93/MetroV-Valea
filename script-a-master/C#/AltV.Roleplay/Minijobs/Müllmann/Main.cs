@@ -265,8 +265,7 @@ namespace Altv_Roleplay.Minijobs.Müllmann
                         }
                     }
 
-                    ServerVehicles.CreateVehicle(3039269212, charId, 2, 0, false, 0, Constants.Positions.Minijob_Müllmann_VehOutPos,
-                        Constants.Positions.Minijob_Müllmann_VehOutRot, $"MM-{charId}", 0, 0);
+                    ServerVehicles.CreateVehicle(3039269212, charId, 2, 0, false, 0, Constants.Positions.Minijob_Müllmann_VehOutPos, Constants.Positions.Minijob_Müllmann_VehOutRot, $"MM-{charId}", 255, 255, 255);
                     var generatorId = new Random();
                     var routeId = generatorId.Next(1, Model.GetMinijobGarbageMaxRoutes());
                     player.SetPlayerCurrentMinijob("Müllmann");
