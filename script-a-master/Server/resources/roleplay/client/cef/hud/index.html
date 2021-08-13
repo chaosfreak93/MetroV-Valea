@@ -4703,8 +4703,9 @@
         function unixToTime(unix) {
             let date = new Date(unix * 1000);
             hour = checkTime(date.getHours()),
-                minute = checkTime(date.getMinutes());
-            let str = hour + ":" + minute;
+                minute = checkTime(date.getMinutes()),
+                    seconds = checkTime(date.getSeconds());
+            let str = hour + ":" + minute + "." + seconds;
             return (str);
         }
 
