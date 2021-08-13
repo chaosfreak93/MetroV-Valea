@@ -1,2 +1,452 @@
-window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"enabled":true},"baseUrl":"https://ka-f.fontawesome.com","baseUrlKit":"https://kit.fontawesome.com","detectConflictsUntil":null,"iconUploads":{},"id":48090306,"license":"free","method":"css","minify":{"enabled":true},"token":"f25e534c46","v4FontFaceShim":{"enabled":true},"v4shim":{"enabled":true},"version":"5.15.3"};
-!function(t){"function"==typeof define&&define.amd?define("kit-loader",t):t()}((function(){"use strict";function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(e)}function e(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);e&&(r=r.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,r)}return n}function r(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?n(Object(o),!0).forEach((function(n){e(t,n,o[n])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(o,e))}))}return t}function o(t,e){return function(t){if(Array.isArray(t))return t}(t)||function(t,e){if("undefined"==typeof Symbol||!(Symbol.iterator in Object(t)))return;var n=[],r=!0,o=!1,i=void 0;try{for(var c,a=t[Symbol.iterator]();!(r=(c=a.next()).done)&&(n.push(c.value),!e||n.length!==e);r=!0);}catch(t){o=!0,i=t}finally{try{r||null==a.return||a.return()}finally{if(o)throw i}}return n}(t,e)||function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t,e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}function c(t,e){var n=e&&e.addOn||"",r=e&&e.baseFilename||t.license+n,o=e&&e.minify?".min":"",i=e&&e.fileSuffix||t.method,c=e&&e.subdir||t.method;return t.baseUrl+"/releases/"+("latest"===t.version?"latest":"v".concat(t.version))+"/"+c+"/"+r+o+"."+i}function a(t){return t.baseUrlKit+"/"+t.token+"/"+t.id+"/kit-upload.css"}function u(t,e){var n=e||["fa"],r="."+Array.prototype.join.call(n,",."),o=t.querySelectorAll(r);Array.prototype.forEach.call(o,(function(e){var n=e.getAttribute("title");e.setAttribute("aria-hidden","true");var r=!e.nextElementSibling||!e.nextElementSibling.classList.contains("sr-only");if(n&&r){var o=t.createElement("span");o.innerHTML=n,o.classList.add("sr-only"),e.parentNode.insertBefore(o,e.nextSibling)}}))}var f,s=function(){},d="undefined"!=typeof global&&void 0!==global.process&&"function"==typeof global.process.emit,l="undefined"==typeof setImmediate?setTimeout:setImmediate,h=[];function m(){for(var t=0;t<h.length;t++)h[t][0](h[t][1]);h=[],f=!1}function p(t,e){h.push([t,e]),f||(f=!0,l(m,0))}function y(t){var e=t.owner,n=e._state,r=e._data,o=t[n],i=t.then;if("function"==typeof o){n="fulfilled";try{r=o(r)}catch(t){w(i,t)}}b(i,r)||("fulfilled"===n&&v(i,r),"rejected"===n&&w(i,r))}function b(e,n){var r;try{if(e===n)throw new TypeError("A promises callback cannot return that same promise.");if(n&&("function"==typeof n||"object"===t(n))){var o=n.then;if("function"==typeof o)return o.call(n,(function(t){r||(r=!0,n===t?g(e,t):v(e,t))}),(function(t){r||(r=!0,w(e,t))})),!0}}catch(t){return r||w(e,t),!0}return!1}function v(t,e){t!==e&&b(t,e)||g(t,e)}function g(t,e){"pending"===t._state&&(t._state="settled",t._data=e,p(S,t))}function w(t,e){"pending"===t._state&&(t._state="settled",t._data=e,p(O,t))}function A(t){t._then=t._then.forEach(y)}function S(t){t._state="fulfilled",A(t)}function O(t){t._state="rejected",A(t),!t._handled&&d&&global.process.emit("unhandledRejection",t._data,t)}function j(t){global.process.emit("rejectionHandled",t)}function E(t){if("function"!=typeof t)throw new TypeError("Promise resolver "+t+" is not a function");if(this instanceof E==!1)throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");this._then=[],function(t,e){function n(t){w(e,t)}try{t((function(t){v(e,t)}),n)}catch(t){n(t)}}(t,this)}E.prototype={constructor:E,_state:"pending",_then:null,_data:void 0,_handled:!1,then:function(t,e){var n={owner:this,then:new this.constructor(s),fulfilled:t,rejected:e};return!e&&!t||this._handled||(this._handled=!0,"rejected"===this._state&&d&&p(j,this)),"fulfilled"===this._state||"rejected"===this._state?p(y,n):this._then.push(n),n.then},catch:function(t){return this.then(null,t)}},E.all=function(t){if(!Array.isArray(t))throw new TypeError("You must pass an array to Promise.all().");return new E((function(e,n){var r=[],o=0;function i(t){return o++,function(n){r[t]=n,--o||e(r)}}for(var c,a=0;a<t.length;a++)(c=t[a])&&"function"==typeof c.then?c.then(i(a),n):r[a]=c;o||e(r)}))},E.race=function(t){if(!Array.isArray(t))throw new TypeError("You must pass an array to Promise.race().");return new E((function(e,n){for(var r,o=0;o<t.length;o++)(r=t[o])&&"function"==typeof r.then?r.then(e,n):e(r)}))},E.resolve=function(e){return e&&"object"===t(e)&&e.constructor===E?e:new E((function(t){t(e)}))},E.reject=function(t){return new E((function(e,n){n(t)}))};var _="function"==typeof Promise?Promise:E;function P(t,e){var n=e.fetch,r=e.XMLHttpRequest,o=e.token,i=t;return"URLSearchParams"in window?(i=new URL(t)).searchParams.set("token",o):i=i+"?token="+encodeURIComponent(o),i=i.toString(),new _((function(t,e){if("function"==typeof n)n(i,{mode:"cors",cache:"default"}).then((function(t){if(t.ok)return t.text();throw new Error("")})).then((function(e){t(e)})).catch(e);else if("function"==typeof r){var o=new r;o.addEventListener("loadend",(function(){this.responseText?t(this.responseText):e(new Error(""))}));["abort","error","timeout"].map((function(t){o.addEventListener(t,(function(){e(new Error(""))}))})),o.open("GET",i),o.send()}else{e(new Error(""))}}))}function C(t,e,n){var r=t;return[[/(url\("?)\.\.\/\.\.\/\.\./g,function(t,n){return"".concat(n).concat(e)}],[/(url\("?)\.\.\/webfonts/g,function(t,r){return"".concat(r).concat(e,"/releases/v").concat(n,"/webfonts")}],[/(url\("?)https:\/\/kit-free([^.])*\.fontawesome\.com/g,function(t,n){return"".concat(n).concat(e)}]].forEach((function(t){var e=o(t,2),n=e[0],i=e[1];r=r.replace(n,i)})),r}function F(t,e){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:function(){},o=e.document||o,i=u.bind(u,o,["fa","fab","fas","far","fal","fad","fak"]),f=Object.keys(t.iconUploads||{}).length>0;t.autoA11y.enabled&&n(i);var s=[{id:"fa-main",addOn:void 0}];t.v4shim.enabled&&s.push({id:"fa-v4-shims",addOn:"-v4-shims"}),t.v4FontFaceShim.enabled&&s.push({id:"fa-v4-font-face",addOn:"-v4-font-face"}),f&&s.push({id:"fa-kit-upload",customCss:!0});var d=s.map((function(n){return new _((function(o,i){P(n.customCss?a(t):c(t,{addOn:n.addOn,minify:t.minify.enabled}),e).then((function(i){o(U(i,r(r({},e),{},{baseUrl:t.baseUrl,version:t.version,id:n.id,contentFilter:function(t,e){return C(t,e.baseUrl,e.version)}})))})).catch(i)}))}));return _.all(d)}function U(t,e){var n=e.contentFilter||function(t,e){return t},r=document.createElement("style"),o=document.createTextNode(n(t,e));return r.appendChild(o),r.media="all",e.id&&r.setAttribute("id",e.id),e&&e.detectingConflicts&&e.detectionIgnoreAttr&&r.setAttributeNode(document.createAttribute(e.detectionIgnoreAttr)),r}function k(t,e){e.autoA11y=t.autoA11y.enabled,"pro"===t.license&&(e.autoFetchSvg=!0,e.fetchSvgFrom=t.baseUrl+"/releases/"+("latest"===t.version?"latest":"v".concat(t.version))+"/svgs",e.fetchUploadedSvgFrom=t.uploadsUrl);var n=[];return t.v4shim.enabled&&n.push(new _((function(n,o){P(c(t,{addOn:"-v4-shims",minify:t.minify.enabled}),e).then((function(t){n(I(t,r(r({},e),{},{id:"fa-v4-shims"})))})).catch(o)}))),n.push(new _((function(n,o){P(c(t,{minify:t.minify.enabled}),e).then((function(t){var o=I(t,r(r({},e),{},{id:"fa-main"}));n(function(t,e){var n=e&&void 0!==e.autoFetchSvg?e.autoFetchSvg:void 0,r=e&&void 0!==e.autoA11y?e.autoA11y:void 0;void 0!==r&&t.setAttribute("data-auto-a11y",r?"true":"false");n&&(t.setAttributeNode(document.createAttribute("data-auto-fetch-svg")),t.setAttribute("data-fetch-svg-from",e.fetchSvgFrom),t.setAttribute("data-fetch-uploaded-svg-from",e.fetchUploadedSvgFrom));return t}(o,e))})).catch(o)}))),_.all(n)}function I(t,e){var n=document.createElement("SCRIPT"),r=document.createTextNode(t);return n.appendChild(r),n.referrerPolicy="strict-origin",e.id&&n.setAttribute("id",e.id),e&&e.detectingConflicts&&e.detectionIgnoreAttr&&n.setAttributeNode(document.createAttribute(e.detectionIgnoreAttr)),n}function L(t){var e,n=[],r=document,o=r.documentElement.doScroll,i=(o?/^loaded|^c/:/^loaded|^i|^c/).test(r.readyState);i||r.addEventListener("DOMContentLoaded",e=function(){for(r.removeEventListener("DOMContentLoaded",e),i=1;e=n.shift();)e()}),i?setTimeout(t,0):n.push(t)}function T(t){"undefined"!=typeof MutationObserver&&new MutationObserver(t).observe(document,{childList:!0,subtree:!0})}try{if(window.FontAwesomeKitConfig){var x=window.FontAwesomeKitConfig,M={detectingConflicts:x.detectConflictsUntil&&new Date<=new Date(x.detectConflictsUntil),detectionIgnoreAttr:"data-fa-detection-ignore",fetch:window.fetch,token:x.token,XMLHttpRequest:window.XMLHttpRequest,document:document},D=document.currentScript,N=D?D.parentElement:document.head;(function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return"js"===t.method?k(t,e):"css"===t.method?F(t,e,(function(t){L(t),T(t)})):void 0})(x,M).then((function(t){t.map((function(t){try{N.insertBefore(t,D?D.nextSibling:null)}catch(e){N.appendChild(t)}})),M.detectingConflicts&&D&&L((function(){D.setAttributeNode(document.createAttribute(M.detectionIgnoreAttr));var t=function(t,e){var n=document.createElement("script");return e&&e.detectionIgnoreAttr&&n.setAttributeNode(document.createAttribute(e.detectionIgnoreAttr)),n.src=c(t,{baseFilename:"conflict-detection",fileSuffix:"js",subdir:"js",minify:t.minify.enabled}),n}(x,M);document.body.appendChild(t)}))})).catch((function(t){console.error("".concat("Font Awesome Kit:"," ").concat(t))}))}}catch(t){console.error("".concat("Font Awesome Kit:"," ").concat(t))}}));
+window.FontAwesomeKitConfig = {
+    "asyncLoading": {
+        "enabled": false
+    },
+    "autoA11y": {
+        "enabled": true
+    },
+    "baseUrl": "https://ka-f.fontawesome.com",
+    "baseUrlKit": "https://kit.fontawesome.com",
+    "detectConflictsUntil": null,
+    "iconUploads": {
+    },
+    "id": 48090306,
+    "license": "free",
+    "method": "css",
+    "minify": {
+        "enabled": true
+    },
+    "token": "f25e534c46",
+    "v4FontFaceShim": {
+        "enabled": true
+    },
+    "v4shim": {
+        "enabled": true
+    },
+    "version": "5.15.3"
+};
+!function(t) {
+    "function" == typeof define && define.amd ? define("kit-loader", t) : t();
+}(function() {
+    "use strict";
+    function t(e) {
+        return (t = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t1) {
+            return typeof t1;
+        } : function(t1) {
+            return t1 && "function" == typeof Symbol && t1.constructor === Symbol && t1 !== Symbol.prototype ? "symbol" : typeof t1;
+        })(e);
+    }
+    function e(t1, e1, n) {
+        return e1 in t1 ? Object.defineProperty(t1, e1, {
+            value: n,
+            enumerable: !0,
+            configurable: !0,
+            writable: !0
+        }) : t1[e1] = n, t1;
+    }
+    function n(t1, e1) {
+        var n1 = Object.keys(t1);
+        if (Object.getOwnPropertySymbols) {
+            var r = Object.getOwnPropertySymbols(t1);
+            e1 && (r = r.filter(function(e2) {
+                return Object.getOwnPropertyDescriptor(t1, e2).enumerable;
+            })), n1.push.apply(n1, r);
+        }
+        return n1;
+    }
+    function r(t1) {
+        for(var r1 = 1; r1 < arguments.length; r1++){
+            var o = null != arguments[r1] ? arguments[r1] : {
+            };
+            r1 % 2 ? n(Object(o), !0).forEach(function(n1) {
+                e(t1, n1, o[n1]);
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t1, Object.getOwnPropertyDescriptors(o)) : n(Object(o)).forEach(function(e1) {
+                Object.defineProperty(t1, e1, Object.getOwnPropertyDescriptor(o, e1));
+            });
+        }
+        return t1;
+    }
+    function o(t1, e1) {
+        return (function(t2) {
+            if (Array.isArray(t2)) return t2;
+        })(t1) || (function(t2, e2) {
+            if ("undefined" == typeof Symbol || !(Symbol.iterator in Object(t2))) return;
+            var n1 = [], r1 = !0, o1 = !1, i = void 0;
+            try {
+                for(var c, a = t2[Symbol.iterator](); !(r1 = (c = a.next()).done) && (n1.push(c.value), !e2 || n1.length !== e2); r1 = !0);
+            } catch (t3) {
+                o1 = !0, i = t3;
+            } finally{
+                try {
+                    r1 || null == a.return || a.return();
+                } finally{
+                    if (o1) throw i;
+                }
+            }
+            return n1;
+        })(t1, e1) || (function(t2, e2) {
+            if (!t2) return;
+            if ("string" == typeof t2) return i(t2, e2);
+            var n1 = Object.prototype.toString.call(t2).slice(8, -1);
+            "Object" === n1 && t2.constructor && (n1 = t2.constructor.name);
+            if ("Map" === n1 || "Set" === n1) return Array.from(t2);
+            if ("Arguments" === n1 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n1)) return i(t2, e2);
+        })(t1, e1) || (function() {
+            throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+        })();
+    }
+    function i(t1, e1) {
+        (null == e1 || e1 > t1.length) && (e1 = t1.length);
+        for(var n1 = 0, r1 = new Array(e1); n1 < e1; n1++)r1[n1] = t1[n1];
+        return r1;
+    }
+    function c(t1, e1) {
+        var n1 = e1 && e1.addOn || "", r1 = e1 && e1.baseFilename || t1.license + n1, o1 = e1 && e1.minify ? ".min" : "", i1 = e1 && e1.fileSuffix || t1.method, c1 = e1 && e1.subdir || t1.method;
+        return t1.baseUrl + "/releases/" + ("latest" === t1.version ? "latest" : "v".concat(t1.version)) + "/" + c1 + "/" + r1 + o1 + "." + i1;
+    }
+    function a(t1) {
+        return t1.baseUrlKit + "/" + t1.token + "/" + t1.id + "/kit-upload.css";
+    }
+    function u(t1, e1) {
+        var n1 = e1 || [
+            "fa"
+        ], r1 = "." + Array.prototype.join.call(n1, ",."), o1 = t1.querySelectorAll(r1);
+        Array.prototype.forEach.call(o1, function(e2) {
+            var n2 = e2.getAttribute("title");
+            e2.setAttribute("aria-hidden", "true");
+            var r2 = !e2.nextElementSibling || !e2.nextElementSibling.classList.contains("sr-only");
+            if (n2 && r2) {
+                var o2 = t1.createElement("span");
+                o2.innerHTML = n2, o2.classList.add("sr-only"), e2.parentNode.insertBefore(o2, e2.nextSibling);
+            }
+        });
+    }
+    var f, s = function() {
+    }, d = "undefined" != typeof global && void 0 !== global.process && "function" == typeof global.process.emit, l = "undefined" == typeof setImmediate ? setTimeout : setImmediate, h = [];
+    function m() {
+        for(var t1 = 0; t1 < h.length; t1++)h[t1][0](h[t1][1]);
+        h = [], f = !1;
+    }
+    function p(t1, e1) {
+        h.push([
+            t1,
+            e1
+        ]), f || (f = !0, l(m, 0));
+    }
+    function y(t1) {
+        var e1 = t1.owner, n1 = e1._state, r1 = e1._data, o1 = t1[n1], i1 = t1.then;
+        if ("function" == typeof o1) {
+            n1 = "fulfilled";
+            try {
+                r1 = o1(r1);
+            } catch (t2) {
+                w(i1, t2);
+            }
+        }
+        b(i1, r1) || ("fulfilled" === n1 && v(i1, r1), "rejected" === n1 && w(i1, r1));
+    }
+    function b(e1, n1) {
+        var r1;
+        try {
+            if (e1 === n1) throw new TypeError("A promises callback cannot return that same promise.");
+            if (n1 && ("function" == typeof n1 || "object" === t(n1))) {
+                var o1 = n1.then;
+                if ("function" == typeof o1) return o1.call(n1, function(t1) {
+                    r1 || (r1 = !0, n1 === t1 ? g(e1, t1) : v(e1, t1));
+                }, function(t1) {
+                    r1 || (r1 = !0, w(e1, t1));
+                }), !0;
+            }
+        } catch (t1) {
+            return r1 || w(e1, t1), !0;
+        }
+        return !1;
+    }
+    function v(t1, e1) {
+        t1 !== e1 && b(t1, e1) || g(t1, e1);
+    }
+    function g(t1, e1) {
+        "pending" === t1._state && (t1._state = "settled", t1._data = e1, p(S, t1));
+    }
+    function w(t1, e1) {
+        "pending" === t1._state && (t1._state = "settled", t1._data = e1, p(O, t1));
+    }
+    function A(t1) {
+        t1._then = t1._then.forEach(y);
+    }
+    function S(t1) {
+        t1._state = "fulfilled", A(t1);
+    }
+    function O(t1) {
+        t1._state = "rejected", A(t1), !t1._handled && d && global.process.emit("unhandledRejection", t1._data, t1);
+    }
+    function j(t1) {
+        global.process.emit("rejectionHandled", t1);
+    }
+    function E(t1) {
+        if ("function" != typeof t1) throw new TypeError("Promise resolver " + t1 + " is not a function");
+        if (this instanceof E == !1) throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
+        this._then = [], (function(t2, e1) {
+            function n1(t3) {
+                w(e1, t3);
+            }
+            try {
+                t2(function(t3) {
+                    v(e1, t3);
+                }, n1);
+            } catch (t3) {
+                n1(t3);
+            }
+        })(t1, this);
+    }
+    E.prototype = {
+        constructor: E,
+        _state: "pending",
+        _then: null,
+        _data: void 0,
+        _handled: !1,
+        then: function(t1, e1) {
+            var n1 = {
+                owner: this,
+                then: new this.constructor(s),
+                fulfilled: t1,
+                rejected: e1
+            };
+            return !e1 && !t1 || this._handled || (this._handled = !0, "rejected" === this._state && d && p(j, this)), "fulfilled" === this._state || "rejected" === this._state ? p(y, n1) : this._then.push(n1), n1.then;
+        },
+        catch: function(t1) {
+            return this.then(null, t1);
+        }
+    }, E.all = function(t1) {
+        if (!Array.isArray(t1)) throw new TypeError("You must pass an array to Promise.all().");
+        return new E(function(e1, n1) {
+            var r1 = [], o3 = 0;
+            function i1(t2) {
+                return o3++, function(n2) {
+                    r1[t2] = n2, --o3 || e1(r1);
+                };
+            }
+            for(var c1, a1 = 0; a1 < t1.length; a1++)(c1 = t1[a1]) && "function" == typeof c1.then ? c1.then(i1(a1), n1) : r1[a1] = c1;
+            o3 || e1(r1);
+        });
+    }, E.race = function(t1) {
+        if (!Array.isArray(t1)) throw new TypeError("You must pass an array to Promise.race().");
+        return new E(function(e1, n1) {
+            for(var r1, o3 = 0; o3 < t1.length; o3++)(r1 = t1[o3]) && "function" == typeof r1.then ? r1.then(e1, n1) : e1(r1);
+        });
+    }, E.resolve = function(e1) {
+        return e1 && "object" === t(e1) && e1.constructor === E ? e1 : new E(function(t1) {
+            t1(e1);
+        });
+    }, E.reject = function(t1) {
+        return new E(function(e1, n1) {
+            n1(t1);
+        });
+    };
+    var _ = "function" == typeof Promise ? Promise : E;
+    function P(t1, e1) {
+        var n1 = e1.fetch, r1 = e1.XMLHttpRequest, o3 = e1.token, i1 = t1;
+        return "URLSearchParams" in window ? (i1 = new URL(t1)).searchParams.set("token", o3) : i1 = i1 + "?token=" + encodeURIComponent(o3), i1 = i1.toString(), new _(function(t2, e2) {
+            if ("function" == typeof n1) n1(i1, {
+                mode: "cors",
+                cache: "default"
+            }).then(function(t3) {
+                if (t3.ok) return t3.text();
+                throw new Error("");
+            }).then(function(e3) {
+                t2(e3);
+            }).catch(e2);
+            else if ("function" == typeof r1) {
+                var o4 = new r1;
+                o4.addEventListener("loadend", function() {
+                    this.responseText ? t2(this.responseText) : e2(new Error(""));
+                });
+                [
+                    "abort",
+                    "error",
+                    "timeout"
+                ].map(function(t3) {
+                    o4.addEventListener(t3, function() {
+                        e2(new Error(""));
+                    });
+                }), o4.open("GET", i1), o4.send();
+            } else {
+                e2(new Error(""));
+            }
+        });
+    }
+    function C(t1, e1, n1) {
+        var r1 = t1;
+        return [
+            [
+                /(url\("?)\.\.\/\.\.\/\.\./g,
+                function(t2, n2) {
+                    return "".concat(n2).concat(e1);
+                }
+            ],
+            [
+                /(url\("?)\.\.\/webfonts/g,
+                function(t2, r2) {
+                    return "".concat(r2).concat(e1, "/releases/v").concat(n1, "/webfonts");
+                }
+            ],
+            [
+                /(url\("?)https:\/\/kit-free([^.])*\.fontawesome\.com/g,
+                function(t2, n2) {
+                    return "".concat(n2).concat(e1);
+                }
+            ]
+        ].forEach(function(t2) {
+            var e2 = o(t2, 2), n2 = e2[0], i1 = e2[1];
+            r1 = r1.replace(n2, i1);
+        }), r1;
+    }
+    function F(t1, e1) {
+        var n1 = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : function() {
+        }, o3 = e1.document || o3, i1 = u.bind(u, o3, [
+            "fa",
+            "fab",
+            "fas",
+            "far",
+            "fal",
+            "fad",
+            "fak"
+        ]), f1 = Object.keys(t1.iconUploads || {
+        }).length > 0;
+        t1.autoA11y.enabled && n1(i1);
+        var s1 = [
+            {
+                id: "fa-main",
+                addOn: void 0
+            }
+        ];
+        t1.v4shim.enabled && s1.push({
+            id: "fa-v4-shims",
+            addOn: "-v4-shims"
+        }), t1.v4FontFaceShim.enabled && s1.push({
+            id: "fa-v4-font-face",
+            addOn: "-v4-font-face"
+        }), f1 && s1.push({
+            id: "fa-kit-upload",
+            customCss: !0
+        });
+        var d1 = s1.map(function(n2) {
+            return new _(function(o5, i2) {
+                P(n2.customCss ? a(t1) : c(t1, {
+                    addOn: n2.addOn,
+                    minify: t1.minify.enabled
+                }), e1).then(function(i3) {
+                    o5(U(i3, r(r({
+                    }, e1), {
+                    }, {
+                        baseUrl: t1.baseUrl,
+                        version: t1.version,
+                        id: n2.id,
+                        contentFilter: function(t2, e2) {
+                            return C(t2, e2.baseUrl, e2.version);
+                        }
+                    })));
+                }).catch(i2);
+            });
+        });
+        return _.all(d1);
+    }
+    function U(t1, e1) {
+        var n1 = e1.contentFilter || function(t2, e2) {
+            return t2;
+        }, r1 = document.createElement("style"), o3 = document.createTextNode(n1(t1, e1));
+        return r1.appendChild(o3), r1.media = "all", e1.id && r1.setAttribute("id", e1.id), e1 && e1.detectingConflicts && e1.detectionIgnoreAttr && r1.setAttributeNode(document.createAttribute(e1.detectionIgnoreAttr)), r1;
+    }
+    function k(t1, e1) {
+        e1.autoA11y = t1.autoA11y.enabled, "pro" === t1.license && (e1.autoFetchSvg = !0, e1.fetchSvgFrom = t1.baseUrl + "/releases/" + ("latest" === t1.version ? "latest" : "v".concat(t1.version)) + "/svgs", e1.fetchUploadedSvgFrom = t1.uploadsUrl);
+        var n1 = [];
+        return t1.v4shim.enabled && n1.push(new _(function(n2, o3) {
+            P(c(t1, {
+                addOn: "-v4-shims",
+                minify: t1.minify.enabled
+            }), e1).then(function(t2) {
+                n2(I(t2, r(r({
+                }, e1), {
+                }, {
+                    id: "fa-v4-shims"
+                })));
+            }).catch(o3);
+        })), n1.push(new _(function(n2, o3) {
+            P(c(t1, {
+                minify: t1.minify.enabled
+            }), e1).then(function(t2) {
+                var o5 = I(t2, r(r({
+                }, e1), {
+                }, {
+                    id: "fa-main"
+                }));
+                n2(function(t3, e2) {
+                    var n3 = e2 && void 0 !== e2.autoFetchSvg ? e2.autoFetchSvg : void 0, r1 = e2 && void 0 !== e2.autoA11y ? e2.autoA11y : void 0;
+                    void 0 !== r1 && t3.setAttribute("data-auto-a11y", r1 ? "true" : "false");
+                    n3 && (t3.setAttributeNode(document.createAttribute("data-auto-fetch-svg")), t3.setAttribute("data-fetch-svg-from", e2.fetchSvgFrom), t3.setAttribute("data-fetch-uploaded-svg-from", e2.fetchUploadedSvgFrom));
+                    return t3;
+                }(o5, e1));
+            }).catch(o3);
+        })), _.all(n1);
+    }
+    function I(t1, e1) {
+        var n1 = document.createElement("SCRIPT"), r1 = document.createTextNode(t1);
+        return n1.appendChild(r1), n1.referrerPolicy = "strict-origin", e1.id && n1.setAttribute("id", e1.id), e1 && e1.detectingConflicts && e1.detectionIgnoreAttr && n1.setAttributeNode(document.createAttribute(e1.detectionIgnoreAttr)), n1;
+    }
+    function L(t1) {
+        var e1, n1 = [], r1 = document, o3 = r1.documentElement.doScroll, i1 = (o3 ? /^loaded|^c/ : /^loaded|^i|^c/).test(r1.readyState);
+        i1 || r1.addEventListener("DOMContentLoaded", e1 = function() {
+            for(r1.removeEventListener("DOMContentLoaded", e1), i1 = 1; e1 = n1.shift();)e1();
+        }), i1 ? setTimeout(t1, 0) : n1.push(t1);
+    }
+    function T(t1) {
+        "undefined" != typeof MutationObserver && new MutationObserver(t1).observe(document, {
+            childList: !0,
+            subtree: !0
+        });
+    }
+    try {
+        if (window.FontAwesomeKitConfig) {
+            var x = window.FontAwesomeKitConfig, M = {
+                detectingConflicts: x.detectConflictsUntil && new Date <= new Date(x.detectConflictsUntil),
+                detectionIgnoreAttr: "data-fa-detection-ignore",
+                fetch: window.fetch,
+                token: x.token,
+                XMLHttpRequest: window.XMLHttpRequest,
+                document: document
+            }, D = document.currentScript, N = D ? D.parentElement : document.head;
+            (function() {
+                var t1 = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
+                }, e1 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {
+                };
+                return "js" === t1.method ? k(t1, e1) : "css" === t1.method ? F(t1, e1, function(t2) {
+                    L(t2), T(t2);
+                }) : void 0;
+            })(x, M).then(function(t1) {
+                t1.map(function(t2) {
+                    try {
+                        N.insertBefore(t2, D ? D.nextSibling : null);
+                    } catch (e1) {
+                        N.appendChild(t2);
+                    }
+                }), M.detectingConflicts && D && L(function() {
+                    D.setAttributeNode(document.createAttribute(M.detectionIgnoreAttr));
+                    var t2 = function(t3, e1) {
+                        var n1 = document.createElement("script");
+                        return e1 && e1.detectionIgnoreAttr && n1.setAttributeNode(document.createAttribute(e1.detectionIgnoreAttr)), n1.src = c(t3, {
+                            baseFilename: "conflict-detection",
+                            fileSuffix: "js",
+                            subdir: "js",
+                            minify: t3.minify.enabled
+                        }), n1;
+                    }(x, M);
+                    document.body.appendChild(t2);
+                });
+            }).catch(function(t1) {
+                console.error("".concat("Font Awesome Kit:", " ").concat(t1));
+            });
+        }
+    } catch (t1) {
+        console.error("".concat("Font Awesome Kit:", " ").concat(t1));
+    }
+});

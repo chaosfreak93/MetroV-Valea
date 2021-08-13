@@ -3,6 +3,7 @@ import * as native from 'natives';
 import BlipManager from './blipmanager';
 import MarkerManager from './markermanager';
 let blip = null;
+let vehicle = alt.Player.local.vehicle;
 let markerCache = [];
 class MinijobManager {
     static CreateJobMarker(name, color, sprite, markersprite, X, Y, Z, bobUpAndDown) {
@@ -24,28 +25,26 @@ class MinijobManager {
         });
     }
     static RemoveJobMarker() {
-        blip.destroy();
+        if (blip != null) blip.destroy();
         for(var marker in markerCache){
             MarkerManager.removeMarkerByData(marker);
         }
     }
     static RemoveJobMarkerWithFreeze(delay) {
-        blip.destroy();
+        if (blip != null) blip.destroy();
         for(var marker in markerCache){
             MarkerManager.removeMarkerByData(marker);
         }
         alt.setTimeout(()=>{
-            native.freezeEntityPosition(alt.Player.local.scriptID, true);
-            if (alt.Player.local.vehicle != null) {
-                native.freezeEntityPosition(alt.Player.local.vehicle.scriptID, true);
+            if (vehicle != null) {
+                native.freezeEntityPosition(vehicle, true);
             }
             alt.setTimeout(()=>{
-                native.freezeEntityPosition(alt.Player.local.scriptID, false);
-                if (alt.Player.local.vehicle != null) {
-                    native.freezeEntityPosition(alt.Player.local.vehicle.scriptID, false);
+                if (vehicle != null) {
+                    native.freezeEntityPosition(vehicle, false);
                 }
             }, delay);
-        }, 1500);
+        }, 500);
     }
 }
 export { MinijobManager as default };

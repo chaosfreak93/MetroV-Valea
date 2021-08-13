@@ -1,0 +1,5 @@
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.dll
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.deps.json
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.runtimeconfig.json
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\DiscordWebhook\bin\Release\net5.0\publish\DiscordWebhook.pdb
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\DiscordWebhook\bin\Release\net5.0\publish\Newtonsoft.Json.dll
