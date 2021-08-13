@@ -79,7 +79,7 @@ alt.onServer("Client:Utilities:setTattoos", (tattooJSON)=>{
     setCorrectTattoos();
 });
 export function setClothes(entity, compId, draw, tex) {
-    native.setPedComponentVariation(entity, compId, draw, tex, 0);
+    native.setPedComponentVariation(entity.scriptID, compId, draw, tex, 0);
 }
 export default {
     loadClipsetAsync,

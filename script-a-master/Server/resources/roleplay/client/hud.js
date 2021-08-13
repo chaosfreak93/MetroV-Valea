@@ -79,7 +79,7 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             hudBrowser.unfocus();
             alt.emitServer("Server:CEF:setCefStatus", false);
             alt.emitServer("Server:ClothesShop:RequestCurrentSkin");
-            clearTattoos(alt.Player.local.scriptID);
+            clearTattoos(alt.Player.local);
             setCorrectTattoos();
         });
         hudBrowser.on("Client:TattooShop:buyTattoo", (shopId, tattooId)=>{
@@ -89,8 +89,8 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:TattooShop:deleteTattoo", parseInt(id));
         });
         hudBrowser.on("Client:TattooShop:previewTattoo", (hash, collection)=>{
-            clearTattoos(alt.Player.local.scriptID);
-            setTattoo(alt.Player.local.scriptID, collection, hash);
+            clearTattoos(alt.Player.local);
+            setTattoo(alt.Player.local, collection, hash);
         });
         //Rotation HUD
         hudBrowser.on("Client:Utilities:setRotation", (rotZ)=>{
@@ -1773,17 +1773,17 @@ alt.onServer("Client:TattooShop:openShop", (gender, shopId, ownTattoosJSON)=>{
     alt.toggleGameControls(false);
     hudBrowser.focus();
     if (gender == 0) {
-        setClothes(alt.Player.local.scriptID, 11, 15, 0);
-        setClothes(alt.Player.local.scriptID, 8, 15, 0);
-        setClothes(alt.Player.local.scriptID, 3, 15, 0);
-        setClothes(alt.Player.local.scriptID, 4, 21, 0);
-        setClothes(alt.Player.local.scriptID, 6, 34, 0);
+        setClothes(alt.Player.local, 11, 15, 0);
+        setClothes(alt.Player.local, 8, 15, 0);
+        setClothes(alt.Player.local, 3, 15, 0);
+        setClothes(alt.Player.local, 4, 21, 0);
+        setClothes(alt.Player.local, 6, 34, 0);
     } else {
-        setClothes(alt.Player.local.scriptID, 11, 18, 0);
-        setClothes(alt.Player.local.scriptID, 8, 34, 0);
-        setClothes(alt.Player.local.scriptID, 3, 15, 0);
-        setClothes(alt.Player.local.scriptID, 4, 17, 0);
-        setClothes(alt.Player.local.scriptID, 6, 35, 0);
+        setClothes(alt.Player.local, 11, 18, 0);
+        setClothes(alt.Player.local, 8, 34, 0);
+        setClothes(alt.Player.local, 3, 15, 0);
+        setClothes(alt.Player.local, 4, 17, 0);
+        setClothes(alt.Player.local, 6, 35, 0);
     }
 });
 alt.onServer("Client:TattooShop:sendItemsToClient", (items)=>{
