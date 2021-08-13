@@ -4118,7 +4118,7 @@
                 if (globalChatMessagesArray[i].from == userPhoneNumber) floatTyp = "me";
                 else floatTyp = "other";
                 date = new Date(globalChatMessagesArray[i].unix);
-                date = Math.floor((date.getTime()) / (60 * 60 * 24));
+                date = Math.floor(date.getTime() / (1000 * 60 * 60 * 24));
                 if (date != lastDate) {
                     html += `<div class="phone-chat-info-sm">${unixToLatest(globalChatMessagesArray[i].unix, "day")}</div>`;
                 }
@@ -4660,6 +4660,7 @@
         }
 
         function unixToLatest(unix, type) {
+            unix = unix * 1000;
             let date = new Date(unix),
                 today = new Date(),
                 str,
@@ -4670,6 +4671,7 @@
 
             if (dateDay == todayDay && dateMonth == todayMonth) {
                 if (type == null) {
+                    unix = unix / 1000;
                     str = unixToTime(unix);
                 } else if (type == "day") {
                     str = "Heute";
@@ -4685,7 +4687,7 @@
 
                 let unixDate = date.getTime();
                 let unixToday = today.getTime();
-                let diffdays = (unixToday - unixDate) / (60 * 60 * 24);
+                let diffdays = (unixToday - unixDate) / (1000 * 60 * 60 * 24);
 
                 if (diffdays == 1) {
                     str = "Gestern";
@@ -4698,7 +4700,7 @@
         }
 
         function unixToTime(unix) {
-            let date = new Date(unix);
+            let date = new Date(unix * 1000);
             hour = checkTime(date.getHours()),
                 minute = checkTime(date.getMinutes());
             let str = hour + ":" + minute;
