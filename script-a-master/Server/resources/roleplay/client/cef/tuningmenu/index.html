@@ -225,7 +225,9 @@
     </body>
 
     <script>
-        let mods = ["Spoiler","vordere Stoßstange","hintere Stoßstange","Seitenschweller","Auspuff","Fahrgestell","Kühlergrill","Motorhaube","linker Kotflügel","rechter Kotflügel","Dach","Motor","Bremsen","Getriebe","Hupe","Federung","Panzerung","-","Turbo","-","Reifenrauch","-","Xenon-Licht","vordere Reifen","hintere Reifen","Kennzeichenhalter","Kennzeichenfarbe","Autoverkleidung","Autoverzierungen","-","Tacho Design","Türinnenraum","Sitze","Lenkrad","Schalthebel","Autoplatten","Hutablage","Kofferraum","Hydraulik","Motorblock","Luftfilter","Domstrebe","Bogenabdeckung","Antenne","Außenteile","Tank","Türe","hintere Hydraulik","Lackierung", "-","Radtyp","Räder", "Reifenfarbe", "Fenstertönung","Kennzeichenfarbe","-","-","-","-","-","-","-","-","Pearl-Effekt","-","Extramod 1","Extramod 2","Extramod 3","Extramod 4","Extramod 5","Extramod 6","Extramod 7","Extramod 8","Extramod 9","Extramod 10","Extramod 11","Extramod 12","Extramod 13","Extramod 14","Extramod 15","Innenraumfarbe","Neon", "-", "-", "-", "-", "-", "-", "Scheinwerfer"];        let performanceMods = [11, 12, 13, 15, 18]
+        let mods = ["Spoiler","vordere Stoßstange","hintere Stoßstange","Seitenschweller","Auspuff","Fahrgestell","Kühlergrill","Motorhaube","linker Kotflügel","rechter Kotflügel","Dach","Motor","Bremsen","Getriebe","Hupe","Federung","Panzerung","-","Turbo","-","Reifenrauch","-","Xenon-Licht","vordere Reifen","hintere Reifen","Kennzeichenhalter","Kennzeichenfarbe","Autoverkleidung","Autoverzierungen","-","Tacho Design","Türinnenraum","Sitze","Lenkrad","Schalthebel","Autoplatten","Hutablage","Kofferraum","Hydraulik","Motorblock","Luftfilter","Domstrebe","Bogenabdeckung","Antenne","Außenteile","Tank","Türe","hintere Hydraulik","Lackierung", "-","Radtyp","Räder", "Reifenfarbe", "Fenstertönung","Kennzeichenfarbe","-","-","-","-","-","-","-","-","Pearl-Effekt","-","Extramod 1","Extramod 2","Extramod 3","Extramod 4","Extramod 5","Extramod 6","Extramod 7","Extramod 8","Extramod 9","Extramod 10","Extramod 11","Extramod 12","Extramod 13","Extramod 14","Extramod 15","Innenraumfarbe","Neon", "-", "-", "-", "-", "-", "-", "Scheinwerfer"]; 
+        let interiorMods = [5, 30, 31, 32, 33, 34, 35, 36, 37, 80];
+        let performanceMods = [11, 12, 13, 15, 18]
         let prices = []
 
         let oldPrimaryColor = "#ffffff";
@@ -325,6 +327,7 @@
 
             oldtyresmokeColor = rgb2hex(installedMods[85], installedMods[86], installedMods[87]);
             updateColorPicker4(oldtyresmokeColor);
+
 
             let exteriorElem = document.getElementById("tuningmenu-content-othercats-exterior"),
                 interiorElem = document.getElementById("tuningmenu-content-othercats-interior"),
