@@ -3284,7 +3284,7 @@
                     playPhoneAudio("../utils/sounds/phone/msg_send.wav");
                     let encodedText = encodeText(text);
                     document.getElementById("phone-chat-input").value = null;
-                    let unix = new Date.now();
+                    let unix = new Date().getTime();
                     targetMessageUser = document.getElementById('phone-chat-disp-name').dataset.target;
                     globalChatMessagesArray = [];
                     alt.emit("Client:Smartphone:sendChatMessage", selectedChatId, userPhoneNumber, targetMessageUser, unix, encodedText);
@@ -4117,7 +4117,7 @@
             for (var i in globalChatMessagesArray) {
                 if (globalChatMessagesArray[i].from == userPhoneNumber) floatTyp = "me";
                 else floatTyp = "other";
-                date = new Date(globalChatMessagesArray[i].unix);
+                date = new Date(globalChatMessagesArray[i].unix * 1000);
                 date = Math.floor(date.getTime() / (1000 * 60 * 60 * 24));
                 if (date != lastDate) {
                     html += `<div class="phone-chat-info-sm">${unixToLatest(globalChatMessagesArray[i].unix, "day")}</div>`;
