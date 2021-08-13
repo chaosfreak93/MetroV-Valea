@@ -1,0 +1,5 @@
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\SaltyChat.Server\bin\Release\net5.0\publish\SaltyChat.Server.dll
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\SaltyChat.Server\bin\Release\net5.0\publish\SaltyChat.Server.deps.json
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\SaltyChat.Server\bin\Release\net5.0\publish\SaltyChat.Server.runtimeconfig.json
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\SaltyChat.Server\bin\Release\net5.0\publish\SaltyChat.Server.pdb
+C:\Users\yanlu\RiderProjects\MetroV-Valea\script-a-master\C#\SaltyChat.Server\bin\Release\net5.0\publish\AltV.Net.dll

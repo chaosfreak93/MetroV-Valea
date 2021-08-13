@@ -1,0 +1,29 @@
+{
+  "name": "valea-new",
+  "version": "0.0.1",
+  "description": "a new valea client script",
+  "author": "Yan-Luca L.",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf ./resources",
+    "build": "swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet"
+  },
+  "devDependencies": {
+    "@altv/types-client": "^1.7.6",
+    "@altv/types-natives": "^1.4.2",
+    "@altv/types-shared": "^1.0.1",
+    "@altv/types-webview": "^1.0.2",
+    "@swc/cli": "^0.1.46",
+    "@swc/core": "^1.2.60",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {},
+  "prettier": {
+    "tabWidth": 4,
+    "printWidth": 120,
+    "singleQuote": true,
+    "semi": true,
+    "arrowParens": "always",
+    "trailingComma": "none"
+}
+}
