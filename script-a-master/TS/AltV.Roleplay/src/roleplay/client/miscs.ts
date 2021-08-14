@@ -125,8 +125,15 @@ alt.everyTick(() => {
         alt.emit("SaltyChat:ToggleRange");
     }
 
-    if (alt.Player.local.vehicle && native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
-        native.disableControlAction(1, 86, true);
+    if (alt.Player.local.vehicle) {
+        const roll: number = native.getEntityRoll(alt.Player.local.vehicle.scriptID)
+        if (roll > 75 || roll < -75) {
+            native.disableControlAction(2, 59, true) // disable left/right
+            native.disableControlAction(2, 60, true) // disable up/down
+        }
+        if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
+            native.disableControlAction(1, 86, true);
+        }
     }
 });
 
