@@ -233,7 +233,11 @@ namespace Altv_Roleplay.Factions.ACLS
                 int charId = User.GetPlayerOnline(player);
                 int price = modPrices[type];
 
-                if (!CharactersInventory.ExistCharacterItem(charId, "Bargeld", "inventory") || CharactersInventory.GetCharacterItemAmount(charId, "Bargeld", "inventory") < price) HUDHandler.SendNotification(player, 3, 5000, $"Du hast nicht genug Bargeld dabei (${price}).");
+                if (!CharactersInventory.ExistCharacterItem(charId, "Bargeld", "inventory") ||
+                    CharactersInventory.GetCharacterItemAmount(charId, "Bargeld", "inventory") < price) {
+                    HUDHandler.SendNotification(player, 3, 5000, $"Du hast nicht genug Bargeld dabei (${price}).");
+                    return;
+                }
                 CharactersInventory.RemoveCharacterItemAmount(charId, "Bargeld", price, "inventory");
 
                 ServerVehicles.InstallBoughtMod(vehicle, type, index);
