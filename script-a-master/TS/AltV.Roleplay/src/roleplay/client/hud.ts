@@ -1334,7 +1334,7 @@ alt.on('keydown', (key) => {
             return;
         }
     } else if (key == 'M'.charCodeAt(0)) {
-        if (alt.Player.local.getSyncedMeta("IsCefOpen") || alt.Player.local.vehicle) return;
+        if (alt.Player.local.getSyncedMeta("IsCefOpen") || alt.Player.local.vehicle || hudBrowser == null) return;
         AnimationMenuUsing = true;
         hudBrowser.focus();
         alt.showCursor(true);
@@ -1373,7 +1373,7 @@ alt.on('keydown', (key) => {
             }
         }
     } else if (key == 'K'.charCodeAt(0)) {
-        if (alt.Player.local.getSyncedMeta("IsCefOpen")) return;
+        if (alt.Player.local.getSyncedMeta("IsCefOpen") || hudBrowser == null) return;
         ClothesRadialMenuUsing = true;
         hudBrowser.focus();
         alt.showCursor(true);
