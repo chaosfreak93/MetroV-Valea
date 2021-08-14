@@ -9,9 +9,9 @@ namespace Altv_Roleplay.Handler
     internal class CarryHandler : IScript
     {
         [AsyncClientEvent("Server:CarryPlayer")]
-        public async Task CarryPlayer(ClassicPlayer player, ClassicPlayer targetPlayer, string Unconscious, string FootCuffs) {
-            var IsUnconscious = bool.Parse(Unconscious);
-            var HasFootCuffs = bool.Parse(FootCuffs);
+        public async Task CarryPlayer(ClassicPlayer player, ClassicPlayer targetPlayer) {
+            targetPlayer.GetSyncedMetaData("IsUnconscious", out bool IsUnconscious);
+            targetPlayer.GetSyncedMetaData("HasFootCuffs", out bool HasFootCuffs);
             targetPlayer.GetStreamSyncedMetaData("isOnHands", out bool isOnHands);
 
             if (!isOnHands) {
