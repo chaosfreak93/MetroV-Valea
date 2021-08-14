@@ -27,7 +27,7 @@ class KeyHandler {
             }
         } else if (key == 'Y'.charCodeAt(0)) {
             let result = Raycast.line(1.5, 2.5);
-            if (result == undefined || !player.vehicle) return;
+            if (result == undefined || player.vehicle) return;
             alt.log("Null Check Done!");
             if (result.isHit && result.entityType != 0) {
                 alt.log("Exist Check Done!");
