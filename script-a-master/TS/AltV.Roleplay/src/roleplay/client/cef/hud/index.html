@@ -48,21 +48,20 @@
 
 <div id="vehicleHUD">
     <div id="VehicleSpeedBox" style="background-color: #1d1d1dcb;">
+        <p id="VehicleSpeedBoxText">240km/h</p>
         <img src="../utils/img/speedometer.png">
     </div>
 
     <div id="VehicleFuelBox" style="background-color: #1d1d1dcb;">
+        <p id="VehicleKMBoxText">20 KM</p>
         <img src="../utils/img/fuel.png">
     </div>
 
     <div id="VehicleKMBox" style="background-color: #1d1d1dcb;">
+        <p id="VehicleFuelBoxText">125 Liter</p>
         <img src="../utils/img/dashboard.png">
     </div>
 </div>
-
-<p id="VehicleSpeedBoxText">240km/h</p>
-<p id="VehicleKMBoxText">20 KM</p>
-<p id="VehicleFuelBoxText">125 Liter</p>
 
 <ul id="InteractionMenu-List"></ul>
 
@@ -2017,15 +2016,6 @@
                     document.getElementById("drinkbox").style.animation = "flickerAnimationn 2.5s infinite";
                 }
             }, 1);
-        }
-
-        function updateStreetLocation(loc) {
-            $("#locationtext").html(loc);
-        }
-
-        function updatePosAndRot(pos, rot) {
-            $("#pos").html(pos);
-            $("#rot").html(rot);
         }
 
         /* Interaktionsmenü Zeug */
