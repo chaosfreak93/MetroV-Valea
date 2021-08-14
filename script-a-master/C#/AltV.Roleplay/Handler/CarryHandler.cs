@@ -13,10 +13,6 @@ namespace Altv_Roleplay.Handler
             targetPlayer.GetSyncedMetaData("IsUnconscious", out bool IsUnconscious);
             targetPlayer.GetSyncedMetaData("HasFootCuffs", out bool HasFootCuffs);
             targetPlayer.GetStreamSyncedMetaData("isOnHands", out bool isOnHands);
-            
-            Alt.Log("IsUnconscious Carry: " + IsUnconscious);
-            Alt.Log("HasFootCuffs Carry: " + HasFootCuffs);
-            Alt.Log("isOnHands Carry: " + isOnHands);
 
             if (!isOnHands) {
                 if (IsUnconscious) {
