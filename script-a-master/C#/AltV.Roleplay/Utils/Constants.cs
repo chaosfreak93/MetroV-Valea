@@ -74,7 +74,7 @@ namespace Altv_Roleplay.Utils
             public static readonly Position Hotel_Apartment_StoragePos =
                 new((float) 265.9728698730469, (float) -999.4517211914062, (float) -99.00858306884766);
 
-            public static readonly Position Arrest_Position = new(1690.9055f, 2591.222f, 45.910645f);
+            public static readonly Position Arrest_Position = new(1664.7164306640625f, 2605.74072265625f, 45.5567626953125f);
             public static readonly Position ProcessTest = new((float) -252.05, (float) -971.736, (float) 31.21);
         }
     }

@@ -203,7 +203,7 @@ namespace Altv_Roleplay.Handler
                 HUDHandler.SendNotification(player, 1, 7500, $"Du sitzt nun für {jailTime} Minuten im Gefängnis.");
                 Characters.SetCharacterJailTime(targetPlayer.CharacterId, true, jailTime);
                 CharactersWanteds.RemoveCharacterWanteds(targetPlayer.CharacterId);
-                targetPlayer.Position = new Position(1691.4594f, 2565.7056f, 45.556763f);
+                targetPlayer.Position = new Position(1662.6856689453125f, 2605.89892578125f, 45.5567626953125f);
 
                 if (Characters.GetCharacterGender(targetPlayer.CharacterId) == false) {
                     targetPlayer.SetClothes(11, 5, 0, 0);
