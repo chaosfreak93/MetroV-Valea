@@ -28,8 +28,11 @@ class KeyHandler {
         } else if (key == 'Y'.charCodeAt(0)) {
             let result = Raycast.line(1.5, 2.5);
             if (result == undefined || !player.vehicle) return;
+            alt.log("Null Check Done!");
             if (result.isHit && result.entityType != 0) {
+                alt.log("Exist Check Done!");
                 if (result.entityType == 1) {
+                    alt.log("Type Check Done!");
                     let player1 = alt.Player.all.find((x)=>x.scriptID == result.hitEntity
                     );
                     if (!player1.valid || player1 == undefined) return;
