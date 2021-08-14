@@ -33,7 +33,7 @@ class KeyHandler {
                     let player1 = alt.Player.all.find((x)=>x.scriptID == result.hitEntity
                     );
                     if (!player1.valid || player1 == undefined) return;
-                    alt.emitServer("Server:CarryPlayer", player1, player1.getSyncedMeta("IsUnconscious"), player1.getSyncedMeta("HasFootCuffs"));
+                    alt.emitServer("Server:CarryPlayer", player1);
                 }
             }
         } else if (key === "Q".charCodeAt(0) && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
