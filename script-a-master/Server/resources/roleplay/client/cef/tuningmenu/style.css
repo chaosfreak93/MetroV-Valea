@@ -356,7 +356,6 @@ select {
     margin-top: 2.2vh;
     text-transform: uppercase;
     letter-spacing: 0.06vh;
-    visibility: hidden;
 }
 
 select:hover,

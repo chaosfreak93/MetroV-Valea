@@ -1,3 +1,4 @@
+//Rework Tuningmenu
 import * as alt from 'alt-client';
 import * as game from 'natives';
 
@@ -12,9 +13,9 @@ let webview,
     currentTyreSmokeColors,
     currentPrimaryPaintType,
     currentSecondaryPaintType,
-    paintTypeIds = [0,12,15,21,118,120],
+    paintTypeIds = [0, 0, 15,21,118,120],
     viewModeActive,
-    paintTypes = ["Normal", "Metallic", "Pearl", "Matte", "Metal", "Chrome"];
+    paintTypes = ["Normal", "", "Pearl", "Matt", "Metallic", "Chrom"];
 
 alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
     if (webview) {
@@ -76,13 +77,15 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
     webview.on("Client:Tuningmenu:ShowcasePaintType", (cat, val) => {
         if (!vehicle) return;
         
+        alt.log("val: " + val);
+        alt.log("new: " + paintTypeIds.indexOf(parseInt(val)));
         if (cat == "primary") {
-            game.setVehicleModColor1(vehicle, paintTypes.indexOf(val), 0, 0);
+            game.setVehicleModColor1(vehicle, paintTypeIds.indexOf(parseInt(val)), 0, parseInt(showcasedMods[63]));
             alt.setTimeout(() => {
                 game.setVehicleCustomPrimaryColour(vehicle, parseInt(currentPrimaryColors[0]), parseInt(currentPrimaryColors[1]), parseInt(currentPrimaryColors[2]));
             }, 50);
         } else if (cat == "secondary") {
-            game.setVehicleModColor2(vehicle, paintTypes.indexOf(val), 0);
+            game.setVehicleModColor2(vehicle, paintTypeIds.indexOf(parseInt(val)), 0);
             alt.setTimeout(() => {
                 game.setVehicleCustomSecondaryColour(vehicle, parseInt(currentSecondaryColors[0]), parseInt(currentSecondaryColors[1]), parseInt(currentSecondaryColors[2]));
             }, 50);
@@ -127,14 +130,14 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
         if (!vehicle) return;
         
         if (type == 100) {
-            installedMods[55] = paintTypes.indexOf(paintType);
+            installedMods[55] = paintTypeIds.indexOf(paintType);
             installedMods[56] = colorR;
             installedMods[57] = colorG;
             installedMods[58] = colorB;
 
             currentPrimaryColors = [parseInt(colorR), parseInt(colorG), parseInt(colorB)];
         } else if (type == 200) {
-            installedMods[59] = paintTypes.indexOf(paintType);
+            installedMods[59] = paintTypeIds.indexOf(paintType);
             installedMods[60] = colorR;
             installedMods[61] = colorG;
             installedMods[62] = colorB;
@@ -154,7 +157,7 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
             currentTyreSmokeColors = [parseInt(colorR), parseInt(colorG), parseInt(colorB)];
         }
 
-        alt.emitServer("Server:Tuningmenu:EquipRGBTuneItem", vehicle, type, colorR, colorG, colorB, paintType == 0 ? 0 : paintTypeIds[paintTypes.indexOf(paintType)])
+        alt.emitServer("Server:Tuningmenu:EquipRGBTuneItem", vehicle, type, colorR, colorG, colorB, paintType == 0 ? 0 : paintType);
     });
 });
 
@@ -209,6 +212,9 @@ function resetToNormal(vehicle, mods) {
             else for (let i = 0; i < 4; i++) game.setVehicleNeonLightEnabled(vehicle, i, true);
         } else if (type == 88) game.setVehicleXenonLightsColor(vehicle, parseInt(index));
     });
+
+    game.setVehicleModColor1(vehicle, paintTypes.indexOf(mods[55]), 0, parseInt(mods[63]));
+    game.setVehicleModColor2(vehicle, paintTypes.indexOf(mods[59]), 0);
 
     game.setVehicleCustomPrimaryColour(vehicle, parseInt(currentPrimaryColors[0]), parseInt(currentPrimaryColors[1]), parseInt(currentPrimaryColors[2]));
     game.setVehicleCustomSecondaryColour(vehicle, parseInt(currentSecondaryColors[0]), parseInt(currentSecondaryColors[1]), parseInt(currentSecondaryColors[2]));
