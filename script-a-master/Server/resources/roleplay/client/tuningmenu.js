@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as game from 'natives';
-let webview, vehicle, possibleMods, installedMods, currentPrimaryColors, currentSecondaryColors, currentUnderfloorColors, currentTyreSmokeColors, currentPrimaryPaintType, currentSecondaryPaintType, paintTypeIds = [
+let webview, vehicle, possibleMods, installedMods, showcasedMods, currentPrimaryColors, currentSecondaryColors, currentUnderfloorColors, currentTyreSmokeColors, currentPrimaryPaintType, currentSecondaryPaintType, paintTypeIds = [
     0,
     12,
     15,
@@ -14,7 +14,7 @@ let webview, vehicle, possibleMods, installedMods, currentPrimaryColors, current
     "Matte",
     "Metal",
     "Chrome"
-], currentPearl;
+];
 alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     if (webview) {
         webview.destroy();
@@ -28,6 +28,7 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     vehicle = veh;
     possibleMods = pMods;
     installedMods = iMods;
+    showcasedMods = iMods;
     currentPrimaryColors = [
         parseInt(installedMods[56]),
         parseInt(installedMods[57]),
@@ -50,7 +51,6 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     ];
     currentPrimaryPaintType = installedMods[55];
     currentSecondaryPaintType = installedMods[59];
-    currentPearl = installedMods[63];
     setTimeout(()=>{
         webview.emit("CEF:Tuningmenu:OpenMenu", pMods, iMods, modPrices);
     }, 500);
@@ -66,12 +66,12 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         vehicle = undefined;
         possibleMods = undefined;
         installedMods = undefined;
+        showcasedMods = undefined;
         currentPrimaryColors = undefined;
         currentSecondaryColors = undefined;
         currentUnderfloorColors = undefined;
         currentPrimaryPaintType = undefined;
         currentSecondaryPaintType = undefined;
-        currentPearl = undefined;
     });
     webview.on("Client:Tuningmenu:ShowcaseColor", (cat, colorR, colorG, colorB)=>{
         if (!vehicle) return;
@@ -96,6 +96,7 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     });
     webview.on("Client:Tuningmenu:ShowcasePart", (type, index)=>{
         if (!vehicle) return;
+        showcasedMods[type] = index;
         if (type == 18 || type == 20 || type == 22) {
             if (index == 0) game.toggleVehicleMod(vehicle, type, false);
             else game.toggleVehicleMod(vehicle, type, true);
@@ -103,18 +104,13 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         else if (type == 49) game.setVehicleLivery(vehicle, parseInt(index) - 1);
         else if (type == 50) {
             game.setVehicleWheelType(vehicle, parseInt(index));
-            game.setVehicleMod(vehicle, 23, parseInt(installedMods[51]), false);
-        } else if (type == 51) game.setVehicleMod(vehicle, 23, parseInt(index), false);
-        else if (type == 52) game.setVehicleExtraColours(vehicle, parseInt(currentPearl), parseInt(index));
+            game.setVehicleMod(vehicle, 23, parseInt(showcasedMods[51]) - 1, false);
+        } else if (type == 51) game.setVehicleMod(vehicle, 23, parseInt(index) - 1, false);
+        else if (type == 52) game.setVehicleExtraColours(vehicle, parseInt(showcasedMods[63]), parseInt(index));
         else if (type == 53) game.setVehicleWindowTint(vehicle, parseInt(index));
         else if (type == 54) game.setVehicleNumberPlateTextIndex(vehicle, parseInt(index));
-        else if (type == 63) {
-            currentPearl = index;
-            game.setVehicleModColor1(vehicle, 2, 0, parseInt(index));
-            alt.setTimeout(()=>{
-                game.setVehicleCustomPrimaryColour(vehicle, parseInt(currentPrimaryColors[0]), parseInt(currentPrimaryColors[1]), parseInt(currentPrimaryColors[2]));
-            }, 50);
-        } else if (type == 80) game.setVehicleInteriorColor(vehicle, parseInt(index));
+        else if (type == 63) game.setVehicleExtraColours(vehicle, parseInt(index), parseInt(showcasedMods[52]));
+        else if (type == 80) game.setVehicleInteriorColor(vehicle, parseInt(index));
         else if (type == 81) {
             if (index == 0) for(let i = 0; i < 4; i++)game.setVehicleNeonLightEnabled(vehicle, i, false);
             else for(let i1 = 0; i1 < 4; i1++)game.setVehicleNeonLightEnabled(vehicle, i1, true);
@@ -123,7 +119,6 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     webview.on("Client:Tuningmenu:EquipTuneItem", (type, index)=>{
         if (!vehicle) return;
         installedMods[type] = index;
-        if (type == 63) currentPearl = index;
         alt.emitServer("Server:Tuningmenu:EquipTuneItem", vehicle, type, index);
     });
     webview.on("Client:Tuningmenu:EquipRGBTuneItem", (type, colorR, colorG, colorB, paintType)=>{
@@ -201,13 +196,16 @@ function resetToNormal(vehicle1, mods) {
         } else if (type < 49) game.setVehicleMod(vehicle1, type, parseInt(index) - 1, false);
         else if (type == 49) game.setVehicleLivery(vehicle1, parseInt(index) - 1);
         else if (type == 50) {
+            alt.log("test1: " + index);
             game.setVehicleWheelType(vehicle1, parseInt(index));
-            game.setVehicleMod(vehicle1, 23, parseInt(installedMods[51]), false);
-        } else if (type == 51) game.setVehicleMod(vehicle1, 23, parseInt(index), false);
-        else if (type == 52) game.setVehicleExtraColours(vehicle1, parseInt(installedMods[63]), parseInt(index));
+            game.setVehicleMod(vehicle1, 23, parseInt(installedMods[51]) - 1, false);
+        } else if (type == 51) {
+            game.setVehicleMod(vehicle1, 23, parseInt(index) - 1, false);
+            alt.log("test4: " + index);
+        } else if (type == 52) game.setVehicleExtraColours(vehicle1, parseInt(installedMods[63]), parseInt(index));
         else if (type == 53) game.setVehicleWindowTint(vehicle1, parseInt(index));
         else if (type == 54) game.setVehicleNumberPlateTextIndex(vehicle1, parseInt(index));
-        else if (type == 63) game.setVehicleModColor1(vehicle1, 2, 0, parseInt(index));
+        else if (type == 63) game.setVehicleExtraColours(vehicle1, parseInt(index), parseInt(showcasedMods[52]));
         else if (type == 80) game.setVehicleInteriorColor(vehicle1, parseInt(index));
         else if (type == 81) {
             if (index == 0) for(let i = 0; i < 4; i++)game.setVehicleNeonLightEnabled(vehicle1, i, false);
