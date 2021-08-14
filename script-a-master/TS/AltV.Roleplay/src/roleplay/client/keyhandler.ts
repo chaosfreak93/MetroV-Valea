@@ -31,12 +31,12 @@ export default class KeyHandler {
             }
         } else if (key == 'Y'.charCodeAt(0)) {
             let result = Raycast.line(1.5, 2.5);
-            if (result == undefined || !player.vehicle) return;
+            if (result == undefined || player.vehicle) return;
             if (result.isHit && result.entityType != 0) {
                 if (result.entityType == 1) {
                     let player = alt.Player.all.find(x => x.scriptID == result.hitEntity);
                     if (!player.valid || player == undefined) return;
-                    alt.emitServer("Server:CarryPlayer", player, player.getSyncedMeta("IsUnconscious"), player.getSyncedMeta("HasFootCuffs"));
+                    alt.emitServer("Server:CarryPlayer", player);
                 }
             }
         } else if (key === "Q".charCodeAt(0) && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {

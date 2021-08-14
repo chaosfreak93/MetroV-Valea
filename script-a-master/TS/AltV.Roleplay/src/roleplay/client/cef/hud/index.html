@@ -23,6 +23,8 @@
     </div>
 </div>
 
+<ul id="InteractionMenu-List"></ul>
+
 <div id="hudbox">
     <div id="drinkbox" style="background-color: #1d1d1dcb;">
         <img src="../utils/img/water.png">
@@ -50,21 +52,18 @@
     <div id="VehicleSpeedBox" style="background-color: #1d1d1dcb;">
         <img src="../utils/img/speedometer.png">
     </div>
+    <p id="VehicleSpeedBoxText">240km/h</p>
 
     <div id="VehicleFuelBox" style="background-color: #1d1d1dcb;">
         <img src="../utils/img/fuel.png">
     </div>
+    <p id="VehicleKMBoxText">20 KM</p>
 
     <div id="VehicleKMBox" style="background-color: #1d1d1dcb;">
         <img src="../utils/img/dashboard.png">
     </div>
+    <p id="VehicleFuelBoxText">125 Liter</p>
 </div>
-
-<p id="VehicleSpeedBoxText">240km/h</p>
-<p id="VehicleKMBoxText">20 KM</p>
-<p id="VehicleFuelBoxText">125 Liter</p>
-
-<ul id="InteractionMenu-List"></ul>
 
 <div id="identityCardApplyForm">
     <img src="../utils/img/logo_transparent_red_512.png" style="width: 156px; margin-bottom: -3px">
@@ -155,7 +154,7 @@
     </div>
     <div class="container" style="padding-top: 15px; border-bottom: 2px solid #ffffff0a;">
         <p>Begründung</p>
-        <input style="width: 75%;" id="RecievePlayerBillCEFBox-ReasonInput" type="text" spellcheck="false" maxlength="32" disabled>
+        <input style="width: 75%;" id="RecievePlayerBillCEFBox-ReasonInput" type="text" spellcheck="false" maxlength="128" disabled>
     </div>
     <div class="container" style="padding-top: 15px">
         <p>Betrag</p>
@@ -310,6 +309,15 @@
     <p class="description">Angemeldete Fahrzeuge ziehen eine KFZ Steuer mit sich. <br>Wähle unten eins der Fahrzeuge aus, die du anmelden möchtest.<br>Das Fahrzeug muss hinter dem Rathaus auf der Markierung stehen.<br><b>Leerzeichen müssen durch einen Bindestrich (-) ersetzt werden.</b></p>
     <hr>
     <ul id="VehicleLicensingCEFBox-List" class="list-group"></ul>
+</div>
+
+<div id="JailCEFBox">
+    <p class="closebtn" onclick="closeJailCEFBox();"><i class="fas fa-times"></i></p>
+    <img src="../utils/img/license-plate.png" style="margin-top: 15px; margin-bottom: 12px;">
+    <p class="title">GEFÄNGNISZEIT</p>
+    <p class="description"></p>
+    <hr>
+    <input id="JailCEFBox-jailTime" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 </div>
 
 <div id="HotelManageCEFBox">
@@ -2017,15 +2025,6 @@
                     document.getElementById("drinkbox").style.animation = "flickerAnimationn 2.5s infinite";
                 }
             }, 1);
-        }
-
-        function updateStreetLocation(loc) {
-            $("#locationtext").html(loc);
-        }
-
-        function updatePosAndRot(pos, rot) {
-            $("#pos").html(pos);
-            $("#rot").html(rot);
         }
 
         /* Interaktionsmenü Zeug */

@@ -21,7 +21,7 @@ class LoginHandler {
             loginBrowser.on("Client:Login:cefIsReady", ()=>{
                 alt.setTimeout(()=>{
                     if (alt.LocalStorage.get("username")) {
-                        loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"), alt.LocalStorage.get("password"));
+                        loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"));
                     }
                     loginBrowser.emit("CEF:Login:showArea", "login");
                 }, 2000);
@@ -56,9 +56,8 @@ class LoginHandler {
             loginBrowser.on("Client:Charselector:PreviewCharacter", (charid)=>{
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
-            loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr)=>{
-                native.freezeEntityPosition(alt.Player.local.scriptID, true);
-                alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
+            loginBrowser.on("Client:Charselector:spawnChar", (charid)=>{
+                alt.emitServer("Server:Charselector:spawnChar", charid);
             });
             loginBrowser.on("Client:Charcreator:SwitchOut", ()=>{
                 if (loginCam != null) {
@@ -123,9 +122,8 @@ class LoginHandler {
     static ViewCharacter(gender, facefeaturearray, headblendsarray, headoverlayarray) {
         LoginHandler.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
     }
-    static SaveLoginCredentialsToStorage(name, password, discordId) {
+    static SaveLoginCredentialsToStorage(name, discordId) {
         alt.LocalStorage.set('username', name);
-        alt.LocalStorage.set('password', password);
         alt.LocalStorage.set('discordId', discordId);
         alt.LocalStorage.save();
     }

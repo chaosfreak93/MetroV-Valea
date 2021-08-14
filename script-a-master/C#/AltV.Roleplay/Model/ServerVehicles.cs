@@ -1062,7 +1062,7 @@ namespace Altv_Roleplay.Model
                         case 53: mod.window_tint = modId; veh.WindowTint = (byte)modId; break;
                         case 54: mod.plate_color = modId; veh.NumberplateIndex = (uint)modId; break;
                         case 55: mod.colorPrimaryType = modId; veh.PrimaryColor = (byte)modId; break;
-                        case 59: mod.colorSecondary_b = modId; veh.SecondaryColor = (byte)modId; break;
+                        case 59: mod.colorSecondaryType = modId; veh.SecondaryColor = (byte)modId; break;
                         case 63: mod.colorPearl = modId; veh.PearlColor = (byte)modId; break;
                         case 80: mod.interior_color = modId; veh.InteriorColor = (byte)modId; break;
                         case 81: mod.neon = modId; if (modId == 0) veh.SetNeonActive(false, false, false, false); else veh.SetNeonActive(true, true, true, true); break;

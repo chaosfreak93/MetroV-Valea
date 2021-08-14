@@ -233,7 +233,11 @@ namespace Altv_Roleplay.Factions.ACLS
                 int charId = User.GetPlayerOnline(player);
                 int price = modPrices[type];
 
-                if (!CharactersInventory.ExistCharacterItem(charId, "Bargeld", "inventory") || CharactersInventory.GetCharacterItemAmount(charId, "Bargeld", "inventory") < price) HUDHandler.SendNotification(player, 3, 5000, $"Du hast nicht genug Bargeld dabei (${price}).");
+                if (!CharactersInventory.ExistCharacterItem(charId, "Bargeld", "inventory") ||
+                    CharactersInventory.GetCharacterItemAmount(charId, "Bargeld", "inventory") < price) {
+                    HUDHandler.SendNotification(player, 3, 5000, $"Du hast nicht genug Bargeld dabei (${price}).");
+                    return;
+                }
                 CharactersInventory.RemoveCharacterItemAmount(charId, "Bargeld", price, "inventory");
 
                 ServerVehicles.InstallBoughtMod(vehicle, type, index);
@@ -249,10 +253,11 @@ namespace Altv_Roleplay.Factions.ACLS
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
                 if (player.GetCharacterMetaId() <= 0 || vehicle.GetVehicleId() <= 0) return;
-                ServerVehicles.InstallBoughtModRgb(vehicle, type, colorR, colorG, colorB);
 
-                //if (paintType == 100) ServerVehicles.InstallBoughtMod(vehicle, 55, paintType);
-                //else if (paintType == 200) ServerVehicles.InstallBoughtMod(vehicle, 59, paintType);
+                if (type == 100) ServerVehicles.InstallBoughtMod(vehicle, 55, paintType);
+                else if (type == 200) ServerVehicles.InstallBoughtMod(vehicle, 59, paintType);
+                
+                ServerVehicles.InstallBoughtModRgb(vehicle, type, colorR, colorG, colorB);
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

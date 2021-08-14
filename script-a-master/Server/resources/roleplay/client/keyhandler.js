@@ -27,13 +27,13 @@ class KeyHandler {
             }
         } else if (key == 'Y'.charCodeAt(0)) {
             let result = Raycast.line(1.5, 2.5);
-            if (result == undefined || !player.vehicle) return;
+            if (result == undefined || player.vehicle) return;
             if (result.isHit && result.entityType != 0) {
                 if (result.entityType == 1) {
                     let player1 = alt.Player.all.find((x)=>x.scriptID == result.hitEntity
                     );
                     if (!player1.valid || player1 == undefined) return;
-                    alt.emitServer("Server:CarryPlayer", player1, player1.getSyncedMeta("IsUnconscious"), player1.getSyncedMeta("HasFootCuffs"));
+                    alt.emitServer("Server:CarryPlayer", player1);
                 }
             }
         } else if (key === "Q".charCodeAt(0) && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {

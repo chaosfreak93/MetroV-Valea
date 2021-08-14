@@ -49,12 +49,11 @@
                                 <label>Primärfarbe</label>
                                 <br>
                                 <select id="primaryPaintSelection" onchange="changePaintType('primary')">
-                                    <option>Normal</option>
-                                    <option>Metallic</option>
-                                    <option value="prl">Pearl</option>
-                                    <option>Matte</option>
-                                    <option>Metal</option>
-                                    <option>Chrome</option>
+                                    <option value="0">Normal</option>
+                                    <option value="15">Pearl</option>
+                                    <option value="21">Matt</option>
+                                    <option value="118">Metallic</option>
+                                    <option value="120">Chrom</option>
                                 </select>
     
                                 <div id="primary" class="leftcat-equip" onclick="equipSelectedTuneItem(this)">
@@ -93,11 +92,10 @@
                                 <label>Sekundärfarbe</label>
                                 <br>
                                 <select id="secondaryPaintSelection" onchange="changePaintType('secondary')">
-                                    <option>Normal</option>
-                                    <option>Metallic</option>
-                                    <option>Matte</option>
-                                    <option>Metal</option>
-                                    <option>Chrome</option>
+                                    <option value="0">Normal</option>
+                                    <option value="21">Matt</option>
+                                    <option value="118">Metallic</option>
+                                    <option value="120">Chrom</option>
                                 </select>
 
                                 <div id="secondary" class="leftcat-equip" onclick="equipSelectedTuneItem(this)">
@@ -306,8 +304,6 @@
                 else element.parentNode.querySelector("num").innerHTML = parseInt(number) + 1;
             }
 
-            if (modType == 63) document.getElementById("primaryPaintSelection").value == "prl";
-
             alt.emit("Client:Tuningmenu:ShowcasePart", modType, element.parentNode.querySelector("num").innerHTML);
         }
 
@@ -343,6 +339,11 @@
                     else exteriorHTML += `<div class='tuningmenu-exterior-othercat'> <p class='tuningmenu-exterior-othercat-title'>${a}</p> <div class="arrows"> <i onclick='clickSelectorArrow(this)' class='arrow arrow-left'></i> <p><num id='number'>${installedMods[mods.indexOf(a)]}</num> / <endnumber>${possibleMods[mods.indexOf(a)]}</endnumber></p> <i onclick='clickSelectorArrow(this)' class='arrow arrow-right'></i> </div><div id="other" class="leftcat-equip" onclick="equipSelectedTuneItem(this)" style="margin-top: 4vh;"><label>Ausrüsten - $${prices[mods.indexOf(a)]}</label></div></div>`;
                 } 
             });
+
+            document.getElementById("primaryPaintSelection").value = `${installedMods[55]}`;
+            document.getElementById("secondaryPaintSelection").value = `${installedMods[59]}`;
+
+            console.log(document.getElementById("primaryPaintSelection").value);
 
             exteriorElem.innerHTML = exteriorHTML;
             interiorElem.innerHTML = interiorHTML;

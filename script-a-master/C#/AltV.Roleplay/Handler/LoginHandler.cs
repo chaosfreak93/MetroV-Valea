@@ -137,7 +137,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            client.EmitLocked("Client:Login:SaveLoginCredentialsToStorage", username, password, discordId);
+            client.EmitLocked("Client:Login:SaveLoginCredentialsToStorage", username, discordId);
             User.SetPlayerOnline(client, 0);
 
             lock (client) {
@@ -187,8 +187,8 @@ namespace Altv_Roleplay.Handler
         }
 
         [AsyncClientEvent("Server:Charselector:spawnChar")]
-        public async void CharacterSelectedSpawnPlace(ClassicPlayer client, string spawnstr, string charcid) {
-            if (client is not {Exists: true} || spawnstr == null || charcid == null || client.accountId <= 0 || User.GetPlayerAccountId(client) <= 0) return;
+        public async void CharacterSelectedSpawnPlace(ClassicPlayer client, string charcid) {
+            if (client is not {Exists: true} || charcid == null || client.accountId <= 0 || User.GetPlayerAccountId(client) <= 0) return;
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -211,7 +211,7 @@ namespace Altv_Roleplay.Handler
 
 
             if (Characters.GetCharacterFirstJoin(charid) && Characters.GetCharacterFirstSpawnPlace(client, charid) == "unset") {
-                Characters.SetCharacterFirstSpawnPlace(client, charid, spawnstr);
+                Characters.SetCharacterFirstSpawnPlace(client, charid);
                 CharactersInventory.AddCharacterItem(charid, "Bargeld", 10000, "inventory");
                 CharactersInventory.AddCharacterItem(charid, "Tasche", 1, "inventory");
                 Characters.SetCharacterBackpack(client, "Tasche");
