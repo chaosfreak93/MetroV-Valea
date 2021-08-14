@@ -56,9 +56,8 @@ class LoginHandler {
             loginBrowser.on("Client:Charselector:PreviewCharacter", (charid)=>{
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
-            loginBrowser.on("Client:Charselector:spawnChar", (charid, spawnstr)=>{
-                native.freezeEntityPosition(alt.Player.local.scriptID, true);
-                alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
+            loginBrowser.on("Client:Charselector:spawnChar", (charid)=>{
+                alt.emitServer("Server:Charselector:spawnChar", charid);
             });
             loginBrowser.on("Client:Charcreator:SwitchOut", ()=>{
                 if (loginCam != null) {

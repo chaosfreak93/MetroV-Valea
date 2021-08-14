@@ -68,9 +68,8 @@ export default class LoginHandler {
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
     
-            loginBrowser.on("Client:Charselector:spawnChar", (charid: number, spawnstr: string) => {
-                native.freezeEntityPosition(alt.Player.local.scriptID, true);
-                alt.emitServer("Server:Charselector:spawnChar", spawnstr, charid);
+            loginBrowser.on("Client:Charselector:spawnChar", (charid: number) => {
+                alt.emitServer("Server:Charselector:spawnChar", charid);
             });
     
             loginBrowser.on("Client:Charcreator:SwitchOut", () => {

@@ -1334,13 +1334,13 @@ namespace Altv_Roleplay.Model
             }
         }
 
-        public static void SetCharacterFirstSpawnPlace(IPlayer player, int charId, string spawnplace) {
+        public static void SetCharacterFirstSpawnPlace(IPlayer player, int charId) {
             if (player == null || !player.Exists || charId == 0) return;
 
             var chars = PlayerCharacters.FirstOrDefault(p => p.charId == charId && p.accountId == User.GetPlayerAccountId(player));
 
             if (chars != null) {
-                chars.firstSpawnPlace = spawnplace;
+                chars.firstSpawnPlace = "lsairport";
                 chars.firstJoin = false;
 
                 try {
