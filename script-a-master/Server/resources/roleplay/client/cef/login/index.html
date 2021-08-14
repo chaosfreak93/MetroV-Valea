@@ -372,9 +372,8 @@
         showArea(area);
     });
 
-    alt.on("CEF:Login:setStorage", (name, password) => {
+    alt.on("CEF:Login:setStorage", (name) => {
         $("#email").val(`${name}`);
-        $("#password").val(`${password}`);
     });
 </script>
 

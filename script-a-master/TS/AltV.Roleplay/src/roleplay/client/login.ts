@@ -25,7 +25,7 @@ export default class LoginHandler {
             loginBrowser.on("Client:Login:cefIsReady", () => {
                 alt.setTimeout(() => {
                     if (alt.LocalStorage.get("username")) {
-                        loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"), alt.LocalStorage.get("password"));
+                        loginBrowser.emit("CEF:Login:setStorage", alt.LocalStorage.get("username"));
                     }
                     loginBrowser.emit("CEF:Login:showArea", "login");
                 }, 2000);
@@ -142,9 +142,8 @@ export default class LoginHandler {
         LoginHandler.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
     }
 
-    static SaveLoginCredentialsToStorage(name: string, password: string, discordId: number): void {
+    static SaveLoginCredentialsToStorage(name: string, discordId: number): void {
         alt.LocalStorage.set('username', name);
-        alt.LocalStorage.set('password', password);
         alt.LocalStorage.set('discordId', discordId);
         alt.LocalStorage.save();
     }
