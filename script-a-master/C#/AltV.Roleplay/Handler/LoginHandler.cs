@@ -137,7 +137,7 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            client.EmitLocked("Client:Login:SaveLoginCredentialsToStorage", username, password, discordId);
+            client.EmitLocked("Client:Login:SaveLoginCredentialsToStorage", username, discordId);
             User.SetPlayerOnline(client, 0);
 
             lock (client) {
