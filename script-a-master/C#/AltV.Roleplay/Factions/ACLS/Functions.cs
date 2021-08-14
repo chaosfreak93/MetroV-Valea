@@ -253,10 +253,11 @@ namespace Altv_Roleplay.Factions.ACLS
             try {
                 if (player == null || !player.Exists || vehicle == null || !vehicle.Exists) return;
                 if (player.GetCharacterMetaId() <= 0 || vehicle.GetVehicleId() <= 0) return;
-                ServerVehicles.InstallBoughtModRgb(vehicle, type, colorR, colorG, colorB);
 
-                //if (paintType == 100) ServerVehicles.InstallBoughtMod(vehicle, 55, paintType);
-                //else if (paintType == 200) ServerVehicles.InstallBoughtMod(vehicle, 59, paintType);
+                if (type == 100) ServerVehicles.InstallBoughtMod(vehicle, 55, paintType);
+                else if (type == 200) ServerVehicles.InstallBoughtMod(vehicle, 59, paintType);
+                
+                ServerVehicles.InstallBoughtModRgb(vehicle, type, colorR, colorG, colorB);
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
