@@ -1543,7 +1543,7 @@ function InterActionMenuDoAction(type, action) {
 function InterActionMenuDoActionAnimationMenu(action) {
     new Promise((resolve, reject) => {
         if (action == "crossarms3") {
-            playAnimation("anim@heists@heist_corona@single_team", "single_team_loop_boss", 1, 300000)
+            playAnimation("anim@heists@heist_corona@single_team", "single_team_loop_boss", 0, 300000)
         } else if (action == "facepalm") {
             playAnimation("random@car_thief@agitated@idle_a", "agitated_idle_a", 1, 300000)
         } else if (action == "finger2") {
@@ -1655,7 +1655,7 @@ alt.everyTick(() => {
         game.disableControlAction(0, 264, true);
         game.disableControlAction(0, 345, true);
     } else if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true) {
-        alt.toggleGameControls(false);
+        alt.toggleGameControls(true);
     } else {
         if (!isPlayerDead) {
             game.enableControlAction(0, 12, true);
