@@ -1643,62 +1643,6 @@ alt.onServer("Client:Cuffs:FootTake", () => {
     alt.toggleGameControls(true);
 });
 
-alt.everyTick(() => {
-    game.disableControlAction(0, 140, true);
-    if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) {
-        game.disableControlAction(0, 12, true);
-        game.disableControlAction(0, 13, true);
-        game.disableControlAction(0, 14, true);
-        game.disableControlAction(0, 15, true);
-        game.disableControlAction(0, 16, true);
-        game.disableControlAction(0, 17, true);
-        game.disableControlAction(0, 22, true);
-        game.disableControlAction(0, 24, true);
-        game.disableControlAction(0, 25, true);
-        game.disableControlAction(0, 37, true);
-        game.disableControlAction(0, 44, true);
-        game.disableControlAction(0, 45, true);
-        game.disableControlAction(0, 141, true);
-        game.disableControlAction(0, 257, true);
-        game.disableControlAction(0, 263, true);
-        game.disableControlAction(0, 264, true);
-        game.disableControlAction(0, 345, true);
-    } else if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true) {
-        alt.toggleGameControls(true);
-    } else {
-        if (!isPlayerDead) {
-            game.enableControlAction(0, 12, true);
-            game.enableControlAction(0, 13, true);
-            game.enableControlAction(0, 14, true);
-            game.enableControlAction(0, 15, true);
-            game.enableControlAction(0, 16, true);
-            game.enableControlAction(0, 17, true);
-            game.enableControlAction(0, 21, true);
-            game.enableControlAction(0, 22, true);
-            game.enableControlAction(0, 23, true);
-            game.enableControlAction(0, 24, true);
-            game.enableControlAction(0, 25, true);
-            game.enableControlAction(0, 32, true);
-            game.enableControlAction(0, 33, true);
-            game.enableControlAction(0, 34, true);
-            game.enableControlAction(0, 35, true);
-            game.enableControlAction(0, 36, true);
-            game.enableControlAction(0, 37, true);
-            game.enableControlAction(0, 44, true);
-            game.enableControlAction(0, 45, true);
-            game.enableControlAction(0, 141, true);
-            game.enableControlAction(0, 257, true);
-            game.enableControlAction(0, 263, true);
-            game.enableControlAction(0, 264, true);
-            game.enableControlAction(0, 345, true);
-        }
-    }
-    if (hudBrowser == null) return;
-    if (alt.Player.local.vehicle == null) return;
-    GetVehicleSpeed();
-    hudBrowser.emit("CEF:HUD:SetPlayerHUDVehicleSpeed", curSpeed);
-});
-
 let closeFarmingCEF = function () {
     alt.emitServer("Server:CEF:setCefStatus", false);
     alt.toggleGameControls(true);
