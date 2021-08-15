@@ -5,6 +5,7 @@ import './blipmanager';
 import './charcreator';
 import './clothestore';
 import './crouch';
+import './cuff';
 import './fingerpointing';
 import './hud';
 import './inventory';
