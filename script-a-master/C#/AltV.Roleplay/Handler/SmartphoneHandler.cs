@@ -291,13 +291,14 @@ namespace Altv_Roleplay.Handler
         }
 
         [AsyncClientEvent("Server:Smartphone:sendChatMessage")]
-        public void sendChatMessage(ClassicPlayer player, int chatId, int phoneNumber, int targetPhoneNumber, int unix, string message) {
+        public void sendChatMessage(ClassicPlayer player, int chatId, int phoneNumber, int targetPhoneNumber, string message) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || chatId <= 0 || phoneNumber <= 0 || targetPhoneNumber <= 0 ||
                     phoneNumber != Characters.GetCharacterPhonenumber(player.CharacterId) || !Characters.ExistPhoneNumber(targetPhoneNumber) ||
                     !CharactersPhone.ExistChatByNumbers(phoneNumber, targetPhoneNumber)) return;
 
-                CharactersPhone.CreatePhoneChatMessage(chatId, phoneNumber, targetPhoneNumber, unix, message);
+                long unix = DateTimeOffset.Now.ToUnixTimeSeconds() / 1000;
+                CharactersPhone.CreatePhoneChatMessage(chatId, phoneNumber, targetPhoneNumber, int.Parse(unix.ToString()), message);
                 requestChatMessages(player, chatId);
 
                 var targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
