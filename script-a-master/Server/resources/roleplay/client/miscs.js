@@ -101,6 +101,11 @@ alt.everyTick(()=>{
     native.setPedConfigFlag(alt.Player.local.scriptID, 331, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 429, true);
     native.disableControlAction(0, 36, true);
+    if (native.isPedArmed(alt.Player.local.scriptID, 6)) {
+        native.disableControlAction(0, 140, true);
+        native.disableControlAction(0, 141, true);
+        native.disableControlAction(0, 142, true);
+    }
     native.disableControlAction(1, 243, true);
     native.disableControlAction(1, 249, true);
     if (native.isDisabledControlJustPressed(0, 243)) {
