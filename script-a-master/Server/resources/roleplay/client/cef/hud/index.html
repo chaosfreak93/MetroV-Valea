@@ -4445,7 +4445,7 @@
         function jailPlayer() {
             let input = document.getElementById("JailCEFBox-jailTime").value;
             let charid = $("#JailCEFBox-setJailTime").data("charid");
-            if (input <= 0 && input >= 140 || charid <= 0) return;
+            if (input <= 0 && input > 180 || charid <= 0) return;
             alt.emit("Client:JailTime:setJailTime", charid, input);
             $("#JailCEFBox").fadeOut(250, function() {
                 alt.emit("Client:JailTime:destroyCEF");
