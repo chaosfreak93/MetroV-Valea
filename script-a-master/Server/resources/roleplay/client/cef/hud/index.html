@@ -15,14 +15,6 @@
 </head>
 
 <body>
-<!-- Geld-HUD -->
-<div class="money">
-    <div id="content">0$</div>
-    <div class="iconmoney" id="wallet" style="display:block;">
-        <i class="fas fa-dollar-sign"></i>
-    </div>
-</div>
-
 <ul id="InteractionMenu-List"></ul>
 
 <div id="hudbox">
@@ -1629,7 +1621,6 @@
             $("#voicebox").fadeTo(1000, 1, function() {});
             $("#foodbox").fadeTo(1000, 1, function() {});
             $("#waterMarkImage").fadeTo(1000, 1, function() {});
-            $(".money").fadeTo(500, 1, function() {});
         }, 1000);
         //document.getElementById("phoneBackgroundImage").style.backgroundImage = "../utils/img/phone/stellar.png')";
         $( ".layer2" ).css( "background-image", 'url("../utils/img/phone/wallpaper6.png")' );
@@ -1668,11 +1659,6 @@
             }
         }
     });
-
-    // Money HUD
-    function updateMoneyHUD(currentMoney) {
-        $("#content").html(`${numberWithCommas(currentMoney)} $`);
-    }
 
     function numberWithCommas(x) {
         let numberwithComma = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -5585,11 +5571,6 @@
 
     alt.on("CEF:Sound:PlayOnce", (path) => {
         playAudio(path);
-    });
-
-    // MONEY
-    alt.on("CEF:HUD:updateMoney", (money) => {
-        updateMoneyHUD(money);
     });
 
     //Alt On Events
