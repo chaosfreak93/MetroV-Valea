@@ -449,9 +449,9 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
         hudBrowser.on("Client:Smartphone:createNewChat", (targetNumber)=>{
             alt.emitServer("Server:Smartphone:createNewChat", parseInt(targetNumber));
         });
-        hudBrowser.on("Client:Smartphone:sendChatMessage", (selectedChatId, userPhoneNumber, targetMessageUser, unix, encodedText)=>{
+        hudBrowser.on("Client:Smartphone:sendChatMessage", (selectedChatId, userPhoneNumber, targetMessageUser, encodedText)=>{
             if (selectedChatId <= 0 || userPhoneNumber <= 0 || targetMessageUser <= 0) return;
-            alt.emitServer("Server:Smartphone:sendChatMessage", parseInt(selectedChatId), parseInt(userPhoneNumber), parseInt(targetMessageUser), parseInt(unix), encodedText);
+            alt.emitServer("Server:Smartphone:sendChatMessage", parseInt(selectedChatId), parseInt(userPhoneNumber), parseInt(targetMessageUser), encodedText);
         });
         hudBrowser.on("Client:Smartphone:deleteChat", (chatId)=>{
             if (chatId <= 0) return;
