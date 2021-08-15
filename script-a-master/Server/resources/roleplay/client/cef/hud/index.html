@@ -305,11 +305,12 @@
 
 <div id="JailCEFBox">
     <p class="closebtn" onclick="closeJailCEFBox();"><i class="fas fa-times"></i></p>
-    <img src="../utils/img/license-plate.png" style="margin-top: 15px; margin-bottom: 12px;">
+    <img src="../utils/img/inventory/Handschellen.png" style="margin-top: 15px; margin-bottom: 12px;">
     <p class="title">GEFÄNGNISZEIT</p>
-    <p class="description">...</p>
+    <p class="description"></p>
     <hr>
-    <input id="JailCEFBox-jailTime" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <input id="JailCEFBox-jailTime" type="number" placeholder="Minuten" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <div id="JailCEFButton"></div>
 </div>
 
 <div id="HotelManageCEFBox">
@@ -4428,11 +4429,24 @@
             });
         }
 
-        function shopCEFBoxCreateCEF(charid) {
-            document.getElementById("phone-police-addwanteds-stgb").innerHTML += `<button id="JailCEFBox-setJailTime" type="button" class="btn btn-sm btn-danger" data-charid="${charid}"><i class="fa fa-check"></i></button>`;
+        function JailCEFBoxCreateCEF(charid) {
+            $("#JailCEFButton").html(`<button id="JailCEFBox-setJailTime" type="button" class="btn btn-sm btn-danger" data-charid="${charid}" onclick='jailPlayer()'><i class="fa fa-check"></i></button>`);
+            $("#JailCEFBox").fadeTo(250, 1, function() {
+                $("#JailCEFBox").show();
+            });
         }
 
         function closeJailCEFBox() {
+            $("#JailCEFBox").fadeOut(250, function() {
+                alt.emit("Client:JailTime:destroyCEF");
+            });
+        }
+
+        function jailPlayer() {
+            let input = document.getElementById("JailCEFBox-jailTime").value;
+            let charid = $("#JailCEFBox-setJailTime").data("charid");
+            if (input <= 0 && input >= 140 || charid <= 0) return;
+            alt.emit("Client:JailTime:setJailTime", charid, input);
             $("#JailCEFBox").fadeOut(250, function() {
                 alt.emit("Client:JailTime:destroyCEF");
             });
@@ -6062,6 +6076,11 @@
 
     alt.on("CEF:TattooShop:sendItemsToClient", (array) => {
         SetTattooShopItems(array);
+    });
+
+    //Jail
+    alt.on("CEF:JailTime:openCEF", (shopId, ownTattoosJSON) => {
+        JailCEFBoxCreateCEF(shopId, ownTattoosJSON);
     });
 </script>
 <script type="text/javascript">

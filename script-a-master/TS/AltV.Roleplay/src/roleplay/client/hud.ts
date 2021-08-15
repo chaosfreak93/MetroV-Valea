@@ -46,6 +46,7 @@ let isPhoneEquipped = false;
 let isPlayerDead = false;
 let currentRadioFrequence = null;
 let isTattooShopOpened = false;
+let isJailTimeCEFOpened = false;
 
 alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
     if (hudBrowser == null) {
@@ -620,6 +621,14 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
 
         hudBrowser.on("Client:Smartphone:setWallpaperId", (wallpaperId) => {
             alt.emitServer("Server:Smartphone:setWallpaperId", `${wallpaperId}`);
+        });
+
+        hudBrowser.on("Client:JailTime:setJailTime", (charId: number, jailTime: number) => {
+            alt.emitServer("Server:JailTime:jailPlayer", charId, jailTime);
+        });
+
+        hudBrowser.on("Client:JailTime:destroyCEF", () => {
+            closeJailTimeCEF();
         });
     }
 });
@@ -1528,7 +1537,7 @@ function InterActionMenuDoAction(type, action) {
             } else if (action == "playerRevive") {
                 alt.emitServer("Server:Raycast:RevivePlayer", playerRC);
             } else if (action == "playerJail") {
-                alt.emitServer("Server:Raycast:jailPlayer", playerRC);
+                alt.emitServer("Server:Raycast:openJailCEF", playerRC);
             } else if (action == "showIdCard") {
                 alt.emitServer("Server:Raycast:showIdcard", playerRC);
             } else if (action == "healPlayer") {
@@ -2063,3 +2072,23 @@ alt.onServer("Client:TattooShop:sendItemsToClient", (items) => {
     if (hudBrowser == null) return;
     hudBrowser.emit("CEF:TattooShop:sendItemsToClient", items);
 });
+
+//Jail
+alt.on("Client:JailTime:openCEF", (charId: number) => {
+    if (hudBrowser == null || isJailTimeCEFOpened) return;
+    isJailTimeCEFOpened = true;
+    hudBrowser.emit("CEF:JailTime:openCEF", charId);
+    alt.emitServer("Server:CEF:setCefStatus", true);
+    alt.showCursor(true);
+    alt.toggleGameControls(false);
+    hudBrowser.focus();
+});
+
+let closeJailTimeCEF = function () {
+    if (hudBrowser == null) return;
+    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.showCursor(false);
+    alt.toggleGameControls(true);
+    hudBrowser.unfocus();
+    isJailTimeCEFOpened = false;
+}

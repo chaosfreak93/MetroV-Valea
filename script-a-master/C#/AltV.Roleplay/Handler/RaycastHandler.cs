@@ -175,35 +175,35 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        [AsyncClientEvent("Server:Raycast:jailPlayer")]
-        public void jailPlayer(ClassicPlayer player, ClassicPlayer targetPlayer) {
+        [AsyncClientEvent("Server:Raycast:openJailCEF")]
+        public void openJailCef(ClassicPlayer player, ClassicPlayer targetPlayer) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPlayer == null || !targetPlayer.Exists ||
-                    targetPlayer.CharacterId <= 0 || !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
-                    !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) ||
-                    ServerFactions.GetCharacterFactionId(player.CharacterId) != 1 ||
-                    Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
+                    targetPlayer.CharacterId <= 0 || Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
+                
+                player.Emit("Client:JailTime:openCEF", targetPlayer.CharacterId);
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
 
-                var jailTime = CharactersWanteds.GetCharacterWantedFinalJailTime(targetPlayer.CharacterId);
+        [AsyncClientEvent("Server:JailTime:jailPlayer")]
+        public void jailPlayer(ClassicPlayer player, int charID, int jailTime) {
+            try {
+                if (player == null || !player.Exists || player.CharacterId <= 0 || !ServerFactions.IsCharacterInAnyFaction(player.CharacterId) ||
+                    !ServerFactions.IsCharacterInFactionDuty(player.CharacterId) || ServerFactions.GetCharacterFactionId(player.CharacterId) != 1) return;
 
-                if (jailTime <= 0) {
-                    HUDHandler.SendNotification(player, 3, 2000, "Der Spieler hat keine offene Haftzeit.");
-                    return;
-                }
+                ClassicPlayer targetPlayer = (ClassicPlayer) Alt.GetAllPlayers().FirstOrDefault(player => ((ClassicPlayer)player).CharacterId == charID);
 
-                var jailPrice = CharactersWanteds.GetCharacterWantedFinalJailPrice(targetPlayer.CharacterId);
-
-                if (CharactersBank.HasCharacterBankMainKonto(targetPlayer.CharacterId)) {
-                    var accNumber = CharactersBank.GetCharacterBankMainKonto(targetPlayer.CharacterId);
-                    var bankMoney = CharactersBank.GetBankAccountMoney(accNumber);
-                    CharactersBank.SetBankAccountMoney(accNumber, bankMoney - jailPrice);
-                    HUDHandler.SendNotification(targetPlayer, 1, 7500, $"Durch deine Inhaftierung wurden dir {jailPrice}$ vom Konto abgezogen.");
-                }
+                if (targetPlayer == null || !targetPlayer.Exists ||
+                    targetPlayer.CharacterId <= 0 || Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
 
                 HUDHandler.SendNotification(player, 1, 7500, $"Du sitzt nun für {jailTime} Minuten im Gefängnis.");
                 Characters.SetCharacterJailTime(targetPlayer.CharacterId, true, jailTime);
                 CharactersWanteds.RemoveCharacterWanteds(targetPlayer.CharacterId);
                 targetPlayer.Position = new Position(1662.6856689453125f, 2605.89892578125f, 45.5567626953125f);
+                targetPlayer.Rotation = new Rotation(0, 0, 1.5336909294128418f);
 
                 if (Characters.GetCharacterGender(targetPlayer.CharacterId) == false) {
                     targetPlayer.SetClothes(11, 5, 0, 0);
