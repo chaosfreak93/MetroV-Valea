@@ -315,7 +315,7 @@
     <p class="closebtn" onclick="closeJailCEFBox();"><i class="fas fa-times"></i></p>
     <img src="../utils/img/license-plate.png" style="margin-top: 15px; margin-bottom: 12px;">
     <p class="title">GEFÄNGNISZEIT</p>
-    <p class="description"></p>
+    <p class="description">...</p>
     <hr>
     <input id="JailCEFBox-jailTime" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 </div>
@@ -1921,8 +1921,6 @@
 
 
         function SetPlayerHUDInVehicle(state, fuel, km) {
-            $("#locationbox").hide();
-            $("#locationtext").hide();
             $("#VehicleSpeedBox").hide();
             $("#VehicleSpeedBoxText").hide();
             $("#VehicleFuelBox").hide();
@@ -1935,8 +1933,6 @@
                 $("#VehicleSpeedBoxText").html(`0km/h`);
                 $("#VehicleKMBoxText").html(`${km} KM`);
                 $("#VehicleFuelBoxText").html(`${fuel} Liter`);
-                $("#locationbox").fadeTo(1, 1, function() {});
-                $("#locationtext").fadeTo(1, 1, function() {});
                 $("#VehicleSpeedBox").fadeTo(1, 1, function() {});
                 $("#VehicleSpeedBoxText").fadeTo(1, 1, function() {});
                 $("#VehicleFuelBox").fadeTo(1, 1, function() {});
@@ -3283,11 +3279,9 @@
                     playPhoneAudio("../utils/sounds/phone/msg_send.wav");
                     let encodedText = encodeText(text);
                     document.getElementById("phone-chat-input").value = null;
-                    var now = new Date();
-                    let unix = Math.round(now.getTime() / 1000);
                     targetMessageUser = document.getElementById('phone-chat-disp-name').dataset.target;
                     globalChatMessagesArray = [];
-                    alt.emit("Client:Smartphone:sendChatMessage", selectedChatId, userPhoneNumber, targetMessageUser, unix, encodedText);
+                    alt.emit("Client:Smartphone:sendChatMessage", selectedChatId, userPhoneNumber, targetMessageUser, encodedText);
                 }
             }
         }
@@ -4445,6 +4439,16 @@
         function closeVehicleLicensingCEFBox() {
             $("#VehicleLicensingCEFBox").fadeOut(250, function() {
                 alt.emit("Client:VehicleLicensing:destroyCEF");
+            });
+        }
+
+        function shopCEFBoxCreateCEF(charid) {
+            document.getElementById("phone-police-addwanteds-stgb").innerHTML += `<button id="JailCEFBox-setJailTime" type="button" class="btn btn-sm btn-danger" data-charid="${charid}"><i class="fa fa-check"></i></button>`;
+        }
+
+        function closeJailCEFBox() {
+            $("#JailCEFBox").fadeOut(250, function() {
+                alt.emit("Client:JailTime:destroyCEF");
             });
         }
 
