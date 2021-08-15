@@ -39,11 +39,10 @@ let AnimationMenuCefOpened = false;
 let ClothesRadialCefOpened = false;
 let TuningMenuCefOpened = false;
 let ClothesStorageCefOpened = false;
-let curSpeed = 0;
 let curKm = 0;
 let curTuningVeh = null;
 let isPhoneEquipped = false;
-let isPlayerDead = false;
+export let isPlayerDead = false;
 let currentRadioFrequence = null;
 let isTattooShopOpened = false;
 let isJailTimeCEFOpened = false;
@@ -1931,12 +1930,6 @@ let closeAllCEFs = function () {
     }
     Inventory.closeInventoryCEF();
     closeTabletCEF();
-}
-
-function GetVehicleSpeed() {
-    let vehicle = alt.Player.local.vehicle;
-    let speed = game.getEntitySpeed(vehicle.scriptID);
-    curSpeed = speed * 3.6;
 }
 
 /* */

@@ -1,5 +1,7 @@
 import * as native from 'natives';
 import * as alt from 'alt-client';
+import { hudBrowser } from './hud';
+let curSpeed = 0;
 alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, isLocked)=>{
     if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
         // game.doorControl(alt.hash(hash), pos.x, pos.y, pos.z, isLocked, 0.0, 50.0, 0.0); //isLocked (0) = Open | isLocked (1) = True
@@ -122,6 +124,10 @@ alt.everyTick(()=>{
         if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
             native.disableControlAction(1, 86, true);
         }
+        GetVehicleSpeed(alt.Player.local.vehicle);
+        if (hudBrowser != null) {
+            hudBrowser.emit("CEF:HUD:SetPlayerHUDVehicleSpeed", curSpeed);
+        }
     }
 });
 export function setAudioData() {
@@ -139,6 +145,10 @@ alt.setInterval(()=>{
     native.setRadarAsExteriorThisFrame();
     native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700, -5145, 0, 0);
 }, 1);
+function GetVehicleSpeed(vehicle) {
+    let speed = native.getEntitySpeed(vehicle.scriptID);
+    curSpeed = speed * 3.6;
+}
 export default {
     setMinimapData,
     setAudioData

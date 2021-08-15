@@ -1,5 +1,8 @@
 import * as native from 'natives';
 import * as alt from 'alt-client';
+import { hudBrowser } from './hud';
+
+let curSpeed: number = 0;
 
 alt.onServer("Client:DoorManager:ManageDoor", (doorHash: string, doorHash2: string, pos: alt.Vector3, pos2: alt.Vector3, isLocked: boolean) => {
     if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
@@ -138,6 +141,10 @@ alt.everyTick(() => {
         if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
             native.disableControlAction(1, 86, true);
         }
+        GetVehicleSpeed(alt.Player.local.vehicle);
+        if (hudBrowser != null) {
+            hudBrowser.emit("CEF:HUD:SetPlayerHUDVehicleSpeed", curSpeed);
+        }
     }
 });
 
@@ -157,6 +164,11 @@ alt.setInterval(() => {
     native.setRadarAsExteriorThisFrame()
     native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0)
 }, 1);
+
+function GetVehicleSpeed(vehicle: alt.Vehicle) {
+    let speed = native.getEntitySpeed(vehicle.scriptID);
+    curSpeed = speed * 3.6;
+}
 
 export default {
     setMinimapData,

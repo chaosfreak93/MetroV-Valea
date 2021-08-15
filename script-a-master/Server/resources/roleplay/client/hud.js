@@ -37,11 +37,10 @@ let AnimationMenuCefOpened = false;
 let ClothesRadialCefOpened = false;
 let TuningMenuCefOpened = false;
 let ClothesStorageCefOpened = false;
-let curSpeed = 0;
 let curKm = 0;
 let curTuningVeh = null;
 let isPhoneEquipped = false;
-let isPlayerDead = false;
+export let isPlayerDead = false;
 let currentRadioFrequence = null;
 let isTattooShopOpened = false;
 let isJailTimeCEFOpened = false;
@@ -1665,11 +1664,6 @@ let closeAllCEFs = function() {
     Inventory.closeInventoryCEF();
     closeTabletCEF();
 };
-function GetVehicleSpeed() {
-    let vehicle1 = alt.Player.local.vehicle;
-    let speed = game.getEntitySpeed(vehicle1.scriptID);
-    curSpeed = speed * 3.6;
-}
 /* */ function initializeFavouriteAnims() {
     if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && AnimationMenuCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true) return;
