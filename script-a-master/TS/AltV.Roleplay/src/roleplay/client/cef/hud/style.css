@@ -90,7 +90,6 @@ div.money,
 #hudbox > #VehicleSpeedBox,
 #hudbox > #VehicleFuelBox,
 #hudbox > #VehicleKMBox,
-p#locationtext,
 p#VehicleFuelBoxText,
 p#VehicleKMBoxText,
 p#VehicleSpeedBoxText,
@@ -209,7 +208,6 @@ img#waterMarkImage {
 #vehicleHUD > #VehicleSpeedBox,
 #vehicleHUD > #VehicleFuelBox,
 #vehicleHUD > #VehicleKMBox,
-p#locationtext,
 p#VehicleFuelBoxText,
 p#VehicleKMBoxText,
 p#VehicleSpeedBoxText,
@@ -254,10 +252,6 @@ div#TattooShopHUD,
 div#RotationHUD,
 div#pluginScreen {
     display: none;
-}
-
-p#locationtext {
-    color: #ffffff;
 }
 
 div#TattooShopHUD > span {

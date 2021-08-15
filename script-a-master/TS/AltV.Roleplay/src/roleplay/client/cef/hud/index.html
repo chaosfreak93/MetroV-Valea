@@ -1921,8 +1921,6 @@
 
 
         function SetPlayerHUDInVehicle(state, fuel, km) {
-            $("#locationbox").hide();
-            $("#locationtext").hide();
             $("#VehicleSpeedBox").hide();
             $("#VehicleSpeedBoxText").hide();
             $("#VehicleFuelBox").hide();
@@ -1935,8 +1933,6 @@
                 $("#VehicleSpeedBoxText").html(`0km/h`);
                 $("#VehicleKMBoxText").html(`${km} KM`);
                 $("#VehicleFuelBoxText").html(`${fuel} Liter`);
-                $("#locationbox").fadeTo(1, 1, function() {});
-                $("#locationtext").fadeTo(1, 1, function() {});
                 $("#VehicleSpeedBox").fadeTo(1, 1, function() {});
                 $("#VehicleSpeedBoxText").fadeTo(1, 1, function() {});
                 $("#VehicleFuelBox").fadeTo(1, 1, function() {});
