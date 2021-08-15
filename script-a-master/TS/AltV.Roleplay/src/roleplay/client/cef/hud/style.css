@@ -117,6 +117,7 @@ div#RecievePlayerBillCEFBox,
 div#FactionStorageCEFBox,
 div#VehicleTrunkCEFBox,
 div#VehicleLicensingCEFBox,
+div#JailCEFBox,
 div#PlayerSearchInventoryCEFBox,
 div#GivePlayerLicenseCEFBox,
 div#Minijob-PilotCEFBox,
@@ -234,6 +235,7 @@ div#RecievePlayerBillCEFBox,
 div#FactionStorageCEFBox,
 div#VehicleTrunkCEFBox,
 div#VehicleLicensingCEFBox,
+div#JailCEFBox,
 div#PlayerSearchInventoryCEFBox,
 div#GivePlayerLicenseCEFBox,
 div#Minijob-PilotCEFBox,
@@ -608,6 +610,19 @@ div#VehicleLicensingCEFBox {
     box-shadow: 1px 4px 22px rgba(0, 0, 0, 0.8);
 }
 
+div#JailCEFBox {
+    width: 650;
+    top: 20%;
+    left: 50%;
+    margin-left: -375px;
+    padding: 20px;
+    position: absolute;
+    background: #171616db;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 1px 4px 22px rgba(0, 0, 0, 0.8);
+}
+
 div#HotelManageCEFBox,
 div#HouseEntranceCEFBox,
 div#TownhallHouseSelectorBox,
@@ -729,6 +744,7 @@ div#RecievePlayerBillCEFBox > p.title,
 div#FactionStorageCEFBox > p.title,
 div#VehicleTrunkCEFBox > p.title,
 div#VehicleLicensingCEFBox > p.title,
+div#JailCEFBox > p.title,
 div#PlayerSearchInventoryCEFBox > p.title,
 div#GivePlayerLicenseCEFBox > p.title,
 div#Minijob-PilotCEFBox > p.title,
@@ -767,6 +783,10 @@ div#VehicleLicensingCEFBox > p.title {
     background-image: linear-gradient(to right, #738eef, #3380e8) !important;
 }
 
+div#JailCEFBox > p.title {
+    background-image: linear-gradient(to right, #738eef, #3380e8) !important;
+}
+
 div#PlayerSearchInventoryCEFBox > p.title {
     background-image: linear-gradient(to right, #738eef, #3380e8) !important;
 }
@@ -802,6 +822,7 @@ div#RecievePlayerBillCEFBox > hr,
 div#FactionStorageCEFBox > hr,
 div#VehicleTrunkCEFBox > hr,
 div#VehicleLicensingCEFBox > hr,
+div#JailCEFBox > hr,
 div#PlayerSearchInventoryCEFBox > hr,
 div#GivePlayerLicenseCEFBox > hr,
 div#Minijob-PilotCEFBox > hr,
@@ -915,6 +936,7 @@ div#PlayerSearchInventoryCEFBox > hr {
 }
 
 div#VehicleLicensingCEFBox > p.description,
+div#JailCEFBox > p.description,
 div#GivePlayerLicenseCEFBox > p.description,
 div#Minijob-PilotCEFBox > p.description,
 div#Minijob-BusDriverCEFBox > p.description,
@@ -2703,6 +2725,7 @@ div#RecievePlayerBillCEFBox > p.closebtn,
 div#FactionStorageCEFBox > p.closebtn,
 div#VehicleTrunkCEFBox > p.closebtn,
 div#VehicleLicensingCEFBox > p.closebtn,
+div#JailCEFBox > p.closebtn,
 div#PlayerSearchInventoryCEFBox > p.closebtn,
 div#GivePlayerLicenseCEFBox > p.closebtn,
 div#Minijob-PilotCEFBox > p.closebtn,
