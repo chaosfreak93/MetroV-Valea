@@ -200,11 +200,10 @@ namespace Altv_Roleplay.Handler
                 if (targetPlayer == null || !targetPlayer.Exists ||
                     targetPlayer.CharacterId <= 0 || Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
 
-                HUDHandler.SendNotification(player, 1, 7500, $"Du sitzt nun für {jailTime} Minuten im Gefängnis.");
+                HUDHandler.SendNotification(targetPlayer, 1, 7500, $"Du sitzt nun für {jailTime} Minuten im Gefängnis.");
                 Characters.SetCharacterJailTime(targetPlayer.CharacterId, true, jailTime);
-                CharactersWanteds.RemoveCharacterWanteds(targetPlayer.CharacterId);
-                targetPlayer.Position = new Position(1662.6856689453125f, 2605.89892578125f, 45.5567626953125f);
-                targetPlayer.Rotation = new Rotation(0, 0, 1.5336909294128418f);
+                targetPlayer.SetPosition(1662.6856689453125f, 2605.89892578125f, 45.5567626953125f);
+                targetPlayer.Rotation = new Rotation();
 
                 if (Characters.GetCharacterGender(targetPlayer.CharacterId) == false) {
                     targetPlayer.SetClothes(11, 5, 0, 0);
