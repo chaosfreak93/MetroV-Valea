@@ -22,7 +22,7 @@ export default class CuffHandler {
             native.disableControlAction(0, 264, true);
             native.disableControlAction(0, 345, true);
         } else {
-            if (!isPlayerDead) {
+            if (!isPlayerDead && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
                 native.enableControlAction(0, 12, true);
                 native.enableControlAction(0, 13, true);
                 native.enableControlAction(0, 14, true);
