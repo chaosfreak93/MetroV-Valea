@@ -857,32 +857,6 @@
     <span id="UserFactionCard-joinInfo" class="FactionCardColor">01.01.2020 (122)</span>
 </div>
 
-<div id="VehicleTuningMainMenuBox">
-    <span class="title">Fahrzeug tunen</span>
-    <div class="circlediv" onclick="closeTuningMenuCEF();"><i class="fa fa-times-circle"></i></div>
-    <ul id="VehicleTuningMainMenuBoxList"></ul>
-</div>
-
-<div id="VehicleTuningMenuColorSelection">
-    <span class="title">Farbe auswählen</span>
-    <div class="circlediv" onclick="closeTuningSubWindow('VehicleTuningMenuColorSelection');"><i class="fa fa-times-circle"></i></div>
-    <div id="color-picker" class="cp-default"></div>
-
-    <div class="inputArea">
-        <span class="title">WERTE</span>
-        <label id="rgbRVal" for="rgbRval">ROT</label>
-        <input type="number" id="rgbRvalField" name="rgbRval" value="255" readonly="readonly" />
-
-        <label id="rgbGval" for="rgbGval">GRÜN</label>
-        <input type="number" id="rgbGvalField" name="rgbGval" value="255" readonly="readonly" />
-
-        <label id="rgbBval" for="rgbBval">BLAU</label>
-        <input type="number" id="rgbBvalField" name="rgbBval" value="255" readonly="readonly" />
-    </div>
-    <button style="margin-left: 12%" type="button" class="btn btn-success" onclick="VehicleTuningMenuColorSelectionTestColor(false)">Testen</button>
-    <button type="button" class="btn btn-success" onclick="VehicleTuningMenuColorSelectionTestColor(true)">Einbauen</button>
-</div>
-
 <div id="Deathscreen-Box">
     <video style="width: 100%; height: 100%;" id="deathvideo" muted loop autoplay>
         <source src="../utils/img/deathscreen.webm" type="video/webm">
@@ -5200,82 +5174,6 @@
             alt.emit('Client:Animations:hideAnimationMenu');
         }
 
-        /* Tuning */
-        var CurTuningMenuWindow = "none",
-            SelectedVehicleTuningMenuColorBoxModtype = "none";
-
-        function ShowACLSTuningMenuWindow(subwindow, modtype) {
-            if (CurTuningMenuWindow != "none") {
-                document.getElementById(CurTuningMenuWindow).style.display = "none";
-            }
-            document.getElementById(subwindow).style.display = "block";
-            CurTuningMenuWindow = subwindow;
-            SelectedVehicleTuningMenuColorBoxModtype = modtype;
-        }
-
-        function closeTuningSubWindow(subwindow) {
-            document.getElementById(subwindow).style.display = "none";
-        }
-
-        function closeTuningMenuCEF() {
-            $("#VehicleTuningMainMenuBox").fadeOut(100, function() {
-                $("#VehicleTuningMainMenuBox").hide();
-                $("#VehicleTuningMenuColorSelection").hide();
-                alt.emit("Client:Tuning:closeCEF");
-            });
-        }
-
-        function VehicleTuningMenuColorSelectionTestColor(install) {
-            var r = $("#rgbRvalField").val();
-            var g = $("#rgbGvalField").val();
-            var b = $("#rgbBvalField").val();
-            if (install) {
-                alt.emit("Client:Tuning:switchTuningColor", "Build", SelectedVehicleTuningMenuColorBoxModtype, r, g, b);
-            } else {
-                alt.emit("Client:Tuning:switchTuningColor", "Test", SelectedVehicleTuningMenuColorBoxModtype, r, g, b);
-            }
-        }
-
-        function SwitchTuning(Type, ID, Action) {
-            alt.emit("Client:Tuning:switchTuning", Type, ID, Action);
-        }
-
-        function openVehicleTuningMenu(Items) {
-            var items = Items.split(";");
-            var html = "";
-
-            for (var i = 0; i < items.length; i++) {
-                var itemValues = items[i].split(":");
-                var modTyp = itemValues[0];
-                var modTypeID = itemValues[1];
-
-                var imagemodtype = modTyp.toLowerCase();
-                imagemodtype = imagemodtype.replace(/ä/g, 'ae');
-                imagemodtype = imagemodtype.replace(/ö/g, 'oe');
-                imagemodtype = imagemodtype.replace(/ü/g, 'ue');
-                imagemodtype = imagemodtype.replace('ß', 'ss');
-                imagemodtype = imagemodtype.replace(' ', '');
-
-                if (modTyp.match("Neonröhren")) {
-                    html += `<li><span class='title'>Unterbodenbeleuchtung</span><img src='../utils/vehiclemods/unterbodenbeleuchtung.png'>`;
-                } else {
-                    html += `<li><span class='title'>${modTyp}</span><img src='../utils/vehiclemods/${imagemodtype}.png'>`;
-                }
-
-                if (modTyp.match("Neonröhren") || modTyp.match("Reifenqualm")) {
-                    html += "<span class='actionbtn' onclick='ShowACLSTuningMenuWindow(`VehicleTuningMenuColorSelection`, `" + modTyp + "`);'>Farbe auswählen</span>";
-                } else {
-                    html += "<div class='far-div1' onclick='SwitchTuning(`Preview` ,`" + modTypeID + "`, `>`);'><i class='far fa-arrow-alt-circle-right'></i></div>" +
-                        "<div class='far-div2' onclick='SwitchTuning(`Preview` ,`" + modTypeID + "`, `<`);'> <i class='far fa-arrow-alt-circle-left'></i></div>" +
-                        "<span class='actionbtn' onclick='SwitchTuning(`Build` ,`" + modTypeID + "`, `>`);'>Montieren</span>";
-                }
-                html += "</li>";
-            }
-
-            $("#VehicleTuningMainMenuBoxList").html(html);
-            $("#VehicleTuningMainMenuBox").fadeTo(1000, 1, function() {});
-        }
-
         function ShowPhoneCallError(errno) {
             stopPhoneAudioLoop();
             let msg,
@@ -5661,9 +5559,6 @@
             $("#bankAccountManageForm").hide();
         });
 
-        $("#VehicleTuningMainMenuBox").hide();
-        $("#VehicleTuningMenuColorSelection").hide();
-
         $("#identityCardApplyForm").fadeOut(300, 0, function() {
             $("#identityCardApplyForm").hide();
         });
@@ -5981,10 +5876,6 @@
 
     alt.on("CEF:Animations:hideAnimationMenu", () => {
         hideAnimationMenu();
-    });
-
-    alt.on("CEF:Tuning:openTuningMenu", (Items) => {
-        openVehicleTuningMenu(Items);
     });
 
     /* Smartphone Alt Ons */
