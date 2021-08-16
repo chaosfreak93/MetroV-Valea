@@ -173,22 +173,22 @@ namespace Altv_Roleplay.Utils
                 AltAsync.Do(() =>
                 {
                     player.SetSyncedMetaData("HasHandcuffs", isCuffed);
-                    if (isCuffed) player.Emit("Client:CufManager:GiveNormalCuffs");
-                    else player.Emit("Client:CufManager:TakeNormalCuffs");
+                    if (isCuffed) player.Emit("Client:CuffManager:GiveNormalCuffs");
+                    else player.Emit("Client:CuffManager:TakeNormalCuffs");
                 });
             else if (cuffType == "ropecuffs")
                 AltAsync.Do(() =>
                 {
                     player.SetSyncedMetaData("HasRopeCuffs", isCuffed);
-                    if (isCuffed) player.Emit("Client:CufManager:GiveNormalCuffs");
-                    else player.Emit("Client:CufManager:TakeNormalCuffs");
+                    if (isCuffed) player.Emit("Client:CuffManager:GiveNormalCuffs");
+                    else player.Emit("Client:CuffManager:TakeNormalCuffs");
                 });
             else if (cuffType == "footcuffs")
                 AltAsync.Do(() =>
                 {
                     player.SetSyncedMetaData("HasFootCuffs", isCuffed);
-                    if (isCuffed) player.Emit("Client:CufManager:GiveFootCuffs");
-                    else player.Emit("Client:CufManager:TakeFootCuffs");
+                    if (isCuffed) player.Emit("Client:CuffManager:GiveFootCuffs");
+                    else player.Emit("Client:CuffManager:TakeFootCuffs");
                 });
         }
 
