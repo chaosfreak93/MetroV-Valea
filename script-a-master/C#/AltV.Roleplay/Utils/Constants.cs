@@ -7,10 +7,10 @@ namespace Altv_Roleplay.Utils
         public static class DatabaseConfig
         {
             public static string Host = "5.181.151.136";
-            public static string User = "yanlu";
+            public static string User = "altv";
             public static string Password = "qS*qD7tc@cv#aJtu";
             public static string Port = "3306";
-            public static string Database = "testserver";
+            public static string Database = "gta";
         }
 
         public static class Positions
