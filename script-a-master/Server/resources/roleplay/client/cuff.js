@@ -1,9 +1,11 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 import { isPlayerDead } from './hud';
+let normalCuffTick = null;
+let footCuffTick = null;
 class CuffHandler {
-    static NormalCuffsCheck() {
-        if ((alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
+    static GiveNormalCuffs() {
+        normalCuffTick = alt.everyTick(()=>{
             native.disableControlAction(0, 12, true);
             native.disableControlAction(0, 13, true);
             native.disableControlAction(0, 14, true);
@@ -20,37 +22,43 @@ class CuffHandler {
             native.disableControlAction(0, 263, true);
             native.disableControlAction(0, 264, true);
             native.disableControlAction(0, 345, true);
-        } else if ((alt.Player.local.getSyncedMeta("HasHandcuffs") == false || alt.Player.local.getSyncedMeta("HasRopeCuffs") == false) && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
-            if (!isPlayerDead) {
-                native.enableControlAction(0, 12, true);
-                native.enableControlAction(0, 13, true);
-                native.enableControlAction(0, 14, true);
-                native.enableControlAction(0, 15, true);
-                native.enableControlAction(0, 16, true);
-                native.enableControlAction(0, 17, true);
-                native.enableControlAction(0, 22, true);
-                native.enableControlAction(0, 24, true);
-                native.enableControlAction(0, 25, true);
-                native.enableControlAction(0, 37, true);
-                native.enableControlAction(0, 44, true);
-                native.enableControlAction(0, 45, true);
-                native.enableControlAction(0, 257, true);
-                native.enableControlAction(0, 263, true);
-                native.enableControlAction(0, 264, true);
-                native.enableControlAction(0, 345, true);
-            }
+        });
+    }
+    static TakeNormalCuffs() {
+        alt.clearEveryTick(normalCuffTick);
+        if (!isPlayerDead) {
+            native.enableControlAction(0, 12, true);
+            native.enableControlAction(0, 13, true);
+            native.enableControlAction(0, 14, true);
+            native.enableControlAction(0, 15, true);
+            native.enableControlAction(0, 16, true);
+            native.enableControlAction(0, 17, true);
+            native.enableControlAction(0, 22, true);
+            native.enableControlAction(0, 24, true);
+            native.enableControlAction(0, 25, true);
+            native.enableControlAction(0, 37, true);
+            native.enableControlAction(0, 44, true);
+            native.enableControlAction(0, 45, true);
+            native.enableControlAction(0, 257, true);
+            native.enableControlAction(0, 263, true);
+            native.enableControlAction(0, 264, true);
+            native.enableControlAction(0, 345, true);
         }
     }
-    static FootCuffsCheck() {
-        if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
+    static GiveFootCuffs() {
+        footCuffTick = alt.everyTick(()=>{
             alt.toggleGameControls(false);
-        } else if (alt.Player.local.getSyncedMeta("HasFootCuffs") == false && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
-            if (!isPlayerDead) {
-                alt.toggleGameControls(true);
-            }
+        });
+    }
+    static TakeFootCuffs() {
+        alt.clearEveryTick(footCuffTick);
+        if (!isPlayerDead) {
+            alt.toggleGameControls(true);
         }
     }
 }
 export { CuffHandler as default };
-alt.setInterval(CuffHandler.NormalCuffsCheck, 10);
-alt.setInterval(CuffHandler.FootCuffsCheck, 10);
+alt.onServer("Client:CufManager:GiveNormalCuffs", CuffHandler.GiveNormalCuffs);
+alt.onServer("Client:CufManager:TakeNormalCuffs", CuffHandler.TakeNormalCuffs);
+alt.onServer("Client:CufManager:GiveFootCuffs", CuffHandler.GiveFootCuffs);
+alt.onServer("Client:CufManager:TakeFootCuffs", CuffHandler.TakeFootCuffs);

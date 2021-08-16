@@ -170,11 +170,26 @@ namespace Altv_Roleplay.Utils
             if (player == null || !player.Exists) return;
 
             if (cuffType == "handcuffs")
-                AltAsync.Do(() => player.SetSyncedMetaData("HasHandcuffs", isCuffed));
+                AltAsync.Do(() =>
+                {
+                    player.SetSyncedMetaData("HasHandcuffs", isCuffed);
+                    if (isCuffed) player.Emit("Client:CufManager:GiveNormalCuffs");
+                    else player.Emit("Client:CufManager:TakeNormalCuffs");
+                });
             else if (cuffType == "ropecuffs")
-                AltAsync.Do(() => player.SetSyncedMetaData("HasRopeCuffs", isCuffed));
+                AltAsync.Do(() =>
+                {
+                    player.SetSyncedMetaData("HasRopeCuffs", isCuffed);
+                    if (isCuffed) player.Emit("Client:CufManager:GiveNormalCuffs");
+                    else player.Emit("Client:CufManager:TakeNormalCuffs");
+                });
             else if (cuffType == "footcuffs")
-                AltAsync.Do(() => player.SetSyncedMetaData("HasFootCuffs", isCuffed));
+                AltAsync.Do(() =>
+                {
+                    player.SetSyncedMetaData("HasFootCuffs", isCuffed);
+                    if (isCuffed) player.Emit("Client:CufManager:GiveFootCuffs");
+                    else player.Emit("Client:CufManager:TakeFootCuffs");
+                });
         }
 
         public static void SetPlayerUsingCrowbar(this IPlayer player, bool isUsing) {
