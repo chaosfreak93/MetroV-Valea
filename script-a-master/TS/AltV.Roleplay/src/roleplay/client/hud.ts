@@ -1309,7 +1309,6 @@ alt.on('keydown', (key) => {
                     if (!interactPlayer) return;
                     InteractMenuUsing = true;
                     hudBrowser.focus();
-                    alt.emitServer("Server:CEF:setCefStatus", true);
                     alt.showCursor(true);
                     alt.toggleGameControls(false);
                     alt.emitServer("Server:InteractionMenu:GetMenuPlayerItems", "player", interactPlayer);
@@ -1321,7 +1320,6 @@ alt.on('keydown', (key) => {
                     if (!interactVehicle) return;
                     InteractMenuUsing = true;
                     hudBrowser.focus();
-                    alt.emitServer("Server:CEF:setCefStatus", true);
                     alt.showCursor(true);
                     alt.toggleGameControls(false);
                     alt.emitServer("Server:InteractionMenu:GetMenuVehicleItems", "vehicleOut", interactVehicle);
@@ -1336,7 +1334,6 @@ alt.on('keydown', (key) => {
             interactVehicle = alt.Vehicle.all.find(x => x.scriptID == selectedRaycastId);
             InteractMenuUsing = true;
             hudBrowser.focus();
-            alt.emitServer("Server:CEF:setCefStatus", true);
             alt.showCursor(true);
             alt.toggleGameControls(false);
             if (!interactVehicle) return;
@@ -1348,7 +1345,6 @@ alt.on('keydown', (key) => {
         if (alt.Player.local.getSyncedMeta("IsCefOpen") || alt.Player.local.vehicle || hudBrowser == null) return;
         AnimationMenuUsing = true;
         hudBrowser.focus();
-        alt.emitServer("Server:CEF:setCefStatus", true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
         alt.emitServer("Server:AnimationMenu:GetAnimationItems");
@@ -1388,7 +1384,6 @@ alt.on('keydown', (key) => {
         if (alt.Player.local.getSyncedMeta("IsCefOpen") || hudBrowser == null) return;
         ClothesRadialMenuUsing = true;
         hudBrowser.focus();
-        alt.emitServer("Server:CEF:setCefStatus", true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
         alt.emitServer("Server:ClothesRadial:GetClothesRadialItems");
@@ -1406,7 +1401,6 @@ alt.on('keyup', (key) => {
         hudBrowser.emit("CEF:InteractionMenu:toggleInteractionMenu", false);
         InteractMenuUsing = false;
         hudBrowser.unfocus();
-        alt.emitServer("Server:CEF:setCefStatus", false);
         alt.showCursor(false);
         alt.toggleGameControls(true);
     } else if (key == 'M'.charCodeAt(0)) {
@@ -1426,7 +1420,6 @@ alt.on('keyup', (key) => {
         } else return;
 
         hudBrowser.unfocus();
-        alt.emitServer("Server:CEF:setCefStatus", false);
         alt.showCursor(false);
         alt.toggleGameControls(true);
         /*} else if (key == 116) { //F5
@@ -1443,7 +1436,6 @@ alt.on('keyup', (key) => {
         hudBrowser.emit("CEF:ClothesRadial:toggleInteractionMenu", false);
         ClothesRadialMenuUsing = false;
         hudBrowser.unfocus();
-        alt.emitServer("Server:CEF:setCefStatus", false);
         alt.showCursor(false);
         alt.toggleGameControls(true);
     } else if (key == 33) {
@@ -1451,8 +1443,8 @@ alt.on('keyup', (key) => {
         if (hudBrowser == null || !browserReady || isPlayerDead || !isPhoneEquipped || alt.Player.local.getSyncedMeta("IsCefOpen") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:Smartphone:togglePhone", true);
         playAnimation("cellphone@in_car@ds", "cellphone_text_read_base", 49, -1);
-        alt.showCursor(true);
         alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.showCursor(true);
         alt.toggleGameControls(false);
         hudBrowser.focus();
     } else if (key == 34) {

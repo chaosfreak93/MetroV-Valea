@@ -20,8 +20,8 @@ class CuffHandler {
             native.disableControlAction(0, 263, true);
             native.disableControlAction(0, 264, true);
             native.disableControlAction(0, 345, true);
-        } else {
-            if (!isPlayerDead && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
+        } else if ((alt.Player.local.getSyncedMeta("HasHandcuffs") == false || alt.Player.local.getSyncedMeta("HasRopeCuffs") == false) && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
+            if (!isPlayerDead) {
                 native.enableControlAction(0, 12, true);
                 native.enableControlAction(0, 13, true);
                 native.enableControlAction(0, 14, true);
@@ -44,13 +44,13 @@ class CuffHandler {
     static FootCuffsCheck() {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
             alt.toggleGameControls(false);
-        } else {
-            if (!isPlayerDead && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
+        } else if (alt.Player.local.getSyncedMeta("HasFootCuffs") == false && alt.Player.local.getSyncedMeta("IsCefOpen") == false) {
+            if (!isPlayerDead) {
                 alt.toggleGameControls(true);
             }
         }
     }
 }
 export { CuffHandler as default };
-alt.everyTick(CuffHandler.NormalCuffsCheck);
-alt.everyTick(CuffHandler.FootCuffsCheck);
+alt.setInterval(CuffHandler.NormalCuffsCheck, 10);
+alt.setInterval(CuffHandler.FootCuffsCheck, 10);
