@@ -174,11 +174,7 @@ namespace Altv_Roleplay.Utils
             else if (cuffType == "ropecuffs")
                 AltAsync.Do(() => player.SetSyncedMetaData("HasRopeCuffs", isCuffed));
             else if (cuffType == "footcuffs")
-                AltAsync.Do(() =>
-                {
-                    player.SetSyncedMetaData("HasFootCuffs", isCuffed);
-                    if (!isCuffed) player.EmitLocked("Client:Cuffs:FootTake");
-                });
+                AltAsync.Do(() => player.SetSyncedMetaData("HasFootCuffs", isCuffed));
         }
 
         public static void SetPlayerUsingCrowbar(this IPlayer player, bool isUsing) {
