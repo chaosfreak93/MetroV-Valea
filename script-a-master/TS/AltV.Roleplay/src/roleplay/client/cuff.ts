@@ -63,7 +63,7 @@ export default class CuffHandler {
     }
 }
 
-alt.onServer("Client:CuffManager:GiveNormalCuffs", CuffHandler.GiveNormalCuffs);
-alt.onServer("Client:CuffManager:TakeNormalCuffs", CuffHandler.TakeNormalCuffs);
+//alt.onServer("Client:CuffManager:GiveNormalCuffs", CuffHandler.GiveNormalCuffs);
+//alt.onServer("Client:CuffManager:TakeNormalCuffs", CuffHandler.TakeNormalCuffs);
 alt.onServer("Client:CuffManager:GiveFootCuffs", CuffHandler.GiveFootCuffs);
 alt.onServer("Client:CuffManager:TakeFootCuffs", CuffHandler.TakeFootCuffs);
