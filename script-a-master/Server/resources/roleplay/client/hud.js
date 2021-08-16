@@ -1330,6 +1330,7 @@ function InterActionMenuDoAction(type, action) {
             } else if (action == "playerRevive") {
                 alt.emitServer("Server:Raycast:RevivePlayer", playerRC);
             } else if (action == "playerJail") {
+                alt.log("Action: " + action);
                 alt.emitServer("Server:Raycast:openJailCEF", playerRC);
             } else if (action == "showIdCard") {
                 alt.emitServer("Server:Raycast:showIdcard", playerRC);
@@ -1737,7 +1738,7 @@ alt.onServer("Client:TattooShop:sendItemsToClient", (items)=>{
     hudBrowser.emit("CEF:TattooShop:sendItemsToClient", items);
 });
 //Jail
-alt.on("Client:JailTime:openCEF", (charId)=>{
+alt.onServer("Client:JailTime:openCEF", (charId)=>{
     if (hudBrowser == null || isJailTimeCEFOpened) return;
     isJailTimeCEFOpened = true;
     hudBrowser.emit("CEF:JailTime:openCEF", charId);

@@ -182,6 +182,7 @@ namespace Altv_Roleplay.Handler
                     targetPlayer.CharacterId <= 0 || Characters.IsCharacterInJail(targetPlayer.CharacterId)) return;
                 
                 player.Emit("Client:JailTime:openCEF", targetPlayer.CharacterId);
+                Alt.Log("Open Jail CEF");
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
