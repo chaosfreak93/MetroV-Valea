@@ -27,6 +27,7 @@ alt.onServer("Client:WritePosAndRot", (pos: alt.Vector3, rot: alt.Vector3) => {
 });
 
 alt.onServer("Client:HUD:CreateCEF", () => {
+    if (alt.Player.local.getSyncedMeta("IsCefOpen") == true) return;
     if (adminMenuBrowser == null) {
         adminMenuBrowser = new alt.WebView("http://resource/client/cef/adminmenu/index.html");
     }
