@@ -604,7 +604,7 @@ namespace Altv_Roleplay.Handler
                     false); //ToDo: Give Animation raussuchen
             else if (Animation == "farmPickup")
                 player.EmitLocked("Client:Inventory:PlayAnimation", "pickup_object", "pickup_low", duration, 1, false);
-            else if (Animation == "handcuffs") player.EmitLocked("Client:Inventory:PlayAnimation", "mp_arresting", "sprint", duration, 49, false);
+            else if (Animation == "handcuffs") player.EmitLocked("Client:Inventory:PlayAnimation", "mp_arresting", "sprint", duration, 1, false);
             else if (Animation == "footcuffs") player.EmitLocked("Client:Inventory:PlayAnimation", "mp_arresting", "idle", duration, 49, false);
             else if (Animation == "revive")
                 player.EmitLocked("Client:Inventory:PlayAnimation", "missheistfbi3b_ig8_2", "cpr_loop_paramedic", duration, 1, false);
