@@ -3,6 +3,7 @@ import * as native from 'natives';
 import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from '../utilities';
 let screenTarget = null;
 let everyTick = null;
+let lastUpdatedTvChannel = 0;
 class CasinoLobby {
     static async awaitRegisterTarget(name, objectModel) {
         await registerTarget(name, objectModel);
@@ -15,10 +16,14 @@ class CasinoLobby {
         everyTick = alt.everyTick(CasinoLobby.startCasinoLobby);
     }
     static startCasinoLobby() {
-        native.setTvChannelPlaylist(0, 'CASINO_DIA_PL', true);
-        native.setTvAudioFrontend(true);
-        native.setTvVolume(-100);
-        native.setTvChannel(0);
+        let currentTime = native.getGameTimer();
+        if (currentTime - lastUpdatedTvChannel >= 42666) {
+            native.setTvChannelPlaylist(0, 'CASINO_DIA_PL', true);
+            native.setTvAudioFrontend(true);
+            native.setTvVolume(-100);
+            native.setTvChannel(0);
+            lastUpdatedTvChannel = currentTime;
+        }
         native.setTextRenderId(screenTarget);
         native.setScriptGfxDrawOrder(4);
         native.setScriptGfxDrawBehindPausemenu(true);
