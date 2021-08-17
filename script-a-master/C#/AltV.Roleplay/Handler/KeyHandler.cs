@@ -161,7 +161,7 @@ namespace Altv_Roleplay.Handler
                 bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 3f);
 
                 if (casinoEntrance && !player.IsInVehicle) {
-                    player.Emit("Casino:Enter");
+                    player.Emit("Client:Casino:Enter");
                     player.Position = new Position(casinoExitPos.X, casinoExitPos.Y, casinoExitPos.Z + 0.5f);
                     return;
                 }
@@ -169,7 +169,7 @@ namespace Altv_Roleplay.Handler
                 bool casinoExit = player.Position.IsInRange(casinoExitPos, 3f);
 
                 if (casinoExit && !player.IsInVehicle) {
-                    player.Emit("Casino:Leave");
+                    player.Emit("Client:Casino:Leave");
                     player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
                     return;
                 }
