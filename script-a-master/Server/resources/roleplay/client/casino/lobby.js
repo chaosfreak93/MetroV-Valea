@@ -1,19 +1,17 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import { loadStreamedTextureDictAsync } from '../utilities';
+import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from '../utilities';
 let screenTarget = null;
 let everyTick = null;
 class CasinoLobby {
-    static registerTarget(name, objectModel) {
-        if (!native.isNamedRendertargetRegistered(name)) {
-            native.registerNamedRendertarget(name, false);
-            native.linkNamedRendertarget(alt.hash(objectModel));
-        }
+    static async awaitRegisterTarget(name, objectModel) {
+        await registerTarget(name, objectModel);
         return native.getNamedRendertargetRenderId(name);
     }
     static async loadCasinoLobby() {
+        await loadModelAsync('vw_vwint01_video_overlay');
         await loadStreamedTextureDictAsync('Prop_Screen_Vinewood');
-        screenTarget = CasinoLobby.registerTarget('casinoscreen_01', 'vw_vwint01_video_overlay');
+        screenTarget = await CasinoLobby.awaitRegisterTarget('casinoscreen_01', 'vw_vwint01_video_overlay');
         everyTick = alt.everyTick(CasinoLobby.startCasinoLobby);
     }
     static startCasinoLobby() {
@@ -32,6 +30,7 @@ class CasinoLobby {
         alt.clearEveryTick(everyTick);
         screenTarget = null;
         native.releaseNamedRendertarget('casinoscreen_01');
+        native.setModelAsNoLongerNeeded(alt.hash('vw_vwint01_video_overlay'));
         native.setStreamedTextureDictAsNoLongerNeeded('Prop_Screen_Vinewood');
     }
 }
