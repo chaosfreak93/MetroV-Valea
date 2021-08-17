@@ -2,7 +2,7 @@ import * as alt from 'alt-client';
 import CasinoLobby from './lobby';
 class CasinoMain {
     static async startCasino() {
-        await CasinoLobby.loadCasionLobby();
+        await CasinoLobby.loadCasinoLobby();
     }
     static stopCasino() {
         CasinoLobby.unloadCasinoLobby();

@@ -3,7 +3,7 @@ import CasinoLobby from './lobby';
 
 export default class CasinoMain {
     static async startCasino(): Promise<void> {
-        await CasinoLobby.loadCasionLobby();
+        await CasinoLobby.loadCasinoLobby();
     }
 
     static stopCasino(): void {

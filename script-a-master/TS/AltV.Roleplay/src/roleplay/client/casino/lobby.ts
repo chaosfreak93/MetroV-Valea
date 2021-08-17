@@ -15,7 +15,7 @@ export default class CasinoLobby {
         return native.getNamedRendertargetRenderId(name);
     }
 
-    static async loadCasionLobby() {
+    static async loadCasinoLobby() {
         await loadStreamedTextureDictAsync('Prop_Screen_Vinewood');
         screenTarget = CasinoLobby.registerTarget('casinoscreen_01', 'vw_vwint01_video_overlay');
 
