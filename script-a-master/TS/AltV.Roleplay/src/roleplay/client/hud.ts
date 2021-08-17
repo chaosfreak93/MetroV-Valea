@@ -1536,7 +1536,6 @@ function InterActionMenuDoAction(type, action) {
             } else if (action == "playerRevive") {
                 alt.emitServer("Server:Raycast:RevivePlayer", playerRC);
             } else if (action == "playerJail") {
-                alt.log("Action: " + action);
                 alt.emitServer("Server:Raycast:openJailCEF", playerRC);
             } else if (action == "showIdCard") {
                 alt.emitServer("Server:Raycast:showIdcard", playerRC);
