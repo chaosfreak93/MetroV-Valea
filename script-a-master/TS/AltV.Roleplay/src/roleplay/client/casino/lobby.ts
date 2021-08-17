@@ -5,6 +5,7 @@ import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from '..
 let screenTarget: number = null;
 let everyTick: number = null;
 let lastUpdatedTvChannel: number = 0;
+let showBigWin: boolean = false;
 
 export default class CasinoLobby {
     static async awaitRegisterTarget(name: string, objectModel: string): Promise<number> {
@@ -23,12 +24,23 @@ export default class CasinoLobby {
 
     static startCasinoLobby() {
         let currentTime: number = native.getGameTimer();
-        if ((currentTime - lastUpdatedTvChannel) >= 42666) {
-            native.setTvChannelPlaylist(0, 'CASINO_DIA_PL', true);
+        if (showBigWin) {
+            native.setTvChannelPlaylist(0, 'CASINO_WIN_PL', true);
             native.setTvAudioFrontend(true);
             native.setTvVolume(-100);
+            native.setTvChannel(-1);
             native.setTvChannel(0);
-            lastUpdatedTvChannel = currentTime;
+
+            lastUpdatedTvChannel = native.getGameTimer() - 33666;
+            showBigWin = false;
+        } else {
+            if ((currentTime - lastUpdatedTvChannel) >= 42666) {
+                native.setTvChannelPlaylist(0, 'CASINO_DIA_PL', true);
+                native.setTvAudioFrontend(true);
+                native.setTvVolume(-100);
+                native.setTvChannel(0);
+                lastUpdatedTvChannel = currentTime;
+            }
         }
 
         native.setTextRenderId(screenTarget);
