@@ -161,8 +161,14 @@ export function setAudioData(): void {
 }
 
 alt.setInterval(() => {
-    native.setRadarAsExteriorThisFrame()
-    native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0)
+    let interior = native.getInteriorFromEntity(alt.Player.local.scriptID);
+    if (native.isValidInterior(interior)) {
+        let interiorInfo = native.getInteriorInfo(interior);
+        native.setRadarAsInteriorThisFrame(interiorInfo[2], interiorInfo[1].x, interiorInfo[1].y, 0, 0);
+    } else {
+        native.setRadarAsExteriorThisFrame();
+        native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0);
+    }
 }, 1);
 
 function GetVehicleSpeed(vehicle: alt.Vehicle) {
