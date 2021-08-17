@@ -26,3 +26,4 @@ import './tuningmenu';
 //CASINO
 import './casino/main';
 import './casino/lobby';
+import './casino/podium';
