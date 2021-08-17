@@ -189,9 +189,15 @@ namespace Altv_Roleplay.Handler
                                 .FirstOrDefault(x => User.GetPlayerUsername(((ClassicPlayer) x).accountId) == addinfo);
                             AltAsync.EmitAllClients("Client:AdminMenu:SetFreezed", kickedPlayerr, info);
 
-                            DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
-                                Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat " +
-                                Characters.GetCharacterName((int) kickedPlayerr.GetCharacterMetaId()) + " **eingefroren**.");
+                            if (info == "on") {
+                                DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
+                                    Characters.GetCharacterName((int)player.GetCharacterMetaId()) + " hat " +
+                                    Characters.GetCharacterName((int)kickedPlayerr.GetCharacterMetaId()) + " **eingefroren**.");
+                            } else {
+                                DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
+                                    Characters.GetCharacterName((int)player.GetCharacterMetaId()) + " hat " +
+                                    Characters.GetCharacterName((int)kickedPlayerr.GetCharacterMetaId()) + " **aufgetaut**.");
+                            }
                             break;
                         case "spieler_spectaten":
                             if (player.AdminLevel() < 4) {
