@@ -14,7 +14,7 @@ export default class CasinoLobby {
         return native.getNamedRendertargetRenderId(name);
     }
 
-    static async loadCasinoLobby() {
+    static async loadCasinoLobby(): Promise<void> {
         await loadModelAsync('vw_vwint01_video_overlay');
         await loadStreamedTextureDictAsync('Prop_Screen_Vinewood');
         screenTarget = await CasinoLobby.awaitRegisterTarget('casinoscreen_01', 'vw_vwint01_video_overlay');
@@ -22,7 +22,7 @@ export default class CasinoLobby {
         everyTick = alt.everyTick(CasinoLobby.startCasinoLobby);
     }
 
-    static startCasinoLobby() {
+    static startCasinoLobby(): void {
         let currentTime: number = native.getGameTimer();
         if (showBigWin) {
             native.setTvChannelPlaylist(0, 'CASINO_WIN_PL', true);
@@ -51,7 +51,7 @@ export default class CasinoLobby {
         native.setTextRenderId(native.getDefaultScriptRendertargetRenderId());
     }
 
-    static unloadCasinoLobby() {
+    static unloadCasinoLobby(): void {
         alt.clearEveryTick(everyTick);
         screenTarget = null;
         native.releaseNamedRendertarget('casinoscreen_01');
