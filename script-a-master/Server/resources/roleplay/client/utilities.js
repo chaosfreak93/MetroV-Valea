@@ -64,6 +64,19 @@ export function setIntoVehicle(vehicle) {
         }, 0);
     });
 }
+export function registerTarget(name, objectModel) {
+    return new Promise((resolve, reject)=>{
+        if (native.isNamedRendertargetRegistered(name)) return resolve(true);
+        native.registerNamedRendertarget(name, false);
+        native.linkNamedRendertarget(alt.hash(objectModel));
+        let interval = alt.setInterval(()=>{
+            if (native.isNamedRendertargetRegistered(name)) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
 export function clearTattoos(entity) {
     native.clearPedDecorations(entity.scriptID);
 }

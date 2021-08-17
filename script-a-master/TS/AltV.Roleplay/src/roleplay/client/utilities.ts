@@ -87,6 +87,23 @@ export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
     });
 }
 
+export function registerTarget(name: string, objectModel: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        if (native.isNamedRendertargetRegistered(name))
+            return resolve(true);
+
+        native.registerNamedRendertarget(name, false);
+        native.linkNamedRendertarget(alt.hash(objectModel));
+
+        let interval = alt.setInterval(() => {
+            if (native.isNamedRendertargetRegistered(name)) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
+
 export function clearTattoos(entity: alt.Entity): void {
     native.clearPedDecorations(entity.scriptID);
 }
