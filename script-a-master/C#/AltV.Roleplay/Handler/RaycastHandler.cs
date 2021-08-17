@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using AltV.Net;
@@ -201,8 +201,8 @@ namespace Altv_Roleplay.Handler
 
                 HUDHandler.SendNotification(targetPlayer, 1, 7500, $"Du sitzt nun für {jailTime} Minuten im Gefängnis.");
                 Characters.SetCharacterJailTime(targetPlayer.CharacterId, true, jailTime);
-                targetPlayer.SetPosition(1662.6856689453125f, 2605.89892578125f, 45.5567626953125f);
-                targetPlayer.Rotation = new Rotation();
+                targetPlayer.Position = new Position(1662.6856689453125f, 2605.89892578125f, 45.5567626953125f);
+                targetPlayer.Rotation = new Rotation(0, 0, 1.5336909294128418f);
 
                 if (Characters.GetCharacterGender(targetPlayer.CharacterId) == false) {
                     targetPlayer.SetClothes(11, 5, 0, 0);
