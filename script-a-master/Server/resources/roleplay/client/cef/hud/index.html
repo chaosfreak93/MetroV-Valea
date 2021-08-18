@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../utils/toastr.min.css">
     <link rel="stylesheet" href="../utils/mdb/css/mdb-sass.css">
-    <script type="text/javascript" src="../utils/colorpicker.js"></script>
     <script type="text/javascript" src="viewport.js"></script>
     <title>HUD</title>
 </head>
@@ -5975,17 +5974,6 @@
     alt.on("CEF:JailTime:openCEF", (charId) => {
         JailCEFBoxCreateCEF(charId);
     });
-</script>
-<script type="text/javascript">
-    ColorPicker(
-
-        document.getElementById('color-picker'),
-
-        function(hex, hsv, rgb) {
-            document.getElementById("rgbRvalField").value = rgb.r;
-            document.getElementById("rgbGvalField").value = rgb.g;
-            document.getElementById("rgbBvalField").value = rgb.b;
-        });
 </script>
 
 </html>
