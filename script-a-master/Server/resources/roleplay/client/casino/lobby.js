@@ -42,6 +42,9 @@ class CasinoLobby {
         native.drawTvChannel(0.5, 0.5, 1, 1, 0, 255, 255, 255, 255);
         native.setTextRenderId(native.getDefaultScriptRendertargetRenderId());
     }
+    static showBigWin() {
+        showBigWin = true;
+    }
     static unloadCasinoLobby() {
         alt.clearEveryTick(everyTick);
         screenTarget = null;

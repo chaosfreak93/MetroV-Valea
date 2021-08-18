@@ -51,6 +51,10 @@ export default class CasinoLobby {
         native.setTextRenderId(native.getDefaultScriptRendertargetRenderId());
     }
 
+    static showBigWin(): void {
+        showBigWin = true;
+    }
+
     static unloadCasinoLobby(): void {
         alt.clearEveryTick(everyTick);
         screenTarget = null;

@@ -16,3 +16,4 @@ export default class CasinoMain {
 
 alt.onServer("Client:Casino:Enter", CasinoMain.startCasino);
 alt.onServer("Client:Casino:Leave", CasinoMain.stopCasino);
+alt.onServer("Client:Casino:ShowBigWin", CasinoLobby.showBigWin);
