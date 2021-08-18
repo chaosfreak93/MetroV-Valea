@@ -7,6 +7,7 @@ let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
 let loginModelHash = null;
+let lastInteract = 0;
 class LoginHandler {
     static async CreateCEF() {
         if (loginBrowser == null) {
@@ -27,6 +28,8 @@ class LoginHandler {
                 }, 2000);
             });
             loginBrowser.on("Client:Login:sendLoginDataToServer", (name, password)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 if (alt.LocalStorage.get("discordId")) {
                     alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.LocalStorage.get("discordId"));
                 } else {
@@ -38,12 +41,18 @@ class LoginHandler {
                 }
             });
             loginBrowser.on("Client:Login:resetPW", (password)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Login:resetPW", password);
             });
             loginBrowser.on("Client:Register:sendRegisterDataToServer", (name, email, password, passwordrepeat)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Register:RegisterNewPlayer", name, email, password, passwordrepeat);
             });
             loginBrowser.on("Client:Charcreator:OpenCreator", ()=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Charcreator:CreateCEF");
                 LoginHandler.DestroyCEF();
             });
@@ -51,12 +60,18 @@ class LoginHandler {
                 LoginHandler.DestroyCEF();
             });
             loginBrowser.on("Client:Charselector:KillCharacter", (charid)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Charselector:KillCharacter", charid);
             });
             loginBrowser.on("Client:Charselector:PreviewCharacter", (charid)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
             loginBrowser.on("Client:Charselector:spawnChar", (charid)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Charselector:spawnChar", charid);
             });
             loginBrowser.on("Client:Charcreator:SwitchOut", ()=>{

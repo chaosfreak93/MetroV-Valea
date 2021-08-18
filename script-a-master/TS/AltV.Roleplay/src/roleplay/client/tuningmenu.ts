@@ -15,7 +15,8 @@ let webview,
     currentSecondaryPaintType,
     paintTypeIds = [0, 0, 15,21,118,120],
     viewModeActive,
-    paintTypes = ["Normal", "", "Pearl", "Matt", "Metallic", "Chrom"];
+    paintTypes = ["Normal", "", "Pearl", "Matt", "Metallic", "Chrom"],
+    lastInteract = 0;
 
 alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
     if (webview) {
@@ -46,6 +47,9 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
     }, 500);
 
     webview.on("Client:Tuningmenu:CloseMenu", () => {
+        if(lastInteract + 500 > Date.now()) return;
+        lastInteract = Date.now();
+
         webview.unfocus();
         webview.destroy();
 	    webview = undefined;
@@ -119,7 +123,8 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
     });
 
     webview.on("Client:Tuningmenu:EquipTuneItem", (type, index) => {
-        if (!vehicle) return;
+        if (!vehicle || lastInteract + 500 > Date.now()) return;
+        lastInteract = Date.now();
 
         installedMods[type] = index;
         
@@ -127,7 +132,9 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices) => {
     });
 
     webview.on("Client:Tuningmenu:EquipRGBTuneItem", (type, colorR, colorG, colorB, paintType) => {
-        if (!vehicle) return;
+        if (!vehicle || lastInteract + 500 > Date.now()) return;
+        lastInteract = Date.now();
+
         
         if (type == 100) {
             installedMods[55] = paintTypeIds.indexOf(paintType);

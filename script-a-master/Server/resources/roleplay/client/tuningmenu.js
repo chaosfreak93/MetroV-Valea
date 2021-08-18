@@ -15,7 +15,7 @@ let webview, vehicle, possibleMods, installedMods, showcasedMods, currentPrimary
     "Matt",
     "Metallic",
     "Chrom"
-];
+], lastInteract = 0;
 alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     if (webview) {
         webview.destroy();
@@ -56,6 +56,8 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         webview.emit("CEF:Tuningmenu:OpenMenu", pMods, iMods, modPrices);
     }, 500);
     webview.on("Client:Tuningmenu:CloseMenu", ()=>{
+        if (lastInteract + 500 > Date.now()) return;
+        lastInteract = Date.now();
         webview.unfocus();
         webview.destroy();
         webview = undefined;
@@ -120,12 +122,14 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         } else if (type == 88) game.setVehicleXenonLightsColor(vehicle, parseInt(index));
     });
     webview.on("Client:Tuningmenu:EquipTuneItem", (type, index)=>{
-        if (!vehicle) return;
+        if (!vehicle || lastInteract + 500 > Date.now()) return;
+        lastInteract = Date.now();
         installedMods[type] = index;
         alt.emitServer("Server:Tuningmenu:EquipTuneItem", vehicle, type, index);
     });
     webview.on("Client:Tuningmenu:EquipRGBTuneItem", (type, colorR, colorG, colorB, paintType)=>{
-        if (!vehicle) return;
+        if (!vehicle || lastInteract + 500 > Date.now()) return;
+        lastInteract = Date.now();
         if (type == 100) {
             installedMods[55] = paintTypeIds.indexOf(paintType);
             installedMods[56] = colorR;

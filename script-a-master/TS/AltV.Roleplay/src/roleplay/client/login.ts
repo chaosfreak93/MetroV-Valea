@@ -8,6 +8,7 @@ let loginBrowser: alt.WebView = null;
 let loginCam: number = null;
 let loginPedHandle: number = null;
 let loginModelHash: number = null;
+let lastInteract: number = 0;
 
 export default class LoginHandler {
 
@@ -32,6 +33,9 @@ export default class LoginHandler {
             });
     
             loginBrowser.on("Client:Login:sendLoginDataToServer", (name: string, password: string) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 if (alt.LocalStorage.get("discordId")) {
                     alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.LocalStorage.get("discordId"));
                 } else {
@@ -44,14 +48,23 @@ export default class LoginHandler {
             });
     
             loginBrowser.on("Client:Login:resetPW", (password: string) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 alt.emitServer("Server:Login:resetPW", password);
             });
     
             loginBrowser.on("Client:Register:sendRegisterDataToServer", (name: string, email: string, password: string, passwordrepeat: string) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 alt.emitServer("Server:Register:RegisterNewPlayer", name, email, password, passwordrepeat);
             });
     
             loginBrowser.on("Client:Charcreator:OpenCreator", () => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 alt.emitServer("Server:Charcreator:CreateCEF");
                 LoginHandler.DestroyCEF();
             });
@@ -61,14 +74,23 @@ export default class LoginHandler {
             });
     
             loginBrowser.on("Client:Charselector:KillCharacter", (charid: number) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 alt.emitServer("Server:Charselector:KillCharacter", charid);
             });
     
             loginBrowser.on("Client:Charselector:PreviewCharacter", (charid: number) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
     
             loginBrowser.on("Client:Charselector:spawnChar", (charid: number) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+    
                 alt.emitServer("Server:Charselector:spawnChar", charid);
             });
     

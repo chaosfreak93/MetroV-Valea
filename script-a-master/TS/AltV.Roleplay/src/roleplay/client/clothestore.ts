@@ -4,6 +4,7 @@ import * as native from 'natives';
 const player: alt.Player = alt.Player.local;
 let clothesStoreBrowser: alt.WebView = null;
 let opened: boolean = false;
+let lastInteract: number = 0;
 
 export default class Clothestore {
     static CreateCEF(): void {
@@ -16,10 +17,16 @@ export default class Clothestore {
             });
     
             clothesStoreBrowser.on('Client:Clothesstore:BuyCloth', (clothId: number, isProp: boolean) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+
                 alt.emitServer("Server:Clothesstore:BuyCloth", clothId, isProp);
             });
     
             clothesStoreBrowser.on('Client:Clothesstore:SetPerfectTorso', (BestTorsoDrawable: number, BestTorsoTexture: number) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+
                 alt.emitServer("Server:Clothesstore:SetPerfectTorso", BestTorsoDrawable, BestTorsoTexture);
             });
     

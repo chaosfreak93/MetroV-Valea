@@ -5,6 +5,7 @@ let charcreatorBrowser: alt.WebView = null;
 let charcreatorCam: number = null;
 let pedHandle: number = null;
 let modelHash: number = null;
+let lastInteract: number = 0;
 
 export default class CharCreator {
 
@@ -74,6 +75,9 @@ export default class CharCreator {
             });
     
             charcreatorBrowser.on("Client:Charcreator:SaveCharacter", (vorname: string, nachname: string, birthdate: Date, gender: number, facefeaturesarray: string, headblendsdataarray: string, headoverlaysarray: string, clothesarray: string) => {
+                if(lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
+
                 native.clearPedProp(alt.Player.local.scriptID, 0);
                 native.clearPedProp(alt.Player.local.scriptID, 1);
                 native.clearPedProp(alt.Player.local.scriptID, 2);
