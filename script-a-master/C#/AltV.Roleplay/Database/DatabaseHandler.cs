@@ -409,6 +409,7 @@ namespace Altv_Roleplay.Database
                 using (var db = new gtaContext()) {
                     ServerFactions.ServerFactions_ = new List<Server_Factions>(db.Server_Factions);
                     ServerFactions.ServerFactionPositions_ = new List<Server_Faction_Positions>(db.Server_Faction_Positions);
+                    ServerFactions.ServerFactionDispatches_ = new List<ServerFaction_Dispatch>(db.Server_Faction_Dispatch);
                     Alt.Log($"{ServerFactions.ServerFactions_.Count} Server-Factions wurden geladen.");
                     Alt.Log($"{ServerFactions.ServerFactionPositions_.Count} Server-Faction-Positions wurden geladen.");
                 }

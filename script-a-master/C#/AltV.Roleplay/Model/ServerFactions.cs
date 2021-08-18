@@ -134,6 +134,13 @@ namespace Altv_Roleplay.Model
                 };
 
                 ServerFactionDispatches_.Add(data);
+                
+                using (gtaContext db = new gtaContext())
+                {
+                    db.Server_Faction_Dispatch.Add(data);
+                    db.SaveChanges();
+                }
+
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
@@ -174,8 +181,14 @@ namespace Altv_Roleplay.Model
 
                 var dispatch = ServerFactionDispatches_.FirstOrDefault(x => x.factionId == factionId && x.senderCharId == senderId);
 
-                if (dispatch != null)
+                if (dispatch != null) {
                     ServerFactionDispatches_.Remove(dispatch);
+
+                    using (gtaContext db = new gtaContext()) {
+                        db.Server_Faction_Dispatch.Remove(dispatch);
+                        db.SaveChanges();
+                    }
+                }
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
@@ -188,8 +201,14 @@ namespace Altv_Roleplay.Model
 
                 var dispatch = ServerFactionDispatches_.FirstOrDefault(x => x.senderCharId == senderId);
 
-                if (dispatch != null)
+                if (dispatch != null) {
                     ServerFactionDispatches_.Remove(dispatch);
+
+                    using (gtaContext db = new gtaContext()) {
+                        db.Server_Faction_Dispatch.Remove(dispatch);
+                        db.SaveChanges();
+                    }
+                }
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

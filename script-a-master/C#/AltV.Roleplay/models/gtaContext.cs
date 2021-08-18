@@ -53,6 +53,7 @@ namespace Altv_Roleplay.models
         public virtual DbSet<Server_Faction_Ranks> Server_Faction_Ranks { get; set; }
         public virtual DbSet<Server_Faction_Storage_Items> Server_Faction_Storage_Items { get; set; }
         public virtual DbSet<Server_Faction_Positions> Server_Faction_Positions { get; set; }
+        public virtual DbSet<ServerFaction_Dispatch> Server_Faction_Dispatch { get; set; }
         public virtual DbSet<Server_Farming_Producer> Server_Farming_Producer { get; set; }
         public virtual DbSet<Server_Farming_Spots> Server_Farming_Spots { get; set; }
         public virtual DbSet<Server_Fuel_Stations> Server_Fuel_Stations { get; set; }
@@ -679,6 +680,21 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.posY).HasColumnName("posY");
                 entity.Property(e => e.posZ).HasColumnName("posZ");
                 entity.Property(e => e.rotation).HasColumnName("rotation");
+            });
+            
+            modelBuilder.Entity<ServerFaction_Dispatch>(entity =>
+            {
+                entity.HasKey(e => e.id);
+                entity.ToTable("server_faction_dispatches", Constants.DatabaseConfig.Database);
+                entity.HasIndex(e => e.id).HasDatabaseName("id");
+                entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
+                entity.Property(e => e.factionId).HasColumnName("factionId").HasColumnType("int(11)");
+                entity.Property(e => e.senderCharId).HasColumnName("senderCharId").HasColumnType("int(11)");
+                entity.Property(e => e.message).HasColumnName("message");
+                entity.Property(e => e.Date).HasColumnName("date");
+                entity.Property(e => e.Destination).HasColumnName("destination").HasConversion(
+                    v => JsonConvert.SerializeObject(v),
+                    v => JsonConvert.DeserializeObject<Position>(v));
             });
 
             modelBuilder.Entity<Server_Farming_Producer>(entity =>
