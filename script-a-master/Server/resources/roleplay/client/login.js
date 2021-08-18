@@ -227,6 +227,10 @@ class LoginHandler {
         }
     }
     static connectionComplete() {
+        alt.emit("Client:HUD:setCefStatus", false);
+        alt.setInterval(()=>{
+            alt.log(alt.Player.local.getMeta("IsCefOpen"));
+        }, 100);
         IPLManager.initializeIPLs();
         IPLManager.initializeEntitySets();
         IPLManager.initializeDoorControl();

@@ -23,7 +23,7 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     }
     webview = new alt.WebView('http://resource/client/cef/tuningmenu/index.html');
     webview.focus();
-    alt.emitServer("Server:CEF:setCefStatus", true);
+    alt.emit("Client:HUD:setCefStatus", true);
     alt.showCursor(true);
     alt.toggleGameControls(false);
     vehicle = veh;
@@ -61,7 +61,7 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         webview.unfocus();
         webview.destroy();
         webview = undefined;
-        alt.emitServer("Server:CEF:setCefStatus", false);
+        alt.emit("Client:HUD:setCefStatus", false);
         alt.emitServer("Server:Tuning:resetToNormal", vehicle);
         resetToNormal(vehicle, installedMods);
         alt.showCursor(false);

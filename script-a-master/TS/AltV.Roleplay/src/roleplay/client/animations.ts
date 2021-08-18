@@ -5,7 +5,7 @@ import { loadAnimDictAsync } from './utilities';
 const storage: alt.LocalStorage = alt.LocalStorage;
 
 alt.on('keyup', (key: number) => {
-    if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("IsUnconscious") == true || alt.Player.local.getSyncedMeta("IsCefOpen") == true) return;
+    if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("IsUnconscious") == true || alt.Player.local.getMeta("IsCefOpen") == true) return;
     if (key == 96) { //Numpad0 
         native.clearPedTasks(alt.Player.local.scriptID);
     } else if (key == 97) { //Numpad1

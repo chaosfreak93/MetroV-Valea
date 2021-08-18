@@ -67,10 +67,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             closeFarmingCEF();
         });
         alt.onServer("Client:Farming:createCEF", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration)=>{
-            if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && ShopCefOpened == false) {
+            if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && ShopCefOpened == false) {
                 if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true) return;
                 hudBrowser.emit("CEF:Farming:createCEF", neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration);
-                alt.emitServer("Server:CEF:setCefStatus", true);
+                alt.emit("Client:HUD:setCefStatus", true);
                 alt.showCursor(true);
                 alt.toggleGameControls(false);
                 hudBrowser.focus();
@@ -84,7 +84,7 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.showCursor(false);
             alt.toggleGameControls(true);
             hudBrowser.unfocus();
-            alt.emitServer("Server:CEF:setCefStatus", false);
+            alt.emit("Client:HUD:setCefStatus", false);
             alt.emitServer("Server:ClothesShop:RequestCurrentSkin");
             clearTattoos(alt.Player.local);
             setCorrectTattoos();
@@ -111,7 +111,7 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             if (lastInteract + 500 > Date.now()) return;
             lastInteract = Date.now();
             alt.emitServer("Server:HUD:sendIdentityCardApplyForm", birthplace);
-            alt.emitServer("Server:CEF:setCefStatus", false);
+            alt.emit("Client:HUD:setCefStatus", false);
             game.freezeEntityPosition(alt.Player.local.scriptID, false);
             alt.showCursor(false);
             alt.toggleGameControls(true);
@@ -716,9 +716,9 @@ alt.on("SaltyChat:VoiceRangeChanged", (voiceRange, voiceIndex)=>{
     }, 1000);
 });
 alt.onServer("Client:HUD:createIdentityCardApplyForm", (charname, gender, adress, birthdate, curBirthpl)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && curBirthpl == "None" && identityCardApplyCEFopened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && curBirthpl == "None" && identityCardApplyCEFopened == false) {
         hudBrowser.emit("CEF:HUD:createIdentityCardApplyForm", charname, gender, adress, birthdate);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -732,9 +732,9 @@ alt.onServer("Client:IdentityCard:showIdentityCard", (type, infoArray)=>{
     }
 });
 alt.onServer("Client:Bank:createBankAccountManageForm", (bankArray, curBank)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && BankAccountManageFormOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && BankAccountManageFormOpened == false) {
         hudBrowser.emit("CEF:Bank:createBankAccountManageForm", bankArray, curBank);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -747,7 +747,7 @@ alt.onServer("Client:ATM:BankATMcreateCEF", (pin, accNumber, zoneName)=>{
     alt.setTimeout(function() {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:ATM:BankATMcreateCEF", pin, accNumber, zoneName);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -766,10 +766,10 @@ alt.onServer("Client:ATM:BankATMdestroyCEFBrowser", ()=>{
     }
 });
 alt.onServer("Client:Shop:shopCEFCreateCEF", (itemArray, shopId, isOnlySelling)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && ShopCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && ShopCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:Shop:shopCEFBoxCreateCEF", itemArray, shopId, isOnlySelling);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -778,9 +778,9 @@ alt.onServer("Client:Shop:shopCEFCreateCEF", (itemArray, shopId, isOnlySelling)=
     }
 });
 alt.onServer("Client:Barber:barberCreateCEF", (headoverlayarray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && BarberCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && BarberCefOpened == false) {
         hudBrowser.emit("CEF:Barber:barberCEFBoxCreateCEF", headoverlayarray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -795,9 +795,9 @@ alt.onServer("Client:Barber:barberCreateCEF", (headoverlayarray)=>{
     }
 });
 alt.onServer("Client:Garage:OpenGarage", (garageId, garagename, garageInArray, garageOutArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && GarageCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && GarageCefOpened == false) {
         hudBrowser.emit("CEF:Garage:OpenGarage", garageId, garagename, garageInArray, garageOutArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -806,9 +806,9 @@ alt.onServer("Client:Garage:OpenGarage", (garageId, garagename, garageInArray, g
     }
 });
 alt.onServer("Client:VehicleShop:OpenCEF", (shopId, shopname, itemArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && VehicleShopCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && VehicleShopCefOpened == false) {
         hudBrowser.emit("CEF:VehicleShop:SetListContent", shopId, shopname, itemArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -817,9 +817,9 @@ alt.onServer("Client:VehicleShop:OpenCEF", (shopId, shopname, itemArray)=>{
     }
 });
 alt.onServer("Client:Jobcenter:OpenCEF", (jobArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && JobcenterCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && JobcenterCefOpened == false) {
         hudBrowser.emit("CEF:Jobcenter:OpenCEF", jobArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -828,10 +828,10 @@ alt.onServer("Client:Jobcenter:OpenCEF", (jobArray)=>{
     }
 });
 alt.onServer("Client:FuelStation:OpenCEF", (fuelStationId, stationName, owner, maxFuel, availableLiter, fuelArray, vehID)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && FuelStationCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && FuelStationCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:FuelStation:OpenCEF", fuelStationId, stationName, owner, maxFuel, availableLiter, fuelArray, vehID);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -840,10 +840,10 @@ alt.onServer("Client:FuelStation:OpenCEF", (fuelStationId, stationName, owner, m
     }
 });
 alt.onServer("Client:ClothesShop:createCEF", (shopId)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && ClothesShopCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && ClothesShopCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:ClothesShop:createCEF", shopId);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -858,10 +858,10 @@ alt.onServer("Client:ClothesShop:createCEF", (shopId)=>{
     }
 });
 alt.onServer("Client:ClothesStorage:createCEF", ()=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && ClothesStorageCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && ClothesStorageCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:ClothesStorage:createCEF");
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.toggleGameControls(false);
         hudBrowser.focus();
@@ -885,10 +885,10 @@ alt.onServer("Client:ClothesStorage:sendItemsToClient", (items)=>{
     }
 });
 alt.onServer("Client:FactionBank:createCEF", (type, factionId, factionBalance)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && bankFactionATMCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && bankFactionATMCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:FactionBank:createCEF", type, factionId, factionBalance);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -897,10 +897,10 @@ alt.onServer("Client:FactionBank:createCEF", (type, factionId, factionBalance)=>
     }
 });
 alt.onServer("Client:GivePlayerBill:openCEF", (type, targetCharId)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && GivePlayerBillCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && GivePlayerBillCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:GivePlayerBill:openCEF", type, targetCharId);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -909,9 +909,9 @@ alt.onServer("Client:GivePlayerBill:openCEF", (type, targetCharId)=>{
     }
 });
 alt.onServer("Client:RecievePlayerBill:openCEF", (type, factionCompanyId, moneyAmount, reason, factionCompanyName, charId)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && RecievePlayerBillCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && RecievePlayerBillCefOpened == false) {
         hudBrowser.emit("CEF:RecievePlayerBill:openCEF", type, factionCompanyId, moneyAmount, reason, factionCompanyName, charId);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -920,11 +920,11 @@ alt.onServer("Client:RecievePlayerBill:openCEF", (type, factionCompanyId, moneyA
     }
 });
 alt.onServer("Client:FactionStorage:openCEF", (charId, factionId, type, invArray, storageArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && FactionStorageCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && FactionStorageCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         alt.log("storageOpenClientside");
         hudBrowser.emit("CEF:FactionStorage:openCEF", charId, factionId, type, invArray, storageArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -933,9 +933,9 @@ alt.onServer("Client:FactionStorage:openCEF", (charId, factionId, type, invArray
     }
 });
 alt.onServer("Client:VehicleTrunk:openCEF", (charId, vehID, type, invArray, storageArray, currentweight, maxweight)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && VehicleTrunkCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && VehicleTrunkCefOpened == false) {
         hudBrowser.emit("CEF:VehicleTrunk:openCEF", charId, vehID, type, invArray, storageArray, currentweight, maxweight);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -944,9 +944,9 @@ alt.onServer("Client:VehicleTrunk:openCEF", (charId, vehID, type, invArray, stor
     }
 });
 alt.onServer("Client:VehicleLicensing:openCEF", (vehArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && VehicleLicensingCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && VehicleLicensingCefOpened == false) {
         hudBrowser.emit("CEF:VehicleLicensing:openCEF", vehArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -955,9 +955,9 @@ alt.onServer("Client:VehicleLicensing:openCEF", (vehArray)=>{
     }
 });
 alt.onServer("Client:PlayerSearch:openCEF", (targetCharId, invArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && PlayerSearchInventoryCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && PlayerSearchInventoryCefOpened == false) {
         hudBrowser.emit("CEF:PlayerSearch:openCEF", targetCharId, invArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -966,9 +966,9 @@ alt.onServer("Client:PlayerSearch:openCEF", (targetCharId, invArray)=>{
     }
 });
 alt.onServer("Client:GivePlayerLicense:openCEF", (targetCharId, licArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && GivePlayerLicenseCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && GivePlayerLicenseCefOpened == false) {
         hudBrowser.emit("CEF:GivePlayerLicense:SetGivePlayerLicenseCEFContent", targetCharId, licArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -977,9 +977,9 @@ alt.onServer("Client:GivePlayerLicense:openCEF", (targetCharId, licArray)=>{
     }
 });
 alt.onServer("Client:MinijobPilot:openCEF", ()=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && MinijobPilotCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && MinijobPilotCefOpened == false) {
         hudBrowser.emit("CEF:MinijobPilot:openCEF");
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -988,9 +988,9 @@ alt.onServer("Client:MinijobPilot:openCEF", ()=>{
     }
 });
 alt.onServer("Client:MinijobBusdriver:openCEF", (routeArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && MinijobBusdriverCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && MinijobBusdriverCefOpened == false) {
         hudBrowser.emit("CEF:MinijobBusdriver:openCEF", routeArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -999,9 +999,9 @@ alt.onServer("Client:MinijobBusdriver:openCEF", (routeArray)=>{
     }
 });
 alt.onServer("Client:HouseManage:openCEF", (houseInfoArray, renterArray)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && HouseManageCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && HouseManageCefOpened == false) {
         hudBrowser.emit("CEF:HouseManage:openCEF", houseInfoArray, renterArray);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -1015,10 +1015,10 @@ alt.onServer("Client:Hotel:setApartmentItems", (array)=>{
     }
 });
 alt.onServer("Client:Hotel:openCEF", (hotelname)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && HotelRentCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && HotelRentCefOpened == false) {
         HotelRentCefOpened = true;
         hudBrowser.emit("CEF:Hotel:openCEF", hotelname);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -1026,9 +1026,9 @@ alt.onServer("Client:Hotel:openCEF", (hotelname)=>{
     }
 });
 alt.onServer("Client:HouseEntrance:openCEF", (charId, houseArray, isRentedIn)=>{
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && HouseEntranceCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && HouseEntranceCefOpened == false) {
         hudBrowser.emit("CEF:HouseEntrance:openCEF", charId, houseArray, isRentedIn);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -1040,7 +1040,7 @@ alt.onServer("Client:Tuning:openTuningMenu", (veh, Items)=>{
     if (hudBrowser != null && TuningMenuCefOpened == false) {
         curTuningVeh = veh;
         hudBrowser.emit("CEF:Tuning:openTuningMenu", Items);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         alt.toggleGameControls(false);
         alt.showCursor(true);
         hudBrowser.focus();
@@ -1050,7 +1050,7 @@ alt.onServer("Client:Tuning:openTuningMenu", (veh, Items)=>{
 alt.onServer("Client:Deathscreen:openCEF", ()=>{
     if (hudBrowser != null && DeathscreenCefOpened == false) {
         closeAllCEFs();
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.setEntityInvincible(alt.Player.local.scriptID, true);
         DeathscreenCefOpened = true;
         isPlayerDead = true;
@@ -1069,7 +1069,7 @@ alt.onServer("Client:Deathscreen:closeCEF", ()=>{
     if (hudBrowser != null && deathScreen != null) {
         deathScreen.destroy();
         hudBrowser.emit("CEF:Deathscreen:closeCEF");
-        alt.emitServer("Server:CEF:setCefStatus", false);
+        alt.emit("Client:HUD:setCefStatus", false);
         game.freezeEntityPosition(alt.Player.local.scriptID, false);
         game.setEntityInvincible(alt.Player.local.scriptID, false);
         alt.showCursor(false);
@@ -1082,7 +1082,7 @@ alt.onServer("Client:Deathscreen:closeCEF", ()=>{
 alt.onServer("Client:Townhall:openHouseSelector", (array)=>{
     if (hudBrowser != null && !TownhallHouseSelectorCefOpened) {
         hudBrowser.emit("CEF:Townhall:openHouseSelector", array);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         game.freezeEntityPosition(alt.Player.local.scriptID, true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -1247,7 +1247,7 @@ alt.onServer("Client:ClothesRadial:SetMenuItems", (itemArray)=>{
 });
 alt.on('keydown', (key)=>{
     if (key == 'X'.charCodeAt(0)) {
-        if (alt.Player.local.getSyncedMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
+        if (alt.Player.local.getMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
         lastInteract = Date.now();
         let result = Raycast.line(1.5, 2.5);
         if (result == undefined && !alt.Player.local.vehicle) return;
@@ -1294,7 +1294,7 @@ alt.on('keydown', (key)=>{
             return;
         }
     } else if (key == 'M'.charCodeAt(0)) {
-        if (alt.Player.local.getSyncedMeta("IsCefOpen") || alt.Player.local.vehicle || lastInteract + 500 > Date.now()) return;
+        if (alt.Player.local.getMeta("IsCefOpen") || alt.Player.local.vehicle || lastInteract + 500 > Date.now()) return;
         lastInteract = Date.now();
         AnimationMenuUsing = true;
         hudBrowser.focus();
@@ -1336,7 +1336,7 @@ alt.on('keydown', (key)=>{
             }
         }
     } else if (key == 'K'.charCodeAt(0)) {
-        if (alt.Player.local.getSyncedMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
+        if (alt.Player.local.getMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
         lastInteract = Date.now();
         ClothesRadialMenuUsing = true;
         hudBrowser.focus();
@@ -1345,7 +1345,7 @@ alt.on('keydown', (key)=>{
         alt.emitServer("Server:ClothesRadial:GetClothesRadialItems");
         return;
     } else if (key === 'N'.charCodeAt(0)) {
-        if (currentRadioFrequence == null || currentRadioFrequence == undefined || alt.Player.local.getSyncedMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
+        if (currentRadioFrequence == null || currentRadioFrequence == undefined || alt.Player.local.getMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
         lastInteract = Date.now();
         alt.emit("SaltyChat:UseRadio", true, true);
     }
@@ -1394,10 +1394,10 @@ alt.on('keyup', (key)=>{
         alt.toggleGameControls(true);
     } else if (key == 33) {
         //Smartphone Bild hoch
-        if (hudBrowser == null || !browserReady || isPlayerDead || !isPhoneEquipped || alt.Player.local.getSyncedMeta("IsCefOpen") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
+        if (hudBrowser == null || !browserReady || isPlayerDead || !isPhoneEquipped || alt.Player.local.getMeta("IsCefOpen") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:Smartphone:togglePhone", true);
         playAnimation("cellphone@in_car@ds", "cellphone_text_read_base", 49, -1);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
         hudBrowser.focus();
@@ -1406,7 +1406,7 @@ alt.on('keyup', (key)=>{
         if (hudBrowser == null || !browserReady || !isPhoneEquipped) return;
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == false && alt.Player.local.getSyncedMeta("HasHandcuffs") == false && alt.Player.local.getSyncedMeta("HasRopeCuffs") == false) game.clearPedTasks(alt.Player.local.scriptID);
         hudBrowser.emit("CEF:Smartphone:togglePhone", false);
-        alt.emitServer("Server:CEF:setCefStatus", false);
+        alt.emit("Client:HUD:setCefStatus", false);
         alt.showCursor(false);
         alt.toggleGameControls(true);
         hudBrowser.unfocus();
@@ -1592,13 +1592,13 @@ alt.onServer("Client:Cuffs:FootTake", ()=>{
     alt.toggleGameControls(true);
 });
 let closeFarmingCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     alt.toggleGameControls(true);
     alt.showCursor(false);
     hudBrowser.unfocus();
 };
 let closeBankCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1606,7 +1606,7 @@ let closeBankCEF = function() {
     BankAccountManageFormOpened = false;
 };
 let closeATMCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1614,7 +1614,7 @@ let closeATMCEF = function() {
     ATMcefOpened = false;
 };
 let closeShopCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1622,7 +1622,7 @@ let closeShopCEF = function() {
     ShopCefOpened = false;
 };
 let closeBarberCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1630,7 +1630,7 @@ let closeBarberCEF = function() {
     BarberCefOpened = false;
 };
 let closeGarageCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1638,7 +1638,7 @@ let closeGarageCEF = function() {
     GarageCefOpened = false;
 };
 let closeVehicleShopCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1646,7 +1646,7 @@ let closeVehicleShopCEF = function() {
     VehicleShopCefOpened = false;
 };
 let closeJobcenterCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1654,7 +1654,7 @@ let closeJobcenterCEF = function() {
     JobcenterCefOpened = false;
 };
 let closeFuelstationCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1662,7 +1662,7 @@ let closeFuelstationCEF = function() {
     FuelStationCefOpened = false;
 };
 let closeClothesShopCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1671,14 +1671,14 @@ let closeClothesShopCEF = function() {
 };
 let closeClothesStorageCEF = function() {
     alt.emitServer("Server:ClothesShop:RequestCurrentSkin");
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.toggleGameControls(true);
     hudBrowser.unfocus();
     ClothesStorageCefOpened = false;
 };
 let closeBankFactionATMCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1686,7 +1686,7 @@ let closeBankFactionATMCEF = function() {
     bankFactionATMCefOpened = false;
 };
 let closeGivePlayerBillCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1694,7 +1694,7 @@ let closeGivePlayerBillCEF = function() {
     GivePlayerBillCefOpened = false;
 };
 let closeRecievePlayerBillCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1702,7 +1702,7 @@ let closeRecievePlayerBillCEF = function() {
     RecievePlayerBillCefOpened = false;
 };
 let closeFactionStorageCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1710,7 +1710,7 @@ let closeFactionStorageCEF = function() {
     FactionStorageCefOpened = false;
 };
 let closeVehicleTrunkCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1718,7 +1718,7 @@ let closeVehicleTrunkCEF = function() {
     VehicleTrunkCefOpened = false;
 };
 let closeVehicleLicensingCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1726,7 +1726,7 @@ let closeVehicleLicensingCEF = function() {
     VehicleLicensingCefOpened = false;
 };
 let closePlayerSearchCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1734,7 +1734,7 @@ let closePlayerSearchCEF = function() {
     PlayerSearchInventoryCefOpened = false;
 };
 let closeGivePlayerLicenseCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1742,7 +1742,7 @@ let closeGivePlayerLicenseCEF = function() {
     GivePlayerLicenseCefOpened = false;
 };
 let closeMinijobPilotCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1750,7 +1750,7 @@ let closeMinijobPilotCEF = function() {
     MinijobPilotCefOpened = false;
 };
 let closeMinijobBusdriverCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1758,7 +1758,7 @@ let closeMinijobBusdriverCEF = function() {
     MinijobBusdriverCefOpened = false;
 };
 let closeHotelRentCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1766,7 +1766,7 @@ let closeHotelRentCEF = function() {
     HotelRentCefOpened = false;
 };
 let closeHouseEntranceCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1774,7 +1774,7 @@ let closeHouseEntranceCEF = function() {
     HouseEntranceCefOpened = false;
 };
 let closeHouseManageCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1782,7 +1782,7 @@ let closeHouseManageCEF = function() {
     HouseManageCefOpened = false;
 };
 let destroyTownHallHouseSelector = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     game.freezeEntityPosition(alt.Player.local.scriptID, false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -1790,21 +1790,21 @@ let destroyTownHallHouseSelector = function() {
     TownhallHouseSelectorCefOpened = false;
 };
 let destroyAnimationMenu = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
     hudBrowser.unfocus();
     AnimationMenuCefOpened = false;
 };
 let destroyClothesRadialMenu = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
     hudBrowser.unfocus();
     ClothesRadialCefOpened = false;
 };
 let closeTuningCEF = function() {
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     alt.toggleGameControls(true);
     alt.showCursor(false);
     hudBrowser.unfocus();
@@ -1817,7 +1817,7 @@ let closeAllCEFs = function() {
     if (identityCardApplyCEFopened || TuningMenuCefOpened || BankAccountManageFormOpened || ATMcefOpened || ShopCefOpened || BarberCefOpened || GarageCefOpened || VehicleShopCefOpened || JobcenterCefOpened || FuelStationCefOpened || ClothesShopCefOpened || bankFactionATMCefOpened || GivePlayerBillCefOpened || FactionStorageCefOpened || RecievePlayerBillCefOpened || VehicleTrunkCefOpened || VehicleLicensingCefOpened || PlayerSearchInventoryCefOpened || GivePlayerLicenseCefOpened || MinijobPilotCefOpened || MinijobBusdriverCefOpened || HotelRentCefOpened || HouseEntranceCefOpened || HouseManageCefOpened || TownhallHouseSelectorCefOpened || AnimationMenuCefOpened) {
         hudBrowser.emit("CEF:General:hideAllCEFs");
         identityCardApplyCEFopened = false, BankAccountManageFormOpened = false, ATMcefOpened = false, ShopCefOpened = false, BarberCefOpened = false, GarageCefOpened = false, VehicleShopCefOpened = false, JobcenterCefOpened = false, FuelStationCefOpened = false, ClothesShopCefOpened = false, bankFactionATMCefOpened = false, GivePlayerBillCefOpened = false, FactionStorageCefOpened = false, RecievePlayerBillCefOpened = false, VehicleTrunkCefOpened = false, VehicleLicensingCefOpened = false, PlayerSearchInventoryCefOpened = false, GivePlayerLicenseCefOpened = false, MinijobPilotCefOpened = false, MinijobBusdriverCefOpened = false, HotelRentCefOpened = false, HouseEntranceCefOpened = false, HouseManageCefOpened = false, TownhallHouseSelectorCefOpened = false, TuningMenuCefOpened = false, AnimationMenuCefOpened = false, ClothesStorageCefOpened = false;
-        alt.emitServer("Server:CEF:setCefStatus", false);
+        alt.emit("Client:HUD:setCefStatus", false);
         alt.showCursor(false);
         alt.toggleGameControls(true);
         hudBrowser.unfocus();
@@ -1826,7 +1826,7 @@ let closeAllCEFs = function() {
     closeTabletCEF();
 };
 /* */ function initializeFavouriteAnims() {
-    if (hudBrowser != null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && AnimationMenuCefOpened == false) {
+    if (hudBrowser != null && alt.Player.local.getMeta("IsCefOpen") == false && AnimationMenuCefOpened == false) {
         if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true) return;
         var animStuff = {
             'Num1': alt.LocalStorage.get('Num1Hotkey'),
@@ -1840,7 +1840,7 @@ let closeAllCEFs = function() {
             'Num9': alt.LocalStorage.get('Num9Hotkey')
         };
         hudBrowser.emit("CEF:Animations:setupAnimationMenu", animStuff);
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
         hudBrowser.focus();
@@ -1902,16 +1902,20 @@ alt.onServer("Client:JailTime:openCEF", (charId)=>{
     if (hudBrowser == null || isJailTimeCEFOpened) return;
     isJailTimeCEFOpened = true;
     hudBrowser.emit("CEF:JailTime:openCEF", charId);
-    alt.emitServer("Server:CEF:setCefStatus", true);
+    alt.emit("Client:HUD:setCefStatus", true);
     alt.showCursor(true);
     alt.toggleGameControls(false);
     hudBrowser.focus();
 });
 let closeJailTimeCEF = function() {
     if (hudBrowser == null) return;
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
     alt.showCursor(false);
     alt.toggleGameControls(true);
     hudBrowser.unfocus();
     isJailTimeCEFOpened = false;
 };
+alt.on("Client:HUD:setCefStatus", (state)=>{
+    if (state == alt.Player.local.getMeta("IsCefOpen")) return;
+    alt.Player.local.setMeta("IsCefOpen", state);
+});

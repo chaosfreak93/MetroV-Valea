@@ -27,7 +27,7 @@ alt.onServer("Client:WritePosAndRot", (pos: alt.Vector3, rot: alt.Vector3) => {
 });
 
 alt.onServer("Client:HUD:CreateCEF", () => {
-    if (alt.Player.local.getSyncedMeta("IsCefOpen") == true) return;
+    if (alt.Player.local.getMeta("IsCefOpen") == true) return;
     if (adminMenuBrowser == null) {
         adminMenuBrowser = new alt.WebView("http://resource/client/cef/adminmenu/index.html");
     }
@@ -53,12 +53,12 @@ alt.onServer("Client:HUD:CreateCEF", () => {
         if (state) {
             alt.toggleGameControls(false);
             adminMenuBrowser.focus();
-            alt.emitServer("Server:CEF:setCefStatus", true);
+            alt.emit("Client:HUD:setCefStatus", true);
             adminmenu_isfocused = true;
         } else {
             alt.toggleGameControls(true);
             adminMenuBrowser.unfocus();
-            alt.emitServer("Server:CEF:setCefStatus", false);
+            alt.emit("Client:HUD:setCefStatus", false);
             adminmenu_isfocused = false;
         }
     })
@@ -90,7 +90,7 @@ alt.onServer("Client:Adminmenu:OpenMenu", () => {
     if (adminMenuBrowser != null) {
         adminmenu_isopened = true;
         adminMenuBrowser.emit("CEF:AdminMenu:OpenMenu");
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
     }
 });
 
@@ -98,7 +98,7 @@ alt.onServer("Client:Adminmenu:CloseMenu", () => {
     if (!adminmenu_isopened) return;
     adminmenu_isopened = false;
     adminMenuBrowser.emit("CEF:AdminMenu:CloseMenu");
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
 });
 
 alt.onServer("Client:Adminmenu:ReceiveMeta", (GetPlayerPlayer: alt.Player) => {
@@ -129,7 +129,7 @@ alt.onServer("Client:Adminmenu:CloseMenu", () => {
     if (!adminmenu_isopened) return;
     adminmenu_isopened = false;
     adminMenuBrowser.emit("CEF:AdminMenu:CloseMenu");
-    alt.emitServer("Server:CEF:setCefStatus", false);
+    alt.emit("Client:HUD:setCefStatus", false);
 });
 
 alt.onServer("Client:AdminMenu:SendAllOnlinePlayers", (AllOnlinePlayerArray: Array<alt.Player>) => {

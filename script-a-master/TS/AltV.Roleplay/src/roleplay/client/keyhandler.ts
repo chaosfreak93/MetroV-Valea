@@ -23,7 +23,7 @@ export default class KeyHandler {
             alt.emitServer("Server:KeyHandler:PressU");
         } else if (key == 'I'.charCodeAt(0)) {
             if (inventoryBrowser == null) { //Inv öffnen
-                if (player.getSyncedMeta("HasFootCuffs") == true || player.getSyncedMeta("HasHandcuffs") == true || player.getSyncedMeta("HasRopeCuffs") == true || player.getSyncedMeta("IsCefOpen") == true) return;
+                if (player.getSyncedMeta("HasFootCuffs") == true || player.getSyncedMeta("HasHandcuffs") == true || player.getSyncedMeta("HasRopeCuffs") == true || player.getMeta("IsCefOpen") == true) return;
                 Inventory.openInventoryCEF(true);
             } else { //Inv close
                 Inventory.closeInventoryCEF();

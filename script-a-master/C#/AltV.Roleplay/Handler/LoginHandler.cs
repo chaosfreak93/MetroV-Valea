@@ -26,7 +26,6 @@ namespace Altv_Roleplay.Handler
             player.SetPlayerIsCuffed("footcuffs", false);
             player.SetPlayerIsCuffed("ropecuffs", false);
             player.SetStreamSyncedMetaData("isOnHands", false);
-            setCefStatus(player, false);
             player.SetPlayerCurrentMinijob("None");
             player.SetPlayerCurrentMinijobRouteId(0);
             player.SetPlayerCurrentMinijobStep("None");
@@ -50,13 +49,6 @@ namespace Altv_Roleplay.Handler
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
-        }
-
-        [AsyncClientEvent("Server:CEF:setCefStatus")]
-        public static void setCefStatus(IPlayer player, bool status) {
-            if (player is not {Exists: true}) return;
-
-            player.SetSyncedMetaData("IsCefOpen", status);
         }
 
         public static void CreateLoginBrowser(IPlayer client) {
@@ -328,7 +320,6 @@ namespace Altv_Roleplay.Handler
             }
 
             SmartphoneHandler.RequestLSPDIntranet(client);
-            setCefStatus(client, false);
             client.SetStreamSyncedMetaData("sharedUsername", $"{charName} ({Characters.GetCharacterAccountId(charid)})");
             client.SetSyncedMetaData("ADMINLEVEL", client.AdminLevel());
             client.SetSyncedMetaData("PLAYER_SPAWNED", true);

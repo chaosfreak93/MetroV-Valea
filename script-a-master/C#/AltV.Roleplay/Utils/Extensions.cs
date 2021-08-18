@@ -31,13 +31,6 @@ namespace Altv_Roleplay.Utils
             player.Kick(reason);
         }
 
-        public static bool IsCefOpen(this ClassicPlayer player) {
-            if (player == null || !player.Exists) return false;
-
-            player.GetSyncedMetaData("IsCefOpen", out bool isCefOpened);
-            return isCefOpened;
-        }
-
         public static void updateTattoos(this ClassicPlayer player) {
             if (player == null || !player.Exists || player.CharacterId <= 0) return;
 

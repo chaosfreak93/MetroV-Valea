@@ -3,12 +3,12 @@ export let inventoryBrowser = null;
 let lastInteract = null;
 export class Inventory {
     static openInventoryCEF(requestItems) {
-        if (inventoryBrowser == null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
+        if (inventoryBrowser == null && alt.Player.local.getMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
             alt.showCursor(true);
             alt.toggleGameControls(false);
             inventoryBrowser = new alt.WebView("http://resource/client/cef/inventory/index.html");
             inventoryBrowser.focus();
-            alt.emitServer("Server:CEF:setCefStatus", true);
+            alt.emit("Client:HUD:setCefStatus", true);
             inventoryBrowser.on("Client:Inventory:cefIsReady", ()=>{
                 if (!requestItems) return;
                 alt.emitServer("Server:Inventory:RequestInventoryItems");
@@ -30,7 +30,7 @@ export class Inventory {
             inventoryBrowser = null;
             alt.showCursor(false);
             alt.toggleGameControls(true);
-            alt.emitServer("Server:CEF:setCefStatus", false);
+            alt.emit("Client:HUD:setCefStatus", false);
         }
     }
     static canInteract() {
