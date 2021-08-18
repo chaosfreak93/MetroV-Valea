@@ -7,6 +7,7 @@ using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
 using Altv_Roleplay.Factories;
+using Altv_Roleplay.Handler.Casino;
 using Altv_Roleplay.Model;
 using Altv_Roleplay.models;
 using Altv_Roleplay.Utils;
@@ -30,6 +31,13 @@ namespace Altv_Roleplay.Handler
             CharactersInventory.AddCharacterItem((int) charId, "Bargeld", itemAmount, "inventory");
             HUDHandler.SendNotification(player, 2, 5000, $"{itemAmount}$ erhalten (Bargeld).");
         }
+        
+        /**[Command("pi")]
+        public void PiCMD(IPlayer player, int pi) {
+            if (player == null || !player.Exists) return;
+
+            WheelHandler.priceIndex = pi;
+        }**/
 
         [Command("getaccountidbymail")]
         public static void CMD_getAccountIdByMail(ClassicPlayer player, string mail) {
