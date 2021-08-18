@@ -6,11 +6,12 @@ let podiumCoords: alt.Vector3 = new alt.Vector3(1100.00, 220.00, -49.975);
 let podiumModel: number = null;
 let vehicleCoords: alt.Vector3 = new alt.Vector3(1100.00, 220.00, -49.35);
 let vehicleModel: number = null;
-let podiumVehicle: string = 'dominator8';
+let podiumVehicle: string = null;
 let interval: number = null;
 
 export default class Podium {
     static async loadPodium(): Promise<void> {
+        podiumVehicle = alt.getSyncedMeta("podiumVehicle");
         await loadModelAsync('vw_prop_vw_casino_podium_01a');
         await loadModelAsync(podiumVehicle);
         podiumModel = native.createObject(alt.hash('vw_prop_vw_casino_podium_01a'), podiumCoords.x, podiumCoords.y, podiumCoords.z, false, false, true);
@@ -27,11 +28,15 @@ export default class Podium {
         interval = alt.setInterval(Podium.startPodium, 5);
     }
 
-    static startPodium(): void {
+    static async startPodium(): Promise<void> {
         let podiumHeading = native.getEntityHeading(podiumModel);
         let podiumZ = podiumHeading - 0.05;
         native.setEntityHeading(podiumModel, podiumZ);
-        if (vehicleModel == null || vehicleModel == undefined) {
+        if (vehicleModel == null || vehicleModel == undefined || podiumVehicle != alt.getSyncedMeta("podiumVehicle")) {
+            podiumVehicle = alt.getSyncedMeta("podiumVehicle");
+            native.deleteVehicle(vehicleModel);
+            vehicleModel = null;
+            await loadModelAsync(podiumVehicle);
             vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
             native.setEntityHeading(vehicleModel, 0);
             native.setEntityInvincible(vehicleModel, true);
