@@ -282,9 +282,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:VehicleShop:destroyVehicleShopCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeVehicleShopCEF();
         });
 

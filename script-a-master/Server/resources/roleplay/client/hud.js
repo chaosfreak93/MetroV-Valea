@@ -228,8 +228,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:Smartphone:leaveRadioFrequence");
         });
         hudBrowser.on("Client:VehicleShop:destroyVehicleShopCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeVehicleShopCEF();
         });
         hudBrowser.on("Client:VehicleShop:BuyVehicle", (shopId, hash)=>{
