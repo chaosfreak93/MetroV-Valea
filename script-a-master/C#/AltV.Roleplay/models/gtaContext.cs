@@ -695,6 +695,7 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.Destination).HasColumnName("destination").HasConversion(
                     v => JsonConvert.SerializeObject(v),
                     v => JsonConvert.DeserializeObject<Position>(v));
+                entity.Property(e => e.altname).HasColumnName("altname");
             });
 
             modelBuilder.Entity<Server_Farming_Producer>(entity =>

@@ -10,5 +10,6 @@ namespace Altv_Roleplay.models
         public string message { get; set; }
         public string Date { get; set; }
         public Position Destination { get; set; }
+        public string altname { get; set; }
     }
 }

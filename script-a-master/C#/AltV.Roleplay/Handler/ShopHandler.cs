@@ -221,7 +221,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                ServerFactions.AddNewFactionDispatch(0, 1, "Aktiver Shopraub", player.Position);
+                ServerFactions.AddNewFactionDispatchNoName("Stiller Alarm", 1, "Ein aktiver Shopraub wurde gemeldet.", player.Position);
 
                 foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                     if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
