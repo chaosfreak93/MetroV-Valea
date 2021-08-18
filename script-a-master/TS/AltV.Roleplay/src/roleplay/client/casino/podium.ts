@@ -6,15 +6,16 @@ let podiumCoords: alt.Vector3 = new alt.Vector3(1100.00, 220.00, -49.975);
 let podiumModel: number = null;
 let vehicleCoords: alt.Vector3 = new alt.Vector3(1100.00, 220.00, -49.35);
 let vehicleModel: number = null;
+let podiumVehicle: string = 'dominator8';
 let interval: number = null;
 
 export default class Podium {
     static async loadPodium(): Promise<void> {
         await loadModelAsync('vw_prop_vw_casino_podium_01a');
-        await loadModelAsync('fmj');
+        await loadModelAsync(podiumVehicle);
         podiumModel = native.createObject(alt.hash('vw_prop_vw_casino_podium_01a'), podiumCoords.x, podiumCoords.y, podiumCoords.z, false, false, true);
         native.setEntityHeading(podiumModel, 0);
-        vehicleModel = native.createVehicle(alt.hash("fmj"), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
+        vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
         native.setEntityHeading(vehicleModel, 0);
         native.setEntityInvincible(vehicleModel, true);
         native.setVehicleDoorsLocked(vehicleModel, 2);
@@ -22,6 +23,7 @@ export default class Podium {
         native.setVehicleModColor2(vehicleModel, 0, 0);
         native.setVehicleCustomPrimaryColour(vehicleModel, 9, 75, 135);
         native.setVehicleCustomSecondaryColour(vehicleModel, 9, 75, 135);
+        native.setVehicleNumberPlateText(vehicleModel, "CASINO");
         interval = alt.setInterval(Podium.startPodium, 5);
     }
 
@@ -30,7 +32,7 @@ export default class Podium {
         let podiumZ = podiumHeading - 0.05;
         native.setEntityHeading(podiumModel, podiumZ);
         if (vehicleModel == null || vehicleModel == undefined) {
-            vehicleModel = native.createVehicle(alt.hash("fmj"), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
+            vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
             native.setEntityHeading(vehicleModel, 0);
             native.setEntityInvincible(vehicleModel, true);
             native.setVehicleDoorsLocked(vehicleModel, 2);
@@ -38,6 +40,7 @@ export default class Podium {
             native.setVehicleModColor2(vehicleModel, 0, 0);
             native.setVehicleCustomPrimaryColour(vehicleModel, 9, 75, 135);
             native.setVehicleCustomSecondaryColour(vehicleModel, 9, 75, 135);
+            native.setVehicleNumberPlateText(vehicleModel, "CASINO");
         }
         let vehicleHeading = native.getEntityHeading(vehicleModel);
         let vehicleZ = vehicleHeading - 0.05;
