@@ -119,8 +119,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             identityCardApplyCEFopened = false;
         });
         hudBrowser.on("Client:Bank:BankAccountdestroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeBankCEF();
         });
         hudBrowser.on("Client:Bank:BankAccountCreateNewAccount", (selectedBank)=>{
@@ -161,8 +159,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:ATM:TryPin", action, curATMAccountNumber);
         });
         hudBrowser.on("Client:ATM:BankATMdestroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeATMCEF();
         });
         hudBrowser.on("Client:Shop:buyItem", (shopId, amount, itemname)=>{
@@ -255,8 +251,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             closeJobcenterCEF();
         });
         hudBrowser.on("Client:Jobcenter:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeJobcenterCEF();
         });
         hudBrowser.on("Client:FuelStation:FuelVehicleAction", (vehID, fuelStationId, fueltype, selectedLiterAmount, selectedLiterPrice)=>{
@@ -265,8 +259,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:FuelStation:FuelVehicleAction", parseInt(vehID), parseInt(fuelStationId), fueltype, parseInt(selectedLiterAmount), parseInt(selectedLiterPrice));
         });
         hudBrowser.on("Client:FuelStation:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeFuelstationCEF();
         });
         hudBrowser.on("Client:ClothesShop:setClothes", (componentId, drawableId, textureId)=>{
@@ -281,13 +273,9 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:ClothesShop:RequestCurrentSkin");
         });
         hudBrowser.on("Client:ClothesShop:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeClothesShopCEF();
         });
         hudBrowser.on("Client:ClothesStorage:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeClothesStorageCEF();
         });
         hudBrowser.on("Client:ClothesShop:buyItem", (shopId, itemName)=>{
@@ -311,8 +299,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             InterActionMenuDoActionClothesRadialMenu(action);
         });
         hudBrowser.on("Client:FactionBank:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeBankFactionATMCEF();
         });
         hudBrowser.on("Client:FactionBank:DepositMoney", (type, factionId, amount)=>{
@@ -331,8 +317,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:PlayerBill:giveBill", type, reason, parseInt(targetCharId), parseInt(moneyamount));
         });
         hudBrowser.on("Client:GivePlayerBill:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeGivePlayerBillCEF();
         });
         hudBrowser.on("Client:PlayerBill:BillAction", (action, billType, factionCompanyId, moneyAmount, reason, charId)=>{
@@ -341,13 +325,9 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:PlayerBill:BillAction", action, billType, parseInt(factionCompanyId), parseInt(moneyAmount), reason, parseInt(charId));
         });
         hudBrowser.on("Client:RecievePlayerBill:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeRecievePlayerBillCEF();
         });
         hudBrowser.on("Client:FactionStorage:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeFactionStorageCEF();
         });
         hudBrowser.on("Client:FactionStorage:FactionStorageAction", (action, factionId, charId, type, itemName, amount, fromContainer)=>{
@@ -377,8 +357,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             closeVehicleTrunkCEF();
         });
         hudBrowser.on("Client:VehicleTrunk:VehicleTrunkAction", (action, vehId, charId, itemName, itemAmount, fromContainer, type)=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             if (action == "storage") {
                 alt.emitServer("Server:VehicleTrunk:StorageItem", parseInt(vehId), parseInt(charId), itemName, parseInt(itemAmount), fromContainer, type);
             } else if (action == "take") {
@@ -391,8 +369,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:VehicleLicensing:LicensingAction", action, parseInt(vehId), vehPlate, newPlate);
         });
         hudBrowser.on("Client:VehicleLicensing:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeVehicleLicensingCEF();
         });
         hudBrowser.on("Client:PlayerSearch:TakeItem", (targetCharId, itemName, itemLocation, itemAmount)=>{
@@ -401,13 +377,9 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:PlayerSearch:TakeItem", parseInt(targetCharId), itemName, itemLocation, parseInt(itemAmount));
         });
         hudBrowser.on("Client:PlayerSearch:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closePlayerSearchCEF();
         });
         hudBrowser.on("Client:GivePlayerLicense:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeGivePlayerLicenseCEF();
         });
         hudBrowser.on("Client:GivePlayerLicense:GiveLicense", (targetCharId, licname)=>{
@@ -421,8 +393,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:MinijobPilot:StartJob", parseInt(level));
         });
         hudBrowser.on("Client:MinijobPilot:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeMinijobPilotCEF();
         });
         hudBrowser.on("Client:MinijobBusdriver:StartJob", (routeId)=>{
@@ -431,13 +401,9 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:MinijobBusdriver:StartJob", parseInt(routeId));
         });
         hudBrowser.on("Client:MinijobBusdriver:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeMinijobBusdriverCEF();
         });
         hudBrowser.on("Client:Hotel:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeHotelRentCEF();
         });
         hudBrowser.on("Client:Hotel:RentHotel", (hotelId, apartmentId)=>{
@@ -456,13 +422,9 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:Hotel:EnterHotel", parseInt(hotelId), parseInt(apartmentId));
         });
         hudBrowser.on("Client:HouseEntrance:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeHouseEntranceCEF();
         });
         hudBrowser.on("Client:Shop:robShop", (shopId)=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             alt.emitServer("Server:Shop:robShop", parseInt(shopId));
         });
         hudBrowser.on("Client:HouseEntrance:BuyHouse", (houseId)=>{
@@ -496,8 +458,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             alt.emitServer("Server:House:setMainHouse", parseInt(houseId));
         });
         hudBrowser.on("Client:HouseManage:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeHouseManageCEF();
         });
         hudBrowser.on("Client:HouseManage:setRentPrice", (houseId, rentPrice)=>{

@@ -139,9 +139,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:Bank:BankAccountdestroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeBankCEF();
         });
 
@@ -197,9 +194,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:ATM:BankATMdestroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeATMCEF();
         });
 
@@ -320,9 +314,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:Jobcenter:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeJobcenterCEF();
         });
 
@@ -334,9 +325,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:FuelStation:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeFuelstationCEF();
         });
 
@@ -356,16 +344,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:ClothesShop:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeClothesShopCEF();
         });
 
         hudBrowser.on("Client:ClothesStorage:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeClothesStorageCEF();
         });
 
@@ -397,9 +379,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:FactionBank:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeBankFactionATMCEF();
         });
 
@@ -425,9 +404,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:GivePlayerBill:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeGivePlayerBillCEF();
         });
 
@@ -439,16 +415,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:RecievePlayerBill:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeRecievePlayerBillCEF();
         });
 
         hudBrowser.on("Client:FactionStorage:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeFactionStorageCEF();
         });
 
@@ -483,9 +453,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:VehicleTrunk:VehicleTrunkAction", (action, vehId, charId, itemName, itemAmount, fromContainer, type) => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             if (action == "storage") {
                 alt.emitServer("Server:VehicleTrunk:StorageItem", parseInt(vehId), parseInt(charId), itemName, parseInt(itemAmount), fromContainer, type);
             } else if (action == "take") {
@@ -501,9 +468,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:VehicleLicensing:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeVehicleLicensingCEF();
         });
 
@@ -515,16 +479,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:PlayerSearch:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closePlayerSearchCEF();
         });
 
         hudBrowser.on("Client:GivePlayerLicense:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeGivePlayerLicenseCEF();
         });
 
@@ -543,9 +501,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:MinijobPilot:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeMinijobPilotCEF();
         });
 
@@ -557,16 +512,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:MinijobBusdriver:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeMinijobBusdriverCEF();
         });
 
         hudBrowser.on("Client:Hotel:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeHotelRentCEF();
         });
 
@@ -592,16 +541,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:HouseEntrance:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeHouseEntranceCEF();
         });
 
         hudBrowser.on("Client:Shop:robShop", (shopId) => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             alt.emitServer("Server:Shop:robShop", parseInt(shopId));
         });
 
@@ -648,9 +591,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:HouseManage:destroyCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeHouseManageCEF();
         });
 
