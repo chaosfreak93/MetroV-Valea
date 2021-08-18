@@ -1,0 +1,5 @@
+Change Discord Log
+Activate Discord Faction Bots
+Deactivate unfinished Functions
+Switch Database
+Fix Merge Conflicts
