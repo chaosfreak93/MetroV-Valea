@@ -412,6 +412,7 @@ namespace Altv_Roleplay.Database
                     ServerFactions.ServerFactionDispatches_ = new List<ServerFaction_Dispatch>(db.Server_Faction_Dispatch);
                     Alt.Log($"{ServerFactions.ServerFactions_.Count} Server-Factions wurden geladen.");
                     Alt.Log($"{ServerFactions.ServerFactionPositions_.Count} Server-Faction-Positions wurden geladen.");
+                    Alt.Log($"{ServerFactions.ServerFactionDispatches_.Count} Server-Faction-Dispatches wurden geladen.");
                 }
 
                 foreach (var pos in ServerFactions.ServerFactionPositions_)
