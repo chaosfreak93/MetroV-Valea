@@ -264,9 +264,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:Garage:destroyGarageCEF", () => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             closeGarageCEF();
         });
 
