@@ -2143,10 +2143,13 @@
             dispatchArray = JSON.parse(dispatchArray);
 
         for (var i in dispatchArray) {
-            if (dispatchArray[i].senderCharId == 0) DispatchSenderName = dispatchArray[i].senderName = "Stiller Alarm - Einkaufsladen";
-
-            dispatchHTML += `<div class='container'><div class='left'><p class='title'>Absender</p><p>${dispatchArray[i].senderName}</p></div><div class='left leftmid'><p class='title'>Nachricht</p><p>${dispatchArray[i].message}</p></div>` +
+            if (dispatchArray[i].senderCharId == 0) {
+                dispatchHTML += `<div class='container'><div class='left'><p class='title'>Absender</p><p>${dispatchArray[i].altname}</p></div><div class='left leftmid'><p class='title'>Nachricht</p><p>${dispatchArray[i].message}</p></div>` +
                 `<div class='left'><button type='button' onclick='VehiclesAppLocateVehicle(${dispatchArray[i].posX}, ${dispatchArray[i].posY});' class='btn btn-success'><i class='fas fa-search'></i></button><button type='button' onclick='DeleteDispatch(${dispatchArray[i].factionId}, ${dispatchArray[i].senderCharId});' class='btn btn-danger'><i class='fas fa-times'></i></button></div></div>`;
+            } else {
+                dispatchHTML += `<div class='container'><div class='left'><p class='title'>Absender</p><p>${dispatchArray[i].senderName}</p></div><div class='left leftmid'><p class='title'>Nachricht</p><p>${dispatchArray[i].message}</p></div>` +
+                `<div class='left'><button type='button' onclick='VehiclesAppLocateVehicle(${dispatchArray[i].posX}, ${dispatchArray[i].posY});' class='btn btn-success'><i class='fas fa-search'></i></button><button type='button' onclick='DeleteDispatch(${dispatchArray[i].factionId}, ${dispatchArray[i].senderCharId});' class='btn btn-danger'><i class='fas fa-times'></i></button></div></div>`;
+            }
         }
 
         if (factionId == 1) {

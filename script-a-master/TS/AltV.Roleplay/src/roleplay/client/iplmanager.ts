@@ -54,6 +54,7 @@ export default class IPLManager {
         alt.requestIpl('farmint');
         alt.requestIpl('farm_lod');
         alt.requestIpl('farm_props');
+        alt.requestIpl('des_farmhs_startimap');
         alt.requestIpl('facelobby');
         alt.removeIpl('CS1_02_cf_offmission');
         alt.requestIpl('CS1_02_cf_onmission1');

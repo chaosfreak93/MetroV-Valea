@@ -157,11 +157,12 @@ namespace Altv_Roleplay.Handler
                 
                 Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
                 Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.80439453125f);
+                Position casinoWheelPos = new Position(1110.949462890625f, 229.26593017578125f, -49.6446533203125f);
                 
                 bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 3f);
 
                 if (casinoEntrance && !player.IsInVehicle) {
-                    player.Emit("Casino:Enter");
+                    player.Emit("Client:Casino:Enter");
                     player.Position = new Position(casinoExitPos.X, casinoExitPos.Y, casinoExitPos.Z + 0.5f);
                     return;
                 }
@@ -169,11 +170,18 @@ namespace Altv_Roleplay.Handler
                 bool casinoExit = player.Position.IsInRange(casinoExitPos, 3f);
 
                 if (casinoExit && !player.IsInVehicle) {
-                    player.Emit("Casino:Leave");
+                    player.Emit("Client:Casino:Leave");
                     player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
                     return;
                 }
                 
+                bool casinoWheel = player.Position.IsInRange(casinoWheelPos, 3f);
+
+                if (casinoWheel && !player.IsInVehicle) {
+                    player.Emit("Client:Casino:PrepareRoll");
+                    return;
+                }
+
                 bool airportExit = player.Position.IsInRange(Constants.Positions.ExitTPPos_Airport, 3f);
 
                 if (airportExit && !player.IsInVehicle && Characters.GetCharacterAccState(charId) == 1) {

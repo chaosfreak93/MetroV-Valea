@@ -221,7 +221,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
 
-                ServerFactions.AddNewFactionDispatch(0, 1, "Aktiver Shopraub", player.Position);
+                ServerFactions.AddNewFactionDispatchNoName("Stiller Alarm", 1, "Ein aktiver Shopraub wurde gemeldet.", player.Position);
 
                 foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
                     if (!ServerFactions.IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) ||
@@ -473,9 +473,8 @@ namespace Altv_Roleplay.Handler
         #region Tattoo Shop
 
         internal static void openTattooShop(ClassicPlayer player, Server_Tattoo_Shops tattooShop) {
-            if (player == null || !player.Exists || player.CharacterId <= 0 || player.IsCefOpen() || tattooShop == null) return;
-
-            LoginHandler.setCefStatus(player, true);
+            if (player == null || !player.Exists || player.CharacterId <= 0 || tattooShop == null) return;
+            
             var gender = Convert.ToInt32(Characters.GetCharacterGender(player.CharacterId));
             player.Emit("Client:TattooShop:openShop", gender, tattooShop.id, CharactersTattoos.GetAccountOwnTattoos(player.CharacterId));
         }

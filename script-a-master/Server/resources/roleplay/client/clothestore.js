@@ -3,6 +3,7 @@ import * as native from 'natives';
 const player = alt.Player.local;
 let clothesStoreBrowser = null;
 let opened = false;
+let lastInteract = 0;
 class Clothestore {
     static CreateCEF() {
         if (clothesStoreBrowser == null) {
@@ -12,9 +13,13 @@ class Clothestore {
                 else native.setPedPropIndex(player.scriptID, parseInt(previewComponentId), parseInt(previewDrawableId), parseInt(previewTextureId), false);
             });
             clothesStoreBrowser.on('Client:Clothesstore:BuyCloth', (clothId, isProp)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Clothesstore:BuyCloth", clothId, isProp);
             });
             clothesStoreBrowser.on('Client:Clothesstore:SetPerfectTorso', (BestTorsoDrawable, BestTorsoTexture)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 alt.emitServer("Server:Clothesstore:SetPerfectTorso", BestTorsoDrawable, BestTorsoTexture);
             });
             clothesStoreBrowser.on("Client:Clothesstore:SetRotation", (rot)=>{

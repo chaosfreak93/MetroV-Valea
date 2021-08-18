@@ -299,6 +299,7 @@ namespace Altv_Roleplay.Minijobs.Pilot
                     }
 
                     HUDHandler.SendNotification(player, 2, 1500, "Du hast den Minijob: Pilot beendet.");
+                    player.EmitLocked("Client:Minijob:RemoveJobMarker");
                     player.SetPlayerCurrentMinijob("None");
                     player.SetPlayerCurrentMinijobRouteId(0);
                     player.SetPlayerCurrentMinijobStep("None");

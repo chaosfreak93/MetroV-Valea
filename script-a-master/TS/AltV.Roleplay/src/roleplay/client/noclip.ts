@@ -1,6 +1,7 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
+let entity: any = null;
 let enabled: boolean = false;
 let defaultSpeed: number = 1.0;
 let everyTick: number = null;
@@ -19,20 +20,24 @@ export default class NoClip {
 
     static start(): void {
         if (enabled) return;
+        entity = alt.Player.local.vehicle ? alt.Player.local.vehicle : alt.Player.local;
         enabled = true;
-        native.freezeEntityPosition(alt.Player.local.scriptID, true);
+        native.freezeEntityPosition(entity, true);
+        native.setEntityCollision(entity, false, false);
         everyTick = alt.everyTick(NoClip.keyHandler);
     }
 
     static stop(): void {
         if (!enabled) return;
         enabled = false;
-        native.freezeEntityPosition(alt.Player.local.scriptID, false);
+        native.setEntityCollision(entity, true, true);
+        native.freezeEntityPosition(entity, false);
         alt.clearEveryTick(everyTick);
+        entity = null;
     }
 
     static keyHandler(): void {
-        let currentPos: alt.Vector3 = alt.Player.local.pos;
+        let currentPos: alt.Vector3 = entity.pos;
         let speed: number = defaultSpeed;
         let rot: alt.Vector3 = native.getGameplayCamRot(2);
         let dirForward: alt.Vector3 = NoClip.camVectorForward(rot);
@@ -45,10 +50,10 @@ export default class NoClip {
         if (native.isControlPressed(0, KEYS.LEFT)) currentPos = NoClip.addSpeedToVector(currentPos, dirRight, -speed, true);
         if (native.isControlPressed(0, KEYS.RIGHT)) currentPos = NoClip.addSpeedToVector(currentPos, dirRight, speed, true);
         let zModifier: number = 0;
-        if (native.isControlPressed(0, KEYS.UP)) zModifier += speed;
-        if (native.isControlPressed(0, KEYS.DOWN)) zModifier -= speed;
+        if (native.isDisabledControlPressed(0, KEYS.UP)) zModifier += speed;
+        if (native.isDisabledControlPressed(0, KEYS.DOWN)) zModifier -= speed;
 
-        if (!NoClip.isVectorEqual(new alt.Vector3(currentPos.x, currentPos.y, currentPos.z + zModifier), alt.Player.local.pos)) native.setEntityCoordsNoOffset(alt.Player.local.scriptID, currentPos.x, currentPos.y, currentPos.z + zModifier, false, false, false);
+        if (!NoClip.isVectorEqual(new alt.Vector3(currentPos.x, currentPos.y, currentPos.z + zModifier), entity.pos)) native.setEntityCoordsNoOffset(entity.scriptID, currentPos.x, currentPos.y, currentPos.z + zModifier, false, false, false);
     }
 
     static addSpeedToVector(vector1: alt.Vector3, vector2: alt.Vector3, speed: number, lr: boolean = false): alt.Vector3 {

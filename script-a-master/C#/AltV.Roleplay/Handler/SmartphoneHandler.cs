@@ -297,7 +297,7 @@ namespace Altv_Roleplay.Handler
                     phoneNumber != Characters.GetCharacterPhonenumber(player.CharacterId) || !Characters.ExistPhoneNumber(targetPhoneNumber) ||
                     !CharactersPhone.ExistChatByNumbers(phoneNumber, targetPhoneNumber)) return;
 
-                long unix = DateTimeOffset.Now.ToUnixTimeSeconds() / 1000;
+                long unix = DateTimeOffset.Now.ToUnixTimeSeconds();
                 CharactersPhone.CreatePhoneChatMessage(chatId, phoneNumber, targetPhoneNumber, int.Parse(unix.ToString()), message);
                 requestChatMessages(player, chatId);
 

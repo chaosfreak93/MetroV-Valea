@@ -31,13 +31,6 @@ namespace Altv_Roleplay.Utils
             player.Kick(reason);
         }
 
-        public static bool IsCefOpen(this ClassicPlayer player) {
-            if (player == null || !player.Exists) return false;
-
-            player.GetSyncedMetaData("IsCefOpen", out bool isCefOpened);
-            return isCefOpened;
-        }
-
         public static void updateTattoos(this ClassicPlayer player) {
             if (player == null || !player.Exists || player.CharacterId <= 0) return;
 
@@ -170,14 +163,25 @@ namespace Altv_Roleplay.Utils
             if (player == null || !player.Exists) return;
 
             if (cuffType == "handcuffs")
-                AltAsync.Do(() => player.SetSyncedMetaData("HasHandcuffs", isCuffed));
+                AltAsync.Do(() =>
+                {
+                    player.SetSyncedMetaData("HasHandcuffs", isCuffed);
+                    if (isCuffed) player.Emit("Client:CuffManager:GiveNormalCuffs");
+                    else player.Emit("Client:CuffManager:TakeNormalCuffs");
+                });
             else if (cuffType == "ropecuffs")
-                AltAsync.Do(() => player.SetSyncedMetaData("HasRopeCuffs", isCuffed));
+                AltAsync.Do(() =>
+                {
+                    player.SetSyncedMetaData("HasRopeCuffs", isCuffed);
+                    if (isCuffed) player.Emit("Client:CuffManager:GiveNormalCuffs");
+                    else player.Emit("Client:CuffManager:TakeNormalCuffs");
+                });
             else if (cuffType == "footcuffs")
                 AltAsync.Do(() =>
                 {
                     player.SetSyncedMetaData("HasFootCuffs", isCuffed);
-                    if (!isCuffed) player.EmitLocked("Client:Cuffs:FootTake");
+                    if (isCuffed) player.Emit("Client:CuffManager:GiveFootCuffs");
+                    else player.Emit("Client:CuffManager:TakeFootCuffs");
                 });
         }
 

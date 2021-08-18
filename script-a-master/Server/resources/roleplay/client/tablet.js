@@ -143,12 +143,12 @@ alt.onServer('Client:Tablet:closeCEF', ()=>{
     closeTabletCEF();
 });
 let openTabletCEF = function() {
-    if (tabletBrowser == null && alt.Player.local.getSyncedMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
+    if (tabletBrowser == null && alt.Player.local.getMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
         alt.showCursor(true);
         alt.toggleGameControls(false);
         tabletBrowser = new alt.WebView("http://resource/client/cef/tablet/index.html");
         tabletBrowser.focus();
-        alt.emitServer("Server:CEF:setCefStatus", true);
+        alt.emit("Client:HUD:setCefStatus", true);
         tabletBrowser.on("Client:Tablet:cefIsReady", ()=>{
             tabletReady = true;
             alt.emitServer("Server:Tablet:RequestTabletData");
@@ -314,7 +314,7 @@ function sendDispatchToFaction(factionId, msg) {
 }
 export function closeTabletCEF() {
     if (tabletBrowser != null) {
-        alt.emitServer("Server:CEF:setCefStatus", false);
+        alt.emit("Client:HUD:setCefStatus", false);
         tabletBrowser.off("Client:Tablet:AppStoreInstallUninstallApp", AppStoreInstallUninstallApp);
         tabletBrowser.off("Client:Tablet:BankingAppnewTransaction", BankingAppnewTransaction);
         tabletBrowser.off("Client:Tablet:EventsAppNewEntry", EventsAppNewEntry);

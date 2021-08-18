@@ -1,5 +1,8 @@
 import * as native from 'natives';
 import * as alt from 'alt-client';
+import { hudBrowser } from './hud';
+
+let curSpeed: number = 0;
 
 alt.onServer("Client:DoorManager:ManageDoor", (doorHash: string, doorHash2: string, pos: alt.Vector3, pos2: alt.Vector3, isLocked: boolean) => {
     if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
@@ -117,7 +120,11 @@ alt.everyTick(() => {
     native.setPedConfigFlag(alt.Player.local.scriptID, 331, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 429, true);
     native.disableControlAction(0, 36, true);
-
+    if (native.isPedArmed(alt.Player.local.scriptID, 6)) {
+        native.disableControlAction(0, 140, true);
+        native.disableControlAction(0, 141, true);
+        native.disableControlAction(0, 142, true);
+    }
     native.disableControlAction(1, 243, true);
     native.disableControlAction(1, 249, true);
 
@@ -125,8 +132,19 @@ alt.everyTick(() => {
         alt.emit("SaltyChat:ToggleRange");
     }
 
-    if (alt.Player.local.vehicle && native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
-        native.disableControlAction(1, 86, true);
+    if (alt.Player.local.vehicle) {
+        const roll: number = native.getEntityRoll(alt.Player.local.vehicle.scriptID)
+        if (roll > 75 || roll < -75) {
+            native.disableControlAction(2, 59, true) // disable left/right
+            native.disableControlAction(2, 60, true) // disable up/down
+        }
+        if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
+            native.disableControlAction(1, 86, true);
+        }
+        GetVehicleSpeed(alt.Player.local.vehicle);
+        if (hudBrowser != null) {
+            hudBrowser.emit("CEF:HUD:SetPlayerHUDVehicleSpeed", curSpeed);
+        }
     }
 });
 
@@ -143,9 +161,20 @@ export function setAudioData(): void {
 }
 
 alt.setInterval(() => {
-    native.setRadarAsExteriorThisFrame()
-    native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0)
+    let interior = native.getInteriorFromEntity(alt.Player.local.scriptID);
+    if (native.isValidInterior(interior)) {
+        let interiorInfo = native.getInteriorInfo(interior);
+        native.setRadarAsInteriorThisFrame(interiorInfo[2], interiorInfo[1].x, interiorInfo[1].y, 0, 0);
+    } else {
+        native.setRadarAsExteriorThisFrame();
+        native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0);
+    }
 }, 1);
+
+function GetVehicleSpeed(vehicle: alt.Vehicle) {
+    let speed = native.getEntitySpeed(vehicle.scriptID);
+    curSpeed = speed * 3.6;
+}
 
 export default {
     setMinimapData,
