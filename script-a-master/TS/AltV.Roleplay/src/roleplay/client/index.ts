@@ -23,6 +23,7 @@ import './utilities';
 import './vehicle';
 import './weatherhandler';
 import './tuningmenu';
+import './weapon';
 //CASINO
 import './casino/main';
 import './casino/lobby';
