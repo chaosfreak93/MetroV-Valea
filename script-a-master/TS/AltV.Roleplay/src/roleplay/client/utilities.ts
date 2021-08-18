@@ -71,6 +71,25 @@ export function loadStreamedTextureDictAsync(streamedTextureDict: string): Promi
     });
 }
 
+export function gotoCoords(movePos: alt.Vector3, moveRot: alt.Vector3): Promise<any> {
+    return new Promise((resolve, reject) => {
+        let coords = native.getEntityCoords(alt.Player.local.scriptID, false);
+
+        if (coords.x >= (movePos.x - 0.01) && coords.x <= (movePos.x + 0.01) && coords.y >= (movePos.y - 0.01) && coords.y <= (movePos.y + 0.01))
+            return resolve(true);
+
+        native.taskGoStraightToCoord(alt.Player.local.scriptID, movePos.x, movePos.y, movePos.z, 1, 5, moveRot.toDegrees().z, 0);
+
+        let interval = alt.setInterval(() => {
+            if (coords.x >= (movePos.x - 0.01) && coords.x <= (movePos.x + 0.01) && coords.y >= (movePos.y - 0.01) && coords.y <= (movePos.y + 0.01)) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
+
+
 export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
     return new Promise((resolve, reject) => {
         if (alt.Player.local.vehicle)
@@ -80,6 +99,23 @@ export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
 
         let interval = alt.setInterval(() => {
             if (alt.Player.local.vehicle) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
+
+export function registerTarget(name: string, objectModel: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        if (native.isNamedRendertargetRegistered(name))
+            return resolve(true);
+
+        native.registerNamedRendertarget(name, false);
+        native.linkNamedRendertarget(alt.hash(objectModel));
+
+        let interval = alt.setInterval(() => {
+            if (native.isNamedRendertargetRegistered(name)) {
                 alt.clearInterval(interval);
                 return resolve(true);
             }

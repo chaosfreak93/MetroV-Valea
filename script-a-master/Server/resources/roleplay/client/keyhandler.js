@@ -19,8 +19,7 @@ class KeyHandler {
             alt.emitServer("Server:KeyHandler:PressU");
         } else if (key == 'I'.charCodeAt(0)) {
             if (inventoryBrowser == null) {
-                alt.log(`CEFState: ${player.getSyncedMeta("IsCefOpen")}`);
-                if (player.getSyncedMeta("HasFootCuffs") == true || player.getSyncedMeta("HasHandcuffs") == true || player.getSyncedMeta("HasRopeCuffs") == true || player.getSyncedMeta("IsCefOpen") == true) return;
+                if (player.getSyncedMeta("HasFootCuffs") == true || player.getSyncedMeta("HasHandcuffs") == true || player.getSyncedMeta("HasRopeCuffs") == true || player.getMeta("IsCefOpen") == true) return;
                 Inventory.openInventoryCEF(true);
             } else {
                 Inventory.closeInventoryCEF();
@@ -37,6 +36,8 @@ class KeyHandler {
                 }
             }
         } else if (key === "Q".charCodeAt(0) && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
+            if (lastInteract + 500 > Date.now()) return;
+            lastInteract = Date.now();
             if (native.isVehicleSirenOn(player.vehicle.scriptID)) {
                 native.setVehicleHasMutedSirens(player.vehicle.scriptID, false);
                 alt.emitServer("Server:Sirens:ForwardSirenMute", player.vehicle.id, false);
@@ -47,6 +48,8 @@ class KeyHandler {
                 native.setVehicleSiren(player.vehicle.scriptID, true);
             }
         } else if (key === 18 && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
+            if (lastInteract + 500 > Date.now()) return;
+            lastInteract = Date.now();
             if (native.isVehicleSirenOn(player.vehicle.scriptID) && !native.isVehicleSirenAudioOn(player.vehicle.scriptID)) {
                 alt.emitServer("Server:Sirens:ForwardSirenMute", player.vehicle.id, false);
             } else if (native.isVehicleSirenOn(player.vehicle.scriptID) && native.isVehicleSirenAudioOn(player.vehicle.scriptID)) {
@@ -68,6 +71,8 @@ class KeyHandler {
                 toggleCrouch = false;
             }
         } else if (key == "J".charCodeAt(0) && player.vehicle && (player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) || player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, 0, true)) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
+            if (lastInteract + 500 > Date.now()) return;
+            lastInteract = Date.now();
             alt.emit("SaltyChat:UseMegaphone", true);
         }
     }

@@ -134,17 +134,54 @@ namespace Altv_Roleplay.Model
                 };
 
                 ServerFactionDispatches_.Add(data);
+                
+                using (gtaContext db = new gtaContext())
+                {
+                    db.Server_Faction_Dispatch.Add(data);
+                    db.SaveChanges();
+                }
+
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
         }
+        
+        public static void AddNewFactionDispatchNoName(string alternativename, int factionId, string message, Position pos)
+        {
+            try
+            {
+                if (factionId <= 0) return;
 
-        public static bool ExistDispatchBySender(int senderId) {
+                var data = new ServerFaction_Dispatch
+                {
+                    senderCharId = 0,
+                    factionId = factionId,
+                    message = message,
+                    Date = DateTime.Now.ToString("d", CultureInfo.CreateSpecificCulture("de-DE")),
+                    Destination = pos,
+                    altname = alternativename
+                };
+
+                ServerFactionDispatches_.Add(data);
+
+                using (gtaContext db = new gtaContext())
+                {
+                    db.Server_Faction_Dispatch.Add(data);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"{e}");
+            }
+        }
+
+        public static bool ExistDispatchBySender(int senderId, int factionId) {
             try {
                 if (senderId <= 0) return false;
 
-                var dispatch = ServerFactionDispatches_.FirstOrDefault(x => x.senderCharId == senderId);
+                var dispatch = ServerFactionDispatches_.FirstOrDefault(x => x.senderCharId == senderId && x.factionId == factionId);
                 if (dispatch != null) return true;
             }
             catch (Exception e) {
@@ -174,8 +211,14 @@ namespace Altv_Roleplay.Model
 
                 var dispatch = ServerFactionDispatches_.FirstOrDefault(x => x.factionId == factionId && x.senderCharId == senderId);
 
-                if (dispatch != null)
+                if (dispatch != null) {
                     ServerFactionDispatches_.Remove(dispatch);
+
+                    using (gtaContext db = new gtaContext()) {
+                        db.Server_Faction_Dispatch.Remove(dispatch);
+                        db.SaveChanges();
+                    }
+                }
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
@@ -188,33 +231,13 @@ namespace Altv_Roleplay.Model
 
                 var dispatch = ServerFactionDispatches_.FirstOrDefault(x => x.senderCharId == senderId);
 
-                if (dispatch != null)
+                if (dispatch != null) {
                     ServerFactionDispatches_.Remove(dispatch);
-            }
-            catch (Exception e) {
-                Alt.Log($"{e}");
-            }
-        }
 
-        public static void createFactionDispatch(IPlayer player, int factionId, string msg, string notificationMsg) {
-            try {
-                if (player == null || !player.Exists || factionId <= 0 || msg.Length <= 0) return;
-
-                var charId = (int) player.GetCharacterMetaId();
-                if (charId <= 0) return;
-
-                if (ExistDispatch(factionId, charId))
-                    RemoveDispatch(factionId, charId);
-
-                AddNewFactionDispatch(charId, factionId, msg, player.Position);
-
-                foreach (var p in Alt.GetAllPlayers().Where(x => x != null && x.Exists && x.GetCharacterMetaId() > 0).ToList()) {
-                    if (p == null || !p.Exists) continue;
-                    if (!IsCharacterInAnyFaction((int) p.GetCharacterMetaId()) || !IsCharacterInFactionDuty((int) p.GetCharacterMetaId()) ||
-                        GetCharacterFactionId((int) p.GetCharacterMetaId()) != factionId) continue;
-
-                    p.Emit("Client:Tablet:sendDispatchSound", "../utils/sounds/dispatch.mp3");
-                    HUDHandler.SendNotification(p, 1, 3500, notificationMsg);
+                    using (gtaContext db = new gtaContext()) {
+                        db.Server_Faction_Dispatch.Remove(dispatch);
+                        db.SaveChanges();
+                    }
                 }
             }
             catch (Exception e) {
@@ -673,7 +696,8 @@ namespace Altv_Roleplay.Model
                 x.Date,
                 posX = x.Destination.X,
                 posY = x.Destination.Y,
-                posZ = x.Destination.Z
+                posZ = x.Destination.Z,
+                altname = x.altname
             }).ToList();
 
             return JsonSerializer.Serialize(items);

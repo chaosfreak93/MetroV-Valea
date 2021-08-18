@@ -62,7 +62,8 @@ namespace Altv_Roleplay.Handler
                 player.DeleteData("HasMaskOn");
             } else if (action == "hut") {
                 if (!player.HasData("HasHatOn")) {
-                    player.SetProps(0, 11, 0);
+                    if (!Characters.GetCharacterGender(charid)) player.SetProps(0, 11, 0);
+                    else player.SetProps(0, 57, 0);
                     player.SetData("HasHatOn", true);
                     return;
                 }
@@ -73,7 +74,8 @@ namespace Altv_Roleplay.Handler
                 player.DeleteData("HasHatOn");
             } else if (action == "brille") {
                 if (!player.HasData("HasGlassesOn")) {
-                    player.SetProps(1, 0, 0);
+                    if (!Characters.GetCharacterGender(charid)) player.SetProps(1, 0, 0);
+                    else player.SetProps(1, 12, 0);
                     player.SetData("HasGlassesOn", true);
                     return;
                 }
@@ -119,7 +121,8 @@ namespace Altv_Roleplay.Handler
                 player.DeleteData("HasPantsOn");
             } else if (action == "schuhe") {
                 if (!player.HasData("HasShoesOn")) {
-                    player.SetClothes(6, 34, 0, 0);
+                    if (!Characters.GetCharacterGender(charid)) player.SetClothes(6, 34, 0, 2);
+                    else player.SetClothes(6, 35, 0, 2);
                     player.SetData("HasShoesOn", true);
                     return;
                 }
@@ -140,7 +143,7 @@ namespace Altv_Roleplay.Handler
             }
 
 
-            if (TypeText == "none" || Characters.GetCharacterClothes(charid, TypeText) == -2) return;
+            if (TypeText == "none" || Characters.GetCharacterClothes(charid, TypeText) == -2 || ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText), (byte)Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId))) == 0) return;
 
             if (ClothesType == "Prop") {
                 player.SetProps(type, 

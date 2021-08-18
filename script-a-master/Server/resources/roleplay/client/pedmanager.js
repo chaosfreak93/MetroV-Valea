@@ -23,11 +23,15 @@ class PedManager {
         native.setPedCanRagdoll(pedHandle, false);
         native.setPedDiesWhenInjured(pedHandle, false);
         native.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
+        native.setBlockingOfNonTemporaryEvents(pedHandle, true);
         native.setPedFleeAttributes(pedHandle, 0, false);
         native.setPedConfigFlag(pedHandle, 32, false); // ped cannot fly thru windscreen
         native.setPedConfigFlag(pedHandle, 281, true); // ped no writhe
         native.setPedGetOutUpsideDownVehicle(pedHandle, false);
         native.setPedCanEvasiveDive(pedHandle, false);
+        native.setPedCombatAttributes(pedHandle, 17, true);
+        native.setEntityInvincible(pedHandle, true);
+        native.setPedSeeingRange(pedHandle, 0);
     }
 }
 export { PedManager as default };

@@ -5,6 +5,7 @@ import './blipmanager';
 import './charcreator';
 import './clothestore';
 import './crouch';
+import './cuff';
 import './fingerpointing';
 import './hud';
 import './inventory';
@@ -21,6 +22,9 @@ import './tablet';
 import './utilities';
 import './vehicle';
 import './weatherhandler';
-import './tuningmenu'; /*  CASINO
+import './tuningmenu';
+import './weapon';
+//CASINO
 import './casino/main';
-import './casino/lobby';*/ 
+import './casino/lobby';
+import './casino/podium';

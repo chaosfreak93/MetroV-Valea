@@ -9,20 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../utils/toastr.min.css">
     <link rel="stylesheet" href="../utils/mdb/css/mdb-sass.css">
-    <script type="text/javascript" src="../utils/colorpicker.js"></script>
     <script type="text/javascript" src="viewport.js"></script>
     <title>HUD</title>
 </head>
 
 <body>
-<!-- Geld-HUD -->
-<div class="money">
-    <div id="content">0$</div>
-    <div class="iconmoney" id="wallet" style="display:block;">
-        <i class="fas fa-dollar-sign"></i>
-    </div>
-</div>
-
 <ul id="InteractionMenu-List"></ul>
 
 <div id="hudbox">
@@ -313,11 +304,12 @@
 
 <div id="JailCEFBox">
     <p class="closebtn" onclick="closeJailCEFBox();"><i class="fas fa-times"></i></p>
-    <img src="../utils/img/license-plate.png" style="margin-top: 15px; margin-bottom: 12px;">
+    <img src="../utils/img/inventory/Handschellen.png" style="margin-top: 15px; margin-bottom: 12px;">
     <p class="title">GEFÄNGNISZEIT</p>
-    <p class="description">...</p>
+    <p class="description"></p>
     <hr>
-    <input id="JailCEFBox-jailTime" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <input id="JailCEFBox-jailTime" type="number" placeholder="Minuten" value="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <div id="JailCEFButton"></div>
 </div>
 
 <div id="HotelManageCEFBox">
@@ -862,32 +854,6 @@
     <span class="signaturetitle FactionCardTitleColor">Unterschrift</span>
     <span id="UserFactionCard-signature" class="FactionCardColor">Maximilian von Mustermann</span>
     <span id="UserFactionCard-joinInfo" class="FactionCardColor">01.01.2020 (122)</span>
-</div>
-
-<div id="VehicleTuningMainMenuBox">
-    <span class="title">Fahrzeug tunen</span>
-    <div class="circlediv" onclick="closeTuningMenuCEF();"><i class="fa fa-times-circle"></i></div>
-    <ul id="VehicleTuningMainMenuBoxList"></ul>
-</div>
-
-<div id="VehicleTuningMenuColorSelection">
-    <span class="title">Farbe auswählen</span>
-    <div class="circlediv" onclick="closeTuningSubWindow('VehicleTuningMenuColorSelection');"><i class="fa fa-times-circle"></i></div>
-    <div id="color-picker" class="cp-default"></div>
-
-    <div class="inputArea">
-        <span class="title">WERTE</span>
-        <label id="rgbRVal" for="rgbRval">ROT</label>
-        <input type="number" id="rgbRvalField" name="rgbRval" value="255" readonly="readonly" />
-
-        <label id="rgbGval" for="rgbGval">GRÜN</label>
-        <input type="number" id="rgbGvalField" name="rgbGval" value="255" readonly="readonly" />
-
-        <label id="rgbBval" for="rgbBval">BLAU</label>
-        <input type="number" id="rgbBvalField" name="rgbBval" value="255" readonly="readonly" />
-    </div>
-    <button style="margin-left: 12%" type="button" class="btn btn-success" onclick="VehicleTuningMenuColorSelectionTestColor(false)">Testen</button>
-    <button type="button" class="btn btn-success" onclick="VehicleTuningMenuColorSelectionTestColor(true)">Einbauen</button>
 </div>
 
 <div id="Deathscreen-Box">
@@ -1629,7 +1595,6 @@
             $("#voicebox").fadeTo(1000, 1, function() {});
             $("#foodbox").fadeTo(1000, 1, function() {});
             $("#waterMarkImage").fadeTo(1000, 1, function() {});
-            $(".money").fadeTo(500, 1, function() {});
         }, 1000);
         //document.getElementById("phoneBackgroundImage").style.backgroundImage = "../utils/img/phone/stellar.png')";
         $( ".layer2" ).css( "background-image", 'url("../utils/img/phone/wallpaper6.png")' );
@@ -1668,11 +1633,6 @@
             }
         }
     });
-
-    // Money HUD
-    function updateMoneyHUD(currentMoney) {
-        $("#content").html(`${numberWithCommas(currentMoney)} $`);
-    }
 
     function numberWithCommas(x) {
         let numberwithComma = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -2553,6 +2513,7 @@
         }
 
         function shopCEFBoxCreateCEF(itemArray, shopId, isOnlySelling) {
+            console.log("Open Shops");
             itemArray = JSON.parse(itemArray);
             let shopCefHTML = "";
             globalShopId = shopId;
@@ -4442,11 +4403,25 @@
             });
         }
 
-        function shopCEFBoxCreateCEF(charid) {
-            document.getElementById("phone-police-addwanteds-stgb").innerHTML += `<button id="JailCEFBox-setJailTime" type="button" class="btn btn-sm btn-danger" data-charid="${charid}"><i class="fa fa-check"></i></button>`;
+        function JailCEFBoxCreateCEF(charid) {
+            document.getElementById("JailCEFBox-jailTime").value = 1;
+            $("#JailCEFButton").html(`<button id="JailCEFBox-setJailTime" type="button" class="btn btn-sm btn-danger" data-charid="${charid}" onclick='jailPlayer()'><i class="fa fa-check"></i></button>`);
+            $("#JailCEFBox").fadeTo(250, 1, function() {
+                $("#JailCEFBox").show();
+            });
         }
 
         function closeJailCEFBox() {
+            $("#JailCEFBox").fadeOut(250, function() {
+                alt.emit("Client:JailTime:destroyCEF");
+            });
+        }
+
+        function jailPlayer() {
+            let input = document.getElementById("JailCEFBox-jailTime").value;
+            let charid = $("#JailCEFBox-setJailTime").data("charid");
+            if (input <= 0 && input > 180 || charid <= 0) return;
+            alt.emit("Client:JailTime:setJailTime", charid, input);
             $("#JailCEFBox").fadeOut(250, function() {
                 alt.emit("Client:JailTime:destroyCEF");
             });
@@ -5198,82 +5173,6 @@
             alt.emit('Client:Animations:hideAnimationMenu');
         }
 
-        /* Tuning */
-        var CurTuningMenuWindow = "none",
-            SelectedVehicleTuningMenuColorBoxModtype = "none";
-
-        function ShowACLSTuningMenuWindow(subwindow, modtype) {
-            if (CurTuningMenuWindow != "none") {
-                document.getElementById(CurTuningMenuWindow).style.display = "none";
-            }
-            document.getElementById(subwindow).style.display = "block";
-            CurTuningMenuWindow = subwindow;
-            SelectedVehicleTuningMenuColorBoxModtype = modtype;
-        }
-
-        function closeTuningSubWindow(subwindow) {
-            document.getElementById(subwindow).style.display = "none";
-        }
-
-        function closeTuningMenuCEF() {
-            $("#VehicleTuningMainMenuBox").fadeOut(100, function() {
-                $("#VehicleTuningMainMenuBox").hide();
-                $("#VehicleTuningMenuColorSelection").hide();
-                alt.emit("Client:Tuning:closeCEF");
-            });
-        }
-
-        function VehicleTuningMenuColorSelectionTestColor(install) {
-            var r = $("#rgbRvalField").val();
-            var g = $("#rgbGvalField").val();
-            var b = $("#rgbBvalField").val();
-            if (install) {
-                alt.emit("Client:Tuning:switchTuningColor", "Build", SelectedVehicleTuningMenuColorBoxModtype, r, g, b);
-            } else {
-                alt.emit("Client:Tuning:switchTuningColor", "Test", SelectedVehicleTuningMenuColorBoxModtype, r, g, b);
-            }
-        }
-
-        function SwitchTuning(Type, ID, Action) {
-            alt.emit("Client:Tuning:switchTuning", Type, ID, Action);
-        }
-
-        function openVehicleTuningMenu(Items) {
-            var items = Items.split(";");
-            var html = "";
-
-            for (var i = 0; i < items.length; i++) {
-                var itemValues = items[i].split(":");
-                var modTyp = itemValues[0];
-                var modTypeID = itemValues[1];
-
-                var imagemodtype = modTyp.toLowerCase();
-                imagemodtype = imagemodtype.replace(/ä/g, 'ae');
-                imagemodtype = imagemodtype.replace(/ö/g, 'oe');
-                imagemodtype = imagemodtype.replace(/ü/g, 'ue');
-                imagemodtype = imagemodtype.replace('ß', 'ss');
-                imagemodtype = imagemodtype.replace(' ', '');
-
-                if (modTyp.match("Neonröhren")) {
-                    html += `<li><span class='title'>Unterbodenbeleuchtung</span><img src='../utils/vehiclemods/unterbodenbeleuchtung.png'>`;
-                } else {
-                    html += `<li><span class='title'>${modTyp}</span><img src='../utils/vehiclemods/${imagemodtype}.png'>`;
-                }
-
-                if (modTyp.match("Neonröhren") || modTyp.match("Reifenqualm")) {
-                    html += "<span class='actionbtn' onclick='ShowACLSTuningMenuWindow(`VehicleTuningMenuColorSelection`, `" + modTyp + "`);'>Farbe auswählen</span>";
-                } else {
-                    html += "<div class='far-div1' onclick='SwitchTuning(`Preview` ,`" + modTypeID + "`, `>`);'><i class='far fa-arrow-alt-circle-right'></i></div>" +
-                        "<div class='far-div2' onclick='SwitchTuning(`Preview` ,`" + modTypeID + "`, `<`);'> <i class='far fa-arrow-alt-circle-left'></i></div>" +
-                        "<span class='actionbtn' onclick='SwitchTuning(`Build` ,`" + modTypeID + "`, `>`);'>Montieren</span>";
-                }
-                html += "</li>";
-            }
-
-            $("#VehicleTuningMainMenuBoxList").html(html);
-            $("#VehicleTuningMainMenuBox").fadeTo(1000, 1, function() {});
-        }
-
         function ShowPhoneCallError(errno) {
             stopPhoneAudioLoop();
             let msg,
@@ -5587,11 +5486,6 @@
         playAudio(path);
     });
 
-    // MONEY
-    alt.on("CEF:HUD:updateMoney", (money) => {
-        updateMoneyHUD(money);
-    });
-
     //Alt On Events
 
     alt.on("CEF:Farming:createCEF", (neededItem, neededItemAmount, neededItemTWO, neededItemTWOAmount, neededItemTHREE, neededItemTHREEAmount, producedItem, producedItemAmount, duration) => {
@@ -5663,9 +5557,6 @@
         $("#bankAccountManageForm").fadeOut(500, function() {
             $("#bankAccountManageForm").hide();
         });
-
-        $("#VehicleTuningMainMenuBox").hide();
-        $("#VehicleTuningMenuColorSelection").hide();
 
         $("#identityCardApplyForm").fadeOut(300, 0, function() {
             $("#identityCardApplyForm").hide();
@@ -5986,10 +5877,6 @@
         hideAnimationMenu();
     });
 
-    alt.on("CEF:Tuning:openTuningMenu", (Items) => {
-        openVehicleTuningMenu(Items);
-    });
-
     /* Smartphone Alt Ons */
     alt.on("CEF:Smartphone:equipPhone", (isEquipped, phoneNumber, isFlyModeEnabled, wallpaperId) => {
         activatePhone(isEquipped);
@@ -6082,17 +5969,11 @@
     alt.on("CEF:TattooShop:sendItemsToClient", (array) => {
         SetTattooShopItems(array);
     });
-</script>
-<script type="text/javascript">
-    ColorPicker(
 
-        document.getElementById('color-picker'),
-
-        function(hex, hsv, rgb) {
-            document.getElementById("rgbRvalField").value = rgb.r;
-            document.getElementById("rgbGvalField").value = rgb.g;
-            document.getElementById("rgbBvalField").value = rgb.b;
-        });
+    //Jail
+    alt.on("CEF:JailTime:openCEF", (charId) => {
+        JailCEFBoxCreateCEF(charId);
+    });
 </script>
 
 </html>

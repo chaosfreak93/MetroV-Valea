@@ -51,20 +51,23 @@ alt.onServer('chat:message', pushMessage);
 alt.on('keyup', (key) => {
     if (loaded) {
         if (!opened && key === 0x23 && alt.gameControlsEnabled()) {
-            //if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
+            if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
             opened = true;
             view.emit('openChat', false);
+            alt.emitServer("Server:CEF:setCefStatus", true);
             view.focus();
             alt.toggleGameControls(false);
         } else if (!opened && key === 0xBF && alt.gameControlsEnabled()) {
-            //if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
+            if (alt.Player.local.getSyncedMeta("ADMINLEVEL") <= 0) return;
             opened = true;
             view.emit('openChat', true);
+            alt.emitServer("Server:CEF:setCefStatus", true);
             view.focus();
             alt.toggleGameControls(false);
         } else if (opened && key == 0x1B) {
             opened = false;
             view.emit('closeChat');
+            alt.emitServer("Server:CEF:setCefStatus", false);
             view.unfocus();
             alt.toggleGameControls(true);
         }

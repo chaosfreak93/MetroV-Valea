@@ -4,6 +4,7 @@ let charcreatorBrowser = null;
 let charcreatorCam = null;
 let pedHandle = null;
 let modelHash = null;
+let lastInteract = 0;
 class CharCreator {
     static CreateCEF(player) {
         if (charcreatorBrowser == null) {
@@ -64,6 +65,8 @@ class CharCreator {
                 native.setPedHairColor(pedHandle, parseInt(headoverlaysjson[2][13]), parseInt(headoverlaysjson[1][13]));
             });
             charcreatorBrowser.on("Client:Charcreator:SaveCharacter", (vorname, nachname, birthdate, gender, facefeaturesarray, headblendsdataarray, headoverlaysarray, clothesarray)=>{
+                if (lastInteract + 500 > Date.now()) return;
+                lastInteract = Date.now();
                 native.clearPedProp(alt.Player.local.scriptID, 0);
                 native.clearPedProp(alt.Player.local.scriptID, 1);
                 native.clearPedProp(alt.Player.local.scriptID, 2);

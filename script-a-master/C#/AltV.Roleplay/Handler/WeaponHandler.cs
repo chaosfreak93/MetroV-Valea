@@ -1,12 +1,13 @@
 ﻿using System;
 using AltV.Net;
+using AltV.Net.Async;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using Altv_Roleplay.Model;
 
 namespace Altv_Roleplay.Handler
 {
-    internal class WeaponHandler
+    internal class WeaponHandler : IScript
     {
         public static void EquipCharacterWeapon(IPlayer player, string type, string wName, int amount, string fromContainer) {
             try {
@@ -153,6 +154,7 @@ namespace Altv_Roleplay.Handler
 
                         if (primWeapon == "None") {
                             player.GiveWeapon(wHash, 0, true);
+                            player.Emit("Client:Weapon:SetWeaponAmmo", (uint)wHash, 0);
                             Characters.SetCharacterWeapon(player, "PrimaryWeapon", wName);
                             Characters.SetCharacterWeapon(player, "PrimaryAmmo", 0);
                             SetWeaponComponents(player, wName);
@@ -166,7 +168,6 @@ namespace Altv_Roleplay.Handler
                             var multiWeight = itemWeight * wAmmoAmount;
                             var finalWeight = bigWeight + multiWeight;
                             var helpWeight = 15f + Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId));
-                            var inBackpack = false;
 
                             if (invWeight + multiWeight > 15f && backpackWeight + multiWeight >
                                 Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId))) {
@@ -174,18 +175,7 @@ namespace Altv_Roleplay.Handler
                                 return;
                             }
 
-                            if (wAmmoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) {
-                                if (invWeight + multiWeight <= 15f) {
-                                    CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", wAmmoAmount, "inventory");
-                                    inBackpack = false;
-                                } else {
-                                    inBackpack = true;
-                                }
-
-                                if (backpackWeight + multiWeight <= Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId)) &&
-                                    inBackpack)
-                                    CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", wAmmoAmount, "backpack");
-                            }
+                            if (wAmmoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) player.Emit("Client:Weapon:GetWeaponAmmo", (uint)wHash, ammoWName);
 
                             if (finalWeight <= helpWeight) {
                                 HUDHandler.SendNotification(player, 2, 5000, $"{wName} erfolgreich abgelegt.");
@@ -236,7 +226,6 @@ namespace Altv_Roleplay.Handler
                                 var multiWeight = itemWeight * ammoAmount;
                                 var finalWeight = bigWeight + multiWeight;
                                 var helpWeight = 15f + Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId));
-                                var inBackpack = false;
 
                                 if (invWeight + multiWeight > 15f && backpackWeight + multiWeight >
                                     Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId))) {
@@ -244,18 +233,7 @@ namespace Altv_Roleplay.Handler
                                     return;
                                 }
 
-                                if (ammoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) {
-                                    if (invWeight + multiWeight <= 15f) {
-                                        CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", ammoAmount, "inventory");
-                                        inBackpack = false;
-                                    } else {
-                                        inBackpack = true;
-                                    }
-
-                                    if (backpackWeight + multiWeight <=
-                                        Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId)) && inBackpack)
-                                        CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", ammoAmount, "backpack");
-                                }
+                                if (ammoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) player.Emit("Client:Weapon:GetWeaponAmmo", (uint)wHash, ammoWName);
 
                                 if (finalWeight <= helpWeight) {
                                     HUDHandler.SendNotification(player, 2, 5000, $"{wName} erfolgreich abgelegt.");
@@ -279,26 +257,14 @@ namespace Altv_Roleplay.Handler
                             var multiWeight = itemWeight * ammoAmount;
                             var finalWeight = bigWeight + multiWeight;
                             var helpWeight = 15f + Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId));
-                            var inBackpack = false;
-
+                            
                             if (invWeight + multiWeight > 15f && backpackWeight + multiWeight >
                                 Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId))) {
                                 HUDHandler.SendNotification(player, 4, 5000, "Nicht genügend Platz.");
                                 return;
                             }
 
-                            if (ammoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) {
-                                if (invWeight + multiWeight <= 15f) {
-                                    CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", ammoAmount, "inventory");
-                                    inBackpack = false;
-                                } else {
-                                    inBackpack = true;
-                                }
-
-                                if (backpackWeight + multiWeight <= Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId)) &&
-                                    inBackpack)
-                                    CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", ammoAmount, "backpack");
-                            }
+                            if (ammoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) player.Emit("Client:Weapon:GetWeaponAmmo", (uint)wHash, ammoWName);
 
                             if (finalWeight <= helpWeight) {
                                 HUDHandler.SendNotification(player, 2, 5000, $"{wName} erfolgreich abgelegt.");
@@ -322,20 +288,8 @@ namespace Altv_Roleplay.Handler
                                 var multiWeight = itemWeight * ammoAmount;
                                 var finalWeight = bigWeight + multiWeight;
                                 var helpWeight = 15f + Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId));
-                                var inBackpack = false;
 
-                                if (ammoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) {
-                                    if (invWeight + multiWeight <= 15f) {
-                                        CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", ammoAmount, "inventory");
-                                        inBackpack = false;
-                                    } else {
-                                        inBackpack = true;
-                                    }
-
-                                    if (backpackWeight + multiWeight <=
-                                        Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId)) && inBackpack)
-                                        CharactersInventory.AddCharacterItem(charId, $"{ammoWName} Munition", ammoAmount, "backpack");
-                                }
+                                if (ammoAmount >= 1 && ammoWName != "None" && finalWeight <= helpWeight) player.Emit("Client:Weapon:GetWeaponAmmo", (uint)wHash, ammoWName);
 
                                 if (finalWeight <= helpWeight) {
                                     HUDHandler.SendNotification(player, 2, 5000, $"{wName} erfolgreich abgelegt.");
@@ -357,7 +311,7 @@ namespace Altv_Roleplay.Handler
                             HUDHandler.SendNotification(player, 3, 5000, "Du hast keine Primärwaffe angelegt.");
                         } else if (primaryWeapon == normalWName) {
                             var newAmmo = (int) Characters.GetCharacterWeapon(player, "PrimaryAmmo") + amount;
-                            player.GiveWeapon(wHash, newAmmo, true);
+                            player.Emit("Client:Weapon:SetWeaponAmmo", (uint)wHash, newAmmo);
                             Characters.SetCharacterWeapon(player, "PrimaryAmmo", newAmmo);
                             HUDHandler.SendNotification(player, 2, 5000, $"Du hast {wName} in deine Waffe geladen.");
 
@@ -373,7 +327,7 @@ namespace Altv_Roleplay.Handler
                             HUDHandler.SendNotification(player, 4, 5000, "Du hast keine Sekundärwaffe angelegt.");
                         } else if (secondaryWeapon == normalWName) {
                             var newAmmo = (int) Characters.GetCharacterWeapon(player, "SecondaryAmmo") + amount;
-                            player.GiveWeapon(wHash, newAmmo, true);
+                            player.Emit("Client:Weapon:SetWeaponAmmo", (uint)wHash, newAmmo);
                             Characters.SetCharacterWeapon(player, "SecondaryAmmo", newAmmo);
                             HUDHandler.SendNotification(player, 2, 5000, $"Du hast {wName} in deine Waffe geladen.");
 
@@ -386,7 +340,7 @@ namespace Altv_Roleplay.Handler
                                 HUDHandler.SendNotification(player, 4, 5000, "Du hast keine Sekundärwaffe angelegt.");
                             } else if (secondary2Weapon == normalWName) {
                                 var newAmmo = (int) Characters.GetCharacterWeapon(player, "SecondaryAmmo2") + amount;
-                                player.GiveWeapon(wHash, newAmmo, true);
+                                player.Emit("Client:Weapon:SetWeaponAmmo", (uint)wHash, newAmmo);
                                 Characters.SetCharacterWeapon(player, "SecondaryAmmo2", newAmmo);
                                 HUDHandler.SendNotification(player, 2, 5000, $"Du hast {wName} in deine Waffe geladen.");
 
@@ -485,6 +439,22 @@ namespace Altv_Roleplay.Handler
             }
 
             return wHash;
+        }
+        
+        [AsyncClientEvent("Server:Weapon:SendWeaponAmmo")]
+        public static void SetWeaponAmmo(IPlayer player, string name, int ammo)
+        {
+            int charId = User.GetPlayerOnline(player);
+
+            float invWeight = CharactersInventory.GetCharacterItemWeight(charId, "inventory");
+            float backpackWeight = CharactersInventory.GetCharacterItemWeight(charId, "backpack");
+            float bigWeight = invWeight + backpackWeight;
+            float itemWeight = ServerItems.GetItemWeight($"{name} Munition");
+            float multiWeight = itemWeight * ammo;
+
+            if (invWeight + multiWeight <= 15f) CharactersInventory.AddCharacterItem(charId, $"{name} Munition", ammo, "inventory");
+            else if (backpackWeight + multiWeight <= Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId))) CharactersInventory.AddCharacterItem(charId, $"{name} Munition", ammo, "backpack");
+            InventoryHandler.RequestInventoryItems(player);
         }
     }
 }
