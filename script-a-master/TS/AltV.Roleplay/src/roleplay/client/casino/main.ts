@@ -1,4 +1,5 @@
 import * as alt from 'alt-client';
+import SingleRace from './insidetrack/singlerace';
 import CasinoLobby from './lobby';
 import Podium from './podium';
 import Wheel from './wheel';
@@ -8,6 +9,7 @@ export default class CasinoMain {
         await CasinoLobby.loadCasinoLobby();
         await Podium.loadPodium();
         await Wheel.loadWheel();
+        //await SingleRace.loadSingleTrack();
     }
 
     static stopCasino(): void {

@@ -29,3 +29,4 @@ import './casino/main';
 import './casino/lobby';
 import './casino/podium';
 import './casino/wheel';
+import './casino/insidetrack/singlerace';
