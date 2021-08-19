@@ -12,9 +12,9 @@ let interval: number = null;
 export default class Podium {
     static async loadPodium(): Promise<void> {
         podiumVehicle = alt.getSyncedMeta("podiumVehicle");
-        await loadModelAsync('vw_prop_vw_casino_podium_01a');
+        await loadModelAsync("vw_prop_vw_casino_podium_01a");
         await loadModelAsync(podiumVehicle);
-        podiumModel = native.createObject(alt.hash('vw_prop_vw_casino_podium_01a'), podiumCoords.x, podiumCoords.y, podiumCoords.z, false, false, true);
+        podiumModel = native.createObject(alt.hash("vw_prop_vw_casino_podium_01a"), podiumCoords.x, podiumCoords.y, podiumCoords.z, false, false, true);
         native.setEntityHeading(podiumModel, 0);
         vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
         native.setEntityHeading(vehicleModel, 0);
@@ -54,9 +54,10 @@ export default class Podium {
 
     static unloadPodium(): void {
         alt.clearInterval(interval);
+        interval = null;
         native.deleteObject(podiumModel);
         podiumModel = null;
-        native.setModelAsNoLongerNeeded(alt.hash('vw_prop_vw_casino_podium_01a'));
+        native.setModelAsNoLongerNeeded(alt.hash("vw_prop_vw_casino_podium_01a"));
         native.deleteVehicle(vehicleModel);
         vehicleModel = null;
     }
