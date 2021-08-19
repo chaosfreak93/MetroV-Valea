@@ -3,7 +3,7 @@ import * as native from 'natives';
 
 let playerTattoos = undefined;
 
-export function loadClipsetAsync(clipset: string): Promise<any> {
+export function loadClipsetAsync(clipset: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
         if (native.hasClipSetLoaded(clipset))
             return resolve(true);
@@ -19,7 +19,7 @@ export function loadClipsetAsync(clipset: string): Promise<any> {
     });
 }
 
-export function loadModelAsync(model: any): Promise<any> {
+export function loadModelAsync(model: any): Promise<boolean> {
     return new Promise((resolve, reject) => {
         if (typeof model === 'string') {
             model = alt.hash(model);
@@ -39,7 +39,7 @@ export function loadModelAsync(model: any): Promise<any> {
     });
 }
 
-export function loadAnimDictAsync(animDict: string): Promise<any> {
+export function loadAnimDictAsync(animDict: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
         if (native.hasAnimDictLoaded(animDict))
             return resolve(true);
@@ -55,7 +55,7 @@ export function loadAnimDictAsync(animDict: string): Promise<any> {
     });
 }
 
-export function loadStreamedTextureDictAsync(streamedTextureDict: string): Promise<any> {
+export function loadStreamedTextureDictAsync(streamedTextureDict: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
         if (native.hasStreamedTextureDictLoaded(streamedTextureDict))
             return resolve(true);
@@ -112,6 +112,7 @@ export function getScaleformReturnValueBoolAsync(returnValue: any): Promise<bool
     });
 }
 
+export function gotoCoords(movePos: alt.Vector3, moveRot: alt.Vector3): Promise<boolean> {
     return new Promise((resolve, reject) => {
         let coords = native.getEntityCoords(alt.Player.local.scriptID, false);
 
@@ -130,7 +131,7 @@ export function getScaleformReturnValueBoolAsync(returnValue: any): Promise<bool
 }
 
 
-export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
+export function setIntoVehicle(vehicle: alt.Vehicle): Promise<boolean> {
     return new Promise((resolve, reject) => {
         if (alt.Player.local.vehicle)
             return resolve(true);
@@ -146,7 +147,7 @@ export function setIntoVehicle(vehicle: alt.Vehicle): Promise<any> {
     });
 }
 
-export function registerTarget(name: string, objectModel: string): Promise<any> {
+export function registerTarget(name: string, objectModel: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
         if (native.isNamedRendertargetRegistered(name))
             return resolve(true);
