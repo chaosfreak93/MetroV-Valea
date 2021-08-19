@@ -70,6 +70,7 @@ export default class Wheel {
 
     static unloadWheel(): void {
         alt.clearEveryTick(interval);
+        interval = null;
         native.deleteObject(wheelModel);
         wheelModel = null;
         native.setModelAsNoLongerNeeded(alt.hash('vw_prop_vw_luckywheel_02a'));
