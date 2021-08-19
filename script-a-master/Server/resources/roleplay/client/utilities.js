@@ -52,6 +52,39 @@ export function loadStreamedTextureDictAsync(streamedTextureDict) {
         }, 0);
     });
 }
+export function loadScaleformMovieAsync(scaleform) {
+    return new Promise((resolve, reject)=>{
+        scaleform = native.requestScaleformMovie(scaleform);
+        let interval = alt.setInterval(()=>{
+            if (native.hasScaleformMovieLoaded(scaleform)) {
+                alt.clearInterval(interval);
+                return resolve(scaleform);
+            }
+        }, 0);
+    });
+}
+export function getScaleformReturnValueIntAsync(returnValue) {
+    return new Promise((resolve, reject)=>{
+        if (native.isScaleformMovieMethodReturnValueReady(returnValue)) return resolve(native.getScaleformMovieMethodReturnValueInt(returnValue));
+        let interval = alt.setInterval(()=>{
+            if (native.isScaleformMovieMethodReturnValueReady(returnValue)) {
+                alt.clearInterval(interval);
+                return resolve(native.getScaleformMovieMethodReturnValueInt(returnValue));
+            }
+        }, 0);
+    });
+}
+export function getScaleformReturnValueBoolAsync(returnValue) {
+    return new Promise((resolve, reject)=>{
+        if (native.isScaleformMovieMethodReturnValueReady(returnValue)) return resolve(native.getScaleformMovieMethodReturnValueBool(returnValue));
+        let interval = alt.setInterval(()=>{
+            if (native.isScaleformMovieMethodReturnValueReady(returnValue)) {
+                alt.clearInterval(interval);
+                return resolve(native.getScaleformMovieMethodReturnValueBool(returnValue));
+            }
+        }, 0);
+    });
+}
 export function gotoCoords(movePos, moveRot) {
     return new Promise((resolve, reject)=>{
         let coords = native.getEntityCoords(alt.Player.local.scriptID, false);
