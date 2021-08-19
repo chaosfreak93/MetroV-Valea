@@ -1,4 +1,5 @@
 import * as alt from 'alt-client';
+import BetConsoles from './insidetrack/betconsoles';
 import SingleRace from './insidetrack/singlerace';
 import CasinoLobby from './lobby';
 import Podium from './podium';
@@ -10,12 +11,14 @@ export default class CasinoMain {
         await Podium.loadPodium();
         await Wheel.loadWheel();
         //await SingleRace.loadSingleTrack();
+        await BetConsoles.loadBetConsoles();
     }
 
     static stopCasino(): void {
         CasinoLobby.unloadCasinoLobby();
         Podium.unloadPodium();
         Wheel.unloadWheel();
+        BetConsoles.unloadBetConsoles();
     }
 }
 
