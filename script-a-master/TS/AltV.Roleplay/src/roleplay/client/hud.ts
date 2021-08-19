@@ -740,7 +740,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         });
 
         hudBrowser.on("Client:Smartphone:sendChatMessage", (selectedChatId, userPhoneNumber, targetMessageUser, encodedText) => {
-            if (selectedChatId <= 0 || userPhoneNumber <= 0 || targetMessageUser <= 0) return;
             if (selectedChatId <= 0 || userPhoneNumber <= 0 || targetMessageUser <= 0 || lastInteract + 500 > Date.now()) return;
             lastInteract = Date.now();
 

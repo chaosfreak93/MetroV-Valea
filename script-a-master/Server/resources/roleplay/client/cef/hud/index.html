@@ -4402,7 +4402,7 @@
                 alt.emit("Client:VehicleLicensing:destroyCEF");
             });
         }
-  
+
         function JailCEFBoxCreateCEF(charid) {
             document.getElementById("JailCEFBox-jailTime").value = 1;
             $("#JailCEFButton").html(`<button id="JailCEFBox-setJailTime" type="button" class="btn btn-sm btn-danger" data-charid="${charid}" onclick='jailPlayer()'><i class="fa fa-check"></i></button>`);
@@ -4426,7 +4426,7 @@
                 alt.emit("Client:JailTime:destroyCEF");
             });
         }
-  
+
         function SetGivePlayerLicenseCEFContent(targetCharId, licArray) {
             var licHTML = "",
                 licArray = JSON.parse(licArray);
