@@ -29,7 +29,7 @@ class Podium {
         let podiumHeading = native.getEntityHeading(podiumModel);
         let podiumZ = podiumHeading - 0.05;
         native.setEntityHeading(podiumModel, podiumZ);
-        if (vehicleModel == null || vehicleModel == undefined || podiumVehicle != alt.getSyncedMeta("podiumVehicle")) {
+        if (vehicleModel == null || vehicleModel == undefined || podiumVehicle != alt.getSyncedMeta("podiumVehicle") && alt.getSyncedMeta("podiumVehicle") != "none") {
             podiumVehicle = alt.getSyncedMeta("podiumVehicle");
             native.deleteVehicle(vehicleModel);
             vehicleModel = null;

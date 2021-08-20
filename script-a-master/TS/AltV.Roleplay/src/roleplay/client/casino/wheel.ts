@@ -30,7 +30,7 @@ export default class Wheel {
             let moveRot = new alt.Vector3(0, 0, -1.4842170476913452);
             await gotoCoords(movePos, moveRot);
             native.taskPlayAnim(ped, lib, anim, 8.0, -8.0, -1, 0, 0, false, false, false);**/
-            alt.emitServer("Client:Casino:DoRoll");
+            alt.emitServer("Server:Casino:LuckyWheel:DoRoll");
         }
     }
 

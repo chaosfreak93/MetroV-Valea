@@ -25,7 +25,7 @@ class Wheel {
             let movePos = new alt.Vector3(1109.221923828125, 229.37142944335938, -49.6446533203125);
             let moveRot = new alt.Vector3(0, 0, -1.4842170476913452);
             await gotoCoords(movePos, moveRot);
-            native.taskPlayAnim(ped, lib, anim, 8.0, -8.0, -1, 0, 0, false, false, false);**/ alt.emitServer("Client:Casino:DoRoll");
+            native.taskPlayAnim(ped, lib, anim, 8.0, -8.0, -1, 0, 0, false, false, false);**/ alt.emitServer("Server:Casino:LuckyWheel:DoRoll");
         }
     }
     static startRoll(priceIndex) {

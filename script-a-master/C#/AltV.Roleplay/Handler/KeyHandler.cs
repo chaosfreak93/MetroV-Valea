@@ -178,7 +178,7 @@ namespace Altv_Roleplay.Handler
                 bool casinoWheel = player.Position.IsInRange(casinoWheelPos, 3f);
 
                 if (casinoWheel && !player.IsInVehicle) {
-                    player.Emit("Client:Casino:PrepareRoll");
+                    player.Emit("Client:Casino:LuckyWheel:PrepareRoll");
                     return;
                 }
 

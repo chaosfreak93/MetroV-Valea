@@ -276,6 +276,8 @@ namespace Altv_Roleplay
             desireTimer.Enabled = true;
             hotelTimer.Enabled = true;
             weatherSyncTimer.Enabled = true;
+            
+            Alt.SetSyncedMetaData("podiumVehicle", "fmj");
 
             Console.WriteLine($"Main-Thread = {Thread.CurrentThread.ManagedThreadId}");
         }

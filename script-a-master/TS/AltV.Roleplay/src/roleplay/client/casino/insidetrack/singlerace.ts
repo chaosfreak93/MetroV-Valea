@@ -1,14 +1,15 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+import { hudBrowser } from '../../hud';
 import { getScaleformReturnValueIntAsync, getScaleformReturnValueBoolAsync, loadScaleformMovieAsync } from '../../utilities';
 
 let scaleform: number  = -1;
 let ChooseHorseVisible: boolean = false;
 let BetVisible: boolean = false;
-let PlayerBalance: number = 500;
+let PlayerBalance: number = -1;
 let CurrentHorse: number = -1;
-let CurrentBet: number = 0;
-let CurrentGain: number = 0;
+let CurrentBet: number = 1000;
+let CurrentGain: number = 2000;
 let HorsesPositions: number[] = [];
 let CurrentSoundId: number= -1;
 let CurrentWinner: number = -1;
@@ -161,7 +162,7 @@ export default class SingleRace {
     }
 
     static getRandomHorseName(): string {
-        let random = Math.floor(Math.random() * 100) + 1;
+        let random = Math.floor(Math.random() * 100);
         let randomName = random < 10 ? "ITH_NAME_00" + random : "ITH_NAME_0" + random;
 
         return randomName;
@@ -178,10 +179,10 @@ export default class SingleRace {
             native.endTextCommandScaleformString();
 
             native.scaleformMovieMethodAddParamPlayerNameString("1/6");
-            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length) + 1][0]);
-            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length) + 1][1]);
-            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length) + 1][2]);
-            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length) + 1][3]);
+            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length)][0]);
+            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length)][1]);
+            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length)][2]);
+            native.scaleformMovieMethodAddParamInt(HorseStyles[Math.floor(Math.random() * HorseStyles.length)][3]);
             native.endScaleformMovieMethod();
         }
     }
@@ -222,7 +223,7 @@ export default class SingleRace {
             if (ChooseHorseVisible) {
                 if (clickedButton != 12 && clickedButton != -1) {
                     CurrentHorse = (clickedButton - 1);
-                    SingleRace.showBetScreen(CurrentHorse);
+                    alt.emitServer("Server:Casino:SingleRace:UpdateBetValues", CurrentHorse, CurrentBet, CurrentGain, true);
                     ChooseHorseVisible = false;
                 }
             }
@@ -250,18 +251,15 @@ export default class SingleRace {
             }
 
             if (clickedButton == 10) {
-                CurrentSoundId = native.getSoundId();
-                native.playSoundFrontend(CurrentSoundId, 'race_loop', 'dlc_vw_casino_inside_track_betting_single_event_sounds', false);
-                
-                SingleRace.startRace();
+                alt.emitServer("Server:Casino:SingleRace:StartRace", CurrentBet);
                 checkRaceStatus = true;
             }
 
             if (clickedButton == 8) {
-                if (CurrentBet < 10000) {
+                if (CurrentBet < PlayerBalance && CurrentBet < 10000) {
                     CurrentBet = (CurrentBet + 100);
                     CurrentGain = (CurrentBet * 2);
-                    SingleRace.updateBetValues(CurrentHorse, CurrentBet, PlayerBalance, CurrentGain);
+                    alt.emitServer("Server:Casino:SingleRace:UpdateBetValues", CurrentHorse, CurrentBet, CurrentGain, false);
                 }
             }
 
@@ -269,7 +267,7 @@ export default class SingleRace {
                 if (CurrentBet > 1000) {
                     CurrentBet = (CurrentBet - 100);
                     CurrentGain = (CurrentBet * 2);
-                    SingleRace.updateBetValues(CurrentHorse, CurrentBet, PlayerBalance, CurrentGain);
+                    alt.emitServer("Server:Casino:SingleRace:UpdateBetValues", CurrentHorse, CurrentBet, CurrentGain, false);
                 }
             }
 
@@ -292,6 +290,7 @@ export default class SingleRace {
     }
 
     static updateBetValues(horse: number, bet: number, balance: number, gain: number): void {
+        PlayerBalance = balance;
         native.beginScaleformMovieMethod(scaleform, "SET_BETTING_VALUES");
         native.scaleformMovieMethodAddParamInt(horse);
 
@@ -301,9 +300,7 @@ export default class SingleRace {
         native.endScaleformMovieMethod();
     }
 
-    static showBetScreen(horse: number): void {
-        SingleRace.updateBetValues(horse, CurrentBet, PlayerBalance, CurrentGain);
-
+    static showBetScreen(): void {
         native.beginScaleformMovieMethod(scaleform, "SHOW_SCREEN");
         native.scaleformMovieMethodAddParamInt(3);
         native.endScaleformMovieMethod();
@@ -342,9 +339,9 @@ export default class SingleRace {
     }
 
     static startRace(): void {
+        CurrentSoundId = native.getSoundId();
+        native.playSoundFrontend(CurrentSoundId, 'race_loop', 'dlc_vw_casino_inside_track_betting_single_event_sounds', false);
         SingleRace.GenerateHorsesOrder();
-
-        alt.log(HorsesPositions);
 
         CurrentWinner = HorsesPositions[0];
 
@@ -380,12 +377,10 @@ export default class SingleRace {
                 native.releaseSoundId(CurrentSoundId);
 
                 CurrentSoundId = -1;
-                alt.log(CurrentWinner);
-                alt.log(CurrentHorse);
 
                 if (CurrentHorse == CurrentWinner) {
-                    PlayerBalance = (PlayerBalance + CurrentGain);
-                    SingleRace.updateBetValues(CurrentHorse, CurrentBet, PlayerBalance, CurrentGain);
+                    alt.emitServer("Server:Casino:SingleRace:WinRace", CurrentGain);
+                    alt.emitServer("Server:Casino:SingleRace:UpdateBetValues", CurrentHorse, CurrentBet, CurrentGain, false);
                 }
 
                 SingleRace.showResults();
