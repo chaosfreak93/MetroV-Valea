@@ -318,8 +318,7 @@ namespace Altv_Roleplay.Handler
                     Characters.IsCharacterPhoneFlyModeEnabled(charid), Characters.GetCharacterPhoneWallpaper(charid));
                 Characters.SetCharacterPhoneEquipped(charid, false);
             }
-
-            SmartphoneHandler.RequestLSPDIntranet(client);
+            
             client.SetStreamSyncedMetaData("sharedUsername", $"{charName} ({Characters.GetCharacterAccountId(charid)})");
             client.SetSyncedMetaData("ADMINLEVEL", client.AdminLevel());
             client.SetSyncedMetaData("PLAYER_SPAWNED", true);
