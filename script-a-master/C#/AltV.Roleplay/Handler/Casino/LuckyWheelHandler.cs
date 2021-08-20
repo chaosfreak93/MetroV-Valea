@@ -41,7 +41,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 122:
                     case 123:
                         //Niete
-                        HUDHandler.SendNotification(player, 2, 4000, "Das ist leider eine Niete.");
+                        HUDHandler.SendNotification(player, 4, 4000, "Das ist leider eine Niete.");
                         break;
                     case 3:
                     case 4:
