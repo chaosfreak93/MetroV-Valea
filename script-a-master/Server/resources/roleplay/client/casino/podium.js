@@ -1,7 +1,7 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 import { loadModelAsync } from '../utilities';
-let podiumCoords = new alt.Vector3(1100, 220, -49.975);
+let podiumCoords = new alt.Vector3(1100, 220, -50);
 let podiumModel = null;
 let vehicleCoords = new alt.Vector3(1100, 220, -49.35);
 let vehicleModel = null;
