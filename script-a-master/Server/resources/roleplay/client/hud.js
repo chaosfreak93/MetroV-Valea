@@ -651,6 +651,12 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
         });
     }
 });
+alt.on("Client:HUD:destroyCEF", ()=>{
+    if (hudBrowser != null) {
+        hudBrowser.destroy();
+        hudBrowser = null;
+    }
+});
 alt.onServer("Client:Smartphone:setCurrentFunkFrequence", (funkfrequence)=>{
     if (funkfrequence == null || funkfrequence == "null") {
         currentRadioFrequence = null;

@@ -9,6 +9,7 @@ namespace Altv_Roleplay.Handler
 {
     internal class HUDHandler : IScript
     {
+        [AsyncClientEvent("Server:HUD:CreateCEF")]
         public static void CreateHUDBrowser(IPlayer client) {
             if (client == null || !client.Exists) return;
 

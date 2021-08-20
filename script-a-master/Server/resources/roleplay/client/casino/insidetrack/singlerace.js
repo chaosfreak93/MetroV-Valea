@@ -617,6 +617,8 @@ class SingleRace {
     static async loadSingleTrack() {
         scaleform = await loadScaleformMovieAsync("HORSE_RACING_CONSOLE");
         native.requestScriptAudioBank("DLC_VINEWOOD/CASINO_GENERAL", false, 0);
+        alt.emit("Client:HUD:setCefStatus", true);
+        alt.emit("Client:HUD:destroyCEF");
         native.setPlayerControl(alt.Player.local.scriptID, false, 0);
         alt.setTimeout(()=>{
             SingleRace.showMainScreen();
@@ -843,6 +845,8 @@ class SingleRace {
         native.releaseNamedScriptAudioBank("DLC_VINEWOOD/CASINO_GENERAL");
         cooldown1 = 60;
         native.setPlayerControl(alt.Player.local.scriptID, true, 0);
+        alt.emitServer("Server:HUD:CreateCEF");
+        alt.emit("Client:HUD:setCefStatus", false);
     }
 }
 export { SingleRace as default };
