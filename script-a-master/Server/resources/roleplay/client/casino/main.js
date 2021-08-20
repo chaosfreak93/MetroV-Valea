@@ -8,7 +8,7 @@ class CasinoMain {
         await CasinoLobby.loadCasinoLobby();
         await Podium.loadPodium();
         await Wheel.loadWheel();
-        await SingleRace.loadSingleTrack();
+    //await SingleRace.loadSingleTrack();
     }
     static stopCasino() {
         CasinoLobby.unloadCasinoLobby();

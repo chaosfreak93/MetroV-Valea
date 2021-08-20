@@ -29,10 +29,7 @@ export default class Podium {
     }
 
     static async startPodium(): Promise<void> {
-        let podiumHeading = native.getEntityHeading(podiumModel);
-        let podiumZ = podiumHeading - 0.05;
-        native.setEntityHeading(podiumModel, podiumZ);
-        if (vehicleModel == null || vehicleModel == undefined || (podiumVehicle != alt.getSyncedMeta("podiumVehicle") && alt.getSyncedMeta("podiumVehicle") != "none")) {
+        if (podiumVehicle != alt.getSyncedMeta("podiumVehicle") && alt.getSyncedMeta("podiumVehicle") != "none") {
             podiumVehicle = alt.getSyncedMeta("podiumVehicle");
             native.deleteVehicle(vehicleModel);
             vehicleModel = null;
@@ -46,7 +43,15 @@ export default class Podium {
             native.setVehicleCustomPrimaryColour(vehicleModel, 9, 75, 135);
             native.setVehicleCustomSecondaryColour(vehicleModel, 9, 75, 135);
             native.setVehicleNumberPlateText(vehicleModel, "CASINO");
+        } else if (alt.getSyncedMeta("podiumVehicle") == "none") {
+            podiumVehicle = alt.getSyncedMeta("podiumVehicle");
+            native.deleteVehicle(vehicleModel);
+            vehicleModel = null;
         }
+        if (podiumModel == null || podiumModel == undefined || vehicleModel == null || vehicleModel == undefined) return;
+        let podiumHeading = native.getEntityHeading(podiumModel);
+        let podiumZ = podiumHeading - 0.05;
+        native.setEntityHeading(podiumModel, podiumZ);
         let vehicleHeading = native.getEntityHeading(vehicleModel);
         let vehicleZ = vehicleHeading - 0.05;
         native.setEntityHeading(vehicleModel, vehicleZ);
