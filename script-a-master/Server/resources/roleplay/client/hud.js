@@ -134,8 +134,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             closeBankCEF();
         });
         hudBrowser.on("Client:ATM:requestBankData", (accountNr)=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             alt.emitServer("Server:ATM:requestBankData", accountNr);
         });
         hudBrowser.on("Client:ATM:WithdrawMoney", (accountNr, amount, zoneName)=>{
@@ -210,8 +208,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             closeBarberCEF();
         });
         hudBrowser.on("Client:Shop:destroyShopCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeShopCEF();
         });
         hudBrowser.on("Client:Garage:destroyGarageCEF", ()=>{
@@ -348,11 +344,11 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
             }
         });
         hudBrowser.on("Client:VehicleTrunk:destroyCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeVehicleTrunkCEF();
         });
         hudBrowser.on("Client:VehicleTrunk:VehicleTrunkAction", (action, vehId, charId, itemName, itemAmount, fromContainer, type)=>{
+            if (lastInteract + 500 > Date.now()) return;
+            lastInteract = Date.now();
             if (action == "storage") {
                 alt.emitServer("Server:VehicleTrunk:StorageItem", parseInt(vehId), parseInt(charId), itemName, parseInt(itemAmount), fromContainer, type);
             } else if (action == "take") {
