@@ -7,7 +7,7 @@ import {clearTattoos, setTattoo, setCorrectTattoos, setClothes} from './utilitie
 import Raycast from './raycast';
 import { Inventory } from './inventory';
 
-export let hudBrowser = null;
+export let hudBrowser: alt.WebView = null;
 export let browserReady = false;
 let deathScreen = null;
 let identityCardApplyCEFopened = false;
@@ -48,14 +48,13 @@ let isTattooShopOpened = false;
 let isJailTimeCEFOpened = false;
 let lastInteract = 0;
 
-alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
+alt.onServer("Client:HUD:CreateCEF", (hunger, thirst) => {
     if (hudBrowser == null) {
         hudBrowser = new alt.WebView("http://resource/client/cef/hud/index.html");
 
         hudBrowser.on("Client:HUD:cefIsReady", () => {
             alt.setTimeout(function () {
                 hudBrowser.emit("CEF:HUD:updateDesireHUD", hunger, thirst);
-                hudBrowser.emit("CEF:HUD:updateMoney", currentmoney);
                 hudBrowser.emit("CEF:HUD:updateHUDVoice", 3.0);
                 browserReady = true;
             }, 1000);
@@ -847,13 +846,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney) => {
         hudBrowser.on("Client:JailTime:destroyCEF", () => {
             closeJailTimeCEF();
         });
-    }
-});
-
-// Geld-HUD
-alt.onServer("Client:HUD:updateMoney", (currentMoney) => {
-    if (hudBrowser != null) {
-        hudBrowser.emit("CEF:HUD:updateMoney", currentMoney);
     }
 });
 

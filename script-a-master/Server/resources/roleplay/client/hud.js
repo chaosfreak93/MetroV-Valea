@@ -45,13 +45,12 @@ let currentRadioFrequence = null;
 let isTattooShopOpened = false;
 let isJailTimeCEFOpened = false;
 let lastInteract = 0;
-alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
+alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
     if (hudBrowser == null) {
         hudBrowser = new alt.WebView("http://resource/client/cef/hud/index.html");
         hudBrowser.on("Client:HUD:cefIsReady", ()=>{
             alt.setTimeout(function() {
                 hudBrowser.emit("CEF:HUD:updateDesireHUD", hunger, thirst);
-                hudBrowser.emit("CEF:HUD:updateMoney", currentmoney);
                 hudBrowser.emit("CEF:HUD:updateHUDVoice", 3);
                 browserReady = true;
             }, 1000);
@@ -650,12 +649,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst, currentmoney)=>{
         hudBrowser.on("Client:JailTime:destroyCEF", ()=>{
             closeJailTimeCEF();
         });
-    }
-});
-// Geld-HUD
-alt.onServer("Client:HUD:updateMoney", (currentMoney)=>{
-    if (hudBrowser != null) {
-        hudBrowser.emit("CEF:HUD:updateMoney", currentMoney);
     }
 });
 alt.onServer("Client:Smartphone:setCurrentFunkFrequence", (funkfrequence)=>{

@@ -13,8 +13,7 @@ namespace Altv_Roleplay.Handler
             if (client == null || !client.Exists) return;
 
             client.EmitLocked("Client:HUD:CreateCEF", Characters.GetCharacterHunger(User.GetPlayerOnline(client)),
-                Characters.GetCharacterThirst(User.GetPlayerOnline(client)),
-                CharactersInventory.GetCharacterItemAmount(User.GetPlayerOnline(client), "Bargeld", "inventory"));
+                Characters.GetCharacterThirst(User.GetPlayerOnline(client)));
         }
 
         [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
