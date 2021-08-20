@@ -443,18 +443,79 @@ namespace Altv_Roleplay.Handler
         
         [AsyncClientEvent("Server:Weapon:SendWeaponAmmo")]
         public static void SetWeaponAmmo(IPlayer player, string name, int ammo)
+        { 
+            try
+            {
+                int charId = User.GetPlayerOnline(player);
+
+                float invWeight = CharactersInventory.GetCharacterItemWeight(charId, "inventory");
+                float backpackWeight = CharactersInventory.GetCharacterItemWeight(charId, "backpack");
+                float itemWeight = ServerItems.GetItemWeight($"{name} Munition");
+                float multiWeight = itemWeight * ammo;
+
+                if (invWeight + multiWeight <= 15f) CharactersInventory.AddCharacterItem(charId, $"{name} Munition", ammo, "inventory");
+                else if (backpackWeight + multiWeight <= Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId))) CharactersInventory.AddCharacterItem(charId, $"{name} Munition", ammo, "backpack");
+                InventoryHandler.RequestInventoryItems(player);
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"{e}");
+            }
+        }
+
+        [AsyncClientEvent("Server:Weapon:UpdateAmmo")]
+        public static void UpdateWeaponAmmo(IPlayer player, uint hash, int ammo)
         {
-            int charId = User.GetPlayerOnline(player);
+            try
+            {
+                string wType = "None";
+                string normalWName = "None";
 
-            float invWeight = CharactersInventory.GetCharacterItemWeight(charId, "inventory");
-            float backpackWeight = CharactersInventory.GetCharacterItemWeight(charId, "backpack");
-            float bigWeight = invWeight + backpackWeight;
-            float itemWeight = ServerItems.GetItemWeight($"{name} Munition");
-            float multiWeight = itemWeight * ammo;
+                switch (hash)
+                {
+                    case 453432689:
+                        wType = "Secondary";
+                        normalWName = "Pistole";
+                        break;
+                    case 3219281620:
+                        wType = "Secondary";
+                        normalWName = "MkII Pistole";
+                        break;
+                    case 2578377531:
+                        wType = "Secondary";
+                        normalWName = "Pistole .50";
+                        break;
+                    case 3249783761:
+                        wType = "Secondary";
+                        normalWName = "Revolver";
+                        break;
+                    case 1198879012:
+                        wType = "Secondary";
+                        normalWName = "Flaregun";
+                        break;
+                    case 171789620:
+                        wType = "Primary";
+                        normalWName = "PDW";
+                        break;
+                    case 2210333304:
+                        wType = "Primary";
+                        normalWName = "Karabiner";
+                        break;
+                    case 736523883:
+                        wType = "Primary";
+                        normalWName = "SMG";
+                        break;
+                }
 
-            if (invWeight + multiWeight <= 15f) CharactersInventory.AddCharacterItem(charId, $"{name} Munition", ammo, "inventory");
-            else if (backpackWeight + multiWeight <= Characters.GetCharacterBackpackSize(Characters.GetCharacterBackpack(charId))) CharactersInventory.AddCharacterItem(charId, $"{name} Munition", ammo, "backpack");
-            InventoryHandler.RequestInventoryItems(player);
+                if (wType == "Primary") Characters.SetCharacterWeapon(player, "PrimaryAmmo", ammo);
+                else if (wType == "Fist") Characters.SetCharacterWeapon(player, "FistWeaponAmmo", ammo);
+                else if (normalWName == (string)Characters.GetCharacterWeapon(player, "SecondaryWeapon")) Characters.SetCharacterWeapon(player, "SecondaryAmmo", ammo);
+                else if (wType != "None") Characters.SetCharacterWeapon(player, "SecondaryAmmo2", ammo);
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"{e}");
+            }
         }
     }
 }
