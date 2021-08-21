@@ -102,13 +102,12 @@ let weaponHashes = [
 ];
 let currentAmmo = [];
 let currentWeaponTypes = [];
-let player = alt.Player.local;
 class WeaponHandler {
     static SetWeaponAmmo(hash, newAmmo) {
-        native.setPedAmmo(player.scriptID, hash, newAmmo, false);
+        if (native.getAmmoInPedWeapon(alt.Player.local, hash) != newAmmo) native.setPedAmmo(alt.Player.local, hash, newAmmo, false);
     }
     static GetWeaponAmmo(hash, name) {
-        let ammo = native.getAmmoInPedWeapon(player.scriptID, hash);
+        let ammo = native.getAmmoInPedWeapon(alt.Player.local, hash);
         alt.emitServer("Server:Weapon:SendWeaponAmmo", name, ammo);
     }
     static CreateCEF() {
