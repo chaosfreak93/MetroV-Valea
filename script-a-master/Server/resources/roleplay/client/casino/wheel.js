@@ -30,6 +30,7 @@ class Wheel {
         }
     }
     static startRoll(priceIndex) {
+        if (wheelModel == null || wheelModel == undefined) return;
         isRolling = true;
         native.setEntityHeading(wheelModel, 0);
         native.setEntityRotation(wheelModel, 0, 0, 0, 1, true);
