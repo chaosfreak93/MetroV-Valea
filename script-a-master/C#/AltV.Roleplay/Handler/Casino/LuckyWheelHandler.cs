@@ -82,7 +82,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 185:
                     case 186:
                         //Discount
-                        Alt.Log("Discount");
+                        HUDHandler.SendNotification(player, 4, 4000, "Du hast einen Discount gewonnen. Momentan gleich zusetzen mit einer Niete.");
                         break;
                     case 7:
                     case 8:
@@ -144,7 +144,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 196:
                     case 197:
                         //Clothing
-                        Alt.Log("Clothing");
+                        HUDHandler.SendNotification(player, 4, 4000, "Du hast Kleidung gewonnen. Momentan gleich zusetzen mit einer Niete.");
                         break;
                     case 11:
                     case 12:
@@ -190,9 +190,16 @@ namespace Altv_Roleplay.Handler.Casino
                     case 199:
                     case 200:
                         //Vehicle
-                        Alt.EmitAllClients("Client:Casino:LuckyWheel:ShowBigWin");
-                        HUDHandler.SendNotification(player, 2, 6250, "Du hast das Podium Fahrzeug gewonnen.");
-                        Alt.SetSyncedMetaData("podiumVehicle", "none".ToLower());
+                        if (ServerDiamondCasino.getPodiumVehicle() != "none") {
+                            Alt.EmitAllClients("Client:Casino:LuckyWheel:ShowBigWin");
+                            HUDHandler.SendNotification(player, 2, 6250, "Du hast das Podium Fahrzeug gewonnen.");
+                            ServerDiamondCasino.setPodiumVehicle("none");
+                        } else if (ServerDiamondCasino.getPodiumVehicle() == "none") {
+                            HUDHandler.SendNotification(player, 2, 4000, "Da das Podium leer ist hast du einen Free Spin gewonnen.");
+                            await Task.Delay(4000);
+                            isRolling = false;
+                            DoRoll(player);
+                        }
                         await Task.Delay(6250);
                         break;
                     case 43:
