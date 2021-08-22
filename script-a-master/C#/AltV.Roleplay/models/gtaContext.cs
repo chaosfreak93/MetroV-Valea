@@ -93,6 +93,7 @@ namespace Altv_Roleplay.models
         public virtual DbSet<Logs_Faction> LogsFaction { get; set; }
         public virtual DbSet<Server_Tattoos> Server_Tattoos { get; set; }
         public virtual DbSet<Server_Tattoo_Shops> Server_Tattoo_Shops { get; set; }
+        public virtual DbSet<Server_Diamond_Casino> Server_Diamond_Casino { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             if (!optionsBuilder.IsConfigured) {
@@ -1340,6 +1341,18 @@ namespace Altv_Roleplay.models
                 entity.Property(e => e.paragraph).HasColumnName("paragraph").HasColumnType("int(11)");
                 entity.Property(e => e.jailtime).HasColumnName("jailtime").HasColumnType("int(11)");
                 entity.Property(e => e.ticketfine).HasColumnName("ticketfine").HasColumnType("int(11)");
+            });
+            
+            modelBuilder.Entity<Server_Diamond_Casino>(entity =>
+            {
+                entity.HasKey(e => e.id);
+                entity.ToTable("server_diamond_casino", Constants.DatabaseConfig.Database);
+                entity.HasIndex(e => e.id).HasDatabaseName("id");
+                entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
+                entity.Property(e => e.podiumVehicle).HasColumnName("podiumVehicle");
+                entity.Property(e => e.insideTrackX).HasColumnName("insideTrackX");
+                entity.Property(e => e.insideTrackY).HasColumnName("insideTrackY");
+                entity.Property(e => e.insideTrackZ).HasColumnName("insideTrackZ");
             });
         }
     }

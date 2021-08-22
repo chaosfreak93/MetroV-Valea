@@ -1375,6 +1375,24 @@ namespace Altv_Roleplay.Database
                 Alt.Log($"{e}");
             }
         }
+        
+        internal static void LoadDiamondCasino() {
+            try {
+                using (var db = new gtaContext()) {
+                    ServerDiamondCasino.DiamondCasino = new List<Server_Diamond_Casino>(db.Server_Diamond_Casino);
+
+                    var result = ServerDiamondCasino.DiamondCasino.First();
+                    
+                    Alt.SetSyncedMetaData("podiumVehicle", result.podiumVehicle);
+
+                    Alt.Log($"Diamond Casino geladen.");
+                }
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
+
 
         internal static void ResetDatabaseOnlineState() {
             try {

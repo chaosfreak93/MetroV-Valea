@@ -43,7 +43,7 @@ namespace Altv_Roleplay.Handler
         public void PiCMD(IPlayer player, string model) {
             if (player == null || !player.Exists) return;
 
-            Alt.SetSyncedMetaData("podiumVehicle", model);
+            ServerDiamondCasino.setPodiumVehicle(model);
         }
 
         [Command("getaccountidbymail")]

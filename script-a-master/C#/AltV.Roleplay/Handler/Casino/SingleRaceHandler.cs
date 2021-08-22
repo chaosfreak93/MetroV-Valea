@@ -23,6 +23,7 @@ namespace Altv_Roleplay.Handler.Casino
         public void winRace(ClassicPlayer player, int gain) {
             string location = CharactersInventory.CharactersInventory_.FirstOrDefault(x => x.itemName == "Jetons").itemLocation;
             CharactersInventory.AddCharacterItem(player.CharacterId, "Jetons", gain, location.Length > 0 ? location : "inventory");
+            ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - gain);
         }
 
         [AsyncClientEvent("Server:Casino:SingleRace:StartRace")]
@@ -34,6 +35,7 @@ namespace Altv_Roleplay.Handler.Casino
             }
             
             CharactersInventory.RemoveCharacterItemAmount(player.CharacterId, "Jetons", bet, location);
+            ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) + bet);
             player.Emit("Client:Casino:SingleRace:StartRace");
         }
     }

@@ -158,6 +158,8 @@ namespace Altv_Roleplay.Handler
                 Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
                 Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.80439453125f);
                 Position casinoWheelPos = new Position(1110.949462890625f, 229.26593017578125f, -49.6446533203125f);
+                var result = ServerDiamondCasino.DiamondCasino.First();
+                Position casinoInsideTrackPos = new Position(result.insideTrackX, result.insideTrackY, result.insideTrackZ);
                 
                 bool casinoEntrance = player.Position.IsInRange(casinoEntrancePos, 3f);
 
@@ -178,7 +180,23 @@ namespace Altv_Roleplay.Handler
                 bool casinoWheel = player.Position.IsInRange(casinoWheelPos, 3f);
 
                 if (casinoWheel && !player.IsInVehicle) {
+                    string itemLocation = CharactersInventory.ExistCharacterItem(charId, "Jetons", "inventory") ? "inventory" : "backpack";
+
+                    if (itemLocation == null || CharactersInventory.GetCharacterItemAmount(charId, "Jetons", itemLocation) < 35000) {
+                        HUDHandler.SendNotification(player, 4, 4000, "Du hast nicht genug Jetons um am Rad zu drehen. Minimum: 35k Jetons");
+                        return;
+                    }
+                    
+                    CharactersInventory.RemoveCharacterItemAmount(charId, "Jetons", 35000, itemLocation);
+                    ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) + 35000);
                     player.Emit("Client:Casino:LuckyWheel:PrepareRoll");
+                    return;
+                }
+                
+                bool casinoInsideTrack = player.Position.IsInRange(casinoInsideTrackPos, 5f);
+
+                if (casinoInsideTrack && !player.IsInVehicle) {
+                    player.Emit("Client:Casino:SingleRace:LoadSingleRace");
                     return;
                 }
 

@@ -57,6 +57,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 183:
                     case 184:
                         //20k $
+                        ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 20000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 20000);
                         ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+20000$",
                             "Unbekannt");
@@ -92,6 +93,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 127:
                     case 128: 
                         //30k $
+                        ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 30000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 30000);
                         ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+30000$",
                             "Unbekannt");
@@ -170,6 +172,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 135:
                     case 136:
                         //40k $
+                        ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 40000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 40000);
                         ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+40000$",
                             "Unbekannt");
@@ -294,6 +297,7 @@ namespace Altv_Roleplay.Handler.Casino
                     case 180:
                     case 181:
                         //50k $
+                        ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 50000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 50000);
                         ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+50000$",
                             "Unbekannt");

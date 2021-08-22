@@ -122,6 +122,7 @@ namespace Altv_Roleplay
             DatabaseHandler.LoadAllServerLogsFaction();
             DatabaseHandler.LoadAllServerLogsCompany();
             DatabaseHandler.LoadAllTattooStuff();
+            DatabaseHandler.LoadDiamondCasino();
 
             WeatherHandler.GetRealWeatherType();
 
@@ -276,8 +277,6 @@ namespace Altv_Roleplay
             desireTimer.Enabled = true;
             hotelTimer.Enabled = true;
             weatherSyncTimer.Enabled = true;
-            
-            Alt.SetSyncedMetaData("podiumVehicle", "fmj");
 
             Console.WriteLine($"Main-Thread = {Thread.CurrentThread.ManagedThreadId}");
         }

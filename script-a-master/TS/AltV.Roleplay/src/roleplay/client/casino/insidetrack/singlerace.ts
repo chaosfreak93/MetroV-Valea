@@ -1,9 +1,8 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import { hudBrowser } from '../../hud';
-import { getScaleformReturnValueIntAsync, getScaleformReturnValueBoolAsync, loadScaleformMovieAsync } from '../../utilities';
+import { getScaleformReturnValueIntAsync, getScaleformReturnValueBoolAsync, loadScaleformMovieAsync, registerTarget } from '../../utilities';
 
-let scaleform: number  = -1;
+let scaleform: number  = null;
 let ChooseHorseVisible: boolean = false;
 let BetVisible: boolean = false;
 let PlayerBalance: number = -1;
@@ -119,27 +118,29 @@ let HorseStyles = [
     [13810226,9115524,5855577,11645361],
     [14176336,9115524,13530742,7105644],
     [16770310,16751169,16772294,16777215]
-]
+];
 
 export default class SingleRace {
     static async loadSingleTrack(): Promise<void> {
-        scaleform = await loadScaleformMovieAsync("HORSE_RACING_CONSOLE");
-        native.requestScriptAudioBank("DLC_VINEWOOD/CASINO_GENERAL", false, 0);
+        if (scaleform == null) {
+            scaleform = await loadScaleformMovieAsync("HORSE_RACING_CONSOLE");
+            native.requestScriptAudioBank("DLC_VINEWOOD/CASINO_GENERAL", false, 0);
 
-        alt.emit("Client:HUD:setCefStatus", true);
-        alt.emit("Client:HUD:destroyCEF");
-        native.setPlayerControl(alt.Player.local.scriptID, false, 0);
+            alt.emit("Client:HUD:setCefStatus", true);
+            alt.emit("Client:HUD:destroyCEF");
+            native.setPlayerControl(alt.Player.local.scriptID, false, 0);
 
-        alt.setTimeout(() => {
-            SingleRace.showMainScreen();
-            SingleRace.setMainScreenCooldown(cooldown);
-        
-            SingleRace.addHorses();
-        
-            drawTick = alt.everyTick(SingleRace.drawSingleTrack);
-            handleTick = alt.everyTick(SingleRace.handleControls);
-            winTick = alt.everyTick(SingleRace.checkRaceWinStatus);
-        }, 500);
+            alt.setTimeout(() => {
+                SingleRace.showMainScreen();
+                SingleRace.setMainScreenCooldown(cooldown);
+            
+                SingleRace.addHorses();
+            
+                drawTick = alt.everyTick(SingleRace.drawSingleTrack);
+                handleTick = alt.everyTick(SingleRace.handleControls);
+                winTick = alt.everyTick(SingleRace.checkRaceWinStatus);
+            }, 500);
+        }
     }
 
     static showMainScreen(): void {
@@ -188,6 +189,7 @@ export default class SingleRace {
     }
 
     static drawSingleTrack(): void {
+        if (scaleform == null) return;
         let xMouse = native.getDisabledControlNormal(2, 239);
         let yMouse = native.getDisabledControlNormal(2, 240);
 
@@ -411,6 +413,13 @@ export default class SingleRace {
         scaleform = null;
         native.releaseNamedScriptAudioBank("DLC_VINEWOOD/CASINO_GENERAL");
         cooldown = 60;
+        native.stopSound(CurrentSoundId);
+        native.releaseSoundId(CurrentSoundId);
+        CurrentSoundId = -1;
+        CurrentHorse = -1;
+        CurrentWinner = -1;
+        HorsesPositions = [];
+        checkRaceStatus = false;
 
         native.setPlayerControl(alt.Player.local.scriptID, true, 0);
         alt.emitServer("Server:HUD:CreateCEF");
