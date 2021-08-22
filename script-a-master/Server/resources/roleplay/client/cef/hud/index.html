@@ -1410,6 +1410,17 @@
                     </div>
                 </div>
                 <hr/>
+                <div class="d-inline form-group">
+                    <label for="phone-anonym-switch align-middle d-inline"> Anonym Anrufen </label>
+                    <div class="phone-switch d-inline">
+                        <label class="switch switch-flat align-middle mx-auto">
+                            <input class="switch-input" type="checkbox" name="switch-group" id="phone-anonym-switch" onchange="phoneSwapAnonym()" value="1"/>
+                            <span class="switch-label" data-on="An" data-off="Aus"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr/>
                 <!--<hr>
                     <div class="d-inline form-group">
                         <label for="phone-darkmode-switch align-middle d-inline"> Darkmode </label>
@@ -4812,6 +4823,27 @@
             $("#phone-nodisturb").addClass("d-none");
         }
 
+        var phoneAnonym = false;
+
+        function phoneSwapAnonym() {
+            let value = document.getElementById("phone-anonym-switch").checked;
+            if (value == true) {
+                phoneAnonymOn();
+            } else {
+                phoneAnonnymOff();
+            }
+        }
+
+        function phoneAnonymOn() {
+            phoneAnonym = true;
+            $("#phone-anonym").removeClass("d-none");
+        }
+
+        function phoneAnonnymOff() {
+            phoneAnonym = false;
+            $("#phone-anonym").addClass("d-none");
+        }
+
         function phoneShowCalling() {
             selectedChatId = 0;
             $("#phone-screen-calling").show();
@@ -4845,7 +4877,7 @@
             allowChatKeyUp = false;
         });
 
-        function phoneReceiveCall(number) {
+        function phoneReceiveCall(number, isAnonymCall) {
             if (phoneActiveCall == null) {
                 latestCall != null ? clearTimeout(latestCall) : latestCall;
                 $("#phoneAcceptCall").show();
@@ -4858,7 +4890,10 @@
                         banner = document.getElementById("phone-banner"),
                         address = getAddressData(null, phoneActiveCall);
                     startPhoneAudioLoop("../utils/sounds/phone/ring.wav");
-                    if (address.name == null) {
+                    if (isAnonymCall) {
+                        display.innerHTML = "Anonym";
+                        banner.innerHTML = "Eingehender Anruf von Anonym";
+                    } else if (address.name == null) {
                         display.innerHTML = phoneActiveCall;
                         banner.innerHTML = "Eingehender Anruf " + phoneActiveCall;
                     } else {
@@ -5239,7 +5274,7 @@
                         activetime.innerHTML = "W&auml;hlen...";
                         $("#phone-screen-calling").show();
                         $("#phone-screen-home").show();
-                        alt.emit("Client:Smartphone:tryCall", number);
+                        alt.emit("Client:Smartphone:tryCall", number, phoneAnonym);
                     }
                 }
             }
