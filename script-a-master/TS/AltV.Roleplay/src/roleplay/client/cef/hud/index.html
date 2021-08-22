@@ -5927,8 +5927,8 @@
         togglePhone(shouldBeVisible);
     });
 
-    alt.on("CEF:Smartphone:showPhoneReceiveCall", (number) => {
-        phoneReceiveCall(number);
+    alt.on("CEF:Smartphone:showPhoneReceiveCall", (number, isAnonymCall) => {
+        phoneReceiveCall(number, isAnonymCall);
     });
 
     alt.on("CEF:Smartphone:showPhoneCallActive", (number) => {

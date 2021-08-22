@@ -690,11 +690,11 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst) => {
         });
 
         /* Smartphone */
-        hudBrowser.on("Client:Smartphone:tryCall", (number) => {
+        hudBrowser.on("Client:Smartphone:tryCall", (number, isAnonymCall) => {
             if(lastInteract + 500 > Date.now()) return;
             lastInteract = Date.now();
 
-            alt.emitServer("Server:Smartphone:tryCall", parseInt(number));
+            alt.emitServer("Server:Smartphone:tryCall", parseInt(number), isAnonymCall);
         });
 
         hudBrowser.on("Client:Smartphone:denyCall", () => {
@@ -747,9 +747,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst) => {
         });
 
         hudBrowser.on("Client:Smartphone:setFlyModeEnabled", (isEnabled) => {
-            if(lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
-
             alt.emitServer("Server:Smartphone:setFlyModeEnabled", isEnabled);
         });
 
@@ -1336,9 +1333,9 @@ alt.onServer("Client:Smartphone:equipPhone", (isEquipped, phoneNumber, isFlyMode
     }, 0);
 });
 
-alt.onServer("Client:Smartphone:showPhoneReceiveCall", (number) => {
+alt.onServer("Client:Smartphone:showPhoneReceiveCall", (number, isAnonymCall) => {
     if (hudBrowser == null || !browserReady) return;
-    hudBrowser.emit("CEF:Smartphone:showPhoneReceiveCall", number);
+    hudBrowser.emit("CEF:Smartphone:showPhoneReceiveCall", number, isAnonymCall);
 });
 
 alt.onServer("Client:Smartphone:showPhoneCallActive", (number) => {
