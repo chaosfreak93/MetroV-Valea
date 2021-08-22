@@ -15,7 +15,7 @@ export default class Podium {
         await loadModelAsync("vw_prop_vw_casino_podium_01a");
         podiumModel = native.createObject(alt.hash("vw_prop_vw_casino_podium_01a"), podiumCoords.x, podiumCoords.y, podiumCoords.z, false, false, true);
         native.setEntityHeading(podiumModel, 0);
-        if (alt.getSyncedMeta("podiumVehicle") == "none") {
+        if (alt.getSyncedMeta("podiumVehicle") != "none") {
             await loadModelAsync(podiumVehicle);
             vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, false, false, true);
             native.setEntityHeading(vehicleModel, 0);
