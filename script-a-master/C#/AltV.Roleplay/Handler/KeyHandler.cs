@@ -16,10 +16,10 @@ namespace Altv_Roleplay.Handler
         [AsyncClientEvent("Server:KeyHandler:PressE")]
         public void PressE(IPlayer player) {
             lock (player) {
-                if (player == null || !player.Exists) return;
+                if (!player.Exists) return;
 
                 var charId = User.GetPlayerOnline(player);
-                if (charId == 0) return;
+                if (charId <= 0 || Characters.IsCharacterUnconscious(charId)) return;
 
                 var farmCol =
                     (ClassicColshape) ServerFarmingSpots.ServerFarmingSpotsColshapes_.FirstOrDefault(x =>
@@ -456,10 +456,10 @@ namespace Altv_Roleplay.Handler
         public void PressU(IPlayer player) {
             try {
                 lock (player) {
-                    if (player == null || !player.Exists) return;
+                    if (!player.Exists) return;
 
                     var charId = User.GetPlayerOnline(player);
-                    if (charId <= 0) return;
+                    if (charId <= 0 || Characters.IsCharacterUnconscious(charId)) return;
 
                     if (player.HasPlayerHandcuffs() || player.HasPlayerRopeCuffs() || player.HasPlayerFootcuffs()) {
                         HUDHandler.SendNotification(player, 3, 5000, "Wie willst du das mit Handschellen/Fesseln machen?");
