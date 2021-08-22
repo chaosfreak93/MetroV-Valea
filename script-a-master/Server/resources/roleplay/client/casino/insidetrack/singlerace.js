@@ -686,7 +686,7 @@ class SingleRace {
         native.drawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255, 0);
     }
     static async handleControls() {
-        if (native.isControlJustPressed(2, 194)) {
+        if (native.isControlJustPressed(2, 202)) {
             SingleRace.unloadSingleTrack();
         }
         if (native.isControlJustPressed(2, 237)) {

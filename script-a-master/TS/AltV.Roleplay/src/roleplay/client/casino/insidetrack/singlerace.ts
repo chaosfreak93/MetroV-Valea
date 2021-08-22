@@ -215,7 +215,7 @@ export default class SingleRace {
     }
 
     static async handleControls(): Promise<void> {
-        if (native.isControlJustPressed(2, 194)) {
+        if (native.isControlJustPressed(2, 202)) {
             SingleRace.unloadSingleTrack();
         }
 
