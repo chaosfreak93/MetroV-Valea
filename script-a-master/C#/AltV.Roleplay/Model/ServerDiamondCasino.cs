@@ -26,7 +26,7 @@ namespace Altv_Roleplay.Model
             using (var db = new gtaContext()) {
                 DiamondCasino = new List<Server_Diamond_Casino>(db.Server_Diamond_Casino);
 
-                return DiamondCasino.First().podiumVehicle;
+                return DiamondCasino.First().podiumVehicle.ToLower();
             }
         }
     }
