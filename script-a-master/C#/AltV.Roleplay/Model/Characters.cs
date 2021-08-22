@@ -2971,7 +2971,7 @@ namespace Altv_Roleplay.Model
         }
 
         [AsyncClientEvent("Server:ClothesShop:RequestCurrentSkin")]
-        public static void SetCharacterCorrectClothes(IPlayer player) {
+        public static void SetCharacterCorrectClothes(IPlayer player, bool withWeapons = false) {
             if (player == null || !player.Exists) return;
 
             var charid = User.GetPlayerOnline(player);
@@ -3048,31 +3048,20 @@ namespace Altv_Roleplay.Model
             else
                 player.SetClothes(10, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Decal"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Decal"), Convert.ToInt32(gender)), 0);
 
-            var primaryWeapon = (string) GetCharacterWeapon(player, "PrimaryWeapon");
-            var primaryAmmo = (int) GetCharacterWeapon(player, "PrimaryAmmo");
-            var SecWeapon = (string) GetCharacterWeapon(player, "SecondaryWeapon");
-            var SecAmmo = (int) GetCharacterWeapon(player, "SecondaryAmmo");
-            var Sec2Weapon = (string) GetCharacterWeapon(player, "SecondaryWeapon2");
-            var Sec2Ammo = (int) GetCharacterWeapon(player, "SecondaryAmmo2");
-            var FistWeapon = (string) GetCharacterWeapon(player, "FistWeapon");
-
-            if (primaryWeapon != "None") {
-                player.GiveWeapon(WeaponHandler.GetWeaponModelByName(primaryWeapon), primaryAmmo, false);
-                WeaponHandler.SetWeaponComponents(player, primaryWeapon);
+            if (withWeapons)
+            {
+                string primaryWeapon = (string)GetCharacterWeapon(player, "PrimaryWeapon");
+                int primaryAmmo = (int)GetCharacterWeapon(player, "PrimaryAmmo");
+                string SecWeapon = (string)GetCharacterWeapon(player, "SecondaryWeapon");
+                int SecAmmo = (int)GetCharacterWeapon(player, "SecondaryAmmo");
+                string Sec2Weapon = (string)GetCharacterWeapon(player, "SecondaryWeapon2");
+                int Sec2Ammo = (int)GetCharacterWeapon(player, "SecondaryAmmo2");
+                string FistWeapon = (string)GetCharacterWeapon(player, "FistWeapon");
+                if (primaryWeapon != "None") { player.Emit("Client:Weapon:SetWeaponAmmo", (uint)WeaponHandler.GetWeaponModelByName(primaryWeapon), primaryAmmo); player.GiveWeapon(WeaponHandler.GetWeaponModelByName(primaryWeapon), 0, false); WeaponHandler.SetWeaponComponents(player, primaryWeapon); }
+                if (SecWeapon != "None") { player.Emit("Client:Weapon:SetWeaponAmmo", (uint)WeaponHandler.GetWeaponModelByName(SecWeapon), SecAmmo); player.GiveWeapon(WeaponHandler.GetWeaponModelByName(SecWeapon), 0, false); WeaponHandler.SetWeaponComponents(player, SecWeapon); }
+                if (Sec2Weapon != "None") { player.Emit("Client:Weapon:SetWeaponAmmo", (uint)WeaponHandler.GetWeaponModelByName(Sec2Weapon), Sec2Ammo); player.GiveWeapon(WeaponHandler.GetWeaponModelByName(Sec2Weapon), 0, false); WeaponHandler.SetWeaponComponents(player, Sec2Weapon); }
+                if (FistWeapon != "None") { player.GiveWeapon(WeaponHandler.GetWeaponModelByName(FistWeapon), 1, false); }
             }
-
-            if (SecWeapon != "None") {
-                player.GiveWeapon(WeaponHandler.GetWeaponModelByName(SecWeapon), SecAmmo, false);
-                WeaponHandler.SetWeaponComponents(player, SecWeapon);
-            }
-
-            if (Sec2Weapon != "None") {
-                player.GiveWeapon(WeaponHandler.GetWeaponModelByName(Sec2Weapon), Sec2Ammo, false);
-                WeaponHandler.SetWeaponComponents(player, Sec2Weapon);
-            }
-
-            if (FistWeapon != "None")
-                player.GiveWeapon(WeaponHandler.GetWeaponModelByName(FistWeapon), 1, false);
         }
 
         public static void SwitchCharacterClothesItem(IPlayer player, string ClothesName, string Type) {

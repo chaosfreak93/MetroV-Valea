@@ -276,7 +276,7 @@ namespace Altv_Roleplay.Handler
 
             HUDHandler.CreateHUDBrowser(client); //HUD erstellen
             WeatherHandler.SetRealWeather(client);
-            Characters.SetCharacterCorrectClothes(client);
+            Characters.SetCharacterCorrectClothes(client, true);
             Characters.SetCharacterLastLogin(charid, DateTime.Now);
             Characters.SetCharacterCurrentFunkFrequence(charid, null);
             Alt.Log($"Eingeloggt {client.Name}");
