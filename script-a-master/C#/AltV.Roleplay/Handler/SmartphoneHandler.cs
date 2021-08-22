@@ -30,7 +30,7 @@ namespace Altv_Roleplay.Handler
         #region Anrufsystem
 
         [AsyncClientEvent("Server:Smartphone:tryCall")]
-        public void tryCall(ClassicPlayer player, int targetPhoneNumber) {
+        public void tryCall(ClassicPlayer player, int targetPhoneNumber, bool isAnonymCall) {
             try {
                 if (player == null || !player.Exists || player.CharacterId <= 0 || targetPhoneNumber <= 0 ||
                     !CharactersInventory.ExistCharacterItem(player.CharacterId, "Smartphone", "inventory") ||
@@ -87,7 +87,7 @@ namespace Altv_Roleplay.Handler
                     Characters.SetCharacterCurrentlyRecieveCallState(currentOwnerId, player.CharacterId);
                     Characters.SetCharacterCurrentlyRecieveCallState(player.CharacterId, currentOwnerId);
                     targetServicePlayer.EmitLocked("Client:Smartphone:showPhoneReceiveCall",
-                        Characters.GetCharacterPhonenumber(player.CharacterId));
+                        Characters.GetCharacterPhonenumber(player.CharacterId), false);
                     return;
                 }
 
@@ -118,7 +118,7 @@ namespace Altv_Roleplay.Handler
                 //Characters.SetCharacterTargetPhoneNumber(player.CharacterId, targetPhoneNumber);
                 Characters.SetCharacterCurrentlyRecieveCallState(targetPlayer.CharacterId, player.CharacterId);
                 Characters.SetCharacterCurrentlyRecieveCallState(player.CharacterId, targetPlayer.CharacterId);
-                targetPlayer.EmitLocked("Client:Smartphone:showPhoneReceiveCall", Characters.GetCharacterPhonenumber(player.CharacterId));
+                targetPlayer.EmitLocked("Client:Smartphone:showPhoneReceiveCall", Characters.GetCharacterPhonenumber(player.CharacterId), isAnonymCall);
             }
             catch (Exception e) {
                 Alt.Log($"{e}");
