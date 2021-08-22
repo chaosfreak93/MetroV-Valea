@@ -13,6 +13,7 @@ export default class Wheel {
 
         wheelModel = native.createObject(alt.hash('vw_prop_vw_luckywheel_02a'), wheelCoords.x, wheelCoords.y, wheelCoords.z, false, false, true);
         native.setEntityHeading(wheelModel, 0);
+        native.freezeEntityPosition(wheelModel, true);
     }
 
     static async prepareRoll(): Promise<void> {
