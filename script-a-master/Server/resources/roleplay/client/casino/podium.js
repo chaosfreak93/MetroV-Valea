@@ -11,18 +11,20 @@ class Podium {
     static async loadPodium() {
         podiumVehicle = alt.getSyncedMeta("podiumVehicle");
         await loadModelAsync("vw_prop_vw_casino_podium_01a");
-        await loadModelAsync(podiumVehicle);
         podiumModel = native.createObject(alt.hash("vw_prop_vw_casino_podium_01a"), podiumCoords.x, podiumCoords.y, podiumCoords.z, false, false, true);
         native.setEntityHeading(podiumModel, 0);
-        vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0, false, false, true);
-        native.setEntityHeading(vehicleModel, 0);
-        native.setEntityInvincible(vehicleModel, true);
-        native.setVehicleDoorsLocked(vehicleModel, 2);
-        native.setVehicleModColor1(vehicleModel, 0, 0, 0);
-        native.setVehicleModColor2(vehicleModel, 0, 0);
-        native.setVehicleCustomPrimaryColour(vehicleModel, 9, 75, 135);
-        native.setVehicleCustomSecondaryColour(vehicleModel, 9, 75, 135);
-        native.setVehicleNumberPlateText(vehicleModel, "CASINO");
+        if (alt.getSyncedMeta("podiumVehicle") == "none") {
+            await loadModelAsync(podiumVehicle);
+            vehicleModel = native.createVehicle(alt.hash(podiumVehicle), vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0, false, false, true);
+            native.setEntityHeading(vehicleModel, 0);
+            native.setEntityInvincible(vehicleModel, true);
+            native.setVehicleDoorsLocked(vehicleModel, 2);
+            native.setVehicleModColor1(vehicleModel, 0, 0, 0);
+            native.setVehicleModColor2(vehicleModel, 0, 0);
+            native.setVehicleCustomPrimaryColour(vehicleModel, 9, 75, 135);
+            native.setVehicleCustomSecondaryColour(vehicleModel, 9, 75, 135);
+            native.setVehicleNumberPlateText(vehicleModel, "CASINO");
+        }
         interval = alt.setInterval(Podium.startPodium, 5);
     }
     static async startPodium() {
