@@ -163,6 +163,8 @@ export default class IPLManager {
         alt.requestIpl('CanyonRvrShallow');
     
         alt.requestIpl('vw_casino_main');
+        alt.requestIpl('vw_casino_carpark');
+        alt.requestIpl('vw_casino_penthouse');
         alt.requestIpl('hei_dlc_windows_casino');
         alt.requestIpl('hei_dlc_casino_door');
         alt.requestIpl('vw_dlc_casino_door');
