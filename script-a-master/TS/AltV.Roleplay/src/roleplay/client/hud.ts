@@ -1670,7 +1670,11 @@ alt.on('keyup', (key) => {
         //Smartphone Bild hoch
         if (hudBrowser == null || !browserReady || isPlayerDead || !isPhoneEquipped || alt.Player.local.getMeta("IsCefOpen") == true || alt.Player.local.getSyncedMeta("HasFootCuffs") == true || alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) return;
         hudBrowser.emit("CEF:Smartphone:togglePhone", true);
-        playAnimation("cellphone@in_car@ds", "cellphone_text_read_base", 49, -1);
+        if (alt.Player.local.vehicle) {
+            playAnimation("cellphone@in_car@ds", "cellphone_text_read_base", 49, -1);
+        } else {
+            game.taskStartScenarioInPlace(alt.Player.local.scriptID, "WORLD_HUMAN_STAND_MOBILE", 0, true);
+        }
         alt.emit("Client:HUD:setCefStatus", true);
         alt.showCursor(true);
         alt.toggleGameControls(false);
@@ -1680,6 +1684,7 @@ alt.on('keyup', (key) => {
         if (hudBrowser == null || !browserReady || !isPhoneEquipped) return;
         if (alt.Player.local.getSyncedMeta("HasFootCuffs") == false && alt.Player.local.getSyncedMeta("HasHandcuffs") == false && alt.Player.local.getSyncedMeta("HasRopeCuffs") == false) game.clearPedTasks(alt.Player.local.scriptID);
         hudBrowser.emit("CEF:Smartphone:togglePhone", false);
+        game.clearPedTasks(alt.Player.local.scriptID);
         alt.emit("Client:HUD:setCefStatus", false);
         alt.showCursor(false);
         alt.toggleGameControls(true);
