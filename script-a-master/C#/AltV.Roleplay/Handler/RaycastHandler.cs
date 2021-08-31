@@ -211,6 +211,8 @@ namespace Altv_Roleplay.Handler
                     targetPlayer.SetClothes(6, 7, 0, 0);
                     targetPlayer.SetClothes(8, 1, 88, 0);
                 }
+                
+                Characters.SetCharacterCorrectTorso(targetPlayer, targetPlayer.GetClothes(11).Drawable);
             }
             catch (Exception e) {
                 Alt.Log($"{e}");

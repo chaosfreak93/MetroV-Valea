@@ -3048,6 +3048,8 @@ namespace Altv_Roleplay.Model
             else
                 player.SetClothes(10, ServerClothes.GetClothesDraw(GetCharacterClothes(charid, "Decal"), Convert.ToInt32(gender)), ServerClothes.GetClothesTexture(GetCharacterClothes(charid, "Decal"), Convert.ToInt32(gender)), 0);
 
+            SetCharacterCorrectTorso(player, player.GetClothes(11).Drawable);
+            
             if (withWeapons)
             {
                 string primaryWeapon = (string)GetCharacterWeapon(player, "PrimaryWeapon");

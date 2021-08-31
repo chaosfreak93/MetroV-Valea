@@ -344,6 +344,8 @@ namespace Altv_Roleplay.Handler
                 }
             }
 
+            Characters.SetCharacterCorrectTorso(client, client.GetClothes(11).Drawable);
+            
             client.updateTattoos();
             
             client.Emit("Client:SpawnArea:SwitchIn");

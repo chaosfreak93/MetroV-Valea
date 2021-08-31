@@ -98,7 +98,6 @@ namespace Altv_Roleplay.Handler
                 player.SetClothes(3, 
                     ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, "Torso"), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))),
                     ServerClothes.GetClothesTexture(Characters.GetCharacterClothes(charid, "Torso"), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))), 0);
-
             } else if (action == "unterhemd") {
                 if (!player.HasData("HasUndershirtOn")) {
                     player.SetClothes(8, 15, 0, 0);
@@ -141,7 +140,6 @@ namespace Altv_Roleplay.Handler
                 TypeText = "Necklace";
                 player.DeleteData("HasNecklaceOn");
             }
-
 
             if (TypeText == "none" || Characters.GetCharacterClothes(charid, TypeText) == -2 || ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText), (byte)Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId))) == 0) return;
 
