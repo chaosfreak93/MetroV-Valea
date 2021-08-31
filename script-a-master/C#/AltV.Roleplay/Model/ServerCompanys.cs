@@ -188,7 +188,8 @@ namespace Altv_Roleplay.Model
             var items = ServerCompanysData_.Where(x => x.id == companyId).Select(x => new {
                 x.companyName,
                 ownerName = Characters.GetCharacterName(x.companyOwnerId),
-                memberAmount = GetServerCompanyMemberCount(companyId)
+                memberAmount = GetServerCompanyMemberCount(companyId),
+                x.companyMoney
             }).ToList();
 
             return JsonSerializer.Serialize(items);

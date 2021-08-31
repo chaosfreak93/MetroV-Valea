@@ -1770,7 +1770,7 @@
 
         for (var i in infoArray) {
             $("#companyapp-overview-header").html(`${infoArray[i].companyName} (${companyId})`);
-            $("#companyapp-overview-text").html(`<b>Geschäftsführer: </b>${infoArray[i].ownerName}<br><b>Mitarbeiter: </b>${infoArray[i].memberAmount}<br><b>Unternehmen-ID: </b>${companyId}<br>`);
+            $("#companyapp-overview-text").html(`<b>Geschäftsführer: </b>${infoArray[i].ownerName}<br><b>Kontostand: </b>${infoArray[i].companyMoney}$<br><b>Mitarbeiter: </b>${infoArray[i].memberAmount}<br>`);
         }
 
         for (var i in memberArray) {
