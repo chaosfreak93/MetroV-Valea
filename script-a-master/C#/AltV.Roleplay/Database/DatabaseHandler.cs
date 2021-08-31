@@ -432,7 +432,7 @@ namespace Altv_Roleplay.Database
                         ServerPeds.ServerPeds_.Add(data);
                     } else if (pos.posType == "storage") {
                         var MarkerData = new Server_Markers {
-                            type = 22,
+                            type = 43,
                             posX = pos.posX,
                             posY = pos.posY,
                             posZ = pos.posZ,
@@ -443,7 +443,7 @@ namespace Altv_Roleplay.Database
                             green = 58,
                             blue = 58,
                             alpha = 50,
-                            bobUpAndDown = true
+                            bobUpAndDown = false
                         };
                         ServerBlips.ServerMarkers_.Add(MarkerData);
                     } else if (pos.posType == "servicephone") {
