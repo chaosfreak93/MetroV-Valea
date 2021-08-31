@@ -133,13 +133,29 @@ export function gotoCoords(movePos: alt.Vector3, moveRot: alt.Vector3): Promise<
 
 export function setIntoVehicle(vehicle: alt.Vehicle): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (alt.Player.local.vehicle)
+        if (native.isPedSittingInVehicle(alt.Player.local.scriptID, vehicle))
             return resolve(true);
 
-        native.setPedIntoVehicle(alt.Player.local.scriptID, vehicle.scriptID, -1);
+        native.setPedIntoVehicle(alt.Player.local.scriptID, vehicle, -1);
 
         let interval = alt.setInterval(() => {
-            if (alt.Player.local.vehicle) {
+            if (native.isPedSittingInVehicle(alt.Player.local.scriptID, vehicle)) {
+                alt.clearInterval(interval);
+                return resolve(true);
+            }
+        }, 0);
+    });
+}
+
+export function isCollisionLoaded(player: alt.Player): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+        if (native.hasCollisionLoadedAroundEntity(player.scriptID))
+            return resolve(true);
+
+        native.requestCollisionAtCoord(player.pos.x, player.pos.y, player.pos.z);
+
+        let interval = alt.setInterval(() => {
+            if (native.hasCollisionLoadedAroundEntity(player.scriptID)) {
                 alt.clearInterval(interval);
                 return resolve(true);
             }
@@ -191,6 +207,7 @@ export default {
     loadAnimDictAsync,
     loadStreamedTextureDictAsync,
     loadModelAsync,
+    isCollisionLoaded,
     setIntoVehicle,
     clearTattoos,
     setTattoo,
