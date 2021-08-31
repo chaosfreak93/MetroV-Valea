@@ -410,9 +410,11 @@ namespace Altv_Roleplay.Database
                     ServerFactions.ServerFactions_ = new List<Server_Factions>(db.Server_Factions);
                     ServerFactions.ServerFactionPositions_ = new List<Server_Faction_Positions>(db.Server_Faction_Positions);
                     ServerFactions.ServerFactionDispatches_ = new List<ServerFaction_Dispatch>(db.Server_Faction_Dispatch);
+                    ServerFactions.ServerFactionClothes_ = new List<Server_Faction_Clothes>(db.Server_Faction_Clothes);
                     Alt.Log($"{ServerFactions.ServerFactions_.Count} Server-Factions wurden geladen.");
                     Alt.Log($"{ServerFactions.ServerFactionPositions_.Count} Server-Faction-Positions wurden geladen.");
                     Alt.Log($"{ServerFactions.ServerFactionDispatches_.Count} Server-Faction-Dispatches wurden geladen.");
+                    Alt.Log($"{ServerFactions.ServerFactionClothes_.Count} Server-Faction-Clothes wurden geladen.");
                 }
 
                 foreach (var pos in ServerFactions.ServerFactionPositions_)
@@ -447,6 +449,22 @@ namespace Altv_Roleplay.Database
                     } else if (pos.posType == "servicephone") {
                         var markerData = new Server_Markers {
                             type = 22,
+                            posX = pos.posX,
+                            posY = pos.posY,
+                            posZ = pos.posZ,
+                            scaleX = 1,
+                            scaleY = 1,
+                            scaleZ = 1,
+                            red = 224,
+                            green = 58,
+                            blue = 58,
+                            alpha = 50,
+                            bobUpAndDown = false
+                        };
+                        ServerBlips.ServerMarkers_.Add(markerData);
+                    } else if (pos.posType == "clothes") {
+                        var markerData = new Server_Markers {
+                            type = 21,
                             posX = pos.posX,
                             posY = pos.posY,
                             posZ = pos.posZ,

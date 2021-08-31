@@ -627,8 +627,11 @@ namespace Altv_Roleplay.models
                 entity.ToTable("server_faction_clothes", Constants.DatabaseConfig.Database);
                 entity.HasIndex(e => e.id).HasDatabaseName("id");
                 entity.Property(e => e.id).HasColumnName("id").HasColumnType("int(11)");
-                entity.Property(e => e.faction).HasColumnName("faction").HasColumnType("int(11)");
-                entity.Property(e => e.clothesName).HasColumnName("clothesName").HasMaxLength(128);
+                entity.Property(e => e.factionId).HasColumnName("factionId").HasColumnType("int(11)");
+                entity.Property(e => e.clothesType).HasColumnName("clothesType").HasMaxLength(128);
+                entity.Property(e => e.drawable).HasColumnName("drawable").HasColumnType("int(11)");
+                entity.Property(e => e.texture).HasColumnName("texture").HasColumnType("int(11)");
+                entity.Property(e => e.gender).HasColumnName("gender").HasColumnType("int(11)");
             });
 
             modelBuilder.Entity<Server_Faction_Members>(entity =>

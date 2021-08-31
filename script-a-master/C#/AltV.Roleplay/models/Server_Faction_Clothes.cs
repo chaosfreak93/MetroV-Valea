@@ -9,7 +9,10 @@ namespace Altv_Roleplay.models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-        public int faction { get; set; }
-        public string clothesName { get; set; }
+        public int factionId { get; set; }
+        public string clothesType { get; set; }
+        public ushort drawable { get; set; }
+        public byte texture { get; set; }
+        public int gender { get; set; }
     }
 }

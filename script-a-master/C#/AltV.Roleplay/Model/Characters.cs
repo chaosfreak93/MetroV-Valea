@@ -3065,6 +3065,40 @@ namespace Altv_Roleplay.Model
                 if (FistWeapon != "None") { player.GiveWeapon(WeaponHandler.GetWeaponModelByName(FistWeapon), 1, false); }
             }
         }
+        
+        public static void SetCharacterDutyClothes(IPlayer player, int factionId) {
+            try {
+                if (player == null || !player.Exists) return;
+
+                var charid = User.GetPlayerOnline(player);
+                if (charid == 0 || factionId == 0) return;
+
+                var gender = GetCharacterGender(charid);
+
+                if (GetCharacterBackpack(charid) == 0) SetCharacterBackpack(player, "None");
+                else if (GetCharacterBackpack(charid) == 31) SetCharacterBackpack(player, "Rucksack");
+                else if (GetCharacterBackpack(charid) == 45) SetCharacterBackpack(player, "Tasche");
+
+                player.SetClothes(11, ServerFactions.GetCharacterClothes(factionId, "Top", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Top", Convert.ToInt32(gender)).texture, 0);
+                player.SetClothes(4, ServerFactions.GetCharacterClothes(factionId, "Leg", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Leg", Convert.ToInt32(gender)).texture, 0);
+                player.SetClothes(6, ServerFactions.GetCharacterClothes(factionId, "Feet", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Feet", Convert.ToInt32(gender)).texture, 0);
+                player.SetClothes(1, ServerFactions.GetCharacterClothes(factionId, "Mask", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Mask", Convert.ToInt32(gender)).texture, 0);
+                player.SetClothes(7, ServerFactions.GetCharacterClothes(factionId, "Necklace", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Necklace", Convert.ToInt32(gender)).texture, 0);
+                player.SetClothes(9, ServerFactions.GetCharacterClothes(factionId, "Armor", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Armor", Convert.ToInt32(gender)).texture, 0);
+                player.SetProps(0, ServerFactions.GetCharacterClothes(factionId, "Hat", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Hat", Convert.ToInt32(gender)).texture);
+                player.SetProps(1, ServerFactions.GetCharacterClothes(factionId, "Glass", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Glass", Convert.ToInt32(gender)).texture);
+                player.SetProps(2, ServerFactions.GetCharacterClothes(factionId, "Earring", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Earring", Convert.ToInt32(gender)).texture);
+                player.SetProps(6, ServerFactions.GetCharacterClothes(factionId, "Watch", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Watch", Convert.ToInt32(gender)).texture);
+                player.SetProps(7, ServerFactions.GetCharacterClothes(factionId, "Bracelet", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Bracelet", Convert.ToInt32(gender)).texture);
+                player.SetClothes(8, ServerFactions.GetCharacterClothes(factionId, "Undershirt", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Undershirt", Convert.ToInt32(gender)).texture, 0);
+                player.SetClothes(10, ServerFactions.GetCharacterClothes(factionId, "Decal", Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, "Decal", Convert.ToInt32(gender)).texture, 0);
+
+                SetCharacterCorrectTorso(player, player.GetClothes(11).Drawable);
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+            }
+        }
 
         public static void SwitchCharacterClothesItem(IPlayer player, string ClothesName, string Type) {
             if (player == null || !player.Exists) return;

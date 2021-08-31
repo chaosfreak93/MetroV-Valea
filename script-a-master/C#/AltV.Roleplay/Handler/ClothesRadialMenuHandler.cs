@@ -144,15 +144,33 @@ namespace Altv_Roleplay.Handler
             if (TypeText == "none" || Characters.GetCharacterClothes(charid, TypeText) == -2 || ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText), (byte)Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId))) == 0) return;
 
             if (ClothesType == "Prop") {
-                player.SetProps(type, 
-                    ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))),
-                    ServerClothes.GetClothesTexture(Characters.GetCharacterClothes(charid, TypeText), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))));
+                if (ServerFactions.IsCharacterInAnyFaction(charid) && ServerFactions.IsCharacterInFactionDuty(charid) &&
+                    ServerFactions.HasFactionClothes(ServerFactions.GetCharacterFactionId(charid))) {
+                    var factionId = ServerFactions.GetCharacterFactionId(charid);
+                    var gender = Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId));
+                    player.SetProps(type, ServerFactions.GetCharacterClothes(factionId, TypeText, Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, TypeText, Convert.ToInt32(gender)).texture);
+                } else {
+                    player.SetProps(type,
+                        ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText),
+                            Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId))),
+                        ServerClothes.GetClothesTexture(Characters.GetCharacterClothes(charid, TypeText),
+                            Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId))));
+                }
                 return;
             }
 
-            player.SetClothes(type, 
-                ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))),
-                ServerClothes.GetClothesTexture(Characters.GetCharacterClothes(charid, TypeText), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))), 0);
+            if (ServerFactions.IsCharacterInAnyFaction(charid) && ServerFactions.IsCharacterInFactionDuty(charid) &&
+                ServerFactions.HasFactionClothes(ServerFactions.GetCharacterFactionId(charid))) {
+                var factionId = ServerFactions.GetCharacterFactionId(charid);
+                var gender = Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer)player).CharacterId));
+                player.SetClothes(type, ServerFactions.GetCharacterClothes(factionId, TypeText, Convert.ToInt32(gender)).drawable, ServerFactions.GetCharacterClothes(factionId, TypeText, Convert.ToInt32(gender)).texture, 0);
+            } else {
+                player.SetClothes(type, 
+                    ServerClothes.GetClothesDraw(Characters.GetCharacterClothes(charid, TypeText), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))),
+                    ServerClothes.GetClothesTexture(Characters.GetCharacterClothes(charid, TypeText), Convert.ToInt32(Characters.GetCharacterGender(((ClassicPlayer) player).CharacterId))), 0);   
+            }
+
+            Characters.SetCharacterCorrectTorso(player, player.GetClothes(11).Drawable);
         }
     }
 }

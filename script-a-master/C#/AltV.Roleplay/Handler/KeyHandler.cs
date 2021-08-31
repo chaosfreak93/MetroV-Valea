@@ -155,9 +155,15 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
                 
-                Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.293017578125f);
-                Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.80439453125f);
+                Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.793017578125f);
+                Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.30439453125f);
                 Position casinoWheelPos = new Position(1110.949462890625f, 229.26593017578125f, -49.6446533203125f);
+                Position casinoGarageEntrancePos = new Position(936.4747314453125f, 1.5692307949066162f, 78.7509765625f);
+                Position casinoGarageEnterPos = new Position(1341.82421875f, 183.95603942871094f, -48.027099609375f);
+                Rotation casinoGarageEnterRot = new Rotation(0, 0, -1.5336909294128418f);
+                Position casinoGarageLeavePos = new Position(1334.4263916015625f, 190.62857055664062f, -47.892333984375f);
+                Position casinoGarageExitPos = new Position(933.8109741210938f, -3.4681320190429688f, 78.7509765625f);
+                Rotation casinoGarageExitRot = new Rotation(0, 0, 2.5726430416107178f);
                 var result = ServerDiamondCasino.DiamondCasino.First();
                 Position casinoInsideTrackPos = new Position(result.insideTrackX, result.insideTrackY, result.insideTrackZ);
                 
@@ -165,7 +171,7 @@ namespace Altv_Roleplay.Handler
 
                 if (casinoEntrance && !player.IsInVehicle) {
                     player.Emit("Client:Casino:Enter");
-                    player.Position = new Position(casinoExitPos.X, casinoExitPos.Y, casinoExitPos.Z + 0.5f);
+                    player.Position = casinoExitPos;
                     return;
                 }
                 
@@ -173,7 +179,7 @@ namespace Altv_Roleplay.Handler
 
                 if (casinoExit && !player.IsInVehicle) {
                     player.Emit("Client:Casino:Leave");
-                    player.Position = new Position(casinoEntrancePos.X, casinoEntrancePos.Y, casinoEntrancePos.Z + 0.5f);
+                    player.Position = casinoEntrancePos;
                     return;
                 }
                 
@@ -193,11 +199,37 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
                 
-                bool casinoInsideTrack = player.Position.IsInRange(casinoInsideTrackPos, 5f);
+                bool casinoInsideTrack = player.Position.IsInRange(casinoInsideTrackPos, 3f);
 
                 if (casinoInsideTrack && !player.IsInVehicle) {
                     player.Emit("Client:Casino:SingleRace:LoadSingleRace");
                     return;
+                }
+                
+                bool casinoGarageEnter = player.Position.IsInRange(casinoGarageEntrancePos, 7.5f);
+
+                if (casinoGarageEnter) {
+                    if (ServerCompanys.GetCharacterServerCompanyId(charId) != 2) return;
+                    if (player.Vehicle != null && player.Vehicle.Driver == player) {
+                        player.Vehicle.Position = casinoGarageEnterPos;
+                        player.Vehicle.Rotation = casinoGarageEnterRot;
+                    } else {
+                        player.Position = casinoGarageEnterPos;
+                        player.Rotation = casinoGarageEnterRot;
+                    }
+                }
+
+                bool casinoGarageLeave = player.Position.IsInRange(casinoGarageLeavePos, 7.5f);
+
+                if (casinoGarageLeave) {
+                    if (ServerCompanys.GetCharacterServerCompanyId(charId) != 2) return;
+                    if (player.Vehicle != null && player.Vehicle.Driver == player) {
+                        player.Vehicle.Position = casinoGarageExitPos;
+                        player.Vehicle.Rotation = casinoGarageExitRot;
+                    } else {
+                        player.Position = casinoGarageExitPos;
+                        player.Rotation = casinoGarageExitRot;
+                    }
                 }
 
                 bool airportExit = player.Position.IsInRange(Constants.Positions.ExitTPPos_Airport, 3f);
@@ -421,6 +453,19 @@ namespace Altv_Roleplay.Handler
                                 $"{Characters.GetCharacterName(charId)} hat das Leitstellentelefon deiner Fraktion abgelegt.");
                             return;
                         }
+                    }
+                    
+                    var factionClothesPos = ServerFactions.ServerFactionPositions_.FirstOrDefault(x =>
+                        x.factionId == factionId && x.posType == "clothes" && player.Position.IsInRange(new Position(x.posX, x.posY, x.posZ), 2f));
+
+                    if (factionClothesPos != null && !player.IsInVehicle) {
+                        var isDuty = ServerFactions.IsCharacterInFactionDuty(charId);
+
+                        if (isDuty)
+                            Characters.SetCharacterDutyClothes(player, factionId);
+                        else
+                            Characters.SetCharacterCorrectClothes(player);
+                        return;
                     }
                 }
 

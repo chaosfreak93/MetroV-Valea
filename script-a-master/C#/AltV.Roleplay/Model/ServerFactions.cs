@@ -20,6 +20,7 @@ namespace Altv_Roleplay.Model
         public static List<Server_Faction_Storage_Items> ServerFactionStorageItems_ = new();
         public static List<Server_Faction_Positions> ServerFactionPositions_ = new();
         public static List<ServerFaction_Dispatch> ServerFactionDispatches_ = new();
+        public static List<Server_Faction_Clothes> ServerFactionClothes_ = new();
 
         public static List<Logs_Faction> LogsFaction_ = new();
         // 1  = DoJ, 2 = LSPD, 3 = LSMD, 4 = ACLS, 5 = Fahrschule
@@ -789,6 +790,36 @@ namespace Altv_Roleplay.Model
             }
 
             return false;
+        }
+        
+        public static Server_Faction_Clothes GetCharacterClothes(int factionId, string clotheType, int gender) {
+            try {
+                if (factionId == 0) return null;
+
+                var factionClothesData = ServerFactionClothes_.FirstOrDefault(x => x.factionId == factionId && x.clothesType == clotheType && x.gender == gender);
+                if (factionClothesData == null) return null;
+
+                return factionClothesData;
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+                return null;
+            }
+        }
+        
+        public static bool HasFactionClothes(int factionId) {
+            try {
+                if (factionId == 0) return false;
+
+                var factionClothesData = ServerFactionClothes_.FirstOrDefault(x => x.factionId == factionId);
+                if (factionClothesData == null) return false;
+
+                return true;
+            }
+            catch (Exception e) {
+                Alt.Log($"{e}");
+                return false;
+            }
         }
     }
 }
