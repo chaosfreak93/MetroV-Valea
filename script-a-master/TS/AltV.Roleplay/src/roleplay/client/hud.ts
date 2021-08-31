@@ -1558,7 +1558,7 @@ alt.on('keydown', (key) => {
             return;
         }
     } else if (key == 'M'.charCodeAt(0)) {
-        if (alt.Player.local.getMeta("IsCefOpen") || alt.Player.local.vehicle || lastInteract + 500 > Date.now()) return;
+        if (hudBrowser == null || alt.Player.local.getMeta("IsCefOpen") || alt.Player.local.vehicle || lastInteract + 500 > Date.now()) return;
         lastInteract = Date.now();
 
         AnimationMenuUsing = true;
@@ -1605,7 +1605,7 @@ alt.on('keydown', (key) => {
             }
         }
     } else if (key == 'K'.charCodeAt(0)) {
-        if (alt.Player.local.getMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
+        if (hudBrowser == null || alt.Player.local.getMeta("IsCefOpen") || lastInteract + 500 > Date.now()) return;
         lastInteract = Date.now();
 
         ClothesRadialMenuUsing = true;
