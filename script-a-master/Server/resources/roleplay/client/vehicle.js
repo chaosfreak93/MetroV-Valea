@@ -22,8 +22,10 @@ class VehicleHandler {
             native.setVehicleDeformationFixed(curVeh.scriptID);
         }
     }
-    static async setPedIntoVehicle(curVeh) {
-        await setIntoVehicle(curVeh);
+    static setPedIntoVehicle(curVeh) {
+        alt.setTimeout(async ()=>{
+            await setIntoVehicle(curVeh);
+        }, 500);
     }
     static toggleDoor(vehicle, doorid, state) {
         if (state) {

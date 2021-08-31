@@ -26,8 +26,10 @@ export default class VehicleHandler {
         }
     }
 
-    static async setPedIntoVehicle(curVeh: alt.Vehicle): Promise<void> {
-        await setIntoVehicle(curVeh);
+    static setPedIntoVehicle(curVeh: alt.Vehicle): void {
+        alt.setTimeout(async () => {
+            await setIntoVehicle(curVeh);
+        }, 500);
     }
 
     static toggleDoor(vehicle: alt.Vehicle, doorid: number, state: boolean): void {
