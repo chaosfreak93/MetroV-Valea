@@ -100,6 +100,7 @@ namespace Altv_Roleplay.Factions.LSMD
                             
                             online.SetProps(2, 2, 0);
                             online.SetProps(7, 0, 0);
+                            Characters.SetCharacterCorrectTorso(online, online.GetClothes(11).Drawable);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                             HUDHandler.SendNotification(online, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
                         } else {
@@ -205,6 +206,7 @@ namespace Altv_Roleplay.Factions.LSMD
                             
                             online.SetProps(2, 2, 0);
                             online.SetProps(7, 0, 0);
+                            Characters.SetCharacterCorrectTorso(online, online.GetClothes(11).Drawable);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                         }
 

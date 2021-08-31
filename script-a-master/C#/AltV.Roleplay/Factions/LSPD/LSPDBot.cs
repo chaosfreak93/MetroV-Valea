@@ -102,6 +102,7 @@ namespace Altv_Roleplay.Factions.LSPD
                             online.SetProps(0, 46, 0);
                             online.SetProps(7, 0,0);
                             online.SetProps(2, 2, 0);
+                            Characters.SetCharacterCorrectTorso(online, online.GetClothes(11).Drawable);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                             HUDHandler.SendNotification(online, 2, 5000, "Du hast dich erfolgreich zum Dienst angemeldet.");
                             SmartphoneHandler.RequestLSPDIntranet(online);
@@ -211,6 +212,7 @@ namespace Altv_Roleplay.Factions.LSPD
                             online.SetProps(0, 46, 0);
                             online.SetProps(7, 0,0);
                             online.SetProps(2, 2, 0);
+                            Characters.SetCharacterCorrectTorso(online, online.GetClothes(11).Drawable);
                             Characters.SetCharacterArmor(online.CharacterId, 100);
                         }
 
