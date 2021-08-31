@@ -2,7 +2,7 @@ import * as alt from 'alt-client';
 import * as native from 'natives';
 import IPLManager from './iplmanager';
 import { setAudioData, setMinimapData } from "./miscs";
-import { loadModelAsync } from './utilities';
+import { isCollisionLoaded, loadModelAsync } from './utilities';
 let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
@@ -169,16 +169,16 @@ class LoginHandler {
             loginBrowser.emit("CEF:Charselector:sendCharactersToCEF", chars);
         }
     }
-    static SwitchIn() {
+    static async SwitchIn() {
         let player = alt.Player.local;
-        native.switchInPlayer(player.scriptID);
-        alt.setTimeout(()=>{
+        await isCollisionLoaded(alt.Player.local);
+        alt.setTimeout(async ()=>{
             let interiorID = native.getInteriorAtCoords(player.pos.x, player.pos.y, player.pos.z);
             native.refreshInterior(interiorID);
-            alt.setTimeout(()=>{
-                native.freezeEntityPosition(alt.Player.local.scriptID, false);
-            }, 250);
-        }, 250);
+            await isCollisionLoaded(alt.Player.local);
+            native.freezeEntityPosition(alt.Player.local.scriptID, false);
+            native.switchInPlayer(player.scriptID);
+        }, 1000);
     }
     static async spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
         let facefeatures = JSON.parse(facefeaturearray);
