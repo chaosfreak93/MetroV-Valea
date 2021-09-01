@@ -107,7 +107,7 @@
     };
     // PLUGIN DEFINITION
     // =======================
-    function Plugin1(settings) {
+    function Plugin(settings) {
         return this.each(function() {
             var $this = $(this);
             var data = $this.data('zmd.hierarchicalDisplay');
@@ -124,19 +124,19 @@
             }
         });
     }
-    $.fn.hierarchicalDisplay = Plugin1;
+    $.fn.hierarchicalDisplay = Plugin;
     $.fn.hierarchicalDisplay.Constructor = HDisplay;
     // DATA-API
     // ==============
     $(document).on('ready', function() {
         $('[data-animation="hierarchical-display"]').each(function() {
-            Plugin1.call($(this));
+            Plugin.call($(this));
         });
     });
     $(document).on('click', '[data-toggle="hierarchical-display"]', function(e) {
         var $this = $(this);
         var $target = $($this.attr('data-target') || $this.attr('href'));
         if ($this.is('a')) e.preventDefault();
-        Plugin1.call($target, 'toggle');
+        Plugin.call($target, 'toggle');
     });
 })(jQuery);

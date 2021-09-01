@@ -16,7 +16,7 @@ let drawTick = null;
 let handleTick = null;
 let winTick = null;
 let fakeTick = null;
-let cooldown1 = 60;
+let cooldown = 60;
 let HorseStyles = [
     [
         15553363,
@@ -623,7 +623,7 @@ class SingleRace {
             native.setPlayerControl(alt.Player.local.scriptID, false, 0);
             alt.setTimeout(()=>{
                 SingleRace.showMainScreen();
-                SingleRace.setMainScreenCooldown(cooldown1);
+                SingleRace.setMainScreenCooldown(cooldown);
                 SingleRace.addHorses();
                 drawTick = alt.everyTick(SingleRace.drawSingleTrack);
                 handleTick = alt.everyTick(SingleRace.handleControls);
@@ -672,12 +672,12 @@ class SingleRace {
         let yMouse = native.getDisabledControlNormal(2, 240);
         fakeTick = fakeTick + 10;
         if (fakeTick == 750) {
-            if (cooldown1 == 1) {
-                cooldown1 = 60;
+            if (cooldown == 1) {
+                cooldown = 60;
             }
-            cooldown1 = cooldown1 - 1;
+            cooldown = cooldown - 1;
             fakeTick = 0;
-            SingleRace.setMainScreenCooldown(cooldown1);
+            SingleRace.setMainScreenCooldown(cooldown);
         }
         native.beginScaleformMovieMethod(scaleform, "SET_MOUSE_INPUT");
         native.scaleformMovieMethodAddParamFloat(xMouse);
@@ -843,7 +843,7 @@ class SingleRace {
         native.setScaleformMovieAsNoLongerNeeded(scaleform);
         scaleform = null;
         native.releaseNamedScriptAudioBank("DLC_VINEWOOD/CASINO_GENERAL");
-        cooldown1 = 60;
+        cooldown = 60;
         native.stopSound(CurrentSoundId);
         native.releaseSoundId(CurrentSoundId);
         CurrentSoundId = -1;

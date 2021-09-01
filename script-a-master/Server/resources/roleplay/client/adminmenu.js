@@ -241,8 +241,8 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info)=>{
             playerblips_allblips.push(playerblips_blip[player.scriptID]);
         }
         playerblips_interval = alt.setInterval(()=>{
-            for(let i1 = 0, n1 = alt.Player.all.length; i1 < n1; i1++){
-                let player = alt.Player.all[i1];
+            for(let i = 0, n = alt.Player.all.length; i < n; i++){
+                let player = alt.Player.all[i];
                 if (!player.valid || player.scriptID == undefined) continue;
                 const username = player.getSyncedMeta('NAME');
                 if (!username || username == undefined) continue;

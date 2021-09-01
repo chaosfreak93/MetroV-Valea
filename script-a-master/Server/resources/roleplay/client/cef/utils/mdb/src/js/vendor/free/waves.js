@@ -230,7 +230,7 @@
             setTimeout(function() {
                 try {
                     el.removeChild(ripple);
-                } catch (e1) {
+                } catch (e) {
                     return false;
                 }
             }, duration);
@@ -401,9 +401,9 @@
                 type: 'mousedown',
                 button: 1
             };
-            var hideRipple = function(mouseup, element1) {
+            var hideRipple = function(mouseup, element) {
                 return function() {
-                    Effect.hide(mouseup, element1);
+                    Effect.hide(mouseup, element);
                 };
             };
             for(; i < elementsLen; i++){

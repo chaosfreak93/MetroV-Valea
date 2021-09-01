@@ -5,12 +5,12 @@
     'use strict';
     function _typeof(obj) {
         if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-            _typeof = function(obj1) {
-                return typeof obj1;
+            _typeof = function(obj) {
+                return typeof obj;
             };
         } else {
-            _typeof = function(obj1) {
-                return obj1 && typeof Symbol === "function" && obj1.constructor === Symbol && obj1 !== Symbol.prototype ? "symbol" : typeof obj1;
+            _typeof = function(obj) {
+                return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
             };
         }
         return _typeof(obj);
@@ -109,7 +109,7 @@
     function _nonIterableRest() {
         throw new TypeError("Invalid attempt to destructure non-iterable instance");
     }
-    var noop = function noop1() {
+    var noop = function noop() {
     };
     var _WINDOW = {
     };
@@ -318,8 +318,8 @@
                 'showMissingIcons'
             ]
         ];
-        attrs.forEach(function(_ref1) {
-            var _ref2 = _slicedToArray(_ref1, 2), attr = _ref2[0], key = _ref2[1];
+        attrs.forEach(function(_ref) {
+            var _ref2 = _slicedToArray(_ref, 2), attr = _ref2[0], key = _ref2[1];
             var val = coerce(getAttrConfig(attr));
             if (val !== undefined && val !== null) {
                 initial[key] = val;
@@ -356,8 +356,8 @@
     if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
     var namespace = w[NAMESPACE_IDENTIFIER];
     var functions = [];
-    var listener = function listener1() {
-        DOCUMENT.removeEventListener('DOMContentLoaded', listener1);
+    var listener = function listener() {
+        DOCUMENT.removeEventListener('DOMContentLoaded', listener);
         loaded = 1;
         functions.map(function(fn) {
             return fn();
@@ -376,7 +376,7 @@
     var SETTLED = 'settled';
     var FULFILLED = 'fulfilled';
     var REJECTED = 'rejected';
-    var NOOP = function NOOP1() {
+    var NOOP = function NOOP() {
     };
     var isNode = typeof global !== 'undefined' && typeof global.process !== 'undefined' && typeof global.process.emit === 'function';
     var asyncSetTimer = typeof setImmediate === 'undefined' ? setTimeout : setImmediate;
@@ -556,7 +556,7 @@
         if (!Array.isArray(promises)) {
             throw new TypeError('You must pass an array to Promise.all().');
         }
-        return new P(function(resolve1, reject1) {
+        return new P(function(resolve, reject) {
             var results = [];
             var remaining = 0;
             function resolver(index) {
@@ -564,20 +564,20 @@
                 return function(value) {
                     results[index] = value;
                     if (!--remaining) {
-                        resolve1(results);
+                        resolve(results);
                     }
                 };
             }
             for(var i = 0, promise; i < promises.length; i++){
                 promise = promises[i];
                 if (promise && typeof promise.then === 'function') {
-                    promise.then(resolver(i), reject1);
+                    promise.then(resolver(i), reject);
                 } else {
                     results[i] = promise;
                 }
             }
             if (!remaining) {
-                resolve1(results);
+                resolve(results);
             }
         });
     };
@@ -585,13 +585,13 @@
         if (!Array.isArray(promises)) {
             throw new TypeError('You must pass an array to Promise.race().');
         }
-        return new P(function(resolve1, reject1) {
+        return new P(function(resolve, reject) {
             for(var i = 0, promise; i < promises.length; i++){
                 promise = promises[i];
                 if (promise && typeof promise.then === 'function') {
-                    promise.then(resolve1, reject1);
+                    promise.then(resolve, reject);
                 } else {
-                    resolve1(promise);
+                    resolve(promise);
                 }
             }
         });
@@ -600,13 +600,13 @@
         if (value && _typeof(value) === 'object' && value.constructor === P) {
             return value;
         }
-        return new P(function(resolve1) {
-            resolve1(value);
+        return new P(function(resolve) {
+            resolve(value);
         });
     };
     P.reject = function(reason) {
-        return new P(function(resolve1, reject1) {
-            reject1(reason);
+        return new P(function(resolve, reject) {
+            reject(reason);
         });
     };
     var picked = typeof Promise === 'function' ? Promise : P;
@@ -706,8 +706,8 @@
     function transformIsMeaningful(transform) {
         return transform.size !== meaninglessTransform.size || transform.x !== meaninglessTransform.x || transform.y !== meaninglessTransform.y || transform.rotate !== meaninglessTransform.rotate || transform.flipX || transform.flipY;
     }
-    function transformForSvg(_ref1) {
-        var transform = _ref1.transform, containerWidth = _ref1.containerWidth, iconWidth = _ref1.iconWidth;
+    function transformForSvg(_ref) {
+        var transform = _ref.transform, containerWidth = _ref.containerWidth, iconWidth = _ref.iconWidth;
         var outer = {
             transform: "translate(".concat(containerWidth / 2, " 256)")
         };
@@ -762,8 +762,8 @@
             ];
         }
     }
-    function makeIconMasking(_ref1) {
-        var children = _ref1.children, attributes = _ref1.attributes, main = _ref1.main, mask = _ref1.mask, transform = _ref1.transform;
+    function makeIconMasking(_ref) {
+        var children = _ref.children, attributes = _ref.attributes, main = _ref.main, mask = _ref.mask, transform = _ref.transform;
         var mainWidth = main.width, mainPath = main.icon;
         var maskWidth = mask.width, maskPath = mask.icon;
         var trans = transformForSvg({
@@ -843,8 +843,8 @@
             attributes: attributes
         };
     }
-    function makeIconStandard(_ref1) {
-        var children = _ref1.children, attributes = _ref1.attributes, main = _ref1.main, transform = _ref1.transform, styles = _ref1.styles;
+    function makeIconStandard(_ref) {
+        var children = _ref.children, attributes = _ref.attributes, main = _ref.main, transform = _ref.transform, styles = _ref.styles;
         var styleString = joinStyles(styles);
         if (styleString.length > 0) {
             attributes['style'] = styleString;
@@ -883,8 +883,8 @@
             attributes: attributes
         };
     }
-    function asIcon(_ref1) {
-        var children = _ref1.children, main = _ref1.main, mask = _ref1.mask, attributes = _ref1.attributes, styles = _ref1.styles, transform = _ref1.transform;
+    function asIcon(_ref) {
+        var children = _ref.children, main = _ref.main, mask = _ref.mask, attributes = _ref.attributes, styles = _ref.styles, transform = _ref.transform;
         if (transformIsMeaningful(transform) && main.found && !mask.found) {
             var width = main.width, height = main.height;
             var offset = {
@@ -904,8 +904,8 @@
             }
         ];
     }
-    function asSymbol(_ref1) {
-        var prefix = _ref1.prefix, iconName = _ref1.iconName, children = _ref1.children, attributes = _ref1.attributes, symbol = _ref1.symbol;
+    function asSymbol(_ref) {
+        var prefix = _ref.prefix, iconName = _ref.iconName, children = _ref.children, attributes = _ref.attributes, symbol = _ref.symbol;
         var id = symbol === true ? "".concat(prefix, "-").concat(config.familyPrefix, "-").concat(iconName) : symbol;
         return [
             {
@@ -928,7 +928,7 @@
     }
     function makeInlineSvgAbstract(params) {
         var _params$icons = params.icons, main = _params$icons.main, mask = _params$icons.mask, prefix = params.prefix, iconName = params.iconName, transform = params.transform, symbol = params.symbol, title = params.title, extra = params.extra, _params$watchable = params.watchable, watchable = _params$watchable === void 0 ? false : _params$watchable;
-        var _ref1 = mask.found ? mask : main, width = _ref1.width, height = _ref1.height;
+        var _ref = mask.found ? mask : main, width = _ref.width, height = _ref.height;
         var widthClass = "fa-w-".concat(Math.ceil(width / height * 16));
         var attrClass = [
             config.replacementClass,
@@ -1062,20 +1062,20 @@
         }
         return val;
     }
-    var noop$1 = function noop2() {
+    var noop$1 = function noop() {
     };
     var p = config.measurePerformance && PERFORMANCE && PERFORMANCE.mark && PERFORMANCE.measure ? PERFORMANCE : {
         mark: noop$1,
         measure: noop$1
     };
     var preamble = "FA \"5.12.0\"";
-    var begin = function begin1(name) {
+    var begin = function begin(name) {
         p.mark("".concat(preamble, " ").concat(name, " begins"));
         return function() {
             return end(name);
         };
     };
-    var end = function end1(name) {
+    var end = function end(name) {
         p.mark("".concat(preamble, " ").concat(name, " ends"));
         p.measure("".concat(preamble, " ").concat(name), "".concat(preamble, " ").concat(name, " begins"), "".concat(preamble, " ").concat(name, " ends"));
     };
@@ -1086,9 +1086,9 @@
     /**
      * Internal helper to bind a function known to have 4 arguments
      * to a given context.
-     */ var bindInternal4 = function bindInternal41(func, thisContext) {
-        return function(a, b, c, d1) {
-            return func.call(thisContext, a, b, c, d1);
+     */ var bindInternal4 = function bindInternal4(func, thisContext) {
+        return function(a, b, c, d) {
+            return func.call(thisContext, a, b, c, d);
         };
     };
     /**
@@ -1162,8 +1162,8 @@
     };
     var _byOldName = {
     };
-    var build = function build1() {
-        var lookup = function lookup1(reducer) {
+    var build = function build() {
+        var lookup = function lookup(reducer) {
             return reduce(styles, function(o, style, prefix) {
                 o[prefix] = reduce(style, reducer, {
                 });
@@ -1217,7 +1217,7 @@
         };
     }
     var styles$1 = namespace.styles;
-    var emptyCanonicalIcon = function emptyCanonicalIcon1() {
+    var emptyCanonicalIcon = function emptyCanonicalIcon() {
         return {
             prefix: null,
             iconName: null,
@@ -1267,7 +1267,7 @@
             return "<".concat(tag, " ").concat(joinAttributes(attributes), ">").concat(children.map(toHtml).join(''), "</").concat(tag, ">");
         }
     }
-    var noop$2 = function noop3() {
+    var noop$2 = function noop() {
     };
     function isWatched(node) {
         var i2svg = node.getAttribute ? node.getAttribute(DATA_FA_I2SVG) : null;
@@ -1401,10 +1401,10 @@
         var style = node.getAttribute('style');
         var val = [];
         if (style) {
-            val = style.split(';').reduce(function(acc, style1) {
-                var styles1 = style1.split(':');
-                var prop = styles1[0];
-                var value = styles1.slice(1);
+            val = style.split(';').reduce(function(acc, style) {
+                var styles = style.split(':');
+                var prop = styles[0];
+                var value = styles.slice(1);
                 if (prop && value.length > 0) {
                     acc[prop] = value.join(':').trim();
                 }
@@ -1430,7 +1430,7 @@
         }
         return val;
     }
-    var parseTransformString = function parseTransformString1(transformString) {
+    var parseTransformString = function parseTransformString(transformString) {
         var transform = {
             size: 16,
             x: 0,
@@ -1702,7 +1702,7 @@
         };
     }
     function findIcon(iconName, prefix) {
-        return new picked(function(resolve1, reject1) {
+        return new picked(function(resolve, reject) {
             var val = {
                 found: false,
                 width: 512,
@@ -1711,7 +1711,7 @@
             };
             if (iconName && prefix && styles$2[prefix] && styles$2[prefix][iconName]) {
                 var icon = styles$2[prefix][iconName];
-                return resolve1(asFoundIcon(icon));
+                return resolve(asFoundIcon(icon));
             }
             var headers = {
             };
@@ -1719,33 +1719,33 @@
                 headers['fa-kit-token'] = WINDOW.FontAwesomeKitConfig.token;
             }
             if (iconName && prefix && !config.showMissingIcons) {
-                reject1(new MissingIcon("Icon is missing for prefix ".concat(prefix, " with icon name ").concat(iconName)));
+                reject(new MissingIcon("Icon is missing for prefix ".concat(prefix, " with icon name ").concat(iconName)));
             } else {
-                resolve1(val);
+                resolve(val);
             }
         });
     }
     var styles$3 = namespace.styles;
     function generateSvgReplacementMutation(node, nodeMeta) {
         var iconName = nodeMeta.iconName, title = nodeMeta.title, prefix = nodeMeta.prefix, transform = nodeMeta.transform, symbol = nodeMeta.symbol, mask = nodeMeta.mask, extra = nodeMeta.extra;
-        return new picked(function(resolve1, reject1) {
+        return new picked(function(resolve, reject) {
             picked.all([
                 findIcon(iconName, prefix),
                 findIcon(mask.iconName, mask.prefix)
-            ]).then(function(_ref1) {
-                var _ref2 = _slicedToArray(_ref1, 2), main = _ref2[0], mask1 = _ref2[1];
-                resolve1([
+            ]).then(function(_ref) {
+                var _ref2 = _slicedToArray(_ref, 2), main = _ref2[0], mask = _ref2[1];
+                resolve([
                     node,
                     makeInlineSvgAbstract({
                         icons: {
                             main: main,
-                            mask: mask1
+                            mask: mask
                         },
                         prefix: prefix,
                         iconName: iconName,
                         transform: transform,
                         symbol: symbol,
-                        mask: mask1,
+                        mask: mask,
                         title: title,
                         extra: extra,
                         watchable: true
@@ -1792,17 +1792,17 @@
         var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
         if (!IS_DOM) return;
         var htmlClassList = DOCUMENT.documentElement.classList;
-        var hclAdd = function hclAdd1(suffix) {
+        var hclAdd = function hclAdd(suffix) {
             return htmlClassList.add("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
         };
-        var hclRemove = function hclRemove1(suffix) {
+        var hclRemove = function hclRemove(suffix) {
             return htmlClassList.remove("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
         };
         var prefixes = config.autoFetchSvg ? Object.keys(PREFIX_TO_STYLE) : Object.keys(styles$3);
         var prefixesDomQuery = [
             ".".concat(LAYERS_TEXT_CLASSNAME, ":not([").concat(DATA_FA_I2SVG, "])")
-        ].concat(prefixes.map(function(p1) {
-            return ".".concat(p1, ":not([").concat(DATA_FA_I2SVG, "])");
+        ].concat(prefixes.map(function(p) {
+            return ".".concat(p, ":not([").concat(DATA_FA_I2SVG, "])");
         })).join(', ');
         if (prefixesDomQuery.length === 0) {
             return;
@@ -1834,7 +1834,7 @@
             }
             return acc;
         }, []);
-        return new picked(function(resolve1, reject1) {
+        return new picked(function(resolve, reject) {
             picked.all(mutations).then(function(resolvedMutations) {
                 perform(resolvedMutations, function() {
                     hclAdd('active');
@@ -1842,11 +1842,11 @@
                     hclRemove('pending');
                     if (typeof callback === 'function') callback();
                     mark();
-                    resolve1();
+                    resolve();
                 });
             }).catch(function() {
                 mark();
-                reject1();
+                reject();
             });
         });
     }
@@ -1862,26 +1862,26 @@
     }
     function replaceForPosition(node, position) {
         var pendingAttribute = "".concat(DATA_FA_PSEUDO_ELEMENT_PENDING).concat(position.replace(':', '-'));
-        return new picked(function(resolve1, reject1) {
+        return new picked(function(resolve, reject) {
             if (node.getAttribute(pendingAttribute) !== null) {
                 // This node is already being processed
-                return resolve1();
+                return resolve();
             }
             var children = toArray(node.children);
             var alreadyProcessedPseudoElement = children.filter(function(c) {
                 return c.getAttribute(DATA_FA_PSEUDO_ELEMENT) === position;
             })[0];
-            var styles1 = WINDOW.getComputedStyle(node, position);
-            var fontFamily = styles1.getPropertyValue('font-family').match(FONT_FAMILY_PATTERN);
-            var fontWeight = styles1.getPropertyValue('font-weight');
+            var styles = WINDOW.getComputedStyle(node, position);
+            var fontFamily = styles.getPropertyValue('font-family').match(FONT_FAMILY_PATTERN);
+            var fontWeight = styles.getPropertyValue('font-weight');
             if (alreadyProcessedPseudoElement && !fontFamily) {
                 // If we've already processed it but the current computed style does not result in a font-family,
                 // that probably means that a class name that was previously present to make the icon has been
                 // removed. So we now should delete the icon.
                 node.removeChild(alreadyProcessedPseudoElement);
-                return resolve1();
+                return resolve();
             } else if (fontFamily) {
-                var content = styles1.getPropertyValue('content');
+                var content = styles.getPropertyValue('content');
                 var prefix = ~[
                     'Solid',
                     'Regular',
@@ -1924,13 +1924,13 @@
                             return toHtml(a);
                         }).join('\n');
                         node.removeAttribute(pendingAttribute);
-                        resolve1();
-                    }).catch(reject1);
+                        resolve();
+                    }).catch(reject);
                 } else {
-                    resolve1();
+                    resolve();
                 }
             } else {
-                resolve1();
+                resolve();
             }
         });
     }
@@ -1945,18 +1945,18 @@
     }
     function searchPseudoElements(root) {
         if (!IS_DOM) return;
-        return new picked(function(resolve1, reject1) {
+        return new picked(function(resolve, reject) {
             var operations = toArray(root.querySelectorAll('*')).filter(processable).map(replace);
-            var end2 = perf.begin('searchPseudoElements');
+            var end = perf.begin('searchPseudoElements');
             disableObservation();
             picked.all(operations).then(function() {
-                end2();
+                end();
                 enableObservation();
-                resolve1();
+                resolve();
             }).catch(function() {
-                end2();
+                end();
                 enableObservation();
-                reject1();
+                reject();
             });
         });
     }
@@ -1976,12 +1976,12 @@
         return s;
     }
     var Library = /*#__PURE__*/ function() {
-        function Library1() {
-            _classCallCheck(this, Library1);
+        function Library() {
+            _classCallCheck(this, Library);
             this.definitions = {
             };
         }
-        _createClass(Library1, [
+        _createClass(Library, [
             {
                 key: "add",
                 value: function add() {
@@ -2023,7 +2023,7 @@
                 }
             }
         ]);
-        return Library1;
+        return Library;
     }();
     function ensureCss() {
         if (config.autoAddCss && !_cssInserted) {
@@ -2077,7 +2077,7 @@
         };
     }
     var library = new Library();
-    var noAuto = function noAuto1() {
+    var noAuto = function noAuto() {
         config.autoReplaceSvg = false;
         config.observeMutations = false;
         disconnect();
@@ -2136,10 +2136,10 @@
         var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
         };
         var _params$transform = params.transform, transform = _params$transform === void 0 ? meaninglessTransform : _params$transform, _params$symbol = params.symbol, symbol = _params$symbol === void 0 ? false : _params$symbol, _params$mask = params.mask, mask = _params$mask === void 0 ? null : _params$mask, _params$title = params.title, title = _params$title === void 0 ? null : _params$title, _params$classes = params.classes, classes = _params$classes === void 0 ? [] : _params$classes, _params$attributes = params.attributes, attributes = _params$attributes === void 0 ? {
-        } : _params$attributes, _params$styles = params.styles, styles1 = _params$styles === void 0 ? {
+        } : _params$attributes, _params$styles = params.styles, styles = _params$styles === void 0 ? {
         } : _params$styles;
         if (!iconDefinition) return;
-        var prefix = iconDefinition.prefix, iconName = iconDefinition.iconName, icon1 = iconDefinition.icon;
+        var prefix = iconDefinition.prefix, iconName = iconDefinition.iconName, icon = iconDefinition.icon;
         return apiObject(_objectSpread({
             type: 'icon'
         }, iconDefinition), function() {
@@ -2154,7 +2154,7 @@
             }
             return makeInlineSvgAbstract({
                 icons: {
-                    main: asFoundIcon(icon1),
+                    main: asFoundIcon(icon),
                     mask: mask ? asFoundIcon(mask.icon) : {
                         found: false,
                         width: null,
@@ -2171,17 +2171,17 @@
                 title: title,
                 extra: {
                     attributes: attributes,
-                    styles: styles1,
+                    styles: styles,
                     classes: classes
                 }
             });
         });
     });
-    var text = function text1(content) {
+    var text = function text(content) {
         var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
         };
         var _params$transform2 = params.transform, transform = _params$transform2 === void 0 ? meaninglessTransform : _params$transform2, _params$title2 = params.title, title = _params$title2 === void 0 ? null : _params$title2, _params$classes2 = params.classes, classes = _params$classes2 === void 0 ? [] : _params$classes2, _params$attributes2 = params.attributes, attributes = _params$attributes2 === void 0 ? {
-        } : _params$attributes2, _params$styles2 = params.styles, styles1 = _params$styles2 === void 0 ? {
+        } : _params$attributes2, _params$styles2 = params.styles, styles = _params$styles2 === void 0 ? {
         } : _params$styles2;
         return apiObject({
             type: 'text',
@@ -2195,7 +2195,7 @@
                 title: title,
                 extra: {
                     attributes: attributes,
-                    styles: styles1,
+                    styles: styles,
                     classes: [
                         "".concat(config.familyPrefix, "-layers-text")
                     ].concat(_toConsumableArray(classes))
@@ -2203,11 +2203,11 @@
             });
         });
     };
-    var counter = function counter1(content) {
+    var counter = function counter(content) {
         var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
         };
         var _params$title3 = params.title, title = _params$title3 === void 0 ? null : _params$title3, _params$classes3 = params.classes, classes = _params$classes3 === void 0 ? [] : _params$classes3, _params$attributes3 = params.attributes, attributes = _params$attributes3 === void 0 ? {
-        } : _params$attributes3, _params$styles3 = params.styles, styles1 = _params$styles3 === void 0 ? {
+        } : _params$attributes3, _params$styles3 = params.styles, styles = _params$styles3 === void 0 ? {
         } : _params$styles3;
         return apiObject({
             type: 'counter',
@@ -2219,7 +2219,7 @@
                 title: title,
                 extra: {
                     attributes: attributes,
-                    styles: styles1,
+                    styles: styles,
                     classes: [
                         "".concat(config.familyPrefix, "-layers-counter")
                     ].concat(_toConsumableArray(classes))
@@ -2227,7 +2227,7 @@
             });
         });
     };
-    var layer = function layer1(assembler) {
+    var layer = function layer(assembler) {
         var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
         };
         var _params$classes4 = params.classes, classes = _params$classes4 === void 0 ? [] : _params$classes4;
@@ -2267,7 +2267,7 @@
         layer: layer,
         toHtml: toHtml
     };
-    var autoReplace = function autoReplace1() {
+    var autoReplace = function autoReplace() {
         var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
         };
         var _params$autoReplaceSv = params.autoReplaceSvgRoot, autoReplaceSvgRoot = _params$autoReplaceSv === void 0 ? DOCUMENT : _params$autoReplaceSv;
@@ -2298,9 +2298,9 @@
                 build();
                 autoReplace();
             },
-            addShims: function addShims(shims1) {
+            addShims: function addShims(shims) {
                 var _namespace$shims;
-                (_namespace$shims = namespace.shims).push.apply(_namespace$shims, _toConsumableArray(shims1));
+                (_namespace$shims = namespace.shims).push.apply(_namespace$shims, _toConsumableArray(shims));
                 build();
                 autoReplace();
             }

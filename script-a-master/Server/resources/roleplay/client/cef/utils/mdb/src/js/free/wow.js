@@ -1,7 +1,7 @@
 'use strict';
 var WOW;
 (function($) {
-    WOW = function WOW1() {
+    WOW = function WOW() {
         return {
             init: function init() {
                 var animationName = [];

@@ -930,7 +930,7 @@
             }
             /* Remove row stripe classes if they are already on the table row */ var stripeClasses = oSettings.asStripeClasses;
             var rowOne = $this.children('tbody').find('tr').eq(0);
-            if ($.inArray(true, $.map(stripeClasses, function(el, i1) {
+            if ($.inArray(true, $.map(stripeClasses, function(el, i) {
                 return rowOne.hasClass(el);
             })) !== -1) {
                 $('tbody tr', this).removeClass(stripeClasses.join(' '));
@@ -966,19 +966,19 @@
                 var a = function(cell, name) {
                     return cell.getAttribute('data-' + name) !== null ? name : null;
                 };
-                $(rowOne[0]).children('th, td').each(function(i1, cell) {
-                    var col = oSettings.aoColumns[i1];
-                    if (col.mData === i1) {
+                $(rowOne[0]).children('th, td').each(function(i, cell) {
+                    var col = oSettings.aoColumns[i];
+                    if (col.mData === i) {
                         var sort = a(cell, 'sort') || a(cell, 'order');
                         var filter = a(cell, 'filter') || a(cell, 'search');
                         if (sort !== null || filter !== null) {
                             col.mData = {
-                                _: i1 + '.display',
-                                sort: sort !== null ? i1 + '.@data-' + sort : undefined,
-                                type: sort !== null ? i1 + '.@data-' + sort : undefined,
-                                filter: filter !== null ? i1 + '.@data-' + filter : undefined
+                                _: i + '.display',
+                                sort: sort !== null ? i + '.@data-' + sort : undefined,
+                                type: sort !== null ? i + '.@data-' + sort : undefined,
+                                filter: filter !== null ? i + '.@data-' + filter : undefined
                             };
-                            _fnColumnOptions(oSettings, i1);
+                            _fnColumnOptions(oSettings, i);
                         }
                     }
                 });
@@ -1005,7 +1005,7 @@
                             var aSort = _fnSortFlatten(oSettings);
                             var sortedColumns = {
                             };
-                            $.each(aSort, function(i1, val) {
+                            $.each(aSort, function(i, val) {
                                 sortedColumns[val.src] = val.dir;
                             });
                             _fnCallbackFire(oSettings, null, 'order', [
@@ -2298,13 +2298,13 @@
         // Allow the data object to be passed in, or construct
         d = d !== undefined ? d : objectRead ? {
         } : [];
-        var attr = function(str, td1) {
+        var attr = function(str, td) {
             if (typeof str === 'string') {
                 var idx = str.indexOf('@');
                 if (idx !== -1) {
-                    var attr1 = str.substring(idx + 1);
+                    var attr = str.substring(idx + 1);
                     var setter = _fnSetObjectDataFn(str);
-                    setter(d, td1.getAttribute(attr1));
+                    setter(d, td.getAttribute(attr));
                 }
             }
         };
@@ -2799,9 +2799,9 @@
         var nTr, nCell;
         var i, k, l, iLen, jLen, iColShifted, iColumn, iColspan, iRowspan;
         var bUnique;
-        var fnShiftCol = function(a, i1, j) {
-            var k1 = a[i1];
-            while(k1[j]){
+        var fnShiftCol = function(a, i, j) {
+            var k = a[i];
+            while(k[j]){
                 j++;
             }
             return j;
@@ -3057,13 +3057,13 @@
             param('bRegex', preSearch.bRegex);
         }
         if (features.bSort) {
-            $.each(sort, function(i1, val) {
+            $.each(sort, function(i, val) {
                 d.order.push({
                     column: val.col,
                     dir: val.dir
                 });
-                param('iSortCol_' + i1, val.col);
-                param('sSortDir_' + i1, val.dir);
+                param('iSortCol_' + i, val.col);
+                param('sSortDir_' + i, val.dir);
             });
             param('iSortingCols', sort.length);
         }
@@ -3617,8 +3617,8 @@
      *  @returns {node} Pagination feature node
      *  @memberof DataTable#oApi
      */ function _fnFeatureHtmlPaginate(settings) {
-        var type = settings.sPaginationType, plugin = DataTable.ext.pager[type], modern = typeof plugin === 'function', redraw = function(settings1) {
-            _fnDraw(settings1);
+        var type = settings.sPaginationType, plugin = DataTable.ext.pager[type], modern = typeof plugin === 'function', redraw = function(settings) {
+            _fnDraw(settings);
         }, node = $('<div/>').addClass(settings.oClasses.sPaging + type)[0], features = settings.aanFeatures;
         if (!modern) {
             plugin.fnInit(settings, node, redraw);
@@ -3626,14 +3626,14 @@
         /* Add a draw callback for the pagination on first instance, to update the paging display */ if (!features.p) {
             node.id = settings.sTableId + '_paginate';
             settings.aoDrawCallback.push({
-                "fn": function(settings1) {
+                "fn": function(settings) {
                     if (modern) {
-                        var start = settings1._iDisplayStart, len = settings1._iDisplayLength, visRecords = settings1.fnRecordsDisplay(), all = len === -1, page = all ? 0 : Math.ceil(start / len), pages = all ? 1 : Math.ceil(visRecords / len), buttons = plugin(page, pages), i, ien;
+                        var start = settings._iDisplayStart, len = settings._iDisplayLength, visRecords = settings.fnRecordsDisplay(), all = len === -1, page = all ? 0 : Math.ceil(start / len), pages = all ? 1 : Math.ceil(visRecords / len), buttons = plugin(page, pages), i, ien;
                         for(i = 0, ien = features.p.length; i < ien; i++){
-                            _fnRenderer(settings1, 'pageButton')(settings1, features.p[i], i, buttons, page, pages);
+                            _fnRenderer(settings, 'pageButton')(settings, features.p[i], i, buttons, page, pages);
                         }
                     } else {
-                        plugin.fnUpdate(settings1, redraw);
+                        plugin.fnUpdate(settings, redraw);
                     }
                 },
                 "sName": "pagination"
@@ -4346,9 +4346,9 @@
 			 */ if (formatters === aSort.length) {
                 // All sort types have formatting functions
                 displayMaster.sort(function(a, b) {
-                    var x, y, k1, test, sort, len = aSort.length, dataA = aoData[a]._aSortData, dataB = aoData[b]._aSortData;
-                    for(k1 = 0; k1 < len; k1++){
-                        sort = aSort[k1];
+                    var x, y, k, test, sort, len = aSort.length, dataA = aoData[a]._aSortData, dataB = aoData[b]._aSortData;
+                    for(k = 0; k < len; k++){
+                        sort = aSort[k];
                         x = dataA[sort.col];
                         y = dataB[sort.col];
                         test = x < y ? -1 : x > y ? 1 : 0;
@@ -4365,9 +4365,9 @@
                 // Not all sort types have formatting methods, so we have to call their sorting
                 // methods.
                 displayMaster.sort(function(a, b) {
-                    var x, y, k1, l, test, sort, fn, len = aSort.length, dataA = aoData[a]._aSortData, dataB = aoData[b]._aSortData;
-                    for(k1 = 0; k1 < len; k1++){
-                        sort = aSort[k1];
+                    var x, y, k, l, test, sort, fn, len = aSort.length, dataA = aoData[a]._aSortData, dataB = aoData[b]._aSortData;
+                    for(k = 0; k < len; k++){
+                        sort = aSort[k];
                         x = dataA[sort.col];
                         y = dataB[sort.col];
                         fn = oExtSort[sort.type + "-" + sort.dir] || oExtSort["string-" + sort.dir];
@@ -4647,7 +4647,7 @@
             // Order
             if (s.order !== undefined) {
                 settings.aaSorting = [];
-                $.each(s.order, function(i1, col) {
+                $.each(s.order, function(i, col) {
                     settings.aaSorting.push(col[0] >= columns.length ? [
                         0,
                         col[1]
@@ -5241,9 +5241,9 @@
         if (!ext.length || !obj || !(obj instanceof _Api) && !obj.__dt_wrapper) {
             return;
         }
-        var i, ien, j, jen, struct, inner, methodScoping = function(scope1, fn, struc) {
+        var i, ien, j, jen, struct, inner, methodScoping = function(scope, fn, struc) {
             return function() {
-                var ret = fn.apply(scope1, arguments);
+                var ret = fn.apply(scope, arguments);
                 // Method extension
                 _Api.extend(ret, ret, struc.methodExt);
                 return ret;
@@ -5296,10 +5296,10 @@
             return;
         }
         var i, ien, heir = name.split('.'), struct = __apiStruct, key, method;
-        var find = function(src, name1) {
-            for(var i1 = 0, ien1 = src.length; i1 < ien1; i1++){
-                if (src[i1].name === name1) {
-                    return src[i1];
+        var find = function(src, name) {
+            for(var i = 0, ien = src.length; i < ien; i++){
+                if (src[i].name === name) {
+                    return src[i];
                 }
             }
             return null;
@@ -6415,7 +6415,7 @@
                 ] : [];
             }
             // Selector - jQuery filtered cells
-            var jqResult = allCells.filter(s).map(function(i1, el) {
+            var jqResult = allCells.filter(s).map(function(i, el) {
                 return {
                     row: el._DT_CellIndex.row,
                     column: el._DT_CellIndex.column
@@ -6896,8 +6896,8 @@
                 // classes - but it's a good effort without getting carried away
                 ien = settings.asDestroyStripes.length;
                 if (ien) {
-                    jqTbody.children().each(function(i1) {
-                        $(this).addClass(settings.asDestroyStripes[i1 % ien]);
+                    jqTbody.children().each(function(i) {
+                        $(this).addClass(settings.asDestroyStripes[i % ien]);
                     });
                 }
             }
@@ -11327,13 +11327,13 @@
                 var aria = settings.oLanguage.oAria.paginate || {
                 };
                 var btnDisplay, btnClass, counter = 0;
-                var attach = function(container, buttons1) {
+                var attach = function(container, buttons) {
                     var i, ien, node, button;
                     var clickHandler = function(e) {
                         _fnPageChange(settings, e.data.action, true);
                     };
-                    for(i = 0, ien = buttons1.length; i < ien; i++){
-                        button = buttons1[i];
+                    for(i = 0, ien = buttons.length; i < ien; i++){
+                        button = buttons[i];
                         if ($.isArray(button)) {
                             var inner = $('<' + (button.DT_el || 'div') + '/>').appendTo(container);
                             attach(inner, button);
@@ -11950,7 +11950,7 @@
         var aria = settings.oLanguage.oAria.paginate || {
         };
         var btnDisplay, btnClass, counter = 0;
-        var attach = function(container, buttons1) {
+        var attach = function(container, buttons) {
             var i, ien, node, button;
             var clickHandler = function(e) {
                 e.preventDefault();
@@ -11958,8 +11958,8 @@
                     api.page(e.data.action).draw('page');
                 }
             };
-            for(i = 0, ien = buttons1.length; i < ien; i++){
-                button = buttons1[i];
+            for(i = 0, ien = buttons.length; i < ien; i++){
+                button = buttons[i];
                 if ($.isArray(button)) {
                     attach(container, button);
                 } else {

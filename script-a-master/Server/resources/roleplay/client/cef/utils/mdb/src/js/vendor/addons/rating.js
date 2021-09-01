@@ -31,48 +31,48 @@
         });
         function markStarsAsActive(index) {
             unmarkActive();
-            for(var i1 = 0; i1 <= index; i1++){
+            for(var i = 0; i <= index; i++){
                 if ($container.hasClass('rating-faces')) {
-                    $($stars.get(i1)).removeClass('fa-meh-blank');
-                    $($stars.get(i1)).addClass('live');
+                    $($stars.get(i)).removeClass('fa-meh-blank');
+                    $($stars.get(i)).addClass('live');
                     switch(index){
                         case '0':
-                            $($stars.get(i1)).addClass('fa-angry');
+                            $($stars.get(i)).addClass('fa-angry');
                             break;
                         case '1':
-                            $($stars.get(i1)).addClass('fa-frown');
+                            $($stars.get(i)).addClass('fa-frown');
                             break;
                         case '2':
-                            $($stars.get(i1)).addClass('fa-meh');
+                            $($stars.get(i)).addClass('fa-meh');
                             break;
                         case '3':
-                            $($stars.get(i1)).addClass('fa-smile');
+                            $($stars.get(i)).addClass('fa-smile');
                             break;
                         case '4':
-                            $($stars.get(i1)).addClass('fa-laugh');
+                            $($stars.get(i)).addClass('fa-laugh');
                             break;
                     }
                 } else if ($container.hasClass('empty-stars')) {
-                    $($stars.get(i1)).addClass('fas');
+                    $($stars.get(i)).addClass('fas');
                     switch(index){
                         case '0':
-                            $($stars.get(i1)).addClass('oneStar');
+                            $($stars.get(i)).addClass('oneStar');
                             break;
                         case '1':
-                            $($stars.get(i1)).addClass('twoStars');
+                            $($stars.get(i)).addClass('twoStars');
                             break;
                         case '2':
-                            $($stars.get(i1)).addClass('threeStars');
+                            $($stars.get(i)).addClass('threeStars');
                             break;
                         case '3':
-                            $($stars.get(i1)).addClass('fourStars');
+                            $($stars.get(i)).addClass('fourStars');
                             break;
                         case '4':
-                            $($stars.get(i1)).addClass('fiveStars');
+                            $($stars.get(i)).addClass('fiveStars');
                             break;
                     }
                 } else {
-                    $($stars.get(i1)).addClass('amber-text');
+                    $($stars.get(i)).addClass('amber-text');
                 }
             }
         }

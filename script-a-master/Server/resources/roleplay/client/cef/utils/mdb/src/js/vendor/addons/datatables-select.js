@@ -220,17 +220,17 @@
             });
         };
         var selectRows = function(start, end) {
-            var indexes1 = dt.rows({
+            var indexes = dt.rows({
                 search: 'applied'
             }).indexes();
             // Which comes first - might need to swap
-            if (indexes1.indexOf(start) > indexes1.indexOf(end)) {
+            if (indexes.indexOf(start) > indexes.indexOf(end)) {
                 var tmp = end;
                 end = start;
                 start = tmp;
             }
             var record = false;
-            return indexes1.filter(function(i) {
+            return indexes.filter(function(i) {
                 if (i === start) {
                     record = true;
                 }
@@ -314,7 +314,7 @@
                     }
                 }
             }
-            var ctx1 = dt.settings()[0];
+            var ctx = dt.settings()[0];
             var wrapperClass = dt.settings()[0].oClasses.sWrapper.replace(/ /g, '.');
             // Ignore clicks inside a sub-table
             if ($(e.target).closest('div.' + wrapperClass)[0] != dt.table().container()) {
@@ -338,15 +338,15 @@
             var cellIndex = cell.index();
             if (items === 'row') {
                 idx = cellIndex.row;
-                typeSelect(e, dt, ctx1, 'row', idx);
+                typeSelect(e, dt, ctx, 'row', idx);
             } else if (items === 'column') {
                 idx = cell.index().column;
-                typeSelect(e, dt, ctx1, 'column', idx);
+                typeSelect(e, dt, ctx, 'column', idx);
             } else if (items === 'cell') {
                 idx = cell.index();
-                typeSelect(e, dt, ctx1, 'cell', idx);
+                typeSelect(e, dt, ctx, 'cell', idx);
             }
-            ctx1._select_lastCell = cellIndex;
+            ctx._select_lastCell = cellIndex;
         });
         // Blurable
         $('body').on('click.dtSelect' + dt.table().node().id, function(e) {
@@ -648,10 +648,10 @@
             if (selected !== true && selected !== false) {
                 return indexes;
             }
-            for(var i1 = 0, ien = indexes.length; i1 < ien; i1++){
-                data = settings[o.prop][indexes[i1]];
+            for(var i = 0, ien = indexes.length; i < ien; i++){
+                data = settings[o.prop][indexes[i]];
                 if (selected === true && data._select_selected === true || selected === false && !data._select_selected) {
-                    out.push(indexes[i1]);
+                    out.push(indexes[i]);
                 }
             }
             return out;
@@ -828,14 +828,14 @@
         var api = this;
         this.iterator('column', function(ctx, idx) {
             ctx.aoColumns[idx]._select_selected = false;
-            var api1 = new DataTable.Api(ctx);
-            var column = api1.column(idx);
+            var api = new DataTable.Api(ctx);
+            var column = api.column(idx);
             $(column.header()).removeClass(ctx._select.className);
             $(column.footer()).removeClass(ctx._select.className);
             // Need to loop over each cell, rather than just using
             // `column().nodes()` as cells which are individually selected should
             // not have the `selected` class removed from them
-            api1.cells(null, idx).indexes().each(function(cellIdx) {
+            api.cells(null, idx).indexes().each(function(cellIdx) {
                 var data = ctx.aoData[cellIdx.row];
                 var cellSelected = data._selected_cells;
                 if (data.anCells && (!cellSelected || !cellSelected[cellIdx.column])) {

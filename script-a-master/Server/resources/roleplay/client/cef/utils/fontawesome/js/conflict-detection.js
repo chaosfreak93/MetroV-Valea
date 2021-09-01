@@ -10,12 +10,12 @@
     'use strict';
     function _typeof(obj) {
         if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-            _typeof = function(obj1) {
-                return typeof obj1;
+            _typeof = function(obj) {
+                return typeof obj;
             };
         } else {
-            _typeof = function(obj1) {
-                return obj1 && typeof Symbol === "function" && obj1.constructor === Symbol && obj1 !== Symbol.prototype ? "symbol" : typeof obj1;
+            _typeof = function(obj) {
+                return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
             };
         }
         return _typeof(obj);
@@ -66,8 +66,8 @@
     var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
     var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
     var functions = [];
-    var listener = function listener1() {
-        DOCUMENT.removeEventListener('DOMContentLoaded', listener1);
+    var listener = function listener() {
+        DOCUMENT.removeEventListener('DOMContentLoaded', listener);
         loaded = 1;
         functions.map(function(fn) {
             return fn();
@@ -82,8 +82,8 @@
         if (!IS_DOM) return;
         loaded ? setTimeout(fn, 0) : functions.push(fn);
     }
-    function report(_ref1) {
-        var nodesTested = _ref1.nodesTested, nodesFound = _ref1.nodesFound;
+    function report(_ref) {
+        var nodesTested = _ref.nodesTested, nodesFound = _ref.nodesFound;
         var timedOutTests = {
         };
         for(var key in nodesFound){
@@ -467,7 +467,7 @@
              * @param {string} [key] HMAC key
              * @param {boolean} raw Raw oytput switch
              * @returns {string} MD5 output
-             */ function md51(string, key, raw) {
+             */ function md5(string, key, raw) {
                 if (!key) {
                     if (!raw) {
                         return hexMD5(string);
@@ -480,9 +480,9 @@
                 return rawHMACMD5(key, string);
             }
             if (module.exports) {
-                module.exports = md51;
+                module.exports = md5;
             } else {
-                $.md5 = md51;
+                $.md5 = md5;
             }
         })(commonjsGlobal);
     });
@@ -505,10 +505,10 @@
     var detectionIgnoreAttr = 'data-fa-detection-ignore';
     var timeoutAttr = 'data-fa-detection-timeout';
     var resultsCollectionMaxWaitAttr = 'data-fa-detection-results-collection-max-wait';
-    function pollUntil(_ref1) {
-        var _ref$fn = _ref1.fn, fn = _ref$fn === void 0 ? function() {
+    function pollUntil(_ref) {
+        var _ref$fn = _ref.fn, fn = _ref$fn === void 0 ? function() {
             return true;
-        } : _ref$fn, _ref$initialDuration = _ref1.initialDuration, initialDuration = _ref$initialDuration === void 0 ? 1 : _ref$initialDuration, _ref$maxDuration = _ref1.maxDuration, maxDuration = _ref$maxDuration === void 0 ? WINDOW.FontAwesomeDetection.timeout : _ref$maxDuration, _ref$showProgress = _ref1.showProgress, showProgress = _ref$showProgress === void 0 ? false : _ref$showProgress, progressIndicator = _ref1.progressIndicator;
+        } : _ref$fn, _ref$initialDuration = _ref.initialDuration, initialDuration = _ref$initialDuration === void 0 ? 1 : _ref$initialDuration, _ref$maxDuration = _ref.maxDuration, maxDuration = _ref$maxDuration === void 0 ? WINDOW.FontAwesomeDetection.timeout : _ref$maxDuration, _ref$showProgress = _ref.showProgress, showProgress = _ref$showProgress === void 0 ? false : _ref$showProgress, progressIndicator = _ref.progressIndicator;
         return new Promise(function(resolve, reject) {
             // eslint-disable-line compat/compat
             function poll(duration, cumulativeDuration) {
@@ -549,11 +549,11 @@
             }
             return true;
         });
-        function runDiag(scriptOrLinkTag, md51) {
+        function runDiag(scriptOrLinkTag, md5) {
             var diagFrame = DOCUMENT.createElement('iframe'); // Using "visibility: hidden; position: absolute" instead of "display: none;" because
             // Firefox will not return the expected results for getComputedStyle if our iframe has display: none.
             diagFrame.setAttribute('style', 'visibility: hidden; position: absolute; height: 0; width: 0;');
-            var testIconId = 'fa-test-icon-' + md51;
+            var testIconId = 'fa-test-icon-' + md5;
             var iTag = DOCUMENT.createElement('i');
             iTag.setAttribute('class', 'fa fa-coffee');
             iTag.setAttribute('id', testIconId);
@@ -565,10 +565,10 @@
             // For example, using single line (double-slash) comments like this one inside that function
             // will probably cause it to choke. Chrome will show an error like this:
             // Uncaught SyntaxError: Unexpected end of input
-            var diagScriptFun = function diagScriptFun1(nodeUnderTestId1, testIconId1, md52, parentOrigin) {
+            var diagScriptFun = function diagScriptFun(nodeUnderTestId, testIconId, md5, parentOrigin) {
                 parent.FontAwesomeDetection.__pollUntil({
                     fn: function fn() {
-                        var iEl = document.getElementById(testIconId1);
+                        var iEl = document.getElementById(testIconId);
                         var computedStyle = window.getComputedStyle(iEl);
                         var fontFamily = computedStyle.getPropertyValue('font-family');
                         if (!!fontFamily.match(/FontAwesome/) || !!fontFamily.match(/Font Awesome 5/)) {
@@ -578,17 +578,17 @@
                         }
                     }
                 }).then(function() {
-                    var node = document.getElementById(nodeUnderTestId1);
+                    var node = document.getElementById(nodeUnderTestId);
                     parent.postMessage({
                         type: 'fontawesome-conflict',
                         technology: 'webfont',
                         href: node.href,
                         innerText: node.innerText,
                         tagName: node.tagName,
-                        md5: md52
+                        md5: md5
                     }, parentOrigin);
                 }).catch(function(e) {
-                    var node = document.getElementById(nodeUnderTestId1);
+                    var node = document.getElementById(nodeUnderTestId);
                     if (e === 'timeout') {
                         parent.postMessage({
                             type: 'no-conflict',
@@ -596,7 +596,7 @@
                             href: node.src,
                             innerText: node.innerText,
                             tagName: node.tagName,
-                            md5: md52
+                            md5: md5
                         }, parentOrigin);
                     } else {
                         console.error(e);
@@ -604,7 +604,7 @@
                 });
             };
             var parentOrigin = WINDOW.location.origin === 'file://' ? '*' : WINDOW.location.origin;
-            diagScript.innerText = "(".concat(diagScriptFun.toString(), ")('").concat(nodeUnderTestId, "', '").concat(testIconId || 'foo', "', '").concat(md51, "', '").concat(parentOrigin, "');");
+            diagScript.innerText = "(".concat(diagScriptFun.toString(), ")('").concat(nodeUnderTestId, "', '").concat(testIconId || 'foo', "', '").concat(md5, "', '").concat(parentOrigin, "');");
             diagFrame.onload = function() {
                 diagFrame.contentDocument.head.appendChild(diagScript);
                 diagFrame.contentDocument.head.appendChild(scriptOrLinkTag);
@@ -643,7 +643,7 @@
         });
         var scriptsByMD5 = {
         };
-        var _loop = function _loop1(scriptIdx) {
+        var _loop = function _loop(scriptIdx) {
             var diagFrame = DOCUMENT.createElement('iframe');
             diagFrame.setAttribute('style', 'display:none;');
             var scriptUnderTest = DOCUMENT.createElement('script');
@@ -661,31 +661,31 @@
             var diagScript = DOCUMENT.createElement('script');
             diagScript.setAttribute('id', diagScriptId);
             var parentOrigin = WINDOW.location.origin === 'file://' ? '*' : WINDOW.location.origin;
-            var diagScriptFun = function diagScriptFun1(nodeUnderTestId1, md51, parentOrigin1) {
+            var diagScriptFun = function diagScriptFun(nodeUnderTestId, md5, parentOrigin) {
                 parent.FontAwesomeDetection.__pollUntil({
                     fn: function fn() {
                         return !!window.FontAwesomeConfig;
                     }
                 }).then(function() {
-                    var scriptNode = document.getElementById(nodeUnderTestId1);
+                    var scriptNode = document.getElementById(nodeUnderTestId);
                     parent.postMessage({
                         type: 'fontawesome-conflict',
                         technology: 'js',
                         src: scriptNode.src,
                         innerText: scriptNode.innerText,
                         tagName: scriptNode.tagName,
-                        md5: md51
-                    }, parentOrigin1);
+                        md5: md5
+                    }, parentOrigin);
                 }).catch(function(e) {
-                    var scriptNode = document.getElementById(nodeUnderTestId1);
+                    var scriptNode = document.getElementById(nodeUnderTestId);
                     if (e === 'timeout') {
                         parent.postMessage({
                             type: 'no-conflict',
                             src: scriptNode.src,
                             innerText: scriptNode.innerText,
                             tagName: scriptNode.tagName,
-                            md5: md51
-                        }, parentOrigin1);
+                            md5: md5
+                        }, parentOrigin);
                     } else {
                         console.error(e);
                     }

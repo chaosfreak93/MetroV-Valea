@@ -5,75 +5,75 @@
  * */ !function(e) {
     e([
         "jquery"
-    ], function(e1) {
+    ], function(e) {
         return (function() {
-            function t(e2, t1, n) {
-                return g1({
+            function t(e, t, n) {
+                return g({
                     type: O.error,
                     iconClass: m().iconClasses.error,
-                    message: e2,
+                    message: e,
                     optionsOverride: n,
-                    title: t1
+                    title: t
                 });
             }
-            function n(t1, n1) {
-                return t1 || (t1 = m()), v = e1("#" + t1.containerId), v.length ? v : (n1 && (v = d1(t1)), v);
+            function n(t, n) {
+                return t || (t = m()), v = e("#" + t.containerId), v.length ? v : (n && (v = d(t)), v);
             }
-            function o(e2, t1, n1) {
-                return g1({
+            function o(e, t, n) {
+                return g({
                     type: O.info,
                     iconClass: m().iconClasses.info,
-                    message: e2,
-                    optionsOverride: n1,
-                    title: t1
+                    message: e,
+                    optionsOverride: n,
+                    title: t
                 });
             }
-            function s(e2) {
-                C = e2;
+            function s(e) {
+                C = e;
             }
-            function i1(e2, t1, n1) {
-                return g1({
+            function i(e, t, n) {
+                return g({
                     type: O.success,
                     iconClass: m().iconClasses.success,
-                    message: e2,
-                    optionsOverride: n1,
-                    title: t1
+                    message: e,
+                    optionsOverride: n,
+                    title: t
                 });
             }
-            function a(e2, t1, n1) {
-                return g1({
+            function a(e, t, n) {
+                return g({
                     type: O.warning,
                     iconClass: m().iconClasses.warning,
-                    message: e2,
-                    optionsOverride: n1,
-                    title: t1
+                    message: e,
+                    optionsOverride: n,
+                    title: t
                 });
             }
-            function r(e2, t1) {
-                var o1 = m();
-                v || n(o1), u1(e2, o1, t1) || l1(o1);
+            function r(e, t) {
+                var o = m();
+                v || n(o), u(e, o, t) || l(o);
             }
-            function c1(t1) {
-                var o1 = m();
-                return v || n(o1), t1 && 0 === e1(":focus", t1).length ? void h(t1) : void (v.children().length && v.remove());
+            function c(t) {
+                var o = m();
+                return v || n(o), t && 0 === e(":focus", t).length ? void h(t) : void (v.children().length && v.remove());
             }
-            function l1(t1) {
-                for(var n1 = v.children(), o1 = n1.length - 1; o1 >= 0; o1--)u1(e1(n1[o1]), t1);
+            function l(t) {
+                for(var n = v.children(), o = n.length - 1; o >= 0; o--)u(e(n[o]), t);
             }
-            function u1(t1, n1, o1) {
-                var s1 = !(!o1 || !o1.force) && o1.force;
-                return !(!t1 || !s1 && 0 !== e1(":focus", t1).length) && (t1[n1.hideMethod]({
-                    duration: n1.hideDuration,
-                    easing: n1.hideEasing,
+            function u(t, n, o) {
+                var s = !(!o || !o.force) && o.force;
+                return !(!t || !s && 0 !== e(":focus", t).length) && (t[n.hideMethod]({
+                    duration: n.hideDuration,
+                    easing: n.hideEasing,
                     complete: function() {
-                        h(t1);
+                        h(t);
                     }
                 }), !0);
             }
-            function d1(t1) {
-                return v = e1("<div/>").attr("id", t1.containerId).addClass(t1.positionClass), v.appendTo(e1(t1.target)), v;
+            function d(t) {
+                return v = e("<div/>").attr("id", t.containerId).addClass(t.positionClass), v.appendTo(e(t.target)), v;
             }
-            function p1() {
+            function p() {
                 return {
                     tapToDismiss: !0,
                     toastClass: "toast",
@@ -113,81 +113,81 @@
                     rtl: !1
                 };
             }
-            function f(e2) {
-                C && C(e2);
+            function f(e) {
+                C && C(e);
             }
-            function g1(t1) {
-                function o1(e2) {
-                    return null == e2 && (e2 = ""), e2.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            function g(t) {
+                function o(e) {
+                    return null == e && (e = ""), e.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
                 }
-                function s1() {
-                    c2(), u2(), d2(), p2(), g2(), C(), l2(), i2();
+                function s() {
+                    c(), u(), d(), p(), g(), C(), l(), i();
                 }
-                function i2() {
-                    var e2 = "";
-                    switch(t1.iconClass){
+                function i() {
+                    var e = "";
+                    switch(t.iconClass){
                         case "toast-success":
                         case "toast-info":
-                            e2 = "polite";
+                            e = "polite";
                             break;
                         default:
-                            e2 = "assertive";
+                            e = "assertive";
                     }
-                    I.attr("aria-live", e2);
+                    I.attr("aria-live", e);
                 }
-                function a1() {
-                    E.closeOnHover && I.hover(H, D), !E.onclick && E.tapToDismiss && I.click(b), E.closeButton && j && j.click(function(e2) {
-                        e2.stopPropagation ? e2.stopPropagation() : void 0 !== e2.cancelBubble && e2.cancelBubble !== !0 && (e2.cancelBubble = !0), E.onCloseClick && E.onCloseClick(e2), b(!0);
-                    }), E.onclick && I.click(function(e2) {
-                        E.onclick(e2), b();
+                function a() {
+                    E.closeOnHover && I.hover(H, D), !E.onclick && E.tapToDismiss && I.click(b), E.closeButton && j && j.click(function(e) {
+                        e.stopPropagation ? e.stopPropagation() : void 0 !== e.cancelBubble && e.cancelBubble !== !0 && (e.cancelBubble = !0), E.onCloseClick && E.onCloseClick(e), b(!0);
+                    }), E.onclick && I.click(function(e) {
+                        E.onclick(e), b();
                     });
                 }
-                function r1() {
+                function r() {
                     I.hide(), I[E.showMethod]({
                         duration: E.showDuration,
                         easing: E.showEasing,
                         complete: E.onShown
                     }), E.timeOut > 0 && (k = setTimeout(b, E.timeOut), F.maxHideTime = parseFloat(E.timeOut), F.hideEta = (new Date).getTime() + F.maxHideTime, E.progressBar && (F.intervalId = setInterval(x, 10)));
                 }
-                function c2() {
-                    t1.iconClass && I.addClass(E.toastClass).addClass(y);
+                function c() {
+                    t.iconClass && I.addClass(E.toastClass).addClass(y);
                 }
-                function l2() {
+                function l() {
                     E.newestOnTop ? v.prepend(I) : v.append(I);
                 }
-                function u2() {
-                    if (t1.title) {
-                        var e2 = t1.title;
-                        E.escapeHtml && (e2 = o1(t1.title)), M.append(e2).addClass(E.titleClass), I.append(M);
+                function u() {
+                    if (t.title) {
+                        var e = t.title;
+                        E.escapeHtml && (e = o(t.title)), M.append(e).addClass(E.titleClass), I.append(M);
                     }
                 }
-                function d2() {
-                    if (t1.message) {
-                        var e3 = t1.message;
-                        E.escapeHtml && (e3 = o1(t1.message)), B.append(e3).addClass(E.messageClass), I.append(B);
+                function d() {
+                    if (t.message) {
+                        var e = t.message;
+                        E.escapeHtml && (e = o(t.message)), B.append(e).addClass(E.messageClass), I.append(B);
                     }
                 }
-                function p2() {
+                function p() {
                     E.closeButton && (j.addClass(E.closeClass).attr("role", "button"), I.prepend(j));
                 }
-                function g2() {
+                function g() {
                     E.progressBar && (q.addClass(E.progressClass), I.prepend(q));
                 }
                 function C() {
                     E.rtl && I.addClass("rtl");
                 }
-                function O(e4, t2) {
-                    if (e4.preventDuplicates) {
-                        if (t2.message === w) return !0;
-                        w = t2.message;
+                function O(e, t) {
+                    if (e.preventDuplicates) {
+                        if (t.message === w) return !0;
+                        w = t.message;
                     }
                     return !1;
                 }
-                function b(t2) {
-                    var n1 = t2 && E.closeMethod !== !1 ? E.closeMethod : E.hideMethod, o2 = t2 && E.closeDuration !== !1 ? E.closeDuration : E.hideDuration, s2 = t2 && E.closeEasing !== !1 ? E.closeEasing : E.hideEasing;
-                    if (!e1(":focus", I).length || t2) return clearTimeout(F.intervalId), I[n1]({
-                        duration: o2,
-                        easing: s2,
+                function b(t) {
+                    var n = t && E.closeMethod !== !1 ? E.closeMethod : E.hideMethod, o = t && E.closeDuration !== !1 ? E.closeDuration : E.hideDuration, s = t && E.closeEasing !== !1 ? E.closeEasing : E.hideEasing;
+                    if (!e(":focus", I).length || t) return clearTimeout(F.intervalId), I[n]({
+                        duration: o,
+                        easing: s,
                         complete: function() {
                             h(I), clearTimeout(k), E.onHidden && "hidden" !== P.state && E.onHidden(), P.state = "hidden", P.endTime = new Date, f(P);
                         }
@@ -203,13 +203,13 @@
                     });
                 }
                 function x() {
-                    var e4 = (F.hideEta - (new Date).getTime()) / F.maxHideTime * 100;
-                    q.width(e4 + "%");
+                    var e = (F.hideEta - (new Date).getTime()) / F.maxHideTime * 100;
+                    q.width(e + "%");
                 }
-                var E = m(), y = t1.iconClass || E.iconClass;
-                if ("undefined" != typeof t1.optionsOverride && (E = e1.extend(E, t1.optionsOverride), y = t1.optionsOverride.iconClass || y), !O(E, t1)) {
+                var E = m(), y = t.iconClass || E.iconClass;
+                if ("undefined" != typeof t.optionsOverride && (E = e.extend(E, t.optionsOverride), y = t.optionsOverride.iconClass || y), !O(E, t)) {
                     T++, v = n(E, !0);
-                    var k = null, I = e1("<div/>"), M = e1("<div/>"), B = e1("<div/>"), q = e1("<div/>"), j = e1(E.closeHtml), F = {
+                    var k = null, I = e("<div/>"), M = e("<div/>"), B = e("<div/>"), q = e("<div/>"), j = e(E.closeHtml), F = {
                         intervalId: null,
                         hideEta: null,
                         maxHideTime: null
@@ -218,17 +218,17 @@
                         state: "visible",
                         startTime: new Date,
                         options: E,
-                        map: t1
+                        map: t
                     };
-                    return s1(), r1(), a1(), f(P), E.debug && console && console.log(P), I;
+                    return s(), r(), a(), f(P), E.debug && console && console.log(P), I;
                 }
             }
             function m() {
-                return e1.extend({
-                }, p1(), b.options);
+                return e.extend({
+                }, p(), b.options);
             }
-            function h(e4) {
-                v || (v = n()), e4.is(":visible") || (e4.remove(), e4 = null, 0 === v.children().length && (v.remove(), w = void 0));
+            function h(e) {
+                v || (v = n()), e.is(":visible") || (e.remove(), e = null, 0 === v.children().length && (v.remove(), w = void 0));
             }
             var v, C, w, T = 0, O = {
                 error: "error",
@@ -237,20 +237,20 @@
                 warning: "warning"
             }, b = {
                 clear: r,
-                remove: c1,
+                remove: c,
                 error: t,
                 getContainer: n,
                 info: o,
                 options: {
                 },
                 subscribe: s,
-                success: i1,
+                success: i,
                 version: "2.1.3",
                 warning: a
             };
             return b;
         })();
     });
-}("function" == typeof define && define.amd ? define : function(e1, t) {
+}("function" == typeof define && define.amd ? define : function(e, t) {
     "undefined" != typeof module && module.exports ? module.exports = t(require("jquery")) : window.toastr = t(window.jQuery);
 }); //# sourceMappingURL=toastr.js.map

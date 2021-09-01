@@ -192,37 +192,37 @@ alt.on('keyup', (key)=>{
         webview.emit("viewModeActive", false);
     }
 });
-function resetToNormal(vehicle1, mods) {
+function resetToNormal(vehicle, mods) {
     let count = 0;
     mods.forEach((index)=>{
         let type = count;
         count++;
         if (type == 18 || type == 20 || type == 22) {
-            if (index == 0) game.toggleVehicleMod(vehicle1, type, false);
-            else game.toggleVehicleMod(vehicle1, type, true);
-        } else if (type < 49) game.setVehicleMod(vehicle1, type, parseInt(index) - 1, false);
-        else if (type == 49) game.setVehicleLivery(vehicle1, parseInt(index) - 1);
+            if (index == 0) game.toggleVehicleMod(vehicle, type, false);
+            else game.toggleVehicleMod(vehicle, type, true);
+        } else if (type < 49) game.setVehicleMod(vehicle, type, parseInt(index) - 1, false);
+        else if (type == 49) game.setVehicleLivery(vehicle, parseInt(index) - 1);
         else if (type == 50) {
             alt.log("test1: " + index);
-            game.setVehicleWheelType(vehicle1, parseInt(index));
-            game.setVehicleMod(vehicle1, 23, parseInt(installedMods[51]) - 1, false);
+            game.setVehicleWheelType(vehicle, parseInt(index));
+            game.setVehicleMod(vehicle, 23, parseInt(installedMods[51]) - 1, false);
         } else if (type == 51) {
-            game.setVehicleMod(vehicle1, 23, parseInt(index) - 1, false);
+            game.setVehicleMod(vehicle, 23, parseInt(index) - 1, false);
             alt.log("test4: " + index);
-        } else if (type == 52) game.setVehicleExtraColours(vehicle1, parseInt(installedMods[63]), parseInt(index));
-        else if (type == 53) game.setVehicleWindowTint(vehicle1, parseInt(index));
-        else if (type == 54) game.setVehicleNumberPlateTextIndex(vehicle1, parseInt(index));
-        else if (type == 63) game.setVehicleExtraColours(vehicle1, parseInt(index), parseInt(showcasedMods[52]));
-        else if (type == 80) game.setVehicleInteriorColor(vehicle1, parseInt(index));
+        } else if (type == 52) game.setVehicleExtraColours(vehicle, parseInt(installedMods[63]), parseInt(index));
+        else if (type == 53) game.setVehicleWindowTint(vehicle, parseInt(index));
+        else if (type == 54) game.setVehicleNumberPlateTextIndex(vehicle, parseInt(index));
+        else if (type == 63) game.setVehicleExtraColours(vehicle, parseInt(index), parseInt(showcasedMods[52]));
+        else if (type == 80) game.setVehicleInteriorColor(vehicle, parseInt(index));
         else if (type == 81) {
-            if (index == 0) for(let i = 0; i < 4; i++)game.setVehicleNeonLightEnabled(vehicle1, i, false);
-            else for(let i1 = 0; i1 < 4; i1++)game.setVehicleNeonLightEnabled(vehicle1, i1, true);
-        } else if (type == 88) game.setVehicleXenonLightsColor(vehicle1, parseInt(index));
+            if (index == 0) for(let i = 0; i < 4; i++)game.setVehicleNeonLightEnabled(vehicle, i, false);
+            else for(let i1 = 0; i1 < 4; i1++)game.setVehicleNeonLightEnabled(vehicle, i1, true);
+        } else if (type == 88) game.setVehicleXenonLightsColor(vehicle, parseInt(index));
     });
-    game.setVehicleModColor1(vehicle1, paintTypes.indexOf(mods[55]), 0, parseInt(mods[63]));
-    game.setVehicleModColor2(vehicle1, paintTypes.indexOf(mods[59]), 0);
-    game.setVehicleCustomPrimaryColour(vehicle1, parseInt(currentPrimaryColors[0]), parseInt(currentPrimaryColors[1]), parseInt(currentPrimaryColors[2]));
-    game.setVehicleCustomSecondaryColour(vehicle1, parseInt(currentSecondaryColors[0]), parseInt(currentSecondaryColors[1]), parseInt(currentSecondaryColors[2]));
-    game.setVehicleNeonLightsColour(vehicle1, parseInt(currentUnderfloorColors[0]), parseInt(currentUnderfloorColors[1]), parseInt(currentUnderfloorColors[2]));
-    game.setVehicleTyreSmokeColor(vehicle1, parseInt(currentTyreSmokeColors[0]), parseInt(currentTyreSmokeColors[1]), parseInt(currentTyreSmokeColors[2]));
+    game.setVehicleModColor1(vehicle, paintTypes.indexOf(mods[55]), 0, parseInt(mods[63]));
+    game.setVehicleModColor2(vehicle, paintTypes.indexOf(mods[59]), 0);
+    game.setVehicleCustomPrimaryColour(vehicle, parseInt(currentPrimaryColors[0]), parseInt(currentPrimaryColors[1]), parseInt(currentPrimaryColors[2]));
+    game.setVehicleCustomSecondaryColour(vehicle, parseInt(currentSecondaryColors[0]), parseInt(currentSecondaryColors[1]), parseInt(currentSecondaryColors[2]));
+    game.setVehicleNeonLightsColour(vehicle, parseInt(currentUnderfloorColors[0]), parseInt(currentUnderfloorColors[1]), parseInt(currentUnderfloorColors[2]));
+    game.setVehicleTyreSmokeColor(vehicle, parseInt(currentTyreSmokeColors[0]), parseInt(currentTyreSmokeColors[1]), parseInt(currentTyreSmokeColors[2]));
 }

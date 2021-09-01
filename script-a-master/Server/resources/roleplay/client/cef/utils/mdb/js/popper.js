@@ -309,8 +309,8 @@
     };
     var createClass = function() {
         function defineProperties(target, props) {
-            for(var i1 = 0; i1 < props.length; i1++){
-                var descriptor = props[i1];
+            for(var i = 0; i < props.length; i++){
+                var descriptor = props[i];
                 descriptor.enumerable = descriptor.enumerable || false;
                 descriptor.configurable = true;
                 if ("value" in descriptor) descriptor.writable = true;
@@ -337,8 +337,8 @@
         return obj;
     };
     var _extends = Object.assign || function(target) {
-        for(var i1 = 1; i1 < arguments.length; i1++){
-            var source = arguments[i1];
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
             for(var key in source){
                 if (Object.prototype.hasOwnProperty.call(source, key)) {
                     target[key] = source[key];
@@ -412,7 +412,7 @@
     }
     function getOffsetRectRelativeToArbitraryNode(children, parent) {
         var fixedPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-        var isIE101 = isIE(10);
+        var isIE10 = isIE(10);
         var isHTML = parent.nodeName === 'HTML';
         var childrenRect = getBoundingClientRect(children);
         var parentRect = getBoundingClientRect(parent);
@@ -437,7 +437,7 @@
         // we do this only on HTML because it's the only element that behaves
         // differently when margins are applied to it. The margins are included in
         // the box of the documentElement, in the other cases not.
-        if (!isIE101 && isHTML) {
+        if (!isIE10 && isHTML) {
             var marginTop = parseFloat(styles.marginTop, 10);
             var marginLeft = parseFloat(styles.marginLeft, 10);
             offsets.top -= borderTopWidth - marginTop;
@@ -448,7 +448,7 @@
             offsets.marginTop = marginTop;
             offsets.marginLeft = marginLeft;
         }
-        if (isIE101 && !fixedPosition ? parent.contains(scrollParent) : parent === scrollParent && scrollParent.nodeName !== 'BODY') {
+        if (isIE10 && !fixedPosition ? parent.contains(scrollParent) : parent === scrollParent && scrollParent.nodeName !== 'BODY') {
             offsets = includeScroll(offsets, parent);
         }
         return offsets;
@@ -836,8 +836,8 @@
             'O'
         ];
         var upperProp = property.charAt(0).toUpperCase() + property.slice(1);
-        for(var i1 = 0; i1 < prefixes.length; i1++){
-            var prefix = prefixes[i1];
+        for(var i = 0; i < prefixes.length; i++){
+            var prefix = prefixes[i];
             var toCheck = prefix ? '' + prefix + upperProp : property;
             if (typeof document.body.style[toCheck] !== 'undefined') {
                 return toCheck;
@@ -1066,7 +1066,7 @@
      */ function getRoundedOffsets(data, shouldRound) {
         var _data$offsets = data.offsets, popper = _data$offsets.popper, reference = _data$offsets.reference;
         var round = Math.round, floor = Math.floor;
-        var noRound = function noRound1(v) {
+        var noRound = function noRound(v) {
             return v;
         };
         var referenceWidth = round(reference.width);
@@ -1593,17 +1593,17 @@
      * The offset value as described in the modifier description
      * @returns {Object} The data object, properly modified
      */ function offset(data, _ref) {
-        var offset1 = _ref.offset;
+        var offset = _ref.offset;
         var placement = data.placement, _data$offsets = data.offsets, popper = _data$offsets.popper, reference = _data$offsets.reference;
         var basePlacement = placement.split('-')[0];
         var offsets = void 0;
-        if (isNumeric(+offset1)) {
+        if (isNumeric(+offset)) {
             offsets = [
-                +offset1,
+                +offset,
                 0
             ];
         } else {
-            offsets = parseOffset(offset1, popper, reference, basePlacement);
+            offsets = parseOffset(offset, popper, reference, basePlacement);
         }
         if (basePlacement === 'left') {
             popper.top += offsets[0];
@@ -2118,11 +2118,11 @@
          * @param {HTMLElement} popper - The HTML element used as the popper
          * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
          * @return {Object} instance - The generated Popper.js instance
-         */ function Popper1(reference, popper) {
+         */ function Popper(reference, popper) {
             var _this = this;
             var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
             };
-            classCallCheck(this, Popper1);
+            classCallCheck(this, Popper);
             this.scheduleUpdate = function() {
                 return requestAnimationFrame(_this.update);
             };
@@ -2130,7 +2130,7 @@
             this.update = debounce(this.update.bind(this));
             // with {} we create a new object with the options inside it
             this.options = _extends({
-            }, Popper1.Defaults, options);
+            }, Popper.Defaults, options);
             // init state
             this.state = {
                 isDestroyed: false,
@@ -2144,9 +2144,9 @@
             this.options.modifiers = {
             };
             Object.keys(_extends({
-            }, Popper1.Defaults.modifiers, options.modifiers)).forEach(function(name) {
+            }, Popper.Defaults.modifiers, options.modifiers)).forEach(function(name) {
                 _this.options.modifiers[name] = _extends({
-                }, Popper1.Defaults.modifiers[name] || {
+                }, Popper.Defaults.modifiers[name] || {
                 }, options.modifiers ? options.modifiers[name] : {
                 });
             });
@@ -2179,7 +2179,7 @@
         }
         // We can't use class properties because they don't get listed in the
         // class prototype and break stuff like Sinon stubs
-        createClass(Popper1, [
+        createClass(Popper, [
             {
                 key: 'update',
                 value: function update$$1() {
@@ -2205,7 +2205,7 @@
                 }
             }
         ]);
-        return Popper1;
+        return Popper;
     }();
     /**
      * The `referenceObject` is an object that provides an interface compatible with Popper.js

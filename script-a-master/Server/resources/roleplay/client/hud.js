@@ -212,10 +212,10 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
         hudBrowser.on("Client:Garage:destroyGarageCEF", ()=>{
             closeGarageCEF();
         });
-        hudBrowser.on("Client:Smartphone:joinRadioFrequence", (currentRadioFrequence1)=>{
+        hudBrowser.on("Client:Smartphone:joinRadioFrequence", (currentRadioFrequence)=>{
             if (lastInteract + 500 > Date.now()) return;
             lastInteract = Date.now();
-            alt.emitServer("Server:Smartphone:joinRadioFrequence", `${currentRadioFrequence1}`);
+            alt.emitServer("Server:Smartphone:joinRadioFrequence", `${currentRadioFrequence}`);
         });
         hudBrowser.on("Client:Smartphone:leaveRadioFrequence", ()=>{
             if (currentRadioFrequence == null || lastInteract + 500 > Date.now()) return;

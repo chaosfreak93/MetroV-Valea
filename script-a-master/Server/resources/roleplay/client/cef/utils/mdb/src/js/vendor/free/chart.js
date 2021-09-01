@@ -41,9 +41,9 @@
                         exports: {
                         }
                     };
-                    e[i][0].call(p.exports, function(r1) {
-                        var n1 = e[i][1][r1];
-                        return o(n1 || r1);
+                    e[i][0].call(p.exports, function(r) {
+                        var n = e[i][1][r];
+                        return o(n || r);
                     }, p, p.exports, r, e, n, t);
                 }
                 return n[i].exports;
@@ -54,15 +54,15 @@
         return r;
     })()({
         1: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
             },
             {
             }
         ],
         2: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /* MIT license */ var colorNames = require(6);
-                module1.exports = {
+                module.exports = {
                     getRgba: getRgba,
                     getHsla: getHsla,
                     getRgb: getRgb,
@@ -256,7 +256,7 @@
             }
         ],
         3: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /* MIT license */ var convert = require(5);
                 var string = require(2);
                 var Color = function(obj) {
@@ -748,7 +748,7 @@
                 if (typeof window !== 'undefined') {
                     window.Color = Color;
                 }
-                module1.exports = Color;
+                module.exports = Color;
             },
             {
                 "2": 2,
@@ -756,8 +756,8 @@
             }
         ],
         4: [
-            function(require, module1, exports1) {
-                /* MIT license */ module1.exports = {
+            function(require, module, exports) {
+                /* MIT license */ module.exports = {
                     rgb2hsl: rgb2hsl,
                     rgb2hsv: rgb2hsv,
                     rgb2hwb: rgb2hwb,
@@ -1973,28 +1973,28 @@
             }
         ],
         5: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 var conversions = require(4);
                 var convert = function() {
                     return new Converter();
                 };
                 for(var func in conversions){
                     // export Raw versions
-                    convert[func + "Raw"] = (function(func1) {
+                    convert[func + "Raw"] = (function(func) {
                         // accept array or plain args
                         return function(arg) {
                             if (typeof arg == "number") arg = Array.prototype.slice.call(arguments);
-                            return conversions[func1](arg);
+                            return conversions[func](arg);
                         };
                     })(func);
                     var pair = /(\w+)2(\w+)/.exec(func), from = pair[1], to = pair[2];
                     // export rgb2hsl and ["rgb"]["hsl"]
                     convert[from] = convert[from] || {
                     };
-                    convert[from][to] = convert[func] = (function(func1) {
+                    convert[from][to] = convert[func] = (function(func) {
                         return function(arg) {
                             if (typeof arg == "number") arg = Array.prototype.slice.call(arguments);
-                            var val = conversions[func1](arg);
+                            var val = conversions[func](arg);
                             if (typeof val == "string" || val === undefined) return val; // keyword
                             for(var i = 0; i < val.length; i++)val[i] = Math.round(val[i]);
                             return val;
@@ -2047,16 +2047,16 @@
                         return this.routeSpace(space, arguments);
                     };
                 });
-                module1.exports = convert;
+                module.exports = convert;
             },
             {
                 "4": 4
             }
         ],
         6: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = {
+                module.exports = {
                     "aliceblue": [
                         240,
                         248,
@@ -2803,7 +2803,7 @@
             }
         ],
         7: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /**
              * @namespace Chart
              */ var Chart = require(30)();
@@ -2855,7 +2855,7 @@
                     }
                 }
                 Chart.platform.initialize();
-                module1.exports = Chart;
+                module.exports = Chart;
                 if (typeof window !== 'undefined') {
                     window.Chart = Chart;
                 }
@@ -2948,9 +2948,9 @@
             }
         ],
         8: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.Bar = function(context, config) {
                         config.type = 'bar';
                         return new Chart(context, config);
@@ -2961,9 +2961,9 @@
             }
         ],
         9: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.Bubble = function(context, config) {
                         config.type = 'bubble';
                         return new Chart(context, config);
@@ -2974,9 +2974,9 @@
             }
         ],
         10: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.Doughnut = function(context, config) {
                         config.type = 'doughnut';
                         return new Chart(context, config);
@@ -2987,9 +2987,9 @@
             }
         ],
         11: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.Line = function(context, config) {
                         config.type = 'line';
                         return new Chart(context, config);
@@ -3000,9 +3000,9 @@
             }
         ],
         12: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.PolarArea = function(context, config) {
                         config.type = 'polarArea';
                         return new Chart(context, config);
@@ -3013,9 +3013,9 @@
             }
         ],
         13: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.Radar = function(context, config) {
                         config.type = 'radar';
                         return new Chart(context, config);
@@ -3026,9 +3026,9 @@
             }
         ],
         14: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.Scatter = function(context, config) {
                         config.type = 'scatter';
                         return new Chart(context, config);
@@ -3039,7 +3039,7 @@
             }
         ],
         15: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var elements = require(41);
@@ -3198,7 +3198,7 @@
                         start: start
                     };
                 }
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.controllers.bar = Chart.DatasetController.extend({
                         dataElementType: elements.Rectangle,
                         initialize: function() {
@@ -3431,7 +3431,7 @@
             }
         ],
         16: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var elements = require(41);
@@ -3470,7 +3470,7 @@
                         }
                     }
                 });
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.controllers.bubble = Chart.DatasetController.extend({
                         /**
                      * @protected
@@ -3596,7 +3596,7 @@
             }
         ],
         17: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var elements = require(41);
@@ -3705,7 +3705,7 @@
                 defaults._set('pie', {
                     cutoutPercentage: 0
                 });
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.controllers.doughnut = Chart.controllers.pie = Chart.DatasetController.extend({
                         dataElementType: elements.Arc,
                         linkScales: helpers.noop,
@@ -3882,7 +3882,7 @@
             }
         ],
         18: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var elements = require(41);
@@ -3908,7 +3908,7 @@
                         ]
                     }
                 });
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     function lineEnabled(dataset, options) {
                         return helpers.valueOrDefault(dataset.showLine, options.showLines);
                     }
@@ -4190,7 +4190,7 @@
             }
         ],
         19: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var elements = require(41);
@@ -4288,7 +4288,7 @@
                         }
                     }
                 });
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.controllers.polarArea = Chart.DatasetController.extend({
                         dataElementType: elements.Arc,
                         linkScales: helpers.noop,
@@ -4413,7 +4413,7 @@
             }
         ],
         20: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var elements = require(41);
@@ -4428,7 +4428,7 @@
                         }
                     }
                 });
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     Chart.controllers.radar = Chart.DatasetController.extend({
                         datasetElementType: elements.Line,
                         dataElementType: elements.Point,
@@ -4557,7 +4557,7 @@
             }
         ],
         21: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 defaults._set('scatter', {
@@ -4592,7 +4592,7 @@
                         }
                     }
                 });
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     // Scatter charts use line controllers
                     Chart.controllers.scatter = Chart.controllers.line;
                 };
@@ -4602,10 +4602,10 @@
             }
         ],
         22: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                var Element1 = require(27);
-                var exports1 = module1.exports = Element1.extend({
+                var Element = require(27);
+                var exports = module.exports = Element.extend({
                     chart: null,
                     currentStep: 0,
                     numSteps: 60,
@@ -4620,7 +4620,7 @@
              * @prop Chart.Animation#animationObject
              * @deprecated since version 2.6.0
              * @todo remove at version 3
-             */ Object.defineProperty(exports1.prototype, 'animationObject', {
+             */ Object.defineProperty(exports.prototype, 'animationObject', {
                     get: function() {
                         return this;
                     }
@@ -4630,7 +4630,7 @@
              * @prop Chart.Animation#chartInstance
              * @deprecated since version 2.6.0
              * @todo remove at version 3
-             */ Object.defineProperty(exports1.prototype, 'chartInstance', {
+             */ Object.defineProperty(exports.prototype, 'chartInstance', {
                     get: function() {
                         return this.chart;
                     },
@@ -4644,7 +4644,7 @@
             }
         ],
         23: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /* global window: false */ 'use strict';
                 var defaults = require(26);
                 var helpers = require(46);
@@ -4656,7 +4656,7 @@
                         onComplete: helpers.noop
                     }
                 });
-                module1.exports = {
+                module.exports = {
                     frameDuration: 17,
                     animations: [],
                     dropFrames: 0,
@@ -4761,9 +4761,9 @@
             }
         ],
         24: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                var Animation1 = require(22);
+                var Animation = require(22);
                 var animations = require(23);
                 var defaults = require(26);
                 var helpers = require(46);
@@ -4773,7 +4773,7 @@
                 var plugins = require(32);
                 var scaleService = require(34);
                 var Tooltip = require(36);
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     // Create a dictionary of chart types, to allow for extension of existing types
                     Chart.types = {
                     };
@@ -5198,7 +5198,7 @@
                                 ], me);
                             };
                             if (animationOptions && (typeof duration !== 'undefined' && duration !== 0 || typeof duration === 'undefined' && animationOptions.duration !== 0)) {
-                                var animation = new Animation1({
+                                var animation = new Animation({
                                     numSteps: (duration || animationOptions.duration) / 16.66,
                                     easing: config.easing || animationOptions.easing,
                                     render: function(chart, animationObject) {
@@ -5214,7 +5214,7 @@
                             } else {
                                 me.draw();
                                 // See https://github.com/chartjs/Chart.js/issues/3781
-                                onComplete(new Animation1({
+                                onComplete(new Animation({
                                     numSteps: 0,
                                     chart: me
                                 }));
@@ -5587,10 +5587,10 @@
             }
         ],
         25: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     var arrayEvents = [
                         'push',
                         'pop',
@@ -5864,10 +5864,10 @@
             }
         ],
         26: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
-                module1.exports = {
+                module.exports = {
                     /**
                  * @private
                  */ _set: function(scope, values) {
@@ -5881,7 +5881,7 @@
             }
         ],
         27: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var color = require(3);
                 var helpers = require(46);
@@ -5923,11 +5923,11 @@
                         view[key] = target;
                     }
                 }
-                var Element1 = function(configuration) {
+                var Element = function(configuration) {
                     helpers.extend(this, configuration);
                     this.initialize.apply(this, arguments);
                 };
-                helpers.extend(Element1.prototype, {
+                helpers.extend(Element.prototype, {
                     initialize: function() {
                         this.hidden = false;
                     },
@@ -5972,8 +5972,8 @@
                         return helpers.isNumber(this._model.x) && helpers.isNumber(this._model.y);
                     }
                 });
-                Element1.extend = helpers.inherits;
-                module1.exports = Element1;
+                Element.extend = helpers.inherits;
+                module.exports = Element;
             },
             {
                 "3": 3,
@@ -5981,13 +5981,13 @@
             }
         ],
         28: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /* global window: false */ /* global document: false */ 'use strict';
                 var color = require(3);
                 var defaults = require(26);
                 var helpers = require(46);
                 var scaleService = require(34);
-                module1.exports = function() {
+                module.exports = function() {
                     // -- Basic js utility methods
                     helpers.configMerge = function() {
                         return helpers.merge(helpers.clone(arguments[0]), [].slice.call(arguments, 1), {
@@ -6545,7 +6545,7 @@
             }
         ],
         29: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
                 /**
@@ -6668,7 +6668,7 @@
              */ /**
              * Contains interaction related functions
              * @namespace Chart.Interaction
-             */ module1.exports = {
+             */ module.exports = {
                     // Helper function for different modes
                     modes: {
                         single: function(chart, e) {
@@ -6825,7 +6825,7 @@
             }
         ],
         30: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 defaults._set('global', {
@@ -6865,7 +6865,7 @@
                         }
                     }
                 });
-                module1.exports = function() {
+                module.exports = function() {
                     // Occupy the global variable of Chart, and create a simple base class
                     var Chart = function(item, config) {
                         this.construct(item, config);
@@ -6880,7 +6880,7 @@
             }
         ],
         31: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
                 function filterByPosition(array, position) {
@@ -6920,7 +6920,7 @@
              */ // The layout service is very self explanatory.  It's responsible for the layout within a chart.
                 // Scales, Legends and Plugins all rely on the layout service and can easily register to be placed anywhere they need
                 // It is this service's responsibility of carrying out that layout.
-                module1.exports = {
+                module.exports = {
                     defaults: {
                     },
                     /**
@@ -7240,7 +7240,7 @@
             }
         ],
         32: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var helpers = require(46);
@@ -7252,7 +7252,7 @@
              * The plugin service singleton
              * @namespace Chart.plugins
              * @since 2.1.0
-             */ module1.exports = {
+             */ module.exports = {
                     /**
                  * Globally registered plugins.
                  * @private
@@ -7578,10 +7578,10 @@
             }
         ],
         33: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 var Ticks = require(35);
                 defaults._set('scale', {
@@ -7677,7 +7677,7 @@
                 function parseLineHeight(options) {
                     return helpers.options.toLineHeight(helpers.valueOrDefault(options.lineHeight, 1.2), helpers.valueOrDefault(options.fontSize, defaults.global.defaultFontSize));
                 }
-                module1.exports = Element1.extend({
+                module.exports = Element.extend({
                     /**
                  * Get the padding needed for the scale
                  * @method getPadding
@@ -8393,12 +8393,12 @@
             }
         ],
         34: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var helpers = require(46);
                 var layouts = require(31);
-                module1.exports = {
+                module.exports = {
                     // Scale registration object. Extensions can register new scale types (such as log or DB scales) and then
                     // use the new chart options to grab the correct scale
                     constructors: {
@@ -8449,13 +8449,13 @@
             }
         ],
         35: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
                 /**
              * Namespace to hold static tick generation functions
              * @namespace Chart.Ticks
-             */ module1.exports = {
+             */ module.exports = {
                     /**
                  * Namespace to hold formatters for different types of ticks
                  * @namespace Chart.Ticks.formatters
@@ -8519,10 +8519,10 @@
             }
         ],
         36: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 defaults._set('global', {
                     tooltips: {
@@ -8929,7 +8929,7 @@
              */ function getBeforeAfterBodyLines(callback) {
                     return pushOrConcat([], splitNewlines(callback));
                 }
-                var exports1 = module1.exports = Element1.extend({
+                var exports = module.exports = Element.extend({
                     initialize: function() {
                         this._model = getBaseModel(this._options);
                         this._lastActive = [];
@@ -9337,7 +9337,7 @@
                 });
                 /**
              * @namespace Chart.Tooltip.positioners
-             */ exports1.positioners = positioners;
+             */ exports.positioners = positioners;
             },
             {
                 "26": 26,
@@ -9346,10 +9346,10 @@
             }
         ],
         37: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 defaults._set('global', {
                     elements: {
@@ -9360,7 +9360,7 @@
                         }
                     }
                 });
-                module1.exports = Element1.extend({
+                module.exports = Element.extend({
                     inLabelRange: function(mouseX) {
                         var vm = this._view;
                         if (vm) {
@@ -9445,10 +9445,10 @@
             }
         ],
         38: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 var globalDefaults = defaults.global;
                 defaults._set('global', {
@@ -9467,7 +9467,7 @@
                         }
                     }
                 });
-                module1.exports = Element1.extend({
+                module.exports = Element.extend({
                     draw: function() {
                         var me = this;
                         var vm = me._view;
@@ -9531,10 +9531,10 @@
             }
         ],
         39: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 var defaultColor = defaults.global.defaultColor;
                 defaults._set('global', {
@@ -9560,7 +9560,7 @@
                     var vm = this._view;
                     return vm ? Math.abs(mouseY - vm.y) < vm.radius + vm.hitRadius : false;
                 }
-                module1.exports = Element1.extend({
+                module.exports = Element.extend({
                     inRange: function(mouseX, mouseY) {
                         var vm = this._view;
                         return vm ? Math.pow(mouseX - vm.x, 2) + Math.pow(mouseY - vm.y, 2) < Math.pow(vm.hitRadius + vm.radius, 2) : false;
@@ -9616,10 +9616,10 @@
             }
         ],
         40: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 defaults._set('global', {
                     elements: {
                         rectangle: {
@@ -9663,7 +9663,7 @@
                         bottom: y2
                     };
                 }
-                module1.exports = Element1.extend({
+                module.exports = Element.extend({
                     draw: function() {
                         var ctx = this._chart.ctx;
                         var vm = this._view;
@@ -9830,14 +9830,14 @@
             }
         ],
         41: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = {
+                module.exports = {
                 };
-                module1.exports.Arc = require(37);
-                module1.exports.Line = require(38);
-                module1.exports.Point = require(39);
-                module1.exports.Rectangle = require(40);
+                module.exports.Arc = require(37);
+                module.exports.Line = require(38);
+                module.exports.Point = require(39);
+                module.exports.Rectangle = require(40);
             },
             {
                 "37": 37,
@@ -9847,12 +9847,12 @@
             }
         ],
         42: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(43);
                 /**
              * @namespace Chart.helpers.canvas
-             */ var exports1 = module1.exports = {
+             */ var exports = module.exports = {
                     /**
                  * Clears the entire canvas associated to the given `chart`.
                  * @param {Chart} chart - The chart for which to clear the canvas.
@@ -10016,7 +10016,7 @@
              * @deprecated since version 2.7.0
              * @todo remove at version 3
              * @private
-             */ helpers.clear = exports1.clear;
+             */ helpers.clear = exports.clear;
                 /**
              * Provided for backward compatibility, use Chart.helpers.canvas.roundedRect instead.
              * @namespace Chart.helpers.drawRoundedRectangle
@@ -10025,7 +10025,7 @@
              * @private
              */ helpers.drawRoundedRectangle = function(ctx) {
                     ctx.beginPath();
-                    exports1.roundedRect.apply(exports1, arguments);
+                    exports.roundedRect.apply(exports, arguments);
                 };
             },
             {
@@ -10033,7 +10033,7 @@
             }
         ],
         43: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 /**
              * @namespace Chart.helpers
@@ -10283,7 +10283,7 @@
                         return ChartElement;
                     }
                 };
-                module1.exports = helpers;
+                module.exports = helpers;
                 // DEPRECATIONS
                 /**
              * Provided for backward compatibility, use Chart.helpers.callback instead.
@@ -10321,7 +10321,7 @@
             }
         ],
         44: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(43);
                 /**
@@ -10525,7 +10525,7 @@
                         return effects.easeOutBounce(t * 2 - 1) * 0.5 + 0.5;
                     }
                 };
-                module1.exports = {
+                module.exports = {
                     effects: effects
                 };
                 // DEPRECATIONS
@@ -10542,13 +10542,13 @@
             }
         ],
         45: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(43);
                 /**
              * @alias Chart.helpers.options
              * @namespace
-             */ module1.exports = {
+             */ module.exports = {
                     /**
                  * Converts the given line height `value` in pixels for a specific font `size`.
                  * @param {Number|String} value - The lineHeight to parse (eg. 1.6, '14px', '75%', '1.6em').
@@ -10631,12 +10631,12 @@
             }
         ],
         46: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = require(43);
-                module1.exports.easing = require(44);
-                module1.exports.canvas = require(42);
-                module1.exports.options = require(45);
+                module.exports = require(43);
+                module.exports.easing = require(44);
+                module.exports.canvas = require(42);
+                module.exports.options = require(45);
             },
             {
                 "42": 42,
@@ -10646,11 +10646,11 @@
             }
         ],
         47: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /**
              * Platform fallback implementation (minimal).
              * @see https://github.com/chartjs/Chart.js/pull/4591#issuecomment-319575939
-             */ module1.exports = {
+             */ module.exports = {
                     acquireContext: function(item) {
                         if (item && item.canvas) {
                             // Support for any object associated to a canvas (including a context2d)
@@ -10664,7 +10664,7 @@
             }
         ],
         48: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /**
              * Chart.Platform implementation for targeting a web browser
              */ 'use strict';
@@ -10911,7 +10911,7 @@
                     }
                     style.appendChild(document.createTextNode(css));
                 }
-                module1.exports = {
+                module.exports = {
                     /**
                  * This property holds whether this platform is enabled for the current environment.
                  * Currently used by platform.js to select the proper implementation.
@@ -11038,7 +11038,7 @@
             }
         ],
         49: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
                 var basic = require(47);
@@ -11049,7 +11049,7 @@
              * @namespace Chart.platform
              * @see https://chartjs.gitbooks.io/proposals/content/Platform.html
              * @since 2.4.0
-             */ module1.exports = helpers.extend({
+             */ module.exports = helpers.extend({
                     /**
                  * @since 2.7.0
                  */ initialize: function() {
@@ -11108,13 +11108,13 @@
             }
         ],
         50: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
-                module1.exports = {
+                module.exports = {
                 };
-                module1.exports.filler = require(51);
-                module1.exports.legend = require(52);
-                module1.exports.title = require(53);
+                module.exports.filler = require(51);
+                module.exports.legend = require(52);
+                module.exports.title = require(53);
             },
             {
                 "51": 51,
@@ -11123,7 +11123,7 @@
             }
         ],
         51: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /**
              * Plugin based on discussion from the following Chart.js issues:
              * @see https://github.com/chartjs/Chart.js/issues/2380#issuecomment-279961569
@@ -11341,7 +11341,7 @@
                     ctx.fillStyle = color;
                     ctx.fill();
                 }
-                module1.exports = {
+                module.exports = {
                     id: 'filler',
                     afterDatasetsUpdate: function(chart, options) {
                         var count = (chart.data.datasets || []).length;
@@ -11399,10 +11399,10 @@
             }
         ],
         52: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 var layouts = require(31);
                 var noop = helpers.noop;
@@ -11483,7 +11483,7 @@
                 }
                 /**
              * IMPORTANT: this class is exposed publicly as Chart.Legend, backward compatibility required!
-             */ var Legend = Element1.extend({
+             */ var Legend = Element.extend({
                     initialize: function(config) {
                         helpers.extend(this, config);
                         // Contains hit boxes for each dataset (in dataset order)
@@ -11843,7 +11843,7 @@
                     layouts.addBox(chart, legend);
                     chart.legend = legend;
                 }
-                module1.exports = {
+                module.exports = {
                     id: 'legend',
                     /**
                  * Backward compatibility: since 2.1.5, the legend is registered as a plugin, making
@@ -11890,10 +11890,10 @@
             }
         ],
         53: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
-                var Element1 = require(27);
+                var Element = require(27);
                 var helpers = require(46);
                 var layouts = require(31);
                 var noop = helpers.noop;
@@ -11911,7 +11911,7 @@
                 });
                 /**
              * IMPORTANT: this class is exposed publicly as Chart.Legend, backward compatibility required!
-             */ var Title = Element1.extend({
+             */ var Title = Element.extend({
                     initialize: function(config) {
                         var me = this;
                         helpers.extend(me, config);
@@ -12067,7 +12067,7 @@
                     layouts.addBox(chart, title);
                     chart.titleBlock = title;
                 }
-                module1.exports = {
+                module.exports = {
                     id: 'title',
                     /**
                  * Backward compatibility: since 2.1.5, the title is registered as a plugin, making
@@ -12108,11 +12108,11 @@
             }
         ],
         54: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var Scale = require(33);
                 var scaleService = require(34);
-                module1.exports = function() {
+                module.exports = function() {
                     // Default config for a category scale
                     var defaultConfig = {
                         position: 'bottom'
@@ -12227,13 +12227,13 @@
             }
         ],
         55: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var helpers = require(46);
                 var scaleService = require(34);
                 var Ticks = require(35);
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     var defaultConfig = {
                         position: 'left',
                         ticks: {
@@ -12402,7 +12402,7 @@
             }
         ],
         56: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
                 var Scale = require(33);
@@ -12461,7 +12461,7 @@
                     ticks.push(generationOptions.max !== undefined ? generationOptions.max : niceMax);
                     return ticks;
                 }
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     var noop = helpers.noop;
                     Chart.LinearScaleBase = Scale.extend({
                         getRightValue: function(value) {
@@ -12577,7 +12577,7 @@
             }
         ],
         57: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var helpers = require(46);
                 var Scale = require(33);
@@ -12623,7 +12623,7 @@
                     ticks.push(lastTick);
                     return ticks;
                 }
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     var defaultConfig = {
                         position: 'left',
                         // label settings
@@ -12887,13 +12887,13 @@
             }
         ],
         58: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 'use strict';
                 var defaults = require(26);
                 var helpers = require(46);
                 var scaleService = require(34);
                 var Ticks = require(35);
-                module1.exports = function(Chart) {
+                module.exports = function(Chart) {
                     var globalDefaults = defaults.global;
                     var defaultConfig = {
                         display: true,
@@ -13329,7 +13329,7 @@
             }
         ],
         59: [
-            function(require, module1, exports1) {
+            function(require, module, exports) {
                 /* global window: false */ 'use strict';
                 var moment = require(1);
                 moment = typeof moment === 'function' ? moment : window.moment;
@@ -13748,7 +13748,7 @@
                     }
                     return 'MMM D, YYYY';
                 }
-                module1.exports = function() {
+                module.exports = function() {
                     var defaultConfig = {
                         position: 'bottom',
                         /**
