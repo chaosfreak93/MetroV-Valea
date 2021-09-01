@@ -241,6 +241,7 @@ class LoginHandler {
         alt.setStat(alt.StatName.Shooting, 50);
         alt.setStat(alt.StatName.Stealth, 0);**/ alt.setMsPerGameMinute(60000);
         let date = new Date();
+        native.setClockDate(date.getDay(), date.getMonth(), date.getFullYear());
         native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
     }
 }

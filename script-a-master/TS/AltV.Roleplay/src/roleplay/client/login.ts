@@ -279,6 +279,7 @@ export default class LoginHandler {
 
         alt.setMsPerGameMinute(60000);
         let date = new Date();
+        native.setClockDate(date.getDay(), date.getMonth(), date.getFullYear());
         native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
     }
 }
