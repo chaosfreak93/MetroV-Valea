@@ -269,13 +269,13 @@ export default class LoginHandler {
         IPLManager.initializeDoorControl();
         setMinimapData();
         setAudioData();
-        /**alt.setStat(alt.StatName.Stamina, 75);
-        alt.setStat(alt.StatName.Strength, 60);
-        alt.setStat(alt.StatName.LungCapacity, 50);
-        alt.setStat(alt.StatName.Wheelie, 50);
-        alt.setStat(alt.StatName.Flying, 75);
-        alt.setStat(alt.StatName.Shooting, 50);
-        alt.setStat(alt.StatName.Stealth, 0);**/
+        alt.setStat("stamina", 75);
+        alt.setStat("strength", 60);
+        alt.setStat("lung_capacity", 50);
+        alt.setStat("wheelie_ability", 50);
+        alt.setStat("flying_ability", 75);
+        alt.setStat("shooting_ability", 50);
+        alt.setStat("stealth_ability", 0);
 
         alt.setMsPerGameMinute(60000);
         let date = new Date();
