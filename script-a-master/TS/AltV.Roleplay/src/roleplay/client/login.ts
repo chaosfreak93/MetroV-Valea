@@ -93,17 +93,6 @@ export default class LoginHandler {
     
                 alt.emitServer("Server:Charselector:spawnChar", charid);
             });
-    
-            loginBrowser.on("Client:Charcreator:SwitchOut", () => {
-                if (loginCam != null) {
-                    native.renderScriptCams(false, false, 0, true, false, 0);
-                    native.setCamActive(loginCam, false);
-                    native.destroyCam(loginCam, true);
-                    loginCam = null;
-                }
-                native.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
-                native.freezeEntityPosition(alt.Player.local.scriptID, true);
-            });
         }
     }
 
@@ -206,9 +195,21 @@ export default class LoginHandler {
             let interiorID = native.getInteriorAtCoords(player.pos.x, player.pos.y, player.pos.z);
             native.refreshInterior(interiorID);
             await isCollisionLoaded(alt.Player.local);
-            native.freezeEntityPosition(alt.Player.local.scriptID, false);
+            native.freezeEntityPosition(alt.Player.local.scriptID, true);
             native.switchInPlayer(player.scriptID);
+            native.freezeEntityPosition(alt.Player.local.scriptID, false);
         }, 1000);
+    }
+
+    static SwitchOut(): void {
+        if (loginCam != null) {
+            native.renderScriptCams(false, false, 0, true, false, 0);
+            native.setCamActive(loginCam, false);
+            native.destroyCam(loginCam, true);
+            loginCam = null;
+        }
+        native.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
+        native.freezeEntityPosition(alt.Player.local.scriptID, true);
     }
 
     static async spawnCharSelectorPed(gender: number, facefeaturearray: string, headblendsarray: string, headoverlayarray: string): Promise<void> {
@@ -278,9 +279,6 @@ export default class LoginHandler {
         alt.setStat("stealth_ability", 0);
 
         alt.setMsPerGameMinute(60000);
-        let date = new Date();
-        native.setClockDate(date.getDay(), date.getMonth(), date.getFullYear());
-        native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
     }
 }
 
@@ -292,4 +290,5 @@ alt.onServer("Client:Login:SaveLoginCredentialsToStorage", LoginHandler.SaveLogi
 alt.onServer("Client:Login:showError", LoginHandler.showError);
 alt.onServer("Client:Login:showArea", LoginHandler.showArea);
 alt.onServer("Client:SpawnArea:SwitchIn", LoginHandler.SwitchIn);
+alt.onServer("Client:SpawnArea:SwitchOut", LoginHandler.SwitchOut);
 alt.on("connectionComplete", LoginHandler.connectionComplete);

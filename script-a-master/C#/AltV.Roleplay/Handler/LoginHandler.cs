@@ -20,6 +20,8 @@ namespace Altv_Roleplay.Handler
         public void OnPlayerConnect_Handler(ClassicPlayer player, string reason) {
             if (player is not {Exists: true}) return;
 
+            DateTime now = DateTime.Now;
+            player.SetDateTime(now.Day, now.Month, now.Year, now.Hour, now.Minute, now.Second);
             player.SetSyncedMetaData("PLAYER_SPAWNED", false);
             player.SetSyncedMetaData("ADMINLEVEL", 0);
             player.SetPlayerIsCuffed("handcuffs", false);
@@ -179,7 +181,7 @@ namespace Altv_Roleplay.Handler
         }
 
         [AsyncClientEvent("Server:Charselector:spawnChar")]
-        public async void CharacterSelectedSpawnPlace(ClassicPlayer client, string charcid) {
+        public async Task CharacterSelectedSpawnPlace(ClassicPlayer client, string charcid) {
             if (client is not {Exists: true} || charcid == null || client.accountId <= 0 || User.GetPlayerAccountId(client) <= 0) return;
 
             var stopwatch = new Stopwatch();
@@ -191,6 +193,9 @@ namespace Altv_Roleplay.Handler
                 client.Kick("Login Fehler!");
                 return;
             }
+            
+            client.Emit("Client:SpawnArea:SwitchOut");
+            await Task.Delay(500);
 
             var charName = Characters.GetCharacterName(charid);
             User.SetPlayerOnline(client, charid); //Online Feld = CharakterID
@@ -253,7 +258,7 @@ namespace Altv_Roleplay.Handler
             client.EmitLocked("Client:SpawnArea:setCharSkin", Characters.GetCharacterSkin("facefeatures", charid),
                 Characters.GetCharacterSkin("headblendsdata", charid), Characters.GetCharacterSkin("headoverlays", charid));
             var dbPos = Characters.GetCharacterLastPosition(charid);
-            dbPos.Z += 1f;
+            dbPos.Z += 0.75f;
 
             lock (client) {
                 if (client is not {Exists: true}) return;
@@ -348,6 +353,7 @@ namespace Altv_Roleplay.Handler
             
             client.updateTattoos();
             
+            await Task.Delay(500);
             client.Emit("Client:SpawnArea:SwitchIn");
             stopwatch.Stop();
             if (stopwatch.Elapsed.Milliseconds > 30)
