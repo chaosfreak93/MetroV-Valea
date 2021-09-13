@@ -1276,10 +1276,9 @@ alt.onServer("Client:Tuning:openTuningMenu", (veh, Items) => {
 });
 
 alt.onServer("Client:Deathscreen:openCEF", () => {
-    if (hudBrowser != null && DeathscreenCefOpened == false) {
+    if (deathScreen == null && DeathscreenCefOpened == false) {
         closeAllCEFs();
         alt.emit("Client:HUD:setCefStatus", true);
-        game.setEntityInvincible(alt.Player.local.scriptID, true);
         DeathscreenCefOpened = true;
         isPlayerDead = true;
         alt.showCursor(true);
@@ -1296,17 +1295,15 @@ alt.onServer("Client:Deathscreen:openCEF", () => {
 });
 
 alt.onServer("Client:Deathscreen:closeCEF", () => {
-    if (hudBrowser != null && deathScreen != null) {
+    if (deathScreen != null && DeathscreenCefOpened == true) {
+        deathScreen.unfocus();
         deathScreen.destroy();
-        hudBrowser.emit("CEF:Deathscreen:closeCEF");
-        alt.emit("Client:HUD:setCefStatus", false);
-        game.freezeEntityPosition(alt.Player.local.scriptID, false);
-        game.setEntityInvincible(alt.Player.local.scriptID, false);
-        alt.showCursor(false);
+        deathScreen = null;
         alt.toggleGameControls(true);
-        hudBrowser.unfocus();
-        DeathscreenCefOpened = false;
+        alt.showCursor(false);
         isPlayerDead = false;
+        DeathscreenCefOpened = false;
+        alt.emit("Client:HUD:setCefStatus", false);
     }
 });
 

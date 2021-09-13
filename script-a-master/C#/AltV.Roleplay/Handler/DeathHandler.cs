@@ -79,6 +79,7 @@ namespace Altv_Roleplay.Handler
                 player.Spawn(pos);
                 player.EmitLocked("Client:Inventory:PlayAnimation", "missheistfbi3b_ig8_2", "cower_loop_victim", -1, 1, false);
                 player.EmitLocked("Client:Deathscreen:openCEF"); // Deathscreen öffnen
+                player.Invincible = true;
                 player.SetPlayerIsUnconscious(true);
             }
             catch (Exception e) {
@@ -94,6 +95,7 @@ namespace Altv_Roleplay.Handler
                 if (charId <= 0) return;
 
                 player.EmitLocked("Client:Deathscreen:closeCEF");
+                player.Invincible = false;
                 player.SetPlayerIsUnconscious(false);
                 player.SetPlayerIsFastFarm(false);
                 player.EmitLocked("Client:Inventory:StopAnimation");
@@ -135,6 +137,7 @@ namespace Altv_Roleplay.Handler
                 if (charId <= 0) return;
 
                 player.EmitLocked("Client:Deathscreen:closeCEF");
+                player.Invincible = true;
                 player.SetPlayerIsUnconscious(false);
                 player.EmitLocked("Client:Inventory:StopAnimation");
                 Characters.SetCharacterUnconscious(charId, false, 0);
