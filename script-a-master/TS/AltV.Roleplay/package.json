@@ -9,12 +9,12 @@
     "build": "npm run clean && swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet"
   },
   "devDependencies": {
-    "@altv/types-client": "^1.7.7",
+    "@altv/types-client": "^1.8.3",
     "@altv/types-natives": "^1.4.2",
-    "@altv/types-shared": "^1.0.2",
+    "@altv/types-shared": "^1.0.4",
     "@altv/types-webview": "^1.0.2",
     "@swc/cli": "^0.1.49",
-    "@swc/core": "^1.2.84",
+    "@swc/core": "^1.2.85",
     "rimraf": "^3.0.2"
   },
   "dependencies": {},
