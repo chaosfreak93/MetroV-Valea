@@ -116,7 +116,7 @@ namespace Altv_Roleplay.EntityStreamer
 
 		public void SetPosition(Position pos)
 		{
-			this.Position = pos;
+			Position = pos;
 		}
 
 		public void SetBlipType(int type)

@@ -38,7 +38,7 @@ export default class Clothestore {
 
     static OpenMenu(gender: number) {
         if (!opened) {
-            opened = true
+            opened = true;
             alt.showCursor(true);
             alt.toggleGameControls(false);
             clothesStoreBrowser.focus();

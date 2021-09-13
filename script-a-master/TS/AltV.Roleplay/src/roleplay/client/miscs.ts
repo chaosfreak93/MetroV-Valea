@@ -107,12 +107,6 @@ export function setMinimapData(): void {
     ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesY = 3.0;
 }
 
-alt.setInterval(() => {
-    alt.setMsPerGameMinute(60000);
-    let date = new Date();
-    native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
-}, 3600000);
-
 alt.everyTick(() => {
     native.drawRect(0, 0, 0, 0, 0, 0, 0, 0, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 184, true);
@@ -133,10 +127,10 @@ alt.everyTick(() => {
     }
 
     if (alt.Player.local.vehicle) {
-        const roll: number = native.getEntityRoll(alt.Player.local.vehicle.scriptID)
+        const roll: number = native.getEntityRoll(alt.Player.local.vehicle.scriptID);
         if (roll > 75 || roll < -75) {
-            native.disableControlAction(2, 59, true) // disable left/right
-            native.disableControlAction(2, 60, true) // disable up/down
+            native.disableControlAction(2, 59, true); // disable left/right
+            native.disableControlAction(2, 60, true); // disable up/down
         }
         if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
             native.disableControlAction(1, 86, true);

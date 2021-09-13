@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Async;
@@ -11,12 +10,12 @@ namespace Altv_Roleplay.Handler.Casino
 {
     public class LuckyWheelHandler : IScript
     {
-        public bool isRolling = false;
+        private bool _isRolling;
         
         [AsyncClientEvent("Server:Casino:LuckyWheel:DoRoll")]
         public async Task DoRoll(ClassicPlayer player) {
-            if (!isRolling) {
-                isRolling = true;
+            if (!_isRolling) {
+                _isRolling = true;
                 //int priceIndex  = 52;
                 int priceIndex  = new Random().Next(1, 200);
                 var charId = User.GetPlayerOnline(player);
@@ -25,8 +24,8 @@ namespace Altv_Roleplay.Handler.Casino
                 var accNumber = CharactersBank.GetCharacterBankMainKonto(charId);
                 if (accNumber <= 0) return;
                 
-                var Date = DateTime.Now.ToString("d", CultureInfo.CreateSpecificCulture("de-DE"));
-                var Time = DateTime.Now.ToString("t", CultureInfo.CreateSpecificCulture("de-DE"));
+                var date = DateTime.Now.ToString("d", CultureInfo.CreateSpecificCulture("de-DE"));
+                var time = DateTime.Now.ToString("t", CultureInfo.CreateSpecificCulture("de-DE"));
                 
                 string itemLocation = CharactersInventory.ExistCharacterItem(player.CharacterId, "Jetons", "inventory") ? "inventory" : "backpack";
 
@@ -59,7 +58,7 @@ namespace Altv_Roleplay.Handler.Casino
                         //20k $
                         ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 20000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 20000);
-                        ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+20000$",
+                        ServerBankPapers.CreateNewBankPaper(accNumber, date, time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+20000$",
                             "Unbekannt");
                         HUDHandler.SendNotification(player, 2, 4000, "Du hast 20k Dollar gewonnen. Das Geld wurde auf dein Konto überwiesen!");
                         break;
@@ -95,7 +94,7 @@ namespace Altv_Roleplay.Handler.Casino
                         //30k $
                         ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 30000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 30000);
-                        ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+30000$",
+                        ServerBankPapers.CreateNewBankPaper(accNumber, date, time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+30000$",
                             "Unbekannt");
                         HUDHandler.SendNotification(player, 2, 4000, "Du hast 30k Dollar gewonnen. Das Geld wurde auf dein Konto überwiesen!");
                         break;
@@ -174,7 +173,7 @@ namespace Altv_Roleplay.Handler.Casino
                         //40k $
                         ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 40000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 40000);
-                        ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+40000$",
+                        ServerBankPapers.CreateNewBankPaper(accNumber, date, time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+40000$",
                             "Unbekannt");
                         HUDHandler.SendNotification(player, 2, 4000, "Du hast 40k Dollar gewonnen. Das Geld wurde auf dein Konto überwiesen!");
                         break;
@@ -197,7 +196,7 @@ namespace Altv_Roleplay.Handler.Casino
                         } else if (ServerDiamondCasino.getPodiumVehicle() == "none") {
                             HUDHandler.SendNotification(player, 2, 4000, "Da das Podium leer ist hast du einen Free Spin gewonnen.");
                             await Task.Delay(4000);
-                            isRolling = false;
+                            _isRolling = false;
                             DoRoll(player);
                         }
                         await Task.Delay(6250);
@@ -270,7 +269,7 @@ namespace Altv_Roleplay.Handler.Casino
                         //Free Spin
                         HUDHandler.SendNotification(player, 2, 4000, "Du hast eine Free Spin gewonnen. Dieser wird automatisch eingelöst.");
                         await Task.Delay(4000);
-                        isRolling = false;
+                        _isRolling = false;
                         DoRoll(player);
                         return;
                     case 54:
@@ -306,7 +305,7 @@ namespace Altv_Roleplay.Handler.Casino
                         //50k $
                         ServerCompanys.SetServerCompanyMoney(2, ServerCompanys.GetServerCompanyMoney(2) - 50000);
                         CharactersBank.SetBankAccountMoney(accNumber, CharactersBank.GetBankAccountMoney(accNumber) + 50000);
-                        ServerBankPapers.CreateNewBankPaper(accNumber, Date, Time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+50000$",
+                        ServerBankPapers.CreateNewBankPaper(accNumber, date, time, "Eingehende Überweisung", "The Diamond Casino & Resort", "Glücksrad Gewinn", "+50000$",
                             "Unbekannt");
                         HUDHandler.SendNotification(player, 2, 4000, "Du hast 50k Dollar gewonnen. Das Geld wurde auf dein Konto überwiesen!");
                         break;
@@ -319,8 +318,7 @@ namespace Altv_Roleplay.Handler.Casino
                         break;
                 }
                 await Task.Delay(4000);
-                isRolling = false;
-                itemLocation = null;
+                _isRolling = false;
                 Alt.EmitAllClients("Client:Casino:LuckyWheel:FinishRoll");
             }
         }

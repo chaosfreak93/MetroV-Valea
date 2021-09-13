@@ -441,7 +441,6 @@ namespace Altv_Roleplay.Handler
                     if (!CharactersInventory.ExistCharacterItem(player.CharacterId, "Bargeld", "inventory") ||
                         CharactersInventory.GetCharacterItemAmount(player.CharacterId, "Bargeld", "inventory") < price)
                         HUDHandler.SendNotification(player, 2, 1500, $"Du hast nicht genug Geld, um dieses Kleidungsstück zu kaufen. (${price})");
-                    ;
                     CharactersInventory.RemoveCharacterItemAmount(player.CharacterId, "Bargeld", price, "inventory");
                     HUDHandler.SendNotification(player, 2, 1500, $"Du hast dir das Kleidungsstück für ${price} gekauft.");
                     CharactersClothes.CreateCharacterOwnedClothes(player.CharacterId, clothId);

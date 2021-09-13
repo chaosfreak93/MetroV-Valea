@@ -229,7 +229,7 @@ namespace Altv_Roleplay.Model
                 {
                     if (state)
                         veh.LockState = VehicleLockState.Locked;
-                    else if (state == false)
+                    else
                         veh.LockState = VehicleLockState.Unlocked;
                 });
                 vehs.lockState = state;

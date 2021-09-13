@@ -348,7 +348,7 @@ namespace Altv_Roleplay.Handler
         [AsyncClientEvent("Server:Inventory:DropItem")]
         public void DropItem(ClassicPlayer player, string itemname, int itemAmount, string fromContainer) {
             try {
-                Vector3 forwardVector = ((ClassicPlayer)player).getForwardVector();
+                Vector3 forwardVector = player.getForwardVector();
                 if (player == null || !player.Exists || itemname == "" || itemAmount <= 0 || fromContainer == "" ||
                     User.GetPlayerOnline(player) == 0) return;
 

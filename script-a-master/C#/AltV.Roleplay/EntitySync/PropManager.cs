@@ -118,7 +118,7 @@ namespace Altv_Roleplay.EntityStreamer
             set
             {
                 // No data changed
-                if (Rotation != null && Rotation.X == value.X && Rotation.Y == value.Y && Rotation.Z == value.Z && value != new Vector3(0, 0, 0))
+                if (Rotation.X == value.X && Rotation.Y == value.Y && Rotation.Z == value.Z && value != new Vector3(0, 0, 0))
                     return;
 
                 Dictionary<string, object> dict = new Dictionary<string, object>()
@@ -148,7 +148,7 @@ namespace Altv_Roleplay.EntityStreamer
             set
             {
                 // No data changed
-                if (Velocity != null && Velocity.X == value.X && Velocity.Y == value.Y && Velocity.Z == value.Z && value != new Vector3(0, 0, 0))
+                if (Velocity.X == value.X && Velocity.Y == value.Y && Velocity.Z == value.Z && value != new Vector3(0, 0, 0))
                     return;
 
                 Dictionary<string, object> dict = new Dictionary<string, object>()

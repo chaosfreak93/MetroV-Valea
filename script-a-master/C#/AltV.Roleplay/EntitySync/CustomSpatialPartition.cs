@@ -13,10 +13,6 @@ namespace Altv_Roleplay.EntityStreamer
     {
         private readonly HashSet<IEntity> entities = new HashSet<IEntity>();
 
-        public GlobalEntity()
-        {
-        }
-
         public override void Add(IEntity entity)
         {
             entities.Add(entity);

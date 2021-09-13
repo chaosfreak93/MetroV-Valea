@@ -41,7 +41,7 @@ namespace Altv_Roleplay.EntityStreamer
             }
             set
             {
-                if (Rotation != null && Rotation.X == value.X && Rotation.Y == value.Y && Rotation.Z == value.Z && value != new Vector3(0, 0, 0))
+                if (Rotation.X == value.X && Rotation.Y == value.Y && Rotation.Z == value.Z && value != new Vector3(0, 0, 0))
                     return;
 
                 Dictionary<string, object> dict = new Dictionary<string, object>()

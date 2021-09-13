@@ -36,7 +36,7 @@ namespace Altv_Roleplay.Handler
 
                 /**var weather = "Clear";
                 switch (weather)**/
-                switch (JsonSerializer.Deserialize<Root>(urljson).weather[0].main) {
+                switch (JsonSerializer.Deserialize<Root>(urljson)?.weather[0].main) {
                     case "Drizzle":
                         if (currentWeatherType == "Clearing") isNotDifferentWeather = true;
                         else isNotDifferentWeather = false;
