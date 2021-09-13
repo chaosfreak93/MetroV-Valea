@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using AltV.Net;
@@ -285,7 +286,7 @@ namespace Altv_Roleplay
             try {
                 if (player == null || !player.Exists || player.AdminLevel() != 0) return;
 
-                Alt.Log($"Ban Me: {player.Name} - {DateTime.Now.ToString()}");
+                Alt.Log($"Ban Me: {player.Name} - {DateTime.Now.ToString(CultureInfo.CurrentCulture)}");
                 var charId = User.GetPlayerOnline(player);
                 player.Kick("");
                 if (charId <= 0) return;
