@@ -11,10 +11,19 @@ alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, i
         }
     }
 });
+alt.on("taskChange", (oldTask, newTask)=>{
+    if (oldTask == 134 && newTask != 134) {
+        if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) {
+            native.clearPedTasksImmediately(alt.Player.local.scriptID);
+            native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 8, -8, -1, 49, 0, false, false, false);
+        }
+    }
+    if (newTask == 204) {
+        native.clearPedTasks(alt.Player.local.scriptID);
+    }
+});
 alt.setInterval(()=>{
-    if ((alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 3)) {
-        native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 8, -8, -1, 49, 0, false, false, false);
-    } else if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 3)) {
+    if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 3)) {
         native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 8, -8, -1, 49, 0, false, false, false);
     }
     if (alt.Player.local.getSyncedMeta("IsUnconscious") == true && alt.Player.local.getSyncedMeta("IsReviving") == false && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cower_loop_victim", 3)) {
