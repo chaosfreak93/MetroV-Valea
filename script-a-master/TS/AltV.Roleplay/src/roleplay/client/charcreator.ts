@@ -1,5 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+import { loadModelAsync } from './utilities';
 
 let charcreatorBrowser: alt.WebView = null;
 let charcreatorCam: number = null;
@@ -118,28 +119,23 @@ export default class CharCreator {
         }
     }
 
-    static spawnCreatorPed(gender: number) {
+    static async spawnCreatorPed(gender: number) {
         if (gender == 1) {
             modelHash = alt.hash('mp_f_freemode_01');
-            native.requestModel(modelHash);
+            await loadModelAsync(modelHash);
         } else if (gender == 0) {
             modelHash = alt.hash('mp_m_freemode_01');
-            native.requestModel(modelHash);
+            await loadModelAsync(modelHash);
         }
-        let interval = alt.setInterval(function () {
-            if (native.hasModelLoaded(modelHash)) {
-                alt.clearInterval(interval);
-                pedHandle = native.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
-                native.setEntityHeading(pedHandle, 180.0);
-                native.setEntityInvincible(pedHandle, true);
-                native.disablePedPainAudio(pedHandle, true);
-                native.freezeEntityPosition(pedHandle, true);
-                native.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
-                native.setPedComponentVariation(pedHandle, 11, 15, 0, 0);
-                native.setPedComponentVariation(pedHandle, 8, 15, 0, 0);
-                native.setPedComponentVariation(pedHandle, 3, 15, 0, 0);
-            }
-        }, 0);
+        pedHandle = native.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
+        native.setEntityHeading(pedHandle, 180.0);
+        native.setEntityInvincible(pedHandle, true);
+        native.disablePedPainAudio(pedHandle, true);
+        native.freezeEntityPosition(pedHandle, true);
+        native.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
+        native.setPedComponentVariation(pedHandle, 11, 15, 0, 0);
+        native.setPedComponentVariation(pedHandle, 8, 15, 0, 0);
+        native.setPedComponentVariation(pedHandle, 3, 15, 0, 0);
     }
 }
 
