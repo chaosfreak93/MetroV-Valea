@@ -3,7 +3,6 @@ import * as native from 'natives';
 import { isPlayerDead } from './hud';
 
 let normalCuffTick: number = null;
-let footCuffTick: number = null;
 
 export default class CuffHandler {
     static GiveNormalCuffs(): void {
@@ -50,13 +49,10 @@ export default class CuffHandler {
     }
 
     static GiveFootCuffs(): void {
-        footCuffTick = alt.everyTick(() => {
-            alt.toggleGameControls(false);
-        });
+        alt.toggleGameControls(false);
     }
 
     static TakeFootCuffs(): void {
-        alt.clearEveryTick(footCuffTick);
         if (!isPlayerDead) {
             alt.toggleGameControls(true);
         }
