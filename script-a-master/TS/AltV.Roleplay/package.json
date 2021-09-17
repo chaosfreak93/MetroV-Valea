@@ -14,7 +14,7 @@
     "@altv/types-shared": "^1.0.4",
     "@altv/types-webview": "^1.0.2",
     "@swc/cli": "^0.1.49",
-    "@swc/core": "^1.2.85",
+    "@swc/core": "^1.2.88",
     "rimraf": "^3.0.2"
   },
   "dependencies": {},
