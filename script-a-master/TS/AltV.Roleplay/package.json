@@ -9,19 +9,19 @@
     "build": "npm run clean && swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet"
   },
   "devDependencies": {
-    "@altv/types-client": "^1.8.3",
+    "@altv/types-client": "^1.8.4",
     "@altv/types-natives": "^1.4.2",
     "@altv/types-shared": "^1.0.4",
     "@altv/types-webview": "^1.0.2",
-    "@swc/cli": "^0.1.49",
-    "@swc/core": "^1.2.88",
+    "@swc/cli": "^0.1.50",
+    "@swc/core": "^1.2.89",
     "rimraf": "^3.0.2"
   },
   "dependencies": {},
   "prettier": {
     "tabWidth": 4,
     "printWidth": 120,
-    "singleQuote": true,
+    "singleQuote": false,
     "semi": true,
     "arrowParens": "always",
     "trailingComma": "all"
