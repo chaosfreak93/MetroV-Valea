@@ -241,7 +241,7 @@ namespace Altv_Roleplay.Handler
                 client.Rotation = Constants.Positions.SpawnRot_Airport;
             }
             
-            if (!Characters.IsPlayerICWhitelisted(client.accountId)) {
+            if (!Characters.IsPlayerICWhitelisted(client.CharacterId)) {
                 foreach (var admin in Alt.GetAllPlayers().ToList().Where(x => x.AdminLevel() > 1)) {
                     HUDHandler.SendNotification(admin, 3, 5000, "Es ist ein neuer User im Airport!");
                 }

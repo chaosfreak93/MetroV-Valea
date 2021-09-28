@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using AltV.Net;
 using AltV.Net.Async;
@@ -677,8 +677,6 @@ namespace Altv_Roleplay.Handler
                                 HUDHandler.SendNotification(player, 4, 3000, $"Spieler {inputvalue} ist bereits gewhitelisted");
                                 break;
                             }
-
-                            Characters.SetPlayerICWhitelistState(Characters.GetCharacterIdFromCharName(inputvalue), true);
 
                             var playerEntry = Alt.GetAllPlayers().ToList().FirstOrDefault(x =>
                                 ((ClassicPlayer) x).CharacterId == Characters.GetCharacterIdFromCharName(inputvalue));

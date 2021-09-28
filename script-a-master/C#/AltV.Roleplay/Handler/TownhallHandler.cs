@@ -19,6 +19,7 @@ namespace Altv_Roleplay.Handler
             Characters.SetCharacterBirthplace(charId, birthplace);
             Characters.setCharacterAccState(charId, 1);
             CharactersInventory.AddCharacterItem(charId, $"Ausweis {Characters.GetCharacterName(charId)}", 1, "inventory");
+            Characters.SetPlayerICWhitelistState(charId, true);
             HUDHandler.SendNotification(player, 2, 5000, "Du hast dir erfolgreich deinen Personalausweis beantragt.");
             HUDHandler.SendNotification(player, 1, 5000, "Erfolg freigeschaltet: Identifizierung");
         }
