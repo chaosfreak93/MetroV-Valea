@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using AltV.Net;
@@ -346,8 +346,8 @@ namespace Altv_Roleplay.Handler
                 HUDHandler.SendNotification(player, 4, 2000, "Du hast das Fahrzeug abgeschlossen.");
                 veh.SetVehicleTrunkState(false);
                 veh.SetVehicleEngineHoodState(false);
-                Global.mGlobal.VirtualAPI.TriggerClientEventSafe(player, "Client:Vehicles:ToggleDoorState", veh, 5, false);
-                Global.mGlobal.VirtualAPI.TriggerClientEventSafe(player, "Client:Vehicles:ToggleDoorState", veh, 4, false);
+                AltAsync.EmitAllClients("Client:Vehicles:ToggleDoorState", veh, 4, false);
+                AltAsync.EmitAllClients("Client:Vehicles:ToggleDoorState", veh, 5, false);
             }
 
             stopwatch.Stop();
