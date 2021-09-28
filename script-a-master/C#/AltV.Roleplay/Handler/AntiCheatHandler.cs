@@ -2,6 +2,7 @@
 using System.Linq;
 using AltV.Net;
 using AltV.Net.Data;
+using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
 using Altv_Roleplay.Factories;
@@ -13,9 +14,9 @@ namespace Altv_Roleplay.Handler
     public class AntiCheatHandler : IScript
     {
         [ScriptEvent(ScriptEventType.WeaponDamage)]
-        public void WeaponDamageEvent(ClassicPlayer player, ClassicPlayer target, uint weapon, ushort dmg, Position offset, BodyPart bodypart) {
+        public void WeaponDamageEvent(ClassicPlayer player, IEntity target, uint weapon, ushort dmg, Position offset, BodyPart bodypart) {
             try {
-                if (player == null || !player.Exists || target == null || !target.Exists) return;
+                if (player == null || !player.Exists || target == null || !target.Exists || target is not ClassicPlayer) return;
 
                 var weaponModel = (WeaponModel) weapon;
                 if (weaponModel == WeaponModel.Fist) return;
