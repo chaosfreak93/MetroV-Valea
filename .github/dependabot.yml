@@ -11,7 +11,7 @@ updates:
       interval: "daily"
     target-branch: "dev"
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/script-a-master/C#/Altv-Roleplay" # Location of package manifests
+    directory: "/script-a-master/C#" # Location of package manifests
     schedule:
       interval: "daily"
     target-branch: "dev"
