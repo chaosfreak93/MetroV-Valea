@@ -4,23 +4,25 @@
  * Licensed under MIT (https://github.com/Johann-S/bs-custom-file-input/blob/master/LICENSE)
  */
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-        typeof define === 'function' && define.amd ? define(factory) :
-            (global = global || self, global.bsCustomFileInput = factory());
-}(this, function () {
-    'use strict';
+    typeof exports === "object" && typeof module !== "undefined"
+        ? (module.exports = factory())
+        : typeof define === "function" && define.amd
+        ? define(factory)
+        : ((global = global || self), (global.bsCustomFileInput = factory()));
+})(this, function () {
+    "use strict";
 
     var Selector = {
         CUSTOMFILE: '.custom-file input[type="file"]',
-        CUSTOMFILELABEL: '.custom-file-label',
-        FORM: 'form',
-        INPUT: 'input'
+        CUSTOMFILELABEL: ".custom-file-label",
+        FORM: "form",
+        INPUT: "input",
     };
 
     var textNodeType = 3;
 
     var getDefaultText = function getDefaultText(input) {
-        var defaultText = '';
+        var defaultText = "";
         var label = input.parentNode.querySelector(Selector.CUSTOMFILELABEL);
 
         if (label) {
@@ -57,14 +59,17 @@
     };
 
     var fileApi = !!window.File;
-    var FAKE_PATH = 'fakepath';
-    var FAKE_PATH_SEPARATOR = '\\';
+    var FAKE_PATH = "fakepath";
+    var FAKE_PATH_SEPARATOR = "\\";
 
     var getSelectedFiles = function getSelectedFiles(input) {
-        if (input.hasAttribute('multiple') && fileApi) {
-            return [].slice.call(input.files).map(function (file) {
-                return file.name;
-            }).join(', ');
+        if (input.hasAttribute("multiple") && fileApi) {
+            return [].slice
+                .call(input.files)
+                .map(function (file) {
+                    return file.name;
+                })
+                .join(", ");
         }
 
         if (input.value.indexOf(FAKE_PATH) !== -1) {
@@ -100,10 +105,10 @@
         }
     }
 
-    var customProperty = 'bsCustomFileInput';
+    var customProperty = "bsCustomFileInput";
     var Event = {
-        FORMRESET: 'reset',
-        INPUTCHANGE: 'change'
+        FORMRESET: "reset",
+        INPUTCHANGE: "change",
     };
     var bsCustomFileInput = {
         init: function init(inputSelector, formSelector) {
@@ -122,9 +127,9 @@
                 var input = customFileInputList[i];
                 Object.defineProperty(input, customProperty, {
                     value: {
-                        defaultText: getDefaultText(input)
+                        defaultText: getDefaultText(input),
                     },
-                    writable: true
+                    writable: true,
                 });
                 handleInputChange.call(input);
                 input.addEventListener(Event.INPUTCHANGE, handleInputChange);
@@ -135,7 +140,7 @@
 
                 Object.defineProperty(formList[_i], customProperty, {
                     value: true,
-                    writable: true
+                    writable: true,
                 });
             }
         },
@@ -159,15 +164,13 @@
 
                 formList[_i2][customProperty] = undefined;
             }
-        }
+        },
     };
 
     return bsCustomFileInput;
-
-}));
+});
 //# sourceMappingURL=bs-custom-file-input.js.map
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    bsCustomFileInput.init()
+    bsCustomFileInput.init();
 });

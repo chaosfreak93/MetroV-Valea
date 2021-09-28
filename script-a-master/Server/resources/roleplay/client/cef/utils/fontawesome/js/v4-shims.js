@@ -2,29 +2,29 @@
  * Font Awesome Pro 5.12.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
  */ (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : global['fontawesome-pro-shims'] = factory();
+    typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : global["fontawesome-pro-shims"] = factory();
 })(this, function() {
-    'use strict';
+    "use strict";
     var _WINDOW = {
     };
     var _DOCUMENT = {
     };
     try {
-        if (typeof window !== 'undefined') _WINDOW = window;
-        if (typeof document !== 'undefined') _DOCUMENT = document;
+        if (typeof window !== "undefined") _WINDOW = window;
+        if (typeof document !== "undefined") _DOCUMENT = document;
     } catch (e) {
     }
     var _ref = _WINDOW.navigator || {
-    }, _ref$userAgent = _ref.userAgent, userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
+    }, _ref$userAgent = _ref.userAgent, userAgent = _ref$userAgent === void 0 ? "" : _ref$userAgent;
     var WINDOW = _WINDOW;
     var DOCUMENT = _DOCUMENT;
     var IS_BROWSER = !!WINDOW.document;
-    var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
-    var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
-    var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
+    var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === "function" && typeof DOCUMENT.createElement === "function";
+    var IS_IE = ~userAgent.indexOf("MSIE") || ~userAgent.indexOf("Trident/");
+    var NAMESPACE_IDENTIFIER = "___FONT_AWESOME___";
     var PRODUCTION = function() {
         try {
-            return process.env.NODE_ENV === 'production';
+            return process.env.NODE_ENV === "production";
         } catch (e) {
             return false;
         }
@@ -2363,10 +2363,10 @@
             "cab",
             null,
             "taxi"
-        ]
+        ], 
     ];
     bunker(function() {
-        if (typeof namespace.hooks.addShims === 'function') {
+        if (typeof namespace.hooks.addShims === "function") {
             namespace.hooks.addShims(shims);
         } else {
             var _namespace$shims;

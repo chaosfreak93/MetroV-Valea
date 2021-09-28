@@ -1,26 +1,26 @@
 /*!
  * Material Design for Bootstrap 4
  *   Version: MDB FREE 4.11.0
- * 
- * 
+ *
+ *
  *   Copyright: Material Design for Bootstrap
  *   https://mdbootstrap.com/
- * 
+ *
  *   Read the license: https://mdbootstrap.com/general/license/
- * 
- * 
+ *
+ *
  *   Documentation: https://mdbootstrap.com/
- * 
+ *
  *   Getting started: https://mdbootstrap.com/docs/jquery/getting-started/download/
- * 
+ *
  *   Tutorials: https://mdbootstrap.com/education/bootstrap/
- * 
+ *
  *   Templates: https://mdbootstrap.com/templates/
- * 
+ *
  *   Support: https://mdbootstrap.com/support/
- * 
+ *
  *   Contact: office@mdbootstrap.com
- * 
+ *
  *   Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js, jquery.easing.js, velocity.min.js, chart.js, wow.js, scrolling-navbar.js, waves.js, forms-free.js, enhanced-modals.js, treeview.js
  */ !function(t) {
     var e = {
@@ -253,7 +253,7 @@
     function(t, e, n) {
         var r, i, o, a = n(60), s = n(0), l = n(5), u = n(6), c = n(4), d = n(23), f = n(20), h = s.WeakMap;
         if (a) {
-            var p = new h, g = p.get, v = p.has, m = p.set;
+            var p = new h(), g = p.get, v = p.has, m = p.set;
             r = function(t, e) {
                 return m.call(p, t, e), e;
             }, i = function(t) {
@@ -360,7 +360,7 @@
             "propertyIsEnumerable",
             "toLocaleString",
             "toString",
-            "valueOf"
+            "valueOf", 
         ];
     },
     function(t, e, n) {
@@ -388,12 +388,12 @@
         var r = n(8), i = n(73), o = n(29), a = n(20), s = n(74), l = n(38), u = n(23)("IE_PROTO"), c = function() {
         }, d = function() {
             var t, e = l("iframe"), n = o.length;
-            for(e.style.display = "none", s.appendChild(e), e.src = String("javascript:"), (t = e.contentWindow.document).open(), t.write("<script>document.F=Object<\/script>"), t.close(), d = t.F; n--;)delete d.prototype[o[n]];
+            for(e.style.display = "none", s.appendChild(e), e.src = String("javascript:"), (t = e.contentWindow.document).open(), t.write("<script>document.F=Object</script>"), t.close(), d = t.F; n--;)delete d.prototype[o[n]];
             return d();
         };
         t.exports = Object.create || function(t, e) {
             var n;
-            return null !== t ? (c.prototype = r(t), n = new c, c.prototype = null, n[u] = t) : n = d(), void 0 === e ? n : i(n, e);
+            return null !== t ? (c.prototype = r(t), n = new c(), c.prototype = null, n[u] = t) : n = d(), void 0 === e ? n : i(n, e);
         }, a[u] = !0;
     },
     function(t, e, n) {
@@ -755,7 +755,7 @@
                     return new n(this);
                 };
             }, C = e + " Iterator", M = !1, A = t.prototype, P = A[v] || A["@@iterator"] || h && A[h], _ = !g && P || k(h), T = "Array" == e && A.entries || P;
-            if (T && (x = o(T.call(new t)), p !== Object.prototype && x.next && (d || o(x) === p || (a ? a(x, p) : "function" != typeof x[v] && l(x, v, m)), s(x, C, !0, !0), d && (f[C] = m))), "values" == h && P && "values" !== P.name && (M = !0, _ = function() {
+            if (T && (x = o(T.call(new t())), p !== Object.prototype && x.next && (d || o(x) === p || (a ? a(x, p) : "function" != typeof x[v] && l(x, v, m)), s(x, C, !0, !0), d && (f[C] = m))), "values" == h && P && "values" !== P.name && (M = !0, _ = function() {
                 return P.call(this);
             }), d && !b || A[v] === _ || l(A, v, _), f[e] = _, h) if (w = {
                 values: k("values"),
@@ -1328,7 +1328,7 @@
         t.exports = !r(function() {
             function t() {
             }
-            return t.prototype.constructor = null, Object.getPrototypeOf(new t) !== t.prototype;
+            return t.prototype.constructor = null, Object.getPrototypeOf(new t()) !== t.prototype;
         });
     },
     function(t, e, n) {
@@ -1421,7 +1421,7 @@
                         M >= S && (w += p.slice(S, M) + I, S = M + C.length);
                     }
                     return w + p.slice(S);
-                }
+                }, 
             ];
             function r(t, n, r, i, a, s) {
                 var l = r + t.length, u = i.length, c = g;
@@ -1585,7 +1585,7 @@
                         }
                     }
                     return S.push(f.slice(x)), S;
-                }
+                }, 
             ];
         }, !g);
     },
@@ -1685,7 +1685,7 @@
                         f[h] = p, "" === p && (a.lastIndex = s(u, o(a.lastIndex), c)), h++;
                     }
                     return 0 === h ? null : f;
-                }
+                }, 
             ];
         });
     },
@@ -2259,7 +2259,7 @@
             }) || !l(function() {
                 new x(-1);
             }) || l(function() {
-                return new x, new x(1.5), new x(NaN), "ArrayBuffer" != x.name;
+                return new x(), new x(1.5), new x(NaN), "ArrayBuffer" != x.name;
             })) {
                 for(var W, j = (w = function(t) {
                     return u(this, w), new x(f(t));
@@ -2397,10 +2397,10 @@
                 })(t);
             }
             /*!
-         * bsCustomFileInput v1.3.2 (https://github.com/Johann-S/bs-custom-file-input)
-         * Copyright 2018 - 2019 Johann-S <johann.servoire@gmail.com>
-         * Licensed under MIT (https://github.com/Johann-S/bs-custom-file-input/blob/master/LICENSE)
-         */ e = void 0, r = function() {
+             * bsCustomFileInput v1.3.2 (https://github.com/Johann-S/bs-custom-file-input)
+             * Copyright 2018 - 2019 Johann-S <johann.servoire@gmail.com>
+             * Licensed under MIT (https://github.com/Johann-S/bs-custom-file-input/blob/master/LICENSE)
+             */ (e = void 0), r = function() {
                 var t = {
                     CUSTOMFILE: '.custom-file input[type="file"]',
                     CUSTOMFILELABEL: ".custom-file-label",
@@ -2488,14 +2488,14 @@
                 })(t);
             }
             /*!
-         * Chart.js
-         * http://chartjs.org/
-         * Version: 2.7.3
-         *
-         * Copyright 2018 Chart.js Contributors
-         * Released under the MIT license
-         * https://github.com/chartjs/Chart.js/blob/master/LICENSE.md
-         */ !function(r) {
+             * Chart.js
+             * http://chartjs.org/
+             * Version: 2.7.3
+             *
+             * Copyright 2018 Chart.js Contributors
+             * Released under the MIT license
+             * https://github.com/chartjs/Chart.js/blob/master/LICENSE.md
+             */ !function(r) {
                 if ("object" === ("undefined" == typeof exports ? "undefined" : o(exports)) && void 0 !== t3) t3.exports = r();
                 else if ("function" == typeof define && n(55)) define([], r);
                 else {
@@ -2565,7 +2565,7 @@
                                     return n = n || 0 == n ? c(n, 0, 1) : 1, e[3] = n, e;
                                 }
                             }
-                            function o(t) {
+                            function o1(t) {
                                 if (t) {
                                     var e = t.match(/^hsla?\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/);
                                     if (e) {
@@ -2574,7 +2574,7 @@
                                             c(parseInt(e[1]), 0, 360),
                                             c(parseFloat(e[2]), 0, 100),
                                             c(parseFloat(e[3]), 0, 100),
-                                            c(isNaN(n) ? 1 : n, 0, 1)
+                                            c(isNaN(n) ? 1 : n, 0, 1), 
                                         ];
                                     }
                                 }
@@ -2588,7 +2588,7 @@
                                             c(parseInt(e[1]), 0, 360),
                                             c(parseFloat(e[2]), 0, 100),
                                             c(parseFloat(e[3]), 0, 100),
-                                            c(isNaN(n) ? 1 : n, 0, 1)
+                                            c(isNaN(n) ? 1 : n, 0, 1), 
                                         ];
                                     }
                                 }
@@ -2611,20 +2611,20 @@
                             }
                             e.exports = {
                                 getRgba: i,
-                                getHsla: o,
+                                getHsla: o1,
                                 getRgb: function(t) {
                                     var e = i(t);
                                     return e && e.slice(0, 3);
                                 },
                                 getHsl: function(t) {
-                                    var e = o(t);
+                                    var e = o1(t);
                                     return e && e.slice(0, 3);
                                 },
                                 getHwb: a,
                                 getAlpha: function(t) {
                                     var e = i(t);
                                     if (e) return e[3];
-                                    if (e = o(t)) return e[3];
+                                    if (e = o1(t)) return e[3];
                                     if (e = a(t)) return e[3];
                                 },
                                 hexString: function(t) {
@@ -2660,7 +2660,7 @@
                         },
                         {
                             6: 6
-                        }
+                        }, 
                     ],
                     3: [
                         function(t, e, n) {
@@ -2896,7 +2896,7 @@
                                     return this.rgb();
                                 },
                                 clone: function() {
-                                    var t, e, n = new a, r = this.values, i = n.values;
+                                    var t, e, n = new a(), r = this.values, i = n.values;
                                     for(var o in r)r.hasOwnProperty(o) && (t = r[o], "[object Array]" === (e = ({
                                     }).toString.call(t)) ? i[o] = t.slice(0) : "[object Number]" === e ? i[o] = t : console.error("unexpected color value:", t));
                                     return n;
@@ -2986,7 +2986,7 @@
                         {
                             2: 2,
                             5: 5
-                        }
+                        }, 
                     ],
                     4: [
                         function(t, e, n) {
@@ -3011,7 +3011,7 @@
                                 return [
                                     i(t)[0],
                                     100 * (1 / 255 * Math.min(e, Math.min(n, r))),
-                                    100 * (r = 1 - 1 / 255 * Math.max(e, Math.max(n, r)))
+                                    100 * (r = 1 - 1 / 255 * Math.max(e, Math.max(n, r))), 
                                 ];
                             }
                             function s(t) {
@@ -3020,7 +3020,7 @@
                                     100 * ((1 - n - (e = Math.min(1 - n, 1 - r, 1 - i))) / (1 - e) || 0),
                                     100 * ((1 - r - e) / (1 - e) || 0),
                                     100 * ((1 - i - e) / (1 - e) || 0),
-                                    100 * e
+                                    100 * e, 
                                 ];
                             }
                             function l(t) {
@@ -3031,7 +3031,7 @@
                                 return [
                                     100 * (0.4124 * (e = e > 0.04045 ? Math.pow((e + 0.055) / 1.055, 2.4) : e / 12.92) + 0.3576 * (n = n > 0.04045 ? Math.pow((n + 0.055) / 1.055, 2.4) : n / 12.92) + 0.1805 * (r = r > 0.04045 ? Math.pow((r + 0.055) / 1.055, 2.4) : r / 12.92)),
                                     100 * (0.2126 * e + 0.7152 * n + 0.0722 * r),
-                                    100 * (0.0193 * e + 0.1192 * n + 0.9505 * r)
+                                    100 * (0.0193 * e + 0.1192 * n + 0.9505 * r), 
                                 ];
                             }
                             function c(t) {
@@ -3039,7 +3039,7 @@
                                 return r /= 100, i /= 108.883, n = (n /= 95.047) > 0.008856 ? Math.pow(n, 1 / 3) : 7.787 * n + 16 / 116, [
                                     116 * (r = r > 0.008856 ? Math.pow(r, 1 / 3) : 7.787 * r + 16 / 116) - 16,
                                     500 * (n - r),
-                                    200 * (r - (i = i > 0.008856 ? Math.pow(i, 1 / 3) : 7.787 * i + 16 / 116))
+                                    200 * (r - (i = i > 0.008856 ? Math.pow(i, 1 / 3) : 7.787 * i + 16 / 116)), 
                                 ];
                             }
                             function d(t) {
@@ -3133,7 +3133,7 @@
                                 return [
                                     255 * (1 - Math.min(1, e * (1 - i) + i)),
                                     255 * (1 - Math.min(1, n * (1 - i) + i)),
-                                    255 * (1 - Math.min(1, r * (1 - i) + i))
+                                    255 * (1 - Math.min(1, r * (1 - i) + i)), 
                                 ];
                             }
                             function v(t) {
@@ -3141,7 +3141,7 @@
                                 return n = -0.9689 * i + 1.8758 * o + 0.0415 * a, r = 0.0557 * i + -0.204 * o + 1.057 * a, e = (e = 3.2406 * i + -1.5372 * o + -0.4986 * a) > 0.0031308 ? 1.055 * Math.pow(e, 1 / 2.4) - 0.055 : e *= 12.92, n = n > 0.0031308 ? 1.055 * Math.pow(n, 1 / 2.4) - 0.055 : n *= 12.92, r = r > 0.0031308 ? 1.055 * Math.pow(r, 1 / 2.4) - 0.055 : r *= 12.92, [
                                     255 * (e = Math.min(Math.max(0, e), 1)),
                                     255 * (n = Math.min(Math.max(0, n), 1)),
-                                    255 * (r = Math.min(Math.max(0, r), 1))
+                                    255 * (r = Math.min(Math.max(0, r), 1)), 
                                 ];
                             }
                             function m(t) {
@@ -3149,7 +3149,7 @@
                                 return n /= 100, r /= 108.883, e = (e /= 95.047) > 0.008856 ? Math.pow(e, 1 / 3) : 7.787 * e + 16 / 116, [
                                     116 * (n = n > 0.008856 ? Math.pow(n, 1 / 3) : 7.787 * n + 16 / 116) - 16,
                                     500 * (e - n),
-                                    200 * (n - (r = r > 0.008856 ? Math.pow(r, 1 / 3) : 7.787 * r + 16 / 116))
+                                    200 * (n - (r = r > 0.008856 ? Math.pow(r, 1 / 3) : 7.787 * r + 16 / 116)), 
                                 ];
                             }
                             function y(t) {
@@ -3157,7 +3157,7 @@
                                 return o <= 8 ? i = (n = 100 * o / 903.3) / 100 * 7.787 + 16 / 116 : (n = 100 * Math.pow((o + 16) / 116, 3), i = Math.pow(n / 100, 1 / 3)), [
                                     e = e / 95.047 <= 0.008856 ? e = 95.047 * (a / 500 + i - 16 / 116) / 7.787 : 95.047 * Math.pow(a / 500 + i, 3),
                                     n,
-                                    r = r / 108.883 <= 0.008859 ? r = 108.883 * (i - s / 200 - 16 / 116) / 7.787 : 108.883 * Math.pow(i - s / 200, 3)
+                                    r = r / 108.883 <= 0.008859 ? r = 108.883 * (i - s / 200 - 16 / 116) / 7.787 : 108.883 * Math.pow(i - s / 200, 3), 
                                 ];
                             }
                             function x(t) {
@@ -3204,7 +3204,7 @@
                                     return [
                                         e,
                                         100 * (2 * (n *= (r *= 2) <= 1 ? r : 2 - r) / (r + n)),
-                                        100 * ((r + n) / 2)
+                                        100 * ((r + n) / 2), 
                                     ];
                                 },
                                 hsl2hwb: function(t) {
@@ -3222,7 +3222,7 @@
                                     return e = i * o, [
                                         r,
                                         100 * (e = (e /= (n = (2 - i) * o) <= 1 ? n : 2 - n) || 0),
-                                        100 * (n /= 2)
+                                        100 * (n /= 2), 
                                     ];
                                 },
                                 hsv2hwb: function(t) {
@@ -4041,12 +4041,12 @@
                             for(var A in C)M[JSON.stringify(C[A])] = A;
                         },
                         {
-                        }
+                        }, 
                     ],
                     5: [
                         function(t, e, n) {
                             var r = t(4), i = function() {
-                                return new u;
+                                return new u();
                             };
                             for(var o in r){
                                 i[o + "Raw"] = (function(t) {
@@ -4097,7 +4097,7 @@
                         },
                         {
                             4: 4
-                        }
+                        }, 
                     ],
                     6: [
                         function(t, e, n) {
@@ -4845,7 +4845,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     7: [
                         function(t, e, n) {
@@ -4896,7 +4896,7 @@
                             59: 59,
                             8: 8,
                             9: 9
-                        }
+                        }, 
                     ],
                     8: [
                         function(t, e, n) {
@@ -4907,7 +4907,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     9: [
                         function(t, e, n) {
@@ -4918,7 +4918,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     10: [
                         function(t, e, n) {
@@ -4929,7 +4929,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     11: [
                         function(t, e, n) {
@@ -4940,7 +4940,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     12: [
                         function(t, e, n) {
@@ -4951,7 +4951,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     13: [
                         function(t, e, n) {
@@ -4962,7 +4962,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     14: [
                         function(t, e, n) {
@@ -4973,7 +4973,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     15: [
                         function(t, e, n) {
@@ -4992,12 +4992,12 @@
                                             gridLines: {
                                                 offsetGridLines: !0
                                             }
-                                        }
+                                        }, 
                                     ],
                                     yAxes: [
                                         {
                                             type: "linear"
-                                        }
+                                        }, 
                                     ]
                                 }
                             }), r._set("horizontalBar", {
@@ -5010,7 +5010,7 @@
                                         {
                                             type: "linear",
                                             position: "bottom"
-                                        }
+                                        }, 
                                     ],
                                     yAxes: [
                                         {
@@ -5022,7 +5022,7 @@
                                             gridLines: {
                                                 offsetGridLines: !0
                                             }
-                                        }
+                                        }, 
                                     ]
                                 },
                                 elements: {
@@ -5163,7 +5163,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     16: [
                         function(t, e, n) {
@@ -5178,14 +5178,14 @@
                                             type: "linear",
                                             position: "bottom",
                                             id: "x-axis-0"
-                                        }
+                                        }, 
                                     ],
                                     yAxes: [
                                         {
                                             type: "linear",
                                             position: "left",
                                             id: "y-axis-0"
-                                        }
+                                        }, 
                                     ]
                                 },
                                 tooltips: {
@@ -5251,7 +5251,7 @@
                                             "hoverRadius",
                                             "hitRadius",
                                             "pointStyle",
-                                            "rotation"
+                                            "rotation", 
                                         ];
                                         for(n = 0, r = p.length; n < r; ++n)f[i = p[n]] = c([
                                             l[i],
@@ -5272,7 +5272,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     17: [
                         function(t, e, n) {
@@ -5412,7 +5412,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     18: [
                         function(t, e, n) {
@@ -5428,13 +5428,13 @@
                                         {
                                             type: "category",
                                             id: "x-axis-0"
-                                        }
+                                        }, 
                                     ],
                                     yAxes: [
                                         {
                                             type: "linear",
                                             id: "y-axis-0"
-                                        }
+                                        }, 
                                     ]
                                 }
                             }), e.exports = function(t) {
@@ -5550,7 +5550,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     19: [
                         function(t, e, n) {
@@ -5679,7 +5679,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     20: [
                         function(t, e, n) {
@@ -5766,7 +5766,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     21: [
                         function(t, e, n) {
@@ -5780,14 +5780,14 @@
                                             id: "x-axis-1",
                                             type: "linear",
                                             position: "bottom"
-                                        }
+                                        }, 
                                     ],
                                     yAxes: [
                                         {
                                             id: "y-axis-1",
                                             type: "linear",
                                             position: "left"
-                                        }
+                                        }, 
                                     ]
                                 },
                                 showLines: !1,
@@ -5807,7 +5807,7 @@
                         },
                         {
                             26: 26
-                        }
+                        }, 
                     ],
                     22: [
                         function(t, e, n) {
@@ -5836,7 +5836,7 @@
                         },
                         {
                             27: 27
-                        }
+                        }, 
                     ],
                     23: [
                         function(t, e, n) {
@@ -5891,7 +5891,7 @@
                         {
                             26: 26,
                             46: 46
-                        }
+                        }, 
                     ],
                     24: [
                         function(t, e, n) {
@@ -6275,7 +6275,7 @@
                             36: 36,
                             46: 46,
                             49: 49
-                        }
+                        }, 
                     ],
                     25: [
                         function(t, e, n) {
@@ -6424,7 +6424,7 @@
                         },
                         {
                             46: 46
-                        }
+                        }, 
                     ],
                     26: [
                         function(t, e, n) {
@@ -6438,7 +6438,7 @@
                         },
                         {
                             46: 46
-                        }
+                        }, 
                     ],
                     27: [
                         function(t, e, n) {
@@ -6491,7 +6491,7 @@
                         {
                             3: 3,
                             46: 46
-                        }
+                        }, 
                     ],
                     28: [
                         function(t, e, n) {
@@ -6711,7 +6711,7 @@
                             3: 3,
                             34: 34,
                             46: 46
-                        }
+                        }, 
                     ],
                     29: [
                         function(t, e, n) {
@@ -6814,7 +6814,7 @@
                         },
                         {
                             46: 46
-                        }
+                        }, 
                     ],
                     30: [
                         function(t, e, n) {
@@ -6861,7 +6861,7 @@
                         },
                         {
                             26: 26
-                        }
+                        }, 
                     ],
                     31: [
                         function(t, e, n) {
@@ -6998,7 +6998,7 @@
                         },
                         {
                             46: 46
-                        }
+                        }, 
                     ],
                     32: [
                         function(t, e, n) {
@@ -7064,7 +7064,7 @@
                         {
                             26: 26,
                             46: 46
-                        }
+                        }, 
                     ],
                     33: [
                         function(t, e, n) {
@@ -7415,7 +7415,7 @@
                             27: 27,
                             35: 35,
                             46: 46
-                        }
+                        }, 
                     ],
                     34: [
                         function(t, e, n) {
@@ -7453,7 +7453,7 @@
                             26: 26,
                             31: 31,
                             46: 46
-                        }
+                        }, 
                     ],
                     35: [
                         function(t, e, n) {
@@ -7486,7 +7486,7 @@
                         },
                         {
                             46: 46
-                        }
+                        }, 
                     ],
                     36: [
                         function(t, e, n) {
@@ -7835,7 +7835,7 @@
                             26: 26,
                             27: 27,
                             46: 46
-                        }
+                        }, 
                     ],
                     37: [
                         function(t, e, n) {
@@ -7895,7 +7895,7 @@
                             26: 26,
                             27: 27,
                             46: 46
-                        }
+                        }, 
                     ],
                     38: [
                         function(t, e, n) {
@@ -7927,7 +7927,7 @@
                             26: 26,
                             27: 27,
                             46: 46
-                        }
+                        }, 
                     ],
                     39: [
                         function(t, e, n) {
@@ -7988,7 +7988,7 @@
                             26: 26,
                             27: 27,
                             46: 46
-                        }
+                        }, 
                     ],
                     40: [
                         function(t, e, n) {
@@ -8045,7 +8045,7 @@
                                         [
                                             e,
                                             r
-                                        ]
+                                        ], 
                                     ], m = [
                                         "bottom",
                                         "left",
@@ -8109,7 +8109,7 @@
                         {
                             26: 26,
                             27: 27
-                        }
+                        }, 
                     ],
                     41: [
                         function(t, e, n) {
@@ -8121,7 +8121,7 @@
                             38: 38,
                             39: 39,
                             40: 40
-                        }
+                        }, 
                     ],
                     42: [
                         function(t, e, n) {
@@ -8193,7 +8193,7 @@
                         },
                         {
                             43: 43
-                        }
+                        }, 
                     ],
                     43: [
                         function(t, e, n) {
@@ -8278,7 +8278,7 @@
                                     }, r = function() {
                                         this.constructor = n;
                                     };
-                                    return r.prototype = e.prototype, n.prototype = new r, n.extend = i.inherits, t && i.extend(n.prototype, t), n.__super__ = e.prototype, n;
+                                    return r.prototype = e.prototype, n.prototype = new r(), n.extend = i.inherits, t && i.extend(n.prototype, t), n.__super__ = e.prototype, n;
                                 }
                             };
                             e.exports = i, i.callCallback = i.callback, i.indexOf = function(t, e, n) {
@@ -8286,7 +8286,7 @@
                             }, i.getValueOrDefault = i.valueOrDefault, i.getValueAtIndexOrDefault = i.valueAtIndexOrDefault;
                         },
                         {
-                        }
+                        }, 
                     ],
                     44: [
                         function(t, e, n) {
@@ -8397,7 +8397,7 @@
                         },
                         {
                             43: 43
-                        }
+                        }, 
                     ],
                     45: [
                         function(t, e, n) {
@@ -8433,7 +8433,7 @@
                         },
                         {
                             43: 43
-                        }
+                        }, 
                     ],
                     46: [
                         function(t, e, n) {
@@ -8444,7 +8444,7 @@
                             43: 43,
                             44: 44,
                             45: 45
-                        }
+                        }, 
                     ],
                     47: [
                         function(t, e, n) {
@@ -8455,7 +8455,7 @@
                             };
                         },
                         {
-                        }
+                        }, 
                     ],
                     48: [
                         function(t2, e, n) {
@@ -8629,7 +8629,7 @@
                         },
                         {
                             46: 46
-                        }
+                        }, 
                     ],
                     49: [
                         function(t, e, n) {
@@ -8651,7 +8651,7 @@
                             46: 46,
                             47: 47,
                             48: 48
-                        }
+                        }, 
                     ],
                     50: [
                         function(t, e, n) {
@@ -8662,7 +8662,7 @@
                             51: 51,
                             52: 52,
                             53: 53
-                        }
+                        }, 
                     ],
                     51: [
                         function(t, e, n) {
@@ -8782,7 +8782,7 @@
                             26: 26,
                             41: 41,
                             46: 46
-                        }
+                        }, 
                     ],
                     52: [
                         function(t, e, n) {
@@ -8986,7 +8986,7 @@
                             27: 27,
                             31: 31,
                             46: 46
-                        }
+                        }, 
                     ],
                     53: [
                         function(t, e, n) {
@@ -9073,7 +9073,7 @@
                             27: 27,
                             31: 31,
                             46: 46
-                        }
+                        }, 
                     ],
                     54: [
                         function(t, e, n) {
@@ -9129,7 +9129,7 @@
                         {
                             33: 33,
                             34: 34
-                        }
+                        }, 
                     ],
                     55: [
                         function(t, e, n) {
@@ -9160,7 +9160,7 @@
                                                 var s = n.getDatasetMeta(o), u = [
                                                     s.type,
                                                     void 0 === e.stacked && void 0 === s.stack ? o : "",
-                                                    s.stack
+                                                    s.stack, 
                                                 ].join(".");
                                                 void 0 === l[u] && (l[u] = {
                                                     positiveValues: [],
@@ -9219,7 +9219,7 @@
                             34: 34,
                             35: 35,
                             46: 46
-                        }
+                        }, 
                     ],
                     56: [
                         function(t, e, n) {
@@ -9274,7 +9274,7 @@
                         {
                             33: 33,
                             46: 46
-                        }
+                        }, 
                     ],
                     57: [
                         function(t, e, n) {
@@ -9305,7 +9305,7 @@
                                                 var s = n.getDatasetMeta(o), u = [
                                                     s.type,
                                                     void 0 === e.stacked && void 0 === s.stack ? o : "",
-                                                    s.stack
+                                                    s.stack, 
                                                 ].join(".");
                                                 n.isDatasetVisible(o) && a(s) && (void 0 === l[u] && (l[u] = []), r.each(i.data, function(e, n) {
                                                     var r = l[u], i = +t.getRightValue(e);
@@ -9383,7 +9383,7 @@
                             34: 34,
                             35: 35,
                             46: 46
-                        }
+                        }, 
                     ],
                     58: [
                         function(t, e, n) {
@@ -9601,7 +9601,7 @@
                             34: 34,
                             35: 35,
                             46: 46
-                        }
+                        }, 
                     ],
                     59: [
                         function(t, e, n) {
@@ -9811,7 +9811,7 @@
                                                 {
                                                     time: n,
                                                     pos: 1
-                                                }
+                                                }, 
                                             ];
                                             var i, o, a, s, l, u = [], c = [
                                                 e
@@ -9922,7 +9922,7 @@
                             33: 33,
                             34: 34,
                             46: 46
-                        }
+                        }, 
                     ]
                 }, {
                 }, [
@@ -9991,11 +9991,11 @@
                 })(t);
             }
             /*!
-         * chartjs-plugin-datalabels v0.7.0
-         * https://chartjs-plugin-datalabels.netlify.com
-         * (c) 2019 Chart.js Contributors
-         * Released under the MIT license
-         */ e = void 0, r = function(t) {
+             * chartjs-plugin-datalabels v0.7.0
+             * https://chartjs-plugin-datalabels.netlify.com
+             * (c) 2019 Chart.js Contributors
+             * Released under the MIT license
+             */ (e = void 0), r = function(t) {
                 var e = (t = t && t.hasOwnProperty("default") ? t.default : t).helpers, n = function() {
                     if ("undefined" != typeof window) {
                         if (window.devicePixelRatio) return window.devicePixelRatio;
@@ -10428,7 +10428,7 @@
                             w({
                                 x: t.x,
                                 y: t.y + t.h
-                            }, n, e)
+                            }, n, e), 
                         ];
                     }
                 });
@@ -10436,7 +10436,7 @@
                     prepare: function(t) {
                         var e, n, r, i, o, a = [];
                         for(e = 0, r = t.length; e < r; ++e)for(n = 0, i = t[e].length; n < i; ++n)o = t[e][n], a.push(o), o.$layout = {
-                            _box: new C,
+                            _box: new C(),
                             _hidable: !1,
                             _visible: !0,
                             _set: e,
@@ -10563,7 +10563,7 @@
                                     r[t],
                                     {
                                         _key: t
-                                    }
+                                    }, 
                                 ]));
                             }) : a.push(e), n = a.reduce(function(t, e) {
                                 return T.each(e.listeners || {
@@ -10918,7 +10918,7 @@
                     };
                     var i = {
                     };
-                    n.expando = "velocity" + (new Date).getTime(), n.uuid = 0;
+                    n.expando = "velocity" + new Date().getTime(), n.uuid = 0;
                     for(var o = {
                     }, a = o.hasOwnProperty, s = o.toString, l = "Boolean Number String Function Array Date RegExp Object Error".split(" "), u = 0; u < l.length; u++)o["[object " + l[u] + "]"] = l[u].toLowerCase();
                     n.fn.init.prototype = n.fn, t2.Velocity = {
@@ -10997,7 +10997,7 @@
                                 {
                                     x: r,
                                     y: i
-                                }
+                                }, 
                             ];
                         };
                         var C = "generateBezier(" + [
@@ -11018,7 +11018,7 @@
                     }
                     function c(t) {
                         if (t) {
-                            var e = (new Date).getTime(), n = b.State.calls.length;
+                            var e = new Date().getTime(), n = b.State.calls.length;
                             n > 10000 && (b.State.calls = (function(t) {
                                 for(var e = -1, n = t ? t.length : 0, r = []; ++e < n;){
                                     var i = t[e];
@@ -11037,7 +11037,7 @@
                                             "-webkit-box",
                                             "-moz-box",
                                             "-ms-flexbox",
-                                            "-webkit-flex"
+                                            "-webkit-flex", 
                                         ], function(t, e) {
                                             w.setPropertyValue(S, "display", e);
                                         }), w.setPropertyValue(S, "display", l.display)), l.visibility !== i && "hidden" !== l.visibility && w.setPropertyValue(S, "visibility", l.visibility), x)if ("element" !== M) {
@@ -11109,7 +11109,7 @@
                     }(), p = function() {
                         var t = 0;
                         return e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || function(e) {
-                            var n, r = (new Date).getTime();
+                            var n, r = new Date().getTime();
                             return n = Math.max(0, 16 - (r - t)), t = r + n, setTimeout(function() {
                                 e(r + n);
                             }, n);
@@ -11476,7 +11476,7 @@
                                     0.15,
                                     0.86
                                 ]
-                            ]
+                            ], 
                         ], function(t, e) {
                             b.Easings[e[0]] = l.apply(null, e[1]);
                         });
@@ -11499,7 +11499,7 @@
                                     "borderRightColor",
                                     "borderBottomColor",
                                     "borderLeftColor",
-                                    "outlineColor"
+                                    "outlineColor", 
                                 ],
                                 transformsBase: [
                                     "translateX",
@@ -11509,14 +11509,14 @@
                                     "scaleY",
                                     "skewX",
                                     "skewY",
-                                    "rotateZ"
+                                    "rotateZ", 
                                 ],
                                 transforms3D: [
                                     "transformPerspective",
                                     "translateZ",
                                     "scaleZ",
                                     "rotateX",
-                                    "rotateY"
+                                    "rotateY", 
                                 ]
                             },
                             Hooks: {
@@ -11935,7 +11935,7 @@
                                                 "width",
                                                 "minHeight",
                                                 "maxHeight",
-                                                "height"
+                                                "height", 
                                             ], function(t, e) {
                                                 b.CSS.setPropertyValue(u, e, s + "%");
                                             }), b.CSS.setPropertyValue(u, "paddingLeft", s + "em"), l.percentToPxWidth = E.lastPercentToPxWidth = (parseFloat(w.getPropertyValue(u, "width", null, !0)) || 1) / s, l.percentToPxHeight = E.lastPercentToPxHeight = (parseFloat(w.getPropertyValue(u, "height", null, !0)) || 1) / s, l.emToPx = E.lastEmToPx = (parseFloat(w.getPropertyValue(u, "paddingLeft")) || 1) / s, t.myParent.removeChild(u);
@@ -12348,7 +12348,7 @@
         }) || !i(function() {
             new l(-1);
         }) || !o(function(t) {
-            new l, new l(null), new l(1.5), new l(t);
+            new l(), new l(null), new l(1.5), new l(t);
         }, !0) || i(function() {
             return 1 !== new l(new s(2), 1, void 0).length;
         });
@@ -12641,13 +12641,13 @@
                 })(t);
             }
             /*!
-         * Waves v0.7.6
-         * http://fian.my.id/Waves
-         *
-         * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
-         * Released under the MIT license
-         * https://github.com/fians/Waves/blob/master/LICENSE
-         */ !function(r, i) {
+             * Waves v0.7.6
+             * http://fian.my.id/Waves
+             *
+             * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
+             * Released under the MIT license
+             * https://github.com/fians/Waves/blob/master/LICENSE
+             */ !function(r, i) {
                 "function" == typeof define && n(55) ? define([], function() {
                     return r.Waves = i.call(r), r.Waves;
                 }) : "object" === ("undefined" == typeof exports ? "undefined" : e(exports)) ? t.exports = i.call(r) : r.Waves = i.call(r);
@@ -12856,5 +12856,5 @@
                 ]), Waves.init();
             });
         }).call(this, n(88)(t));
-    }
+    }, 
 ]);

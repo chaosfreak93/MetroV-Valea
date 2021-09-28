@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadModelAsync, loadScaleformMovieAsync, registerTarget } from '../../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync, loadScaleformMovieAsync, registerTarget } from "../../utilities";
 let scaleform = null;
 let screenTarget = null;
 let drawTick = null;

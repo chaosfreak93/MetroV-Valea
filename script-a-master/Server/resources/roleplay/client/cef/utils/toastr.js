@@ -147,7 +147,7 @@
                         duration: E.showDuration,
                         easing: E.showEasing,
                         complete: E.onShown
-                    }), E.timeOut > 0 && (k = setTimeout(b, E.timeOut), F.maxHideTime = parseFloat(E.timeOut), F.hideEta = (new Date).getTime() + F.maxHideTime, E.progressBar && (F.intervalId = setInterval(x, 10)));
+                    }), E.timeOut > 0 && (k = setTimeout(b, E.timeOut), F.maxHideTime = parseFloat(E.timeOut), F.hideEta = new Date().getTime() + F.maxHideTime, E.progressBar && (F.intervalId = setInterval(x, 10)));
                 }
                 function c() {
                     t.iconClass && I.addClass(E.toastClass).addClass(y);
@@ -189,12 +189,12 @@
                         duration: o,
                         easing: s,
                         complete: function() {
-                            h(I), clearTimeout(k), E.onHidden && "hidden" !== P.state && E.onHidden(), P.state = "hidden", P.endTime = new Date, f(P);
+                            h(I), clearTimeout(k), E.onHidden && "hidden" !== P.state && E.onHidden(), P.state = "hidden", P.endTime = new Date(), f(P);
                         }
                     });
                 }
                 function D() {
-                    (E.timeOut > 0 || E.extendedTimeOut > 0) && (k = setTimeout(b, E.extendedTimeOut), F.maxHideTime = parseFloat(E.extendedTimeOut), F.hideEta = (new Date).getTime() + F.maxHideTime);
+                    (E.timeOut > 0 || E.extendedTimeOut > 0) && (k = setTimeout(b, E.extendedTimeOut), F.maxHideTime = parseFloat(E.extendedTimeOut), F.hideEta = new Date().getTime() + F.maxHideTime);
                 }
                 function H() {
                     clearTimeout(k), F.hideEta = 0, I.stop(!0, !0)[E.showMethod]({
@@ -203,7 +203,7 @@
                     });
                 }
                 function x() {
-                    var e = (F.hideEta - (new Date).getTime()) / F.maxHideTime * 100;
+                    var e = (F.hideEta - new Date().getTime()) / F.maxHideTime * 100;
                     q.width(e + "%");
                 }
                 var E = m(), y = t.iconClass || E.iconClass;
@@ -216,7 +216,7 @@
                     }, P = {
                         toastId: T,
                         state: "visible",
-                        startTime: new Date,
+                        startTime: new Date(),
                         options: E,
                         map: t
                     };

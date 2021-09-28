@@ -1,20 +1,20 @@
 // Implementation of float:left with fix for the
 // [double-margin bug in IE5/6](http://www.positioniseverything.net/explorer/doubled-margin.html)
 @mixin float-left {
-  @include float(left);
+    @include float(left);
 }
 
 // Implementation of float:right with fix for the
 // [double-margin bug in IE5/6](http://www.positioniseverything.net/explorer/doubled-margin.html)
 @mixin float-right {
-  @include float(right);
+    @include float(right);
 }
 
 // Direction independent float mixin that fixes the
 // [double-margin bug in IE5/6](http://www.positioniseverything.net/explorer/doubled-margin.html)
 @mixin float($side: left) {
-  display: inline;
-  float: unquote($side);
+    display: inline;
+    float: unquote($side);
 }
 
 // Resets floated elements back to their default of `float: none` and defaults
@@ -29,6 +29,6 @@
 //       #footer li
 //         +reset-float
 @mixin reset-float($display: block) {
-  float: none;
-  display: $display;
+    float: none;
+    display: $display;
 }

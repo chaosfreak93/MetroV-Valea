@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from '../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from "../utilities";
 let screenTarget = null;
 let everyTick = null;
 let lastUpdatedTvChannel = 0;

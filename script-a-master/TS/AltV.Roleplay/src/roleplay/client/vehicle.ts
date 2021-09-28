@@ -1,6 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { setIntoVehicle } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
 
 let dict: any[] = [];
 
@@ -13,8 +12,15 @@ export default class VehicleHandler {
             alt.log("Keine Mods gefunden: " + maxMods);
         } else {
             for (var i = 0; i < maxMods; i++) {
-                alt.log(`ModId: ${i} | Modname: ${native.getLabelText(native.getModTextLabel(curVeh.scriptID, modId, i))}`);
-                alt.emitServer("Server:Utilities:createNewMod", `${native.getLabelText(native.getModTextLabel(curVeh.scriptID, modId, i))}`, modId, i + 1);
+                alt.log(
+                    `ModId: ${i} | Modname: ${native.getLabelText(native.getModTextLabel(curVeh.scriptID, modId, i))}`,
+                );
+                alt.emitServer(
+                    "Server:Utilities:createNewMod",
+                    `${native.getLabelText(native.getModTextLabel(curVeh.scriptID, modId, i))}`,
+                    modId,
+                    i + 1,
+                );
             }
         }
     }
@@ -24,12 +30,6 @@ export default class VehicleHandler {
             native.setVehicleFixed(curVeh.scriptID);
             native.setVehicleDeformationFixed(curVeh.scriptID);
         }
-    }
-
-    static setPedIntoVehicle(curVeh: alt.Vehicle): void {
-        alt.setTimeout(async () => {
-            await setIntoVehicle(curVeh);
-        }, 500);
     }
 
     static toggleDoor(vehicle: alt.Vehicle, doorid: number, state: boolean): void {
@@ -42,7 +42,8 @@ export default class VehicleHandler {
 
     static gameEntityCreate(entity: alt.Entity): void {
         if (entity instanceof alt.Vehicle) {
-            if (dict[entity.id] != undefined) native.setVehicleHasMutedSirens(alt.Vehicle.getByID(entity.id).scriptID, dict[entity.id]);
+            if (dict[entity.id] != undefined)
+                native.setVehicleHasMutedSirens(alt.Vehicle.getByID(entity.id).scriptID, dict[entity.id]);
             if (!entity.hasStreamSyncedMeta("IsVehicleCardealer")) return;
             if (entity.getStreamSyncedMeta("IsVehicleCardealer") == true) {
                 native.freezeEntityPosition(entity.scriptID, true);
@@ -63,7 +64,6 @@ export default class VehicleHandler {
 
 alt.onServer("returnVehicleMods", VehicleHandler.returnVehicleMods);
 alt.onServer("Client:Utilities:repairVehicle", VehicleHandler.repairVehicle);
-alt.onServer("Client:Utilities:setIntoVehicle", VehicleHandler.setPedIntoVehicle);
 alt.onServer("Client:Vehicles:ToggleDoorState", VehicleHandler.toggleDoor);
 alt.onServer("Client:Sirens:setVehicleHasMutedSirensForAll", VehicleHandler.setVehicleHasMutedSirensForAll);
 alt.on("gameEntityCreate", VehicleHandler.gameEntityCreate);

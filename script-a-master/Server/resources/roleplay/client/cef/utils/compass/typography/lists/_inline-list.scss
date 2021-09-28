@@ -1,12 +1,13 @@
 // makes a list inline.
 
 @mixin inline-list {
-  list-style-type: none;
-  &, & li {
-    margin: 0px;
-    padding: 0px;
-    display: inline;
-  }
+    list-style-type: none;
+    &,
+    & li {
+        margin: 0px;
+        padding: 0px;
+        display: inline;
+    }
 }
 
 // makes an inline list delimited with the passed string.
@@ -24,29 +25,29 @@
 // see http://www.richardscarrott.co.uk/posts/view/ie8-last-child-bug for details
 
 @mixin delimited-list($separator: ", ") {
-  @include inline-list;
-  li {
-    &:after {
-      content: $separator;
-    }
+    @include inline-list;
+    li {
+        &:after {
+            content: $separator;
+        }
 
-    &:last-child {
-      &:after {
-        content: "";
-      }
-    }
+        &:last-child {
+            &:after {
+                content: "";
+            }
+        }
 
-    &.last {
-      &:after {
-        content: "";
-      }
+        &.last {
+            &:after {
+                content: "";
+            }
+        }
     }
-  }
 }
 
 // See [delimited-list](#mixin-delimited-list)
 // @deprecated
 @mixin comma-delimited-list {
-  @warn "comma-delimited-list is deprecated. Please use delimited-list instead.";
-  @include delimited-list;
+    @warn "comma-delimited-list is deprecated. Please use delimited-list instead.";
+    @include delimited-list;
 }

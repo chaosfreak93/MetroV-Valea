@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { hudBrowser } from './hud';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { hudBrowser } from "./hud";
 
 const player: alt.Player = alt.Player.local;
 

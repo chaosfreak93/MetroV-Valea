@@ -1,12 +1,11 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 
 let playerTattoos = undefined;
 
 export function loadClipsetAsync(clipset: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (native.hasClipSetLoaded(clipset))
-            return resolve(true);
+        if (native.hasClipSetLoaded(clipset)) return resolve(true);
 
         native.requestClipSet(clipset);
 
@@ -21,12 +20,11 @@ export function loadClipsetAsync(clipset: string): Promise<boolean> {
 
 export function loadModelAsync(model: any): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (typeof model === 'string') {
+        if (typeof model === "string") {
             model = alt.hash(model);
         }
 
-        if (native.hasModelLoaded(model))
-            return resolve(true);
+        if (native.hasModelLoaded(model)) return resolve(true);
 
         native.requestModel(model);
 
@@ -41,8 +39,7 @@ export function loadModelAsync(model: any): Promise<boolean> {
 
 export function loadAnimDictAsync(animDict: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (native.hasAnimDictLoaded(animDict))
-            return resolve(true);
+        if (native.hasAnimDictLoaded(animDict)) return resolve(true);
 
         native.requestAnimDict(animDict);
 
@@ -57,8 +54,7 @@ export function loadAnimDictAsync(animDict: string): Promise<boolean> {
 
 export function loadStreamedTextureDictAsync(streamedTextureDict: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (native.hasStreamedTextureDictLoaded(streamedTextureDict))
-            return resolve(true);
+        if (native.hasStreamedTextureDictLoaded(streamedTextureDict)) return resolve(true);
 
         native.requestStreamedTextureDict(streamedTextureDict, true);
 
@@ -116,30 +112,32 @@ export function gotoCoords(movePos: alt.Vector3, moveRot: alt.Vector3): Promise<
     return new Promise((resolve, reject) => {
         let coords = native.getEntityCoords(alt.Player.local.scriptID, false);
 
-        if (coords.x >= (movePos.x - 0.01) && coords.x <= (movePos.x + 0.01) && coords.y >= (movePos.y - 0.01) && coords.y <= (movePos.y + 0.01))
+        if (
+            coords.x >= movePos.x - 0.01 &&
+            coords.x <= movePos.x + 0.01 &&
+            coords.y >= movePos.y - 0.01 &&
+            coords.y <= movePos.y + 0.01
+        )
             return resolve(true);
 
-        native.taskGoStraightToCoord(alt.Player.local.scriptID, movePos.x, movePos.y, movePos.z, 1, 5, moveRot.toDegrees().z, 0);
+        native.taskGoStraightToCoord(
+            alt.Player.local.scriptID,
+            movePos.x,
+            movePos.y,
+            movePos.z,
+            1,
+            5,
+            moveRot.toDegrees().z,
+            0,
+        );
 
         let interval = alt.setInterval(() => {
-            if (coords.x >= (movePos.x - 0.01) && coords.x <= (movePos.x + 0.01) && coords.y >= (movePos.y - 0.01) && coords.y <= (movePos.y + 0.01)) {
-                alt.clearInterval(interval);
-                return resolve(true);
-            }
-        }, 0);
-    });
-}
-
-
-export function setIntoVehicle(vehicle: alt.Vehicle): Promise<boolean> {
-    return new Promise((resolve, reject) => {
-        if (native.isPedSittingInVehicle(alt.Player.local.scriptID, vehicle))
-            return resolve(true);
-
-        native.setPedIntoVehicle(alt.Player.local.scriptID, vehicle, -1);
-
-        let interval = alt.setInterval(() => {
-            if (native.isPedSittingInVehicle(alt.Player.local.scriptID, vehicle)) {
+            if (
+                coords.x >= movePos.x - 0.01 &&
+                coords.x <= movePos.x + 0.01 &&
+                coords.y >= movePos.y - 0.01 &&
+                coords.y <= movePos.y + 0.01
+            ) {
                 alt.clearInterval(interval);
                 return resolve(true);
             }
@@ -149,8 +147,7 @@ export function setIntoVehicle(vehicle: alt.Vehicle): Promise<boolean> {
 
 export function isCollisionLoaded(player: alt.Player): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (native.hasCollisionLoadedAroundEntity(player.scriptID))
-            return resolve(true);
+        if (native.hasCollisionLoadedAroundEntity(player.scriptID)) return resolve(true);
 
         native.requestCollisionAtCoord(player.pos.x, player.pos.y, player.pos.z);
 
@@ -165,8 +162,7 @@ export function isCollisionLoaded(player: alt.Player): Promise<boolean> {
 
 export function registerTarget(name: string, objectModel: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        if (native.isNamedRendertargetRegistered(name))
-            return resolve(true);
+        if (native.isNamedRendertargetRegistered(name)) return resolve(true);
 
         native.registerNamedRendertarget(name, false);
         native.linkNamedRendertarget(alt.hash(objectModel));
@@ -208,9 +204,8 @@ export default {
     loadStreamedTextureDictAsync,
     loadModelAsync,
     isCollisionLoaded,
-    setIntoVehicle,
     clearTattoos,
     setTattoo,
     setCorrectTattoos,
-    setClothes
-}
+    setClothes,
+};

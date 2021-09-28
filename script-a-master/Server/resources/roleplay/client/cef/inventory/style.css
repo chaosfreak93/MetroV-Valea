@@ -1,26 +1,26 @@
 @font-face {
-    font-family: 'PEL';
-    src: url('../utils/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-family: "PEL";
+    src: url("../utils/fonts/Poppins-ExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PM';
-    src: url('../utils/fonts/Poppins-Medium.ttf') format('truetype');
+    font-family: "PM";
+    src: url("../utils/fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PT';
-    src: url('../utils/fonts/Poppins-Thin.ttf') format('truetype');
+    font-family: "PT";
+    src: url("../utils/fonts/Poppins-Thin.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSR';
-    src: url('../utils/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-family: "OSR";
+    src: url("../utils/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSL';
-    src: url('../utils/fonts/OpenSans-Light.ttf') format('truetype');
+    font-family: "OSL";
+    src: url("../utils/fonts/OpenSans-Light.ttf") format("truetype");
 }
 
 body {
@@ -111,7 +111,7 @@ body {
     margin-top: 12px;
     background: #3131314a;
     transition: all 0.3s ease-in-out;
-    padding: .8rem .5rem;
+    padding: 0.8rem 0.5rem;
     justify-content: center;
     align-items: center;
 }
@@ -173,7 +173,7 @@ body {
     padding-top: 4px;
     padding-bottom: 4px;
     border: 1px solid #00000038;
-    opacity: .9;
+    opacity: 0.9;
 }
 
 #InventoryBox > div.ContentArea > ul.list-group > li.list-group-item > .btn:nth-of-type(1):hover {
@@ -277,7 +277,7 @@ body {
     padding: 8px 12px;
     cursor: pointer;
     list-style-type: none;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     user-select: none;
     border-bottom: 1px solid #0c0c0c;
 }

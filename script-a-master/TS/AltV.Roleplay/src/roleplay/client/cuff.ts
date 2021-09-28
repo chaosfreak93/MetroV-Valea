@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { isPlayerDead } from './hud';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { isPlayerDead } from "./hud";
 
 let normalCuffTick: number = null;
 

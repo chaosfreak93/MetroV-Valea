@@ -1,6 +1,6 @@
-import * as alt from  'alt-client';
-import * as native from 'natives';
-import { loadModelAsync, loadScaleformMovieAsync, registerTarget } from '../../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync, loadScaleformMovieAsync, registerTarget } from "../../utilities";
 
 let scaleform: number = null;
 let screenTarget: number = null;
@@ -9,7 +9,7 @@ let drawTick: number = null;
 export default class BigScreen {
     static async awaitRegisterTarget(name: string, objectModel: string): Promise<number> {
         await registerTarget(name, objectModel);
-    
+
         return native.getNamedRendertargetRenderId(name);
     }
 

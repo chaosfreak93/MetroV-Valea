@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadAnimDictAsync } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadAnimDictAsync } from "./utilities";
 const player = alt.Player.local;
 let active = false;
 let interval = null;
@@ -73,13 +73,13 @@ class Fingerpointing {
     }
 }
 export { Fingerpointing as default };
-alt.on('keydown', (key)=>{
-    if (key == 'B'.charCodeAt(0)) {
+alt.on("keydown", (key)=>{
+    if (key == "B".charCodeAt(0)) {
         Fingerpointing.start();
     }
 });
-alt.on('keyup', (key)=>{
-    if (key == 'B'.charCodeAt(0)) {
+alt.on("keyup", (key)=>{
+    if (key == "B".charCodeAt(0)) {
         Fingerpointing.stop();
     }
 });

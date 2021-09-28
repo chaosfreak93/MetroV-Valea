@@ -1,12 +1,16 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 
 export let inventoryBrowser: alt.WebView = null;
 let lastInteract: number = null;
 
 export class Inventory {
     static openInventoryCEF(requestItems: boolean): void {
-        if (inventoryBrowser == null && alt.Player.local.getMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
+        if (
+            inventoryBrowser == null &&
+            alt.Player.local.getMeta("IsCefOpen") == false &&
+            alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true
+        ) {
             alt.showCursor(true);
             alt.toggleGameControls(false);
             inventoryBrowser = new alt.WebView("http://resource/client/cef/inventory/index.html");
@@ -25,6 +29,7 @@ export class Inventory {
 
     static closeInventoryCEF(): void {
         if (inventoryBrowser != null) {
+            inventoryBrowser.off("Client:Inventory:cefIsReady", () => {});
             inventoryBrowser.off("Client:Inventory:UseInvItem", Inventory.UseItem);
             inventoryBrowser.off("Client:Inventory:DropInvItem", Inventory.DropItem);
             inventoryBrowser.off("Client:Inventory:switchItemToDifferentInv", Inventory.switchItemToDifferentInv);
@@ -44,40 +49,62 @@ export class Inventory {
 
     static UseItem(itemname: string, itemAmount: string, fromContainer: string): void {
         if (!Inventory.canInteract) return;
-        lastInteract = Date.now()
+        lastInteract = Date.now();
         alt.emitServer("Server:Inventory:UseItem", itemname, parseInt(itemAmount), fromContainer);
     }
 
     static DropItem(itemname: string, itemAmount: string, fromContainer: string): void {
         if (!Inventory.canInteract) return;
-        lastInteract = Date.now()
+        lastInteract = Date.now();
         alt.emitServer("Server:Inventory:DropItem", itemname, parseInt(itemAmount), fromContainer);
     }
 
-    static switchItemToDifferentInv(itemname: string, itemAmount: string, fromContainer: string, toContainer: string): void {
+    static switchItemToDifferentInv(
+        itemname: string,
+        itemAmount: string,
+        fromContainer: string,
+        toContainer: string,
+    ): void {
         if (!Inventory.canInteract) return;
-        lastInteract = Date.now()
-        alt.emitServer("Server:Inventory:switchItemToDifferentInv", itemname, parseInt(itemAmount), fromContainer, toContainer);
+        lastInteract = Date.now();
+        alt.emitServer(
+            "Server:Inventory:switchItemToDifferentInv",
+            itemname,
+            parseInt(itemAmount),
+            fromContainer,
+            toContainer,
+        );
     }
 
     static GiveItem(itemname: string, itemAmount: string, fromContainer: string, targetPlayerID: string): void {
         if (!Inventory.canInteract) return;
-        lastInteract = Date.now()
-        alt.emitServer("Server:Inventory:GiveItem", itemname, parseInt(itemAmount), fromContainer, parseInt(targetPlayerID));
+        lastInteract = Date.now();
+        alt.emitServer(
+            "Server:Inventory:GiveItem",
+            itemname,
+            parseInt(itemAmount),
+            fromContainer,
+            parseInt(targetPlayerID),
+        );
     }
 
     static CreateInventory(invArray: any, backpackSize: number, targetPlayerID: string) {
         Inventory.openInventoryCEF(false);
         alt.setTimeout(() => {
             if (inventoryBrowser != null) {
-                inventoryBrowser.emit('CEF:Inventory:AddInventoryItems', invArray, backpackSize, parseInt(targetPlayerID));
+                inventoryBrowser.emit(
+                    "CEF:Inventory:AddInventoryItems",
+                    invArray,
+                    backpackSize,
+                    parseInt(targetPlayerID),
+                );
             }
         }, 800);
     }
 
     static AddInventoryItems(invArray: any, backpackSize: number, targetPlayerID: string): void {
         if (inventoryBrowser != null) {
-            inventoryBrowser.emit('CEF:Inventory:AddInventoryItems', invArray, backpackSize, targetPlayerID);
+            inventoryBrowser.emit("CEF:Inventory:AddInventoryItems", invArray, backpackSize, targetPlayerID);
         }
     }
 }
@@ -88,5 +115,5 @@ alt.onServer("Client:Inventory:closeCEF", Inventory.closeInventoryCEF);
 
 export default {
     inventoryBrowser,
-    Inventory
-}
+    Inventory,
+};

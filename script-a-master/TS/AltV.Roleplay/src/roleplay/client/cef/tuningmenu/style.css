@@ -98,7 +98,10 @@
     margin-left: 1.5vh;
 }
 
-.tuningmenu-undercategory-choose:hover, #tuningmenu-content-backbutton:hover, #tuningmenu-content-closebutton:hover, .tuningmenu-content-backbutton {
+.tuningmenu-undercategory-choose:hover,
+#tuningmenu-content-backbutton:hover,
+#tuningmenu-content-closebutton:hover,
+.tuningmenu-content-backbutton {
     cursor: pointer;
 }
 
@@ -160,7 +163,7 @@
     background-color: #1f1f1f;
     width: 71vh;
     height: 22.5vh;
-    display:inline-block;
+    display: inline-block;
     margin-top: 1vh;
     margin-left: 2vh;
     border-radius: 2vh;
@@ -173,12 +176,13 @@
     margin-top: 2.25vh;
 }
 
-#tuningmenu-content-othercats-interior, #tuningmenu-content-othercats-performance {
+#tuningmenu-content-othercats-interior,
+#tuningmenu-content-othercats-performance {
     height: 39vh;
     overflow: scroll;
     overflow-x: hidden;
     margin-top: 2.25vh;
-}   
+}
 
 .tuningmenu-exterior-othercat {
     background-color: #1f1f1f;
@@ -212,14 +216,13 @@
     font-size: 1.1vh;
 }
 
-
 /*      COLOR PICKER        */
 
 #container {
     overflow: hidden;
 }
- 
-.io {    
+
+.io {
     clear: both;
     color: white;
     margin-left: 37vh;
@@ -281,7 +284,10 @@ input::-webkit-inner-spin-button {
     font-size: 2vh;
 }
 
-.leftcat-equip:hover, .leftcat-equip label:hover, .leftcat-resetcolor:hover, .leftcat-resetcolor label:hover {
+.leftcat-equip:hover,
+.leftcat-equip label:hover,
+.leftcat-resetcolor:hover,
+.leftcat-resetcolor label:hover {
     cursor: pointer;
 }
 

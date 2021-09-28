@@ -1,46 +1,46 @@
 @font-face {
-    font-family: 'PEL';
-    src: url('../utils/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-family: "PEL";
+    src: url("../utils/fonts/Poppins-ExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PM';
-    src: url('../utils/fonts/Poppins-Medium.ttf') format('truetype');
+    font-family: "PM";
+    src: url("../utils/fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PT';
-    src: url('../utils/fonts/Poppins-Thin.ttf') format('truetype');
+    font-family: "PT";
+    src: url("../utils/fonts/Poppins-Thin.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSR';
-    src: url('../utils/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-family: "OSR";
+    src: url("../utils/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSL';
-    src: url('../utils/fonts/OpenSans-Light.ttf') format('truetype');
+    font-family: "OSL";
+    src: url("../utils/fonts/OpenSans-Light.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'DB';
-    src: url('../utils/fonts/db.ttf') format('truetype');
+    font-family: "DB";
+    src: url("../utils/fonts/db.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSSB';
-    src: url('../utils/fonts/OpenSans-Semibold.ttf') format('truetype');
+    font-family: "OSSB";
+    src: url("../utils/fonts/OpenSans-Semibold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'BNT';
-    src: url('../utils/fonts/bnt.ttf') format('truetype');
+    font-family: "BNT";
+    src: url("../utils/fonts/bnt.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "PricedownBL";
-    src: url('../utils/fonts/pricedownbl.ttf') format('truetype');
+    src: url("../utils/fonts/pricedownbl.ttf") format("truetype");
 }
 
 @keyframes flickerAnimationn {
@@ -268,7 +268,7 @@ div#TattooShopHUD > span {
     color: #ffffff;
     border-bottom-right-radius: 4px;
     border-top-left-radius: 4px;
-    opacity: .6;
+    opacity: 0.6;
     transition: all 0.3s ease-in-out;
     font-size: 14px;
 }
@@ -312,7 +312,7 @@ ul#TattooShopHUD-TattooList > li > button {
     background: #1f1f1f;
     border-radius: 4px;
     border: 1px solid #101010;
-    opacity: .7;
+    opacity: 0.7;
     transition: all 0.3s ease-in-out;
 }
 
@@ -384,7 +384,7 @@ div#TattooShopHUD > ul#TattooShopHUD-HomeList > li {
     margin-bottom: 0.5vw;
     padding-bottom: 0px !important;
     transition: all 0.3s ease-in-out;
-    opacity: .7;
+    opacity: 0.7;
 }
 
 ul#TattooShopHUD-TattooList {
@@ -460,7 +460,7 @@ ul#InteractionMenu-List {
 ul#InteractionMenu-List > li {
     position: absolute;
     background-color: #100f0f;
-    opacity: .95;
+    opacity: 0.95;
     color: #d2d2d2;
     text-align: center;
     border-radius: 50%;
@@ -770,6 +770,7 @@ div#HouseManageCEFBox > p.title {
     letter-spacing: 1px;
     font-weight: bold;
     background-image: linear-gradient(to right, #ef7385, #e8334c);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2px;
@@ -816,6 +817,7 @@ div#ClothesShopCEFBox > p.title {
     letter-spacing: 1px;
     font-weight: bold;
     background-image: linear-gradient(to right, #879c31, #4c6d00);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2px;
@@ -849,7 +851,7 @@ div#HouseManageCEFBox > hr {
     border-left: none;
     border-right: none;
     border-bottom: none;
-    opacity: .75;
+    opacity: 0.75;
 }
 
 div#HouseEntranceCEFBox > hr.green {
@@ -883,7 +885,7 @@ div#Minijob-BusDriverCEFBox > div#Minijob-BusDriverCEFBox-List > div.container {
     padding-left: 15px;
     margin-bottom: 12px;
     margin-top: 12px;
-    opacity: .5;
+    opacity: 0.5;
     transition: all 0.3s ease-in-out;
 }
 
@@ -1016,7 +1018,7 @@ button.btn-anmelden {
     border-color: #0e0e0e;
     color: #d2d2d2;
     background: rgb(21, 21, 21);
-    opacity: .5;
+    opacity: 0.5;
     font-size: 14px;
     text-align: center;
     float: left;
@@ -1028,7 +1030,7 @@ button.btn-abmelden {
     border-color: #0e0e0e;
     color: #d2d2d2;
     background: rgb(21, 21, 21);
-    opacity: .5;
+    opacity: 0.5;
     font-size: 14px;
     text-align: center;
     float: left;
@@ -1222,7 +1224,7 @@ div#HouseEntranceCEFBox > div#HouseEntranceCEFBox-List > div.container:nth-last-
 div#HouseEntranceCEFBox > div#HouseEntranceCEFBox-List > button {
     font-family: PEL;
     font-size: 14px;
-    opacity: .25;
+    opacity: 0.25;
     transition: all 0.3s ease-in-out;
     margin-left: 5px;
 }
@@ -1289,7 +1291,7 @@ div#HotelManageCEFBox > ul.list-group > li.list-group-item > p.rentstate > font 
 div#HotelManageCEFBox > ul > li > button.btn-sm.btn-danger {
     background: #252525;
     border: 1px solid #151515;
-    opacity: .25;
+    opacity: 0.25;
     font-size: 14px;
     transition: all 0.3s ease-in-out;
 }
@@ -1318,6 +1320,7 @@ div#Minijob-PilotCEFBox > ul.list-group > li.list-group-item:hover {
 
 div#Minijob-PilotCEFBox > ul.list-group > li.list-group-item > p.title {
     background-image: linear-gradient(to right, #efc973, #e83333);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: PM;
@@ -1358,7 +1361,7 @@ div#PlayerSearchInventoryCEFBox > div.container > ul.list-group > li.list-group-
     border-color: #0e0e0ea8;
     background: #3a3a3a;
     font-size: 12px;
-    opacity: .6;
+    opacity: 0.6;
     transition: all 0.3s ease-in-out;
 }
 
@@ -1438,7 +1441,7 @@ div#RecievePlayerBillCEFBox > button.btn {
     background: #2d2d2de0;
     padding: 5px 10px;
     font-size: 14px;
-    opacity: .5;
+    opacity: 0.5;
     transition: all 0.3s ease-in-out;
 }
 
@@ -1460,7 +1463,7 @@ div#ClothesShopCEFBox > div.container > hr {
     border-left: none;
     border-right: none;
     border-bottom: none;
-    opacity: .75;
+    opacity: 0.75;
 }
 
 div#ClothesShopCEFBox > div.container > hr {
@@ -1507,7 +1510,7 @@ div#ClothesShopCEFBox > div.container > button.clothbtn {
     width: 80px;
     transition: all 0.5s ease-in-out;
     filter: grayscale(1);
-    opacity: .5;
+    opacity: 0.5;
 }
 
 div#ClothesShopCEFBox > div.container > button.buybtn {
@@ -1516,7 +1519,7 @@ div#ClothesShopCEFBox > div.container > button.buybtn {
     color: #d2d2d2;
     padding: 6px 12px;
     filter: grayscale(1);
-    opacity: .5;
+    opacity: 0.5;
     cursor: pointer;
     margin-top: -0.8rem;
     margin-bottom: 1rem;
@@ -1619,9 +1622,9 @@ div#bankFactionATMForm > p.description,
     margin-top: 20px;
     margin-bottom: 20px;
     transform: rotate(6deg);
-    opacity: .5;
+    opacity: 0.5;
     transition: all 0.3s ease-in-out;
-    filter: grayscale(.7);
+    filter: grayscale(0.7);
 }
 
 #identityCardApplyForm > img#sendIdentityCardApplyForm:hover {
@@ -1693,13 +1696,13 @@ div#jobCenterApplyForm > ul.list-group > li.list-group-item > i.fa.fa-check {
     border: 1px solid #000000;
     border-top: none;
     border-right: none;
-    opacity: .2;
+    opacity: 0.2;
     transition: all 0.5s ease-in-out;
 }
 
 div#jobCenterApplyForm > ul.list-group > li.list-group-item > i.fa.fa-check:hover {
     cursor: pointer;
-    opacity: .8;
+    opacity: 0.8;
     transform: scale(1.05);
 }
 
@@ -1898,7 +1901,7 @@ div#bankFactionATMForm > ul.list-group > li.list-group-item {
     padding: 2rem !important;
     margin-left: 50px !important;
     width: 200px !important;
-    opacity: .4;
+    opacity: 0.4;
     padding-bottom: 0rem !important;
     margin-bottom: 20px;
     border-color: #34ad79 !important;
@@ -1908,12 +1911,12 @@ div#bankFactionATMForm > ul.list-group > li.list-group-item {
     margin-left: 40px !important;
     width: 230px !important;
     border-color: #ad3434 !important;
-    opacity: .8;
+    opacity: 0.8;
     padding-top: 15px !important;
 }
 
 #bankATMbox > div#bankATMbox-OverviewArea > ul.list-group > li.list-group-item:hover {
-    opacity: .85;
+    opacity: 0.85;
     cursor: pointer;
 }
 
@@ -2048,7 +2051,7 @@ div#banKATMbox > div#bankATMbox-DoMoneyTransfer > input#bankATMBox-Moneytransfer
     color: #313131;
     border-radius: 6px;
     border: 2px solid #252b28;
-    opacity: .35;
+    opacity: 0.35;
     transition: all 0.5s ease-in-out;
 }
 
@@ -2085,7 +2088,7 @@ div#bankATMbox > div#bankATMbox-WithdrawArea > input#bankATMBox-WithdrawInput:fo
 div#bankATMbox > div#banKATMbox-DoMoneyTransfer > input#bankATMBox-MoneyTransferBalanceInput:focus,
 div#bankATMbox > div#bankATMbox-DoMoneyTransfer > input#bankATMBox-MoneyTransferTargetInput:focus,
 div#banKATMbox > div#bankATMbox-DoMoneyTransfer > input#bankATMBox-MoneytransferInput:focus {
-    opacity: .8;
+    opacity: 0.8;
     transform: scale(1.05);
 }
 
@@ -2114,7 +2117,7 @@ div#bankATMbox > div#bankATMbox-DoMoneyTransfer > button#bankATMBox-DoMoneyTrans
     padding-left: 22px;
     padding-right: 22px;
     padding-top: 6px;
-    opacity: .5;
+    opacity: 0.5;
     padding-bottom: 6px;
     margin-bottom: 20px;
     transition: all 0.5s ease-in-out;
@@ -2126,7 +2129,7 @@ div#bankATMbox > div#bankATMbox-WithdrawArea > button#bankATMBox-WithdrawArea-Bu
 div#bankATMbox > div#bankATMbox-DoMoneyTransfer > button#bankATMBox-DoMoneyTransfer-Button:hover {
     cursor: pointer;
     background: #219463;
-    opacity: .8;
+    opacity: 0.8;
     color: #d2d2d2;
     border: 1px solid #3b3b3b;
 }
@@ -2163,33 +2166,65 @@ div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransact
     background: rgba(82, 191, 128, 0.25) !important;
 }
 
-div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransactionArea-List > div.card > div.card-header {
+div#bankATMbox
+    > div#bankATMbox-ViewTransactionArea
+    > ul#bankATMbox-ViewTransactionArea-List
+    > div.card
+    > div.card-header {
     font-size: 0.9rem;
     font-family: PEL;
     letter-spacing: 0.1px;
     padding-left: 0.8rem;
 }
 
-div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransactionArea-List > div.card > div.card-body > h6.card-title {
+div#bankATMbox
+    > div#bankATMbox-ViewTransactionArea
+    > ul#bankATMbox-ViewTransactionArea-List
+    > div.card
+    > div.card-body
+    > h6.card-title {
     font-family: OSR;
     margin-bottom: 5px;
 }
 
-div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransactionArea-List > div.card > div.card-body > p.card-text {
+div#bankATMbox
+    > div#bankATMbox-ViewTransactionArea
+    > ul#bankATMbox-ViewTransactionArea-List
+    > div.card
+    > div.card-body
+    > p.card-text {
     font-family: PEL;
     font-size: 15px;
     text-align: left;
 }
 
-div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransactionArea-List > div.card.green > div.card-body > p.card-text > b {
+div#bankATMbox
+    > div#bankATMbox-ViewTransactionArea
+    > ul#bankATMbox-ViewTransactionArea-List
+    > div.card.green
+    > div.card-body
+    > p.card-text
+    > b {
     color: #23a55d !important;
 }
 
-div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransactionArea-List > div.card.red > div.card-body > p.card-text > b {
+div#bankATMbox
+    > div#bankATMbox-ViewTransactionArea
+    > ul#bankATMbox-ViewTransactionArea-List
+    > div.card.red
+    > div.card-body
+    > p.card-text
+    > b {
     color: #bf3f32 !important;
 }
 
-div#bankATMbox > div#bankATMbox-ViewTransactionArea > ul#bankATMbox-ViewTransactionArea-List > div.card.blue > div.card-body > p.card-text > b {
+div#bankATMbox
+    > div#bankATMbox-ViewTransactionArea
+    > ul#bankATMbox-ViewTransactionArea-List
+    > div.card.blue
+    > div.card-body
+    > p.card-text
+    > b {
     color: #3287bf !important;
 }
 
@@ -2238,7 +2273,7 @@ div#bankFactionATMForm > span.closeBankManageForm {
     top: 0;
     border-top-left-radius: 6px;
     border-bottom-right-radius: 4px;
-    opacity: .45;
+    opacity: 0.45;
     transition: all 0.5s ease-in-out;
 }
 
@@ -2246,7 +2281,7 @@ div#bankAccountManageForm > span.closeBankManageForm:hover,
 div#shopCEFBox > span.closeBankManageForm:hover,
 div#barberCEFBox > span.closeBarberCEF:hover,
 div#bankFactionATMForm > span.closeBankManageForm:hover {
-    opacity: .8;
+    opacity: 0.8;
     background: rgba(160, 28, 28, 0.68);
     cursor: pointer;
     transform: scale(1.05);
@@ -2329,10 +2364,16 @@ div#VehicleFuelstationCEFBox > div.container > form > input#VehicleFuelStationCE
     outline: none;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    border-radius: 2px
+    border-radius: 2px;
 }
 
-div#barberCEFBox > div.dropdown > div.dropdown-content > div.subboxcontent > div.nose-pegel > form > input.slider::-webkit-slider-thumb {
+div#barberCEFBox
+    > div.dropdown
+    > div.dropdown-content
+    > div.subboxcontent
+    > div.nose-pegel
+    > form
+    > input.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 18px;
@@ -2378,7 +2419,7 @@ div#barberCEFBox > div.dropdown div.dropdown-caption {
     display: block;
     box-sizing: border-box;
     padding: 15px;
-    transition: all .25 ease;
+    transition: all 0.25 ease;
 }
 
 div#barberCEFBox > div.dropdown .dropdown-selector {
@@ -2395,7 +2436,7 @@ div#barberCEFBox > button {
     background: #1c4a3196;
     border: none;
     color: #d2d2d2;
-    opacity: .45;
+    opacity: 0.45;
     padding: 6px 12px;
     cursor: pointer;
     margin-top: 15px;
@@ -2410,7 +2451,7 @@ div#barberCEFBox > button {
 }
 
 div#barberCEFBox > button:hover {
-    opacity: .9;
+    opacity: 0.9;
     cursor: pointer;
 }
 
@@ -2419,8 +2460,8 @@ div#barberCEFBox > div.dropdown div.dropdown-content {
     z-index: 2;
     box-sizing: border-box;
     max-height: 0;
-    opacity: .5;
-    transition: all .25s ease;
+    opacity: 0.5;
+    transition: all 0.25s ease;
     overflow: hidden;
 }
 
@@ -2649,8 +2690,8 @@ div#AnimationMenuBox > p.title {
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
-    color: rgba(255, 255, 255, 0.80);
+    font-family: "Raleway", sans-serif;
+    color: rgba(255, 255, 255, 0.8);
     border: 3px solid rgba(0, 0, 0, 0.3);
     outline: none;
     margin-bottom: 0;
@@ -2721,7 +2762,7 @@ div#VehicleShopCEFBox > p.closebtn {
     padding-right: 14px;
     border-bottom-right-radius: 4px;
     border: 1px solid #00000085;
-    opacity: .4;
+    opacity: 0.4;
     border-top: none;
     border-left: none;
     transition: all 0.5s ease-in-out;
@@ -2760,7 +2801,7 @@ div#TownhallHouseSelectorBox > p.closebtn {
     padding-right: 14px;
     border-bottom-right-radius: 4px;
     border: 1px solid #00000085;
-    opacity: .4;
+    opacity: 0.4;
     border-top: none;
     border-left: none;
     transition: all 0.5s ease-in-out;
@@ -2907,7 +2948,7 @@ div#HouseManageCEFBox > ul.nav.nav-tabs > li {
     padding: 5px 15px 5px 15px;
     border: 1px solid #000000b5;
     color: #d2d2d2;
-    opacity: .25;
+    opacity: 0.25;
     filter: grayscale(1);
     transition: all 0.3s ease-in-out;
 }
@@ -2985,7 +3026,7 @@ div#HouseManageCEFBox > div.tab-content > div.tab-pane > ul > li > p {
     margin-bottom: 0;
     color: #d2d2d2;
     font-family: PEL;
-    opacity: .75;
+    opacity: 0.75;
     float: left;
     padding-left: 4%;
 }
@@ -3001,7 +3042,7 @@ div#HouseManageCEFBox > div.tab-content > div.tab-pane > ul > li:nth-child(even)
 div#HouseManageCEFBox > div.tab-content > div.tab-pane > ul > li > button {
     float: right;
     margin-right: 2%;
-    opacity: .15;
+    opacity: 0.15;
     transition: all 0.3s ease-in-out;
 }
 
@@ -3168,7 +3209,7 @@ ul#TownHallHouseSelector-List > li > button {
     float: right;
     background: #505050;
     border-color: #0000008a;
-    opacity: .35;
+    opacity: 0.35;
     transition: all 0.3s ease-in-out;
     margin-left: 5px;
 }
@@ -3182,7 +3223,6 @@ ul#TownHallHouseSelector-List > li > button.btn-success:hover {
     opacity: 1;
     background: #35dc68;
 }
-
 
 /* Tuning */
 
@@ -3377,7 +3417,7 @@ div#VehicleTuningMenuColorSelection > button {
     color: #d2d2d2;
     font-size: 14px;
     border-color: transparent;
-    opacity: .3;
+    opacity: 0.3;
     transition: all 0.3s ease-in-out;
 }
 
@@ -3465,7 +3505,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     top: 72%;
 }
 
-
 /* Color Picker Tuning */
 
 .picker-wrapper,
@@ -3521,7 +3560,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     -o-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    opacity: .5;
+    opacity: 0.5;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
     filter: alpha(opacity=50);
@@ -3532,7 +3571,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     width: 100%;
     height: 10px;
     left: -4px;
-    opacity: .6;
+    opacity: 0.6;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
     filter: alpha(opacity=60);
@@ -3543,7 +3582,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     border-radius: 4px;
     background-color: white;
 }
-
 
 /* Hudlist */
 
@@ -3631,7 +3669,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     color: white;
     position: relative;
     display: block;
-    padding: .75rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     margin-bottom: 10px;
     border-right: 0;
     border-left: 0;
@@ -3640,7 +3678,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 #HUDlist-carousel div ul li.active {
     background-color: rgb(197 30 34 / 74%);
 }
-
 
 /* Smartphone */
 
@@ -3672,7 +3709,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
         font-size: 18px !important;
     }
 }
-
 
 /* If the screen size is 1080px wide or less, set the font-size of <div> to 30px */
 
@@ -3731,7 +3767,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 }
 
 .phone-sms-color-bg {
-    background-color: #2B9789;
+    background-color: #2b9789;
 }
 
 .phone-sms-chat-pre {
@@ -3755,13 +3791,13 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 
 .phone-sms-chat-pre-time {
     float: right;
-    display: inline-block;
+    display: block;
     color: grey;
 }
 
 .phone-sms-chat-pre-alert {
     float: right;
-    display: inline-block;
+    display: block;
 }
 
 #phone-screen-sms-header {
@@ -3776,7 +3812,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     padding: 10px;
     width: 90%;
     border-radius: 15px;
-    background-color: #FEF4C5;
+    background-color: #fef4c5;
 }
 
 .phone-chat-info {
@@ -3785,7 +3821,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     padding: 10px;
     width: 90%;
     border-radius: 15px;
-    background-color: #FEF4C5;
+    background-color: #fef4c5;
     text-align: center;
 }
 
@@ -3795,7 +3831,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     padding: 2px;
     width: 30%;
     border-radius: 15px;
-    background-color: #FEF4C5;
+    background-color: #fef4c5;
     text-align: center;
     font-size: 14px;
 }
@@ -3876,7 +3912,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 }
 
 .phone-chat-me {
-    background-color: #DEF9C8;
+    background-color: #def9c8;
     text-align: left;
     float: right;
 }
@@ -3886,9 +3922,9 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 10px solid #DEF9C8;
+    border-left: 10px solid #def9c8;
     border-right: 10px solid transparent;
-    border-top: 10px solid #DEF9C8;
+    border-top: 10px solid #def9c8;
     border-bottom: 10px solid transparent;
     right: -20px;
     top: 6px;
@@ -3918,7 +3954,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     display: inline;
     right: 20%;
     top: -28px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 #phone-chat-emotes > .dropdown-menu {
@@ -4001,7 +4037,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 
 #phone-input-new-chat {
     float: left;
-    display: inline-block;
+    display: block;
     width: 80%;
     margin: 10px;
     margin-left: 0;
@@ -4079,10 +4115,10 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     line-height: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    border-bottom: 2px solid #2B9789;
+    border-bottom: 2px solid #2b9789;
     padding: 10px 10%;
     margin: auto;
-    opacity: .6;
+    opacity: 0.6;
 }
 
 .phone-sms-nav-item-active {
@@ -4125,9 +4161,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     text-align: center;
 }
 
-#phone-notif-app {
-}
-
 #phone-header {
     pointer-events: none;
     position: relative;
@@ -4148,7 +4181,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     top: 95%;
     height: 4.5%;
     width: 100%;
-    opacity: .9;
+    opacity: 0.9;
 }
 
 #phone-home {
@@ -4380,7 +4413,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     vertical-align: top;
     top: 3px;
     right: 3px;
-    opacity: .25;
+    opacity: 0.25;
 }
 
 #phone-police-wanteds-list > .wanted-entry > .close:hover {
@@ -4585,7 +4618,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     display: none;
 }
 
-
 /*switch*/
 
 .switch {
@@ -4595,8 +4627,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     height: 30px;
     padding: 3px;
     margin: 0 10px 10px 0;
-    background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
-    background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+    background: linear-gradient(to bottom, #eeeeee, #ffffff 25px);
+    background-image: -webkit-linear-gradient(top, #eeeeee, #ffffff 25px);
     border-radius: 18px;
     box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
     cursor: pointer;
@@ -4627,7 +4659,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 .switch-label:after {
     position: absolute;
     top: 50%;
-    margin-top: -.5em;
+    margin-top: -0.5em;
     line-height: 1;
     -webkit-transition: inherit;
     -moz-transition: inherit;
@@ -4646,13 +4678,13 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 .switch-label:after {
     content: attr(data-on);
     left: 11px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-shadow: 0 1px rgba(0, 0, 0, 0.2);
     opacity: 0;
 }
 
 .switch-input:checked ~ .switch-label {
-    background: #E1B42B;
+    background: #e1b42b;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -4670,8 +4702,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     left: 4px;
     width: 28px;
     height: 28px;
-    background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
-    background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+    background: linear-gradient(to bottom, #ffffff 40%, #f0f0f0);
+    background-image: -webkit-linear-gradient(top, #ffffff 40%, #f0f0f0);
     border-radius: 100%;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
@@ -4684,8 +4716,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     margin: -6px 0 0 -6px;
     width: 12px;
     height: 12px;
-    background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
-    background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+    background: linear-gradient(to bottom, #eeeeee, #ffffff);
+    background-image: -webkit-linear-gradient(top, #eeeeee, #ffffff);
     border-radius: 6px;
     box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
 }
@@ -4694,7 +4726,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     left: 74px;
     box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Transition
 ========================== */
@@ -4707,18 +4738,17 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     -o-transition: All 0.3s ease;
 }
 
-
 /* Switch Flat
 ==========================*/
 
 .switch-flat {
     padding: 0;
-    background: #FFF;
+    background: #fff;
     background-image: none;
 }
 
 .switch-flat .switch-label {
-    background: #FFF;
+    background: #fff;
     border: solid 2px #eceeef;
     box-shadow: none;
 }
@@ -4741,7 +4771,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 }
 
 .switch-flat .switch-input:checked ~ .switch-label {
-    background: #FFF;
+    background: #fff;
     border-color: #0088cc;
 }
 
@@ -4770,8 +4800,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
 }
 
 .ProcessingBoxHammer {
-    -webkit-transition: -webkit-transform .3s ease-in-out;
-    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .ProcessingBoxHammer:hover {
@@ -4806,14 +4836,15 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     border-radius: 5px;
 }
 
-
-.ProcessingBoxNeededItem, #ProcessingBoxProducedItem {
+.ProcessingBoxNeededItem,
+#ProcessingBoxProducedItem {
     margin: 3%;
     color: white;
     font-size: 150%;
 }
 
-.ProcessingBoxNeededItemTwo, .ProcessingBoxNeededItemThree {
+.ProcessingBoxNeededItemTwo,
+.ProcessingBoxNeededItemThree {
     margin-top: 2%;
 }
 
@@ -4840,7 +4871,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     bottom: 2%;
 }
 
-#ProcessingBoxButtonBoxes, .ProcessingBoxTitle {
+#ProcessingBoxButtonBoxes,
+.ProcessingBoxTitle {
     text-align: center;
 }
 
@@ -4876,7 +4908,6 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     size: 150%;
 }
 
-
 #ProcessingBoxMainfraim {
     text-align: center;
     align-items: center;
@@ -4893,7 +4924,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     display: inline-block;
 }
 
-#ProcessingBoxMainfraim, .ProcessingBoxZutaten {
+#ProcessingBoxMainfraim,
+.ProcessingBoxZutaten {
     display: inline-block;
 }
 
@@ -4902,7 +4934,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     margin: 3% 3% 3% 3%;
 }
 
-.fa-arrow-right, .ProcessingBoxMainframePlus {
+.fa-arrow-right,
+.ProcessingBoxMainframePlus {
     size: 180% !important;
     font-size: 180%;
     margin-left: 2%;
@@ -4946,13 +4979,13 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     }
 }
 
-@-keyframes spin1 {
-0% {
-    transform: rotate(0deg);
-}
-100% {
-    transform: rotate(360deg);
-}
+@keyframes spin1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Slider */
@@ -4969,8 +5002,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     background: #1d1d1ddb;
     outline: none;
     opacity: 0.6;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
 }
 
 .slidecontainer > .slider:hover {
@@ -4995,8 +5028,8 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     top: 7vh;
     padding: 0;
     border-radius: 8vh;
-    background-color: rgba(0, 0, 0, .5);
-    display: block
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
 }
 
 .money .iconmoney {
@@ -5006,7 +5039,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     color: #fff;
     background-image: linear-gradient(#0c4, #00802b);
     float: left;
-    opacity: .7
+    opacity: 0.7;
 }
 
 .money div {
@@ -5015,7 +5048,7 @@ div#VehicleTuningMenuColorSelection > div.inputArea > label#rgbBval {
     float: right;
     font-size: 1.5vh;
     font-family: PricedownBL;
-    padding: .7vh 2.5vh
+    padding: 0.7vh 2.5vh;
 }
 
 #phone-app-license {

@@ -7,16 +7,16 @@ $inline-block-alignment: middle !default;
 
 // Provides a cross-browser method to implement `display: inline-block;`
 @mixin inline-block($alignment: $inline-block-alignment) {
-  @if $legacy-support-for-mozilla {
-    display: -moz-inline-stack;
-  }
-  display: inline-block;
-  @if $alignment and $alignment != none {
-    vertical-align: $alignment;
-  }
-  @if $legacy-support-for-ie {
-    *vertical-align: auto;
-    zoom: 1;
-    *display: inline;
-  }
+    @if $legacy-support-for-mozilla {
+        display: -moz-inline-stack;
+    }
+    display: inline-block;
+    @if $alignment and $alignment != none {
+        vertical-align: $alignment;
+    }
+    @if $legacy-support-for-ie {
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+    }
 }

@@ -1,6 +1,6 @@
 //Rework Tuningmenu
-import * as alt from 'alt-client';
-import * as game from 'natives';
+import * as alt from "alt-client";
+import * as game from "natives";
 let webview, vehicle, possibleMods, installedMods, showcasedMods, currentPrimaryColors, currentSecondaryColors, currentUnderfloorColors, currentTyreSmokeColors, currentPrimaryPaintType, currentSecondaryPaintType, paintTypeIds = [
     0,
     0,
@@ -21,7 +21,7 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         webview.destroy();
         webview = undefined;
     }
-    webview = new alt.WebView('http://resource/client/cef/tuningmenu/index.html');
+    webview = new alt.WebView("http://resource/client/cef/tuningmenu/index.html");
     webview.focus();
     alt.emit("Client:HUD:setCefStatus", true);
     alt.showCursor(true);
@@ -172,8 +172,8 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
         alt.emitServer("Server:Tuningmenu:EquipRGBTuneItem", vehicle, type, colorR, colorG, colorB, paintType == 0 ? 0 : paintType);
     });
 });
-alt.on('keydown', (key)=>{
-    if (key == 'O'.charCodeAt(0)) {
+alt.on("keydown", (key)=>{
+    if (key == "O".charCodeAt(0)) {
         if (!webview || !vehicle || viewModeActive) return;
         alt.showCursor(false);
         alt.toggleGameControls(true);
@@ -182,8 +182,8 @@ alt.on('keydown', (key)=>{
         webview.emit("viewModeActive", true);
     }
 });
-alt.on('keyup', (key)=>{
-    if (key == 'O'.charCodeAt(0)) {
+alt.on("keyup", (key)=>{
+    if (key == "O".charCodeAt(0)) {
         if (!webview || !vehicle || !viewModeActive) return;
         alt.showCursor(true);
         alt.toggleGameControls(false);

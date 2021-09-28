@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from  'natives';
-import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from '../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync, loadStreamedTextureDictAsync, registerTarget } from "../utilities";
 
 let screenTarget: number = null;
 let everyTick: number = null;
@@ -10,7 +10,7 @@ let showBigWin: boolean = false;
 export default class CasinoLobby {
     static async awaitRegisterTarget(name: string, objectModel: string): Promise<number> {
         await registerTarget(name, objectModel);
-    
+
         return native.getNamedRendertargetRenderId(name);
     }
 
@@ -34,7 +34,7 @@ export default class CasinoLobby {
             lastUpdatedTvChannel = native.getGameTimer() - 33666;
             showBigWin = false;
         } else {
-            if ((currentTime - lastUpdatedTvChannel) >= 42666) {
+            if (currentTime - lastUpdatedTvChannel >= 42666) {
                 native.setTvChannelPlaylist(0, "CASINO_DIA_PL", true);
                 native.setTvAudioFrontend(true);
                 native.setTvVolume(-100);
@@ -46,7 +46,19 @@ export default class CasinoLobby {
         native.setTextRenderId(screenTarget);
         native.setScriptGfxDrawOrder(4);
         native.setScriptGfxDrawBehindPausemenu(true);
-        native.drawInteractiveSprite("Prop_Screen_Vinewood", "BG_Wall_Colour_4x4", 0.25, 0.5, 0.5, 1.0, 0.0, 255, 255, 255, 255);
+        native.drawInteractiveSprite(
+            "Prop_Screen_Vinewood",
+            "BG_Wall_Colour_4x4",
+            0.25,
+            0.5,
+            0.5,
+            1.0,
+            0.0,
+            255,
+            255,
+            255,
+            255,
+        );
         native.drawTvChannel(0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255);
         native.setTextRenderId(native.getDefaultScriptRendertargetRenderId());
     }

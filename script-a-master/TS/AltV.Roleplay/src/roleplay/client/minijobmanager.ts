@@ -1,14 +1,23 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import BlipManager from './blipmanager';
-import MarkerManager from './markermanager';
+import * as alt from "alt-client";
+import * as native from "natives";
+import BlipManager from "./blipmanager";
+import MarkerManager from "./markermanager";
 
 let blip: alt.PointBlip = null;
 let vehicle: alt.Vehicle = alt.Player.local.vehicle;
 let markerCache: any[] = [];
 
 export default class MinijobManager {
-    static CreateJobMarker(name: string, color: number, sprite: number, markersprite: number, X: number, Y: number, Z: number, bobUpAndDown: boolean): void {
+    static CreateJobMarker(
+        name: string,
+        color: number,
+        sprite: number,
+        markersprite: number,
+        X: number,
+        Y: number,
+        Z: number,
+        bobUpAndDown: boolean,
+    ): void {
         blip = BlipManager.createBlipWithRoute(X, Y, Z, sprite, 0.8, color, true, false, name);
         MarkerManager.addMarker(markersprite, X, Y, Z, 1, 1, 1, 46, 133, 232, 150, bobUpAndDown);
         markerCache.push({
@@ -23,32 +32,30 @@ export default class MinijobManager {
             green: 133,
             blue: 232,
             alpha: 150,
-            bobUpAndDown: bobUpAndDown
+            bobUpAndDown: bobUpAndDown,
         });
     }
 
     static RemoveJobMarker(): void {
-        if (blip != null)
-            blip.destroy();
+        if (blip != null) blip.destroy();
         for (var marker in markerCache) {
             MarkerManager.removeMarkerByData(marker);
         }
     }
 
     static RemoveJobMarkerWithFreeze(delay: number): void {
-        if (blip != null)
-            blip.destroy();
+        if (blip != null) blip.destroy();
         for (var marker in markerCache) {
             MarkerManager.removeMarkerByData(marker);
         }
 
         alt.setTimeout(() => {
             if (vehicle != null) {
-                native.freezeEntityPosition(vehicle, true);    
+                native.freezeEntityPosition(vehicle, true);
             }
             alt.setTimeout(() => {
                 if (vehicle != null) {
-                    native.freezeEntityPosition(vehicle, false);    
+                    native.freezeEntityPosition(vehicle, false);
                 }
             }, delay);
         }, 500);

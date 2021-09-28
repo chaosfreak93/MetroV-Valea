@@ -1,24 +1,48 @@
-import * as native from 'natives';
-import * as alt from 'alt-client';
-import { hudBrowser } from './hud';
+import * as native from "natives";
+import * as alt from "alt-client";
+import { hudBrowser } from "./hud";
 
 let curSpeed: number = 0;
 
-alt.onServer("Client:DoorManager:ManageDoor", (doorHash: string, doorHash2: string, pos: alt.Vector3, pos2: alt.Vector3, isLocked: boolean) => {
-    if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
-        // game.doorControl(alt.hash(hash), pos.x, pos.y, pos.z, isLocked, 0.0, 50.0, 0.0); //isLocked (0) = Open | isLocked (1) = True
-        native.setStateOfClosestDoorOfType(alt.hash(doorHash), pos.x, pos.y, pos.z, isLocked, 0, false);
-        if (doorHash2 != "None") {
-            native.setStateOfClosestDoorOfType(alt.hash(doorHash2), pos2.x, pos2.y, pos2.z, isLocked, 0, false);
+alt.onServer(
+    "Client:DoorManager:ManageDoor",
+    (doorHash: string, doorHash2: string, pos: alt.Vector3, pos2: alt.Vector3, isLocked: boolean) => {
+        if (
+            doorHash != undefined &&
+            doorHash2 != undefined &&
+            pos != undefined &&
+            pos2 != undefined &&
+            isLocked != undefined
+        ) {
+            // game.doorControl(alt.hash(hash), pos.x, pos.y, pos.z, isLocked, 0.0, 50.0, 0.0); //isLocked (0) = Open | isLocked (1) = True
+            native.setStateOfClosestDoorOfType(alt.hash(doorHash), pos.x, pos.y, pos.z, isLocked, 0, false);
+            if (doorHash2 != "None") {
+                native.setStateOfClosestDoorOfType(alt.hash(doorHash2), pos2.x, pos2.y, pos2.z, isLocked, 0, false);
+            }
         }
-    }
-});
+    },
+);
 
 alt.on("taskChange", (oldTask: number, newTask: number) => {
     if (oldTask == 134 && newTask != 134) {
-        if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) {
+        if (
+            alt.Player.local.getSyncedMeta("HasHandcuffs") == true ||
+            alt.Player.local.getSyncedMeta("HasRopeCuffs") == true
+        ) {
             native.clearPedTasksImmediately(alt.Player.local.scriptID);
-            native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 8.0, -8, -1, 49, 0, false, false, false);
+            native.taskPlayAnim(
+                alt.Player.local.scriptID,
+                "mp_arresting",
+                "sprint",
+                8.0,
+                -8,
+                -1,
+                49,
+                0,
+                false,
+                false,
+                false,
+            );
         }
     }
     if (newTask == 204) {
@@ -27,23 +51,74 @@ alt.on("taskChange", (oldTask: number, newTask: number) => {
 });
 
 alt.setInterval(() => {
-    if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 3)) {
+    if (
+        alt.Player.local.getSyncedMeta("HasFootCuffs") == true &&
+        !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 3)
+    ) {
         native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 8.0, -8, -1, 49, 0, false, false, false);
     }
-    if ((alt.Player.local.getSyncedMeta("IsUnconscious") == true && alt.Player.local.getSyncedMeta("IsReviving") == false) && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cower_loop_victim", 3)) {
-        native.taskPlayAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cower_loop_victim", 1, 1, -1, 1, 1, false, false, false);
-    } else if ((alt.Player.local.getSyncedMeta("IsUnconscious") == true && alt.Player.local.getSyncedMeta("IsReviving") == true) && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_victim", 3)) {
-        native.taskPlayAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_victim", 1, 1, -1, 1, 1, false, false, false);
-    } else if ((alt.Player.local.getSyncedMeta("IsUnconscious") == false && alt.Player.local.getSyncedMeta("IsReviving") == true) && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_paramedic", 3)) {
-        native.taskPlayAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_paramedic", 1, 1, -1, 1, 1, false, false, false);
+    if (
+        alt.Player.local.getSyncedMeta("IsUnconscious") == true &&
+        alt.Player.local.getSyncedMeta("IsReviving") == false &&
+        !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cower_loop_victim", 3)
+    ) {
+        native.taskPlayAnim(
+            alt.Player.local.scriptID,
+            "missheistfbi3b_ig8_2",
+            "cower_loop_victim",
+            1,
+            1,
+            -1,
+            1,
+            1,
+            false,
+            false,
+            false,
+        );
+    } else if (
+        alt.Player.local.getSyncedMeta("IsUnconscious") == true &&
+        alt.Player.local.getSyncedMeta("IsReviving") == true &&
+        !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_victim", 3)
+    ) {
+        native.taskPlayAnim(
+            alt.Player.local.scriptID,
+            "missheistfbi3b_ig8_2",
+            "cpr_loop_victim",
+            1,
+            1,
+            -1,
+            1,
+            1,
+            false,
+            false,
+            false,
+        );
+    } else if (
+        alt.Player.local.getSyncedMeta("IsUnconscious") == false &&
+        alt.Player.local.getSyncedMeta("IsReviving") == true &&
+        !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_paramedic", 3)
+    ) {
+        native.taskPlayAnim(
+            alt.Player.local.scriptID,
+            "missheistfbi3b_ig8_2",
+            "cpr_loop_paramedic",
+            1,
+            1,
+            -1,
+            1,
+            1,
+            false,
+            false,
+            false,
+        );
     }
 }, 100);
 
-alt.onServer('Client:Inventory:PlayEffect', (effectName, duration) => {
+alt.onServer("Client:Inventory:PlayEffect", (effectName, duration) => {
     native.animpostfxPlay(effectName, duration, false);
 });
 
-alt.onServer('Client:Inventory:StopEffect', (effectName) => {
+alt.onServer("Client:Inventory:StopEffect", (effectName) => {
     native.animpostfxStop(effectName);
 });
 
@@ -53,63 +128,63 @@ alt.setInterval(() => {
 }, 20000);
 
 export function setMinimapData(): void {
-    const ZOOM_LEVEL_0 = alt.MapZoomData.get('ZOOM_LEVEL_0');
+    const ZOOM_LEVEL_0 = alt.MapZoomData.get("ZOOM_LEVEL_0");
     ZOOM_LEVEL_0.fZoomScale = 2.73;
     ZOOM_LEVEL_0.fZoomSpeed = 0.9;
     ZOOM_LEVEL_0.fScrollSpeed = 0.08;
     ZOOM_LEVEL_0.vTilesX = 0.0;
     ZOOM_LEVEL_0.vTilesY = 0.0;
 
-    const ZOOM_LEVEL_1 = alt.MapZoomData.get('ZOOM_LEVEL_1');
+    const ZOOM_LEVEL_1 = alt.MapZoomData.get("ZOOM_LEVEL_1");
     ZOOM_LEVEL_1.fZoomScale = 2.8;
     ZOOM_LEVEL_1.fZoomSpeed = 0.9;
     ZOOM_LEVEL_1.fScrollSpeed = 0.08;
     ZOOM_LEVEL_1.vTilesX = 0.0;
     ZOOM_LEVEL_1.vTilesY = 0.0;
 
-    const ZOOM_LEVEL_2 = alt.MapZoomData.get('ZOOM_LEVEL_2');
+    const ZOOM_LEVEL_2 = alt.MapZoomData.get("ZOOM_LEVEL_2");
     ZOOM_LEVEL_2.fZoomScale = 8.0;
     ZOOM_LEVEL_2.fZoomSpeed = 0.9;
     ZOOM_LEVEL_2.fScrollSpeed = 0.08;
     ZOOM_LEVEL_2.vTilesX = 0.0;
     ZOOM_LEVEL_2.vTilesY = 0.0;
 
-    const ZOOM_LEVEL_3 = alt.MapZoomData.get('ZOOM_LEVEL_3');
+    const ZOOM_LEVEL_3 = alt.MapZoomData.get("ZOOM_LEVEL_3");
     ZOOM_LEVEL_3.fZoomScale = 11.0;
     ZOOM_LEVEL_3.fZoomSpeed = 0.9;
     ZOOM_LEVEL_3.fScrollSpeed = 0.08;
     ZOOM_LEVEL_3.vTilesX = 0.0;
     ZOOM_LEVEL_3.vTilesY = 0.0;
 
-    const ZOOM_LEVEL_4 = alt.MapZoomData.get('ZOOM_LEVEL_4');
+    const ZOOM_LEVEL_4 = alt.MapZoomData.get("ZOOM_LEVEL_4");
     ZOOM_LEVEL_4.fZoomScale = 16.0;
     ZOOM_LEVEL_4.fZoomSpeed = 0.9;
     ZOOM_LEVEL_4.fScrollSpeed = 0.08;
     ZOOM_LEVEL_4.vTilesX = 0.0;
     ZOOM_LEVEL_4.vTilesY = 0.0;
 
-    const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get('ZOOM_LEVEL_GOLF_COURSE');
+    const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get("ZOOM_LEVEL_GOLF_COURSE");
     ZOOM_LEVEL_GOLF_COURSE.fZoomScale = 55.0;
     ZOOM_LEVEL_GOLF_COURSE.fZoomSpeed = 0.0;
     ZOOM_LEVEL_GOLF_COURSE.fScrollSpeed = 0.1;
     ZOOM_LEVEL_GOLF_COURSE.vTilesX = 2.0;
     ZOOM_LEVEL_GOLF_COURSE.vTilesY = 1.0;
 
-    const ZOOM_LEVEL_INTERIOR = alt.MapZoomData.get('ZOOM_LEVEL_INTERIOR');
+    const ZOOM_LEVEL_INTERIOR = alt.MapZoomData.get("ZOOM_LEVEL_INTERIOR");
     ZOOM_LEVEL_INTERIOR.fZoomScale = 450.0;
     ZOOM_LEVEL_INTERIOR.fZoomSpeed = 0.0;
     ZOOM_LEVEL_INTERIOR.fScrollSpeed = 0.1;
     ZOOM_LEVEL_INTERIOR.vTilesX = 1.0;
     ZOOM_LEVEL_INTERIOR.vTilesY = 1.0;
 
-    const ZOOM_LEVEL_GALLERY = alt.MapZoomData.get('ZOOM_LEVEL_GALLERY');
+    const ZOOM_LEVEL_GALLERY = alt.MapZoomData.get("ZOOM_LEVEL_GALLERY");
     ZOOM_LEVEL_GALLERY.fZoomScale = 4.5;
     ZOOM_LEVEL_GALLERY.fZoomSpeed = 0.0;
     ZOOM_LEVEL_GALLERY.fScrollSpeed = 0.0;
     ZOOM_LEVEL_GALLERY.vTilesX = 0.0;
     ZOOM_LEVEL_GALLERY.vTilesY = 0.0;
 
-    const ZOOM_LEVEL_GALLERY_MAXIMIZE = alt.MapZoomData.get('ZOOM_LEVEL_GALLERY_MAXIMIZE');
+    const ZOOM_LEVEL_GALLERY_MAXIMIZE = alt.MapZoomData.get("ZOOM_LEVEL_GALLERY_MAXIMIZE");
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomScale = 11.0;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomSpeed = 0.0;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fScrollSpeed = 0.0;
@@ -182,5 +257,5 @@ function GetVehicleSpeed(vehicle: alt.Vehicle) {
 
 export default {
     setMinimapData,
-    setAudioData
-}
+    setAudioData,
+};

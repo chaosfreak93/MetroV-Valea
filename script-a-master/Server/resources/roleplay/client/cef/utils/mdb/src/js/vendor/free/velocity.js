@@ -112,7 +112,7 @@
         };
         var a = {
         };
-        r.expando = "velocity" + (new Date).getTime(), r.uuid = 0;
+        r.expando = "velocity" + new Date().getTime(), r.uuid = 0;
         for(var n = {
         }, o = n.hasOwnProperty, i = n.toString, s = "Boolean Number String Function Array Date RegExp Object Error".split(" "), l = 0; l < s.length; l++)n["[object " + s[l] + "]"] = s[l].toLowerCase();
         r.fn.init.prototype = r.fn, e.Velocity = {
@@ -203,7 +203,7 @@
                     {
                         x: a,
                         y: n
-                    }
+                    }, 
                 ];
             };
             var T = "generateBezier(" + [
@@ -224,7 +224,7 @@
         }
         function c(e) {
             if (e) {
-                var t = (new Date).getTime(), r = b.State.calls.length;
+                var t = new Date().getTime(), r = b.State.calls.length;
                 r > 10000 && (b.State.calls = n(b.State.calls));
                 for(var o = 0; r > o; o++)if (b.State.calls[o]) {
                     var s = b.State.calls[o], l = s[0], u = s[2], d = s[3], g = !!d, y = null;
@@ -317,7 +317,7 @@
         }(), g = function() {
             var e = 0;
             return t.webkitRequestAnimationFrame || t.mozRequestAnimationFrame || function(t) {
-                var r, a = (new Date).getTime();
+                var r, a = new Date().getTime();
                 return r = Math.max(0, 16 - (a - e)), e = a + r, setTimeout(function() {
                     t(a + r);
                 }, r);
@@ -684,7 +684,7 @@
                     0.15,
                     0.86
                 ]
-            ]
+            ], 
         ], function(e, t) {
             b.Easings[t[0]] = l.apply(null, t[1]);
         });
@@ -707,7 +707,7 @@
                     "borderRightColor",
                     "borderBottomColor",
                     "borderLeftColor",
-                    "outlineColor"
+                    "outlineColor", 
                 ],
                 transformsBase: [
                     "translateX",
@@ -717,7 +717,7 @@
                     "scaleY",
                     "skewX",
                     "skewY",
-                    "rotateZ"
+                    "rotateZ", 
                 ],
                 transforms3D: [
                     "transformPerspective",

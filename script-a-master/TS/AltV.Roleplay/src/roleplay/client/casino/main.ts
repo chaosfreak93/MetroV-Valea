@@ -1,9 +1,9 @@
-import * as alt from 'alt-client';
-import SingleRace from './insidetrack/singlerace';
-import BigScreen from './insidetrack/bigscreen';
-import CasinoLobby from './lobby';
-import Podium from './podium';
-import Wheel from './wheel';
+import * as alt from "alt-client";
+import SingleRace from "./insidetrack/singlerace";
+import BigScreen from "./insidetrack/bigscreen";
+import CasinoLobby from "./lobby";
+import Podium from "./podium";
+import Wheel from "./wheel";
 
 export default class CasinoMain {
     static async startCasino(): Promise<void> {

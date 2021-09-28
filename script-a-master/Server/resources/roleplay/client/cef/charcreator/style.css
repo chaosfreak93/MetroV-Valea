@@ -1,26 +1,26 @@
 @font-face {
-    font-family: 'PEL';
-    src: url('../utils/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-family: "PEL";
+    src: url("../utils/fonts/Poppins-ExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PM';
-    src: url('../utils/fonts/Poppins-Medium.ttf') format('truetype');
+    font-family: "PM";
+    src: url("../utils/fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PT';
-    src: url('../utils/fonts/Poppins-Thin.ttf') format('truetype');
+    font-family: "PT";
+    src: url("../utils/fonts/Poppins-Thin.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSR';
-    src: url('../utils/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-family: "OSR";
+    src: url("../utils/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSL';
-    src: url('../utils/fonts/OpenSans-Light.ttf') format('truetype');
+    font-family: "OSL";
+    src: url("../utils/fonts/OpenSans-Light.ttf") format("truetype");
 }
 
 body {
@@ -160,7 +160,6 @@ div.box > p.info {
     margin-bottom: 0.2rem;
 }
 
-
 /* charcreatorbox CSS */
 
 .charcreatorbox {
@@ -194,7 +193,6 @@ div.box > p.info {
     box-shadow: 1px 4px 22px rgba(0, 0, 0, 0.8);
     padding-bottom: 12px;
 }
-
 
 /* Dropdown fuer Char Editor */
 
@@ -252,7 +250,13 @@ div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > div.
     border-radius: 2px;
 }
 
-div#creatorarea > div.dropdown > div.dropdown-content > div.subboxcontent > div.nose-pegel > form > input.slider::-webkit-slider-thumb {
+div#creatorarea
+    > div.dropdown
+    > div.dropdown-content
+    > div.subboxcontent
+    > div.nose-pegel
+    > form
+    > input.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 18px;
@@ -289,7 +293,7 @@ div#charcreatorsecondbox > .dropdown .dropdown-caption {
     display: block;
     box-sizing: border-box;
     padding: 15px;
-    transition: all .25 ease;
+    transition: all 0.25 ease;
 }
 
 div#creatorarea > .dropdown .dropdown-selector,
@@ -309,8 +313,8 @@ div#charcreatorsecondbox > .dropdown .dropdown-content {
     z-index: 2;
     box-sizing: border-box;
     max-height: 0;
-    opacity: .5;
-    transition: all .25s ease;
+    opacity: 0.5;
+    transition: all 0.25s ease;
     overflow: hidden;
 }
 
@@ -508,7 +512,6 @@ input#birthday {
     margin-bottom: 1rem;
 }
 
-
 /* date picker */
 
 .datepicker {
@@ -571,8 +574,8 @@ td.day {
     border-radius: 0.3vw;
     outline: none;
     margin: 0;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
 }
 
 .inputcustom:hover {
@@ -591,7 +594,7 @@ td.day {
     -webkit-appearance: none;
     appearance: none;
     width: 0.2vw;
-    height: 98.0vh;
+    height: 98vh;
     border-radius: 50vw;
     border: 0.06vw solid rgba(0, 0, 0, 0);
     background: rgba(120, 120, 120, 0);
@@ -599,7 +602,7 @@ td.day {
 
 .inputcustom::-moz-range-thumb {
     width: 0.2vw;
-    height: 98.0vh;
+    height: 98vh;
     border-radius: 50vw;
     border: 0.06vw solid rgba(0, 0, 0, 0);
     background: rgba(120, 120, 120, 0);

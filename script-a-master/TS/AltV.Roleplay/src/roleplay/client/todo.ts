@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as game from  'natives';
+import * as alt from "alt-client";
+import * as game from "natives";
 
 alt.requestIpl("tr_tuner_shop_burton");
 alt.requestIpl("tr_tuner_shop_strawberry");
@@ -11,8 +11,7 @@ alt.requestIpl("tr_tuner_race_line");
 alt.requestIpl("tr_tuner_meetup");
 
 let TunerInteriorID = game.getInteriorAtCoords(-1350.0, 160.0, -100.0);
-if(game.isValidInterior(TunerInteriorID)) {
-    
+if (game.isValidInterior(TunerInteriorID)) {
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_style_1"); // Default Design
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_style_2"); // White Design
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_style_3"); // Dark Design
@@ -22,12 +21,11 @@ if(game.isValidInterior(TunerInteriorID)) {
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_style_7"); // Japan Design
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_style_8"); // Color Design
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_style_9"); // Race Design
-    
-    
+
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_bedroom"); // With Bed room
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_bedroom_empty"); // Bed room is clean
-    
-    game.activateInteriorEntitySet(TunerInteriorID, "entity_set_table");  // nothing
+
+    game.activateInteriorEntitySet(TunerInteriorID, "entity_set_table"); // nothing
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_thermal"); // nothing
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_tints"); // railing
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_train"); // nothing
@@ -41,7 +39,7 @@ if(game.isValidInterior(TunerInteriorID)) {
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_car_lift_cutscene"); // Carlift Cutscene
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_car_lift_default"); // Carlift Default
     game.deactivateInteriorEntitySet(TunerInteriorID, "entity_set_car_lift_purchase"); // Carlift Purchase
-    
+
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_scope"); // nothing
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_cut_seats"); // Seats in corner
     game.activateInteriorEntitySet(TunerInteriorID, "entity_set_def_table"); // nothing

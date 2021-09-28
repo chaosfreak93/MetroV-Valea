@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 const player = alt.Player.local;
 let cayoPericoPos = new alt.Vector3(4895.28, -5744.58, 26.351);
 let isCayoPericoLoaded = false;
@@ -13,13 +13,13 @@ class IPLManager {
     static initializeDoorControl() {
         native.doorControl(3687927243, -1149.709, -1521.088, 10.78267, true, 0, 50, 0); // VESPUCCI HOUSE
         native.doorControl(520341586, -14.868921, -1441.1823, 31.193226, true, 0, 50, 0); // FRANKLIN'S OLD HOUSE
-        native.doorControl(159994461, -816.716, 179.09796, 72.82738, true, 0, 50, 0); // MICHAELS HOUSE 
-        native.doorControl(2608952911, -816.1068, 177.51086, 72.82738, true, 0, 50, 0); // MICHAELS HOUSE 
-        native.doorControl(2731327123, -806.28174, 186.02461, 72.62405, true, 0, 50, 0); // MICHAELS HOUSE 
-        native.doorControl(2840207166, -793.3943, 180.50746, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE 
-        native.doorControl(2840207166, -796.5657, 177.22139, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE 
-        native.doorControl(1245831483, -794.1853, 182.56801, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE 
-        native.doorControl(1245831483, -794.5051, 178.01237, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE 
+        native.doorControl(159994461, -816.716, 179.09796, 72.82738, true, 0, 50, 0); // MICHAELS HOUSE
+        native.doorControl(2608952911, -816.1068, 177.51086, 72.82738, true, 0, 50, 0); // MICHAELS HOUSE
+        native.doorControl(2731327123, -806.28174, 186.02461, 72.62405, true, 0, 50, 0); // MICHAELS HOUSE
+        native.doorControl(2840207166, -793.3943, 180.50746, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE
+        native.doorControl(2840207166, -796.5657, 177.22139, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE
+        native.doorControl(1245831483, -794.1853, 182.56801, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE
+        native.doorControl(1245831483, -794.5051, 178.01237, 73.04045, true, 0, 50, 0); // MICHAELS HOUSE
         native.doorControl(308207762, 7.518359, 539.5268, 176.17764, true, 0, 50, 0); // FRANKLIN'S NEW HOUSE
         native.doorControl(1145337974, 1273.8154, -1720.6969, 54.92143, true, 0, 50, 0); // LESTER'S HOUSE
         native.doorControl(132154435, 1972.769, 3815.366, 33.663258, true, 0, 50, 0); // TREVOR'S HOUSE

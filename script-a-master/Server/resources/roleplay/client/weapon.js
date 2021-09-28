@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 let weaponHashes = [
     "0x92A27487",
     "0x958A4A8F",
@@ -98,7 +98,7 @@ let weaponHashes = [
     "0x60EC506",
     "0xBA536372 ",
     "0xBFA49206",
-    "0xFBAB5776"
+    "0xFBAB5776", 
 ];
 let currentAmmo = [];
 let currentWeaponTypes = [];

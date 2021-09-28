@@ -722,8 +722,8 @@
 .bounceIn {
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
 }
 
 @-webkit-keyframes bounceInDown {
@@ -1049,8 +1049,8 @@
 .bounceOut {
     -webkit-animation-name: bounceOut;
     animation-name: bounceOut;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
 }
 
 @-webkit-keyframes bounceOutDown {
@@ -1669,8 +1669,8 @@
 .flipOutX {
     -webkit-animation-name: flipOutX;
     animation-name: flipOutX;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
 }
@@ -1712,8 +1712,8 @@
 .flipOutY {
     -webkit-animation-name: flipOutY;
     animation-name: flipOutY;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
 }

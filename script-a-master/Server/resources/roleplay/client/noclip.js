@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 let entity = null;
 let enabled = false;
 let defaultSpeed = 1;

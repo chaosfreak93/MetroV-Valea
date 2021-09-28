@@ -1,8 +1,8 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import IPLManager from './iplmanager';
+import * as alt from "alt-client";
+import * as native from "natives";
+import IPLManager from "./iplmanager";
 import { setAudioData, setMinimapData } from "./miscs";
-import { isCollisionLoaded, loadModelAsync } from './utilities';
+import { isCollisionLoaded, loadModelAsync } from "./utilities";
 
 let loginBrowser: alt.WebView = null;
 let loginCam: number = null;
@@ -11,11 +11,20 @@ let loginModelHash: number = null;
 let lastInteract: number = 0;
 
 export default class LoginHandler {
-
-
     static async CreateCEF(): Promise<void> {
         if (loginBrowser == null) {
-            loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280.0, 5220.0, 26.0, 0, 0, 240, 50, true, 2);
+            loginCam = native.createCameraWithParams(
+                alt.hash("DEFAULT_SCRIPTED_CAMERA"),
+                3280.0,
+                5220.0,
+                26.0,
+                0,
+                0,
+                240,
+                50,
+                true,
+                2,
+            );
             native.setCamActive(loginCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
@@ -31,13 +40,18 @@ export default class LoginHandler {
                     loginBrowser.emit("CEF:Login:showArea", "login");
                 }, 2000);
             });
-    
+
             loginBrowser.on("Client:Login:sendLoginDataToServer", (name: string, password: string) => {
-                if(lastInteract + 500 > Date.now()) return;
+                if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
-    
+
                 if (alt.LocalStorage.get("discordId")) {
-                    alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.LocalStorage.get("discordId"));
+                    alt.emitServer(
+                        "Server:Login:ValidateLoginCredentials",
+                        name,
+                        password,
+                        alt.LocalStorage.get("discordId"),
+                    );
                 } else {
                     if (alt.Discord.currentUser == null) {
                         loginBrowser.emit("CEF:Login:showError", "Bitte öffne Discord und starte alt:V neu.");
@@ -46,51 +60,54 @@ export default class LoginHandler {
                     alt.emitServer("Server:Login:ValidateLoginCredentials", name, password, alt.Discord.currentUser.id);
                 }
             });
-    
+
             loginBrowser.on("Client:Login:resetPW", (password: string) => {
-                if(lastInteract + 500 > Date.now()) return;
+                if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
-    
+
                 alt.emitServer("Server:Login:resetPW", password);
             });
-    
-            loginBrowser.on("Client:Register:sendRegisterDataToServer", (name: string, email: string, password: string, passwordrepeat: string) => {
-                if(lastInteract + 500 > Date.now()) return;
-                lastInteract = Date.now();
-    
-                alt.emitServer("Server:Register:RegisterNewPlayer", name, email, password, passwordrepeat);
-            });
-    
+
+            loginBrowser.on(
+                "Client:Register:sendRegisterDataToServer",
+                (name: string, email: string, password: string, passwordrepeat: string) => {
+                    if (lastInteract + 500 > Date.now()) return;
+                    lastInteract = Date.now();
+
+                    alt.emitServer("Server:Register:RegisterNewPlayer", name, email, password, passwordrepeat);
+                },
+            );
+
             loginBrowser.on("Client:Charcreator:OpenCreator", () => {
-                if(lastInteract + 500 > Date.now()) return;
+                if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
-    
+
                 alt.emitServer("Server:Charcreator:CreateCEF");
                 LoginHandler.DestroyCEF();
             });
-    
+
             loginBrowser.on("Client:Login:DestroyCEF", () => {
                 LoginHandler.DestroyCEF();
             });
-    
+
             loginBrowser.on("Client:Charselector:KillCharacter", (charid: number) => {
-                if(lastInteract + 500 > Date.now()) return;
+                if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
-    
+
                 alt.emitServer("Server:Charselector:KillCharacter", charid);
             });
-    
+
             loginBrowser.on("Client:Charselector:PreviewCharacter", (charid: number) => {
-                if(lastInteract + 500 > Date.now()) return;
+                if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
-    
+
                 alt.emitServer("Server:Charselector:PreviewCharacter", charid);
             });
-    
+
             loginBrowser.on("Client:Charselector:spawnChar", (charid: number) => {
-                if(lastInteract + 500 > Date.now()) return;
+                if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
-    
+
                 alt.emitServer("Server:Charselector:spawnChar", charid);
             });
         }
@@ -98,6 +115,16 @@ export default class LoginHandler {
 
     static DestroyCEF(): void {
         if (loginBrowser != null) {
+            loginBrowser.off("Client:Login:cefIsReady", () => {});
+            loginBrowser.off("Client:Login:sendLoginDataToServer", () => {});
+            loginBrowser.off("Client:Login:resetPW", () => {});
+            loginBrowser.off("Client:Register:sendRegisterDataToServer", () => {});
+            loginBrowser.off("Client:Charcreator:OpenCreator", () => {});
+            loginBrowser.off("Client:Login:DestroyCEF", () => {});
+            loginBrowser.off("Client:Charselector:KillCharacter", () => {});
+            loginBrowser.off("Client:Charselector:PreviewCharacter", () => {});
+            loginBrowser.off("Client:Charselector:spawnChar", () => {});
+            loginBrowser.unfocus();
             loginBrowser.destroy();
         }
         loginBrowser = null;
@@ -122,39 +149,115 @@ export default class LoginHandler {
         const headblendsjson = JSON.parse(headblendsarray);
         const headoverlaysjson = JSON.parse(headoverlayarray);
 
-        native.setPedHeadBlendData(alt.Player.local.scriptID, parseInt(headblendsjson[0]), parseInt(headblendsjson[1]), 0, parseInt(headblendsjson[2]), parseInt(headblendsjson[5]), 0, parseFloat(headblendsjson[3]), parseInt(headblendsjson[4]), 0, false);
+        native.setPedHeadBlendData(
+            alt.Player.local.scriptID,
+            parseInt(headblendsjson[0]),
+            parseInt(headblendsjson[1]),
+            0,
+            parseInt(headblendsjson[2]),
+            parseInt(headblendsjson[5]),
+            0,
+            parseFloat(headblendsjson[3]),
+            parseInt(headblendsjson[4]),
+            0,
+            false,
+        );
         native.setPedHeadOverlayColor(alt.Player.local.scriptID, 1, 1, parseInt(headoverlaysjson[2][1]), 1);
         native.setPedHeadOverlayColor(alt.Player.local.scriptID, 2, 1, parseInt(headoverlaysjson[2][2]), 1);
         native.setPedHeadOverlayColor(alt.Player.local.scriptID, 5, 2, parseInt(headoverlaysjson[2][5]), 1);
         native.setPedHeadOverlayColor(alt.Player.local.scriptID, 8, 2, parseInt(headoverlaysjson[2][8]), 1);
         native.setPedHeadOverlayColor(alt.Player.local.scriptID, 10, 1, parseInt(headoverlaysjson[2][10]), 1);
         native.setPedEyeColor(alt.Player.local.scriptID, parseInt(headoverlaysjson[0][14]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 0, parseInt(headoverlaysjson[0][0]), parseInt(headoverlaysjson[1][0]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 1, parseInt(headoverlaysjson[0][1]), parseFloat(headoverlaysjson[1][1]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 2, parseInt(headoverlaysjson[0][2]), parseFloat(headoverlaysjson[1][2]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 3, parseInt(headoverlaysjson[0][3]), parseInt(headoverlaysjson[1][3]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 4, parseInt(headoverlaysjson[0][4]), parseInt(headoverlaysjson[1][4]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 5, parseInt(headoverlaysjson[0][5]), parseInt(headoverlaysjson[1][5]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 6, parseInt(headoverlaysjson[0][6]), parseInt(headoverlaysjson[1][6]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 7, parseInt(headoverlaysjson[0][7]), parseInt(headoverlaysjson[1][7]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 8, parseInt(headoverlaysjson[0][8]), parseInt(headoverlaysjson[1][8]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 9, parseInt(headoverlaysjson[0][9]), parseInt(headoverlaysjson[1][9]));
-        native.setPedHeadOverlay(alt.Player.local.scriptID, 10, parseInt(headoverlaysjson[0][10]), parseInt(headoverlaysjson[1][10]));
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            0,
+            parseInt(headoverlaysjson[0][0]),
+            parseInt(headoverlaysjson[1][0]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            1,
+            parseInt(headoverlaysjson[0][1]),
+            parseFloat(headoverlaysjson[1][1]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            2,
+            parseInt(headoverlaysjson[0][2]),
+            parseFloat(headoverlaysjson[1][2]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            3,
+            parseInt(headoverlaysjson[0][3]),
+            parseInt(headoverlaysjson[1][3]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            4,
+            parseInt(headoverlaysjson[0][4]),
+            parseInt(headoverlaysjson[1][4]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            5,
+            parseInt(headoverlaysjson[0][5]),
+            parseInt(headoverlaysjson[1][5]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            6,
+            parseInt(headoverlaysjson[0][6]),
+            parseInt(headoverlaysjson[1][6]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            7,
+            parseInt(headoverlaysjson[0][7]),
+            parseInt(headoverlaysjson[1][7]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            8,
+            parseInt(headoverlaysjson[0][8]),
+            parseInt(headoverlaysjson[1][8]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            9,
+            parseInt(headoverlaysjson[0][9]),
+            parseInt(headoverlaysjson[1][9]),
+        );
+        native.setPedHeadOverlay(
+            alt.Player.local.scriptID,
+            10,
+            parseInt(headoverlaysjson[0][10]),
+            parseInt(headoverlaysjson[1][10]),
+        );
         native.setPedComponentVariation(alt.Player.local.scriptID, 2, parseInt(headoverlaysjson[0][13]), 0, 0);
-        native.setPedHairColor(alt.Player.local.scriptID, parseInt(headoverlaysjson[2][13]), parseInt(headoverlaysjson[1][13]));
+        native.setPedHairColor(
+            alt.Player.local.scriptID,
+            parseInt(headoverlaysjson[2][13]),
+            parseInt(headoverlaysjson[1][13]),
+        );
 
         for (let i = 0; i < 20; i++) {
             native.setPedFaceFeature(alt.Player.local.scriptID, i, parseFloat(facefeaturesjson[i]));
         }
     }
 
-    static ViewCharacter(gender: number, facefeaturearray: string, headblendsarray: string, headoverlayarray: string): void {
+    static ViewCharacter(
+        gender: number,
+        facefeaturearray: string,
+        headblendsarray: string,
+        headoverlayarray: string,
+    ): void {
         LoginHandler.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
     }
 
     static SaveLoginCredentialsToStorage(name: string, discordId: number): void {
-        alt.LocalStorage.set('username', name);
-        alt.LocalStorage.set('discordId', discordId);
+        alt.LocalStorage.set("username", name);
+        alt.LocalStorage.set("discordId", discordId);
         alt.LocalStorage.save();
     }
 
@@ -175,7 +278,18 @@ export default class LoginHandler {
                     loginCam = null;
                 }
                 native.setEntityAlpha(alt.Player.local.scriptID, 0, false);
-                loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003.0, -98.6, 0, 0, 358, 18, true, 2);
+                loginCam = native.createCameraWithParams(
+                    alt.hash("DEFAULT_SCRIPTED_CAMERA"),
+                    402.7,
+                    -1003.0,
+                    -98.6,
+                    0,
+                    0,
+                    358,
+                    18,
+                    true,
+                    2,
+                );
                 native.setCamActive(loginCam, true);
                 native.renderScriptCams(true, false, 0, true, false, 0);
             }
@@ -212,7 +326,12 @@ export default class LoginHandler {
         native.freezeEntityPosition(alt.Player.local.scriptID, true);
     }
 
-    static async spawnCharSelectorPed(gender: number, facefeaturearray: string, headblendsarray: string, headoverlayarray: string): Promise<void> {
+    static async spawnCharSelectorPed(
+        gender: number,
+        facefeaturearray: string,
+        headblendsarray: string,
+        headoverlayarray: string,
+    ): Promise<void> {
         let facefeatures = JSON.parse(facefeaturearray);
         let headblends = JSON.parse(headblendsarray);
         let headoverlays = JSON.parse(headoverlayarray);
@@ -223,10 +342,10 @@ export default class LoginHandler {
         }
 
         if (gender == 1) {
-            loginModelHash = alt.hash('mp_f_freemode_01');
+            loginModelHash = alt.hash("mp_f_freemode_01");
             await loadModelAsync(loginModelHash);
         } else if (gender == 0) {
-            loginModelHash = alt.hash('mp_m_freemode_01');
+            loginModelHash = alt.hash("mp_m_freemode_01");
             await loadModelAsync(loginModelHash);
         }
         loginPedHandle = native.createPed(4, loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);
@@ -236,8 +355,20 @@ export default class LoginHandler {
         native.disablePedPainAudio(loginPedHandle, true);
         native.freezeEntityPosition(loginPedHandle, true);
         native.taskSetBlockingOfNonTemporaryEvents(loginPedHandle, true);
-                
-        native.setPedHeadBlendData(loginPedHandle, parseFloat(headblends[0]), parseFloat(headblends[1]), 0, parseFloat(headblends[2]), parseFloat(headblends[5]), 0, parseFloat(headblends[3]), parseFloat(headblends[4]), 0, false);
+
+        native.setPedHeadBlendData(
+            loginPedHandle,
+            parseFloat(headblends[0]),
+            parseFloat(headblends[1]),
+            0,
+            parseFloat(headblends[2]),
+            parseFloat(headblends[5]),
+            0,
+            parseFloat(headblends[3]),
+            parseFloat(headblends[4]),
+            0,
+            false,
+        );
         native.setPedHeadOverlayColor(loginPedHandle, 1, 1, parseInt(headoverlays[2][1]), 1);
         native.setPedHeadOverlayColor(loginPedHandle, 2, 1, parseInt(headoverlays[2][2]), 1);
         native.setPedHeadOverlayColor(loginPedHandle, 5, 2, parseInt(headoverlays[2][5]), 1);

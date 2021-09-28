@@ -3,17 +3,20 @@
  * License - https://fontawesome.com/license (Commercial License)
  */
 @font-face {
-    font-family: 'Font Awesome 5 Duotone';
+    font-family: "Font Awesome 5 Duotone";
     font-style: normal;
     font-weight: 900;
     font-display: auto;
     src: url("../webfonts/fa-duotone-900.eot");
-    src: url("../webfonts/fa-duotone-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-duotone-900.woff2") format("woff2"), url("../webfonts/fa-duotone-900.woff") format("woff"), url("../webfonts/fa-duotone-900.ttf") format("truetype"), url("../webfonts/fa-duotone-900.svg#fontawesome") format("svg");
+    src: url("../webfonts/fa-duotone-900.eot?#iefix") format("embedded-opentype"),
+        url("../webfonts/fa-duotone-900.woff2") format("woff2"), url("../webfonts/fa-duotone-900.woff") format("woff"),
+        url("../webfonts/fa-duotone-900.ttf") format("truetype"),
+        url("../webfonts/fa-duotone-900.svg#fontawesome") format("svg");
 }
 
 .fad {
     position: relative;
-    font-family: 'Font Awesome 5 Duotone';
+    font-family: "Font Awesome 5 Duotone";
     font-weight: 900;
 }
 
@@ -46,7 +49,8 @@
     color: #fff;
 }
 
-.fad.fa-stack-1x, .fad.fa-stack-2x {
+.fad.fa-stack-1x,
+.fad.fa-stack-2x {
     position: absolute;
 }
 

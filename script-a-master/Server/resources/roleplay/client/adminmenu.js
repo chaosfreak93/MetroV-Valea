@@ -1,7 +1,7 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import BlipManager from './blipmanager';
-import NoClip from './noclip';
+import * as alt from "alt-client";
+import * as native from "natives";
+import BlipManager from "./blipmanager";
+import NoClip from "./noclip";
 export let adminMenuBrowser;
 export let browserReady = false;
 let adminmenu_isopened = false;
@@ -52,7 +52,7 @@ alt.onServer("Client:HUD:CreateCEF", ()=>{
         }
     });
 });
-alt.on('keydown', (key)=>{
+alt.on("keydown", (key)=>{
     if (key === 38) {
         if (!adminmenu_isopened) return;
         adminMenuBrowser.emit("CEF:AdminMenu:ChangeSelectedField", "up");
@@ -63,6 +63,7 @@ alt.on('keydown', (key)=>{
         if (!adminmenu_isopened) return;
         adminMenuBrowser.emit("CEF:AdminMenu:ChangeSelectedMenu");
     } else if (key === 8) {
+        // BACKSPACE
         if (!adminmenu_isopened || adminmenu_isfocused) return;
         adminMenuBrowser.emit("CEF:AdminMenu:ReturnSelectedMenu");
     } else if (key === 120) {
@@ -189,12 +190,12 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info)=>{
                 if (!player.valid || player.scriptID == undefined) continue;
                 /**if (player.scriptID === alt.Player.local.scriptID) {
                     continue;
-                }**/ const name = player.getSyncedMeta('NAME');
+                }**/ const name = player.getSyncedMeta("NAME");
                 if (!name) continue;
                 if (!native.hasEntityClearLosToEntity(alt.Player.local.scriptID, player.scriptID, 17)) continue;
                 let dist = distance2d(player.pos, alt.Player.local.pos);
                 if (dist > 25) continue;
-                const isChatting = player.getSyncedMeta('CHATTING');
+                const isChatting = player.getSyncedMeta("CHATTING");
                 const pos = {
                     ...native.getPedBoneCoords(player.scriptID, 12844, 0, 0, 0)
                 };
@@ -206,7 +207,7 @@ alt.onServer("Client:Adminmenu:ToggleNametags", (info)=>{
                 const vector = native.getEntityVelocity(entity);
                 const frameTime = native.getFrameTime();
                 native.setDrawOrigin(pos.x + vector.x * frameTime, pos.y + vector.y * frameTime, pos.z + vector.z * frameTime, 0);
-                native.beginTextCommandDisplayText('STRING');
+                native.beginTextCommandDisplayText("STRING");
                 native.setTextFont(4);
                 native.setTextScale(fontSize, fontSize);
                 native.setTextProportional(true);
@@ -235,7 +236,7 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info)=>{
         for(let i = 0, n = alt.Player.all.length; i < n; i++){
             let player = alt.Player.all[i];
             if (!player.valid || player.scriptID == undefined) continue;
-            const username = player.getSyncedMeta('NAME');
+            const username = player.getSyncedMeta("NAME");
             if (!username || username == undefined) continue;
             playerblips_blip[player.scriptID] = BlipManager.createBlip(player.pos.x, player.pos.y, player.pos.z, 0, 0.9, 4, false, true, username);
             playerblips_allblips.push(playerblips_blip[player.scriptID]);
@@ -244,7 +245,7 @@ alt.onServer("Client:Adminmenu:TogglePlayerBlips", (info)=>{
             for(let i = 0, n = alt.Player.all.length; i < n; i++){
                 let player = alt.Player.all[i];
                 if (!player.valid || player.scriptID == undefined) continue;
-                const username = player.getSyncedMeta('NAME');
+                const username = player.getSyncedMeta("NAME");
                 if (!username || username == undefined) continue;
                 if (playerblips_blip[player.scriptID] == undefined) {
                     playerblips_blip[player.scriptID] = BlipManager.createBlip(player.pos.x, player.pos.y, player.pos.z, 0, 0.9, 4, false, true, username);

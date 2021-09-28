@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadModelAsync } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync } from "./utilities";
 let charcreatorBrowser = null;
 let charcreatorCam = null;
 let pedHandle = null;
@@ -15,7 +15,7 @@ class CharCreator {
             alt.toggleGameControls(false);
             native.setEntityAlpha(alt.Player.local.scriptID, 0, false);
             native.triggerScreenblurFadeIn(1);
-            charcreatorCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+            charcreatorCam = native.createCameraWithParams(alt.hash("DEFAULT_SCRIPTED_CAMERA"), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
             native.setCamActive(charcreatorCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             charcreatorBrowser = new alt.WebView("http://resource/client/cef/charcreator/index.html");
@@ -106,10 +106,10 @@ class CharCreator {
     }
     static async spawnCreatorPed(gender) {
         if (gender == 1) {
-            modelHash = alt.hash('mp_f_freemode_01');
+            modelHash = alt.hash("mp_f_freemode_01");
             await loadModelAsync(modelHash);
         } else if (gender == 0) {
-            modelHash = alt.hash('mp_m_freemode_01');
+            modelHash = alt.hash("mp_m_freemode_01");
             await loadModelAsync(modelHash);
         }
         pedHandle = native.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);

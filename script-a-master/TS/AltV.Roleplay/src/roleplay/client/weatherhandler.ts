@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 
 let oldWeather: string = "none";
 
@@ -10,11 +10,11 @@ export default class WeatherHandler {
             oldWeather = newWeather;
             return;
         }
-    
+
         let i = 0;
         let interval = alt.setInterval(() => {
             i++;
-            if (i < 100) native.setWeatherTypeTransition(alt.hash(oldWeather), alt.hash(newWeather), (i / 100));
+            if (i < 100) native.setWeatherTypeTransition(alt.hash(oldWeather), alt.hash(newWeather), i / 100);
             else {
                 alt.clearInterval(interval);
                 oldWeather = newWeather;

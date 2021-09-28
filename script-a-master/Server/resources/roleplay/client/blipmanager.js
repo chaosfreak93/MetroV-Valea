@@ -1,4 +1,4 @@
-import * as alt from 'alt-client';
+import * as alt from "alt-client";
 class BlipManager {
     static createBlip(x, y, z, sprite, scale, color, shortRange, showCone, name) {
         const blip = new alt.PointBlip(x, y, z);

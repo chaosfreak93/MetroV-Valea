@@ -1,8 +1,8 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import Crouch from './crouch';
-import { Inventory, inventoryBrowser } from './inventory';
-import Raycast from './raycast';
+import * as alt from "alt-client";
+import * as native from "natives";
+import Crouch from "./crouch";
+import { Inventory, inventoryBrowser } from "./inventory";
+import Raycast from "./raycast";
 const player = alt.Player.local;
 let lastInteract = 0;
 let toggleCrouch = false;
@@ -13,18 +13,20 @@ class KeyHandler {
     static keyup(key) {
         if (!KeyHandler.canInteract) return;
         lastInteract = Date.now();
-        if (key == 'E'.charCodeAt(0)) {
+        if (key == "E".charCodeAt(0)) {
             alt.emitServer("Server:KeyHandler:PressE");
-        } else if (key == 'U'.charCodeAt(0)) {
+        } else if (key == "U".charCodeAt(0)) {
             alt.emitServer("Server:KeyHandler:PressU");
-        } else if (key == 'I'.charCodeAt(0)) {
+        } else if (key == "I".charCodeAt(0)) {
             if (inventoryBrowser == null) {
+                //Inv öffnen
                 if (player.getSyncedMeta("HasFootCuffs") == true || player.getSyncedMeta("HasHandcuffs") == true || player.getSyncedMeta("HasRopeCuffs") == true || player.getMeta("IsCefOpen") == true) return;
                 Inventory.openInventoryCEF(true);
             } else {
+                //Inv close
                 Inventory.closeInventoryCEF();
             }
-        } else if (key == 'Y'.charCodeAt(0)) {
+        } else if (key == "Y".charCodeAt(0)) {
             let result = Raycast.line(1.5, 2.5);
             if (result == undefined || player.vehicle) return;
             if (result.isHit && result.entityType != 0) {
@@ -72,5 +74,5 @@ class KeyHandler {
     }
 }
 export { KeyHandler as default };
-alt.on('keyup', KeyHandler.keyup);
-alt.on('keydown', KeyHandler.keydown);
+alt.on("keyup", KeyHandler.keyup);
+alt.on("keydown", KeyHandler.keydown);

@@ -3,23 +3,24 @@
 // and `+print-utilities(screen)` into your screen stylesheet.
 // Note: these aren't semantic.
 @mixin print-utilities($media: print) {
-  @if $media == print {
-    .noprint, .no-print {
-      display: none;
+    @if $media == print {
+        .noprint,
+        .no-print {
+            display: none;
+        }
+        #{elements-of-type(block)} {
+            &.print-only {
+                display: block;
+            }
+        }
+        #{elements-of-type(inline)} {
+            &.print-only {
+                display: inline;
+            }
+        }
+    } @else {
+        .print-only {
+            display: none;
+        }
     }
-    #{elements-of-type(block)} {
-      &.print-only {
-        display: block;
-      }
-    }
-    #{elements-of-type(inline)} {
-      &.print-only {
-        display: inline;
-      }
-    }
-  } @else {
-    .print-only {
-      display: none;
-    }
-  }
 }

@@ -1,6 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { setIntoVehicle } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
 let dict = [];
 class VehicleHandler {
     static returnVehicleMods(curVeh, modId) {
@@ -21,11 +20,6 @@ class VehicleHandler {
             native.setVehicleFixed(curVeh.scriptID);
             native.setVehicleDeformationFixed(curVeh.scriptID);
         }
-    }
-    static setPedIntoVehicle(curVeh) {
-        alt.setTimeout(async ()=>{
-            await setIntoVehicle(curVeh);
-        }, 500);
     }
     static toggleDoor(vehicle, doorid, state) {
         if (state) {
@@ -55,7 +49,6 @@ class VehicleHandler {
 export { VehicleHandler as default };
 alt.onServer("returnVehicleMods", VehicleHandler.returnVehicleMods);
 alt.onServer("Client:Utilities:repairVehicle", VehicleHandler.repairVehicle);
-alt.onServer("Client:Utilities:setIntoVehicle", VehicleHandler.setPedIntoVehicle);
 alt.onServer("Client:Vehicles:ToggleDoorState", VehicleHandler.toggleDoor);
 alt.onServer("Client:Sirens:setVehicleHasMutedSirensForAll", VehicleHandler.setVehicleHasMutedSirensForAll);
 alt.on("gameEntityCreate", VehicleHandler.gameEntityCreate);

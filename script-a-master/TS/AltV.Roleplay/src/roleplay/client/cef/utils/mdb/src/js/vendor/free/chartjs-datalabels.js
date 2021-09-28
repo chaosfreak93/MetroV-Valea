@@ -5,18 +5,20 @@
  * Released under the MIT license
  */
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('chart.js')) :
-        typeof define === 'function' && define.amd ? define(['chart.js'], factory) :
-            (global = global || self, global.ChartDataLabels = factory(global.Chart));
-}(this, function (Chart) {
-    'use strict';
+    typeof exports === "object" && typeof module !== "undefined"
+        ? (module.exports = factory(require("chart.js")))
+        : typeof define === "function" && define.amd
+        ? define(["chart.js"], factory)
+        : ((global = global || self), (global.ChartDataLabels = factory(global.Chart)));
+})(this, function (Chart) {
+    "use strict";
 
-    Chart = Chart && Chart.hasOwnProperty('default') ? Chart['default'] : Chart;
+    Chart = Chart && Chart.hasOwnProperty("default") ? Chart["default"] : Chart;
 
     var helpers = Chart.helpers;
 
     var devicePixelRatio = (function () {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== "undefined") {
             if (window.devicePixelRatio) {
                 return window.devicePixelRatio;
             }
@@ -31,7 +33,7 @@
         }
 
         return 1;
-    }());
+    })();
 
     var utils = {
         // @todo move this in Chart.helpers.toTextLines
@@ -42,12 +44,12 @@
             inputs = [].concat(inputs);
             while (inputs.length) {
                 input = inputs.pop();
-                if (typeof input === 'string') {
-                    lines.unshift.apply(lines, input.split('\n'));
+                if (typeof input === "string") {
+                    lines.unshift.apply(lines, input.split("\n"));
                 } else if (Array.isArray(input)) {
                     inputs.push.apply(inputs, input);
                 } else if (!helpers.isNullOrUndef(inputs)) {
-                    lines.unshift('' + input);
+                    lines.unshift("" + input);
                 }
             }
 
@@ -61,10 +63,13 @@
                 return null;
             }
 
-            return (font.style ? font.style + ' ' : '')
-                + (font.weight ? font.weight + ' ' : '')
-                + font.size + 'px '
-                + font.family;
+            return (
+                (font.style ? font.style + " " : "") +
+                (font.weight ? font.weight + " " : "") +
+                font.size +
+                "px " +
+                font.family
+            );
         },
 
         // @todo move this in Chart.helpers.canvas.textSize
@@ -86,7 +91,7 @@
 
             return {
                 height: ilen * font.lineHeight,
-                width: width
+                width: width,
             };
         },
 
@@ -100,7 +105,7 @@
                 size: size,
                 style: helpers.valueOrDefault(value.style, global.defaultFontStyle),
                 weight: helpers.valueOrDefault(value.weight, null),
-                string: ''
+                string: "",
             };
 
             font.string = utils.toFontString(font);
@@ -149,7 +154,7 @@
          */
         rasterize: function (v) {
             return Math.round(v * devicePixelRatio) / devicePixelRatio;
-        }
+        },
     };
 
     function orient(point, origin) {
@@ -157,10 +162,10 @@
         var y0 = origin.y;
 
         if (x0 === null) {
-            return {x: 0, y: -1};
+            return { x: 0, y: -1 };
         }
         if (y0 === null) {
-            return {x: 1, y: 0};
+            return { x: 1, y: 0 };
         }
 
         var dx = point.x - x0;
@@ -169,41 +174,41 @@
 
         return {
             x: ln ? dx / ln : 0,
-            y: ln ? dy / ln : -1
+            y: ln ? dy / ln : -1,
         };
     }
 
     function aligned(x, y, vx, vy, align) {
         switch (align) {
-            case 'center':
+            case "center":
                 vx = vy = 0;
                 break;
-            case 'bottom':
+            case "bottom":
                 vx = 0;
                 vy = 1;
                 break;
-            case 'right':
+            case "right":
                 vx = 1;
                 vy = 0;
                 break;
-            case 'left':
+            case "left":
                 vx = -1;
                 vy = 0;
                 break;
-            case 'top':
+            case "top":
                 vx = 0;
                 vy = -1;
                 break;
-            case 'start':
+            case "start":
                 vx = -vx;
                 vy = -vy;
                 break;
-            case 'end':
+            case "end":
                 // keep natural orientation
                 break;
             default:
                 // clockwise rotation (in degree)
-                align *= (Math.PI / 180);
+                align *= Math.PI / 180;
                 vx = Math.cos(align);
                 vy = Math.sin(align);
                 break;
@@ -213,12 +218,12 @@
             x: x,
             y: y,
             vx: vx,
-            vy: vy
+            vy: vy,
         };
     }
 
-// Line clipping (Cohen–Sutherland algorithm)
-// https://en.wikipedia.org/wiki/Cohen–Sutherland_algorithm
+    // Line clipping (Cohen–Sutherland algorithm)
+    // https://en.wikipedia.org/wiki/Cohen–Sutherland_algorithm
 
     var R_INSIDE = 0;
     var R_LEFT = 1;
@@ -254,7 +259,7 @@
 
         // eslint-disable-next-line no-constant-condition
         while (true) {
-            if (!(r0 | r1) || (r0 & r1)) {
+            if (!(r0 | r1) || r0 & r1) {
                 // both points inside or on the same side: no clipping
                 break;
             }
@@ -263,16 +268,16 @@
             r = r0 || r1;
 
             if (r & R_TOP) {
-                x = x0 + (x1 - x0) * (area.top - y0) / (y1 - y0);
+                x = x0 + ((x1 - x0) * (area.top - y0)) / (y1 - y0);
                 y = area.top;
             } else if (r & R_BOTTOM) {
-                x = x0 + (x1 - x0) * (area.bottom - y0) / (y1 - y0);
+                x = x0 + ((x1 - x0) * (area.bottom - y0)) / (y1 - y0);
                 y = area.bottom;
             } else if (r & R_RIGHT) {
-                y = y0 + (y1 - y0) * (area.right - x0) / (x1 - x0);
+                y = y0 + ((y1 - y0) * (area.right - x0)) / (x1 - x0);
                 x = area.right;
             } else if (r & R_LEFT) {
-                y = y0 + (y1 - y0) * (area.left - x0) / (x1 - x0);
+                y = y0 + ((y1 - y0) * (area.left - x0)) / (x1 - x0);
                 x = area.left;
             }
 
@@ -291,7 +296,7 @@
             x0: x0,
             x1: x1,
             y0: y0,
-            y1: y1
+            y1: y1,
         };
     }
 
@@ -304,10 +309,10 @@
             segment = clipped(segment, config.area);
         }
 
-        if (anchor === 'start') {
+        if (anchor === "start") {
             x = segment.x0;
             y = segment.y0;
-        } else if (anchor === 'end') {
+        } else if (anchor === "end") {
             x = segment.x1;
             y = segment.y1;
         } else {
@@ -326,14 +331,17 @@
             var r0 = vm.innerRadius;
             var r1 = vm.outerRadius;
 
-            return compute({
-                x0: vm.x + vx * r0,
-                y0: vm.y + vy * r0,
-                x1: vm.x + vx * r1,
-                y1: vm.y + vy * r1,
-                vx: vx,
-                vy: vy
-            }, config);
+            return compute(
+                {
+                    x0: vm.x + vx * r0,
+                    y0: vm.y + vy * r0,
+                    x1: vm.x + vx * r1,
+                    y1: vm.y + vy * r1,
+                    vx: vx,
+                    vy: vy,
+                },
+                config,
+            );
         },
 
         point: function (vm, config) {
@@ -341,14 +349,17 @@
             var rx = v.x * vm.radius;
             var ry = v.y * vm.radius;
 
-            return compute({
-                x0: vm.x - rx,
-                y0: vm.y - ry,
-                x1: vm.x + rx,
-                y1: vm.y + ry,
-                vx: v.x,
-                vy: v.y
-            }, config);
+            return compute(
+                {
+                    x0: vm.x - rx,
+                    y0: vm.y - ry,
+                    x1: vm.x + rx,
+                    y1: vm.y + ry,
+                    vx: v.x,
+                    vy: v.y,
+                },
+                config,
+            );
         },
 
         rect: function (vm, config) {
@@ -366,28 +377,34 @@
                 sy = Math.abs(vm.base - vm.y);
             }
 
-            return compute({
-                x0: x,
-                y0: y + sy,
-                x1: x + sx,
-                y1: y,
-                vx: v.x,
-                vy: v.y
-            }, config);
+            return compute(
+                {
+                    x0: x,
+                    y0: y + sy,
+                    x1: x + sx,
+                    y1: y,
+                    vx: v.x,
+                    vy: v.y,
+                },
+                config,
+            );
         },
 
         fallback: function (vm, config) {
             var v = orient(vm, config.origin);
 
-            return compute({
-                x0: vm.x,
-                y0: vm.y,
-                x1: vm.x,
-                y1: vm.y,
-                vx: v.x,
-                vy: v.y
-            }, config);
-        }
+            return compute(
+                {
+                    x0: vm.x,
+                    y0: vm.y,
+                    x1: vm.x,
+                    y1: vm.y,
+                    vx: v.x,
+                    vy: v.y,
+                },
+                config,
+            );
+        },
     };
 
     var helpers$1 = Chart.helpers;
@@ -406,14 +423,14 @@
                 x: tx - padding.left - borderWidth,
                 y: ty - padding.top - borderWidth,
                 w: tw + padding.width + borderWidth * 2,
-                h: th + padding.height + borderWidth * 2
+                h: th + padding.height + borderWidth * 2,
             },
             text: {
                 x: tx,
                 y: ty,
                 w: tw,
-                h: th
-            }
+                h: th,
+            },
         };
     }
 
@@ -426,13 +443,11 @@
         }
 
         if (scale.xCenter !== undefined && scale.yCenter !== undefined) {
-            return {x: scale.xCenter, y: scale.yCenter};
+            return { x: scale.xCenter, y: scale.yCenter };
         }
 
         var pixel = scale.getBasePixel();
-        return horizontal ?
-            {x: pixel, y: null} :
-            {x: null, y: pixel};
+        return horizontal ? { x: pixel, y: null } : { x: null, y: pixel };
     }
 
     function getPositioner(el) {
@@ -465,7 +480,8 @@
             rasterize(rect.y) + borderWidth / 2,
             rasterize(rect.w) - borderWidth,
             rasterize(rect.h) - borderWidth,
-            model.borderRadius);
+            model.borderRadius,
+        );
 
         ctx.closePath();
 
@@ -477,7 +493,7 @@
         if (borderColor && borderWidth) {
             ctx.strokeStyle = borderColor;
             ctx.lineWidth = borderWidth;
-            ctx.lineJoin = 'miter';
+            ctx.lineJoin = "miter";
             ctx.stroke();
         }
     }
@@ -488,9 +504,9 @@
         var x = rect.x;
         var y = rect.y + h / 2;
 
-        if (align === 'center') {
+        if (align === "center") {
             x += w / 2;
-        } else if (align === 'end' || align === 'right') {
+        } else if (align === "end" || align === "right") {
             x += w;
         }
 
@@ -498,7 +514,7 @@
             h: h,
             w: w,
             x: x,
-            y: y
+            y: y,
         };
     }
 
@@ -548,7 +564,7 @@
 
         ctx.font = font.string;
         ctx.textAlign = align;
-        ctx.textBaseline = 'middle';
+        ctx.textBaseline = "middle";
         ctx.shadowBlur = model.textShadowBlur;
         ctx.shadowColor = model.textShadowColor;
 
@@ -556,7 +572,7 @@
             ctx.fillStyle = color;
         }
         if (stroked) {
-            ctx.lineJoin = 'round';
+            ctx.lineJoin = "round";
             ctx.lineWidth = strokeWidth;
             ctx.strokeStyle = strokeColor;
         }
@@ -567,7 +583,7 @@
                 filled: filled,
                 w: rect.w,
                 x: rect.x,
-                y: rect.y + rect.h * i
+                y: rect.y + rect.h * i,
             });
         }
     }
@@ -595,8 +611,8 @@
             var color = resolve([config.color, Chart.defaults.global.defaultFontColor], context, index);
 
             return {
-                align: resolve([config.align, 'center'], context, index),
-                anchor: resolve([config.anchor, 'center'], context, index),
+                align: resolve([config.align, "center"], context, index),
+                anchor: resolve([config.anchor, "center"], context, index),
                 area: context.chart.chartArea,
                 backgroundColor: resolve([config.backgroundColor, null], context, index),
                 borderColor: resolve([config.borderColor, null], context, index),
@@ -615,11 +631,11 @@
                 positioner: getPositioner(me._el),
                 rotation: resolve([config.rotation, 0], context, index) * (Math.PI / 180),
                 size: utils.textSize(me._ctx, lines, font),
-                textAlign: resolve([config.textAlign, 'start'], context, index),
+                textAlign: resolve([config.textAlign, "start"], context, index),
                 textShadowBlur: resolve([config.textShadowBlur, 0], context, index),
                 textShadowColor: resolve([config.textShadowColor, color], context, index),
                 textStrokeColor: resolve([config.textStrokeColor, color], context, index),
-                textStrokeWidth: resolve([config.textStrokeWidth, 0], context, index)
+                textStrokeWidth: resolve([config.textStrokeWidth, 0], context, index),
             };
         },
 
@@ -682,11 +698,7 @@
             if (model.clip) {
                 area = model.area;
                 ctx.beginPath();
-                ctx.rect(
-                    area.left,
-                    area.top,
-                    area.right - area.left,
-                    area.bottom - area.top);
+                ctx.rect(area.left, area.top, area.right - area.left, area.bottom - area.top);
                 ctx.clip();
             }
 
@@ -698,13 +710,13 @@
             drawText(ctx, model.lines, rects.text, model);
 
             ctx.restore();
-        }
+        },
     });
 
     var helpers$2 = Chart.helpers;
 
     var MIN_INTEGER = Number.MIN_SAFE_INTEGER || -9007199254740991; // eslint-disable-line es/no-number-minsafeinteger
-    var MAX_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991;  // eslint-disable-line es/no-number-maxsafeinteger
+    var MAX_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991; // eslint-disable-line es/no-number-maxsafeinteger
 
     function rotated(point, center, angle) {
         var cos = Math.cos(angle);
@@ -714,7 +726,7 @@
 
         return {
             x: cx + cos * (point.x - cx) - sin * (point.y - cy),
-            y: cy + sin * (point.x - cx) + cos * (point.y - cy)
+            y: cy + sin * (point.x - cx) + cos * (point.y - cy),
         };
     }
 
@@ -735,7 +747,7 @@
 
         return {
             min: min,
-            max: max
+            max: max,
         };
     }
 
@@ -748,7 +760,7 @@
             vx: (p1.x - p0.x) / ln,
             vy: (p1.y - p0.y) / ln,
             origin: p0,
-            ln: ln
+            ln: ln,
         };
     }
 
@@ -758,7 +770,7 @@
             x: 0,
             y: 0,
             w: 0,
-            h: 0
+            h: 0,
         };
     };
 
@@ -767,7 +779,7 @@
             var r = this._rect;
             return {
                 x: r.x + r.w / 2,
-                y: r.y + r.h / 2
+                y: r.y + r.h / 2,
             };
         },
 
@@ -777,7 +789,7 @@
                 x: rect.x + center.x,
                 y: rect.y + center.y,
                 w: rect.w,
-                h: rect.h
+                h: rect.h,
             };
         },
 
@@ -788,10 +800,12 @@
 
             point = rotated(point, me.center(), -me._rotation);
 
-            return !(point.x < rect.x - margin
-                || point.y < rect.y - margin
-                || point.x > rect.x + rect.w + margin * 2
-                || point.y > rect.y + rect.h + margin * 2);
+            return !(
+                point.x < rect.x - margin ||
+                point.y < rect.y - margin ||
+                point.x > rect.x + rect.w + margin * 2 ||
+                point.y > rect.y + rect.h + margin * 2
+            );
         },
 
         // Separating Axis Theorem
@@ -799,19 +813,13 @@
         intersects: function (other) {
             var r0 = this._points();
             var r1 = other._points();
-            var axes = [
-                toAxis(r0[0], r0[1]),
-                toAxis(r0[0], r0[3])
-            ];
+            var axes = [toAxis(r0[0], r0[1]), toAxis(r0[0], r0[3])];
             var i, pr0, pr1;
 
             if (this._rotation !== other._rotation) {
                 // Only separate with r1 axis if the rotation is different,
                 // else it's enough to separate r0 and r1 with r0 axis only!
-                axes.push(
-                    toAxis(r1[0], r1[1]),
-                    toAxis(r1[0], r1[3])
-                );
+                axes.push(toAxis(r1[0], r1[1]), toAxis(r1[0], r1[3]));
             }
 
             for (i = 0; i < axes.length; ++i) {
@@ -836,12 +844,12 @@
             var center = me.center();
 
             return [
-                rotated({x: rect.x, y: rect.y}, center, angle),
-                rotated({x: rect.x + rect.w, y: rect.y}, center, angle),
-                rotated({x: rect.x + rect.w, y: rect.y + rect.h}, center, angle),
-                rotated({x: rect.x, y: rect.y + rect.h}, center, angle)
+                rotated({ x: rect.x, y: rect.y }, center, angle),
+                rotated({ x: rect.x + rect.w, y: rect.y }, center, angle),
+                rotated({ x: rect.x + rect.w, y: rect.y + rect.h }, center, angle),
+                rotated({ x: rect.x, y: rect.y + rect.h }, center, angle),
             ];
-        }
+        },
     });
 
     function coordinates(view, model, geometry) {
@@ -851,7 +859,7 @@
 
         if (!vx && !vy) {
             // if aligned center, we don't want to offset the center point
-            return {x: point.x, y: point.y};
+            return { x: point.x, y: point.y };
         }
 
         var w = geometry.w;
@@ -859,8 +867,8 @@
 
         // take in account the label rotation
         var rotation = model.rotation;
-        var dx = Math.abs(w / 2 * Math.cos(rotation)) + Math.abs(h / 2 * Math.sin(rotation));
-        var dy = Math.abs(w / 2 * Math.sin(rotation)) + Math.abs(h / 2 * Math.cos(rotation));
+        var dx = Math.abs((w / 2) * Math.cos(rotation)) + Math.abs((h / 2) * Math.sin(rotation));
+        var dy = Math.abs((w / 2) * Math.sin(rotation)) + Math.abs((h / 2) * Math.cos(rotation));
 
         // scale the unit vector (vx, vy) to get at least dx or dy equal to
         // w or h respectively (else we would calculate the distance to the
@@ -875,7 +883,7 @@
 
         return {
             x: point.x + dx,
-            y: point.y + dy
+            y: point.y + dy,
         };
     }
 
@@ -943,7 +951,7 @@
                         _hidable: false,
                         _visible: true,
                         _set: i,
-                        _idx: j
+                        _idx: j,
                     };
                 }
             }
@@ -955,9 +963,7 @@
                 var sa = a.$layout;
                 var sb = b.$layout;
 
-                return sa._idx === sb._idx
-                    ? sb._set - sa._set
-                    : sb._idx - sa._idx;
+                return sa._idx === sb._idx ? sb._set - sa._set : sb._idx - sa._idx;
             });
 
             this.update(labels);
@@ -973,7 +979,7 @@
                 label = labels[i];
                 model = label.model();
                 state = label.$layout;
-                state._hidable = model && model.display === 'auto';
+                state._hidable = model && model.display === "auto";
                 state._visible = label.visible();
                 dirty |= state._hidable;
             }
@@ -1014,7 +1020,7 @@
                     label.draw(chart, center);
                 }
             }
-        }
+        },
     };
 
     var helpers$3 = Chart.helpers;
@@ -1032,15 +1038,15 @@
             } else if (!helpers$3.isNullOrUndef(value.r)) {
                 label = value.r;
             } else {
-                label = '';
+                label = "";
                 keys = Object.keys(value);
                 for (k = 0, klen = keys.length; k < klen; ++k) {
-                    label += (k !== 0 ? ', ' : '') + keys[k] + ': ' + value[keys[k]];
+                    label += (k !== 0 ? ", " : "") + keys[k] + ": " + value[keys[k]];
                 }
             }
         }
 
-        return '' + label;
+        return "" + label;
     };
 
     /**
@@ -1049,8 +1055,8 @@
      */
 
     var defaults = {
-        align: 'center',
-        anchor: 'center',
+        align: "center",
+        anchor: "center",
         backgroundColor: null,
         borderColor: null,
         borderRadius: 0,
@@ -1064,7 +1070,7 @@
             lineHeight: 1.2,
             size: undefined,
             style: undefined,
-            weight: null
+            weight: null,
         },
         formatter: formatter,
         labels: undefined,
@@ -1075,14 +1081,14 @@
             top: 4,
             right: 4,
             bottom: 4,
-            left: 4
+            left: 4,
         },
         rotation: 0,
-        textAlign: 'start',
+        textAlign: "start",
         textStrokeColor: undefined,
         textStrokeWidth: 0,
         textShadowBlur: 0,
-        textShadowColor: undefined
+        textShadowColor: undefined,
     };
 
     /**
@@ -1090,8 +1096,8 @@
      */
 
     var helpers$4 = Chart.helpers;
-    var EXPANDO_KEY = '$datalabels';
-    var DEFAULT_KEY = '$default';
+    var EXPANDO_KEY = "$datalabels";
+    var DEFAULT_KEY = "$default";
 
     function configure(dataset, options) {
         var override = dataset.datalabels;
@@ -1114,11 +1120,7 @@
         if (keys.length) {
             keys.forEach(function (key) {
                 if (labels[key]) {
-                    configs.push(helpers$4.merge({}, [
-                        options,
-                        labels[key],
-                        {_key: key}
-                    ]));
+                    configs.push(helpers$4.merge({}, [options, labels[key], { _key: key }]));
                 }
             });
         } else {
@@ -1139,7 +1141,7 @@
 
         return {
             labels: configs,
-            listeners: listeners
+            listeners: listeners,
         };
     }
 
@@ -1203,9 +1205,9 @@
             return;
         }
 
-        if (event.type === 'mousemove') {
+        if (event.type === "mousemove") {
             label = layout.lookup(expando._labels, event);
-        } else if (event.type !== 'mouseout') {
+        } else if (event.type !== "mouseout") {
             return;
         }
 
@@ -1223,7 +1225,7 @@
         }
     }
 
-// https://github.com/chartjs/chartjs-plugin-datalabels/issues/108
+    // https://github.com/chartjs/chartjs-plugin-datalabels/issues/108
     function invalidate(chart) {
         if (chart.animating) {
             return;
@@ -1241,32 +1243,32 @@
         // No render scheduled: trigger a "lazy" render that can be canceled in case
         // of hover interactions. The 1ms duration is a workaround to make sure an
         // animation is created so the controller can stop it before any transition.
-        chart.render({duration: 1, lazy: true});
+        chart.render({ duration: 1, lazy: true });
     }
 
     Chart.defaults.global.plugins.datalabels = defaults;
 
     var plugin = {
-        id: 'datalabels',
+        id: "datalabels",
 
         beforeInit: function (chart) {
             chart[EXPANDO_KEY] = {
-                _actives: []
+                _actives: [],
             };
         },
 
         beforeUpdate: function (chart) {
             var expando = chart[EXPANDO_KEY];
             expando._listened = false;
-            expando._listeners = {};     // {<event-type>: {<dataset-index>: {<label-key>: <fn>}}}
-            expando._datasets = [];      // per dataset labels: [Label[]]
-            expando._labels = [];        // layouted labels: Label[]
+            expando._listeners = {}; // {<event-type>: {<dataset-index>: {<label-key>: <fn>}}}
+            expando._datasets = []; // per dataset labels: [Label[]]
+            expando._labels = []; // layouted labels: Label[]
         },
 
         afterDatasetUpdate: function (chart, args, options) {
             var datasetIndex = args.index;
             var expando = chart[EXPANDO_KEY];
-            var labels = expando._datasets[datasetIndex] = [];
+            var labels = (expando._datasets[datasetIndex] = []);
             var visible = chart.isDatasetVisible(datasetIndex);
             var dataset = chart.data.datasets[datasetIndex];
             var config = configure(dataset, options);
@@ -1288,14 +1290,14 @@
                         label = new Label(cfg, ctx, el, i);
                         label.$groups = {
                             _set: datasetIndex,
-                            _key: key || DEFAULT_KEY
+                            _key: key || DEFAULT_KEY,
                         };
                         label.$context = {
                             active: false,
                             chart: chart,
                             dataIndex: i,
                             dataset: dataset,
-                            datasetIndex: datasetIndex
+                            datasetIndex: datasetIndex,
                         };
 
                         label.update(label.$context);
@@ -1314,14 +1316,12 @@
                     target[event] = target[event] || {};
                     target[event][args.index] = source[event];
                     expando._listened = true;
-                }
+                },
             });
         },
 
         afterUpdate: function (chart, options) {
-            chart[EXPANDO_KEY]._labels = layout.prepare(
-                chart[EXPANDO_KEY]._datasets,
-                options);
+            chart[EXPANDO_KEY]._labels = layout.prepare(chart[EXPANDO_KEY]._datasets, options);
         },
 
         // Draw labels on top of all dataset elements
@@ -1337,11 +1337,11 @@
             // computation for users who don't implement label interactions.
             if (chart[EXPANDO_KEY]._listened) {
                 switch (event.type) {
-                    case 'mousemove':
-                    case 'mouseout':
+                    case "mousemove":
+                    case "mouseout":
                         handleMoveEvents(chart, event);
                         break;
-                    case 'click':
+                    case "click":
                         handleClickEvents(chart, event);
                         break;
                     default:
@@ -1352,7 +1352,7 @@
         afterEvent: function (chart) {
             var expando = chart[EXPANDO_KEY];
             var previous = expando._actives;
-            var actives = expando._actives = chart.lastActive || [];  // public API?!
+            var actives = (expando._actives = chart.lastActive || []); // public API?!
             var updates = utils.arrayDiff(previous, actives);
             var i, ilen, j, jlen, update, label, labels;
 
@@ -1362,7 +1362,7 @@
                     labels = update[0][EXPANDO_KEY] || [];
                     for (j = 0, jlen = labels.length; j < jlen; ++j) {
                         label = labels[j];
-                        label.$context.active = (update[1] === 1);
+                        label.$context.active = update[1] === 1;
                         label.update(label.$context);
                     }
                 }
@@ -1374,12 +1374,11 @@
             }
 
             delete expando._dirty;
-        }
+        },
     };
 
-// TODO Remove at version 1, we shouldn't automatically register plugins.
-// https://github.com/chartjs/chartjs-plugin-datalabels/issues/42
+    // TODO Remove at version 1, we shouldn't automatically register plugins.
+    // https://github.com/chartjs/chartjs-plugin-datalabels/issues/42
     Chart.plugins.unregister(plugin);
     return plugin;
-
-}));
+});

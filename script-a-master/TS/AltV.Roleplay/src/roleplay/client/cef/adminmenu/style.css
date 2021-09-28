@@ -13,7 +13,6 @@
     box-shadow: 1px 4px 22px rgba(0, 0, 0, 0.8) !important;
 }
 
-
 .adminmenu-main > hr {
     margin-top: -1rem;
     border-bottom: none;
@@ -24,7 +23,16 @@
     border-left: none;
 }
 
-.adminmenu-main, .adminmenu-player-list, .adminmenu-online-list, .adminmenu-misc-list, .adminmenu-server-list, .adminmenu-peds-list, .adminmenu-fahrzeug-list, .adminmenu-online_action-list, .adminmenu-einreise-list, ::-webkit-scrollbar {
+.adminmenu-main,
+.adminmenu-player-list,
+.adminmenu-online-list,
+.adminmenu-misc-list,
+.adminmenu-server-list,
+.adminmenu-peds-list,
+.adminmenu-fahrzeug-list,
+.adminmenu-online_action-list,
+.adminmenu-einreise-list,
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -35,7 +43,6 @@
 }
 
 li {
-
     list-style-type: none;
     margin-right: 5vh;
     font-size: 2vh;
@@ -45,6 +52,7 @@ li {
     font-size: 3vh;
     text-align: center;
     background-image: linear-gradient(90deg, rgb(0, 255, 242), rgb(0, 255, 242), rgb(0, 128, 38), rgb(0, 128, 38));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -60,6 +68,7 @@ li {
 
 .selected {
     background-image: linear-gradient(90deg, rgb(0, 255, 242), rgb(0, 255, 242), rgb(0, 128, 38), rgb(0, 128, 38));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

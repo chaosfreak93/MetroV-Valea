@@ -9,8 +9,6 @@
 //   (search for 'appearance' within the page)
 
 @mixin appearance($ap) {
-  $ap: unquote($ap);
-  @include experimental(appearance, $ap,
-          -moz, -webkit, not(-o), not(-ms), not(-khtml), official
-  );
+    $ap: unquote($ap);
+    @include experimental(appearance, $ap, -moz, -webkit, not(-o), not(-ms), not(-khtml), official);
 }

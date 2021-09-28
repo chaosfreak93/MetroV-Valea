@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 let playerTattoos = undefined;
 export function loadClipsetAsync(clipset) {
     return new Promise((resolve, reject)=>{
@@ -15,7 +15,7 @@ export function loadClipsetAsync(clipset) {
 }
 export function loadModelAsync(model) {
     return new Promise((resolve, reject)=>{
-        if (typeof model === 'string') {
+        if (typeof model === "string") {
             model = alt.hash(model);
         }
         if (native.hasModelLoaded(model)) return resolve(true);
@@ -98,18 +98,6 @@ export function gotoCoords(movePos, moveRot) {
         }, 0);
     });
 }
-export function setIntoVehicle(vehicle) {
-    return new Promise((resolve, reject)=>{
-        if (native.isPedSittingInVehicle(alt.Player.local.scriptID, vehicle)) return resolve(true);
-        native.setPedIntoVehicle(alt.Player.local.scriptID, vehicle, -1);
-        let interval = alt.setInterval(()=>{
-            if (native.isPedSittingInVehicle(alt.Player.local.scriptID, vehicle)) {
-                alt.clearInterval(interval);
-                return resolve(true);
-            }
-        }, 0);
-    });
-}
 export function isCollisionLoaded(player) {
     return new Promise((resolve, reject)=>{
         if (native.hasCollisionLoadedAroundEntity(player.scriptID)) return resolve(true);
@@ -158,7 +146,6 @@ export default {
     loadStreamedTextureDictAsync,
     loadModelAsync,
     isCollisionLoaded,
-    setIntoVehicle,
     clearTattoos,
     setTattoo,
     setCorrectTattoos,

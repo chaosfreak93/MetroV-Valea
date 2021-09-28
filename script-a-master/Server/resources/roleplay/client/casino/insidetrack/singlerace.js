@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { getScaleformReturnValueIntAsync, getScaleformReturnValueBoolAsync, loadScaleformMovieAsync } from '../../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { getScaleformReturnValueIntAsync, getScaleformReturnValueBoolAsync, loadScaleformMovieAsync } from "../../utilities";
 let scaleform = null;
 let ChooseHorseVisible = false;
 let BetVisible = false;
@@ -611,7 +611,7 @@ let HorseStyles = [
         16751169,
         16772294,
         16777215
-    ]
+    ], 
 ];
 class SingleRace {
     static async loadSingleTrack() {
@@ -789,7 +789,7 @@ class SingleRace {
     }
     static startRace() {
         CurrentSoundId = native.getSoundId();
-        native.playSoundFrontend(CurrentSoundId, 'race_loop', 'dlc_vw_casino_inside_track_betting_single_event_sounds', false);
+        native.playSoundFrontend(CurrentSoundId, "race_loop", "dlc_vw_casino_inside_track_betting_single_event_sounds", false);
         SingleRace.GenerateHorsesOrder();
         CurrentWinner = HorsesPositions[0];
         native.beginScaleformMovieMethod(scaleform, "START_RACE");

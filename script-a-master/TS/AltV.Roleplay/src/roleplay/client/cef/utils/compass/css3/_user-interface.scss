@@ -4,16 +4,13 @@
 // http://www.w3.org/TR/2000/WD-css3-userint-20000216
 @import "shared";
 
-
 // This property controls the selection model and granularity of an element.
 //
 // @param $select
 //   [ none | text | toggle | element | elements | all | inherit ]
 @mixin user-select($select) {
-  $select: unquote($select);
-  @include experimental(user-select, $select,
-          -moz, -webkit, not(-o), -ms, -khtml, official
-  );
+    $select: unquote($select);
+    @include experimental(user-select, $select, -moz, -webkit, not(-o), -ms, -khtml, official);
 }
 
 // Style the html5 input placeholder in browsers that support it.
@@ -40,16 +37,16 @@
 //       }
 //     }
 @mixin input-placeholder {
-  &:-ms-input-placeholder {
-    @content;
-  }
-  &:-moz-placeholder {
-    @content;
-  }
-  &::-moz-placeholder {
-    @content;
-  }
-  &::-webkit-input-placeholder {
-    @content;
-  }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
 }

@@ -1,29 +1,29 @@
 window.FontAwesomeKitConfig = {
-    "asyncLoading": {
-        "enabled": false
+    asyncLoading: {
+        enabled: false
     },
-    "autoA11y": {
-        "enabled": true
+    autoA11y: {
+        enabled: true
     },
-    "baseUrl": "https://ka-f.fontawesome.com",
-    "baseUrlKit": "https://kit.fontawesome.com",
-    "detectConflictsUntil": null,
-    "iconUploads": {
+    baseUrl: "https://ka-f.fontawesome.com",
+    baseUrlKit: "https://kit.fontawesome.com",
+    detectConflictsUntil: null,
+    iconUploads: {
     },
-    "id": 48090306,
-    "license": "free",
-    "method": "css",
-    "minify": {
-        "enabled": true
+    id: 48090306,
+    license: "free",
+    method: "css",
+    minify: {
+        enabled: true
     },
-    "token": "f25e534c46",
-    "v4FontFaceShim": {
-        "enabled": true
+    token: "f25e534c46",
+    v4FontFaceShim: {
+        enabled: true
     },
-    "v4shim": {
-        "enabled": true
+    v4shim: {
+        enabled: true
     },
-    "version": "5.15.3"
+    version: "5.15.3"
 };
 !function(t) {
     "function" == typeof define && define.amd ? define("kit-loader", t) : t();
@@ -257,7 +257,7 @@ window.FontAwesomeKitConfig = {
                 t(e);
             }).catch(e);
             else if ("function" == typeof r) {
-                var o = new r;
+                var o = new r();
                 o.addEventListener("loadend", function() {
                     this.responseText ? t(this.responseText) : e(new Error(""));
                 });
@@ -282,20 +282,20 @@ window.FontAwesomeKitConfig = {
                 /(url\("?)\.\.\/\.\.\/\.\./g,
                 function(t, n) {
                     return "".concat(n).concat(e);
-                }
+                }, 
             ],
             [
                 /(url\("?)\.\.\/webfonts/g,
                 function(t, r) {
                     return "".concat(r).concat(e, "/releases/v").concat(n, "/webfonts");
-                }
+                }, 
             ],
             [
                 /(url\("?)https:\/\/kit-free([^.])*\.fontawesome\.com/g,
                 function(t, n) {
                     return "".concat(n).concat(e);
-                }
-            ]
+                }, 
+            ], 
         ].forEach(function(t) {
             var e = o(t, 2), n = e[0], i = e[1];
             r = r.replace(n, i);
@@ -408,7 +408,7 @@ window.FontAwesomeKitConfig = {
     try {
         if (window.FontAwesomeKitConfig) {
             var x = window.FontAwesomeKitConfig, M = {
-                detectingConflicts: x.detectConflictsUntil && new Date <= new Date(x.detectConflictsUntil),
+                detectingConflicts: x.detectConflictsUntil && new Date() <= new Date(x.detectConflictsUntil),
                 detectionIgnoreAttr: "data-fa-detection-ignore",
                 fetch: window.fetch,
                 token: x.token,

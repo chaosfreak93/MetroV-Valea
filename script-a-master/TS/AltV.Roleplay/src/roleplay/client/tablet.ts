@@ -1,13 +1,13 @@
 //TODO: Rework Tablet
 
-import * as alt from 'alt-client';
-import * as game from 'natives';
+import * as alt from "alt-client";
+import * as game from "natives";
 
 let tabletBrowser: alt.WebView = null;
 let lastInteract: number = 0;
 let tabletReady = false;
 
-alt.on('keyup', (key) => {
+alt.on("keyup", (key) => {
     if (!canInteract) return;
     lastInteract = Date.now();
     if (key == 0x73) {
@@ -20,33 +20,61 @@ alt.on('keyup', (key) => {
 });
 
 function canInteract() {
-    return lastInteract + 1000 < Date.now()
+    return lastInteract + 1000 < Date.now();
 }
 
 let tablet = null;
 
-alt.onServer('Client:Tablet:createCEF', () => {
+alt.onServer("Client:Tablet:createCEF", () => {
     openTabletCEF();
     let coords = game.getEntityCoords(alt.Player.local.scriptID, true);
     let bone = game.getPedBoneIndex(alt.Player.local.scriptID, 28422);
     if (tablet) return;
-    let tabletModel = alt.hash('prop_cs_tablet');
+    let tabletModel = alt.hash("prop_cs_tablet");
     game.requestAnimDict("cellphone@");
     game.requestModel(tabletModel);
     let animInterval = alt.setInterval(() => {
         if (!game.hasAnimDictLoaded("cellphone@")) return;
-        game.taskPlayAnim(alt.Player.local.scriptID, "cellphone@", "cellphone_cellphone_intro", 1.0, -1, -1, 50, 0, false, false, false);
+        game.taskPlayAnim(
+            alt.Player.local.scriptID,
+            "cellphone@",
+            "cellphone_cellphone_intro",
+            1.0,
+            -1,
+            -1,
+            50,
+            0,
+            false,
+            false,
+            false,
+        );
         alt.clearInterval(animInterval);
     }, 0);
     let interval = alt.setInterval(() => {
         if (!game.hasModelLoaded(tabletModel)) return;
         tablet = game.createObject(tabletModel, coords.x, coords.y, coords.z, true, true, false);
-        game.attachEntityToEntity(tablet, alt.Player.local.scriptID, bone, 0, 0, 0, 0, 0, 0, true, true, false, false, 2, true);
+        game.attachEntityToEntity(
+            tablet,
+            alt.Player.local.scriptID,
+            bone,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            true,
+            true,
+            false,
+            false,
+            2,
+            true,
+        );
         alt.clearInterval(interval);
     }, 0);
 });
 
-alt.onServer('Client:Tablet:finaly', () => {
+alt.onServer("Client:Tablet:finaly", () => {
     if (tabletBrowser != null) {
         let interval = alt.setInterval(() => {
             if (tabletReady) {
@@ -117,17 +145,43 @@ alt.onServer("Client:Tablet:SetFactionAppContent", (dutyMemberCount, dispatchCou
     }
 });
 
-alt.onServer("Client:Tablet:SetLSPDAppPersonSearchData", (charName, gender, birthdate, birthplace, address, job, mainBankAcc, firstJoinDate) => {
-    if (tabletBrowser != null) {
-        tabletBrowser.emit("CEF:Tablet:SetLSPDAppPersonSearchData", charName, gender, birthdate, birthplace, address, job, mainBankAcc, firstJoinDate);
-    }
-});
+alt.onServer(
+    "Client:Tablet:SetLSPDAppPersonSearchData",
+    (charName, gender, birthdate, birthplace, address, job, mainBankAcc, firstJoinDate) => {
+        if (tabletBrowser != null) {
+            tabletBrowser.emit(
+                "CEF:Tablet:SetLSPDAppPersonSearchData",
+                charName,
+                gender,
+                birthdate,
+                birthplace,
+                address,
+                job,
+                mainBankAcc,
+                firstJoinDate,
+            );
+        }
+    },
+);
 
-alt.onServer("Client:Tablet:SetLSPDAppSearchVehiclePlateData", (owner, name, manufactor, buydate, trunk, maxfuel, tax, fueltype) => {
-    if (tabletBrowser != null) {
-        tabletBrowser.emit("CEF:Tablet:SetLSPDAppSearchVehiclePlateData", owner, name, manufactor, buydate, trunk, maxfuel, tax, fueltype);
-    }
-});
+alt.onServer(
+    "Client:Tablet:SetLSPDAppSearchVehiclePlateData",
+    (owner, name, manufactor, buydate, trunk, maxfuel, tax, fueltype) => {
+        if (tabletBrowser != null) {
+            tabletBrowser.emit(
+                "CEF:Tablet:SetLSPDAppSearchVehiclePlateData",
+                owner,
+                name,
+                manufactor,
+                buydate,
+                trunk,
+                maxfuel,
+                tax,
+                fueltype,
+            );
+        }
+    },
+);
 
 alt.onServer("Client:Tablet:SetLSPDAppLicenseSearchData", (charName, licArray) => {
     if (tabletBrowser != null) {
@@ -163,14 +217,18 @@ alt.onServer("Client:Tablet:sendDispatchSound", (filePath) => {
     if (tabletBrowser != null) {
         tabletBrowser.emit("CEF:Tablet:playDispatchSound", filePath);
     }
-})
+});
 
-alt.onServer('Client:Tablet:closeCEF', () => {
+alt.onServer("Client:Tablet:closeCEF", () => {
     closeTabletCEF();
 });
 
 let openTabletCEF = function () {
-    if (tabletBrowser == null && alt.Player.local.getMeta("IsCefOpen") == false && alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true) {
+    if (
+        tabletBrowser == null &&
+        alt.Player.local.getMeta("IsCefOpen") == false &&
+        alt.Player.local.getSyncedMeta("PLAYER_SPAWNED") == true
+    ) {
         alt.showCursor(true);
         alt.toggleGameControls(false);
         tabletBrowser = new alt.WebView("http://resource/client/cef/tablet/index.html");
@@ -205,7 +263,7 @@ let openTabletCEF = function () {
         tabletBrowser.on("Client:Tablet:sendDispatchToFaction", sendDispatchToFaction);
         tabletBrowser.on("Client:Tablet:DeleteFactionDispatch", DeleteFactionDispatch);
     }
-}
+};
 
 function DeleteFactionDispatch(factionId, senderId) {
     if (factionId <= 0 || senderId < 0) return;
@@ -231,13 +289,27 @@ function AppStoreInstallUninstallApp(action, appname) {
 function BankingAppnewTransaction(targetBankNumber, transactiontext, moneyAmount) {
     if (!canInteract) return;
     lastInteract = Date.now();
-    alt.emitServer("Server:Tablet:BankingAppNewTransaction", parseInt(targetBankNumber), transactiontext, parseInt(moneyAmount));
+    alt.emitServer(
+        "Server:Tablet:BankingAppNewTransaction",
+        parseInt(targetBankNumber),
+        transactiontext,
+        parseInt(moneyAmount),
+    );
 }
 
 function EventsAppNewEntry(title, callNumber, eventDate, Time, location, eventType, information) {
     if (!canInteract) return;
     lastInteract = Date.now();
-    alt.emitServer("Server:Tablet:EventsAppNewEntry", title, callNumber, eventDate, Time, location, eventType, information);
+    alt.emitServer(
+        "Server:Tablet:EventsAppNewEntry",
+        title,
+        callNumber,
+        eventDate,
+        Time,
+        location,
+        eventType,
+        information,
+    );
 }
 
 function LifeinvaderAppNewEntry(title, callNumber, information) {
@@ -289,8 +361,22 @@ function CompanyAppRankAction(rankId, charId) {
 function FactionManagerAppInviteNewMember(charName, dienstnummer, factionId) {
     if (!canInteract) return;
     lastInteract = Date.now();
-    if (charName == "" || dienstnummer <= 0 || factionId <= 0 || dienstnummer == null || dienstnummer == undefined || factionId == undefined || factionId == null) return;
-    alt.emitServer("Server:Tablet:FactionManagerAppInviteNewMember", charName, parseInt(dienstnummer), parseInt(factionId));
+    if (
+        charName == "" ||
+        dienstnummer <= 0 ||
+        factionId <= 0 ||
+        dienstnummer == null ||
+        dienstnummer == undefined ||
+        factionId == undefined ||
+        factionId == null
+    )
+        return;
+    alt.emitServer(
+        "Server:Tablet:FactionManagerAppInviteNewMember",
+        charName,
+        parseInt(dienstnummer),
+        parseInt(factionId),
+    );
 }
 
 function FactionManagerRankAction(action, charId) {

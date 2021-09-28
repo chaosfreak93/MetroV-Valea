@@ -1,21 +1,21 @@
 // Footers
 footer {
-  &.page-footer {
-    bottom: 0;
-    color: $white-base;
+    &.page-footer {
+        bottom: 0;
+        color: $white-base;
 
-    .container-fluid {
-      width: auto;
-    }
+        .container-fluid {
+            width: auto;
+        }
 
-    .footer-copyright {
-      overflow: hidden;
-      color: $footer-copyright-color;
-      background-color: $footer-copyright-bg-color;
-    }
+        .footer-copyright {
+            overflow: hidden;
+            color: $footer-copyright-color;
+            background-color: $footer-copyright-bg-color;
+        }
 
-    a {
-      color: $white-base;
+        a {
+            color: $white-base;
+        }
     }
-  }
 }

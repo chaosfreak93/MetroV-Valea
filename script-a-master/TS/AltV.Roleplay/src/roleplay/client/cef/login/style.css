@@ -1,26 +1,26 @@
 @font-face {
-    font-family: 'PEL';
-    src: url('../utils/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-family: "PEL";
+    src: url("../utils/fonts/Poppins-ExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PM';
-    src: url('../utils/fonts/Poppins-Medium.ttf') format('truetype');
+    font-family: "PM";
+    src: url("../utils/fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PT';
-    src: url('../utils/fonts/Poppins-Thin.ttf') format('truetype');
+    font-family: "PT";
+    src: url("../utils/fonts/Poppins-Thin.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSR';
-    src: url('../utils/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-family: "OSR";
+    src: url("../utils/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'OSL';
-    src: url('../utils/fonts/OpenSans-Light.ttf') format('truetype');
+    font-family: "OSL";
+    src: url("../utils/fonts/OpenSans-Light.ttf") format("truetype");
 }
 
 body {
@@ -158,7 +158,12 @@ p.logintitle {
     width: 300px;
 }
 
-#email, #password, #registername, #registeremail, #registerpassword, #registerpasswordrepeat {
+#email,
+#password,
+#registername,
+#registeremail,
+#registerpassword,
+#registerpasswordrepeat {
     border: 1px solid #7c0000;
     border-radius: 30px;
 }
@@ -346,7 +351,6 @@ div#SpawnSelectArea > ul > li:hover {
     font-weight: bold;
 }
 
-
 /* Char death Dropdown */
 
 div#chardeatharea > .dropdown > .dropdown-caption > i.fas.fa-angle-double-down.dropdown {
@@ -379,7 +383,7 @@ div#chardeatharea > .dropdown .dropdown-caption {
     display: block;
     box-sizing: border-box;
     padding: 15px;
-    transition: all .25 ease;
+    transition: all 0.25 ease;
 }
 
 div#chardeatharea > .dropdown .dropdown-selector {
@@ -397,8 +401,8 @@ div#chardeatharea > .dropdown .dropdown-content {
     z-index: 2;
     box-sizing: border-box;
     max-height: 0;
-    opacity: .5;
-    transition: all .25s ease;
+    opacity: 0.5;
+    transition: all 0.25s ease;
     overflow: hidden;
 }
 
@@ -515,7 +519,7 @@ div#chardeatharea {
 }
 
 .close {
-    opacity: .8;
+    opacity: 0.8;
     color: #9c9c9c;
     text-shadow: 0 1px 0 #b7b7b7;
     transition: all 0.3s ease-in-out;

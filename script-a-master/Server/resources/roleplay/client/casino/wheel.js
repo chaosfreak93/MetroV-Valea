@@ -1,14 +1,14 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadModelAsync } from '../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync } from "../utilities";
 let wheelCoords = new alt.Vector3(1111.0593, 229.8342, -50.38);
 let wheelModel = null;
 let interval = null;
 let isRolling = false;
 class Wheel {
     static async loadWheel() {
-        await loadModelAsync('vw_prop_vw_luckywheel_02a');
-        wheelModel = native.createObject(alt.hash('vw_prop_vw_luckywheel_02a'), wheelCoords.x, wheelCoords.y, wheelCoords.z, false, false, true);
+        await loadModelAsync("vw_prop_vw_luckywheel_02a");
+        wheelModel = native.createObject(alt.hash("vw_prop_vw_luckywheel_02a"), wheelCoords.x, wheelCoords.y, wheelCoords.z, false, false, true);
         native.setEntityHeading(wheelModel, 0);
         native.freezeEntityPosition(wheelModel, true);
     }
@@ -67,7 +67,7 @@ class Wheel {
         interval = null;
         native.deleteObject(wheelModel);
         wheelModel = null;
-        native.setModelAsNoLongerNeeded(alt.hash('vw_prop_vw_luckywheel_02a'));
+        native.setModelAsNoLongerNeeded(alt.hash("vw_prop_vw_luckywheel_02a"));
     }
 }
 export { Wheel as default };

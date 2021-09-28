@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadClipsetAsync } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadClipsetAsync } from "./utilities";
 
 const player: alt.Player = alt.Player.local;
 let enabled: boolean = false;
@@ -38,12 +38,12 @@ export default class Crouch {
 
     static checkCrouch(): void {
         native.setPedMovementClipset(player.scriptID, movementClipSet2, clipSetSwitchTime);
-        native.disableControlAction(0,22,true); //Jump
-        native.setPedUsingActionMode(player.scriptID, false, -1, 'DEFAULT_ACTION');
+        native.disableControlAction(0, 22, true); //Jump
+        native.setPedUsingActionMode(player.scriptID, false, -1, "DEFAULT_ACTION");
 
-        if(native.isAimCamActive()){
+        if (native.isAimCamActive()) {
             native.setPedStrafeClipset(player.scriptID, strafeClipSet);
-            native.setPedUsingActionMode(player.scriptID, false, -1, 'DEFAULT_ACTION');
+            native.setPedUsingActionMode(player.scriptID, false, -1, "DEFAULT_ACTION");
         }
     }
 }

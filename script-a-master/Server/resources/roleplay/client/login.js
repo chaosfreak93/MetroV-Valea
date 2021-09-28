@@ -1,8 +1,8 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import IPLManager from './iplmanager';
+import * as alt from "alt-client";
+import * as native from "natives";
+import IPLManager from "./iplmanager";
 import { setAudioData, setMinimapData } from "./miscs";
-import { isCollisionLoaded, loadModelAsync } from './utilities';
+import { isCollisionLoaded, loadModelAsync } from "./utilities";
 let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
@@ -11,7 +11,7 @@ let lastInteract = 0;
 class LoginHandler {
     static async CreateCEF() {
         if (loginBrowser == null) {
-            loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
+            loginCam = native.createCameraWithParams(alt.hash("DEFAULT_SCRIPTED_CAMERA"), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
             native.setCamActive(loginCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
@@ -78,6 +78,25 @@ class LoginHandler {
     }
     static DestroyCEF() {
         if (loginBrowser != null) {
+            loginBrowser.off("Client:Login:cefIsReady", ()=>{
+            });
+            loginBrowser.off("Client:Login:sendLoginDataToServer", ()=>{
+            });
+            loginBrowser.off("Client:Login:resetPW", ()=>{
+            });
+            loginBrowser.off("Client:Register:sendRegisterDataToServer", ()=>{
+            });
+            loginBrowser.off("Client:Charcreator:OpenCreator", ()=>{
+            });
+            loginBrowser.off("Client:Login:DestroyCEF", ()=>{
+            });
+            loginBrowser.off("Client:Charselector:KillCharacter", ()=>{
+            });
+            loginBrowser.off("Client:Charselector:PreviewCharacter", ()=>{
+            });
+            loginBrowser.off("Client:Charselector:spawnChar", ()=>{
+            });
+            loginBrowser.unfocus();
             loginBrowser.destroy();
         }
         loginBrowser = null;
@@ -128,8 +147,8 @@ class LoginHandler {
         LoginHandler.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
     }
     static SaveLoginCredentialsToStorage(name, discordId) {
-        alt.LocalStorage.set('username', name);
-        alt.LocalStorage.set('discordId', discordId);
+        alt.LocalStorage.set("username", name);
+        alt.LocalStorage.set("discordId", discordId);
         alt.LocalStorage.save();
     }
     static showError(msg) {
@@ -148,7 +167,7 @@ class LoginHandler {
                     loginCam = null;
                 }
                 native.setEntityAlpha(alt.Player.local.scriptID, 0, false);
-                loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+                loginCam = native.createCameraWithParams(alt.hash("DEFAULT_SCRIPTED_CAMERA"), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
                 native.setCamActive(loginCam, true);
                 native.renderScriptCams(true, false, 0, true, false, 0);
             }
@@ -161,11 +180,15 @@ class LoginHandler {
     }
     static async SwitchIn() {
         let player = alt.Player.local;
+        alt.log("Switch In called");
         await isCollisionLoaded(alt.Player.local);
+        alt.log("Collision Loaded");
         alt.setTimeout(async ()=>{
             let interiorID = native.getInteriorAtCoords(player.pos.x, player.pos.y, player.pos.z);
             native.refreshInterior(interiorID);
+            alt.log("Interior refreshed");
             await isCollisionLoaded(alt.Player.local);
+            alt.log("Collision Loaded");
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
             native.switchInPlayer(player.scriptID);
             native.freezeEntityPosition(alt.Player.local.scriptID, false);
@@ -190,10 +213,10 @@ class LoginHandler {
             loginPedHandle = null;
         }
         if (gender == 1) {
-            loginModelHash = alt.hash('mp_f_freemode_01');
+            loginModelHash = alt.hash("mp_f_freemode_01");
             await loadModelAsync(loginModelHash);
         } else if (gender == 0) {
-            loginModelHash = alt.hash('mp_m_freemode_01');
+            loginModelHash = alt.hash("mp_m_freemode_01");
             await loadModelAsync(loginModelHash);
         }
         loginPedHandle = native.createPed(4, loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);

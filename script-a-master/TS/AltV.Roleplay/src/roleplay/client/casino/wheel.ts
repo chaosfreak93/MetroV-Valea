@@ -1,17 +1,25 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { gotoCoords, loadAnimDictAsync, loadModelAsync } from '../utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { gotoCoords, loadAnimDictAsync, loadModelAsync } from "../utilities";
 
-let wheelCoords: alt.Vector3 = new alt.Vector3(1111.0593, 229.8342, -50.3800);
+let wheelCoords: alt.Vector3 = new alt.Vector3(1111.0593, 229.8342, -50.38);
 let wheelModel: number = null;
 let interval: number = null;
 let isRolling: boolean = false;
 
 export default class Wheel {
     static async loadWheel(): Promise<void> {
-        await loadModelAsync('vw_prop_vw_luckywheel_02a');
+        await loadModelAsync("vw_prop_vw_luckywheel_02a");
 
-        wheelModel = native.createObject(alt.hash('vw_prop_vw_luckywheel_02a'), wheelCoords.x, wheelCoords.y, wheelCoords.z, false, false, true);
+        wheelModel = native.createObject(
+            alt.hash("vw_prop_vw_luckywheel_02a"),
+            wheelCoords.x,
+            wheelCoords.y,
+            wheelCoords.z,
+            false,
+            false,
+            true,
+        );
         native.setEntityHeading(wheelModel, 0);
         native.freezeEntityPosition(wheelModel, true);
     }
@@ -43,8 +51,8 @@ export default class Wheel {
         let speedIntCnt = 1;
         let rollspeed = 1.0;
         let winAngle = (priceIndex - 1) * 18;
-        let rollAngle = winAngle + (360 * 8);
-        let midLength = (rollAngle / 2);
+        let rollAngle = winAngle + 360 * 8;
+        let midLength = rollAngle / 2;
         let intCnt = 0;
         interval = alt.everyTick(() => {
             if (speedIntCnt > 0) {
@@ -75,6 +83,6 @@ export default class Wheel {
         interval = null;
         native.deleteObject(wheelModel);
         wheelModel = null;
-        native.setModelAsNoLongerNeeded(alt.hash('vw_prop_vw_luckywheel_02a'));
+        native.setModelAsNoLongerNeeded(alt.hash("vw_prop_vw_luckywheel_02a"));
     }
 }

@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadAnimDictAsync } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadAnimDictAsync } from "./utilities";
 
 const player: alt.Player = alt.Player.local;
 let active: boolean = false;
@@ -54,7 +54,6 @@ export default class Fingerpointing {
 
     static process() {
         if (active) {
-
             native.isTaskMoveNetworkActive(player.scriptID);
 
             let camPitch = Fingerpointing.getRelativePitch();
@@ -78,29 +77,47 @@ export default class Fingerpointing {
             }
             camHeading = (camHeading + 180.0) / 360.0;
 
-            let coords = native.getOffsetFromEntityInWorldCoords(player.scriptID, (cosCamHeading * -0.2) - (sinCamHeading *
-                (0.4 * camHeading + 0.3)), (sinCamHeading * -0.2) + (cosCamHeading * (0.4 * camHeading + 0.3)), 0.6);
+            let coords = native.getOffsetFromEntityInWorldCoords(
+                player.scriptID,
+                cosCamHeading * -0.2 - sinCamHeading * (0.4 * camHeading + 0.3),
+                sinCamHeading * -0.2 + cosCamHeading * (0.4 * camHeading + 0.3),
+                0.6,
+            );
 
-            let ray = native.startShapeTestCapsule(coords.x, coords.y, coords.z - 0.2, coords.x, coords.y, coords.z + 0.2, 1.0, 95, player.scriptID, 7);
+            let ray = native.startShapeTestCapsule(
+                coords.x,
+                coords.y,
+                coords.z - 0.2,
+                coords.x,
+                coords.y,
+                coords.z + 0.2,
+                1.0,
+                95,
+                player.scriptID,
+                7,
+            );
             let [_, blocked, coords1, coords2, entity] = native.getShapeTestResult(ray, false, null, null, null);
 
             native.setTaskMoveNetworkSignalFloat(player.scriptID, "Pitch", camPitch);
             native.setTaskMoveNetworkSignalFloat(player.scriptID, "Heading", camHeading * -1.0 + 1.0);
             native.setTaskMoveNetworkSignalBool(player.scriptID, "isBlocked", blocked);
-            native.setTaskMoveNetworkSignalBool(player.scriptID, "isFirstPerson", native._0xEE778F8C7E1142E2(native._0x19CAFA3C87F7C2FF()) === 4);
-
+            native.setTaskMoveNetworkSignalBool(
+                player.scriptID,
+                "isFirstPerson",
+                native._0xEE778F8C7E1142E2(native._0x19CAFA3C87F7C2FF()) === 4,
+            );
         }
     }
 }
 
-alt.on('keydown', (key) => {
-    if (key == 'B'.charCodeAt(0)) {
+alt.on("keydown", (key) => {
+    if (key == "B".charCodeAt(0)) {
         Fingerpointing.start();
     }
 });
 
-alt.on('keyup', (key) => {
-    if (key == 'B'.charCodeAt(0)) {
+alt.on("keyup", (key) => {
+    if (key == "B".charCodeAt(0)) {
         Fingerpointing.stop();
     }
 });

@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 
 let markers: any[] = [];
 
@@ -20,12 +20,25 @@ export default class MarkerManager {
                 green: markerArray[i].green,
                 blue: markerArray[i].blue,
                 alpha: markerArray[i].alpha,
-                bobUpAndDown: markerArray[i].bobUpAndDown
+                bobUpAndDown: markerArray[i].bobUpAndDown,
             });
         }
     }
 
-    static addMarker(type: number, x: number, y: number, z: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean): void {
+    static addMarker(
+        type: number,
+        x: number,
+        y: number,
+        z: number,
+        scaleX: number,
+        scaleY: number,
+        scaleZ: number,
+        red: number,
+        green: number,
+        blue: number,
+        alpha: number,
+        bobUpAndDown: boolean,
+    ): void {
         markers.push({
             type: type,
             x: x,
@@ -38,7 +51,7 @@ export default class MarkerManager {
             green: green,
             blue: blue,
             alpha: alpha,
-            bobUpAndDown: bobUpAndDown
+            bobUpAndDown: bobUpAndDown,
         });
     }
 
@@ -50,7 +63,32 @@ export default class MarkerManager {
     static drawMarker(): void {
         if (markers.length >= 1) {
             for (var i = 0; i < markers.length; i++) {
-                native.drawMarker(markers[i].type, markers[i].x, markers[i].y, markers[i].z, 0, 0, 0, 0, 0, 0, markers[i].scaleX, markers[i].scaleY, markers[i].scaleZ, markers[i].red, markers[i].green, markers[i].blue, markers[i].alpha, markers[i].bobUpAndDown, false, 2, false, undefined, undefined, false);
+                native.drawMarker(
+                    markers[i].type,
+                    markers[i].x,
+                    markers[i].y,
+                    markers[i].z,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    markers[i].scaleX,
+                    markers[i].scaleY,
+                    markers[i].scaleZ,
+                    markers[i].red,
+                    markers[i].green,
+                    markers[i].blue,
+                    markers[i].alpha,
+                    markers[i].bobUpAndDown,
+                    false,
+                    2,
+                    false,
+                    undefined,
+                    undefined,
+                    false,
+                );
             }
         }
     }

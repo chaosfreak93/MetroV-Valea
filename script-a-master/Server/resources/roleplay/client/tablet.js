@@ -1,10 +1,10 @@
 //TODO: Rework Tablet
-import * as alt from 'alt-client';
-import * as game from 'natives';
+import * as alt from "alt-client";
+import * as game from "natives";
 let tabletBrowser = null;
 let lastInteract = 0;
 let tabletReady = false;
-alt.on('keyup', (key)=>{
+alt.on("keyup", (key)=>{
     if (!canInteract) return;
     lastInteract = Date.now();
     if (key == 115) {
@@ -19,12 +19,12 @@ function canInteract() {
     return lastInteract + 1000 < Date.now();
 }
 let tablet = null;
-alt.onServer('Client:Tablet:createCEF', ()=>{
+alt.onServer("Client:Tablet:createCEF", ()=>{
     openTabletCEF();
     let coords = game.getEntityCoords(alt.Player.local.scriptID, true);
     let bone = game.getPedBoneIndex(alt.Player.local.scriptID, 28422);
     if (tablet) return;
-    let tabletModel = alt.hash('prop_cs_tablet');
+    let tabletModel = alt.hash("prop_cs_tablet");
     game.requestAnimDict("cellphone@");
     game.requestModel(tabletModel);
     let animInterval = alt.setInterval(()=>{
@@ -39,7 +39,7 @@ alt.onServer('Client:Tablet:createCEF', ()=>{
         alt.clearInterval(interval);
     }, 0);
 });
-alt.onServer('Client:Tablet:finaly', ()=>{
+alt.onServer("Client:Tablet:finaly", ()=>{
     if (tabletBrowser != null) {
         let interval = alt.setInterval(()=>{
             if (tabletReady) {
@@ -139,7 +139,7 @@ alt.onServer("Client:Tablet:sendDispatchSound", (filePath)=>{
         tabletBrowser.emit("CEF:Tablet:playDispatchSound", filePath);
     }
 });
-alt.onServer('Client:Tablet:closeCEF', ()=>{
+alt.onServer("Client:Tablet:closeCEF", ()=>{
     closeTabletCEF();
 });
 let openTabletCEF = function() {
