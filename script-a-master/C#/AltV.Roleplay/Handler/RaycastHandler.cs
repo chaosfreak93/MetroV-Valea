@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using AltV.Net;
@@ -79,7 +79,7 @@ namespace Altv_Roleplay.Handler
                     if (player.IsInVehicle && (player.Seat == 1)) {
                         veh.GetStreamSyncedMetaData("passengerCharId", out int passengerCharId);
 
-                        if (passengerCharId != null && passengerCharId != 0) {
+                        if (passengerCharId != 0) {
                             interactHTML +=
                                 "<li class='interactitem' id='InteractionMenu-giveCar' data-action='giveCar' data-actionstring='Fahrzeug an den Beifahrer übertragen'><img src='../utils/img/inventory/Fahrzeugschluessel.png'></li>";
                         }
