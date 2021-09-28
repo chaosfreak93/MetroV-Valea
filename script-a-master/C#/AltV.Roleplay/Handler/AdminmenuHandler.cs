@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using AltV.Net;
 using AltV.Net.Async;
