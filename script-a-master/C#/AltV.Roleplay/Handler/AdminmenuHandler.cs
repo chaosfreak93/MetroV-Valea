@@ -379,7 +379,7 @@ namespace Altv_Roleplay.Handler
                                 var veh = Alt.CreateVehicle(inputvalue, player.Position, player.Rotation);
                                 veh.EngineOn = true;
                                 veh.LockState = VehicleLockState.Unlocked;
-                                player.EmitLocked("Client:Utilities:setIntoVehicle", veh);
+                                player.SetIntoVehicle(veh, 1);
                                 DiscordLog.DiscordLog.SendEmbed("adminmenu", "Adminmenu Logs",
                                     Characters.GetCharacterName((int) player.GetCharacterMetaId()) + " hat sich das **Fahrzeug " + inputvalue +
                                     " gespawnt**");
