@@ -94,7 +94,7 @@ namespace Altv_Roleplay.Handler
             }
         }
 
-        public static string GetGarageParkInString(IPlayer player, IReadOnlyCollection<Server_Garage_Slots> garageSlots, int charId, int garageId,
+        public static string GetGarageParkInString(IPlayer player, IEnumerable<Server_Garage_Slots> garageSlots, int charId, int garageId,
             bool isFaction, string factionShort, int factionId) {
             if (player == null || !player.Exists || !garageSlots.Any() || garageId == 0 || charId == 0) return "undefined";
 
