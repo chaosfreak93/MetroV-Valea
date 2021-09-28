@@ -407,10 +407,23 @@ namespace Altv_Roleplay.Model
             return JsonSerializer.Serialize(items);
         }
 
-        public static string GetCharacterTabletBankingAppOwnerInfo(int charId) {
+        public static string GetCharacterTabletMainBankingAppOwnerInfo(int charId) {
             if (charId == 0) return "";
 
             var items = CharactersBank.CharactersBank_.Where(x => x.charId == charId && x.mainAccount).Select(x => new {
+                charname = Characters.GetCharacterName(charId),
+                banknumber = x.accountNumber,
+                bankmoney = x.money,
+                banksubdivision = x.createZone
+            }).ToList();
+
+            return JsonSerializer.Serialize(items);
+        }
+        
+        public static string GetCharacterTabletSecondBankingAppOwnerInfo(int charId) {
+            if (charId == 0) return "";
+
+            var items = CharactersBank.CharactersBank_.Where(x => x.charId == charId && !x.mainAccount).Select(x => new {
                 charname = Characters.GetCharacterName(charId),
                 banknumber = x.accountNumber,
                 bankmoney = x.money,

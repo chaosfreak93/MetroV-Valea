@@ -78,7 +78,7 @@ namespace Altv_Roleplay.Handler
                 player.EmitLocked("Client:Tablet:SetTutorialAppContent", CharactersTablet.GetCharacterTabletTutorialEntrys(charId));
 
                 if (CharactersTablet.HasCharacterTabletApp(charId, "banking")) {
-                    var bankingAppOwnerArray = CharactersTablet.GetCharacterTabletBankingAppOwnerInfo(charId);
+                    var bankingAppOwnerArray = CharactersTablet.GetCharacterTabletMainBankingAppOwnerInfo(charId);
                     var bankPaperArray = ServerBankPapers.GetTabletBankAccountBankPaper(CharactersBank.GetCharacterBankMainKonto(charId));
                     player.EmitLocked("Client:Tablet:SetBankingAppContent", bankingAppOwnerArray, bankPaperArray);
                 }
