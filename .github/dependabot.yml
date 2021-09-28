@@ -11,12 +11,12 @@ updates:
       interval: "daily"
     target-branch: "dev"
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/script-a-master/C#/AltV.Roleplay" # Location of package manifests
+    directory: "/script-a-master/C%23/AltV.Roleplay" # Location of package manifests
     schedule:
       interval: "daily"
     target-branch: "dev"
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/script-a-master/C#/SaltyChat.Server" # Location of package manifests
+    directory: "/script-a-master/C%23/SaltyChat.Server" # Location of package manifests
     schedule:
       interval: "daily"
     target-branch: "dev"
