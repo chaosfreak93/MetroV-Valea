@@ -13,7 +13,7 @@
     "@altv/types-natives": "^1.4.2",
     "@altv/types-shared": "^1.0.5",
     "@altv/types-webview": "^1.0.2",
-    "@swc/cli": "^0.1.50",
+    "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.92",
     "rimraf": "^3.0.2"
   },
