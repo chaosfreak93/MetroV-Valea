@@ -156,7 +156,7 @@ alt.onServer("Client:AdminMenu:Spectate", (target, info)=>{
                     native.renderScriptCams(true, false, 0, true, false, 0);
                     spectate_tick = alt.everyTick(()=>{
                         native.pointCamAtCoord(spectate_camera, target.pos.x, target.pos.y, target.pos.z);
-                        native.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, true, false, false, true);
+                        native.setEntityCoords(alt.Player.local.scriptID, target.pos.x, target.pos.y, target.pos.z - 5, false, false, false, false);
                     });
                 }, 50);
             }, 50);
@@ -167,7 +167,7 @@ alt.onServer("Client:AdminMenu:Spectate", (target, info)=>{
         native.setCamActive(spectate_camera, false);
         native.renderScriptCams(false, false, 0, false, false, 0);
         native.destroyCam(spectate_camera, true);
-        native.setEntityCoords(alt.Player.local.scriptID, spectate_lastpos.x, spectate_lastpos.y, spectate_lastpos.z, true, false, false, true);
+        native.setEntityCoords(alt.Player.local.scriptID, spectate_lastpos.x, spectate_lastpos.y, spectate_lastpos.z, false, false, false, false);
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
         spectate_lastpos = null;
         spectate_camera = null;

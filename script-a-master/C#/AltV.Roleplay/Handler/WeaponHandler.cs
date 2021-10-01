@@ -427,6 +427,7 @@ namespace Altv_Roleplay.Handler
                 case "Springmesser": wHash = WeaponModel.Switchblade; break;
                 case "Schlagring": wHash = WeaponModel.BrassKnuckles; break;
                 case "Taschenlampe": wHash = WeaponModel.Flashlight; break;
+                case "SMG": wHash = WeaponModel.SMG; break;
             }
             return wHash;
         }

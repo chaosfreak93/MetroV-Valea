@@ -227,7 +227,7 @@
     color: white;
     margin-left: 37vh;
     display: inline-block;
-    margin-top: -10000000vh;
+    margin-top: -0.6vh;
 }
 
 .io input {
@@ -264,7 +264,7 @@ input::-webkit-inner-spin-button {
     border-radius: 0.5vh;
     border: solid white 1vh;
     margin-bottom: 3vh;
-    margin-top: 1.5vh;
+    margin-top: -13.5vh;
     background-color: white;
     color: black;
     font-size: 2vh;

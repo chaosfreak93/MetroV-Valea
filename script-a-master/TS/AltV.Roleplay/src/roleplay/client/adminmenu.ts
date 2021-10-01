@@ -206,10 +206,10 @@ alt.onServer("Client:AdminMenu:Spectate", (target: alt.Player, info: string) => 
                             target.pos.x,
                             target.pos.y,
                             target.pos.z - 5,
-                            true,
                             false,
                             false,
-                            true,
+                            false,
+                            false,
                         );
                     });
                 }, 50);
@@ -226,10 +226,10 @@ alt.onServer("Client:AdminMenu:Spectate", (target: alt.Player, info: string) => 
             spectate_lastpos.x,
             spectate_lastpos.y,
             spectate_lastpos.z,
-            true,
             false,
             false,
-            true,
+            false,
+            false,
         );
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
         spectate_lastpos = null;

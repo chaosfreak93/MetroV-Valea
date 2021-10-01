@@ -554,9 +554,10 @@ namespace Altv_Roleplay.Handler
                 return;
             }
 
-            player.EmitLocked("Client:Inventory:StopAnimation");
             player.Health = 200;
             HUDHandler.SendNotification(player, 2, 5000, "Du hast dich wiederbelebt.");
+            DeathHandler.revive(player);
+            Alt.Emit("SaltyChat:SetPlayerAlive", player, true);
         }
 
         [Command("revive")]

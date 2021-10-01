@@ -48,7 +48,7 @@ export default class KeyHandler {
         } else if (
             key === "Q".charCodeAt(0) &&
             player.vehicle &&
-            player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) &&
+            player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, false) &&
             native.getVehicleClass(player.vehicle.scriptID) == 18
         ) {
             if (native.isVehicleSirenOn(player.vehicle.scriptID)) {
@@ -63,7 +63,7 @@ export default class KeyHandler {
         } else if (
             key === 18 &&
             player.vehicle &&
-            player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) &&
+            player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, false) &&
             native.getVehicleClass(player.vehicle.scriptID) == 18
         ) {
             if (

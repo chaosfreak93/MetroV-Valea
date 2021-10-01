@@ -32,6 +32,7 @@ view.on('chatmessage', (text) => {
     opened = false;
     view.unfocus();
     alt.toggleGameControls(true);
+    alt.emit("Client:HUD:setCefStatus", false);
 })
 
 export function pushMessage(name, text) {

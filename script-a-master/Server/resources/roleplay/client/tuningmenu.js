@@ -85,8 +85,6 @@ alt.onServer("Client:Tuningmenu:OpenMenu", (veh, pMods, iMods, modPrices)=>{
     });
     webview.on("Client:Tuningmenu:ShowcasePaintType", (cat, val)=>{
         if (!vehicle) return;
-        alt.log("val: " + val);
-        alt.log("new: " + paintTypeIds.indexOf(parseInt(val)));
         if (cat == "primary") {
             game.setVehicleModColor1(vehicle, paintTypeIds.indexOf(parseInt(val)), 0, parseInt(showcasedMods[63]));
             alt.setTimeout(()=>{
@@ -203,12 +201,10 @@ function resetToNormal(vehicle, mods) {
         } else if (type < 49) game.setVehicleMod(vehicle, type, parseInt(index) - 1, false);
         else if (type == 49) game.setVehicleLivery(vehicle, parseInt(index) - 1);
         else if (type == 50) {
-            alt.log("test1: " + index);
             game.setVehicleWheelType(vehicle, parseInt(index));
             game.setVehicleMod(vehicle, 23, parseInt(installedMods[51]) - 1, false);
         } else if (type == 51) {
             game.setVehicleMod(vehicle, 23, parseInt(index) - 1, false);
-            alt.log("test4: " + index);
         } else if (type == 52) game.setVehicleExtraColours(vehicle, parseInt(installedMods[63]), parseInt(index));
         else if (type == 53) game.setVehicleWindowTint(vehicle, parseInt(index));
         else if (type == 54) game.setVehicleNumberPlateTextIndex(vehicle, parseInt(index));

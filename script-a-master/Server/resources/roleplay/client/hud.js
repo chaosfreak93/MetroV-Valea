@@ -77,8 +77,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
         });
         //Tattoo Shop
         hudBrowser.on("Client:TattooShop:closeShop", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             isTattooShopOpened = false;
             alt.showCursor(false);
             alt.toggleGameControls(true);
@@ -194,7 +192,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
             if (lastInteract + 500 > Date.now()) return;
             lastInteract = Date.now();
             alt.emitServer("Server:Barber:finishBarber", headoverlayarray);
-            closeBarberCEF();
         });
         hudBrowser.on("Client:Barber:RequestCurrentSkin", ()=>{
             if (lastInteract + 500 > Date.now()) return;
@@ -202,8 +199,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
             alt.emitServer("Server:Barber:RequestCurrentSkin");
         });
         hudBrowser.on("Client:Barber:destroyBarberCEF", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             closeBarberCEF();
         });
         hudBrowser.on("Client:Shop:destroyShopCEF", ()=>{
@@ -481,8 +476,6 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
             }
         });
         hudBrowser.on("Client:Townhall:destroyHouseSelector", ()=>{
-            if (lastInteract + 500 > Date.now()) return;
-            lastInteract = Date.now();
             destroyTownHallHouseSelector();
         });
         hudBrowser.on("Client:Animation:SaveAnimationHotkey", (hotkey, animId, animName, animDict, animFlag, animDuration)=>{

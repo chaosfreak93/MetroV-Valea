@@ -180,15 +180,11 @@ class LoginHandler {
     }
     static async SwitchIn() {
         let player = alt.Player.local;
-        alt.log("Switch In called");
         await isCollisionLoaded(alt.Player.local);
-        alt.log("Collision Loaded");
         alt.setTimeout(async ()=>{
             let interiorID = native.getInteriorAtCoords(player.pos.x, player.pos.y, player.pos.z);
             native.refreshInterior(interiorID);
-            alt.log("Interior refreshed");
             await isCollisionLoaded(alt.Player.local);
-            alt.log("Collision Loaded");
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
             native.switchInPlayer(player.scriptID);
             native.freezeEntityPosition(alt.Player.local.scriptID, false);

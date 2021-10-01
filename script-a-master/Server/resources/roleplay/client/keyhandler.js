@@ -37,7 +37,7 @@ class KeyHandler {
                     alt.emitServer("Server:CarryPlayer", player);
                 }
             }
-        } else if (key === "Q".charCodeAt(0) && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
+        } else if (key === "Q".charCodeAt(0) && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, false) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
             if (native.isVehicleSirenOn(player.vehicle.scriptID)) {
                 native.setVehicleHasMutedSirens(player.vehicle.scriptID, false);
                 alt.emitServer("Server:Sirens:ForwardSirenMute", player.vehicle.id, false);
@@ -47,7 +47,7 @@ class KeyHandler {
                 alt.emitServer("Server:Sirens:ForwardSirenMute", player.vehicle.id, true);
                 native.setVehicleSiren(player.vehicle.scriptID, true);
             }
-        } else if (key === 18 && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, true) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
+        } else if (key === 18 && player.vehicle && player.scriptID == native.getPedInVehicleSeat(player.vehicle.scriptID, -1, false) && native.getVehicleClass(player.vehicle.scriptID) == 18) {
             if (native.isVehicleSirenOn(player.vehicle.scriptID) && !native.isVehicleSirenAudioOn(player.vehicle.scriptID)) {
                 alt.emitServer("Server:Sirens:ForwardSirenMute", player.vehicle.id, false);
             } else if (native.isVehicleSirenOn(player.vehicle.scriptID) && native.isVehicleSirenAudioOn(player.vehicle.scriptID)) {
