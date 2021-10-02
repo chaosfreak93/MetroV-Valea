@@ -16,7 +16,7 @@ namespace Altv_Roleplay.Handler
         [ScriptEvent(ScriptEventType.WeaponDamage)]
         public void WeaponDamageEvent(ClassicPlayer player, IEntity target, uint weapon, ushort dmg, Position offset, BodyPart bodypart) {
             try {
-                if (player == null || !player.Exists || target == null || !target.Exists || target is not ClassicPlayer) return;
+                if (player == null || !player.Exists || target == null || !target.Exists) return;
 
                 var weaponModel = (WeaponModel) weapon;
                 if (weaponModel == WeaponModel.Fist) return;
