@@ -155,7 +155,7 @@ namespace Altv_Roleplay.Handler
                     return;
                 }
                 
-                Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.793017578125f);
+                /**Position casinoEntrancePos = new Position(935.94727f, 47.20879f, 80.793017578125f);
                 Position casinoExitPos = new Position(1089.7847f, 206.09671f, -49.30439453125f);
                 Position casinoWheelPos = new Position(1110.949462890625f, 229.26593017578125f, -49.6446533203125f);
                 Position casinoGarageEntrancePos = new Position(936.4747314453125f, 1.5692307949066162f, 78.7509765625f);
@@ -230,7 +230,7 @@ namespace Altv_Roleplay.Handler
                         player.Position = casinoGarageExitPos;
                         player.Rotation = casinoGarageExitRot;
                     }
-                }
+                }**/
 
                 bool airportExit = player.Position.IsInRange(Constants.Positions.ExitTPPos_Airport, 3f);
 

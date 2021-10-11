@@ -123,7 +123,7 @@ namespace Altv_Roleplay
             DatabaseHandler.LoadAllServerLogsFaction();
             DatabaseHandler.LoadAllServerLogsCompany();
             DatabaseHandler.LoadAllTattooStuff();
-            DatabaseHandler.LoadDiamondCasino();
+            //DatabaseHandler.LoadDiamondCasino();
 
             WeatherHandler.GetRealWeatherType();
 

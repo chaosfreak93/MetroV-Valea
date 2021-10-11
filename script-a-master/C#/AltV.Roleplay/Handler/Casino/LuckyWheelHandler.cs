@@ -8,7 +8,7 @@ using Altv_Roleplay.Model;
 
 namespace Altv_Roleplay.Handler.Casino
 {
-    public class LuckyWheelHandler : IScript
+    public class LuckyWheelHandler
     {
         private bool _isRolling;
         

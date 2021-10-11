@@ -7,7 +7,7 @@ using Altv_Roleplay.Model;
 
 namespace Altv_Roleplay.Handler.Casino
 {
-    public class SingleRaceHandler : IScript
+    public class SingleRaceHandler
     {
         [AsyncClientEvent("Server:Casino:SingleRace:UpdateBetValues")]
         public async Task updateBetValues(ClassicPlayer player, int horse, int bet, int gain, bool showBetScreen) {
