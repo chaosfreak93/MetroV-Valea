@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YiF1/OvvWyPuBtojsbCwXIkuaeJaSSFQxilQGm6nm3RQN0zPpPsCGRbabrHnxRiy6Mo1wfBWcfGTGHX4S50i2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\RiderProjects\\MetroV-Valea\\script-a-master\\C#\\SaltyChat.Server\\SaltyChat.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\altv.net\\6.1.5\\altv.net.6.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
