@@ -1,0 +1,10 @@
+{
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "dynamicImport": true
+      },
+      "target": "es2021"
+    },
+    "minify": false
+  }

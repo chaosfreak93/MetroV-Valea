@@ -4,15 +4,15 @@
  * (c) 2019 Chart.js Contributors
  * Released under the MIT license
  */ (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('chart.js')) : typeof define === 'function' && define.amd ? define([
-        'chart.js'
+    typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("chart.js")) : typeof define === "function" && define.amd ? define([
+        "chart.js"
     ], factory) : (global = global || self, global.ChartDataLabels = factory(global.Chart));
 })(this, function(Chart) {
-    'use strict';
-    Chart = Chart && Chart.hasOwnProperty('default') ? Chart['default'] : Chart;
+    "use strict";
+    Chart = Chart && Chart.hasOwnProperty("default") ? Chart["default"] : Chart;
     var helpers = Chart.helpers;
     var devicePixelRatio = function() {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== "undefined") {
             if (window.devicePixelRatio) {
                 return window.devicePixelRatio;
             }
@@ -34,12 +34,12 @@
             inputs = [].concat(inputs);
             while(inputs.length){
                 input = inputs.pop();
-                if (typeof input === 'string') {
-                    lines.unshift.apply(lines, input.split('\n'));
+                if (typeof input === "string") {
+                    lines.unshift.apply(lines, input.split("\n"));
                 } else if (Array.isArray(input)) {
                     inputs.push.apply(inputs, input);
                 } else if (!helpers.isNullOrUndef(inputs)) {
-                    lines.unshift('' + input);
+                    lines.unshift("" + input);
                 }
             }
             return lines;
@@ -50,7 +50,7 @@
             if (!font || helpers.isNullOrUndef(font.size) || helpers.isNullOrUndef(font.family)) {
                 return null;
             }
-            return (font.style ? font.style + ' ' : '') + (font.weight ? font.weight + ' ' : '') + font.size + 'px ' + font.family;
+            return (font.style ? font.style + " " : "") + (font.weight ? font.weight + " " : "") + font.size + "px " + font.family;
         },
         // @todo move this in Chart.helpers.canvas.textSize
         // @todo cache calls of measureText if font doesn't change?!
@@ -80,7 +80,7 @@
                 size: size,
                 style: helpers.valueOrDefault(value.style, global.defaultFontStyle),
                 weight: helpers.valueOrDefault(value.weight, null),
-                string: ''
+                string: ""
             };
             font.string = utils.toFontString(font);
             return font;
@@ -151,30 +151,30 @@
     }
     function aligned(x, y, vx, vy, align) {
         switch(align){
-            case 'center':
+            case "center":
                 vx = vy = 0;
                 break;
-            case 'bottom':
+            case "bottom":
                 vx = 0;
                 vy = 1;
                 break;
-            case 'right':
+            case "right":
                 vx = 1;
                 vy = 0;
                 break;
-            case 'left':
+            case "left":
                 vx = -1;
                 vy = 0;
                 break;
-            case 'top':
+            case "top":
                 vx = 0;
                 vy = -1;
                 break;
-            case 'start':
+            case "start":
                 vx = -vx;
                 vy = -vy;
                 break;
-            case 'end':
+            case "end":
                 break;
             default:
                 // clockwise rotation (in degree)
@@ -263,10 +263,10 @@
         if (config.clamp) {
             segment = clipped(segment, config.area);
         }
-        if (anchor === 'start') {
+        if (anchor === "start") {
             x = segment.x0;
             y = segment.y0;
-        } else if (anchor === 'end') {
+        } else if (anchor === "end") {
             x = segment.x1;
             y = segment.y1;
         } else {
@@ -412,7 +412,7 @@
         if (borderColor && borderWidth) {
             ctx.strokeStyle = borderColor;
             ctx.lineWidth = borderWidth;
-            ctx.lineJoin = 'miter';
+            ctx.lineJoin = "miter";
             ctx.stroke();
         }
     }
@@ -421,9 +421,9 @@
         var w = rect.w;
         var x = rect.x;
         var y = rect.y + h / 2;
-        if (align === 'center') {
+        if (align === "center") {
             x += w / 2;
-        } else if (align === 'end' || align === 'right') {
+        } else if (align === "end" || align === "right") {
             x += w;
         }
         return {
@@ -471,14 +471,14 @@
         rect = textGeometry(rect, align, font);
         ctx.font = font.string;
         ctx.textAlign = align;
-        ctx.textBaseline = 'middle';
+        ctx.textBaseline = "middle";
         ctx.shadowBlur = model.textShadowBlur;
         ctx.shadowColor = model.textShadowColor;
         if (filled) {
             ctx.fillStyle = color;
         }
         if (stroked) {
-            ctx.lineJoin = 'round';
+            ctx.lineJoin = "round";
             ctx.lineWidth = strokeWidth;
             ctx.strokeStyle = strokeColor;
         }
@@ -520,11 +520,11 @@
             return {
                 align: resolve([
                     config.align,
-                    'center'
+                    "center"
                 ], context, index),
                 anchor: resolve([
                     config.anchor,
-                    'center'
+                    "center"
                 ], context, index),
                 area: context.chart.chartArea,
                 backgroundColor: resolve([
@@ -576,7 +576,7 @@
                 size: utils.textSize(me._ctx, lines, font),
                 textAlign: resolve([
                     config.textAlign,
-                    'start'
+                    "start"
                 ], context, index),
                 textShadowBlur: resolve([
                     config.textShadowBlur,
@@ -783,7 +783,7 @@
                 rotated({
                     x: rect.x,
                     y: rect.y + rect.h
-                }, center, angle)
+                }, center, angle), 
             ];
         }
     });
@@ -892,7 +892,7 @@
                 label = labels[i];
                 model = label.model();
                 state = label.$layout;
-                state._hidable = model && model.display === 'auto';
+                state._hidable = model && model.display === "auto";
                 state._visible = label.visible();
                 dirty |= state._hidable;
             }
@@ -939,21 +939,21 @@
             } else if (!helpers$3.isNullOrUndef(value.r)) {
                 label = value.r;
             } else {
-                label = '';
+                label = "";
                 keys = Object.keys(value);
                 for(k = 0, klen = keys.length; k < klen; ++k){
-                    label += (k !== 0 ? ', ' : '') + keys[k] + ': ' + value[keys[k]];
+                    label += (k !== 0 ? ", " : "") + keys[k] + ": " + value[keys[k]];
                 }
             }
         }
-        return '' + label;
+        return "" + label;
     };
     /**
      * IMPORTANT: make sure to also update tests and TypeScript definition
      * files (`/test/specs/defaults.spec.js` and `/types/options.d.ts`)
      */ var defaults = {
-        align: 'center',
-        anchor: 'center',
+        align: "center",
+        anchor: "center",
         backgroundColor: null,
         borderColor: null,
         borderRadius: 0,
@@ -982,7 +982,7 @@
             left: 4
         },
         rotation: 0,
-        textAlign: 'start',
+        textAlign: "start",
         textStrokeColor: undefined,
         textStrokeWidth: 0,
         textShadowBlur: 0,
@@ -991,8 +991,8 @@
     /**
      * @see https://github.com/chartjs/Chart.js/issues/4176
      */ var helpers$4 = Chart.helpers;
-    var EXPANDO_KEY = '$datalabels';
-    var DEFAULT_KEY = '$default';
+    var EXPANDO_KEY = "$datalabels";
+    var DEFAULT_KEY = "$default";
     function configure(dataset, options) {
         var override = dataset.datalabels;
         var listeners = {
@@ -1100,9 +1100,9 @@
         if (!listeners.enter && !listeners.leave) {
             return;
         }
-        if (event.type === 'mousemove') {
+        if (event.type === "mousemove") {
             label = layout.lookup(expando._labels, event);
-        } else if (event.type !== 'mouseout') {
+        } else if (event.type !== "mouseout") {
             return;
         }
         previous = expando._hovered;
@@ -1140,7 +1140,7 @@
     }
     Chart.defaults.global.plugins.datalabels = defaults;
     var plugin = {
-        id: 'datalabels',
+        id: "datalabels",
         beforeInit: function(chart) {
             chart[EXPANDO_KEY] = {
                 _actives: []
@@ -1217,11 +1217,11 @@
             // computation for users who don't implement label interactions.
             if (chart[EXPANDO_KEY]._listened) {
                 switch(event.type){
-                    case 'mousemove':
-                    case 'mouseout':
+                    case "mousemove":
+                    case "mouseout":
                         handleMoveEvents(chart, event);
                         break;
-                    case 'click':
+                    case "click":
                         handleClickEvents(chart, event);
                         break;
                     default:

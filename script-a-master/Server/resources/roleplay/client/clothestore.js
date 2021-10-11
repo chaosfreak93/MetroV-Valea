@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 const player = alt.Player.local;
 let clothesStoreBrowser = null;
 let opened = false;
@@ -8,16 +8,16 @@ class Clothestore {
     static CreateCEF() {
         if (clothesStoreBrowser == null) {
             clothesStoreBrowser = new alt.WebView("http://resource/client/cef/clothesstore/index.html");
-            clothesStoreBrowser.on('Client:Clothesstore:PreviewCloth', (isProp, previewComponentId, previewDrawableId, previewTextureId)=>{
+            clothesStoreBrowser.on("Client:Clothesstore:PreviewCloth", (isProp, previewComponentId, previewDrawableId, previewTextureId)=>{
                 if (!isProp) native.setPedComponentVariation(player.scriptID, parseInt(previewComponentId), parseInt(previewDrawableId), parseInt(previewTextureId), 0);
                 else native.setPedPropIndex(player.scriptID, parseInt(previewComponentId), parseInt(previewDrawableId), parseInt(previewTextureId), false);
             });
-            clothesStoreBrowser.on('Client:Clothesstore:BuyCloth', (clothId, isProp)=>{
+            clothesStoreBrowser.on("Client:Clothesstore:BuyCloth", (clothId, isProp)=>{
                 if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
                 alt.emitServer("Server:Clothesstore:BuyCloth", clothId, isProp);
             });
-            clothesStoreBrowser.on('Client:Clothesstore:SetPerfectTorso', (BestTorsoDrawable, BestTorsoTexture)=>{
+            clothesStoreBrowser.on("Client:Clothesstore:SetPerfectTorso", (BestTorsoDrawable, BestTorsoTexture)=>{
                 if (lastInteract + 500 > Date.now()) return;
                 lastInteract = Date.now();
                 alt.emitServer("Server:Clothesstore:SetPerfectTorso", BestTorsoDrawable, BestTorsoTexture);

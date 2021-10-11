@@ -3,25 +3,25 @@
  * Copyright 2018 - 2019 Johann-S <johann.servoire@gmail.com>
  * Licensed under MIT (https://github.com/Johann-S/bs-custom-file-input/blob/master/LICENSE)
  */ (function(global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = global || self, global.bsCustomFileInput = factory());
+    typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = global || self, global.bsCustomFileInput = factory());
 })(this, function() {
-    'use strict';
+    "use strict";
     var Selector = {
         CUSTOMFILE: '.custom-file input[type="file"]',
-        CUSTOMFILELABEL: '.custom-file-label',
-        FORM: 'form',
-        INPUT: 'input'
+        CUSTOMFILELABEL: ".custom-file-label",
+        FORM: "form",
+        INPUT: "input"
     };
     var textNodeType = 3;
-    var getDefaultText = function getDefaultText1(input) {
-        var defaultText = '';
+    var getDefaultText = function getDefaultText(input) {
+        var defaultText = "";
         var label = input.parentNode.querySelector(Selector.CUSTOMFILELABEL);
         if (label) {
             defaultText = label.innerHTML;
         }
         return defaultText;
     };
-    var findFirstChildNode = function findFirstChildNode1(element) {
+    var findFirstChildNode = function findFirstChildNode(element) {
         if (element.childNodes.length > 0) {
             var childNodes = [].slice.call(element.childNodes);
             for(var i = 0; i < childNodes.length; i++){
@@ -33,7 +33,7 @@
         }
         return element;
     };
-    var restoreDefaultText = function restoreDefaultText1(input) {
+    var restoreDefaultText = function restoreDefaultText(input) {
         var defaultText = input.bsCustomFileInput.defaultText;
         var label = input.parentNode.querySelector(Selector.CUSTOMFILELABEL);
         if (label) {
@@ -42,13 +42,13 @@
         }
     };
     var fileApi = !!window.File;
-    var FAKE_PATH = 'fakepath';
-    var FAKE_PATH_SEPARATOR = '\\';
-    var getSelectedFiles = function getSelectedFiles1(input) {
-        if (input.hasAttribute('multiple') && fileApi) {
+    var FAKE_PATH = "fakepath";
+    var FAKE_PATH_SEPARATOR = "\\";
+    var getSelectedFiles = function getSelectedFiles(input) {
+        if (input.hasAttribute("multiple") && fileApi) {
             return [].slice.call(input.files).map(function(file) {
                 return file.name;
-            }).join(', ');
+            }).join(", ");
         }
         if (input.value.indexOf(FAKE_PATH) !== -1) {
             var splittedValue = input.value.split(FAKE_PATH_SEPARATOR);
@@ -76,10 +76,10 @@
             restoreDefaultText(customFileList[i]);
         }
     }
-    var customProperty = 'bsCustomFileInput';
-    var Event1 = {
-        FORMRESET: 'reset',
-        INPUTCHANGE: 'change'
+    var customProperty = "bsCustomFileInput";
+    var Event = {
+        FORMRESET: "reset",
+        INPUTCHANGE: "change"
     };
     var bsCustomFileInput = {
         init: function init(inputSelector, formSelector) {
@@ -100,10 +100,10 @@
                     writable: true
                 });
                 handleInputChange.call(input);
-                input.addEventListener(Event1.INPUTCHANGE, handleInputChange);
+                input.addEventListener(Event.INPUTCHANGE, handleInputChange);
             }
             for(var _i = 0, _len = formList.length; _i < _len; _i++){
-                formList[_i].addEventListener(Event1.FORMRESET, handleFormReset);
+                formList[_i].addEventListener(Event.FORMRESET, handleFormReset);
                 Object.defineProperty(formList[_i], customProperty, {
                     value: true,
                     writable: true
@@ -121,10 +121,10 @@
                 var input = customFileInputList[i];
                 restoreDefaultText(input);
                 input[customProperty] = undefined;
-                input.removeEventListener(Event1.INPUTCHANGE, handleInputChange);
+                input.removeEventListener(Event.INPUTCHANGE, handleInputChange);
             }
             for(var _i2 = 0, _len2 = formList.length; _i2 < _len2; _i2++){
-                formList[_i2].removeEventListener(Event1.FORMRESET, handleFormReset);
+                formList[_i2].removeEventListener(Event.FORMRESET, handleFormReset);
                 formList[_i2][customProperty] = undefined;
             }
         }

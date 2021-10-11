@@ -1,8 +1,7 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { isPlayerDead } from './hud';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { isPlayerDead } from "./hud";
 let normalCuffTick = null;
-let footCuffTick = null;
 class CuffHandler {
     static GiveNormalCuffs() {
         normalCuffTick = alt.everyTick(()=>{
@@ -46,12 +45,9 @@ class CuffHandler {
         }
     }
     static GiveFootCuffs() {
-        footCuffTick = alt.everyTick(()=>{
-            alt.toggleGameControls(false);
-        });
+        alt.toggleGameControls(false);
     }
     static TakeFootCuffs() {
-        alt.clearEveryTick(footCuffTick);
         if (!isPlayerDead) {
             alt.toggleGameControls(true);
         }

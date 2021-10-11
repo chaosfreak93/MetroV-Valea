@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 class Raycast {
     static line(radius, distance) {
         let position = native.getPedBoneCoords(alt.Player.local.scriptID, 31086, 0.5, 0, 0);

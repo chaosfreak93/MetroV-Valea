@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as game from 'natives';
+import * as alt from "alt-client";
+import * as game from "natives";
 alt.requestIpl("tr_tuner_shop_burton");
 alt.requestIpl("tr_tuner_shop_strawberry");
 alt.requestIpl("tr_tuner_shop_rancho");

@@ -1,7 +1,7 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import BlipManager from './blipmanager';
-import MarkerManager from './markermanager';
+import * as alt from "alt-client";
+import * as native from "natives";
+import BlipManager from "./blipmanager";
+import MarkerManager from "./markermanager";
 let blip = null;
 let vehicle = alt.Player.local.vehicle;
 let markerCache = [];

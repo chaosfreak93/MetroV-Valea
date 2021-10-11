@@ -1,6 +1,6 @@
-import * as native from 'natives';
-import * as alt from 'alt-client';
-import { hudBrowser } from './hud';
+import * as native from "natives";
+import * as alt from "alt-client";
+import { hudBrowser } from "./hud";
 let curSpeed = 0;
 alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, isLocked)=>{
     if (doorHash != undefined && doorHash2 != undefined && pos != undefined && pos2 != undefined && isLocked != undefined) {
@@ -11,10 +11,19 @@ alt.onServer("Client:DoorManager:ManageDoor", (doorHash, doorHash2, pos, pos2, i
         }
     }
 });
+alt.on("taskChange", (oldTask, newTask)=>{
+    if (oldTask == 134 && newTask != 134) {
+        if (alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) {
+            native.clearPedTasksImmediately(alt.Player.local.scriptID);
+            native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 8, -8, -1, 49, 0, false, false, false);
+        }
+    }
+    if (newTask == 204) {
+        native.clearPedTasks(alt.Player.local.scriptID);
+    }
+});
 alt.setInterval(()=>{
-    if ((alt.Player.local.getSyncedMeta("HasHandcuffs") == true || alt.Player.local.getSyncedMeta("HasRopeCuffs") == true) && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 3)) {
-        native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "sprint", 8, -8, -1, 49, 0, false, false, false);
-    } else if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 3)) {
+    if (alt.Player.local.getSyncedMeta("HasFootCuffs") == true && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 3)) {
         native.taskPlayAnim(alt.Player.local.scriptID, "mp_arresting", "idle", 8, -8, -1, 49, 0, false, false, false);
     }
     if (alt.Player.local.getSyncedMeta("IsUnconscious") == true && alt.Player.local.getSyncedMeta("IsReviving") == false && !native.isEntityPlayingAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cower_loop_victim", 3)) {
@@ -25,10 +34,10 @@ alt.setInterval(()=>{
         native.taskPlayAnim(alt.Player.local.scriptID, "missheistfbi3b_ig8_2", "cpr_loop_paramedic", 1, 1, -1, 1, 1, false, false, false);
     }
 }, 100);
-alt.onServer('Client:Inventory:PlayEffect', (effectName, duration)=>{
+alt.onServer("Client:Inventory:PlayEffect", (effectName, duration)=>{
     native.animpostfxPlay(effectName, duration, false);
 });
-alt.onServer('Client:Inventory:StopEffect', (effectName)=>{
+alt.onServer("Client:Inventory:StopEffect", (effectName)=>{
     native.animpostfxStop(effectName);
 });
 alt.setInterval(()=>{
@@ -36,66 +45,61 @@ alt.setInterval(()=>{
     native.invalidateVehicleIdleCam();
 }, 20000);
 export function setMinimapData() {
-    const ZOOM_LEVEL_0 = alt.MapZoomData.get('ZOOM_LEVEL_0');
+    const ZOOM_LEVEL_0 = alt.MapZoomData.get("ZOOM_LEVEL_0");
     ZOOM_LEVEL_0.fZoomScale = 2.73;
     ZOOM_LEVEL_0.fZoomSpeed = 0.9;
     ZOOM_LEVEL_0.fScrollSpeed = 0.08;
     ZOOM_LEVEL_0.vTilesX = 0;
     ZOOM_LEVEL_0.vTilesY = 0;
-    const ZOOM_LEVEL_1 = alt.MapZoomData.get('ZOOM_LEVEL_1');
+    const ZOOM_LEVEL_1 = alt.MapZoomData.get("ZOOM_LEVEL_1");
     ZOOM_LEVEL_1.fZoomScale = 2.8;
     ZOOM_LEVEL_1.fZoomSpeed = 0.9;
     ZOOM_LEVEL_1.fScrollSpeed = 0.08;
     ZOOM_LEVEL_1.vTilesX = 0;
     ZOOM_LEVEL_1.vTilesY = 0;
-    const ZOOM_LEVEL_2 = alt.MapZoomData.get('ZOOM_LEVEL_2');
+    const ZOOM_LEVEL_2 = alt.MapZoomData.get("ZOOM_LEVEL_2");
     ZOOM_LEVEL_2.fZoomScale = 8;
     ZOOM_LEVEL_2.fZoomSpeed = 0.9;
     ZOOM_LEVEL_2.fScrollSpeed = 0.08;
     ZOOM_LEVEL_2.vTilesX = 0;
     ZOOM_LEVEL_2.vTilesY = 0;
-    const ZOOM_LEVEL_3 = alt.MapZoomData.get('ZOOM_LEVEL_3');
+    const ZOOM_LEVEL_3 = alt.MapZoomData.get("ZOOM_LEVEL_3");
     ZOOM_LEVEL_3.fZoomScale = 11;
     ZOOM_LEVEL_3.fZoomSpeed = 0.9;
     ZOOM_LEVEL_3.fScrollSpeed = 0.08;
     ZOOM_LEVEL_3.vTilesX = 0;
     ZOOM_LEVEL_3.vTilesY = 0;
-    const ZOOM_LEVEL_4 = alt.MapZoomData.get('ZOOM_LEVEL_4');
+    const ZOOM_LEVEL_4 = alt.MapZoomData.get("ZOOM_LEVEL_4");
     ZOOM_LEVEL_4.fZoomScale = 16;
     ZOOM_LEVEL_4.fZoomSpeed = 0.9;
     ZOOM_LEVEL_4.fScrollSpeed = 0.08;
     ZOOM_LEVEL_4.vTilesX = 0;
     ZOOM_LEVEL_4.vTilesY = 0;
-    const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get('ZOOM_LEVEL_GOLF_COURSE');
+    const ZOOM_LEVEL_GOLF_COURSE = alt.MapZoomData.get("ZOOM_LEVEL_GOLF_COURSE");
     ZOOM_LEVEL_GOLF_COURSE.fZoomScale = 55;
     ZOOM_LEVEL_GOLF_COURSE.fZoomSpeed = 0;
     ZOOM_LEVEL_GOLF_COURSE.fScrollSpeed = 0.1;
     ZOOM_LEVEL_GOLF_COURSE.vTilesX = 2;
     ZOOM_LEVEL_GOLF_COURSE.vTilesY = 1;
-    const ZOOM_LEVEL_INTERIOR = alt.MapZoomData.get('ZOOM_LEVEL_INTERIOR');
+    const ZOOM_LEVEL_INTERIOR = alt.MapZoomData.get("ZOOM_LEVEL_INTERIOR");
     ZOOM_LEVEL_INTERIOR.fZoomScale = 450;
     ZOOM_LEVEL_INTERIOR.fZoomSpeed = 0;
     ZOOM_LEVEL_INTERIOR.fScrollSpeed = 0.1;
     ZOOM_LEVEL_INTERIOR.vTilesX = 1;
     ZOOM_LEVEL_INTERIOR.vTilesY = 1;
-    const ZOOM_LEVEL_GALLERY = alt.MapZoomData.get('ZOOM_LEVEL_GALLERY');
+    const ZOOM_LEVEL_GALLERY = alt.MapZoomData.get("ZOOM_LEVEL_GALLERY");
     ZOOM_LEVEL_GALLERY.fZoomScale = 4.5;
     ZOOM_LEVEL_GALLERY.fZoomSpeed = 0;
     ZOOM_LEVEL_GALLERY.fScrollSpeed = 0;
     ZOOM_LEVEL_GALLERY.vTilesX = 0;
     ZOOM_LEVEL_GALLERY.vTilesY = 0;
-    const ZOOM_LEVEL_GALLERY_MAXIMIZE = alt.MapZoomData.get('ZOOM_LEVEL_GALLERY_MAXIMIZE');
+    const ZOOM_LEVEL_GALLERY_MAXIMIZE = alt.MapZoomData.get("ZOOM_LEVEL_GALLERY_MAXIMIZE");
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomScale = 11;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fZoomSpeed = 0;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.fScrollSpeed = 0;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesX = 2;
     ZOOM_LEVEL_GALLERY_MAXIMIZE.vTilesY = 3;
 }
-alt.setInterval(()=>{
-    alt.setMsPerGameMinute(60000);
-    let date = new Date();
-    native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
-}, 3600000);
 alt.everyTick(()=>{
     native.drawRect(0, 0, 0, 0, 0, 0, 0, 0, false);
     native.setPedConfigFlag(alt.Player.local.scriptID, 184, true);
@@ -116,10 +120,8 @@ alt.everyTick(()=>{
     if (alt.Player.local.vehicle) {
         const roll = native.getEntityRoll(alt.Player.local.vehicle.scriptID);
         if (roll > 75 || roll < -75) {
-            native.disableControlAction(2, 59, true) // disable left/right
-            ;
-            native.disableControlAction(2, 60, true) // disable up/down
-            ;
+            native.disableControlAction(2, 59, true); // disable left/right
+            native.disableControlAction(2, 60, true); // disable up/down
         }
         if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
             native.disableControlAction(1, 86, true);

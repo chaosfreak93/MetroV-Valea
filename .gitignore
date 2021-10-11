@@ -1,18 +1,10 @@
-﻿.idea
-
-script-a-master/C#/.idea
-script-a-master/C#/.vs
-script-a-master/C#/AltV.Roleplay/bin
-script-a-master/C#/AltV.Roleplay/obj
-script-a-master/C#/DiscordWebhook/bin
-script-a-master/C#/DiscordWebhook/obj
-script-a-master/C#/SaltyChat.Server/bin
-script-a-master/C#/SaltyChat.Server/obj
-
-script-a-master/TS/AltV.Roleplay/node_modules
+﻿**/.idea
+**/.vs
+**/.vscode
+**/node_modules
+**/package-lock.json
+**/bin
+**/obj
 
 script-a-master/Server/cache
-script-a-master/Server/node_modules
-script-a-master/Server/package-lock.json
 script-a-master/Server/server.log
-script-a-master/Server/server.cfg

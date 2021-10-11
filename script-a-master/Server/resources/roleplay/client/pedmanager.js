@@ -1,6 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import { loadModelAsync } from './utilities';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync } from "./utilities";
 class PedManager {
     static getPedsToSpawn(pedArray) {
         pedArray = JSON.parse(pedArray);

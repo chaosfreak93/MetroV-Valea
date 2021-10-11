@@ -1,4 +1,4 @@
-import * as alt from 'alt-client';
+import * as alt from "alt-client";
 export let inventoryBrowser = null;
 let lastInteract = null;
 export class Inventory {
@@ -21,6 +21,8 @@ export class Inventory {
     }
     static closeInventoryCEF() {
         if (inventoryBrowser != null) {
+            inventoryBrowser.off("Client:Inventory:cefIsReady", ()=>{
+            });
             inventoryBrowser.off("Client:Inventory:UseInvItem", Inventory.UseItem);
             inventoryBrowser.off("Client:Inventory:DropInvItem", Inventory.DropItem);
             inventoryBrowser.off("Client:Inventory:switchItemToDifferentInv", Inventory.switchItemToDifferentInv);
@@ -60,13 +62,13 @@ export class Inventory {
         Inventory.openInventoryCEF(false);
         alt.setTimeout(()=>{
             if (inventoryBrowser != null) {
-                inventoryBrowser.emit('CEF:Inventory:AddInventoryItems', invArray, backpackSize, parseInt(targetPlayerID));
+                inventoryBrowser.emit("CEF:Inventory:AddInventoryItems", invArray, backpackSize, parseInt(targetPlayerID));
             }
         }, 800);
     }
     static AddInventoryItems(invArray, backpackSize, targetPlayerID) {
         if (inventoryBrowser != null) {
-            inventoryBrowser.emit('CEF:Inventory:AddInventoryItems', invArray, backpackSize, targetPlayerID);
+            inventoryBrowser.emit("CEF:Inventory:AddInventoryItems", invArray, backpackSize, targetPlayerID);
         }
     }
 }

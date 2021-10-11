@@ -1,8 +1,8 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
-import IPLManager from './iplmanager';
+import * as alt from "alt-client";
+import * as native from "natives";
+import IPLManager from "./iplmanager";
 import { setAudioData, setMinimapData } from "./miscs";
-import { loadModelAsync } from './utilities';
+import { isCollisionLoaded, loadModelAsync } from "./utilities";
 let loginBrowser = null;
 let loginCam = null;
 let loginPedHandle = null;
@@ -11,7 +11,7 @@ let lastInteract = 0;
 class LoginHandler {
     static async CreateCEF() {
         if (loginBrowser == null) {
-            loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
+            loginCam = native.createCameraWithParams(alt.hash("DEFAULT_SCRIPTED_CAMERA"), 3280, 5220, 26, 0, 0, 240, 50, true, 2);
             native.setCamActive(loginCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
@@ -74,20 +74,29 @@ class LoginHandler {
                 lastInteract = Date.now();
                 alt.emitServer("Server:Charselector:spawnChar", charid);
             });
-            loginBrowser.on("Client:Charcreator:SwitchOut", ()=>{
-                if (loginCam != null) {
-                    native.renderScriptCams(false, false, 0, true, false, 0);
-                    native.setCamActive(loginCam, false);
-                    native.destroyCam(loginCam, true);
-                    loginCam = null;
-                }
-                native.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
-                native.freezeEntityPosition(alt.Player.local.scriptID, true);
-            });
         }
     }
     static DestroyCEF() {
         if (loginBrowser != null) {
+            loginBrowser.off("Client:Login:cefIsReady", ()=>{
+            });
+            loginBrowser.off("Client:Login:sendLoginDataToServer", ()=>{
+            });
+            loginBrowser.off("Client:Login:resetPW", ()=>{
+            });
+            loginBrowser.off("Client:Register:sendRegisterDataToServer", ()=>{
+            });
+            loginBrowser.off("Client:Charcreator:OpenCreator", ()=>{
+            });
+            loginBrowser.off("Client:Login:DestroyCEF", ()=>{
+            });
+            loginBrowser.off("Client:Charselector:KillCharacter", ()=>{
+            });
+            loginBrowser.off("Client:Charselector:PreviewCharacter", ()=>{
+            });
+            loginBrowser.off("Client:Charselector:spawnChar", ()=>{
+            });
+            loginBrowser.unfocus();
             loginBrowser.destroy();
         }
         loginBrowser = null;
@@ -138,8 +147,8 @@ class LoginHandler {
         LoginHandler.spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray);
     }
     static SaveLoginCredentialsToStorage(name, discordId) {
-        alt.LocalStorage.set('username', name);
-        alt.LocalStorage.set('discordId', discordId);
+        alt.LocalStorage.set("username", name);
+        alt.LocalStorage.set("discordId", discordId);
         alt.LocalStorage.save();
     }
     static showError(msg) {
@@ -158,7 +167,7 @@ class LoginHandler {
                     loginCam = null;
                 }
                 native.setEntityAlpha(alt.Player.local.scriptID, 0, false);
-                loginCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+                loginCam = native.createCameraWithParams(alt.hash("DEFAULT_SCRIPTED_CAMERA"), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
                 native.setCamActive(loginCam, true);
                 native.renderScriptCams(true, false, 0, true, false, 0);
             }
@@ -169,16 +178,27 @@ class LoginHandler {
             loginBrowser.emit("CEF:Charselector:sendCharactersToCEF", chars);
         }
     }
-    static SwitchIn() {
+    static async SwitchIn() {
         let player = alt.Player.local;
-        native.switchInPlayer(player.scriptID);
-        alt.setTimeout(()=>{
+        await isCollisionLoaded(alt.Player.local);
+        alt.setTimeout(async ()=>{
             let interiorID = native.getInteriorAtCoords(player.pos.x, player.pos.y, player.pos.z);
             native.refreshInterior(interiorID);
-            alt.setTimeout(()=>{
-                native.freezeEntityPosition(alt.Player.local.scriptID, false);
-            }, 250);
-        }, 250);
+            await isCollisionLoaded(alt.Player.local);
+            native.freezeEntityPosition(alt.Player.local.scriptID, true);
+            native.switchInPlayer(player.scriptID);
+            native.freezeEntityPosition(alt.Player.local.scriptID, false);
+        }, 1000);
+    }
+    static SwitchOut() {
+        if (loginCam != null) {
+            native.renderScriptCams(false, false, 0, true, false, 0);
+            native.setCamActive(loginCam, false);
+            native.destroyCam(loginCam, true);
+            loginCam = null;
+        }
+        native.switchOutPlayer(alt.Player.local.scriptID, 0, 1);
+        native.freezeEntityPosition(alt.Player.local.scriptID, true);
     }
     static async spawnCharSelectorPed(gender, facefeaturearray, headblendsarray, headoverlayarray) {
         let facefeatures = JSON.parse(facefeaturearray);
@@ -189,10 +209,10 @@ class LoginHandler {
             loginPedHandle = null;
         }
         if (gender == 1) {
-            loginModelHash = alt.hash('mp_f_freemode_01');
+            loginModelHash = alt.hash("mp_f_freemode_01");
             await loadModelAsync(loginModelHash);
         } else if (gender == 0) {
-            loginModelHash = alt.hash('mp_m_freemode_01');
+            loginModelHash = alt.hash("mp_m_freemode_01");
             await loadModelAsync(loginModelHash);
         }
         loginPedHandle = native.createPed(4, loginModelHash, 402.778, -996.9758, -100.01465, 0, false, true);
@@ -233,15 +253,14 @@ class LoginHandler {
         IPLManager.initializeDoorControl();
         setMinimapData();
         setAudioData();
-        /**alt.setStat(alt.StatName.Stamina, 75);
-        alt.setStat(alt.StatName.Strength, 60);
-        alt.setStat(alt.StatName.LungCapacity, 50);
-        alt.setStat(alt.StatName.Wheelie, 50);
-        alt.setStat(alt.StatName.Flying, 75);
-        alt.setStat(alt.StatName.Shooting, 50);
-        alt.setStat(alt.StatName.Stealth, 0);**/ alt.setMsPerGameMinute(60000);
-        let date = new Date();
-        native.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
+        alt.setStat("stamina", 75);
+        alt.setStat("strength", 60);
+        alt.setStat("lung_capacity", 50);
+        alt.setStat("wheelie_ability", 50);
+        alt.setStat("flying_ability", 75);
+        alt.setStat("shooting_ability", 50);
+        alt.setStat("stealth_ability", 0);
+        alt.setMsPerGameMinute(60000);
     }
 }
 export { LoginHandler as default };
@@ -253,4 +272,5 @@ alt.onServer("Client:Login:SaveLoginCredentialsToStorage", LoginHandler.SaveLogi
 alt.onServer("Client:Login:showError", LoginHandler.showError);
 alt.onServer("Client:Login:showArea", LoginHandler.showArea);
 alt.onServer("Client:SpawnArea:SwitchIn", LoginHandler.SwitchIn);
+alt.onServer("Client:SpawnArea:SwitchOut", LoginHandler.SwitchOut);
 alt.on("connectionComplete", LoginHandler.connectionComplete);

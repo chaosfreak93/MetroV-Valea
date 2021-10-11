@@ -1,5 +1,5 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
 let playerTattoos = undefined;
 export function loadClipsetAsync(clipset) {
     return new Promise((resolve, reject)=>{
@@ -15,7 +15,7 @@ export function loadClipsetAsync(clipset) {
 }
 export function loadModelAsync(model) {
     return new Promise((resolve, reject)=>{
-        if (typeof model === 'string') {
+        if (typeof model === "string") {
             model = alt.hash(model);
         }
         if (native.hasModelLoaded(model)) return resolve(true);
@@ -52,6 +52,39 @@ export function loadStreamedTextureDictAsync(streamedTextureDict) {
         }, 0);
     });
 }
+export function loadScaleformMovieAsync(scaleform) {
+    return new Promise((resolve, reject)=>{
+        scaleform = native.requestScaleformMovie(scaleform);
+        let interval = alt.setInterval(()=>{
+            if (native.hasScaleformMovieLoaded(scaleform)) {
+                alt.clearInterval(interval);
+                return resolve(scaleform);
+            }
+        }, 0);
+    });
+}
+export function getScaleformReturnValueIntAsync(returnValue) {
+    return new Promise((resolve, reject)=>{
+        if (native.isScaleformMovieMethodReturnValueReady(returnValue)) return resolve(native.getScaleformMovieMethodReturnValueInt(returnValue));
+        let interval = alt.setInterval(()=>{
+            if (native.isScaleformMovieMethodReturnValueReady(returnValue)) {
+                alt.clearInterval(interval);
+                return resolve(native.getScaleformMovieMethodReturnValueInt(returnValue));
+            }
+        }, 0);
+    });
+}
+export function getScaleformReturnValueBoolAsync(returnValue) {
+    return new Promise((resolve, reject)=>{
+        if (native.isScaleformMovieMethodReturnValueReady(returnValue)) return resolve(native.getScaleformMovieMethodReturnValueBool(returnValue));
+        let interval = alt.setInterval(()=>{
+            if (native.isScaleformMovieMethodReturnValueReady(returnValue)) {
+                alt.clearInterval(interval);
+                return resolve(native.getScaleformMovieMethodReturnValueBool(returnValue));
+            }
+        }, 0);
+    });
+}
 export function gotoCoords(movePos, moveRot) {
     return new Promise((resolve, reject)=>{
         let coords = native.getEntityCoords(alt.Player.local.scriptID, false);
@@ -65,12 +98,12 @@ export function gotoCoords(movePos, moveRot) {
         }, 0);
     });
 }
-export function setIntoVehicle(vehicle) {
+export function isCollisionLoaded(player) {
     return new Promise((resolve, reject)=>{
-        if (alt.Player.local.vehicle) return resolve(true);
-        native.setPedIntoVehicle(alt.Player.local.scriptID, vehicle.scriptID, -1);
+        if (native.hasCollisionLoadedAroundEntity(player.scriptID)) return resolve(true);
+        native.requestCollisionAtCoord(player.pos.x, player.pos.y, player.pos.z);
         let interval = alt.setInterval(()=>{
-            if (alt.Player.local.vehicle) {
+            if (native.hasCollisionLoadedAroundEntity(player.scriptID)) {
                 alt.clearInterval(interval);
                 return resolve(true);
             }
@@ -112,7 +145,7 @@ export default {
     loadAnimDictAsync,
     loadStreamedTextureDictAsync,
     loadModelAsync,
-    setIntoVehicle,
+    isCollisionLoaded,
     clearTattoos,
     setTattoo,
     setCorrectTattoos,

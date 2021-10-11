@@ -1,5 +1,6 @@
-import * as alt from 'alt-client';
-import * as native from 'natives';
+import * as alt from "alt-client";
+import * as native from "natives";
+import { loadModelAsync } from "./utilities";
 let charcreatorBrowser = null;
 let charcreatorCam = null;
 let pedHandle = null;
@@ -14,7 +15,7 @@ class CharCreator {
             alt.toggleGameControls(false);
             native.setEntityAlpha(alt.Player.local.scriptID, 0, false);
             native.triggerScreenblurFadeIn(1);
-            charcreatorCam = native.createCameraWithParams(alt.hash('DEFAULT_SCRIPTED_CAMERA'), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
+            charcreatorCam = native.createCameraWithParams(alt.hash("DEFAULT_SCRIPTED_CAMERA"), 402.7, -1003, -98.6, 0, 0, 358, 18, true, 2);
             native.setCamActive(charcreatorCam, true);
             native.renderScriptCams(true, false, 0, true, false, 0);
             charcreatorBrowser = new alt.WebView("http://resource/client/cef/charcreator/index.html");
@@ -103,28 +104,23 @@ class CharCreator {
             charcreatorBrowser.emit("CEF:Charcreator:showArea", area);
         }
     }
-    static spawnCreatorPed(gender) {
+    static async spawnCreatorPed(gender) {
         if (gender == 1) {
-            modelHash = alt.hash('mp_f_freemode_01');
-            native.requestModel(modelHash);
+            modelHash = alt.hash("mp_f_freemode_01");
+            await loadModelAsync(modelHash);
         } else if (gender == 0) {
-            modelHash = alt.hash('mp_m_freemode_01');
-            native.requestModel(modelHash);
+            modelHash = alt.hash("mp_m_freemode_01");
+            await loadModelAsync(modelHash);
         }
-        let interval = alt.setInterval(function() {
-            if (native.hasModelLoaded(modelHash)) {
-                alt.clearInterval(interval);
-                pedHandle = native.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
-                native.setEntityHeading(pedHandle, 180);
-                native.setEntityInvincible(pedHandle, true);
-                native.disablePedPainAudio(pedHandle, true);
-                native.freezeEntityPosition(pedHandle, true);
-                native.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
-                native.setPedComponentVariation(pedHandle, 11, 15, 0, 0);
-                native.setPedComponentVariation(pedHandle, 8, 15, 0, 0);
-                native.setPedComponentVariation(pedHandle, 3, 15, 0, 0);
-            }
-        }, 0);
+        pedHandle = native.createPed(4, modelHash, 402.778, -996.9758, -100.01465, 0, false, true);
+        native.setEntityHeading(pedHandle, 180);
+        native.setEntityInvincible(pedHandle, true);
+        native.disablePedPainAudio(pedHandle, true);
+        native.freezeEntityPosition(pedHandle, true);
+        native.taskSetBlockingOfNonTemporaryEvents(pedHandle, true);
+        native.setPedComponentVariation(pedHandle, 11, 15, 0, 0);
+        native.setPedComponentVariation(pedHandle, 8, 15, 0, 0);
+        native.setPedComponentVariation(pedHandle, 3, 15, 0, 0);
     }
 }
 export { CharCreator as default };

@@ -1536,7 +1536,9 @@
     background-color: rgba(62, 69, 81, 0.7);
 }
 
-.scss-mdb .primary-color, .scss-mdb ul.stepper li.active a .circle, .scss-mdb ul.stepper li.completed a .circle {
+.scss-mdb .primary-color,
+.scss-mdb ul.stepper li.active a .circle,
+.scss-mdb ul.stepper li.completed a .circle {
     background-color: #4285f4 !important;
 }
 
@@ -1584,7 +1586,8 @@
     background-color: #f80 !important;
 }
 
-.scss-mdb .danger-color, .scss-mdb ul.stepper li.warning a .circle {
+.scss-mdb .danger-color,
+.scss-mdb ul.stepper li.warning a .circle {
     background-color: #ff3547 !important;
 }
 
@@ -1660,7 +1663,8 @@
     color: #4f4f4f !important;
 }
 
-.scss-mdb .dark-grey-text:hover, .scss-mdb .dark-grey-text:focus {
+.scss-mdb .dark-grey-text:hover,
+.scss-mdb .dark-grey-text:focus {
     color: #4f4f4f !important;
 }
 
@@ -1733,11 +1737,14 @@
     transition: all 0.2s ease-in-out;
 }
 
-.scss-mdb a.disabled:hover, .scss-mdb a:disabled:hover {
+.scss-mdb a.disabled:hover,
+.scss-mdb a:disabled:hover {
     color: #007bff;
 }
 
-.scss-mdb a:not([href]):not([tabindex]), .scss-mdb a:not([href]):not([tabindex]):focus, .scss-mdb a:not([href]):not([tabindex]):hover {
+.scss-mdb a:not([href]):not([tabindex]),
+.scss-mdb a:not([href]):not([tabindex]):focus,
+.scss-mdb a:not([href]):not([tabindex]):hover {
     color: inherit;
     text-decoration: none;
 }
@@ -1760,11 +1767,17 @@
     margin-bottom: 2.8rem;
 }
 
-.scss-mdb .divider-new > h1, .scss-mdb .divider-new h2, .scss-mdb .divider-new h3, .scss-mdb .divider-new h4, .scss-mdb .divider-new h5, .scss-mdb .divider-new h6 {
+.scss-mdb .divider-new > h1,
+.scss-mdb .divider-new h2,
+.scss-mdb .divider-new h3,
+.scss-mdb .divider-new h4,
+.scss-mdb .divider-new h5,
+.scss-mdb .divider-new h6 {
     margin-bottom: 0;
 }
 
-.scss-mdb .divider-new:before, .scss-mdb .divider-new:after {
+.scss-mdb .divider-new:before,
+.scss-mdb .divider-new:after {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -1782,7 +1795,8 @@
     margin: 0 0 0 0.5rem;
 }
 
-.scss-mdb .img-fluid, .scss-mdb .modal-dialog.cascading-modal.modal-avatar .modal-header,
+.scss-mdb .img-fluid,
+.scss-mdb .modal-dialog.cascading-modal.modal-avatar .modal-header,
 .scss-mdb .video-fluid {
     max-width: 100%;
     height: auto;
@@ -1854,7 +1868,8 @@
     background-color: #4285f4 !important;
 }
 
-.scss-mdb a.bg-primary:hover, .scss-mdb a.bg-primary:focus,
+.scss-mdb a.bg-primary:hover,
+.scss-mdb a.bg-primary:focus,
 .scss-mdb button.bg-primary:hover,
 .scss-mdb button.bg-primary:focus {
     background-color: #1266f1 !important;
@@ -1868,7 +1883,8 @@
     background-color: #ff3547 !important;
 }
 
-.scss-mdb a.bg-danger:hover, .scss-mdb a.bg-danger:focus,
+.scss-mdb a.bg-danger:hover,
+.scss-mdb a.bg-danger:focus,
 .scss-mdb button.bg-danger:hover,
 .scss-mdb button.bg-danger:focus {
     background-color: #ff0219 !important;
@@ -1882,7 +1898,8 @@
     background-color: #fb3 !important;
 }
 
-.scss-mdb a.bg-warning:hover, .scss-mdb a.bg-warning:focus,
+.scss-mdb a.bg-warning:hover,
+.scss-mdb a.bg-warning:focus,
 .scss-mdb button.bg-warning:hover,
 .scss-mdb button.bg-warning:focus {
     background-color: #ffaa00 !important;
@@ -1896,7 +1913,8 @@
     background-color: #00c851 !important;
 }
 
-.scss-mdb a.bg-success:hover, .scss-mdb a.bg-success:focus,
+.scss-mdb a.bg-success:hover,
+.scss-mdb a.bg-success:focus,
 .scss-mdb button.bg-success:hover,
 .scss-mdb button.bg-success:focus {
     background-color: #00953c !important;
@@ -1910,7 +1928,8 @@
     background-color: #33b5e5 !important;
 }
 
-.scss-mdb a.bg-info:hover, .scss-mdb a.bg-info:focus,
+.scss-mdb a.bg-info:hover,
+.scss-mdb a.bg-info:focus,
 .scss-mdb button.bg-info:hover,
 .scss-mdb button.bg-info:focus {
     background-color: #1a9bcb !important;
@@ -1924,7 +1943,8 @@
     background-color: #2bbbad !important;
 }
 
-.scss-mdb a.bg-default:hover, .scss-mdb a.bg-default:focus,
+.scss-mdb a.bg-default:hover,
+.scss-mdb a.bg-default:focus,
 .scss-mdb button.bg-default:hover,
 .scss-mdb button.bg-default:focus {
     background-color: #219287 !important;
@@ -1938,7 +1958,8 @@
     background-color: #a6c !important;
 }
 
-.scss-mdb a.bg-secondary:hover, .scss-mdb a.bg-secondary:focus,
+.scss-mdb a.bg-secondary:hover,
+.scss-mdb a.bg-secondary:focus,
 .scss-mdb button.bg-secondary:hover,
 .scss-mdb button.bg-secondary:focus {
     background-color: #9540bf !important;
@@ -1952,7 +1973,8 @@
     background-color: #212121 !important;
 }
 
-.scss-mdb a.bg-dark:hover, .scss-mdb a.bg-dark:focus,
+.scss-mdb a.bg-dark:hover,
+.scss-mdb a.bg-dark:focus,
 .scss-mdb button.bg-dark:hover,
 .scss-mdb button.bg-dark:focus {
     background-color: #080808 !important;
@@ -1966,7 +1988,8 @@
     background-color: #e0e0e0 !important;
 }
 
-.scss-mdb a.bg-light:hover, .scss-mdb a.bg-light:focus,
+.scss-mdb a.bg-light:hover,
+.scss-mdb a.bg-light:focus,
 .scss-mdb button.bg-light:hover,
 .scss-mdb button.bg-light:focus {
     background-color: #c7c7c7 !important;
@@ -1997,58 +2020,63 @@
 }
 
 @font-face {
-
-.scss-mdb {
-    font-family: Roboto;
-    font-weight: 200;
-    src: local(Roboto Thin), url("../font/roboto/Roboto-Thin.eot");
-    src: url("../font/roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("../font/roboto/Roboto-Thin.woff2") format("woff2"), url("../font/roboto/Roboto-Thin.woff") format("woff"), url("../font/roboto/Roboto-Thin.ttf") format("truetype");
-}
-
-}
-
-@font-face {
-
-.scss-mdb {
-    font-family: Roboto;
-    font-weight: 300;
-    src: local(Roboto Light), url("../font/roboto/Roboto-Light.eot");
-    src: url("../font/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../font/roboto/Roboto-Light.woff2") format("woff2"), url("../font/roboto/Roboto-Light.woff") format("woff"), url("../font/roboto/Roboto-Light.ttf") format("truetype");
-}
-
+    .scss-mdb {
+        font-family: Roboto;
+        font-weight: 200;
+        src: local(Roboto Thin), url("../font/roboto/Roboto-Thin.eot");
+        src: url("../font/roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"),
+            url("../font/roboto/Roboto-Thin.woff2") format("woff2"),
+            url("../font/roboto/Roboto-Thin.woff") format("woff"),
+            url("../font/roboto/Roboto-Thin.ttf") format("truetype");
+    }
 }
 
 @font-face {
-
-.scss-mdb {
-    font-family: Roboto;
-    font-weight: 400;
-    src: local(Roboto Regular), url("../font/roboto/Roboto-Regular.eot");
-    src: url("../font/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../font/roboto/Roboto-Regular.woff2") format("woff2"), url("../font/roboto/Roboto-Regular.woff") format("woff"), url("../font/roboto/Roboto-Regular.ttf") format("truetype");
-}
-
-}
-
-@font-face {
-
-.scss-mdb {
-    font-family: Roboto;
-    font-weight: 500;
-    src: url("../font/roboto/Roboto-Medium.eot");
-    src: url("../font/roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../font/roboto/Roboto-Medium.woff2") format("woff2"), url("../font/roboto/Roboto-Medium.woff") format("woff"), url("../font/roboto/Roboto-Medium.ttf") format("truetype");
-}
-
+    .scss-mdb {
+        font-family: Roboto;
+        font-weight: 300;
+        src: local(Roboto Light), url("../font/roboto/Roboto-Light.eot");
+        src: url("../font/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"),
+            url("../font/roboto/Roboto-Light.woff2") format("woff2"),
+            url("../font/roboto/Roboto-Light.woff") format("woff"),
+            url("../font/roboto/Roboto-Light.ttf") format("truetype");
+    }
 }
 
 @font-face {
-
-.scss-mdb {
-    font-family: Roboto;
-    font-weight: 700;
-    src: url("../font/roboto/Roboto-Bold.eot");
-    src: url("../font/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../font/roboto/Roboto-Bold.woff2") format("woff2"), url("../font/roboto/Roboto-Bold.woff") format("woff"), url("../font/roboto/Roboto-Bold.ttf") format("truetype");
+    .scss-mdb {
+        font-family: Roboto;
+        font-weight: 400;
+        src: local(Roboto Regular), url("../font/roboto/Roboto-Regular.eot");
+        src: url("../font/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+            url("../font/roboto/Roboto-Regular.woff2") format("woff2"),
+            url("../font/roboto/Roboto-Regular.woff") format("woff"),
+            url("../font/roboto/Roboto-Regular.ttf") format("truetype");
+    }
 }
 
+@font-face {
+    .scss-mdb {
+        font-family: Roboto;
+        font-weight: 500;
+        src: url("../font/roboto/Roboto-Medium.eot");
+        src: url("../font/roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+            url("../font/roboto/Roboto-Medium.woff2") format("woff2"),
+            url("../font/roboto/Roboto-Medium.woff") format("woff"),
+            url("../font/roboto/Roboto-Medium.ttf") format("truetype");
+    }
+}
+
+@font-face {
+    .scss-mdb {
+        font-family: Roboto;
+        font-weight: 700;
+        src: url("../font/roboto/Roboto-Bold.eot");
+        src: url("../font/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+            url("../font/roboto/Roboto-Bold.woff2") format("woff2"),
+            url("../font/roboto/Roboto-Bold.woff") format("woff"),
+            url("../font/roboto/Roboto-Bold.ttf") format("truetype");
+    }
 }
 
 .scss-mdb body {
@@ -2056,17 +2084,22 @@
     font-weight: 300;
 }
 
-.scss-mdb h1, .scss-mdb h2, .scss-mdb h3, .scss-mdb h4, .scss-mdb h5, .scss-mdb h6 {
+.scss-mdb h1,
+.scss-mdb h2,
+.scss-mdb h3,
+.scss-mdb h4,
+.scss-mdb h5,
+.scss-mdb h6 {
     font-weight: 300;
 }
 
 .scss-mdb .blockquote {
     padding: 0.5rem 1rem;
-    border-left: .25rem solid #eceeef;
+    border-left: 0.25rem solid #eceeef;
 }
 
 .scss-mdb .blockquote.text-right {
-    border-right: .25rem solid #eceeef;
+    border-right: 0.25rem solid #eceeef;
     border-left: none;
 }
 
@@ -2233,7 +2266,8 @@
     color: #4285f4 !important;
 }
 
-.scss-mdb a.text-primary:hover, .scss-mdb a.text-primary:focus {
+.scss-mdb a.text-primary:hover,
+.scss-mdb a.text-primary:focus {
     color: #1266f1 !important;
 }
 
@@ -2241,7 +2275,8 @@
     color: #ff3547 !important;
 }
 
-.scss-mdb a.text-danger:hover, .scss-mdb a.text-danger:focus {
+.scss-mdb a.text-danger:hover,
+.scss-mdb a.text-danger:focus {
     color: #ff0219 !important;
 }
 
@@ -2249,7 +2284,8 @@
     color: #fb3 !important;
 }
 
-.scss-mdb a.text-warning:hover, .scss-mdb a.text-warning:focus {
+.scss-mdb a.text-warning:hover,
+.scss-mdb a.text-warning:focus {
     color: #ffaa00 !important;
 }
 
@@ -2257,7 +2293,8 @@
     color: #00c851 !important;
 }
 
-.scss-mdb a.text-success:hover, .scss-mdb a.text-success:focus {
+.scss-mdb a.text-success:hover,
+.scss-mdb a.text-success:focus {
     color: #00953c !important;
 }
 
@@ -2265,7 +2302,8 @@
     color: #33b5e5 !important;
 }
 
-.scss-mdb a.text-info:hover, .scss-mdb a.text-info:focus {
+.scss-mdb a.text-info:hover,
+.scss-mdb a.text-info:focus {
     color: #1a9bcb !important;
 }
 
@@ -2273,7 +2311,8 @@
     color: #2bbbad !important;
 }
 
-.scss-mdb a.text-default:hover, .scss-mdb a.text-default:focus {
+.scss-mdb a.text-default:hover,
+.scss-mdb a.text-default:focus {
     color: #219287 !important;
 }
 
@@ -2281,7 +2320,8 @@
     color: #a6c !important;
 }
 
-.scss-mdb a.text-secondary:hover, .scss-mdb a.text-secondary:focus {
+.scss-mdb a.text-secondary:hover,
+.scss-mdb a.text-secondary:focus {
     color: #9540bf !important;
 }
 
@@ -2289,7 +2329,8 @@
     color: #212121 !important;
 }
 
-.scss-mdb a.text-dark:hover, .scss-mdb a.text-dark:focus {
+.scss-mdb a.text-dark:hover,
+.scss-mdb a.text-dark:focus {
     color: #080808 !important;
 }
 
@@ -2297,7 +2338,8 @@
     color: #e0e0e0 !important;
 }
 
-.scss-mdb a.text-light:hover, .scss-mdb a.text-light:focus {
+.scss-mdb a.text-light:hover,
+.scss-mdb a.text-light:focus {
     color: #c7c7c7 !important;
 }
 
@@ -2327,7 +2369,8 @@
     background-attachment: fixed;
 }
 
-.scss-mdb .view img, .scss-mdb .view video {
+.scss-mdb .view img,
+.scss-mdb .view video {
     position: relative;
     display: block;
 }
@@ -2356,12 +2399,14 @@
     opacity: 1;
 }
 
-.scss-mdb .zoom img, .scss-mdb .zoom video {
+.scss-mdb .zoom img,
+.scss-mdb .zoom video {
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
 }
 
-.scss-mdb .zoom:hover img, .scss-mdb .zoom:hover video {
+.scss-mdb .zoom:hover img,
+.scss-mdb .zoom:hover video {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
@@ -2430,7 +2475,13 @@
     margin-left: -50px;
     pointer-events: none;
     background: rgba(0, 0, 0, 0.2);
-    background: radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(
+        rgba(0, 0, 0, 0.2) 0,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(255, 255, 255, 0) 70%
+    );
     border-radius: 50%;
     opacity: 0;
     -webkit-transition-property: -webkit-transform, opacity;
@@ -2446,7 +2497,13 @@
 
 .scss-mdb .waves-effect.waves-light .waves-ripple {
     background: rgba(255, 255, 255, 0.4);
-    background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.2) 0,
+        rgba(255, 255, 255, 0.3) 40%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0) 70%
+    );
 }
 
 .scss-mdb .waves-effect.waves-classic .waves-ripple {
@@ -2488,12 +2545,12 @@
 }
 
 .scss-mdb .waves-button {
-    padding: .85em 1.1em;
-    border-radius: .2em;
+    padding: 0.85em 1.1em;
+    border-radius: 0.2em;
 }
 
 .scss-mdb .waves-button-input {
-    padding: .85em 1.1em;
+    padding: 0.85em 1.1em;
     margin: 0;
 }
 
@@ -2501,7 +2558,7 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    border-radius: .2em;
+    border-radius: 0.2em;
 }
 
 .scss-mdb .waves-input-wrapper.waves-button {
@@ -2540,7 +2597,8 @@
     display: block;
 }
 
-.scss-mdb a.waves-effect, .scss-mdb a.waves-light {
+.scss-mdb a.waves-effect,
+.scss-mdb a.waves-light {
     display: inline-block;
 }
 
@@ -3598,8 +3656,8 @@
 .scss-mdb .bounceIn {
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
 }
 
 @-webkit-keyframes bounceInDown {
@@ -3925,8 +3983,8 @@
 .scss-mdb .bounceOut {
     -webkit-animation-name: bounceOut;
     animation-name: bounceOut;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
 }
 
 @-webkit-keyframes bounceOutDown {
@@ -4545,8 +4603,8 @@
 .scss-mdb .flipOutX {
     -webkit-animation-name: flipOutX;
     animation-name: flipOutX;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
 }
@@ -4588,8 +4646,8 @@
 .scss-mdb .flipOutY {
     -webkit-animation-name: flipOutY;
     animation-name: flipOutY;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
 }
@@ -5839,15 +5897,21 @@
     border-radius: 0.125rem;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     padding: 0.84rem 2.14rem;
     font-size: 0.81rem;
 }
 
-.scss-mdb .btn:hover, .scss-mdb .btn:focus, .scss-mdb .btn:active {
+.scss-mdb .btn:hover,
+.scss-mdb .btn:focus,
+.scss-mdb .btn:active {
     outline: 0;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -5884,7 +5948,12 @@
     font-size: 0.64rem;
 }
 
-.scss-mdb .btn.disabled:hover, .scss-mdb .btn.disabled:focus, .scss-mdb .btn.disabled:active, .scss-mdb .btn:disabled:hover, .scss-mdb .btn:disabled:focus, .scss-mdb .btn:disabled:active {
+.scss-mdb .btn.disabled:hover,
+.scss-mdb .btn.disabled:focus,
+.scss-mdb .btn.disabled:active,
+.scss-mdb .btn:disabled:hover,
+.scss-mdb .btn:disabled:focus,
+.scss-mdb .btn:disabled:active {
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
@@ -5916,7 +5985,9 @@
     box-shadow: none;
 }
 
-.scss-mdb .btn-link:hover, .scss-mdb .btn-link:focus, .scss-mdb .btn-link:active {
+.scss-mdb .btn-link:hover,
+.scss-mdb .btn-link:focus,
+.scss-mdb .btn-link:active {
     color: #000;
     background-color: transparent;
     -webkit-box-shadow: none;
@@ -5938,12 +6009,15 @@
     background-color: #5a95f5;
 }
 
-.scss-mdb .btn-primary:focus, .scss-mdb .btn-primary.focus {
+.scss-mdb .btn-primary:focus,
+.scss-mdb .btn-primary.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-primary:focus, .scss-mdb .btn-primary:active, .scss-mdb .btn-primary.active {
+.scss-mdb .btn-primary:focus,
+.scss-mdb .btn-primary:active,
+.scss-mdb .btn-primary.active {
     background-color: #0b51c5;
 }
 
@@ -5951,18 +6025,21 @@
     background-color: #4285f4 !important;
 }
 
-.scss-mdb .btn-primary.dropdown-toggle:hover, .scss-mdb .btn-primary.dropdown-toggle:focus {
+.scss-mdb .btn-primary.dropdown-toggle:hover,
+.scss-mdb .btn-primary.dropdown-toggle:focus {
     background-color: #5a95f5 !important;
 }
 
-.scss-mdb .btn-primary:not([disabled]):not(.disabled):active, .scss-mdb .btn-primary:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-primary:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-primary:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-primary.dropdown-toggle {
     background-color: #0b51c5 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-primary:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-primary:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-primary:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-primary:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-primary.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -5972,7 +6049,8 @@
     color: #4285f4 !important;
 }
 
-.scss-mdb .primary-ic:hover, .scss-mdb .primary-ic:focus {
+.scss-mdb .primary-ic:hover,
+.scss-mdb .primary-ic:focus {
     color: #4285f4;
 }
 
@@ -5992,13 +6070,18 @@
     border: 2px solid #4285f4 !important;
 }
 
-.scss-mdb .btn-outline-primary:hover, .scss-mdb .btn-outline-primary:focus, .scss-mdb .btn-outline-primary:active, .scss-mdb .btn-outline-primary:active:focus, .scss-mdb .btn-outline-primary.active {
+.scss-mdb .btn-outline-primary:hover,
+.scss-mdb .btn-outline-primary:focus,
+.scss-mdb .btn-outline-primary:active,
+.scss-mdb .btn-outline-primary:active:focus,
+.scss-mdb .btn-outline-primary.active {
     color: #4285f4 !important;
     background-color: transparent !important;
     border-color: #4285f4 !important;
 }
 
-.scss-mdb .btn-outline-primary:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-primary:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-primary:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-primary:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-primary.dropdown-toggle {
     background-color: transparent !important;
     border-color: #4285f4 !important;
@@ -6006,7 +6089,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-primary:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-primary:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-primary:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-primary:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-primary.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6022,12 +6106,15 @@
     background-color: #ff4f5e;
 }
 
-.scss-mdb .btn-danger:focus, .scss-mdb .btn-danger.focus {
+.scss-mdb .btn-danger:focus,
+.scss-mdb .btn-danger.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-danger:focus, .scss-mdb .btn-danger:active, .scss-mdb .btn-danger.active {
+.scss-mdb .btn-danger:focus,
+.scss-mdb .btn-danger:active,
+.scss-mdb .btn-danger.active {
     background-color: #ce0012;
 }
 
@@ -6035,18 +6122,21 @@
     background-color: #ff3547 !important;
 }
 
-.scss-mdb .btn-danger.dropdown-toggle:hover, .scss-mdb .btn-danger.dropdown-toggle:focus {
+.scss-mdb .btn-danger.dropdown-toggle:hover,
+.scss-mdb .btn-danger.dropdown-toggle:focus {
     background-color: #ff4f5e !important;
 }
 
-.scss-mdb .btn-danger:not([disabled]):not(.disabled):active, .scss-mdb .btn-danger:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-danger:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-danger:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-danger.dropdown-toggle {
     background-color: #ce0012 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-danger:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-danger:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-danger:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-danger:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-danger.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6056,7 +6146,8 @@
     color: #ff3547 !important;
 }
 
-.scss-mdb .danger-ic:hover, .scss-mdb .danger-ic:focus {
+.scss-mdb .danger-ic:hover,
+.scss-mdb .danger-ic:focus {
     color: #ff3547;
 }
 
@@ -6076,13 +6167,18 @@
     border: 2px solid #ff3547 !important;
 }
 
-.scss-mdb .btn-outline-danger:hover, .scss-mdb .btn-outline-danger:focus, .scss-mdb .btn-outline-danger:active, .scss-mdb .btn-outline-danger:active:focus, .scss-mdb .btn-outline-danger.active {
+.scss-mdb .btn-outline-danger:hover,
+.scss-mdb .btn-outline-danger:focus,
+.scss-mdb .btn-outline-danger:active,
+.scss-mdb .btn-outline-danger:active:focus,
+.scss-mdb .btn-outline-danger.active {
     color: #ff3547 !important;
     background-color: transparent !important;
     border-color: #ff3547 !important;
 }
 
-.scss-mdb .btn-outline-danger:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-danger:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-danger:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-danger:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-danger.dropdown-toggle {
     background-color: transparent !important;
     border-color: #ff3547 !important;
@@ -6090,7 +6186,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-danger:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-danger:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-danger:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-danger:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-danger.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6106,12 +6203,15 @@
     background-color: #ffc44d;
 }
 
-.scss-mdb .btn-warning:focus, .scss-mdb .btn-warning.focus {
+.scss-mdb .btn-warning:focus,
+.scss-mdb .btn-warning.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-warning:focus, .scss-mdb .btn-warning:active, .scss-mdb .btn-warning.active {
+.scss-mdb .btn-warning:focus,
+.scss-mdb .btn-warning:active,
+.scss-mdb .btn-warning.active {
     background-color: #cc8800;
 }
 
@@ -6119,18 +6219,21 @@
     background-color: #fb3 !important;
 }
 
-.scss-mdb .btn-warning.dropdown-toggle:hover, .scss-mdb .btn-warning.dropdown-toggle:focus {
+.scss-mdb .btn-warning.dropdown-toggle:hover,
+.scss-mdb .btn-warning.dropdown-toggle:focus {
     background-color: #ffc44d !important;
 }
 
-.scss-mdb .btn-warning:not([disabled]):not(.disabled):active, .scss-mdb .btn-warning:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-warning:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-warning:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-warning.dropdown-toggle {
     background-color: #cc8800 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-warning:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-warning:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-warning:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-warning:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-warning.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6140,7 +6243,8 @@
     color: #fb3 !important;
 }
 
-.scss-mdb .warning-ic:hover, .scss-mdb .warning-ic:focus {
+.scss-mdb .warning-ic:hover,
+.scss-mdb .warning-ic:focus {
     color: #fb3;
 }
 
@@ -6160,13 +6264,18 @@
     border: 2px solid #fb3 !important;
 }
 
-.scss-mdb .btn-outline-warning:hover, .scss-mdb .btn-outline-warning:focus, .scss-mdb .btn-outline-warning:active, .scss-mdb .btn-outline-warning:active:focus, .scss-mdb .btn-outline-warning.active {
+.scss-mdb .btn-outline-warning:hover,
+.scss-mdb .btn-outline-warning:focus,
+.scss-mdb .btn-outline-warning:active,
+.scss-mdb .btn-outline-warning:active:focus,
+.scss-mdb .btn-outline-warning.active {
     color: #fb3 !important;
     background-color: transparent !important;
     border-color: #fb3 !important;
 }
 
-.scss-mdb .btn-outline-warning:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-warning:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-warning:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-warning:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-warning.dropdown-toggle {
     background-color: transparent !important;
     border-color: #fb3 !important;
@@ -6174,7 +6283,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-warning:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-warning:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-warning:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-warning:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-warning.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6190,12 +6300,15 @@
     background-color: #00e25b;
 }
 
-.scss-mdb .btn-success:focus, .scss-mdb .btn-success.focus {
+.scss-mdb .btn-success:focus,
+.scss-mdb .btn-success.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-success:focus, .scss-mdb .btn-success:active, .scss-mdb .btn-success.active {
+.scss-mdb .btn-success:focus,
+.scss-mdb .btn-success:active,
+.scss-mdb .btn-success.active {
     background-color: #006228;
 }
 
@@ -6203,18 +6316,21 @@
     background-color: #00c851 !important;
 }
 
-.scss-mdb .btn-success.dropdown-toggle:hover, .scss-mdb .btn-success.dropdown-toggle:focus {
+.scss-mdb .btn-success.dropdown-toggle:hover,
+.scss-mdb .btn-success.dropdown-toggle:focus {
     background-color: #00e25b !important;
 }
 
-.scss-mdb .btn-success:not([disabled]):not(.disabled):active, .scss-mdb .btn-success:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-success:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-success:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-success.dropdown-toggle {
     background-color: #006228 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-success:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-success:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-success:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-success:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-success.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6224,7 +6340,8 @@
     color: #00c851 !important;
 }
 
-.scss-mdb .success-ic:hover, .scss-mdb .success-ic:focus {
+.scss-mdb .success-ic:hover,
+.scss-mdb .success-ic:focus {
     color: #00c851;
 }
 
@@ -6244,13 +6361,18 @@
     border: 2px solid #00c851 !important;
 }
 
-.scss-mdb .btn-outline-success:hover, .scss-mdb .btn-outline-success:focus, .scss-mdb .btn-outline-success:active, .scss-mdb .btn-outline-success:active:focus, .scss-mdb .btn-outline-success.active {
+.scss-mdb .btn-outline-success:hover,
+.scss-mdb .btn-outline-success:focus,
+.scss-mdb .btn-outline-success:active,
+.scss-mdb .btn-outline-success:active:focus,
+.scss-mdb .btn-outline-success.active {
     color: #00c851 !important;
     background-color: transparent !important;
     border-color: #00c851 !important;
 }
 
-.scss-mdb .btn-outline-success:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-success:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-success:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-success:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-success.dropdown-toggle {
     background-color: transparent !important;
     border-color: #00c851 !important;
@@ -6258,7 +6380,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-success:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-success:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-success:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-success:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-success.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6274,12 +6397,15 @@
     background-color: #4abde8;
 }
 
-.scss-mdb .btn-info:focus, .scss-mdb .btn-info.focus {
+.scss-mdb .btn-info:focus,
+.scss-mdb .btn-info.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-info:focus, .scss-mdb .btn-info:active, .scss-mdb .btn-info.active {
+.scss-mdb .btn-info:focus,
+.scss-mdb .btn-info:active,
+.scss-mdb .btn-info.active {
     background-color: #14799e;
 }
 
@@ -6287,18 +6413,21 @@
     background-color: #33b5e5 !important;
 }
 
-.scss-mdb .btn-info.dropdown-toggle:hover, .scss-mdb .btn-info.dropdown-toggle:focus {
+.scss-mdb .btn-info.dropdown-toggle:hover,
+.scss-mdb .btn-info.dropdown-toggle:focus {
     background-color: #4abde8 !important;
 }
 
-.scss-mdb .btn-info:not([disabled]):not(.disabled):active, .scss-mdb .btn-info:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-info:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-info:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-info.dropdown-toggle {
     background-color: #14799e !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-info:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-info:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-info:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-info:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-info.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6308,7 +6437,8 @@
     color: #33b5e5 !important;
 }
 
-.scss-mdb .info-ic:hover, .scss-mdb .info-ic:focus {
+.scss-mdb .info-ic:hover,
+.scss-mdb .info-ic:focus {
     color: #33b5e5;
 }
 
@@ -6328,13 +6458,18 @@
     border: 2px solid #33b5e5 !important;
 }
 
-.scss-mdb .btn-outline-info:hover, .scss-mdb .btn-outline-info:focus, .scss-mdb .btn-outline-info:active, .scss-mdb .btn-outline-info:active:focus, .scss-mdb .btn-outline-info.active {
+.scss-mdb .btn-outline-info:hover,
+.scss-mdb .btn-outline-info:focus,
+.scss-mdb .btn-outline-info:active,
+.scss-mdb .btn-outline-info:active:focus,
+.scss-mdb .btn-outline-info.active {
     color: #33b5e5 !important;
     background-color: transparent !important;
     border-color: #33b5e5 !important;
 }
 
-.scss-mdb .btn-outline-info:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-info:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-info:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-info:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-info.dropdown-toggle {
     background-color: transparent !important;
     border-color: #33b5e5 !important;
@@ -6342,7 +6477,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-info:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-info:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-info:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-info:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-info.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6358,12 +6494,15 @@
     background-color: #30cfc0;
 }
 
-.scss-mdb .btn-default:focus, .scss-mdb .btn-default.focus {
+.scss-mdb .btn-default:focus,
+.scss-mdb .btn-default.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-default:focus, .scss-mdb .btn-default:active, .scss-mdb .btn-default.active {
+.scss-mdb .btn-default:focus,
+.scss-mdb .btn-default:active,
+.scss-mdb .btn-default.active {
     background-color: #186860;
 }
 
@@ -6371,18 +6510,21 @@
     background-color: #2bbbad !important;
 }
 
-.scss-mdb .btn-default.dropdown-toggle:hover, .scss-mdb .btn-default.dropdown-toggle:focus {
+.scss-mdb .btn-default.dropdown-toggle:hover,
+.scss-mdb .btn-default.dropdown-toggle:focus {
     background-color: #30cfc0 !important;
 }
 
-.scss-mdb .btn-default:not([disabled]):not(.disabled):active, .scss-mdb .btn-default:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-default:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-default:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-default.dropdown-toggle {
     background-color: #186860 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-default:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-default:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-default:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-default:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-default.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6392,7 +6534,8 @@
     color: #2bbbad !important;
 }
 
-.scss-mdb .default-ic:hover, .scss-mdb .default-ic:focus {
+.scss-mdb .default-ic:hover,
+.scss-mdb .default-ic:focus {
     color: #2bbbad;
 }
 
@@ -6412,13 +6555,18 @@
     border: 2px solid #2bbbad !important;
 }
 
-.scss-mdb .btn-outline-default:hover, .scss-mdb .btn-outline-default:focus, .scss-mdb .btn-outline-default:active, .scss-mdb .btn-outline-default:active:focus, .scss-mdb .btn-outline-default.active {
+.scss-mdb .btn-outline-default:hover,
+.scss-mdb .btn-outline-default:focus,
+.scss-mdb .btn-outline-default:active,
+.scss-mdb .btn-outline-default:active:focus,
+.scss-mdb .btn-outline-default.active {
     color: #2bbbad !important;
     background-color: transparent !important;
     border-color: #2bbbad !important;
 }
 
-.scss-mdb .btn-outline-default:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-default:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-default:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-default:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-default.dropdown-toggle {
     background-color: transparent !important;
     border-color: #2bbbad !important;
@@ -6426,7 +6574,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-default:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-default:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-default:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-default:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-default.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6442,12 +6591,15 @@
     background-color: #b579d2;
 }
 
-.scss-mdb .btn-secondary:focus, .scss-mdb .btn-secondary.focus {
+.scss-mdb .btn-secondary:focus,
+.scss-mdb .btn-secondary.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-secondary:focus, .scss-mdb .btn-secondary:active, .scss-mdb .btn-secondary.active {
+.scss-mdb .btn-secondary:focus,
+.scss-mdb .btn-secondary:active,
+.scss-mdb .btn-secondary.active {
     background-color: #773399;
 }
 
@@ -6455,18 +6607,21 @@
     background-color: #a6c !important;
 }
 
-.scss-mdb .btn-secondary.dropdown-toggle:hover, .scss-mdb .btn-secondary.dropdown-toggle:focus {
+.scss-mdb .btn-secondary.dropdown-toggle:hover,
+.scss-mdb .btn-secondary.dropdown-toggle:focus {
     background-color: #b579d2 !important;
 }
 
-.scss-mdb .btn-secondary:not([disabled]):not(.disabled):active, .scss-mdb .btn-secondary:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-secondary:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-secondary:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-secondary.dropdown-toggle {
     background-color: #773399 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-secondary:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-secondary:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-secondary:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-secondary:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-secondary.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6476,7 +6631,8 @@
     color: #a6c !important;
 }
 
-.scss-mdb .secondary-ic:hover, .scss-mdb .secondary-ic:focus {
+.scss-mdb .secondary-ic:hover,
+.scss-mdb .secondary-ic:focus {
     color: #a6c;
 }
 
@@ -6496,13 +6652,18 @@
     border: 2px solid #a6c !important;
 }
 
-.scss-mdb .btn-outline-secondary:hover, .scss-mdb .btn-outline-secondary:focus, .scss-mdb .btn-outline-secondary:active, .scss-mdb .btn-outline-secondary:active:focus, .scss-mdb .btn-outline-secondary.active {
+.scss-mdb .btn-outline-secondary:hover,
+.scss-mdb .btn-outline-secondary:focus,
+.scss-mdb .btn-outline-secondary:active,
+.scss-mdb .btn-outline-secondary:active:focus,
+.scss-mdb .btn-outline-secondary.active {
     color: #a6c !important;
     background-color: transparent !important;
     border-color: #a6c !important;
 }
 
-.scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-secondary.dropdown-toggle {
     background-color: transparent !important;
     border-color: #a6c !important;
@@ -6510,7 +6671,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-secondary:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-secondary.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6526,12 +6688,15 @@
     background-color: #3b3b3b;
 }
 
-.scss-mdb .btn-elegant:focus, .scss-mdb .btn-elegant.focus {
+.scss-mdb .btn-elegant:focus,
+.scss-mdb .btn-elegant.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-elegant:focus, .scss-mdb .btn-elegant:active, .scss-mdb .btn-elegant.active {
+.scss-mdb .btn-elegant:focus,
+.scss-mdb .btn-elegant:active,
+.scss-mdb .btn-elegant.active {
     background-color: black;
 }
 
@@ -6539,18 +6704,21 @@
     background-color: #2e2e2e !important;
 }
 
-.scss-mdb .btn-elegant.dropdown-toggle:hover, .scss-mdb .btn-elegant.dropdown-toggle:focus {
+.scss-mdb .btn-elegant.dropdown-toggle:hover,
+.scss-mdb .btn-elegant.dropdown-toggle:focus {
     background-color: #3b3b3b !important;
 }
 
-.scss-mdb .btn-elegant:not([disabled]):not(.disabled):active, .scss-mdb .btn-elegant:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-elegant:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-elegant:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-elegant.dropdown-toggle {
     background-color: black !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-elegant:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-elegant:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-elegant:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-elegant:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-elegant.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6560,7 +6728,8 @@
     color: #2e2e2e !important;
 }
 
-.scss-mdb .elegant-ic:hover, .scss-mdb .elegant-ic:focus {
+.scss-mdb .elegant-ic:hover,
+.scss-mdb .elegant-ic:focus {
     color: #2e2e2e;
 }
 
@@ -6580,13 +6749,18 @@
     border: 2px solid #2e2e2e !important;
 }
 
-.scss-mdb .btn-outline-elegant:hover, .scss-mdb .btn-outline-elegant:focus, .scss-mdb .btn-outline-elegant:active, .scss-mdb .btn-outline-elegant:active:focus, .scss-mdb .btn-outline-elegant.active {
+.scss-mdb .btn-outline-elegant:hover,
+.scss-mdb .btn-outline-elegant:focus,
+.scss-mdb .btn-outline-elegant:active,
+.scss-mdb .btn-outline-elegant:active:focus,
+.scss-mdb .btn-outline-elegant.active {
     color: #2e2e2e !important;
     background-color: transparent !important;
     border-color: #2e2e2e !important;
 }
 
-.scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-elegant.dropdown-toggle {
     background-color: transparent !important;
     border-color: #2e2e2e !important;
@@ -6594,7 +6768,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-elegant:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-elegant.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6610,12 +6785,15 @@
     background-color: #9f105c;
 }
 
-.scss-mdb .btn-unique:focus, .scss-mdb .btn-unique.focus {
+.scss-mdb .btn-unique:focus,
+.scss-mdb .btn-unique.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-unique:focus, .scss-mdb .btn-unique:active, .scss-mdb .btn-unique.active {
+.scss-mdb .btn-unique:focus,
+.scss-mdb .btn-unique:active,
+.scss-mdb .btn-unique.active {
     background-color: #2c0419;
 }
 
@@ -6623,18 +6801,21 @@
     background-color: #880e4f !important;
 }
 
-.scss-mdb .btn-unique.dropdown-toggle:hover, .scss-mdb .btn-unique.dropdown-toggle:focus {
+.scss-mdb .btn-unique.dropdown-toggle:hover,
+.scss-mdb .btn-unique.dropdown-toggle:focus {
     background-color: #9f105c !important;
 }
 
-.scss-mdb .btn-unique:not([disabled]):not(.disabled):active, .scss-mdb .btn-unique:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-unique:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-unique:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-unique.dropdown-toggle {
     background-color: #2c0419 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-unique:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-unique:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-unique:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-unique:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-unique.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6644,7 +6825,8 @@
     color: #880e4f !important;
 }
 
-.scss-mdb .unique-ic:hover, .scss-mdb .unique-ic:focus {
+.scss-mdb .unique-ic:hover,
+.scss-mdb .unique-ic:focus {
     color: #880e4f;
 }
 
@@ -6664,13 +6846,18 @@
     border: 2px solid #880e4f !important;
 }
 
-.scss-mdb .btn-outline-unique:hover, .scss-mdb .btn-outline-unique:focus, .scss-mdb .btn-outline-unique:active, .scss-mdb .btn-outline-unique:active:focus, .scss-mdb .btn-outline-unique.active {
+.scss-mdb .btn-outline-unique:hover,
+.scss-mdb .btn-outline-unique:focus,
+.scss-mdb .btn-outline-unique:active,
+.scss-mdb .btn-outline-unique:active:focus,
+.scss-mdb .btn-outline-unique.active {
     color: #880e4f !important;
     background-color: transparent !important;
     border-color: #880e4f !important;
 }
 
-.scss-mdb .btn-outline-unique:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-unique:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-unique:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-unique:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-unique.dropdown-toggle {
     background-color: transparent !important;
     border-color: #880e4f !important;
@@ -6678,7 +6865,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-unique:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-unique:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-unique:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-unique:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-unique.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6694,12 +6882,15 @@
     background-color: #3fa044;
 }
 
-.scss-mdb .btn-dark-green:focus, .scss-mdb .btn-dark-green.focus {
+.scss-mdb .btn-dark-green:focus,
+.scss-mdb .btn-dark-green.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-dark-green:focus, .scss-mdb .btn-dark-green:active, .scss-mdb .btn-dark-green.active {
+.scss-mdb .btn-dark-green:focus,
+.scss-mdb .btn-dark-green:active,
+.scss-mdb .btn-dark-green.active {
     background-color: #1b451d;
 }
 
@@ -6707,18 +6898,21 @@
     background-color: #388e3c !important;
 }
 
-.scss-mdb .btn-dark-green.dropdown-toggle:hover, .scss-mdb .btn-dark-green.dropdown-toggle:focus {
+.scss-mdb .btn-dark-green.dropdown-toggle:hover,
+.scss-mdb .btn-dark-green.dropdown-toggle:focus {
     background-color: #3fa044 !important;
 }
 
-.scss-mdb .btn-dark-green:not([disabled]):not(.disabled):active, .scss-mdb .btn-dark-green:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-dark-green:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-dark-green:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-dark-green.dropdown-toggle {
     background-color: #1b451d !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-dark-green:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-dark-green:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-dark-green:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-dark-green:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-dark-green.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6728,7 +6922,8 @@
     color: #388e3c !important;
 }
 
-.scss-mdb .dark-green-ic:hover, .scss-mdb .dark-green-ic:focus {
+.scss-mdb .dark-green-ic:hover,
+.scss-mdb .dark-green-ic:focus {
     color: #388e3c;
 }
 
@@ -6748,13 +6943,18 @@
     border: 2px solid #388e3c !important;
 }
 
-.scss-mdb .btn-outline-dark-green:hover, .scss-mdb .btn-outline-dark-green:focus, .scss-mdb .btn-outline-dark-green:active, .scss-mdb .btn-outline-dark-green:active:focus, .scss-mdb .btn-outline-dark-green.active {
+.scss-mdb .btn-outline-dark-green:hover,
+.scss-mdb .btn-outline-dark-green:focus,
+.scss-mdb .btn-outline-dark-green:active,
+.scss-mdb .btn-outline-dark-green:active:focus,
+.scss-mdb .btn-outline-dark-green.active {
     color: #388e3c !important;
     background-color: transparent !important;
     border-color: #388e3c !important;
 }
 
-.scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-dark-green.dropdown-toggle {
     background-color: transparent !important;
     border-color: #388e3c !important;
@@ -6762,7 +6962,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-dark-green:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-dark-green.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6778,12 +6979,15 @@
     background-color: #63759d;
 }
 
-.scss-mdb .btn-mdb-color:focus, .scss-mdb .btn-mdb-color.focus {
+.scss-mdb .btn-mdb-color:focus,
+.scss-mdb .btn-mdb-color.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-mdb-color:focus, .scss-mdb .btn-mdb-color:active, .scss-mdb .btn-mdb-color.active {
+.scss-mdb .btn-mdb-color:focus,
+.scss-mdb .btn-mdb-color:active,
+.scss-mdb .btn-mdb-color.active {
     background-color: #323a4e;
 }
 
@@ -6791,18 +6995,21 @@
     background-color: #59698d !important;
 }
 
-.scss-mdb .btn-mdb-color.dropdown-toggle:hover, .scss-mdb .btn-mdb-color.dropdown-toggle:focus {
+.scss-mdb .btn-mdb-color.dropdown-toggle:hover,
+.scss-mdb .btn-mdb-color.dropdown-toggle:focus {
     background-color: #63759d !important;
 }
 
-.scss-mdb .btn-mdb-color:not([disabled]):not(.disabled):active, .scss-mdb .btn-mdb-color:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-mdb-color:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-mdb-color:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-mdb-color.dropdown-toggle {
     background-color: #323a4e !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-mdb-color:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-mdb-color:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-mdb-color:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-mdb-color:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-mdb-color.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6812,7 +7019,8 @@
     color: #59698d !important;
 }
 
-.scss-mdb .mdb-color-ic:hover, .scss-mdb .mdb-color-ic:focus {
+.scss-mdb .mdb-color-ic:hover,
+.scss-mdb .mdb-color-ic:focus {
     color: #59698d;
 }
 
@@ -6832,13 +7040,18 @@
     border: 2px solid #59698d !important;
 }
 
-.scss-mdb .btn-outline-mdb-color:hover, .scss-mdb .btn-outline-mdb-color:focus, .scss-mdb .btn-outline-mdb-color:active, .scss-mdb .btn-outline-mdb-color:active:focus, .scss-mdb .btn-outline-mdb-color.active {
+.scss-mdb .btn-outline-mdb-color:hover,
+.scss-mdb .btn-outline-mdb-color:focus,
+.scss-mdb .btn-outline-mdb-color:active,
+.scss-mdb .btn-outline-mdb-color:active:focus,
+.scss-mdb .btn-outline-mdb-color.active {
     color: #59698d !important;
     background-color: transparent !important;
     border-color: #59698d !important;
 }
 
-.scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-mdb-color.dropdown-toggle {
     background-color: transparent !important;
     border-color: #59698d !important;
@@ -6846,7 +7059,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-mdb-color:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-mdb-color.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6862,12 +7076,15 @@
     background-color: #d74444;
 }
 
-.scss-mdb .btn-red:focus, .scss-mdb .btn-red.focus {
+.scss-mdb .btn-red:focus,
+.scss-mdb .btn-red.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-red:focus, .scss-mdb .btn-red:active, .scss-mdb .btn-red.active {
+.scss-mdb .btn-red:focus,
+.scss-mdb .btn-red:active,
+.scss-mdb .btn-red.active {
     background-color: #811b1b;
 }
 
@@ -6875,18 +7092,21 @@
     background-color: #d32f2f !important;
 }
 
-.scss-mdb .btn-red.dropdown-toggle:hover, .scss-mdb .btn-red.dropdown-toggle:focus {
+.scss-mdb .btn-red.dropdown-toggle:hover,
+.scss-mdb .btn-red.dropdown-toggle:focus {
     background-color: #d74444 !important;
 }
 
-.scss-mdb .btn-red:not([disabled]):not(.disabled):active, .scss-mdb .btn-red:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-red:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-red:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-red.dropdown-toggle {
     background-color: #811b1b !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-red:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-red:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-red:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-red:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-red.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6896,7 +7116,8 @@
     color: #d32f2f !important;
 }
 
-.scss-mdb .red-ic:hover, .scss-mdb .red-ic:focus {
+.scss-mdb .red-ic:hover,
+.scss-mdb .red-ic:focus {
     color: #d32f2f;
 }
 
@@ -6916,13 +7137,18 @@
     border: 2px solid #d32f2f !important;
 }
 
-.scss-mdb .btn-outline-red:hover, .scss-mdb .btn-outline-red:focus, .scss-mdb .btn-outline-red:active, .scss-mdb .btn-outline-red:active:focus, .scss-mdb .btn-outline-red.active {
+.scss-mdb .btn-outline-red:hover,
+.scss-mdb .btn-outline-red:focus,
+.scss-mdb .btn-outline-red:active,
+.scss-mdb .btn-outline-red:active:focus,
+.scss-mdb .btn-outline-red.active {
     color: #d32f2f !important;
     background-color: transparent !important;
     border-color: #d32f2f !important;
 }
 
-.scss-mdb .btn-outline-red:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-red:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-red:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-red:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-red.dropdown-toggle {
     background-color: transparent !important;
     border-color: #d32f2f !important;
@@ -6930,7 +7156,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-red:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-red:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-red:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-red:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-red.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6946,12 +7173,15 @@
     background-color: #ee578a;
 }
 
-.scss-mdb .btn-pink:focus, .scss-mdb .btn-pink.focus {
+.scss-mdb .btn-pink:focus,
+.scss-mdb .btn-pink.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-pink:focus, .scss-mdb .btn-pink:active, .scss-mdb .btn-pink.active {
+.scss-mdb .btn-pink:focus,
+.scss-mdb .btn-pink:active,
+.scss-mdb .btn-pink.active {
     background-color: #b41249;
 }
 
@@ -6959,18 +7189,21 @@
     background-color: #ec407a !important;
 }
 
-.scss-mdb .btn-pink.dropdown-toggle:hover, .scss-mdb .btn-pink.dropdown-toggle:focus {
+.scss-mdb .btn-pink.dropdown-toggle:hover,
+.scss-mdb .btn-pink.dropdown-toggle:focus {
     background-color: #ee578a !important;
 }
 
-.scss-mdb .btn-pink:not([disabled]):not(.disabled):active, .scss-mdb .btn-pink:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-pink:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-pink:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-pink.dropdown-toggle {
     background-color: #b41249 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-pink:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-pink:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-pink:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-pink:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-pink.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -6980,7 +7213,8 @@
     color: #ec407a !important;
 }
 
-.scss-mdb .pink-ic:hover, .scss-mdb .pink-ic:focus {
+.scss-mdb .pink-ic:hover,
+.scss-mdb .pink-ic:focus {
     color: #ec407a;
 }
 
@@ -7000,13 +7234,18 @@
     border: 2px solid #ec407a !important;
 }
 
-.scss-mdb .btn-outline-pink:hover, .scss-mdb .btn-outline-pink:focus, .scss-mdb .btn-outline-pink:active, .scss-mdb .btn-outline-pink:active:focus, .scss-mdb .btn-outline-pink.active {
+.scss-mdb .btn-outline-pink:hover,
+.scss-mdb .btn-outline-pink:focus,
+.scss-mdb .btn-outline-pink:active,
+.scss-mdb .btn-outline-pink:active:focus,
+.scss-mdb .btn-outline-pink.active {
     color: #ec407a !important;
     background-color: transparent !important;
     border-color: #ec407a !important;
 }
 
-.scss-mdb .btn-outline-pink:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-pink:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-pink:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-pink:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-pink.dropdown-toggle {
     background-color: transparent !important;
     border-color: #ec407a !important;
@@ -7014,7 +7253,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-pink:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-pink:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-pink:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-pink:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-pink.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7030,12 +7270,15 @@
     background-color: #a028bf;
 }
 
-.scss-mdb .btn-purple:focus, .scss-mdb .btn-purple.focus {
+.scss-mdb .btn-purple:focus,
+.scss-mdb .btn-purple.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-purple:focus, .scss-mdb .btn-purple:active, .scss-mdb .btn-purple.active {
+.scss-mdb .btn-purple:focus,
+.scss-mdb .btn-purple:active,
+.scss-mdb .btn-purple.active {
     background-color: #481256;
 }
 
@@ -7043,18 +7286,21 @@
     background-color: #8e24aa !important;
 }
 
-.scss-mdb .btn-purple.dropdown-toggle:hover, .scss-mdb .btn-purple.dropdown-toggle:focus {
+.scss-mdb .btn-purple.dropdown-toggle:hover,
+.scss-mdb .btn-purple.dropdown-toggle:focus {
     background-color: #a028bf !important;
 }
 
-.scss-mdb .btn-purple:not([disabled]):not(.disabled):active, .scss-mdb .btn-purple:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-purple:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-purple:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-purple.dropdown-toggle {
     background-color: #481256 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-purple:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-purple:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-purple:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-purple:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-purple.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7064,7 +7310,8 @@
     color: #8e24aa !important;
 }
 
-.scss-mdb .purple-ic:hover, .scss-mdb .purple-ic:focus {
+.scss-mdb .purple-ic:hover,
+.scss-mdb .purple-ic:focus {
     color: #8e24aa;
 }
 
@@ -7084,13 +7331,18 @@
     border: 2px solid #8e24aa !important;
 }
 
-.scss-mdb .btn-outline-purple:hover, .scss-mdb .btn-outline-purple:focus, .scss-mdb .btn-outline-purple:active, .scss-mdb .btn-outline-purple:active:focus, .scss-mdb .btn-outline-purple.active {
+.scss-mdb .btn-outline-purple:hover,
+.scss-mdb .btn-outline-purple:focus,
+.scss-mdb .btn-outline-purple:active,
+.scss-mdb .btn-outline-purple:active:focus,
+.scss-mdb .btn-outline-purple.active {
     color: #8e24aa !important;
     background-color: transparent !important;
     border-color: #8e24aa !important;
 }
 
-.scss-mdb .btn-outline-purple:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-purple:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-purple:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-purple:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-purple.dropdown-toggle {
     background-color: transparent !important;
     border-color: #8e24aa !important;
@@ -7098,7 +7350,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-purple:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-purple:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-purple:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-purple:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-purple.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7114,12 +7367,15 @@
     background-color: #5b32bc;
 }
 
-.scss-mdb .btn-deep-purple:focus, .scss-mdb .btn-deep-purple.focus {
+.scss-mdb .btn-deep-purple:focus,
+.scss-mdb .btn-deep-purple.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-deep-purple:focus, .scss-mdb .btn-deep-purple:active, .scss-mdb .btn-deep-purple.active {
+.scss-mdb .btn-deep-purple:focus,
+.scss-mdb .btn-deep-purple:active,
+.scss-mdb .btn-deep-purple.active {
     background-color: #2a1758;
 }
 
@@ -7127,18 +7383,21 @@
     background-color: #512da8 !important;
 }
 
-.scss-mdb .btn-deep-purple.dropdown-toggle:hover, .scss-mdb .btn-deep-purple.dropdown-toggle:focus {
+.scss-mdb .btn-deep-purple.dropdown-toggle:hover,
+.scss-mdb .btn-deep-purple.dropdown-toggle:focus {
     background-color: #5b32bc !important;
 }
 
-.scss-mdb .btn-deep-purple:not([disabled]):not(.disabled):active, .scss-mdb .btn-deep-purple:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-deep-purple:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-deep-purple:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-deep-purple.dropdown-toggle {
     background-color: #2a1758 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-deep-purple:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-deep-purple:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-deep-purple:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-deep-purple:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-deep-purple.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7148,7 +7407,8 @@
     color: #512da8 !important;
 }
 
-.scss-mdb .deep-purple-ic:hover, .scss-mdb .deep-purple-ic:focus {
+.scss-mdb .deep-purple-ic:hover,
+.scss-mdb .deep-purple-ic:focus {
     color: #512da8;
 }
 
@@ -7168,13 +7428,18 @@
     border: 2px solid #512da8 !important;
 }
 
-.scss-mdb .btn-outline-deep-purple:hover, .scss-mdb .btn-outline-deep-purple:focus, .scss-mdb .btn-outline-deep-purple:active, .scss-mdb .btn-outline-deep-purple:active:focus, .scss-mdb .btn-outline-deep-purple.active {
+.scss-mdb .btn-outline-deep-purple:hover,
+.scss-mdb .btn-outline-deep-purple:focus,
+.scss-mdb .btn-outline-deep-purple:active,
+.scss-mdb .btn-outline-deep-purple:active:focus,
+.scss-mdb .btn-outline-deep-purple.active {
     color: #512da8 !important;
     background-color: transparent !important;
     border-color: #512da8 !important;
 }
 
-.scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-deep-purple.dropdown-toggle {
     background-color: transparent !important;
     border-color: #512da8 !important;
@@ -7182,7 +7447,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-deep-purple:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-deep-purple.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7198,12 +7464,15 @@
     background-color: #4d5ec1;
 }
 
-.scss-mdb .btn-indigo:focus, .scss-mdb .btn-indigo.focus {
+.scss-mdb .btn-indigo:focus,
+.scss-mdb .btn-indigo.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-indigo:focus, .scss-mdb .btn-indigo:active, .scss-mdb .btn-indigo.active {
+.scss-mdb .btn-indigo:focus,
+.scss-mdb .btn-indigo:active,
+.scss-mdb .btn-indigo.active {
     background-color: #252f69;
 }
 
@@ -7211,18 +7480,21 @@
     background-color: #3f51b5 !important;
 }
 
-.scss-mdb .btn-indigo.dropdown-toggle:hover, .scss-mdb .btn-indigo.dropdown-toggle:focus {
+.scss-mdb .btn-indigo.dropdown-toggle:hover,
+.scss-mdb .btn-indigo.dropdown-toggle:focus {
     background-color: #4d5ec1 !important;
 }
 
-.scss-mdb .btn-indigo:not([disabled]):not(.disabled):active, .scss-mdb .btn-indigo:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-indigo:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-indigo:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-indigo.dropdown-toggle {
     background-color: #252f69 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-indigo:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-indigo:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-indigo:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-indigo:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-indigo.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7232,7 +7504,8 @@
     color: #3f51b5 !important;
 }
 
-.scss-mdb .indigo-ic:hover, .scss-mdb .indigo-ic:focus {
+.scss-mdb .indigo-ic:hover,
+.scss-mdb .indigo-ic:focus {
     color: #3f51b5;
 }
 
@@ -7252,13 +7525,18 @@
     border: 2px solid #3f51b5 !important;
 }
 
-.scss-mdb .btn-outline-indigo:hover, .scss-mdb .btn-outline-indigo:focus, .scss-mdb .btn-outline-indigo:active, .scss-mdb .btn-outline-indigo:active:focus, .scss-mdb .btn-outline-indigo.active {
+.scss-mdb .btn-outline-indigo:hover,
+.scss-mdb .btn-outline-indigo:focus,
+.scss-mdb .btn-outline-indigo:active,
+.scss-mdb .btn-outline-indigo:active:focus,
+.scss-mdb .btn-outline-indigo.active {
     color: #3f51b5 !important;
     background-color: transparent !important;
     border-color: #3f51b5 !important;
 }
 
-.scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-indigo.dropdown-toggle {
     background-color: transparent !important;
     border-color: #3f51b5 !important;
@@ -7266,7 +7544,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-indigo:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-indigo.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7282,12 +7561,15 @@
     background-color: #2083e4;
 }
 
-.scss-mdb .btn-blue:focus, .scss-mdb .btn-blue.focus {
+.scss-mdb .btn-blue:focus,
+.scss-mdb .btn-blue.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-blue:focus, .scss-mdb .btn-blue:active, .scss-mdb .btn-blue.active {
+.scss-mdb .btn-blue:focus,
+.scss-mdb .btn-blue:active,
+.scss-mdb .btn-blue.active {
     background-color: #0e4377;
 }
 
@@ -7295,18 +7577,21 @@
     background-color: #1976d2 !important;
 }
 
-.scss-mdb .btn-blue.dropdown-toggle:hover, .scss-mdb .btn-blue.dropdown-toggle:focus {
+.scss-mdb .btn-blue.dropdown-toggle:hover,
+.scss-mdb .btn-blue.dropdown-toggle:focus {
     background-color: #2083e4 !important;
 }
 
-.scss-mdb .btn-blue:not([disabled]):not(.disabled):active, .scss-mdb .btn-blue:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-blue:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-blue:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-blue.dropdown-toggle {
     background-color: #0e4377 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-blue:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-blue:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-blue:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-blue:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-blue.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7316,7 +7601,8 @@
     color: #1976d2 !important;
 }
 
-.scss-mdb .blue-ic:hover, .scss-mdb .blue-ic:focus {
+.scss-mdb .blue-ic:hover,
+.scss-mdb .blue-ic:focus {
     color: #1976d2;
 }
 
@@ -7336,13 +7622,18 @@
     border: 2px solid #1976d2 !important;
 }
 
-.scss-mdb .btn-outline-blue:hover, .scss-mdb .btn-outline-blue:focus, .scss-mdb .btn-outline-blue:active, .scss-mdb .btn-outline-blue:active:focus, .scss-mdb .btn-outline-blue.active {
+.scss-mdb .btn-outline-blue:hover,
+.scss-mdb .btn-outline-blue:focus,
+.scss-mdb .btn-outline-blue:active,
+.scss-mdb .btn-outline-blue:active:focus,
+.scss-mdb .btn-outline-blue.active {
     color: #1976d2 !important;
     background-color: transparent !important;
     border-color: #1976d2 !important;
 }
 
-.scss-mdb .btn-outline-blue:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-blue:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-blue:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-blue:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-blue.dropdown-toggle {
     background-color: transparent !important;
     border-color: #1976d2 !important;
@@ -7350,7 +7641,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-blue:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-blue:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-blue:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-blue:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-blue.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7366,12 +7658,15 @@
     background-color: #9cc1ff;
 }
 
-.scss-mdb .btn-light-blue:focus, .scss-mdb .btn-light-blue.focus {
+.scss-mdb .btn-light-blue:focus,
+.scss-mdb .btn-light-blue.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-light-blue:focus, .scss-mdb .btn-light-blue:active, .scss-mdb .btn-light-blue.active {
+.scss-mdb .btn-light-blue:focus,
+.scss-mdb .btn-light-blue:active,
+.scss-mdb .btn-light-blue.active {
     background-color: #1c71ff;
 }
 
@@ -7379,18 +7674,21 @@
     background-color: #82b1ff !important;
 }
 
-.scss-mdb .btn-light-blue.dropdown-toggle:hover, .scss-mdb .btn-light-blue.dropdown-toggle:focus {
+.scss-mdb .btn-light-blue.dropdown-toggle:hover,
+.scss-mdb .btn-light-blue.dropdown-toggle:focus {
     background-color: #9cc1ff !important;
 }
 
-.scss-mdb .btn-light-blue:not([disabled]):not(.disabled):active, .scss-mdb .btn-light-blue:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-light-blue:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-light-blue:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-light-blue.dropdown-toggle {
     background-color: #1c71ff !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-light-blue:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-light-blue:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-light-blue:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-light-blue:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-light-blue.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7400,7 +7698,8 @@
     color: #82b1ff !important;
 }
 
-.scss-mdb .light-blue-ic:hover, .scss-mdb .light-blue-ic:focus {
+.scss-mdb .light-blue-ic:hover,
+.scss-mdb .light-blue-ic:focus {
     color: #82b1ff;
 }
 
@@ -7420,13 +7719,18 @@
     border: 2px solid #82b1ff !important;
 }
 
-.scss-mdb .btn-outline-light-blue:hover, .scss-mdb .btn-outline-light-blue:focus, .scss-mdb .btn-outline-light-blue:active, .scss-mdb .btn-outline-light-blue:active:focus, .scss-mdb .btn-outline-light-blue.active {
+.scss-mdb .btn-outline-light-blue:hover,
+.scss-mdb .btn-outline-light-blue:focus,
+.scss-mdb .btn-outline-light-blue:active,
+.scss-mdb .btn-outline-light-blue:active:focus,
+.scss-mdb .btn-outline-light-blue.active {
     color: #82b1ff !important;
     background-color: transparent !important;
     border-color: #82b1ff !important;
 }
 
-.scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-light-blue.dropdown-toggle {
     background-color: transparent !important;
     border-color: #82b1ff !important;
@@ -7434,7 +7738,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-light-blue:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-light-blue.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7450,12 +7755,15 @@
     background-color: #00d3ee;
 }
 
-.scss-mdb .btn-cyan:focus, .scss-mdb .btn-cyan.focus {
+.scss-mdb .btn-cyan:focus,
+.scss-mdb .btn-cyan.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-cyan:focus, .scss-mdb .btn-cyan:active, .scss-mdb .btn-cyan.active {
+.scss-mdb .btn-cyan:focus,
+.scss-mdb .btn-cyan:active,
+.scss-mdb .btn-cyan.active {
     background-color: #00626e;
 }
 
@@ -7463,18 +7771,21 @@
     background-color: #00bcd4 !important;
 }
 
-.scss-mdb .btn-cyan.dropdown-toggle:hover, .scss-mdb .btn-cyan.dropdown-toggle:focus {
+.scss-mdb .btn-cyan.dropdown-toggle:hover,
+.scss-mdb .btn-cyan.dropdown-toggle:focus {
     background-color: #00d3ee !important;
 }
 
-.scss-mdb .btn-cyan:not([disabled]):not(.disabled):active, .scss-mdb .btn-cyan:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-cyan:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-cyan:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-cyan.dropdown-toggle {
     background-color: #00626e !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-cyan:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-cyan:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-cyan:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-cyan:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-cyan.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7484,7 +7795,8 @@
     color: #00bcd4 !important;
 }
 
-.scss-mdb .cyan-ic:hover, .scss-mdb .cyan-ic:focus {
+.scss-mdb .cyan-ic:hover,
+.scss-mdb .cyan-ic:focus {
     color: #00bcd4;
 }
 
@@ -7504,13 +7816,18 @@
     border: 2px solid #00bcd4 !important;
 }
 
-.scss-mdb .btn-outline-cyan:hover, .scss-mdb .btn-outline-cyan:focus, .scss-mdb .btn-outline-cyan:active, .scss-mdb .btn-outline-cyan:active:focus, .scss-mdb .btn-outline-cyan.active {
+.scss-mdb .btn-outline-cyan:hover,
+.scss-mdb .btn-outline-cyan:focus,
+.scss-mdb .btn-outline-cyan:active,
+.scss-mdb .btn-outline-cyan:active:focus,
+.scss-mdb .btn-outline-cyan.active {
     color: #00bcd4 !important;
     background-color: transparent !important;
     border-color: #00bcd4 !important;
 }
 
-.scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-cyan.dropdown-toggle {
     background-color: transparent !important;
     border-color: #00bcd4 !important;
@@ -7518,7 +7835,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-cyan:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-cyan.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7534,12 +7852,15 @@
     background-color: #009382;
 }
 
-.scss-mdb .btn-teal:focus, .scss-mdb .btn-teal.focus {
+.scss-mdb .btn-teal:focus,
+.scss-mdb .btn-teal.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-teal:focus, .scss-mdb .btn-teal:active, .scss-mdb .btn-teal.active {
+.scss-mdb .btn-teal:focus,
+.scss-mdb .btn-teal:active,
+.scss-mdb .btn-teal.active {
     background-color: #001311;
 }
 
@@ -7547,18 +7868,21 @@
     background-color: #00796b !important;
 }
 
-.scss-mdb .btn-teal.dropdown-toggle:hover, .scss-mdb .btn-teal.dropdown-toggle:focus {
+.scss-mdb .btn-teal.dropdown-toggle:hover,
+.scss-mdb .btn-teal.dropdown-toggle:focus {
     background-color: #009382 !important;
 }
 
-.scss-mdb .btn-teal:not([disabled]):not(.disabled):active, .scss-mdb .btn-teal:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-teal:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-teal:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-teal.dropdown-toggle {
     background-color: #001311 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-teal:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-teal:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-teal:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-teal:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-teal.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7568,7 +7892,8 @@
     color: #00796b !important;
 }
 
-.scss-mdb .teal-ic:hover, .scss-mdb .teal-ic:focus {
+.scss-mdb .teal-ic:hover,
+.scss-mdb .teal-ic:focus {
     color: #00796b;
 }
 
@@ -7588,13 +7913,18 @@
     border: 2px solid #00796b !important;
 }
 
-.scss-mdb .btn-outline-teal:hover, .scss-mdb .btn-outline-teal:focus, .scss-mdb .btn-outline-teal:active, .scss-mdb .btn-outline-teal:active:focus, .scss-mdb .btn-outline-teal.active {
+.scss-mdb .btn-outline-teal:hover,
+.scss-mdb .btn-outline-teal:focus,
+.scss-mdb .btn-outline-teal:active,
+.scss-mdb .btn-outline-teal:active:focus,
+.scss-mdb .btn-outline-teal.active {
     color: #00796b !important;
     background-color: transparent !important;
     border-color: #00796b !important;
 }
 
-.scss-mdb .btn-outline-teal:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-teal:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-teal:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-teal:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-teal.dropdown-toggle {
     background-color: transparent !important;
     border-color: #00796b !important;
@@ -7602,7 +7932,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-teal:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-teal:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-teal:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-teal:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-teal.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7618,12 +7949,15 @@
     background-color: #3fa044;
 }
 
-.scss-mdb .btn-green:focus, .scss-mdb .btn-green.focus {
+.scss-mdb .btn-green:focus,
+.scss-mdb .btn-green.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-green:focus, .scss-mdb .btn-green:active, .scss-mdb .btn-green.active {
+.scss-mdb .btn-green:focus,
+.scss-mdb .btn-green:active,
+.scss-mdb .btn-green.active {
     background-color: #1b451d;
 }
 
@@ -7631,18 +7965,21 @@
     background-color: #388e3c !important;
 }
 
-.scss-mdb .btn-green.dropdown-toggle:hover, .scss-mdb .btn-green.dropdown-toggle:focus {
+.scss-mdb .btn-green.dropdown-toggle:hover,
+.scss-mdb .btn-green.dropdown-toggle:focus {
     background-color: #3fa044 !important;
 }
 
-.scss-mdb .btn-green:not([disabled]):not(.disabled):active, .scss-mdb .btn-green:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-green:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-green:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-green.dropdown-toggle {
     background-color: #1b451d !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-green:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-green:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-green:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-green:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-green.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7652,7 +7989,8 @@
     color: #388e3c !important;
 }
 
-.scss-mdb .green-ic:hover, .scss-mdb .green-ic:focus {
+.scss-mdb .green-ic:hover,
+.scss-mdb .green-ic:focus {
     color: #388e3c;
 }
 
@@ -7672,13 +8010,18 @@
     border: 2px solid #388e3c !important;
 }
 
-.scss-mdb .btn-outline-green:hover, .scss-mdb .btn-outline-green:focus, .scss-mdb .btn-outline-green:active, .scss-mdb .btn-outline-green:active:focus, .scss-mdb .btn-outline-green.active {
+.scss-mdb .btn-outline-green:hover,
+.scss-mdb .btn-outline-green:focus,
+.scss-mdb .btn-outline-green:active,
+.scss-mdb .btn-outline-green:active:focus,
+.scss-mdb .btn-outline-green.active {
     color: #388e3c !important;
     background-color: transparent !important;
     border-color: #388e3c !important;
 }
 
-.scss-mdb .btn-outline-green:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-green:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-green:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-green:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-green.dropdown-toggle {
     background-color: transparent !important;
     border-color: #388e3c !important;
@@ -7686,7 +8029,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-green:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-green:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-green:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-green:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-green.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7702,12 +8046,15 @@
     background-color: #97c95d;
 }
 
-.scss-mdb .btn-light-green:focus, .scss-mdb .btn-light-green.focus {
+.scss-mdb .btn-light-green:focus,
+.scss-mdb .btn-light-green.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-light-green:focus, .scss-mdb .btn-light-green:active, .scss-mdb .btn-light-green.active {
+.scss-mdb .btn-light-green:focus,
+.scss-mdb .btn-light-green:active,
+.scss-mdb .btn-light-green.active {
     background-color: #577d2a;
 }
 
@@ -7715,18 +8062,21 @@
     background-color: #8bc34a !important;
 }
 
-.scss-mdb .btn-light-green.dropdown-toggle:hover, .scss-mdb .btn-light-green.dropdown-toggle:focus {
+.scss-mdb .btn-light-green.dropdown-toggle:hover,
+.scss-mdb .btn-light-green.dropdown-toggle:focus {
     background-color: #97c95d !important;
 }
 
-.scss-mdb .btn-light-green:not([disabled]):not(.disabled):active, .scss-mdb .btn-light-green:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-light-green:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-light-green:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-light-green.dropdown-toggle {
     background-color: #577d2a !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-light-green:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-light-green:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-light-green:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-light-green:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-light-green.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7736,7 +8086,8 @@
     color: #8bc34a !important;
 }
 
-.scss-mdb .light-green-ic:hover, .scss-mdb .light-green-ic:focus {
+.scss-mdb .light-green-ic:hover,
+.scss-mdb .light-green-ic:focus {
     color: #8bc34a;
 }
 
@@ -7756,13 +8107,18 @@
     border: 2px solid #8bc34a !important;
 }
 
-.scss-mdb .btn-outline-light-green:hover, .scss-mdb .btn-outline-light-green:focus, .scss-mdb .btn-outline-light-green:active, .scss-mdb .btn-outline-light-green:active:focus, .scss-mdb .btn-outline-light-green.active {
+.scss-mdb .btn-outline-light-green:hover,
+.scss-mdb .btn-outline-light-green:focus,
+.scss-mdb .btn-outline-light-green:active,
+.scss-mdb .btn-outline-light-green:active:focus,
+.scss-mdb .btn-outline-light-green.active {
     color: #8bc34a !important;
     background-color: transparent !important;
     border-color: #8bc34a !important;
 }
 
-.scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-light-green.dropdown-toggle {
     background-color: transparent !important;
     border-color: #8bc34a !important;
@@ -7770,7 +8126,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-light-green:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-light-green.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7786,12 +8143,15 @@
     background-color: #c3c930;
 }
 
-.scss-mdb .btn-lime:focus, .scss-mdb .btn-lime.focus {
+.scss-mdb .btn-lime:focus,
+.scss-mdb .btn-lime.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-lime:focus, .scss-mdb .btn-lime:active, .scss-mdb .btn-lime.active {
+.scss-mdb .btn-lime:focus,
+.scss-mdb .btn-lime:active,
+.scss-mdb .btn-lime.active {
     background-color: #5f6217;
 }
 
@@ -7799,18 +8159,21 @@
     background-color: #afb42b !important;
 }
 
-.scss-mdb .btn-lime.dropdown-toggle:hover, .scss-mdb .btn-lime.dropdown-toggle:focus {
+.scss-mdb .btn-lime.dropdown-toggle:hover,
+.scss-mdb .btn-lime.dropdown-toggle:focus {
     background-color: #c3c930 !important;
 }
 
-.scss-mdb .btn-lime:not([disabled]):not(.disabled):active, .scss-mdb .btn-lime:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-lime:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-lime:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-lime.dropdown-toggle {
     background-color: #5f6217 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-lime:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-lime:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-lime:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-lime:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-lime.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7820,7 +8183,8 @@
     color: #afb42b !important;
 }
 
-.scss-mdb .lime-ic:hover, .scss-mdb .lime-ic:focus {
+.scss-mdb .lime-ic:hover,
+.scss-mdb .lime-ic:focus {
     color: #afb42b;
 }
 
@@ -7840,13 +8204,18 @@
     border: 2px solid #afb42b !important;
 }
 
-.scss-mdb .btn-outline-lime:hover, .scss-mdb .btn-outline-lime:focus, .scss-mdb .btn-outline-lime:active, .scss-mdb .btn-outline-lime:active:focus, .scss-mdb .btn-outline-lime.active {
+.scss-mdb .btn-outline-lime:hover,
+.scss-mdb .btn-outline-lime:focus,
+.scss-mdb .btn-outline-lime:active,
+.scss-mdb .btn-outline-lime:active:focus,
+.scss-mdb .btn-outline-lime.active {
     color: #afb42b !important;
     background-color: transparent !important;
     border-color: #afb42b !important;
 }
 
-.scss-mdb .btn-outline-lime:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-lime:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-lime:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-lime:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-lime.dropdown-toggle {
     background-color: transparent !important;
     border-color: #afb42b !important;
@@ -7854,7 +8223,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-lime:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-lime:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-lime:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-lime:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-lime.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7870,12 +8240,15 @@
     background-color: #fbc846;
 }
 
-.scss-mdb .btn-yellow:focus, .scss-mdb .btn-yellow.focus {
+.scss-mdb .btn-yellow:focus,
+.scss-mdb .btn-yellow.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-yellow:focus, .scss-mdb .btn-yellow:active, .scss-mdb .btn-yellow.active {
+.scss-mdb .btn-yellow:focus,
+.scss-mdb .btn-yellow:active,
+.scss-mdb .btn-yellow.active {
     background-color: #be8904;
 }
 
@@ -7883,18 +8256,21 @@
     background-color: #fbc02d !important;
 }
 
-.scss-mdb .btn-yellow.dropdown-toggle:hover, .scss-mdb .btn-yellow.dropdown-toggle:focus {
+.scss-mdb .btn-yellow.dropdown-toggle:hover,
+.scss-mdb .btn-yellow.dropdown-toggle:focus {
     background-color: #fbc846 !important;
 }
 
-.scss-mdb .btn-yellow:not([disabled]):not(.disabled):active, .scss-mdb .btn-yellow:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-yellow:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-yellow:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-yellow.dropdown-toggle {
     background-color: #be8904 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-yellow:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-yellow:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-yellow:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-yellow:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-yellow.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7904,7 +8280,8 @@
     color: #fbc02d !important;
 }
 
-.scss-mdb .yellow-ic:hover, .scss-mdb .yellow-ic:focus {
+.scss-mdb .yellow-ic:hover,
+.scss-mdb .yellow-ic:focus {
     color: #fbc02d;
 }
 
@@ -7924,13 +8301,18 @@
     border: 2px solid #fbc02d !important;
 }
 
-.scss-mdb .btn-outline-yellow:hover, .scss-mdb .btn-outline-yellow:focus, .scss-mdb .btn-outline-yellow:active, .scss-mdb .btn-outline-yellow:active:focus, .scss-mdb .btn-outline-yellow.active {
+.scss-mdb .btn-outline-yellow:hover,
+.scss-mdb .btn-outline-yellow:focus,
+.scss-mdb .btn-outline-yellow:active,
+.scss-mdb .btn-outline-yellow:active:focus,
+.scss-mdb .btn-outline-yellow.active {
     color: #fbc02d !important;
     background-color: transparent !important;
     border-color: #fbc02d !important;
 }
 
-.scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-yellow.dropdown-toggle {
     background-color: transparent !important;
     border-color: #fbc02d !important;
@@ -7938,7 +8320,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-yellow:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-yellow.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7954,12 +8337,15 @@
     background-color: #ffaa1a;
 }
 
-.scss-mdb .btn-amber:focus, .scss-mdb .btn-amber.focus {
+.scss-mdb .btn-amber:focus,
+.scss-mdb .btn-amber.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-amber:focus, .scss-mdb .btn-amber:active, .scss-mdb .btn-amber.active {
+.scss-mdb .btn-amber:focus,
+.scss-mdb .btn-amber:active,
+.scss-mdb .btn-amber.active {
     background-color: #996000;
 }
 
@@ -7967,18 +8353,21 @@
     background-color: #ffa000 !important;
 }
 
-.scss-mdb .btn-amber.dropdown-toggle:hover, .scss-mdb .btn-amber.dropdown-toggle:focus {
+.scss-mdb .btn-amber.dropdown-toggle:hover,
+.scss-mdb .btn-amber.dropdown-toggle:focus {
     background-color: #ffaa1a !important;
 }
 
-.scss-mdb .btn-amber:not([disabled]):not(.disabled):active, .scss-mdb .btn-amber:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-amber:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-amber:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-amber.dropdown-toggle {
     background-color: #996000 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-amber:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-amber:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-amber:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-amber:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-amber.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -7988,7 +8377,8 @@
     color: #ffa000 !important;
 }
 
-.scss-mdb .amber-ic:hover, .scss-mdb .amber-ic:focus {
+.scss-mdb .amber-ic:hover,
+.scss-mdb .amber-ic:focus {
     color: #ffa000;
 }
 
@@ -8008,13 +8398,18 @@
     border: 2px solid #ffa000 !important;
 }
 
-.scss-mdb .btn-outline-amber:hover, .scss-mdb .btn-outline-amber:focus, .scss-mdb .btn-outline-amber:active, .scss-mdb .btn-outline-amber:active:focus, .scss-mdb .btn-outline-amber.active {
+.scss-mdb .btn-outline-amber:hover,
+.scss-mdb .btn-outline-amber:focus,
+.scss-mdb .btn-outline-amber:active,
+.scss-mdb .btn-outline-amber:active:focus,
+.scss-mdb .btn-outline-amber.active {
     color: #ffa000 !important;
     background-color: transparent !important;
     border-color: #ffa000 !important;
 }
 
-.scss-mdb .btn-outline-amber:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-amber:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-amber:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-amber:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-amber.dropdown-toggle {
     background-color: transparent !important;
     border-color: #ffa000 !important;
@@ -8022,7 +8417,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-amber:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-amber:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-amber:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-amber:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-amber.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8038,12 +8434,15 @@
     background-color: #ff8910;
 }
 
-.scss-mdb .btn-orange:focus, .scss-mdb .btn-orange.focus {
+.scss-mdb .btn-orange:focus,
+.scss-mdb .btn-orange.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-orange:focus, .scss-mdb .btn-orange:active, .scss-mdb .btn-orange.active {
+.scss-mdb .btn-orange:focus,
+.scss-mdb .btn-orange:active,
+.scss-mdb .btn-orange.active {
     background-color: #8f4800;
 }
 
@@ -8051,18 +8450,21 @@
     background-color: #f57c00 !important;
 }
 
-.scss-mdb .btn-orange.dropdown-toggle:hover, .scss-mdb .btn-orange.dropdown-toggle:focus {
+.scss-mdb .btn-orange.dropdown-toggle:hover,
+.scss-mdb .btn-orange.dropdown-toggle:focus {
     background-color: #ff8910 !important;
 }
 
-.scss-mdb .btn-orange:not([disabled]):not(.disabled):active, .scss-mdb .btn-orange:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-orange:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-orange:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-orange.dropdown-toggle {
     background-color: #8f4800 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-orange:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-orange:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-orange:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-orange:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-orange.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8072,7 +8474,8 @@
     color: #f57c00 !important;
 }
 
-.scss-mdb .orange-ic:hover, .scss-mdb .orange-ic:focus {
+.scss-mdb .orange-ic:hover,
+.scss-mdb .orange-ic:focus {
     color: #f57c00;
 }
 
@@ -8092,13 +8495,18 @@
     border: 2px solid #f57c00 !important;
 }
 
-.scss-mdb .btn-outline-orange:hover, .scss-mdb .btn-outline-orange:focus, .scss-mdb .btn-outline-orange:active, .scss-mdb .btn-outline-orange:active:focus, .scss-mdb .btn-outline-orange.active {
+.scss-mdb .btn-outline-orange:hover,
+.scss-mdb .btn-outline-orange:focus,
+.scss-mdb .btn-outline-orange:active,
+.scss-mdb .btn-outline-orange:active:focus,
+.scss-mdb .btn-outline-orange.active {
     color: #f57c00 !important;
     background-color: transparent !important;
     border-color: #f57c00 !important;
 }
 
-.scss-mdb .btn-outline-orange:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-orange:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-orange:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-orange:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-orange.dropdown-toggle {
     background-color: transparent !important;
     border-color: #f57c00 !important;
@@ -8106,7 +8514,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-orange:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-orange:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-orange:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-orange:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-orange.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8122,12 +8531,15 @@
     background-color: #ff835d;
 }
 
-.scss-mdb .btn-deep-orange:focus, .scss-mdb .btn-deep-orange.focus {
+.scss-mdb .btn-deep-orange:focus,
+.scss-mdb .btn-deep-orange.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-deep-orange:focus, .scss-mdb .btn-deep-orange:active, .scss-mdb .btn-deep-orange.active {
+.scss-mdb .btn-deep-orange:focus,
+.scss-mdb .btn-deep-orange:active,
+.scss-mdb .btn-deep-orange.active {
     background-color: #dc3500;
 }
 
@@ -8135,18 +8547,21 @@
     background-color: #ff7043 !important;
 }
 
-.scss-mdb .btn-deep-orange.dropdown-toggle:hover, .scss-mdb .btn-deep-orange.dropdown-toggle:focus {
+.scss-mdb .btn-deep-orange.dropdown-toggle:hover,
+.scss-mdb .btn-deep-orange.dropdown-toggle:focus {
     background-color: #ff835d !important;
 }
 
-.scss-mdb .btn-deep-orange:not([disabled]):not(.disabled):active, .scss-mdb .btn-deep-orange:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-deep-orange:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-deep-orange:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-deep-orange.dropdown-toggle {
     background-color: #dc3500 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-deep-orange:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-deep-orange:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-deep-orange:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-deep-orange:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-deep-orange.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8156,7 +8571,8 @@
     color: #ff7043 !important;
 }
 
-.scss-mdb .deep-orange-ic:hover, .scss-mdb .deep-orange-ic:focus {
+.scss-mdb .deep-orange-ic:hover,
+.scss-mdb .deep-orange-ic:focus {
     color: #ff7043;
 }
 
@@ -8176,13 +8592,18 @@
     border: 2px solid #ff7043 !important;
 }
 
-.scss-mdb .btn-outline-deep-orange:hover, .scss-mdb .btn-outline-deep-orange:focus, .scss-mdb .btn-outline-deep-orange:active, .scss-mdb .btn-outline-deep-orange:active:focus, .scss-mdb .btn-outline-deep-orange.active {
+.scss-mdb .btn-outline-deep-orange:hover,
+.scss-mdb .btn-outline-deep-orange:focus,
+.scss-mdb .btn-outline-deep-orange:active,
+.scss-mdb .btn-outline-deep-orange:active:focus,
+.scss-mdb .btn-outline-deep-orange.active {
     color: #ff7043 !important;
     background-color: transparent !important;
     border-color: #ff7043 !important;
 }
 
-.scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-deep-orange.dropdown-toggle {
     background-color: transparent !important;
     border-color: #ff7043 !important;
@@ -8190,7 +8611,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-deep-orange:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-deep-orange.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8206,12 +8628,15 @@
     background-color: #896052;
 }
 
-.scss-mdb .btn-brown:focus, .scss-mdb .btn-brown.focus {
+.scss-mdb .btn-brown:focus,
+.scss-mdb .btn-brown.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-brown:focus, .scss-mdb .btn-brown:active, .scss-mdb .btn-brown.active {
+.scss-mdb .btn-brown:focus,
+.scss-mdb .btn-brown:active,
+.scss-mdb .btn-brown.active {
     background-color: #392822;
 }
 
@@ -8219,18 +8644,21 @@
     background-color: #795548 !important;
 }
 
-.scss-mdb .btn-brown.dropdown-toggle:hover, .scss-mdb .btn-brown.dropdown-toggle:focus {
+.scss-mdb .btn-brown.dropdown-toggle:hover,
+.scss-mdb .btn-brown.dropdown-toggle:focus {
     background-color: #896052 !important;
 }
 
-.scss-mdb .btn-brown:not([disabled]):not(.disabled):active, .scss-mdb .btn-brown:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-brown:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-brown:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-brown.dropdown-toggle {
     background-color: #392822 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-brown:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-brown:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-brown:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-brown:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-brown.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8240,7 +8668,8 @@
     color: #795548 !important;
 }
 
-.scss-mdb .brown-ic:hover, .scss-mdb .brown-ic:focus {
+.scss-mdb .brown-ic:hover,
+.scss-mdb .brown-ic:focus {
     color: #795548;
 }
 
@@ -8260,13 +8689,18 @@
     border: 2px solid #795548 !important;
 }
 
-.scss-mdb .btn-outline-brown:hover, .scss-mdb .btn-outline-brown:focus, .scss-mdb .btn-outline-brown:active, .scss-mdb .btn-outline-brown:active:focus, .scss-mdb .btn-outline-brown.active {
+.scss-mdb .btn-outline-brown:hover,
+.scss-mdb .btn-outline-brown:focus,
+.scss-mdb .btn-outline-brown:active,
+.scss-mdb .btn-outline-brown:active:focus,
+.scss-mdb .btn-outline-brown.active {
     color: #795548 !important;
     background-color: transparent !important;
     border-color: #795548 !important;
 }
 
-.scss-mdb .btn-outline-brown:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-brown:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-brown:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-brown:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-brown.dropdown-toggle {
     background-color: transparent !important;
     border-color: #795548 !important;
@@ -8274,7 +8708,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-brown:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-brown:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-brown:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-brown:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-brown.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8290,12 +8725,15 @@
     background-color: #6e6e6e;
 }
 
-.scss-mdb .btn-grey:focus, .scss-mdb .btn-grey.focus {
+.scss-mdb .btn-grey:focus,
+.scss-mdb .btn-grey.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-grey:focus, .scss-mdb .btn-grey:active, .scss-mdb .btn-grey.active {
+.scss-mdb .btn-grey:focus,
+.scss-mdb .btn-grey:active,
+.scss-mdb .btn-grey.active {
     background-color: #2e2e2e;
 }
 
@@ -8303,18 +8741,21 @@
     background-color: #616161 !important;
 }
 
-.scss-mdb .btn-grey.dropdown-toggle:hover, .scss-mdb .btn-grey.dropdown-toggle:focus {
+.scss-mdb .btn-grey.dropdown-toggle:hover,
+.scss-mdb .btn-grey.dropdown-toggle:focus {
     background-color: #6e6e6e !important;
 }
 
-.scss-mdb .btn-grey:not([disabled]):not(.disabled):active, .scss-mdb .btn-grey:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-grey:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-grey:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-grey.dropdown-toggle {
     background-color: #2e2e2e !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-grey:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-grey:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-grey:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-grey:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-grey.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8324,7 +8765,8 @@
     color: #616161 !important;
 }
 
-.scss-mdb .grey-ic:hover, .scss-mdb .grey-ic:focus {
+.scss-mdb .grey-ic:hover,
+.scss-mdb .grey-ic:focus {
     color: #616161;
 }
 
@@ -8344,13 +8786,18 @@
     border: 2px solid #616161 !important;
 }
 
-.scss-mdb .btn-outline-grey:hover, .scss-mdb .btn-outline-grey:focus, .scss-mdb .btn-outline-grey:active, .scss-mdb .btn-outline-grey:active:focus, .scss-mdb .btn-outline-grey.active {
+.scss-mdb .btn-outline-grey:hover,
+.scss-mdb .btn-outline-grey:focus,
+.scss-mdb .btn-outline-grey:active,
+.scss-mdb .btn-outline-grey:active:focus,
+.scss-mdb .btn-outline-grey.active {
     color: #616161 !important;
     background-color: transparent !important;
     border-color: #616161 !important;
 }
 
-.scss-mdb .btn-outline-grey:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-grey:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-grey:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-grey:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-grey.dropdown-toggle {
     background-color: transparent !important;
     border-color: #616161 !important;
@@ -8358,7 +8805,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-grey:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-grey:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-grey:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-grey:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-grey.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8374,12 +8822,15 @@
     background-color: #879ca7;
 }
 
-.scss-mdb .btn-blue-grey:focus, .scss-mdb .btn-blue-grey.focus {
+.scss-mdb .btn-blue-grey:focus,
+.scss-mdb .btn-blue-grey.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-blue-grey:focus, .scss-mdb .btn-blue-grey:active, .scss-mdb .btn-blue-grey.active {
+.scss-mdb .btn-blue-grey:focus,
+.scss-mdb .btn-blue-grey:active,
+.scss-mdb .btn-blue-grey.active {
     background-color: #4a5b64;
 }
 
@@ -8387,18 +8838,21 @@
     background-color: #78909c !important;
 }
 
-.scss-mdb .btn-blue-grey.dropdown-toggle:hover, .scss-mdb .btn-blue-grey.dropdown-toggle:focus {
+.scss-mdb .btn-blue-grey.dropdown-toggle:hover,
+.scss-mdb .btn-blue-grey.dropdown-toggle:focus {
     background-color: #879ca7 !important;
 }
 
-.scss-mdb .btn-blue-grey:not([disabled]):not(.disabled):active, .scss-mdb .btn-blue-grey:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-blue-grey:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-blue-grey:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-blue-grey.dropdown-toggle {
     background-color: #4a5b64 !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-blue-grey:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-blue-grey:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-blue-grey:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-blue-grey:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-blue-grey.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8408,7 +8862,8 @@
     color: #78909c !important;
 }
 
-.scss-mdb .blue-grey-ic:hover, .scss-mdb .blue-grey-ic:focus {
+.scss-mdb .blue-grey-ic:hover,
+.scss-mdb .blue-grey-ic:focus {
     color: #78909c;
 }
 
@@ -8428,13 +8883,18 @@
     border: 2px solid #78909c !important;
 }
 
-.scss-mdb .btn-outline-blue-grey:hover, .scss-mdb .btn-outline-blue-grey:focus, .scss-mdb .btn-outline-blue-grey:active, .scss-mdb .btn-outline-blue-grey:active:focus, .scss-mdb .btn-outline-blue-grey.active {
+.scss-mdb .btn-outline-blue-grey:hover,
+.scss-mdb .btn-outline-blue-grey:focus,
+.scss-mdb .btn-outline-blue-grey:active,
+.scss-mdb .btn-outline-blue-grey:active:focus,
+.scss-mdb .btn-outline-blue-grey.active {
     color: #78909c !important;
     background-color: transparent !important;
     border-color: #78909c !important;
 }
 
-.scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-blue-grey.dropdown-toggle {
     background-color: transparent !important;
     border-color: #78909c !important;
@@ -8442,7 +8902,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-blue-grey:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-blue-grey.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8458,12 +8919,15 @@
     background-color: #2e2e2e;
 }
 
-.scss-mdb .btn-dark:focus, .scss-mdb .btn-dark.focus {
+.scss-mdb .btn-dark:focus,
+.scss-mdb .btn-dark.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-dark:focus, .scss-mdb .btn-dark:active, .scss-mdb .btn-dark.active {
+.scss-mdb .btn-dark:focus,
+.scss-mdb .btn-dark:active,
+.scss-mdb .btn-dark.active {
     background-color: black;
 }
 
@@ -8471,18 +8935,21 @@
     background-color: #212121 !important;
 }
 
-.scss-mdb .btn-dark.dropdown-toggle:hover, .scss-mdb .btn-dark.dropdown-toggle:focus {
+.scss-mdb .btn-dark.dropdown-toggle:hover,
+.scss-mdb .btn-dark.dropdown-toggle:focus {
     background-color: #2e2e2e !important;
 }
 
-.scss-mdb .btn-dark:not([disabled]):not(.disabled):active, .scss-mdb .btn-dark:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-dark:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-dark:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-dark.dropdown-toggle {
     background-color: black !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-dark:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-dark:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-dark:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-dark:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-dark.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8492,7 +8959,8 @@
     color: #212121 !important;
 }
 
-.scss-mdb .dark-ic:hover, .scss-mdb .dark-ic:focus {
+.scss-mdb .dark-ic:hover,
+.scss-mdb .dark-ic:focus {
     color: #212121;
 }
 
@@ -8512,13 +8980,18 @@
     border: 2px solid #212121 !important;
 }
 
-.scss-mdb .btn-outline-dark:hover, .scss-mdb .btn-outline-dark:focus, .scss-mdb .btn-outline-dark:active, .scss-mdb .btn-outline-dark:active:focus, .scss-mdb .btn-outline-dark.active {
+.scss-mdb .btn-outline-dark:hover,
+.scss-mdb .btn-outline-dark:focus,
+.scss-mdb .btn-outline-dark:active,
+.scss-mdb .btn-outline-dark:active:focus,
+.scss-mdb .btn-outline-dark.active {
     color: #212121 !important;
     background-color: transparent !important;
     border-color: #212121 !important;
 }
 
-.scss-mdb .btn-outline-dark:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-dark:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-dark:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-dark:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-dark.dropdown-toggle {
     background-color: transparent !important;
     border-color: #212121 !important;
@@ -8526,7 +8999,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-dark:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-dark:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-dark:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-dark:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-dark.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8542,12 +9016,15 @@
     background-color: #ededed;
 }
 
-.scss-mdb .btn-light:focus, .scss-mdb .btn-light.focus {
+.scss-mdb .btn-light:focus,
+.scss-mdb .btn-light.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-light:focus, .scss-mdb .btn-light:active, .scss-mdb .btn-light.active {
+.scss-mdb .btn-light:focus,
+.scss-mdb .btn-light:active,
+.scss-mdb .btn-light.active {
     background-color: #adadad;
 }
 
@@ -8555,18 +9032,21 @@
     background-color: #e0e0e0 !important;
 }
 
-.scss-mdb .btn-light.dropdown-toggle:hover, .scss-mdb .btn-light.dropdown-toggle:focus {
+.scss-mdb .btn-light.dropdown-toggle:hover,
+.scss-mdb .btn-light.dropdown-toggle:focus {
     background-color: #ededed !important;
 }
 
-.scss-mdb .btn-light:not([disabled]):not(.disabled):active, .scss-mdb .btn-light:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-light:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-light:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-light.dropdown-toggle {
     background-color: #adadad !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-light:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-light:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-light:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-light:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-light.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8576,7 +9056,8 @@
     color: #e0e0e0 !important;
 }
 
-.scss-mdb .light-ic:hover, .scss-mdb .light-ic:focus {
+.scss-mdb .light-ic:hover,
+.scss-mdb .light-ic:focus {
     color: #e0e0e0;
 }
 
@@ -8596,13 +9077,18 @@
     border: 2px solid #e0e0e0 !important;
 }
 
-.scss-mdb .btn-outline-light:hover, .scss-mdb .btn-outline-light:focus, .scss-mdb .btn-outline-light:active, .scss-mdb .btn-outline-light:active:focus, .scss-mdb .btn-outline-light.active {
+.scss-mdb .btn-outline-light:hover,
+.scss-mdb .btn-outline-light:focus,
+.scss-mdb .btn-outline-light:active,
+.scss-mdb .btn-outline-light:active:focus,
+.scss-mdb .btn-outline-light.active {
     color: #e0e0e0 !important;
     background-color: transparent !important;
     border-color: #e0e0e0 !important;
 }
 
-.scss-mdb .btn-outline-light:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-light:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-light:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-light:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-light.dropdown-toggle {
     background-color: transparent !important;
     border-color: #e0e0e0 !important;
@@ -8610,7 +9096,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-light:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-light:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-light:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-light:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-light.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8626,12 +9113,15 @@
     background-color: white;
 }
 
-.scss-mdb .btn-white:focus, .scss-mdb .btn-white.focus {
+.scss-mdb .btn-white:focus,
+.scss-mdb .btn-white.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-white:focus, .scss-mdb .btn-white:active, .scss-mdb .btn-white.active {
+.scss-mdb .btn-white:focus,
+.scss-mdb .btn-white:active,
+.scss-mdb .btn-white.active {
     background-color: #cccccc;
 }
 
@@ -8639,18 +9129,21 @@
     background-color: #fff !important;
 }
 
-.scss-mdb .btn-white.dropdown-toggle:hover, .scss-mdb .btn-white.dropdown-toggle:focus {
+.scss-mdb .btn-white.dropdown-toggle:hover,
+.scss-mdb .btn-white.dropdown-toggle:focus {
     background-color: white !important;
 }
 
-.scss-mdb .btn-white:not([disabled]):not(.disabled):active, .scss-mdb .btn-white:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-white:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-white:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-white.dropdown-toggle {
     background-color: #cccccc !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-white:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-white:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-white:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-white:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-white.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8660,7 +9153,8 @@
     color: #fff !important;
 }
 
-.scss-mdb .white-ic:hover, .scss-mdb .white-ic:focus {
+.scss-mdb .white-ic:hover,
+.scss-mdb .white-ic:focus {
     color: #fff;
 }
 
@@ -8680,13 +9174,18 @@
     border: 2px solid #fff !important;
 }
 
-.scss-mdb .btn-outline-white:hover, .scss-mdb .btn-outline-white:focus, .scss-mdb .btn-outline-white:active, .scss-mdb .btn-outline-white:active:focus, .scss-mdb .btn-outline-white.active {
+.scss-mdb .btn-outline-white:hover,
+.scss-mdb .btn-outline-white:focus,
+.scss-mdb .btn-outline-white:active,
+.scss-mdb .btn-outline-white:active:focus,
+.scss-mdb .btn-outline-white.active {
     color: #fff !important;
     background-color: transparent !important;
     border-color: #fff !important;
 }
 
-.scss-mdb .btn-outline-white:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-white:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-white:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-white:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-white.dropdown-toggle {
     background-color: transparent !important;
     border-color: #fff !important;
@@ -8694,7 +9193,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-white:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-white:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-white:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-white:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-white.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8710,12 +9210,15 @@
     background-color: #0d0d0d;
 }
 
-.scss-mdb .btn-black:focus, .scss-mdb .btn-black.focus {
+.scss-mdb .btn-black:focus,
+.scss-mdb .btn-black.focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-black:focus, .scss-mdb .btn-black:active, .scss-mdb .btn-black.active {
+.scss-mdb .btn-black:focus,
+.scss-mdb .btn-black:active,
+.scss-mdb .btn-black.active {
     background-color: black;
 }
 
@@ -8723,18 +9226,21 @@
     background-color: #000 !important;
 }
 
-.scss-mdb .btn-black.dropdown-toggle:hover, .scss-mdb .btn-black.dropdown-toggle:focus {
+.scss-mdb .btn-black.dropdown-toggle:hover,
+.scss-mdb .btn-black.dropdown-toggle:focus {
     background-color: #0d0d0d !important;
 }
 
-.scss-mdb .btn-black:not([disabled]):not(.disabled):active, .scss-mdb .btn-black:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-black:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-black:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-black.dropdown-toggle {
     background-color: black !important;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-black:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-black:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-black:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-black:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-black.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8744,7 +9250,8 @@
     color: #000 !important;
 }
 
-.scss-mdb .black-ic:hover, .scss-mdb .black-ic:focus {
+.scss-mdb .black-ic:hover,
+.scss-mdb .black-ic:focus {
     color: #000;
 }
 
@@ -8764,13 +9271,18 @@
     border: 2px solid #000 !important;
 }
 
-.scss-mdb .btn-outline-black:hover, .scss-mdb .btn-outline-black:focus, .scss-mdb .btn-outline-black:active, .scss-mdb .btn-outline-black:active:focus, .scss-mdb .btn-outline-black.active {
+.scss-mdb .btn-outline-black:hover,
+.scss-mdb .btn-outline-black:focus,
+.scss-mdb .btn-outline-black:active,
+.scss-mdb .btn-outline-black:active:focus,
+.scss-mdb .btn-outline-black.active {
     color: #000 !important;
     background-color: transparent !important;
     border-color: #000 !important;
 }
 
-.scss-mdb .btn-outline-black:not([disabled]):not(.disabled):active, .scss-mdb .btn-outline-black:not([disabled]):not(.disabled).active,
+.scss-mdb .btn-outline-black:not([disabled]):not(.disabled):active,
+.scss-mdb .btn-outline-black:not([disabled]):not(.disabled).active,
 .show > .scss-mdb .btn-outline-black.dropdown-toggle {
     background-color: transparent !important;
     border-color: #000 !important;
@@ -8778,7 +9290,8 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.scss-mdb .btn-outline-black:not([disabled]):not(.disabled):active:focus, .scss-mdb .btn-outline-black:not([disabled]):not(.disabled).active:focus,
+.scss-mdb .btn-outline-black:not([disabled]):not(.disabled):active:focus,
+.scss-mdb .btn-outline-black:not([disabled]):not(.disabled).active:focus,
 .show > .scss-mdb .btn-outline-black.dropdown-toggle:focus {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -8786,11 +9299,13 @@
 
 .scss-mdb .btn.purple-gradient {
     color: #fff;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
 }
 
-.scss-mdb .btn.purple-gradient:hover, .scss-mdb .btn.purple-gradient:focus, .scss-mdb .btn.purple-gradient:active,
+.scss-mdb .btn.purple-gradient:hover,
+.scss-mdb .btn.purple-gradient:focus,
+.scss-mdb .btn.purple-gradient:active,
 .scss-mdb .btn.purple-gradient:active:focus .scss-mdb .btn.purple-gradient.active {
     background: -webkit-gradient(linear, left top, left bottom, from(#ff88ce), to(#8f8bf7));
     background: linear-gradient(#ff88ce, #8f8bf7);
@@ -8798,11 +9313,13 @@
 
 .scss-mdb .btn.peach-gradient {
     color: #fff;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
 }
 
-.scss-mdb .btn.peach-gradient:hover, .scss-mdb .btn.peach-gradient:focus, .scss-mdb .btn.peach-gradient:active,
+.scss-mdb .btn.peach-gradient:hover,
+.scss-mdb .btn.peach-gradient:focus,
+.scss-mdb .btn.peach-gradient:active,
 .scss-mdb .btn.peach-gradient:active:focus .scss-mdb .btn.peach-gradient.active {
     background: -webkit-gradient(linear, left top, left bottom, from(#ffdf89), to(#fc7b7b));
     background: linear-gradient(#ffdf89, #fc7b7b);
@@ -8810,11 +9327,13 @@
 
 .scss-mdb .btn.aqua-gradient {
     color: #fff;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
 }
 
-.scss-mdb .btn.aqua-gradient:hover, .scss-mdb .btn.aqua-gradient:focus, .scss-mdb .btn.aqua-gradient:active,
+.scss-mdb .btn.aqua-gradient:hover,
+.scss-mdb .btn.aqua-gradient:focus,
+.scss-mdb .btn.aqua-gradient:active,
 .scss-mdb .btn.aqua-gradient:active:focus .scss-mdb .btn.aqua-gradient.active {
     background: -webkit-gradient(linear, left top, left bottom, from(#3aa2ff), to(#1fffac));
     background: linear-gradient(#3aa2ff, #1fffac);
@@ -8822,11 +9341,13 @@
 
 .scss-mdb .btn.blue-gradient {
     color: #fff;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
 }
 
-.scss-mdb .btn.blue-gradient:hover, .scss-mdb .btn.blue-gradient:focus, .scss-mdb .btn.blue-gradient:active,
+.scss-mdb .btn.blue-gradient:hover,
+.scss-mdb .btn.blue-gradient:focus,
+.scss-mdb .btn.blue-gradient:active,
 .scss-mdb .btn.blue-gradient:active:focus .scss-mdb .btn.blue-gradient.active {
     background: -webkit-gradient(linear, left top, left bottom, from(#5ed1fc), to(#3647b3));
     background: linear-gradient(#5ed1fc, #3647b3);
@@ -8851,7 +9372,12 @@
     box-shadow: none;
 }
 
-.scss-mdb .card .card-body h1, .scss-mdb .card .card-body h2, .scss-mdb .card .card-body h3, .scss-mdb .card .card-body h4, .scss-mdb .card .card-body h5, .scss-mdb .card .card-body h6 {
+.scss-mdb .card .card-body h1,
+.scss-mdb .card .card-body h2,
+.scss-mdb .card .card-body h3,
+.scss-mdb .card .card-body h4,
+.scss-mdb .card .card-body h5,
+.scss-mdb .card .card-body h6 {
     font-weight: 400;
 }
 
@@ -8959,7 +9485,9 @@
     pointer-events: none;
 }
 
-.scss-mdb .navbar .nav-item .nav-link .fas, .scss-mdb .navbar .nav-item .nav-link .fab, .scss-mdb .navbar .nav-item .nav-link .far {
+.scss-mdb .navbar .nav-item .nav-link .fas,
+.scss-mdb .navbar .nav-item .nav-link .fab,
+.scss-mdb .navbar .nav-item .nav-link .far {
     padding-right: 3px;
     padding-left: 3px;
 }
@@ -9396,7 +9924,9 @@
     font-size: 1.25rem;
 }
 
-.scss-mdb .modal-dialog.cascading-modal .modal-header .title .fas, .scss-mdb .modal-dialog.cascading-modal .modal-header .title .fab, .scss-mdb .modal-dialog.cascading-modal .modal-header .title .far {
+.scss-mdb .modal-dialog.cascading-modal .modal-header .title .fas,
+.scss-mdb .modal-dialog.cascading-modal .modal-header .title .fab,
+.scss-mdb .modal-dialog.cascading-modal .modal-header .title .far {
     margin-right: 9px;
 }
 
@@ -9503,7 +10033,9 @@
     background-color: #4285f4;
 }
 
-.scss-mdb .modal-dialog.modal-notify.modal-primary .fas, .scss-mdb .modal-dialog.modal-notify.modal-primary .fab, .scss-mdb .modal-dialog.modal-notify.modal-primary .far {
+.scss-mdb .modal-dialog.modal-notify.modal-primary .fas,
+.scss-mdb .modal-dialog.modal-notify.modal-primary .fab,
+.scss-mdb .modal-dialog.modal-notify.modal-primary .far {
     color: #4285f4;
 }
 
@@ -9527,7 +10059,9 @@
     background-color: #ff3547;
 }
 
-.scss-mdb .modal-dialog.modal-notify.modal-danger .fas, .scss-mdb .modal-dialog.modal-notify.modal-danger .fab, .scss-mdb .modal-dialog.modal-notify.modal-danger .far {
+.scss-mdb .modal-dialog.modal-notify.modal-danger .fas,
+.scss-mdb .modal-dialog.modal-notify.modal-danger .fab,
+.scss-mdb .modal-dialog.modal-notify.modal-danger .far {
     color: #ff3547;
 }
 
@@ -9551,7 +10085,9 @@
     background-color: #fb3;
 }
 
-.scss-mdb .modal-dialog.modal-notify.modal-warning .fas, .scss-mdb .modal-dialog.modal-notify.modal-warning .fab, .scss-mdb .modal-dialog.modal-notify.modal-warning .far {
+.scss-mdb .modal-dialog.modal-notify.modal-warning .fas,
+.scss-mdb .modal-dialog.modal-notify.modal-warning .fab,
+.scss-mdb .modal-dialog.modal-notify.modal-warning .far {
     color: #fb3;
 }
 
@@ -9575,7 +10111,9 @@
     background-color: #00c851;
 }
 
-.scss-mdb .modal-dialog.modal-notify.modal-success .fas, .scss-mdb .modal-dialog.modal-notify.modal-success .fab, .scss-mdb .modal-dialog.modal-notify.modal-success .far {
+.scss-mdb .modal-dialog.modal-notify.modal-success .fas,
+.scss-mdb .modal-dialog.modal-notify.modal-success .fab,
+.scss-mdb .modal-dialog.modal-notify.modal-success .far {
     color: #00c851;
 }
 
@@ -9599,7 +10137,9 @@
     background-color: #33b5e5;
 }
 
-.scss-mdb .modal-dialog.modal-notify.modal-info .fas, .scss-mdb .modal-dialog.modal-notify.modal-info .fab, .scss-mdb .modal-dialog.modal-notify.modal-info .far {
+.scss-mdb .modal-dialog.modal-notify.modal-info .fas,
+.scss-mdb .modal-dialog.modal-notify.modal-info .fab,
+.scss-mdb .modal-dialog.modal-notify.modal-info .far {
     color: #33b5e5;
 }
 
@@ -9733,7 +10273,8 @@
         margin: 0;
     }
 
-    .scss-mdb .modal .modal-full-height.modal-top, .scss-mdb .modal .modal-full-height.modal-bottom {
+    .scss-mdb .modal .modal-full-height.modal-top,
+    .scss-mdb .modal .modal-full-height.modal-bottom {
         display: block;
         width: 100%;
         max-width: 100%;
@@ -9937,7 +10478,8 @@
     transition: 0.2s opacity ease-out, 0.2s color ease-out;
 }
 
-.scss-mdb .md-form input:not([type]).valid, .scss-mdb .md-form input:not([type]):focus.valid,
+.scss-mdb .md-form input:not([type]).valid,
+.scss-mdb .md-form input:not([type]):focus.valid,
 .scss-mdb .md-form input[type="text"]:not(.browser-default).valid,
 .scss-mdb .md-form input[type="text"]:not(.browser-default):focus.valid,
 .scss-mdb .md-form input[type="password"]:not(.browser-default).valid,
@@ -10002,7 +10544,8 @@
     opacity: 1;
 }
 
-.scss-mdb .md-form input:not([type]).invalid, .scss-mdb .md-form input:not([type]):focus.invalid,
+.scss-mdb .md-form input:not([type]).invalid,
+.scss-mdb .md-form input:not([type]):focus.invalid,
 .scss-mdb .md-form input[type="text"]:not(.browser-default).invalid,
 .scss-mdb .md-form input[type="text"]:not(.browser-default):focus.invalid,
 .scss-mdb .md-form input[type="password"]:not(.browser-default).invalid,
@@ -10262,7 +10805,7 @@
 
 .scss-mdb .md-form > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
 .scss-mdb .md-form > input[type="time"]:not(.browser-default) + label {
-    font-size: .8rem;
+    font-size: 0.8rem;
     -webkit-transform: translateY(-25px);
     transform: translateY(-25px);
     -webkit-transform-origin: 0 0;
@@ -10308,7 +10851,8 @@
     box-shadow: none;
 }
 
-.scss-mdb .md-form .form-control:disabled, .scss-mdb .md-form .form-control[readonly] {
+.scss-mdb .md-form .form-control:disabled,
+.scss-mdb .md-form .form-control[readonly] {
     background-color: transparent;
     border-bottom: 1px solid #bdbdbd;
 }
@@ -10333,7 +10877,8 @@
     box-shadow: 0 1px 0 0 #f44336 !important;
 }
 
-.scss-mdb .md-form .form-control.is-valid, .scss-mdb .md-form .form-control.is-invalid {
+.scss-mdb .md-form .form-control.is-valid,
+.scss-mdb .md-form .form-control.is-invalid {
     background-position: center right !important;
 }
 
@@ -10375,10 +10920,10 @@
     font-size: 1rem;
     color: #757575;
     cursor: text;
-    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
-    transition: color .2s ease-out, -webkit-transform .2s ease-out;
-    transition: transform .2s ease-out, color .2s ease-out;
-    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out, -webkit-transform 0.2s ease-out;
     -webkit-transform: translateY(12px);
     transform: translateY(12px);
     -webkit-transform-origin: 0% 100%;
@@ -10498,8 +11043,8 @@
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .scss-mdb .md-form.md-outline input[type="text"]:focus:not([readonly]),
@@ -10534,7 +11079,8 @@
     color: #4285f4;
 }
 
-.scss-mdb .md-form.md-outline input[type="text"].valid, .scss-mdb .md-form.md-outline input[type="text"]:focus.valid,
+.scss-mdb .md-form.md-outline input[type="text"].valid,
+.scss-mdb .md-form.md-outline input[type="text"]:focus.valid,
 .scss-mdb .md-form.md-outline input[type="password"].valid,
 .scss-mdb .md-form.md-outline input[type="password"]:focus.valid,
 .scss-mdb .md-form.md-outline input[type="email"].valid,
@@ -10603,7 +11149,8 @@
     opacity: 1;
 }
 
-.scss-mdb .md-form.md-outline input[type="text"].invalid, .scss-mdb .md-form.md-outline input[type="text"]:focus.invalid,
+.scss-mdb .md-form.md-outline input[type="text"].invalid,
+.scss-mdb .md-form.md-outline input[type="text"]:focus.invalid,
 .scss-mdb .md-form.md-outline input[type="password"].invalid,
 .scss-mdb .md-form.md-outline input[type="password"]:focus.invalid,
 .scss-mdb .md-form.md-outline input[type="email"].invalid,
@@ -10774,7 +11321,7 @@
 }
 
 .scss-mdb .md-form.md-outline .form-control {
-    padding: .375rem .75rem;
+    padding: 0.375rem 0.75rem;
 }
 
 .scss-mdb .md-form.md-outline label {
@@ -10785,10 +11332,10 @@
     font-size: 1rem;
     color: #757575;
     cursor: text;
-    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
-    transition: color .2s ease-out, -webkit-transform .2s ease-out;
-    transition: transform .2s ease-out, color .2s ease-out;
-    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out, -webkit-transform 0.2s ease-out;
     -webkit-transform: translateY(9px);
     transform: translateY(9px);
     -webkit-transform-origin: 0% 100%;
@@ -10806,7 +11353,7 @@
 }
 
 .scss-mdb .md-form.md-outline.form-lg .form-control.form-control-lg {
-    padding: .5rem .725rem;
+    padding: 0.5rem 0.725rem;
 }
 
 .scss-mdb .md-form.md-outline.form-lg label {
@@ -10822,7 +11369,7 @@
 }
 
 .scss-mdb .md-form.md-outline.form-lg .prefix {
-    top: .65rem;
+    top: 0.65rem;
     font-size: 25px;
 }
 
@@ -10841,23 +11388,23 @@
 }
 
 .scss-mdb .md-form.md-outline.form-sm .form-control.form-control-sm {
-    padding: .25rem .625rem;
+    padding: 0.25rem 0.625rem;
 }
 
 .scss-mdb .md-form.md-outline.form-sm label {
-    font-size: .8rem;
+    font-size: 0.8rem;
     -webkit-transform: translateY(8px);
     transform: translateY(8px);
 }
 
 .scss-mdb .md-form.md-outline.form-sm label.active {
-    font-size: .85rem;
+    font-size: 0.85rem;
     -webkit-transform: translateY(-12px) scale(0.8);
     transform: translateY(-12px) scale(0.8);
 }
 
 .scss-mdb .md-form.md-outline.form-sm .prefix {
-    top: .5rem;
+    top: 0.5rem;
     font-size: 15px;
 }
 
@@ -10877,10 +11424,10 @@
 
 .scss-mdb .md-form.md-outline .prefix {
     position: absolute;
-    top: .6rem;
+    top: 0.6rem;
     font-size: 20px;
-    -webkit-transition: color .2s;
-    transition: color .2s;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
 }
 
 .scss-mdb .md-form.md-outline .prefix:focus {
@@ -10902,7 +11449,7 @@
 }
 
 .scss-mdb .md-form.md-outline .character-counter {
-    margin-top: -.5rem;
+    margin-top: -0.5rem;
 }
 
 .scss-mdb .md-form.md-bg input[type="text"],
@@ -10921,13 +11468,14 @@
     box-sizing: border-box;
     padding: 10px 5px;
     background: #f5f5f5 no-repeat;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#4285f4), to(#4285f4)), -webkit-gradient(linear, left top, left bottom, from(#ced4da), to(#ced4da));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4285f4), to(#4285f4)),
+        -webkit-gradient(linear, left top, left bottom, from(#ced4da), to(#ced4da));
     background-image: linear-gradient(to bottom, #4285f4, #4285f4), linear-gradient(to bottom, #ced4da, #ced4da);
     background-position: 50% 100%, 50% 100%;
     background-size: 0 2px, 100% 1px;
     border: 0;
-    border-top-left-radius: .3rem;
-    border-top-right-radius: .3rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
     -webkit-transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
@@ -10975,7 +11523,7 @@
 
 .scss-mdb .md-form.md-bg > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
 .scss-mdb .md-form.md-bg > input[type="time"]:not(.browser-default) + label {
-    font-size: .8rem;
+    font-size: 0.8rem;
     -webkit-transform: translateY(-12px);
     transform: translateY(-12px);
     -webkit-transform-origin: 0 0;
@@ -10983,17 +11531,17 @@
 }
 
 .scss-mdb .md-form.md-bg .form-control {
-    padding: 1.1rem .7rem .4rem !important;
+    padding: 1.1rem 0.7rem 0.4rem !important;
 }
 
 .scss-mdb .md-form.md-bg label {
     top: 0;
-    padding-left: .7rem;
+    padding-left: 0.7rem;
     font-size: 1rem;
-    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
-    transition: color .2s ease-out, -webkit-transform .2s ease-out;
-    transition: transform .2s ease-out, color .2s ease-out;
-    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out, -webkit-transform 0.2s ease-out;
     -webkit-transform: translateY(13px);
     transform: translateY(13px);
     -webkit-transform-origin: 0% 100%;
@@ -11001,7 +11549,7 @@
 }
 
 .scss-mdb .md-form.md-bg label.active {
-    padding-left: .75rem;
+    padding-left: 0.75rem;
     font-weight: 500;
     -webkit-transform: translateY(-3px) scale(0.8);
     transform: translateY(-3px) scale(0.8);
@@ -11038,7 +11586,7 @@
 }
 
 .scss-mdb .needs-validation .md-form label {
-    left: .3rem;
+    left: 0.3rem;
 }
 
 .scss-mdb .custom-file-input:lang(es) ~ .custom-file-label::after {
@@ -11085,12 +11633,37 @@
 }
 
 .scss-mdb .young-passion-gradient {
-    background-image: -webkit-gradient(linear, left top, right top, from(#ff8177), color-stop(0%, #ff867a), color-stop(21%, #ff8c7f), color-stop(52%, #f99185), color-stop(78%, #cf556c), to(#b12a5b));
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#ff8177),
+        color-stop(0%, #ff867a),
+        color-stop(21%, #ff8c7f),
+        color-stop(52%, #f99185),
+        color-stop(78%, #cf556c),
+        to(#b12a5b)
+    );
+    background-image: linear-gradient(
+        to right,
+        #ff8177 0%,
+        #ff867a 0%,
+        #ff8c7f 21%,
+        #f99185 52%,
+        #cf556c 78%,
+        #b12a5b 100%
+    );
 }
 
 .scss-mdb .lady-lips-gradient {
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#ff9a9e), color-stop(99%, #fecfef), to(#fecfef));
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#ff9a9e),
+        color-stop(99%, #fecfef),
+        to(#fecfef)
+    );
     background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
 }
 
@@ -11104,7 +11677,14 @@
 }
 
 .scss-mdb .frozen-dreams-gradient {
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#fdcbf1), color-stop(1%, #fdcbf1), to(#e6dee9));
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#fdcbf1),
+        color-stop(1%, #fdcbf1),
+        to(#e6dee9)
+    );
     background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
 }
 
@@ -11179,7 +11759,7 @@
 }
 
 .scss-mdb .schedule-list .font-smaller {
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 .scss-mdb .note {
@@ -11385,7 +11965,8 @@
     color: rgba(0, 0, 0, 0.38);
 }
 
-.scss-mdb ul.stepper li.active a .label, .scss-mdb ul.stepper li.completed a .label {
+.scss-mdb ul.stepper li.active a .label,
+.scss-mdb ul.stepper li.completed a .label {
     font-weight: 600;
     color: rgba(0, 0, 0, 0.87);
 }
@@ -11585,16 +12166,16 @@
 }
 
 .scss-mdb .treeview .rotate {
-    margin-top: .2rem;
-    font-size: .8rem;
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
     vertical-align: text-top;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview .rotate.down {
@@ -11629,7 +12210,7 @@
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list li {
-    padding: .2em 0 0 .2em;
+    padding: 0.2em 0 0 0.2em;
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .nested::before {
@@ -11644,10 +12225,10 @@
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .closed {
     display: block;
-    padding: .2em .2em .2em .4em;
+    padding: 0.2em 0.2em 0.2em 0.4em;
     margin-right: 0;
-    border-top-left-radius: .3em;
-    border-bottom-left-radius: .3em;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .closed:hover {
@@ -11655,9 +12236,9 @@
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .closed .fa-angle-right {
-    font-size: .8rem;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    font-size: 0.8rem;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .closed .fa-angle-right.down {
@@ -11669,8 +12250,8 @@
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .open {
     background-color: #32a0ff;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-items .open:hover {
@@ -11683,12 +12264,12 @@
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-element {
-    padding: .2em .2em .2em .6em;
+    padding: 0.2em 0.2em 0.2em 0.6em;
     cursor: pointer;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview-animated .treeview-animated-list .treeview-animated-element:hover {
@@ -11733,17 +12314,17 @@
 
 .scss-mdb .treeview-colorful .treeview-colorful-list ul {
     padding-left: 1em;
-    margin-top: .1em;
+    margin-top: 0.1em;
     background: rgba(224, 127, 178, 0.2);
 }
 
 .scss-mdb .treeview-colorful .treeview-colorful-element {
-    padding: .2em .2em .2em 1em;
+    padding: 0.2em 0.2em 0.2em 1em;
     cursor: pointer;
     border: 2px solid transparent;
     border-right: 0 solid transparent;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview-colorful .treeview-colorful-element:hover {
@@ -11764,11 +12345,11 @@
 
 .scss-mdb .treeview-colorful .treeview-colorful-items-header {
     display: block;
-    padding: .4em;
+    padding: 0.4em;
     margin-right: 0;
     border-bottom: 2px solid transparent;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview-colorful .treeview-colorful-items-header:hover {
@@ -11778,8 +12359,8 @@
 .scss-mdb .treeview-colorful .treeview-colorful-items-header.open {
     background-color: #a2127a;
     border-bottom: 2px solid #ffac47;
-    -webkit-transition: all .1s linear;
-    transition: all .1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .scss-mdb .treeview-colorful .treeview-colorful-items-header.open span {
@@ -11796,16 +12377,16 @@
 }
 
 .scss-mdb .treeview-colorful .treeview-colorful-items-header .fa-angle-right {
-    font-size: .8rem;
-    -webkit-transition: all .2s linear;
-    transition: all .2s linear;
+    font-size: 0.8rem;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .scss-mdb .treeview-colorful .treeview-colorful-items-header .fas {
     position: relative;
     color: #ffac47;
-    -webkit-transition: all .2s linear;
-    transition: all .2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
 }
@@ -11813,8 +12394,8 @@
 .scss-mdb .treeview-colorful .treeview-colorful-items-header .fa-minus-circle {
     position: relative;
     color: #ffac47;
-    -webkit-transition: all .2s linear;
-    transition: all .2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }

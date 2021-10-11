@@ -1,0 +1,30 @@
+{
+  "name": "valea-new",
+  "version": "0.0.1",
+  "description": "a new valea client script",
+  "author": "Yan-Luca L.",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf ../../Server/resources/roleplay/client",
+    "build": "npm run clean && swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet",
+    "lint": "prettier --check ./src"
+  },
+  "devDependencies": {
+    "@altv/types-client": "^1.8.7",
+    "@altv/types-natives": "^1.4.2",
+    "@altv/types-shared": "^1.0.6",
+    "@altv/types-webview": "^1.0.2",
+    "@swc/cli": "^0.1.51",
+    "@swc/core": "^1.2.95",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {},
+  "prettier": {
+    "tabWidth": 4,
+    "printWidth": 120,
+    "singleQuote": false,
+    "semi": true,
+    "arrowParens": "always",
+    "trailingComma": "all"
+  }
+}
