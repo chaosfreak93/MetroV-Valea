@@ -6,12 +6,17 @@
 version: 2
 updates:
   - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/script-a-master/Server" # Location of package manifests
+    directory: "/script-a-master/TS/AltV.Roleplay" # Location of package manifests
     schedule:
       interval: "daily"
     target-branch: "dev"
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/script-a-master/Altv-Roleplay" # Location of package manifests
+    directory: "/script-a-master/C#/AltV.Roleplay" # Location of package manifests
+    schedule:
+      interval: "daily"
+    target-branch: "dev"
+  - package-ecosystem: "nuget" # See documentation for possible values
+    directory: "/script-a-master/C#/SaltyChat.Server" # Location of package manifests
     schedule:
       interval: "daily"
     target-branch: "dev"

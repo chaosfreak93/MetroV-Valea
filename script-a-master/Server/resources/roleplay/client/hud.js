@@ -560,6 +560,7 @@ alt.onServer("Client:HUD:CreateCEF", (hunger, thirst)=>{
             alt.emitServer("Server:Smartphone:createNewChat", parseInt(targetNumber));
         });
         hudBrowser.on("Client:Smartphone:sendChatMessage", (selectedChatId, userPhoneNumber, targetMessageUser, encodedText)=>{
+            if (selectedChatId <= 0 || userPhoneNumber <= 0 || targetMessageUser <= 0) return;
             if (selectedChatId <= 0 || userPhoneNumber <= 0 || targetMessageUser <= 0 || lastInteract + 500 > Date.now()) return;
             lastInteract = Date.now();
             alt.emitServer("Server:Smartphone:sendChatMessage", parseInt(selectedChatId), parseInt(userPhoneNumber), parseInt(targetMessageUser), encodedText);
