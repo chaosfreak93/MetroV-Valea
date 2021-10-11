@@ -14,6 +14,10 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "nuget" # See documentation for possible values
+    directory: "/script-a-master/Serverside/DiscordWebhook" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/script-a-master/Serverside/SaltyChat.Server" # Location of package manifests
     schedule:
       interval: "daily"
