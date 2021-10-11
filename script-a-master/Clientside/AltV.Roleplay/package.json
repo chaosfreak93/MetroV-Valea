@@ -16,7 +16,8 @@
     "@altv/types-webview": "^1.0.2",
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.95",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "prettier": "^2.4.1"
   },
   "dependencies": {},
   "prettier": {
