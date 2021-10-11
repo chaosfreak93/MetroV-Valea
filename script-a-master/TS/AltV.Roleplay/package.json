@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf ../../Server/resources/roleplay/client",
-    "build": "npm run clean && swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet"
+    "build": "npm run clean && swc ./src -d ../../Server/resources --copy-files --only **/*.ts --quiet",
+    "lint": "prettier --check ./src"
   },
   "devDependencies": {
     "@altv/types-client": "^1.8.7",
