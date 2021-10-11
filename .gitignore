@@ -10,9 +10,10 @@ script-a-master/Serverside/SaltyChat.Server/bin
 script-a-master/Serverside/SaltyChat.Server/obj
 
 script-a-master/Clientside/AltV.Roleplay/node_modules
+script-a-master/Clientside/AltV.Roleplay/.vscode
+script-a-master/Clientside/AltV.Roleplay/package-lock.json
 
 script-a-master/Server/cache
 script-a-master/Server/node_modules
 script-a-master/Server/package-lock.json
 script-a-master/Server/server.log
-script-a-master/Server/server.cfg
