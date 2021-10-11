@@ -1,4 +1,4 @@
-## Update Serverside Dependencys
+## Install Serverside Dependencys
 Per NuGet -> Restore
 
 ## Update Serverside Dependencys
