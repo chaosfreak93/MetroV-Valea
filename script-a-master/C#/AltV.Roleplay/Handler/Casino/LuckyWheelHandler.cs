@@ -1,4 +1,4 @@
-﻿using System;
+﻿/**using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using AltV.Net;
@@ -8,7 +8,7 @@ using Altv_Roleplay.Model;
 
 namespace Altv_Roleplay.Handler.Casino
 {
-    public class LuckyWheelHandler
+    public class LuckyWheelHandler : IScript
     {
         private bool _isRolling;
         
@@ -323,4 +323,4 @@ namespace Altv_Roleplay.Handler.Casino
             }
         }
     }
-}
+}**/

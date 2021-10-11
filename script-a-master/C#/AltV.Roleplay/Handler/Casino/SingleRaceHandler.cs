@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿/**using System.Linq;
 using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Async;
@@ -7,7 +7,7 @@ using Altv_Roleplay.Model;
 
 namespace Altv_Roleplay.Handler.Casino
 {
-    public class SingleRaceHandler
+    public class SingleRaceHandler : IScript
     {
         [AsyncClientEvent("Server:Casino:SingleRace:UpdateBetValues")]
         public async Task updateBetValues(ClassicPlayer player, int horse, int bet, int gain, bool showBetScreen) {
@@ -39,4 +39,4 @@ namespace Altv_Roleplay.Handler.Casino
             player.Emit("Client:Casino:SingleRace:StartRace");
         }
     }
-}
+}**/

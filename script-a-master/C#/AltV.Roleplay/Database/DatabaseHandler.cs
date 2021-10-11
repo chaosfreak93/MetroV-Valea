@@ -1390,7 +1390,7 @@ namespace Altv_Roleplay.Database
             }
         }
         
-        internal static void LoadDiamondCasino() {
+        /**internal static void LoadDiamondCasino() {
             try {
                 using (var db = new gtaContext()) {
                     ServerDiamondCasino.DiamondCasino = new List<Server_Diamond_Casino>(db.Server_Diamond_Casino);
@@ -1405,7 +1405,7 @@ namespace Altv_Roleplay.Database
             catch (Exception e) {
                 Alt.Log($"{e}");
             }
-        }
+        }**/
 
 
         internal static void ResetDatabaseOnlineState() {

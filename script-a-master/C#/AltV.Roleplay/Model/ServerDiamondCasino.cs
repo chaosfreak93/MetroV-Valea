@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿/**using System.Collections.Generic;
 using System.Linq;
 using AltV.Net;
 using Altv_Roleplay.models;
@@ -30,4 +30,4 @@ namespace Altv_Roleplay.Model
             }
         }
     }
-}
+}**/
