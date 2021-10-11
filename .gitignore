@@ -1,15 +1,15 @@
 ﻿.idea
 
-script-a-master/C#/.idea
-script-a-master/C#/.vs
-script-a-master/C#/AltV.Roleplay/bin
-script-a-master/C#/AltV.Roleplay/obj
-script-a-master/C#/DiscordWebhook/bin
-script-a-master/C#/DiscordWebhook/obj
-script-a-master/C#/SaltyChat.Server/bin
-script-a-master/C#/SaltyChat.Server/obj
+script-a-master/Serverside/.idea
+script-a-master/Serverside/.vs
+script-a-master/Serverside/AltV.Roleplay/bin
+script-a-master/Serverside/AltV.Roleplay/obj
+script-a-master/Serverside/DiscordWebhook/bin
+script-a-master/Serverside/DiscordWebhook/obj
+script-a-master/Serverside/SaltyChat.Server/bin
+script-a-master/Serverside/SaltyChat.Server/obj
 
-script-a-master/TS/AltV.Roleplay/node_modules
+script-a-master/Clientside/AltV.Roleplay/node_modules
 
 script-a-master/Server/cache
 script-a-master/Server/node_modules
