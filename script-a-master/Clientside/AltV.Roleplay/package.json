@@ -10,7 +10,7 @@
     "lint": "prettier --check ./src"
   },
   "devDependencies": {
-    "@altv/types-client": "^1.8.7",
+    "@altv/types-client": "^2.0.5",
     "@altv/types-natives": "^1.4.2",
     "@altv/types-shared": "^1.0.6",
     "@altv/types-webview": "^1.0.2",
