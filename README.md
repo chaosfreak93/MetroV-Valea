@@ -1,4 +1,6 @@
-## MetroV
+## MetroV - Outdated
+
+Extremly modified Valea Script
 
 # Serverside Updates
 ` script-a-master/Serverside `
