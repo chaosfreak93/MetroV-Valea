@@ -2,8 +2,8 @@
 
 Extremly modified Valea Script
 
-# Serverside Updates
+### Serverside Sourcecode
 ` script-a-master/Serverside `
 
-# Clientside Updates
+### Clientside Sourcecode
 ` script-a-master/Clientside `
